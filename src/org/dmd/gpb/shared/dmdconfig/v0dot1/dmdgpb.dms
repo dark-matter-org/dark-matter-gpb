@@ -1,0 +1,11 @@
+SchemaDefinition
+name       			mvw
+schemaBaseID		800
+schemaIDRange		200
+dependsOn			dmg
+defFiles			types.dmd
+defFiles			complex.dmd
+defFiles    		attributes.dmd
+defFiles    		classes.dmd
+generatedFileHeader LGPL.txt
+
