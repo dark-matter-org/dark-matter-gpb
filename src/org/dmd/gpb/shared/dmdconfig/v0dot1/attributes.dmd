@@ -1,0 +1,24 @@
+AttributeDefinition
+name			cplusplusType
+dmdID			1
+type			String
+description		An indication of the C++ type associated with a GPB attribute type.
+
+AttributeDefinition
+name			dmType
+dmdID			2
+type			String
+description		An indication of the dark-matter type associated with a GPB attribute type.
+
+AttributeDefinition
+name			gpbHint
+dmdID			3
+type			String
+description		A short description of something that can be dumped as one line comment in a .proto spec.
+ For longer explanations, use the description attribute.
+
+AttributeDefinition
+name			defaultValue
+dmdID			4
+type			String
+description		The default value to be used for a GpbType or for an GpbAttribute.

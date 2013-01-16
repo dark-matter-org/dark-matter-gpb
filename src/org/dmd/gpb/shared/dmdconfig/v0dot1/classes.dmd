@@ -1,0 +1,53 @@
+ClassDefinition
+name			GpbDefinition
+classType   	ABSTRACT
+dmdID			1
+useWrapperType	EXTENDED
+isNamedBy		camelCaseName
+must			camelCaseName
+may         	file
+may        		lineNumber
+may         	description
+may				gpbHint
+description		The GpbDefinition provides a common base for all dark-matter
+ Google Protocol Buffer definitions.
+
+ClassDefinition
+name 			GpbType
+dmdID			2
+useWrapperType	EXTENDED
+derivedFrom		GpbDefinition
+isNamedBy		camelCaseName
+must			camelCaseName
+must			definedInModule
+may				internallyGenerated
+may				isEnumType
+may				isMessageType
+may				defaultValue
+description		The GpbType class is use to define the types of attributes in the GPB
+ specification. All GpbMessages and EnumDefinitions will have GpbTypes generated for
+ them so that they can be used as types for GpbAttributes.
+
+ClassDefinition
+name         	GpbEnum
+classType      	STRUCTURAL
+dmdID			3
+useWrapperType	EXTENDED
+derivedFrom     GpbDefinition
+isNamedBy       name
+may            	description
+must          	name
+must           	enumValue
+may             defaultValue
+description    The GpbEnum allows for the definition of enumerations. One thing to be aware
+ of with enums is that, if you're generating C++, the names of enum elements must be globally
+ unique. The dark-matter GPB utility will warn you if 
+ <p/>
+ When you're defining a message type, you might want one of its fields to only have one of a
+ pre-defined list of values. For example, let's say you want to add a corpus field for each
+ SearchRequest, where the corpus can be UNIVERSAL, WEB, IMAGES, LOCAL, NEWS, PRODUCTS or VIDEO.
+ You can do this very simply by adding an enum to your message definition - a field with an enum
+ type can only have one of a specified set of constants as its value (if you try to provide a
+ different value, the parser will treat it like an unknown field). In the following
+ example we've added an enum called Corpus with all the possible values, and a field of type Corpus:
+ 

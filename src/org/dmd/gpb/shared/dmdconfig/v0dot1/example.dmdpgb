@@ -1,3 +1,10 @@
+GpbType
+name			int32
+cplusplusType	int32
+dmType			Integer
+description Uses variable-length encoding. Inefficient for encoding negative
+ numbers – if your field is likely to have negative values, use sint32 instead.
+
 GpbAttribute
 name 		id
 gpbType		int32
@@ -5,7 +12,7 @@ description A person's unique identifier in the blah system.
 
 GpbAttribute
 name		phone
-gpfType		PhoneNumber
+gpbType		PhoneNumber
 description A phone number and its type.
 
 GpbMessage
