@@ -22,3 +22,29 @@ name			defaultValue
 dmdID			4
 type			String
 description		The default value to be used for a GpbType or for an GpbAttribute.
+
+AttributeDefinition
+name			sizeInBytes
+dmdID			5
+type			Integer
+description		The size in bytes that a particular primitive type would occupy on the wire.
+
+AttributeDefinition
+name			gpbType
+dmdID			6
+type			GpbType
+description		A reference to a GpbType definition.
+
+AttributeDefinition
+name			isMessageType
+dmdID			7
+type			Boolean
+description		Indicates if an internally generated GpbType is associated with a GpbMessage.
+
+AttributeDefinition
+name			definedInGpbModule
+dmdID			7
+type			Boolean
+description		Indicates if an internally generated GpbType is associated with a GpbMessage.
+
+

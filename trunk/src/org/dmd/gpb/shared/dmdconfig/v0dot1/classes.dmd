@@ -14,16 +14,18 @@ description		The GpbDefinition provides a common base for all dark-matter
 
 ClassDefinition
 name 			GpbType
+classType      	STRUCTURAL
 dmdID			2
 useWrapperType	EXTENDED
 derivedFrom		GpbDefinition
 isNamedBy		camelCaseName
 must			camelCaseName
-must			definedInModule
+must			definedInGpbModule
 may				internallyGenerated
 may				isEnumType
 may				isMessageType
 may				defaultValue
+may				sizeInBytes
 description		The GpbType class is use to define the types of attributes in the GPB
  specification. All GpbMessages and EnumDefinitions will have GpbTypes generated for
  them so that they can be used as types for GpbAttributes.
@@ -35,13 +37,12 @@ dmdID			3
 useWrapperType	EXTENDED
 derivedFrom     GpbDefinition
 isNamedBy       name
-may            	description
 must          	name
 must           	enumValue
 may             defaultValue
 description    The GpbEnum allows for the definition of enumerations. One thing to be aware
  of with enums is that, if you're generating C++, the names of enum elements must be globally
- unique. The dark-matter GPB utility will warn you if 
+ unique. The dark-matter GPB utility will warn you if you have clashing enum value names.
  <p/>
  When you're defining a message type, you might want one of its fields to only have one of a
  pre-defined list of values. For example, let's say you want to add a corpus field for each
@@ -50,4 +51,25 @@ description    The GpbEnum allows for the definition of enumerations. One thing 
  type can only have one of a specified set of constants as its value (if you try to provide a
  different value, the parser will treat it like an unknown field). In the following
  example we've added an enum called Corpus with all the possible values, and a field of type Corpus:
- 
+
+ClassDefinition
+name         	GpbAttribute
+classType      	STRUCTURAL
+dmdID			4
+useWrapperType	EXTENDED
+derivedFrom     GpbDefinition
+isNamedBy       name
+must          	name
+must			gpbType
+
+ClassDefinition
+name         	GpbAttribute
+classType      	STRUCTURAL
+dmdID			4
+useWrapperType	EXTENDED
+derivedFrom     GpbDefinition
+isNamedBy       name
+must          	name
+must			gpbType
+
+
