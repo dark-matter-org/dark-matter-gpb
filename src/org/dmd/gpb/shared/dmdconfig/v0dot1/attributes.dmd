@@ -43,7 +43,7 @@ description		Indicates if an internally generated GpbType is associated with a G
 
 AttributeDefinition
 name			definedInGpbModule
-dmdID			7
+dmdID			8
 type			Boolean
 description		Indicates if an internally generated GpbType is associated with a GpbMessage.
 

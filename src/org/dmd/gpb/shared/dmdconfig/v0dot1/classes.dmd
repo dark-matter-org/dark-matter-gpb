@@ -10,7 +10,7 @@ may        		lineNumber
 may         	description
 may				gpbHint
 description		The GpbDefinition provides a common base for all dark-matter
- Google Protocol Buffer definitions.
+ Google Protocol Buffer definitions. 
 
 ClassDefinition
 name 			GpbType
@@ -36,8 +36,8 @@ classType      	STRUCTURAL
 dmdID			3
 useWrapperType	EXTENDED
 derivedFrom     GpbDefinition
-isNamedBy       name
-must          	name
+isNamedBy       camelCaseName
+must          	camelCaseName
 must           	enumValue
 may             defaultValue
 description    The GpbEnum allows for the definition of enumerations. One thing to be aware
@@ -58,18 +58,28 @@ classType      	STRUCTURAL
 dmdID			4
 useWrapperType	EXTENDED
 derivedFrom     GpbDefinition
-isNamedBy       name
-must          	name
+isNamedBy       camelCaseName
+must          	camelCaseName
 must			gpbType
 
 ClassDefinition
-name         	GpbAttribute
+name         	GpbMessage
 classType      	STRUCTURAL
-dmdID			4
+dmdID			5
 useWrapperType	EXTENDED
 derivedFrom     GpbDefinition
-isNamedBy       name
-must          	name
-must			gpbType
+isNamedBy       camelCaseName
+must          	camelCaseName
 
+ClassDefinition
+name         	GpbDefinitionSet
+classType      	STRUCTURAL
+dmdID			6
+useWrapperType	EXTENDED
+derivedFrom     GpbDefinition
+isNamedBy       camelCaseName
+must          	camelCaseName
+description		The GpbDefinitionSet is used to define a named collection of definitions from
+ which Google Protocol Buffer (GPB) .proto files can be composed and generated. GpbDefinitionSets
+ are referred to by GpbArtifacts
 
