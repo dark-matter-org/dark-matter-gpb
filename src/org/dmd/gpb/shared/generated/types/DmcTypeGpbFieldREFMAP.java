@@ -27,61 +27,61 @@ import org.dmd.dmc.DmcMappedAttributeIF;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
 import org.dmd.dmc.types.CamelCaseName;    // key type import
 /**
- * The DmcTypeGpbAttributeREFMAP provides storage for a map of GpbAttributeREF
+ * The DmcTypeGpbFieldREFMAP provides storage for a map of GpbFieldREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2828)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:540)
  */
 @SuppressWarnings("serial")
-// public class DmcTypeGpbAttributeREFMAP extends DmcTypeGpbAttributeREF<GpbAttributeREF,CamelCaseName> {
-public class DmcTypeGpbAttributeREFMAP extends DmcTypeGpbAttributeREF implements Serializable {
+// public class DmcTypeGpbFieldREFMAP extends DmcTypeGpbFieldREF<GpbFieldREF,CamelCaseName> {
+public class DmcTypeGpbFieldREFMAP extends DmcTypeGpbFieldREF implements Serializable {
     
-    private final static Iterator<GpbAttributeREF> emptyList = (new HashMap<CamelCaseName,GpbAttributeREF>()).values().iterator();
+    private final static Iterator<GpbFieldREF> emptyList = (new HashMap<CamelCaseName,GpbFieldREF>()).values().iterator();
     
-    protected Map<CamelCaseName,GpbAttributeREF> value;
+    protected Map<CamelCaseName,GpbFieldREF> value;
     
-    public DmcTypeGpbAttributeREFMAP(){
+    public DmcTypeGpbFieldREFMAP(){
         value = null;
     }
     
-    public DmcTypeGpbAttributeREFMAP(DmcAttributeInfo ai){
+    public DmcTypeGpbFieldREFMAP(DmcAttributeInfo ai){
         super(ai);
         initValue();
     }
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-            value = new HashMap<CamelCaseName,GpbAttributeREF>();
+            value = new HashMap<CamelCaseName,GpbFieldREF>();
         else
-            value = new TreeMap<CamelCaseName,GpbAttributeREF>();
+            value = new TreeMap<CamelCaseName,GpbFieldREF>();
     }
     
     public CamelCaseName firstKey(){
         if (getAttributeInfo().valueType == ValueTypeEnum.TREEMAPPED){
             if (value == null)
                 return(null);
-            TreeMap<CamelCaseName,GpbAttributeREF> map = (TreeMap<CamelCaseName,GpbAttributeREF>)value;
+            TreeMap<CamelCaseName,GpbFieldREF> map = (TreeMap<CamelCaseName,GpbFieldREF>)value;
             return(map.firstKey());
         }
         throw(new IllegalStateException("Attribute " + getAttributeInfo().name + " is HASHMAPPED and doesn't support firstKey()"));
     }
     
     @Override
-    public DmcTypeGpbAttributeREFMAP getNew(){
-        return(new DmcTypeGpbAttributeREFMAP(getAttributeInfo()));
+    public DmcTypeGpbFieldREFMAP getNew(){
+        return(new DmcTypeGpbFieldREFMAP(getAttributeInfo()));
     }
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2885)
-    public DmcAttribute<GpbAttributeREF> cloneIt(){
+    public DmcAttribute<GpbFieldREF> cloneIt(){
         synchronized(this){
-            DmcTypeGpbAttributeREFMAP rc = getNew();
+            DmcTypeGpbFieldREFMAP rc = getNew();
     
             if (value == null)
                 return(rc);
     
-            for(GpbAttributeREF val: value.values())
+            for(GpbFieldREF val: value.values())
             try {
                 rc.add(val);
             } catch (DmcValueException e) {
@@ -93,13 +93,13 @@ public class DmcTypeGpbAttributeREFMAP extends DmcTypeGpbAttributeREF implements
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2905)
-    public GpbAttributeREF add(Object v) throws DmcValueException {
+    public GpbFieldREF add(Object v) throws DmcValueException {
         synchronized(this){
-            GpbAttributeREF newval = typeCheck(v);
+            GpbFieldREF newval = typeCheck(v);
             if (value == null)
                 initValue();
             CamelCaseName key = (CamelCaseName)((DmcMappedAttributeIF)newval).getKey();
-            GpbAttributeREF oldval = value.put(key,newval);
+            GpbFieldREF oldval = value.put(key,newval);
             
             if (oldval != null){
                 // We had a value with this key, ensure that the value actually changed
@@ -113,7 +113,7 @@ public class DmcTypeGpbAttributeREFMAP extends DmcTypeGpbAttributeREF implements
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2926)
-    public GpbAttributeREF del(Object key){
+    public GpbFieldREF del(Object key){
         synchronized(this){
     
             if (value == null)
@@ -128,36 +128,36 @@ public class DmcTypeGpbAttributeREFMAP extends DmcTypeGpbAttributeREF implements
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2942)
-    public Iterator<GpbAttributeREF> getMV(){
+    public Iterator<GpbFieldREF> getMV(){
         synchronized(this){
     
             if (value == null)
                 return(emptyList);
     
-            Map<CamelCaseName,GpbAttributeREF> clone = null;
+            Map<CamelCaseName,GpbFieldREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-                clone = new HashMap<CamelCaseName,GpbAttributeREF>(value);
+                clone = new HashMap<CamelCaseName,GpbFieldREF>(value);
             else
-                clone = new TreeMap<CamelCaseName,GpbAttributeREF>(value);
+                clone = new TreeMap<CamelCaseName,GpbFieldREF>(value);
             return(clone.values().iterator());
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2959)
-    public Map<CamelCaseName,GpbAttributeREF> getMVCopy(){
+    public Map<CamelCaseName,GpbFieldREF> getMVCopy(){
         synchronized(this){
-            Map<CamelCaseName,GpbAttributeREF> clone = null;
+            Map<CamelCaseName,GpbFieldREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED){
                 if (value == null)
-                    clone = new HashMap<CamelCaseName,GpbAttributeREF>();
+                    clone = new HashMap<CamelCaseName,GpbFieldREF>();
                 else
-                    clone = new HashMap<CamelCaseName,GpbAttributeREF>(value);
+                    clone = new HashMap<CamelCaseName,GpbFieldREF>(value);
             }
             else{
                 if (value == null)
-                    clone = new TreeMap<CamelCaseName,GpbAttributeREF>();
+                    clone = new TreeMap<CamelCaseName,GpbFieldREF>();
                 else
-                    clone = new TreeMap<CamelCaseName,GpbAttributeREF>(value);
+                    clone = new TreeMap<CamelCaseName,GpbFieldREF>(value);
             }
             return(clone);
         }
@@ -175,7 +175,7 @@ public class DmcTypeGpbAttributeREFMAP extends DmcTypeGpbAttributeREF implements
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2992)
-    public GpbAttributeREF getByKey(Object key){
+    public GpbFieldREF getByKey(Object key){
         synchronized(this){
            if (value == null)
                return(null);
@@ -195,7 +195,7 @@ public class DmcTypeGpbAttributeREFMAP extends DmcTypeGpbAttributeREF implements
                return(false);
     
             try {
-                GpbAttributeREF val = typeCheck(v);
+                GpbFieldREF val = typeCheck(v);
                 return(value.containsValue(val));
             } catch (DmcValueException e) {
                 return(false);

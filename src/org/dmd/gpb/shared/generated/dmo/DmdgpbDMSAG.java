@@ -1,17 +1,17 @@
 package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpHeaderDMSAG(DmoCompactSchemaFormatter.java:850)
-import java.util.ArrayList;                                  // For storage of schema info - (DmoCompactSchemaFormatter.java:784)
-import java.util.HashMap;                                    // For storage of schema info - (DmoCompactSchemaFormatter.java:783)
-import java.util.Iterator;                                   // For access of schema info - (DmoCompactSchemaFormatter.java:785)
-import org.dmd.dmc.*;                                        // Basic DMC stuff - (DmoCompactSchemaFormatter.java:786)
-import org.dmd.dmc.rules.RuleIF;                             // For rule info - (DmoCompactSchemaFormatter.java:787)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                  // Required attribute from MetaDMSAG - (DmoCompactSchemaFormatter.java:803)
-import org.dmd.dms.generated.enums.ClassTypeEnum;            // Have class definitions - (DmoCompactSchemaFormatter.java:791)
-import org.dmd.dms.generated.enums.DataTypeEnum;             // Have class/attribute definitions - (DmoCompactSchemaFormatter.java:792)
-import org.dmd.dms.generated.enums.OriginalTypeEnum;         // Have type/internal type definitions - (DmoCompactSchemaFormatter.java:797)
-import org.dmd.dms.generated.enums.ValueTypeEnum;            // Have attribute definitions - (DmoCompactSchemaFormatter.java:818)
+// Called from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpHeaderDMSAG(DmoCompactSchemaFormatter.java:855)
+import java.util.ArrayList;                                  // For storage of schema info - (DmoCompactSchemaFormatter.java:789)
+import java.util.HashMap;                                    // For storage of schema info - (DmoCompactSchemaFormatter.java:788)
+import java.util.Iterator;                                   // For access of schema info - (DmoCompactSchemaFormatter.java:790)
+import org.dmd.dmc.*;                                        // Basic DMC stuff - (DmoCompactSchemaFormatter.java:791)
+import org.dmd.dmc.rules.RuleIF;                             // For rule info - (DmoCompactSchemaFormatter.java:792)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                  // Required attribute from MetaDMSAG - (DmoCompactSchemaFormatter.java:808)
+import org.dmd.dms.generated.enums.ClassTypeEnum;            // Have class definitions - (DmoCompactSchemaFormatter.java:796)
+import org.dmd.dms.generated.enums.DataTypeEnum;             // Have class/attribute definitions - (DmoCompactSchemaFormatter.java:797)
+import org.dmd.dms.generated.enums.OriginalTypeEnum;         // Have type/internal type definitions - (DmoCompactSchemaFormatter.java:802)
+import org.dmd.dms.generated.enums.ValueTypeEnum;            // Have attribute definitions - (DmoCompactSchemaFormatter.java:823)
 
 
 
@@ -40,18 +40,20 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcAttributeInfo __sizeInBytes = new DmcAttributeInfo("sizeInBytes", -477995, "Integer", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
 
     // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:157)
-    public final static DmcTypeInfo __type_GpbAttribute = new DmcTypeInfo("GpbAttribute", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_GpbDefinition = new DmcTypeInfo("GpbDefinition", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_GpbDefinitionSet = new DmcTypeInfo("GpbDefinitionSet", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_GpbEnum = new DmcTypeInfo("GpbEnum", OriginalTypeEnum.REFERENCE);
+    public final static DmcTypeInfo __type_GpbField = new DmcTypeInfo("GpbField", OriginalTypeEnum.REFERENCE);
+    public final static DmcTypeInfo __type_GpbFieldIndicator = new DmcTypeInfo("GpbFieldIndicator", OriginalTypeEnum.COMPLEXTYPE);
+    public final static DmcTypeInfo __type_GpbFieldRuleEnum = new DmcTypeInfo("GpbFieldRuleEnum", OriginalTypeEnum.ENUM);
     public final static DmcTypeInfo __type_GpbMessage = new DmcTypeInfo("GpbMessage", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_GpbType = new DmcTypeInfo("GpbType", OriginalTypeEnum.REFERENCE);
 
-    // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:193)
+    // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:198)
     public final static DmcClassInfo __GpbDefinition = new DmcClassInfo("GpbDefinition","org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO", -477999, ClassTypeEnum.ABSTRACT, DataTypeEnum.PERSISTENT,null,MetaDMSAG.__camelCaseName);
-    public final static DmcClassInfo __GpbAttribute = new DmcClassInfo("GpbAttribute","org.dmd.gpb.shared.generated.dmo.GpbAttributeDMO", -477996, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__camelCaseName);
     public final static DmcClassInfo __GpbDefinitionSet = new DmcClassInfo("GpbDefinitionSet","org.dmd.gpb.shared.generated.dmo.GpbDefinitionSetDMO", -477994, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__camelCaseName);
     public final static DmcClassInfo __GpbEnum = new DmcClassInfo("GpbEnum","org.dmd.gpb.shared.generated.dmo.GpbEnumDMO", -477997, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__camelCaseName);
+    public final static DmcClassInfo __GpbField = new DmcClassInfo("GpbField","org.dmd.gpb.shared.generated.dmo.GpbFieldDMO", -477996, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__camelCaseName);
     public final static DmcClassInfo __GpbMessage = new DmcClassInfo("GpbMessage","org.dmd.gpb.shared.generated.dmo.GpbMessageDMO", -477995, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__camelCaseName);
     public final static DmcClassInfo __GpbType = new DmcClassInfo("GpbType","org.dmd.gpb.shared.generated.dmo.GpbTypeDMO", -477998, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__camelCaseName);
 
@@ -92,10 +94,10 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         _SmAp.put(__gpbType.id,__gpbType);
         _SmAp.put(__isMessageType.id,__isMessageType);
         _SmAp.put(__sizeInBytes.id,__sizeInBytes);
-        _CmAp.put(__GpbAttribute.id,__GpbAttribute);
         _CmAp.put(__GpbDefinition.id,__GpbDefinition);
         _CmAp.put(__GpbDefinitionSet.id,__GpbDefinitionSet);
         _CmAp.put(__GpbEnum.id,__GpbEnum);
+        _CmAp.put(__GpbField.id,__GpbField);
         _CmAp.put(__GpbMessage.id,__GpbMessage);
         _CmAp.put(__GpbType.id,__GpbType);
 
@@ -117,8 +119,8 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         __GpbEnum.addMust(MetaDMSAG.__enumValue);
         __GpbEnum.addMay(__defaultValue);
 
-        __GpbAttribute.addMust(MetaDMSAG.__camelCaseName);
-        __GpbAttribute.addMust(__gpbType);
+        __GpbField.addMust(MetaDMSAG.__camelCaseName);
+        __GpbField.addMust(__gpbType);
 
         __GpbMessage.addMust(MetaDMSAG.__camelCaseName);
 

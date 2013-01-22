@@ -3,33 +3,33 @@ name			int32
 cplusplusType	int32
 dmType			Integer
 description Uses variable-length encoding. Inefficient for encoding negative
- numbers – if your field is likely to have negative values, use sint32 instead.
+ numbers if your field is likely to have negative values, use sint32 instead.
 
-GpbAttribute
+GpbField
 name 		id
 gpbType		int32
 description A person's unique identifier in the blah system.
 
-GpbAttribute
+GpbField
 name		phone
 gpbType		PhoneNumber
 description A phone number and its type.
 
 GpbMessage
 name 	Person
-field 	required name 			1 
-field 	required id 			2
-field 	optional email 			3
+gpbfield 	REQUIRED name 			1 
+gpbfield 	REQUIRED id 			2
+gpbfield 	OPTIONAL email 			3
 embed	PhoneType
 embed 	PhoneNumber
-field 	repeated phone 			4
+field 	REPEATED phone 			4
 description The Person Message is used to represent an individual with an
  email address and one or more phone numbers.
 
 GpbMessage
 name	PhoneNumber
-field	required number		1
-field	optional phoneType	2 HOME
+gpbfield	REQUIRED number		1
+gpbfield	OPTIONAL phoneType	2 HOME
 description Allows for the specification of a phone number and, optionally, its location.
 
 GpbEnumDefinition
