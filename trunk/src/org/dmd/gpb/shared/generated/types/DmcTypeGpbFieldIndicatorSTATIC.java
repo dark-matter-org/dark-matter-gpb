@@ -18,41 +18,42 @@ package org.dmd.gpb.shared.generated.types;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcInputStreamIF;
 import org.dmd.dmc.DmcOutputStreamIF;
+import org.dmd.gpb.shared.generated.types.GpbFieldIndicator;    // base type import
 
 /**
- * The DmcTypeGpbAttributeREFSTATIC provides static access to functions used to manage values of type GpbAttributeREF
+ * The DmcTypeGpbFieldIndicatorSTATIC provides static access to functions used to manage values of type GpbFieldIndicator
  * These methods are used to support ComplexTypeDefinitions.
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpSTATICType(GenUtility.java:2130)
  *    Called from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2045)
  */
-public class DmcTypeGpbAttributeREFSTATIC {
+public class DmcTypeGpbFieldIndicatorSTATIC {
     
-    public static DmcTypeGpbAttributeREFSTATIC instance;
-    static DmcTypeGpbAttributeREFSV typeHelper;
+    public static DmcTypeGpbFieldIndicatorSTATIC instance;
+    static DmcTypeGpbFieldIndicatorSV typeHelper;
     
     static {
-        instance = new DmcTypeGpbAttributeREFSTATIC();
+        instance = new DmcTypeGpbFieldIndicatorSTATIC();
     }
     
-    protected DmcTypeGpbAttributeREFSTATIC() {
-        typeHelper = new DmcTypeGpbAttributeREFSV();
+    protected DmcTypeGpbFieldIndicatorSTATIC() {
+        typeHelper = new DmcTypeGpbFieldIndicatorSV();
     }
     
-    public GpbAttributeREF typeCheck(Object value) throws DmcValueException {
+    public GpbFieldIndicator typeCheck(Object value) throws DmcValueException {
     	   return(typeHelper.typeCheck(value));
     }
     
-    public GpbAttributeREF cloneValue(GpbAttributeREF value) throws DmcValueException {
+    public GpbFieldIndicator cloneValue(GpbFieldIndicator value) throws DmcValueException {
     	   return(typeHelper.cloneValue(value));
     }
     
-    public void serializeValue(DmcOutputStreamIF dos, GpbAttributeREF value) throws Exception {
+    public void serializeValue(DmcOutputStreamIF dos, GpbFieldIndicator value) throws Exception {
     	   typeHelper.serializeValue(dos, value);
     }
     
-    public GpbAttributeREF deserializeValue(DmcInputStreamIF dis) throws Exception {
+    public GpbFieldIndicator deserializeValue(DmcInputStreamIF dis) throws Exception {
     	   return(typeHelper.deserializeValue(dis));
     }
     

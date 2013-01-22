@@ -25,51 +25,51 @@ import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
 /**
- * The DmcTypeGpbAttributeREFSET provides storage for a set of GpbAttributeREF
+ * The DmcTypeGpbFieldREFSET provides storage for a set of GpbFieldREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2595)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:532)
  */
 @SuppressWarnings("serial")
-public class DmcTypeGpbAttributeREFSET extends DmcTypeGpbAttributeREF implements Serializable {
+public class DmcTypeGpbFieldREFSET extends DmcTypeGpbFieldREF implements Serializable {
     
-     private final static Iterator<GpbAttributeREF> emptyList =  (new HashSet<GpbAttributeREF>()).iterator();
+     private final static Iterator<GpbFieldREF> emptyList =  (new HashSet<GpbFieldREF>()).iterator();
     
     
-    protected Set<GpbAttributeREF> value;
+    protected Set<GpbFieldREF> value;
     
-    public DmcTypeGpbAttributeREFSET(){
+    public DmcTypeGpbFieldREFSET(){
         value = null;
     }
     
-    public DmcTypeGpbAttributeREFSET(DmcAttributeInfo ai){
+    public DmcTypeGpbFieldREFSET(DmcAttributeInfo ai){
         super(ai);
         initValue();
     }
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHSET)
-            value = new HashSet<GpbAttributeREF>();
+            value = new HashSet<GpbFieldREF>();
         else
-            value = new TreeSet<GpbAttributeREF>();
+            value = new TreeSet<GpbFieldREF>();
     }
     
     @Override
-    public DmcTypeGpbAttributeREFSET getNew(){
-        return(new DmcTypeGpbAttributeREFSET(getAttributeInfo()));
+    public DmcTypeGpbFieldREFSET getNew(){
+        return(new DmcTypeGpbFieldREFSET(getAttributeInfo()));
     }
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2636)
-    public DmcAttribute<GpbAttributeREF> cloneIt(){
+    public DmcAttribute<GpbFieldREF> cloneIt(){
         synchronized(this){
-            DmcTypeGpbAttributeREFSET rc = getNew();
+            DmcTypeGpbFieldREFSET rc = getNew();
     
             if (value == null)
                 return(rc);
     
-            for(GpbAttributeREF val: value)
+            for(GpbFieldREF val: value)
             try {
                 rc.add(val);
             } catch (DmcValueException e) {
@@ -81,9 +81,9 @@ public class DmcTypeGpbAttributeREFSET extends DmcTypeGpbAttributeREF implements
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2659)
-    public GpbAttributeREF add(Object v) throws DmcValueException {
+    public GpbFieldREF add(Object v) throws DmcValueException {
         synchronized(this){
-            GpbAttributeREF rc = typeCheck(v);
+            GpbFieldREF rc = typeCheck(v);
             if (value == null)
                 initValue();
         
@@ -97,9 +97,9 @@ public class DmcTypeGpbAttributeREFSET extends DmcTypeGpbAttributeREF implements
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2676)
-    public GpbAttributeREF del(Object v){
+    public GpbFieldREF del(Object v){
         synchronized(this){
-            GpbAttributeREF rc = null;
+            GpbFieldREF rc = null;
             if (value == null)
                 return(rc);
             
@@ -121,32 +121,32 @@ public class DmcTypeGpbAttributeREFSET extends DmcTypeGpbAttributeREF implements
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2701)
-    public Iterator<GpbAttributeREF> getMV(){
+    public Iterator<GpbFieldREF> getMV(){
         synchronized(this){
             if (value == null)
                 return(emptyList);
 
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHSET)
-                return( (new HashSet<GpbAttributeREF>(value)).iterator() );
+                return( (new HashSet<GpbFieldREF>(value)).iterator() );
             else
-                return( (new TreeSet<GpbAttributeREF>(value)).iterator() );
+                return( (new TreeSet<GpbFieldREF>(value)).iterator() );
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2715)
-    public Set<GpbAttributeREF> getMVCopy(){
+    public Set<GpbFieldREF> getMVCopy(){
         synchronized(this){
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHSET){
                 if (value == null)
-                    return(new HashSet<GpbAttributeREF>());
+                    return(new HashSet<GpbFieldREF>());
                 else
-                    return(new HashSet<GpbAttributeREF>(value));
+                    return(new HashSet<GpbFieldREF>(value));
             }
             else{
                 if (value == null)
-                    return(new TreeSet<GpbAttributeREF>(value));
+                    return(new TreeSet<GpbFieldREF>(value));
                 else
-                    return(new TreeSet<GpbAttributeREF>(value));
+                    return(new TreeSet<GpbFieldREF>(value));
             }
         }
     }
@@ -169,7 +169,7 @@ public class DmcTypeGpbAttributeREFSET extends DmcTypeGpbAttributeREF implements
                 return(false);
             
             try {
-                GpbAttributeREF val = typeCheck(v);
+                GpbFieldREF val = typeCheck(v);
                 return(value.contains(val));
             } catch (DmcValueException e) {
                 return(false);

@@ -22,14 +22,14 @@ import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcOutputStreamIF;
 import org.dmd.dmc.DmcInputStreamIF;
 import org.dmd.dmc.DmcNamedObjectNontransportableREF; // base import
-import org.dmd.gpb.shared.generated.dmo.GpbAttributeDMO; // primitive type
+import org.dmd.gpb.shared.generated.dmo.GpbFieldDMO; // primitive type
 import org.dmd.dmc.types.CamelCaseName;
 import org.dmd.dms.generated.types.DmcTypeCamelCaseNameSV; 
 
 import org.dmd.dms.generated.enums.ValueTypeEnum;
 import org.dmd.dms.generated.enums.DataTypeEnum;
 /**
- * This is the generated DmcAttribute derivative for values of type GpbAttribute
+ * This is the generated DmcAttribute derivative for values of type GpbField
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -37,38 +37,38 @@ import org.dmd.dms.generated.enums.DataTypeEnum;
  * Generated from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:420)
  */
 @SuppressWarnings("serial")
-public class GpbAttributeREF extends DmcNamedObjectNontransportableREF<GpbAttributeDMO> {
+public class GpbFieldREF extends DmcNamedObjectNontransportableREF<GpbFieldDMO> {
 
     public final static DmcAttributeInfo __camelCaseName = new DmcAttributeInfo("camelCaseName",116,"CamelCaseName",ValueTypeEnum.SINGLE,DataTypeEnum.PERSISTENT);
     
     DmcTypeCamelCaseNameSV myName;    
     
-    public GpbAttributeREF(){
+    public GpbFieldREF(){
     }
 
-    public GpbAttributeREF(GpbAttributeDMO o){
+    public GpbFieldREF(GpbFieldDMO o){
          object = o;
          myName = (DmcTypeCamelCaseNameSV)o.getObjectNameAttribute();
     }
 
-    public GpbAttributeREF(CamelCaseName n) throws DmcValueException {
+    public GpbFieldREF(CamelCaseName n) throws DmcValueException {
          object = null;
          myName = new DmcTypeCamelCaseNameSV(__camelCaseName);
          myName.set(n);
     }
 
-    public GpbAttributeREF(String n) throws DmcValueException {
+    public GpbFieldREF(String n) throws DmcValueException {
          object = null;
          myName = new DmcTypeCamelCaseNameSV(__camelCaseName);
          myName.set(n);
     }
 
-    public GpbAttributeREF(GpbAttributeREF original){
+    public GpbFieldREF(GpbFieldREF original){
         myName = original.myName;
         object = original.object;
     }
 
-    public void setObject(GpbAttributeDMO o){
+    public void setObject(GpbFieldDMO o){
          object = o;
          if (object != null)
              myName = (DmcTypeCamelCaseNameSV)o.getObjectNameAttribute();
@@ -77,8 +77,8 @@ public class GpbAttributeREF extends DmcNamedObjectNontransportableREF<GpbAttrib
     /**
      * Clones this reference.
      */
-    public GpbAttributeREF cloneMe(){
-        GpbAttributeREF rc = new GpbAttributeREF();
+    public GpbFieldREF cloneMe(){
+        GpbFieldREF rc = new GpbFieldREF();
         rc.myName = myName;
         rc.object = object;
         return(rc);

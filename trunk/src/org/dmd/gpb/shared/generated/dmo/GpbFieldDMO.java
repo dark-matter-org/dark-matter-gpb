@@ -40,43 +40,43 @@ import org.dmd.gpb.shared.generated.types.GpbTypeREF;                  // Helper
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-public class GpbAttributeDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, Serializable  {
+public class GpbFieldDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, Serializable  {
 
-    public final static String constructionClassName = "GpbAttribute";
+    public final static String constructionClassName = "GpbField";
 
 
     static {
     }
 
-    public GpbAttributeDMO() {
-        super("GpbAttribute");
+    public GpbFieldDMO() {
+        super("GpbField");
     }
 
-    protected GpbAttributeDMO(String oc) {
+    protected GpbFieldDMO(String oc) {
         super(oc);
     }
 
     @Override
-    public GpbAttributeDMO getNew(){
-        GpbAttributeDMO rc = new GpbAttributeDMO();
+    public GpbFieldDMO getNew(){
+        GpbFieldDMO rc = new GpbFieldDMO();
         return(rc);
     }
 
     @Override
-    public GpbAttributeDMO getSlice(DmcSliceInfo info){
-        GpbAttributeDMO rc = new GpbAttributeDMO();
+    public GpbFieldDMO getSlice(DmcSliceInfo info){
+        GpbFieldDMO rc = new GpbFieldDMO();
         populateSlice(rc,info);
         return(rc);
     }
 
-    public GpbAttributeDMO(DmcTypeModifierMV mods) {
-        super("GpbAttribute");
+    public GpbFieldDMO(DmcTypeModifierMV mods) {
+        super("GpbField");
         modrec(true);
         setModifier(mods);
     }
 
-    public GpbAttributeDMO getModificationRecorder(){
-        GpbAttributeDMO rc = new GpbAttributeDMO();
+    public GpbFieldDMO getModificationRecorder(){
+        GpbFieldDMO rc = new GpbFieldDMO();
         rc.setCamelCaseName(getCamelCaseName());
         rc.setModifier(new DmcTypeModifierMV(MetaDMSAG.__modify));
         rc.modrec(true);
@@ -100,8 +100,8 @@ public class GpbAttributeDMO  extends GpbDefinitionDMO  implements DmcNamedObjec
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
     public boolean equals(Object obj){
-        if (obj instanceof GpbAttributeDMO){
-            return( getObjectName().equals( ((GpbAttributeDMO) obj).getObjectName()) );
+        if (obj instanceof GpbFieldDMO){
+            return( getObjectName().equals( ((GpbFieldDMO) obj).getObjectName()) );
         }
         return(false);
     }

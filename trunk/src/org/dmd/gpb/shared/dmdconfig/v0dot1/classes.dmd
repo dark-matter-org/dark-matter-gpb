@@ -53,7 +53,7 @@ description    The GpbEnum allows for the definition of enumerations. One thing 
  example we've added an enum called Corpus with all the possible values, and a field of type Corpus:
 
 ClassDefinition
-name         	GpbAttribute
+name         	GpbField
 classType      	STRUCTURAL
 dmdID			4
 useWrapperType	EXTENDED

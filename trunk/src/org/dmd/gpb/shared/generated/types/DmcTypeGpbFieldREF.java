@@ -22,12 +22,12 @@ import org.dmd.dmc.DmcInputStreamIF;
 import org.dmd.dmc.types.DmcTypeNamedObjectREF;
 import org.dmd.dmc.types.CamelCaseName;
 
-import org.dmd.gpb.shared.generated.types.GpbAttributeREF;
+import org.dmd.gpb.shared.generated.types.GpbFieldREF;
 
-import org.dmd.gpb.shared.generated.dmo.GpbAttributeDMO;
+import org.dmd.gpb.shared.generated.dmo.GpbFieldDMO;
 
 /**
- * This is the generated DmcAttribute derivative for values of type GpbAttribute
+ * This is the generated DmcAttribute derivative for values of type GpbField
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -35,19 +35,19 @@ import org.dmd.gpb.shared.generated.dmo.GpbAttributeDMO;
  * Generated from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREFHelperType(DmoTypeFormatter.java:585)
  */
 @SuppressWarnings("serial")
-abstract public class DmcTypeGpbAttributeREF extends DmcTypeNamedObjectREF<GpbAttributeREF, CamelCaseName> {
+abstract public class DmcTypeGpbFieldREF extends DmcTypeNamedObjectREF<GpbFieldREF, CamelCaseName> {
 
-    public DmcTypeGpbAttributeREF(){
+    public DmcTypeGpbFieldREF(){
     
     }
 
-    public DmcTypeGpbAttributeREF(DmcAttributeInfo ai){
+    public DmcTypeGpbFieldREF(DmcAttributeInfo ai){
         super(ai);
     }
 
     @Override
-    protected GpbAttributeREF getNewHelper(){
-        return(new GpbAttributeREF());
+    protected GpbFieldREF getNewHelper(){
+        return(new GpbFieldREF());
     }
 
     @Override
@@ -57,49 +57,49 @@ abstract public class DmcTypeGpbAttributeREF extends DmcTypeNamedObjectREF<GpbAt
 
     @Override
     protected String getDMOClassName(){
-        return( GpbAttributeDMO.class.getName());
+        return( GpbFieldDMO.class.getName());
     }
 
     @Override
     protected boolean isDMO(Object value){
-        if (value instanceof GpbAttributeDMO)
+        if (value instanceof GpbFieldDMO)
             return(true);
         return(false);
     }
 
     @Override
-    protected GpbAttributeREF typeCheck(Object value) throws DmcValueException {
-        GpbAttributeREF rc = null;
+    protected GpbFieldREF typeCheck(Object value) throws DmcValueException {
+        GpbFieldREF rc = null;
 
-        if (value instanceof GpbAttributeREF)
-            rc = (GpbAttributeREF)value;
-        else if (value instanceof GpbAttributeDMO)
-            rc = new GpbAttributeREF((GpbAttributeDMO)value);
+        if (value instanceof GpbFieldREF)
+            rc = (GpbFieldREF)value;
+        else if (value instanceof GpbFieldDMO)
+            rc = new GpbFieldREF((GpbFieldDMO)value);
         else if (value instanceof CamelCaseName)
-            rc = new GpbAttributeREF((CamelCaseName)value);
+            rc = new GpbFieldREF((CamelCaseName)value);
         else if (value instanceof String)
-            rc = new GpbAttributeREF((String)value);
+            rc = new GpbFieldREF((String)value);
         else
-            throw(new DmcValueException("Object of class: " + value.getClass().getName() + " passed where object compatible with GpbAttributeREF, GpbAttributeDMO or String expected."));
+            throw(new DmcValueException("Object of class: " + value.getClass().getName() + " passed where object compatible with GpbFieldREF, GpbFieldDMO or String expected."));
 
         return(rc);
     }
 
     @Override
-    public void serializeValue(DmcOutputStreamIF dos, GpbAttributeREF value) throws Exception {
+    public void serializeValue(DmcOutputStreamIF dos, GpbFieldREF value) throws Exception {
         value.serializeIt(dos);
     }
 
     @Override
-    public GpbAttributeREF deserializeValue(DmcInputStreamIF dis) throws Exception {
-        GpbAttributeREF rc = new GpbAttributeREF();
+    public GpbFieldREF deserializeValue(DmcInputStreamIF dis) throws Exception {
+        GpbFieldREF rc = new GpbFieldREF();
         rc.deserializeIt(dis);
         return(rc);
     }
 
     @Override
-    public GpbAttributeREF cloneValue(GpbAttributeREF value){
-        return(new GpbAttributeREF(value));
+    public GpbFieldREF cloneValue(GpbFieldREF value){
+        return(new GpbFieldREF(value));
     }
 
 

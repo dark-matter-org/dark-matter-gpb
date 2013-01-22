@@ -1,0 +1,14 @@
+EnumDefinition
+name            GpbFieldRuleEnum
+enumValue		0 REQUIRED A well-formed message must have exactly one of this field.
+enumValue		1 OPTIONAL A well-formed message can have zero or one of this field (but not more than one).
+enumValue		2 REPEATED This field can be repeated any number of times (including zero) in a well-formed message. The order of the repeated values will be preserved.
+description		The GpbFieldRuleEnum indicates whether a field is required, optional or repeated.
+ <p/>
+ REQUIRED is Forever You should be very careful about marking fields as required. If at some
+ point you wish to stop writing or sending a required field, it will be problematic to change
+ the field to an optional field Ð old readers will consider messages without this field to be
+ incomplete and may reject or drop them unintentionally. You should consider writing
+ application-specific custom validation routines for your buffers instead. Some engineers
+ at Google have come to the conclusion that using required does more harm than good; they
+ prefer to use only optional and repeated. However, this view is not universal.
