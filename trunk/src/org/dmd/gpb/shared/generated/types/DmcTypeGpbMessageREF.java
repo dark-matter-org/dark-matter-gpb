@@ -20,7 +20,7 @@ import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcOutputStreamIF;
 import org.dmd.dmc.DmcInputStreamIF;
 import org.dmd.dmc.types.DmcTypeNamedObjectREF;
-import org.dmd.dmc.types.CamelCaseName;
+import org.dmd.dmc.types.DotName;
 
 import org.dmd.gpb.shared.generated.types.GpbMessageREF;
 
@@ -35,7 +35,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbMessageDMO;
  * Generated from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREFHelperType(DmoTypeFormatter.java:585)
  */
 @SuppressWarnings("serial")
-abstract public class DmcTypeGpbMessageREF extends DmcTypeNamedObjectREF<GpbMessageREF, CamelCaseName> {
+abstract public class DmcTypeGpbMessageREF extends DmcTypeNamedObjectREF<GpbMessageREF, DotName> {
 
     public DmcTypeGpbMessageREF(){
     
@@ -51,8 +51,8 @@ abstract public class DmcTypeGpbMessageREF extends DmcTypeNamedObjectREF<GpbMess
     }
 
     @Override
-    protected CamelCaseName getNewName(){
-        return(new CamelCaseName());
+    protected DotName getNewName(){
+        return(new DotName());
     }
 
     @Override
@@ -75,8 +75,8 @@ abstract public class DmcTypeGpbMessageREF extends DmcTypeNamedObjectREF<GpbMess
             rc = (GpbMessageREF)value;
         else if (value instanceof GpbMessageDMO)
             rc = new GpbMessageREF((GpbMessageDMO)value);
-        else if (value instanceof CamelCaseName)
-            rc = new GpbMessageREF((CamelCaseName)value);
+        else if (value instanceof DotName)
+            rc = new GpbMessageREF((DotName)value);
         else if (value instanceof String)
             rc = new GpbMessageREF((String)value);
         else

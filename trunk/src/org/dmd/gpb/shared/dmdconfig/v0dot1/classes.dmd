@@ -3,8 +3,8 @@ name			GpbDefinition
 classType   	ABSTRACT
 dmdID			1
 useWrapperType	EXTENDED
-isNamedBy		camelCaseName
-must			camelCaseName
+isNamedBy		dotName
+must			dotName
 may         	file
 may        		lineNumber
 may         	description
@@ -18,8 +18,8 @@ classType      	STRUCTURAL
 dmdID			2
 useWrapperType	EXTENDED
 derivedFrom		GpbDefinition
-isNamedBy		camelCaseName
-must			camelCaseName
+isNamedBy		dotName
+must			dotName
 must			definedInGpbModule
 may				internallyGenerated
 may				isEnumType
@@ -36,8 +36,8 @@ classType      	STRUCTURAL
 dmdID			3
 useWrapperType	EXTENDED
 derivedFrom     GpbDefinition
-isNamedBy       camelCaseName
-must          	camelCaseName
+isNamedBy       dotName
+must          	dotName
 must           	enumValue
 may             defaultValue
 description    The GpbEnum allows for the definition of enumerations. One thing to be aware
@@ -58,8 +58,8 @@ classType      	STRUCTURAL
 dmdID			4
 useWrapperType	EXTENDED
 derivedFrom     GpbDefinition
-isNamedBy       camelCaseName
-must          	camelCaseName
+isNamedBy       dotName
+must          	dotName
 must			gpbType
 
 ClassDefinition
@@ -68,8 +68,8 @@ classType      	STRUCTURAL
 dmdID			5
 useWrapperType	EXTENDED
 derivedFrom     GpbDefinition
-isNamedBy       camelCaseName
-must          	camelCaseName
+isNamedBy       dotName
+must          	dotName
 
 ClassDefinition
 name         	GpbDefinitionSet
@@ -77,8 +77,8 @@ classType      	STRUCTURAL
 dmdID			6
 useWrapperType	EXTENDED
 derivedFrom     GpbDefinition
-isNamedBy       camelCaseName
-must          	camelCaseName
+isNamedBy       dotName
+must          	dotName
 description		The GpbDefinitionSet is used to define a named collection of definitions from
  which Google Protocol Buffer (GPB) .proto files can be composed and generated. GpbDefinitionSets
  are referred to by GpbArtifacts

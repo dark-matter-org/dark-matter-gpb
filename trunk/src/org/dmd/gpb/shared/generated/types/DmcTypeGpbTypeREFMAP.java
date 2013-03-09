@@ -25,7 +25,7 @@ import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcMappedAttributeIF;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
-import org.dmd.dmc.types.CamelCaseName;    // key type import
+import org.dmd.dmc.types.DotName;    // key type import
 /**
  * The DmcTypeGpbTypeREFMAP provides storage for a map of GpbTypeREF
  * <P>
@@ -34,12 +34,12 @@ import org.dmd.dmc.types.CamelCaseName;    // key type import
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:540)
  */
 @SuppressWarnings("serial")
-// public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF<GpbTypeREF,CamelCaseName> {
+// public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF<GpbTypeREF,DotName> {
 public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializable {
     
-    private final static Iterator<GpbTypeREF> emptyList = (new HashMap<CamelCaseName,GpbTypeREF>()).values().iterator();
+    private final static Iterator<GpbTypeREF> emptyList = (new HashMap<DotName,GpbTypeREF>()).values().iterator();
     
-    protected Map<CamelCaseName,GpbTypeREF> value;
+    protected Map<DotName,GpbTypeREF> value;
     
     public DmcTypeGpbTypeREFMAP(){
         value = null;
@@ -52,16 +52,16 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-            value = new HashMap<CamelCaseName,GpbTypeREF>();
+            value = new HashMap<DotName,GpbTypeREF>();
         else
-            value = new TreeMap<CamelCaseName,GpbTypeREF>();
+            value = new TreeMap<DotName,GpbTypeREF>();
     }
     
-    public CamelCaseName firstKey(){
+    public DotName firstKey(){
         if (getAttributeInfo().valueType == ValueTypeEnum.TREEMAPPED){
             if (value == null)
                 return(null);
-            TreeMap<CamelCaseName,GpbTypeREF> map = (TreeMap<CamelCaseName,GpbTypeREF>)value;
+            TreeMap<DotName,GpbTypeREF> map = (TreeMap<DotName,GpbTypeREF>)value;
             return(map.firstKey());
         }
         throw(new IllegalStateException("Attribute " + getAttributeInfo().name + " is HASHMAPPED and doesn't support firstKey()"));
@@ -98,7 +98,7 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
             GpbTypeREF newval = typeCheck(v);
             if (value == null)
                 initValue();
-            CamelCaseName key = (CamelCaseName)((DmcMappedAttributeIF)newval).getKey();
+            DotName key = (DotName)((DmcMappedAttributeIF)newval).getKey();
             GpbTypeREF oldval = value.put(key,newval);
             
             if (oldval != null){
@@ -119,7 +119,7 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
             if (value == null)
                 return(null);
     
-           if (key instanceof CamelCaseName)
+           if (key instanceof DotName)
                 return(value.remove(key));
             else
                 throw(new IllegalStateException("Incompatible key type: " + key.getClass().getName() + " passed to del():" + getName()));
@@ -134,30 +134,30 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
             if (value == null)
                 return(emptyList);
     
-            Map<CamelCaseName,GpbTypeREF> clone = null;
+            Map<DotName,GpbTypeREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-                clone = new HashMap<CamelCaseName,GpbTypeREF>(value);
+                clone = new HashMap<DotName,GpbTypeREF>(value);
             else
-                clone = new TreeMap<CamelCaseName,GpbTypeREF>(value);
+                clone = new TreeMap<DotName,GpbTypeREF>(value);
             return(clone.values().iterator());
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2959)
-    public Map<CamelCaseName,GpbTypeREF> getMVCopy(){
+    public Map<DotName,GpbTypeREF> getMVCopy(){
         synchronized(this){
-            Map<CamelCaseName,GpbTypeREF> clone = null;
+            Map<DotName,GpbTypeREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED){
                 if (value == null)
-                    clone = new HashMap<CamelCaseName,GpbTypeREF>();
+                    clone = new HashMap<DotName,GpbTypeREF>();
                 else
-                    clone = new HashMap<CamelCaseName,GpbTypeREF>(value);
+                    clone = new HashMap<DotName,GpbTypeREF>(value);
             }
             else{
                 if (value == null)
-                    clone = new TreeMap<CamelCaseName,GpbTypeREF>();
+                    clone = new TreeMap<DotName,GpbTypeREF>();
                 else
-                    clone = new TreeMap<CamelCaseName,GpbTypeREF>(value);
+                    clone = new TreeMap<DotName,GpbTypeREF>(value);
             }
             return(clone);
         }
@@ -180,8 +180,8 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
            if (value == null)
                return(null);
     
-            if (key instanceof CamelCaseName)
-                return(value.get((CamelCaseName) key));
+            if (key instanceof DotName)
+                return(value.get((DotName) key));
             else
                 throw(new IllegalStateException("Incompatible type: " + key.getClass().getName() + " passed to del():" + getName()));
         }
@@ -210,7 +210,7 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
            if (value == null)
                return(false);
     
-           if (key instanceof CamelCaseName)
+           if (key instanceof DotName)
                 return(value.containsKey(key));
             return(false);
         }

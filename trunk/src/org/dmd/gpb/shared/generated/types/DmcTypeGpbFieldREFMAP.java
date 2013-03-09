@@ -25,7 +25,7 @@ import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcMappedAttributeIF;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
-import org.dmd.dmc.types.CamelCaseName;    // key type import
+import org.dmd.dmc.types.DotName;    // key type import
 /**
  * The DmcTypeGpbFieldREFMAP provides storage for a map of GpbFieldREF
  * <P>
@@ -34,12 +34,12 @@ import org.dmd.dmc.types.CamelCaseName;    // key type import
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:540)
  */
 @SuppressWarnings("serial")
-// public class DmcTypeGpbFieldREFMAP extends DmcTypeGpbFieldREF<GpbFieldREF,CamelCaseName> {
+// public class DmcTypeGpbFieldREFMAP extends DmcTypeGpbFieldREF<GpbFieldREF,DotName> {
 public class DmcTypeGpbFieldREFMAP extends DmcTypeGpbFieldREF implements Serializable {
     
-    private final static Iterator<GpbFieldREF> emptyList = (new HashMap<CamelCaseName,GpbFieldREF>()).values().iterator();
+    private final static Iterator<GpbFieldREF> emptyList = (new HashMap<DotName,GpbFieldREF>()).values().iterator();
     
-    protected Map<CamelCaseName,GpbFieldREF> value;
+    protected Map<DotName,GpbFieldREF> value;
     
     public DmcTypeGpbFieldREFMAP(){
         value = null;
@@ -52,16 +52,16 @@ public class DmcTypeGpbFieldREFMAP extends DmcTypeGpbFieldREF implements Seriali
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-            value = new HashMap<CamelCaseName,GpbFieldREF>();
+            value = new HashMap<DotName,GpbFieldREF>();
         else
-            value = new TreeMap<CamelCaseName,GpbFieldREF>();
+            value = new TreeMap<DotName,GpbFieldREF>();
     }
     
-    public CamelCaseName firstKey(){
+    public DotName firstKey(){
         if (getAttributeInfo().valueType == ValueTypeEnum.TREEMAPPED){
             if (value == null)
                 return(null);
-            TreeMap<CamelCaseName,GpbFieldREF> map = (TreeMap<CamelCaseName,GpbFieldREF>)value;
+            TreeMap<DotName,GpbFieldREF> map = (TreeMap<DotName,GpbFieldREF>)value;
             return(map.firstKey());
         }
         throw(new IllegalStateException("Attribute " + getAttributeInfo().name + " is HASHMAPPED and doesn't support firstKey()"));
@@ -98,7 +98,7 @@ public class DmcTypeGpbFieldREFMAP extends DmcTypeGpbFieldREF implements Seriali
             GpbFieldREF newval = typeCheck(v);
             if (value == null)
                 initValue();
-            CamelCaseName key = (CamelCaseName)((DmcMappedAttributeIF)newval).getKey();
+            DotName key = (DotName)((DmcMappedAttributeIF)newval).getKey();
             GpbFieldREF oldval = value.put(key,newval);
             
             if (oldval != null){
@@ -119,7 +119,7 @@ public class DmcTypeGpbFieldREFMAP extends DmcTypeGpbFieldREF implements Seriali
             if (value == null)
                 return(null);
     
-           if (key instanceof CamelCaseName)
+           if (key instanceof DotName)
                 return(value.remove(key));
             else
                 throw(new IllegalStateException("Incompatible key type: " + key.getClass().getName() + " passed to del():" + getName()));
@@ -134,30 +134,30 @@ public class DmcTypeGpbFieldREFMAP extends DmcTypeGpbFieldREF implements Seriali
             if (value == null)
                 return(emptyList);
     
-            Map<CamelCaseName,GpbFieldREF> clone = null;
+            Map<DotName,GpbFieldREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-                clone = new HashMap<CamelCaseName,GpbFieldREF>(value);
+                clone = new HashMap<DotName,GpbFieldREF>(value);
             else
-                clone = new TreeMap<CamelCaseName,GpbFieldREF>(value);
+                clone = new TreeMap<DotName,GpbFieldREF>(value);
             return(clone.values().iterator());
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2959)
-    public Map<CamelCaseName,GpbFieldREF> getMVCopy(){
+    public Map<DotName,GpbFieldREF> getMVCopy(){
         synchronized(this){
-            Map<CamelCaseName,GpbFieldREF> clone = null;
+            Map<DotName,GpbFieldREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED){
                 if (value == null)
-                    clone = new HashMap<CamelCaseName,GpbFieldREF>();
+                    clone = new HashMap<DotName,GpbFieldREF>();
                 else
-                    clone = new HashMap<CamelCaseName,GpbFieldREF>(value);
+                    clone = new HashMap<DotName,GpbFieldREF>(value);
             }
             else{
                 if (value == null)
-                    clone = new TreeMap<CamelCaseName,GpbFieldREF>();
+                    clone = new TreeMap<DotName,GpbFieldREF>();
                 else
-                    clone = new TreeMap<CamelCaseName,GpbFieldREF>(value);
+                    clone = new TreeMap<DotName,GpbFieldREF>(value);
             }
             return(clone);
         }
@@ -180,8 +180,8 @@ public class DmcTypeGpbFieldREFMAP extends DmcTypeGpbFieldREF implements Seriali
            if (value == null)
                return(null);
     
-            if (key instanceof CamelCaseName)
-                return(value.get((CamelCaseName) key));
+            if (key instanceof DotName)
+                return(value.get((DotName) key));
             else
                 throw(new IllegalStateException("Incompatible type: " + key.getClass().getName() + " passed to del():" + getName()));
         }
@@ -210,7 +210,7 @@ public class DmcTypeGpbFieldREFMAP extends DmcTypeGpbFieldREF implements Seriali
            if (value == null)
                return(false);
     
-           if (key instanceof CamelCaseName)
+           if (key instanceof DotName)
                 return(value.containsKey(key));
             return(false);
         }

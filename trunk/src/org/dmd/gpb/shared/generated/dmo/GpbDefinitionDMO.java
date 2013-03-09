@@ -16,16 +16,17 @@
 package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:391)
-import java.io.Serializable;                                       // Always required - (GenUtility.java:220)
-import org.dmd.dmc.DmcAttribute;                                   // Any attributes - (GenUtility.java:236)
-import org.dmd.dmc.DmcNamedObjectIF;                               // Named object - (GenUtility.java:371)
-import org.dmd.dmc.DmcObject;                                      // Structural class - (GenUtility.java:347)
-import org.dmd.dmc.DmcValueException;                              // Any attributes - (GenUtility.java:237)
-import org.dmd.dmc.types.CamelCaseName;                            // Naming attribute type - (GenUtility.java:366)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                        // Attribute from meta schema - (GenUtility.java:193)
-import org.dmd.dms.generated.types.DmcTypeCamelCaseNameSV;         // Required type - (GenUtility.java:324)
-import org.dmd.dms.generated.types.DmcTypeIntegerSV;               // Required type - (GenUtility.java:324)
-import org.dmd.dms.generated.types.DmcTypeStringSV;                // Required type - (GenUtility.java:324)
+import java.io.Serializable;                                 // Always required - (GenUtility.java:220)
+import org.dmd.dmc.DmcAttribute;                             // Any attributes - (GenUtility.java:236)
+import org.dmd.dmc.DmcHierarchicNamedObjectIF;               // Named object - (GenUtility.java:369)
+import org.dmd.dmc.DmcNamedObjectIF;                         // Named object - (GenUtility.java:371)
+import org.dmd.dmc.DmcObject;                                // Structural class - (GenUtility.java:347)
+import org.dmd.dmc.DmcValueException;                        // Any attributes - (GenUtility.java:237)
+import org.dmd.dmc.types.DotName;                            // Naming attribute type - (GenUtility.java:366)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                  // Attribute from meta schema - (GenUtility.java:193)
+import org.dmd.dms.generated.types.DmcTypeDotNameSV;         // Required type - (GenUtility.java:324)
+import org.dmd.dms.generated.types.DmcTypeIntegerSV;         // Required type - (GenUtility.java:324)
+import org.dmd.dms.generated.types.DmcTypeStringSV;          // Required type - (GenUtility.java:324)
 
 /**
  * The GpbDefinition provides a common base for all dark-matter\n Google
@@ -37,7 +38,7 @@ import org.dmd.dms.generated.types.DmcTypeStringSV;                // Required t
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-abstract public class GpbDefinitionDMO  extends DmcObject  implements DmcNamedObjectIF, Serializable  {
+abstract public class GpbDefinitionDMO  extends DmcObject  implements DmcNamedObjectIF, DmcHierarchicNamedObjectIF, Serializable  {
 
     public final static String constructionClassName = "GpbDefinition";
 
@@ -54,17 +55,22 @@ abstract public class GpbDefinitionDMO  extends DmcObject  implements DmcNamedOb
     }
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:744)
-    public CamelCaseName getObjectName(){
-        DmcAttribute<?> name = get(MetaDMSAG.__camelCaseName);
+    public DotName getObjectName(){
+        DmcAttribute<?> name = get(MetaDMSAG.__dotName);
         if (name != null)
-            return((CamelCaseName)name.getSV());
+            return((DotName)name.getSV());
     
         return(null);
     }
 
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:755)
+    public DotName getHierarchicObjectName(){
+        return(getObjectName());
+    }
+
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:761)
     public DmcAttribute<?> getObjectNameAttribute(){
-        DmcAttribute<?> name = get(MetaDMSAG.__camelCaseName);
+        DmcAttribute<?> name = get(MetaDMSAG.__dotName);
         return(name);
     }
 
@@ -78,7 +84,7 @@ abstract public class GpbDefinitionDMO  extends DmcObject  implements DmcNamedOb
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:776)
     public int hashCode(){
-        CamelCaseName objn = getObjectName();
+        DotName objn = getObjectName();
         if (objn == null)
             return(0);
         
@@ -286,8 +292,8 @@ abstract public class GpbDefinitionDMO  extends DmcObject  implements DmcNamedOb
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:774)
-    public CamelCaseName getCamelCaseName(){
-        DmcTypeCamelCaseNameSV attr = (DmcTypeCamelCaseNameSV) get(MetaDMSAG.__camelCaseName);
+    public DotName getDotName(){
+        DmcTypeDotNameSV attr = (DmcTypeDotNameSV) get(MetaDMSAG.__dotName);
         if (attr == null)
             return(null);
 
@@ -295,18 +301,18 @@ abstract public class GpbDefinitionDMO  extends DmcObject  implements DmcNamedOb
     }
 
     /**
-     * Sets camelCaseName to the specified value.
-     * @param value CamelCaseName
+     * Sets dotName to the specified value.
+     * @param value DotName
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:814)
-    public void setCamelCaseName(CamelCaseName value) {
-        DmcAttribute<?> attr = get(MetaDMSAG.__camelCaseName);
+    public void setDotName(DotName value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__dotName);
         if (attr == null)
-            attr = new DmcTypeCamelCaseNameSV(MetaDMSAG.__camelCaseName);
+            attr = new DmcTypeDotNameSV(MetaDMSAG.__dotName);
         
         try{
             attr.set(value);
-            set(MetaDMSAG.__camelCaseName,attr);
+            set(MetaDMSAG.__dotName,attr);
         }
         catch(DmcValueException ex){
             throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
@@ -314,25 +320,25 @@ abstract public class GpbDefinitionDMO  extends DmcObject  implements DmcNamedOb
     }
 
     /**
-     * Sets camelCaseName to the specified value.
-     * @param value A value compatible with DmcTypeCamelCaseNameSV
+     * Sets dotName to the specified value.
+     * @param value A value compatible with DmcTypeDotNameSV
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:867)
-    public void setCamelCaseName(Object value) throws DmcValueException {
-        DmcTypeCamelCaseNameSV attr  = (DmcTypeCamelCaseNameSV) get(MetaDMSAG.__camelCaseName);
+    public void setDotName(Object value) throws DmcValueException {
+        DmcTypeDotNameSV attr  = (DmcTypeDotNameSV) get(MetaDMSAG.__dotName);
         if (attr == null)
-            attr = new DmcTypeCamelCaseNameSV(MetaDMSAG.__camelCaseName);
+            attr = new DmcTypeDotNameSV(MetaDMSAG.__dotName);
         
         attr.set(value);
-        set(MetaDMSAG.__camelCaseName,attr);
+        set(MetaDMSAG.__dotName,attr);
     }
 
     /**
-     * Removes the camelCaseName attribute value.
+     * Removes the dotName attribute value.
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:887)
-    public void remCamelCaseName(){
-         rem(MetaDMSAG.__camelCaseName);
+    public void remDotName(){
+         rem(MetaDMSAG.__dotName);
     }
 
 

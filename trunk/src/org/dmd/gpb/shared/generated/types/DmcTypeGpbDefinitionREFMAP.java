@@ -25,7 +25,7 @@ import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcMappedAttributeIF;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
-import org.dmd.dmc.types.CamelCaseName;    // key type import
+import org.dmd.dmc.types.DotName;    // key type import
 /**
  * The DmcTypeGpbDefinitionREFMAP provides storage for a map of GpbDefinitionREF
  * <P>
@@ -34,12 +34,12 @@ import org.dmd.dmc.types.CamelCaseName;    // key type import
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:540)
  */
 @SuppressWarnings("serial")
-// public class DmcTypeGpbDefinitionREFMAP extends DmcTypeGpbDefinitionREF<GpbDefinitionREF,CamelCaseName> {
+// public class DmcTypeGpbDefinitionREFMAP extends DmcTypeGpbDefinitionREF<GpbDefinitionREF,DotName> {
 public class DmcTypeGpbDefinitionREFMAP extends DmcTypeGpbDefinitionREF implements Serializable {
     
-    private final static Iterator<GpbDefinitionREF> emptyList = (new HashMap<CamelCaseName,GpbDefinitionREF>()).values().iterator();
+    private final static Iterator<GpbDefinitionREF> emptyList = (new HashMap<DotName,GpbDefinitionREF>()).values().iterator();
     
-    protected Map<CamelCaseName,GpbDefinitionREF> value;
+    protected Map<DotName,GpbDefinitionREF> value;
     
     public DmcTypeGpbDefinitionREFMAP(){
         value = null;
@@ -52,16 +52,16 @@ public class DmcTypeGpbDefinitionREFMAP extends DmcTypeGpbDefinitionREF implemen
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-            value = new HashMap<CamelCaseName,GpbDefinitionREF>();
+            value = new HashMap<DotName,GpbDefinitionREF>();
         else
-            value = new TreeMap<CamelCaseName,GpbDefinitionREF>();
+            value = new TreeMap<DotName,GpbDefinitionREF>();
     }
     
-    public CamelCaseName firstKey(){
+    public DotName firstKey(){
         if (getAttributeInfo().valueType == ValueTypeEnum.TREEMAPPED){
             if (value == null)
                 return(null);
-            TreeMap<CamelCaseName,GpbDefinitionREF> map = (TreeMap<CamelCaseName,GpbDefinitionREF>)value;
+            TreeMap<DotName,GpbDefinitionREF> map = (TreeMap<DotName,GpbDefinitionREF>)value;
             return(map.firstKey());
         }
         throw(new IllegalStateException("Attribute " + getAttributeInfo().name + " is HASHMAPPED and doesn't support firstKey()"));
@@ -98,7 +98,7 @@ public class DmcTypeGpbDefinitionREFMAP extends DmcTypeGpbDefinitionREF implemen
             GpbDefinitionREF newval = typeCheck(v);
             if (value == null)
                 initValue();
-            CamelCaseName key = (CamelCaseName)((DmcMappedAttributeIF)newval).getKey();
+            DotName key = (DotName)((DmcMappedAttributeIF)newval).getKey();
             GpbDefinitionREF oldval = value.put(key,newval);
             
             if (oldval != null){
@@ -119,7 +119,7 @@ public class DmcTypeGpbDefinitionREFMAP extends DmcTypeGpbDefinitionREF implemen
             if (value == null)
                 return(null);
     
-           if (key instanceof CamelCaseName)
+           if (key instanceof DotName)
                 return(value.remove(key));
             else
                 throw(new IllegalStateException("Incompatible key type: " + key.getClass().getName() + " passed to del():" + getName()));
@@ -134,30 +134,30 @@ public class DmcTypeGpbDefinitionREFMAP extends DmcTypeGpbDefinitionREF implemen
             if (value == null)
                 return(emptyList);
     
-            Map<CamelCaseName,GpbDefinitionREF> clone = null;
+            Map<DotName,GpbDefinitionREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-                clone = new HashMap<CamelCaseName,GpbDefinitionREF>(value);
+                clone = new HashMap<DotName,GpbDefinitionREF>(value);
             else
-                clone = new TreeMap<CamelCaseName,GpbDefinitionREF>(value);
+                clone = new TreeMap<DotName,GpbDefinitionREF>(value);
             return(clone.values().iterator());
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2959)
-    public Map<CamelCaseName,GpbDefinitionREF> getMVCopy(){
+    public Map<DotName,GpbDefinitionREF> getMVCopy(){
         synchronized(this){
-            Map<CamelCaseName,GpbDefinitionREF> clone = null;
+            Map<DotName,GpbDefinitionREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED){
                 if (value == null)
-                    clone = new HashMap<CamelCaseName,GpbDefinitionREF>();
+                    clone = new HashMap<DotName,GpbDefinitionREF>();
                 else
-                    clone = new HashMap<CamelCaseName,GpbDefinitionREF>(value);
+                    clone = new HashMap<DotName,GpbDefinitionREF>(value);
             }
             else{
                 if (value == null)
-                    clone = new TreeMap<CamelCaseName,GpbDefinitionREF>();
+                    clone = new TreeMap<DotName,GpbDefinitionREF>();
                 else
-                    clone = new TreeMap<CamelCaseName,GpbDefinitionREF>(value);
+                    clone = new TreeMap<DotName,GpbDefinitionREF>(value);
             }
             return(clone);
         }
@@ -180,8 +180,8 @@ public class DmcTypeGpbDefinitionREFMAP extends DmcTypeGpbDefinitionREF implemen
            if (value == null)
                return(null);
     
-            if (key instanceof CamelCaseName)
-                return(value.get((CamelCaseName) key));
+            if (key instanceof DotName)
+                return(value.get((DotName) key));
             else
                 throw(new IllegalStateException("Incompatible type: " + key.getClass().getName() + " passed to del():" + getName()));
         }
@@ -210,7 +210,7 @@ public class DmcTypeGpbDefinitionREFMAP extends DmcTypeGpbDefinitionREF implemen
            if (value == null)
                return(false);
     
-           if (key instanceof CamelCaseName)
+           if (key instanceof DotName)
                 return(value.containsKey(key));
             return(false);
         }
