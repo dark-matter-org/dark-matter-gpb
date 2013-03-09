@@ -23,8 +23,8 @@ import org.dmd.dmc.DmcOutputStreamIF;
 import org.dmd.dmc.DmcInputStreamIF;
 import org.dmd.dmc.DmcNamedObjectNontransportableREF; // base import
 import org.dmd.gpb.shared.generated.dmo.GpbMessageDMO; // primitive type
-import org.dmd.dmc.types.CamelCaseName;
-import org.dmd.dms.generated.types.DmcTypeCamelCaseNameSV; 
+import org.dmd.dmc.types.DotName;
+import org.dmd.dms.generated.types.DmcTypeDotNameSV; 
 
 import org.dmd.dms.generated.enums.ValueTypeEnum;
 import org.dmd.dms.generated.enums.DataTypeEnum;
@@ -39,27 +39,27 @@ import org.dmd.dms.generated.enums.DataTypeEnum;
 @SuppressWarnings("serial")
 public class GpbMessageREF extends DmcNamedObjectNontransportableREF<GpbMessageDMO> {
 
-    public final static DmcAttributeInfo __camelCaseName = new DmcAttributeInfo("camelCaseName",116,"CamelCaseName",ValueTypeEnum.SINGLE,DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __dotName = new DmcAttributeInfo("dotName",107,"DotName",ValueTypeEnum.SINGLE,DataTypeEnum.PERSISTENT);
     
-    DmcTypeCamelCaseNameSV myName;    
+    DmcTypeDotNameSV myName;    
     
     public GpbMessageREF(){
     }
 
     public GpbMessageREF(GpbMessageDMO o){
          object = o;
-         myName = (DmcTypeCamelCaseNameSV)o.getObjectNameAttribute();
+         myName = (DmcTypeDotNameSV)o.getObjectNameAttribute();
     }
 
-    public GpbMessageREF(CamelCaseName n) throws DmcValueException {
+    public GpbMessageREF(DotName n) throws DmcValueException {
          object = null;
-         myName = new DmcTypeCamelCaseNameSV(__camelCaseName);
+         myName = new DmcTypeDotNameSV(__dotName);
          myName.set(n);
     }
 
     public GpbMessageREF(String n) throws DmcValueException {
          object = null;
-         myName = new DmcTypeCamelCaseNameSV(__camelCaseName);
+         myName = new DmcTypeDotNameSV(__dotName);
          myName.set(n);
     }
 
@@ -71,7 +71,7 @@ public class GpbMessageREF extends DmcNamedObjectNontransportableREF<GpbMessageD
     public void setObject(GpbMessageDMO o){
          object = o;
          if (object != null)
-             myName = (DmcTypeCamelCaseNameSV)o.getObjectNameAttribute();
+             myName = (DmcTypeDotNameSV)o.getObjectNameAttribute();
     }
 
     /**
@@ -87,7 +87,7 @@ public class GpbMessageREF extends DmcNamedObjectNontransportableREF<GpbMessageD
     @Override
     public void setName(DmcObjectName n) throws DmcValueException {
         if (myName == null)
-            myName = new DmcTypeCamelCaseNameSV(__camelCaseName);
+            myName = new DmcTypeDotNameSV(__dotName);
         myName.set(n);
     }
 
@@ -99,7 +99,7 @@ public class GpbMessageREF extends DmcNamedObjectNontransportableREF<GpbMessageD
         return(myName.getSV());
     }
 
-    public CamelCaseName getName(){
+    public DotName getName(){
         if (myName == null)
             throw(new IllegalStateException("You've tried to access the name of an object but the name attribute hasn't been set."));
         
@@ -119,7 +119,7 @@ public class GpbMessageREF extends DmcNamedObjectNontransportableREF<GpbMessageD
     }
 
     public void deserializeIt(DmcInputStreamIF dis) throws Exception {
-        myName = (DmcTypeCamelCaseNameSV) dis.getAttributeInstance();
+        myName = (DmcTypeDotNameSV) dis.getAttributeInstance();
         myName.deserializeIt(dis);
     }
 

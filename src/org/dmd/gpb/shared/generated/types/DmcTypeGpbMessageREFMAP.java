@@ -25,7 +25,7 @@ import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcMappedAttributeIF;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
-import org.dmd.dmc.types.CamelCaseName;    // key type import
+import org.dmd.dmc.types.DotName;    // key type import
 /**
  * The DmcTypeGpbMessageREFMAP provides storage for a map of GpbMessageREF
  * <P>
@@ -34,12 +34,12 @@ import org.dmd.dmc.types.CamelCaseName;    // key type import
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:540)
  */
 @SuppressWarnings("serial")
-// public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF<GpbMessageREF,CamelCaseName> {
+// public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF<GpbMessageREF,DotName> {
 public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Serializable {
     
-    private final static Iterator<GpbMessageREF> emptyList = (new HashMap<CamelCaseName,GpbMessageREF>()).values().iterator();
+    private final static Iterator<GpbMessageREF> emptyList = (new HashMap<DotName,GpbMessageREF>()).values().iterator();
     
-    protected Map<CamelCaseName,GpbMessageREF> value;
+    protected Map<DotName,GpbMessageREF> value;
     
     public DmcTypeGpbMessageREFMAP(){
         value = null;
@@ -52,16 +52,16 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-            value = new HashMap<CamelCaseName,GpbMessageREF>();
+            value = new HashMap<DotName,GpbMessageREF>();
         else
-            value = new TreeMap<CamelCaseName,GpbMessageREF>();
+            value = new TreeMap<DotName,GpbMessageREF>();
     }
     
-    public CamelCaseName firstKey(){
+    public DotName firstKey(){
         if (getAttributeInfo().valueType == ValueTypeEnum.TREEMAPPED){
             if (value == null)
                 return(null);
-            TreeMap<CamelCaseName,GpbMessageREF> map = (TreeMap<CamelCaseName,GpbMessageREF>)value;
+            TreeMap<DotName,GpbMessageREF> map = (TreeMap<DotName,GpbMessageREF>)value;
             return(map.firstKey());
         }
         throw(new IllegalStateException("Attribute " + getAttributeInfo().name + " is HASHMAPPED and doesn't support firstKey()"));
@@ -98,7 +98,7 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
             GpbMessageREF newval = typeCheck(v);
             if (value == null)
                 initValue();
-            CamelCaseName key = (CamelCaseName)((DmcMappedAttributeIF)newval).getKey();
+            DotName key = (DotName)((DmcMappedAttributeIF)newval).getKey();
             GpbMessageREF oldval = value.put(key,newval);
             
             if (oldval != null){
@@ -119,7 +119,7 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
             if (value == null)
                 return(null);
     
-           if (key instanceof CamelCaseName)
+           if (key instanceof DotName)
                 return(value.remove(key));
             else
                 throw(new IllegalStateException("Incompatible key type: " + key.getClass().getName() + " passed to del():" + getName()));
@@ -134,30 +134,30 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
             if (value == null)
                 return(emptyList);
     
-            Map<CamelCaseName,GpbMessageREF> clone = null;
+            Map<DotName,GpbMessageREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-                clone = new HashMap<CamelCaseName,GpbMessageREF>(value);
+                clone = new HashMap<DotName,GpbMessageREF>(value);
             else
-                clone = new TreeMap<CamelCaseName,GpbMessageREF>(value);
+                clone = new TreeMap<DotName,GpbMessageREF>(value);
             return(clone.values().iterator());
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2959)
-    public Map<CamelCaseName,GpbMessageREF> getMVCopy(){
+    public Map<DotName,GpbMessageREF> getMVCopy(){
         synchronized(this){
-            Map<CamelCaseName,GpbMessageREF> clone = null;
+            Map<DotName,GpbMessageREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED){
                 if (value == null)
-                    clone = new HashMap<CamelCaseName,GpbMessageREF>();
+                    clone = new HashMap<DotName,GpbMessageREF>();
                 else
-                    clone = new HashMap<CamelCaseName,GpbMessageREF>(value);
+                    clone = new HashMap<DotName,GpbMessageREF>(value);
             }
             else{
                 if (value == null)
-                    clone = new TreeMap<CamelCaseName,GpbMessageREF>();
+                    clone = new TreeMap<DotName,GpbMessageREF>();
                 else
-                    clone = new TreeMap<CamelCaseName,GpbMessageREF>(value);
+                    clone = new TreeMap<DotName,GpbMessageREF>(value);
             }
             return(clone);
         }
@@ -180,8 +180,8 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
            if (value == null)
                return(null);
     
-            if (key instanceof CamelCaseName)
-                return(value.get((CamelCaseName) key));
+            if (key instanceof DotName)
+                return(value.get((DotName) key));
             else
                 throw(new IllegalStateException("Incompatible type: " + key.getClass().getName() + " passed to del():" + getName()));
         }
@@ -210,7 +210,7 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
            if (value == null)
                return(false);
     
-           if (key instanceof CamelCaseName)
+           if (key instanceof DotName)
                 return(value.containsKey(key));
             return(false);
         }

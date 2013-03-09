@@ -25,7 +25,7 @@ import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcMappedAttributeIF;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
-import org.dmd.dmc.types.CamelCaseName;    // key type import
+import org.dmd.dmc.types.DotName;    // key type import
 /**
  * The DmcTypeGpbDefinitionSetREFMAP provides storage for a map of GpbDefinitionSetREF
  * <P>
@@ -34,12 +34,12 @@ import org.dmd.dmc.types.CamelCaseName;    // key type import
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:540)
  */
 @SuppressWarnings("serial")
-// public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF<GpbDefinitionSetREF,CamelCaseName> {
+// public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF<GpbDefinitionSetREF,DotName> {
 public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF implements Serializable {
     
-    private final static Iterator<GpbDefinitionSetREF> emptyList = (new HashMap<CamelCaseName,GpbDefinitionSetREF>()).values().iterator();
+    private final static Iterator<GpbDefinitionSetREF> emptyList = (new HashMap<DotName,GpbDefinitionSetREF>()).values().iterator();
     
-    protected Map<CamelCaseName,GpbDefinitionSetREF> value;
+    protected Map<DotName,GpbDefinitionSetREF> value;
     
     public DmcTypeGpbDefinitionSetREFMAP(){
         value = null;
@@ -52,16 +52,16 @@ public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF im
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-            value = new HashMap<CamelCaseName,GpbDefinitionSetREF>();
+            value = new HashMap<DotName,GpbDefinitionSetREF>();
         else
-            value = new TreeMap<CamelCaseName,GpbDefinitionSetREF>();
+            value = new TreeMap<DotName,GpbDefinitionSetREF>();
     }
     
-    public CamelCaseName firstKey(){
+    public DotName firstKey(){
         if (getAttributeInfo().valueType == ValueTypeEnum.TREEMAPPED){
             if (value == null)
                 return(null);
-            TreeMap<CamelCaseName,GpbDefinitionSetREF> map = (TreeMap<CamelCaseName,GpbDefinitionSetREF>)value;
+            TreeMap<DotName,GpbDefinitionSetREF> map = (TreeMap<DotName,GpbDefinitionSetREF>)value;
             return(map.firstKey());
         }
         throw(new IllegalStateException("Attribute " + getAttributeInfo().name + " is HASHMAPPED and doesn't support firstKey()"));
@@ -98,7 +98,7 @@ public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF im
             GpbDefinitionSetREF newval = typeCheck(v);
             if (value == null)
                 initValue();
-            CamelCaseName key = (CamelCaseName)((DmcMappedAttributeIF)newval).getKey();
+            DotName key = (DotName)((DmcMappedAttributeIF)newval).getKey();
             GpbDefinitionSetREF oldval = value.put(key,newval);
             
             if (oldval != null){
@@ -119,7 +119,7 @@ public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF im
             if (value == null)
                 return(null);
     
-           if (key instanceof CamelCaseName)
+           if (key instanceof DotName)
                 return(value.remove(key));
             else
                 throw(new IllegalStateException("Incompatible key type: " + key.getClass().getName() + " passed to del():" + getName()));
@@ -134,30 +134,30 @@ public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF im
             if (value == null)
                 return(emptyList);
     
-            Map<CamelCaseName,GpbDefinitionSetREF> clone = null;
+            Map<DotName,GpbDefinitionSetREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-                clone = new HashMap<CamelCaseName,GpbDefinitionSetREF>(value);
+                clone = new HashMap<DotName,GpbDefinitionSetREF>(value);
             else
-                clone = new TreeMap<CamelCaseName,GpbDefinitionSetREF>(value);
+                clone = new TreeMap<DotName,GpbDefinitionSetREF>(value);
             return(clone.values().iterator());
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2959)
-    public Map<CamelCaseName,GpbDefinitionSetREF> getMVCopy(){
+    public Map<DotName,GpbDefinitionSetREF> getMVCopy(){
         synchronized(this){
-            Map<CamelCaseName,GpbDefinitionSetREF> clone = null;
+            Map<DotName,GpbDefinitionSetREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED){
                 if (value == null)
-                    clone = new HashMap<CamelCaseName,GpbDefinitionSetREF>();
+                    clone = new HashMap<DotName,GpbDefinitionSetREF>();
                 else
-                    clone = new HashMap<CamelCaseName,GpbDefinitionSetREF>(value);
+                    clone = new HashMap<DotName,GpbDefinitionSetREF>(value);
             }
             else{
                 if (value == null)
-                    clone = new TreeMap<CamelCaseName,GpbDefinitionSetREF>();
+                    clone = new TreeMap<DotName,GpbDefinitionSetREF>();
                 else
-                    clone = new TreeMap<CamelCaseName,GpbDefinitionSetREF>(value);
+                    clone = new TreeMap<DotName,GpbDefinitionSetREF>(value);
             }
             return(clone);
         }
@@ -180,8 +180,8 @@ public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF im
            if (value == null)
                return(null);
     
-            if (key instanceof CamelCaseName)
-                return(value.get((CamelCaseName) key));
+            if (key instanceof DotName)
+                return(value.get((DotName) key));
             else
                 throw(new IllegalStateException("Incompatible type: " + key.getClass().getName() + " passed to del():" + getName()));
         }
@@ -210,7 +210,7 @@ public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF im
            if (value == null)
                return(false);
     
-           if (key instanceof CamelCaseName)
+           if (key instanceof DotName)
                 return(value.containsKey(key));
             return(false);
         }
