@@ -29,9 +29,9 @@ import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required fo
 import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Base class - (GenUtility.java:351)
 
 /**
- * The GpbDefinitionSet is used to define a named collection of definitions
- * from\n which Google Protocol Buffer (GPB) .proto files can be composed and
- * generated. GpbDefinitionSets\n are referred to by GpbArtifacts
+ * The GpbModule is used to define a named collection of definitions from\n
+ * which Google Protocol Buffer (GPB) .proto files can be composed and
+ * generated. GpbModule\n are referred to by GpbArtifacts
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -39,43 +39,43 @@ import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Base class 
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-public class GpbDefinitionSetDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, DmcHierarchicNamedObjectIF, Serializable  {
+public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, DmcHierarchicNamedObjectIF, Serializable  {
 
-    public final static String constructionClassName = "GpbDefinitionSet";
+    public final static String constructionClassName = "GpbModule";
 
 
     static {
     }
 
-    public GpbDefinitionSetDMO() {
-        super("GpbDefinitionSet");
+    public GpbModuleDMO() {
+        super("GpbModule");
     }
 
-    protected GpbDefinitionSetDMO(String oc) {
+    protected GpbModuleDMO(String oc) {
         super(oc);
     }
 
     @Override
-    public GpbDefinitionSetDMO getNew(){
-        GpbDefinitionSetDMO rc = new GpbDefinitionSetDMO();
+    public GpbModuleDMO getNew(){
+        GpbModuleDMO rc = new GpbModuleDMO();
         return(rc);
     }
 
     @Override
-    public GpbDefinitionSetDMO getSlice(DmcSliceInfo info){
-        GpbDefinitionSetDMO rc = new GpbDefinitionSetDMO();
+    public GpbModuleDMO getSlice(DmcSliceInfo info){
+        GpbModuleDMO rc = new GpbModuleDMO();
         populateSlice(rc,info);
         return(rc);
     }
 
-    public GpbDefinitionSetDMO(DmcTypeModifierMV mods) {
-        super("GpbDefinitionSet");
+    public GpbModuleDMO(DmcTypeModifierMV mods) {
+        super("GpbModule");
         modrec(true);
         setModifier(mods);
     }
 
-    public GpbDefinitionSetDMO getModificationRecorder(){
-        GpbDefinitionSetDMO rc = new GpbDefinitionSetDMO();
+    public GpbModuleDMO getModificationRecorder(){
+        GpbModuleDMO rc = new GpbModuleDMO();
         rc.setDotName(getDotName());
         rc.setModifier(new DmcTypeModifierMV(MetaDMSAG.__modify));
         rc.modrec(true);
@@ -104,8 +104,8 @@ public class GpbDefinitionSetDMO  extends GpbDefinitionDMO  implements DmcNamedO
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
     public boolean equals(Object obj){
-        if (obj instanceof GpbDefinitionSetDMO){
-            return( getObjectName().equals( ((GpbDefinitionSetDMO) obj).getObjectName()) );
+        if (obj instanceof GpbModuleDMO){
+            return( getObjectName().equals( ((GpbModuleDMO) obj).getObjectName()) );
         }
         return(false);
     }

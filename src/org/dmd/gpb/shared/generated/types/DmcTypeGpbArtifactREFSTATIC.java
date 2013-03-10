@@ -20,39 +20,39 @@ import org.dmd.dmc.DmcInputStreamIF;
 import org.dmd.dmc.DmcOutputStreamIF;
 
 /**
- * The DmcTypeGpbDefinitionSetREFSTATIC provides static access to functions used to manage values of type GpbDefinitionSetREF
+ * The DmcTypeGpbArtifactREFSTATIC provides static access to functions used to manage values of type GpbArtifactREF
  * These methods are used to support ComplexTypeDefinitions.
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpSTATICType(GenUtility.java:2130)
  *    Called from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2045)
  */
-public class DmcTypeGpbDefinitionSetREFSTATIC {
+public class DmcTypeGpbArtifactREFSTATIC {
     
-    public static DmcTypeGpbDefinitionSetREFSTATIC instance;
-    static DmcTypeGpbDefinitionSetREFSV typeHelper;
+    public static DmcTypeGpbArtifactREFSTATIC instance;
+    static DmcTypeGpbArtifactREFSV typeHelper;
     
     static {
-        instance = new DmcTypeGpbDefinitionSetREFSTATIC();
+        instance = new DmcTypeGpbArtifactREFSTATIC();
     }
     
-    protected DmcTypeGpbDefinitionSetREFSTATIC() {
-        typeHelper = new DmcTypeGpbDefinitionSetREFSV();
+    protected DmcTypeGpbArtifactREFSTATIC() {
+        typeHelper = new DmcTypeGpbArtifactREFSV();
     }
     
-    public GpbDefinitionSetREF typeCheck(Object value) throws DmcValueException {
+    public GpbArtifactREF typeCheck(Object value) throws DmcValueException {
     	   return(typeHelper.typeCheck(value));
     }
     
-    public GpbDefinitionSetREF cloneValue(GpbDefinitionSetREF value) throws DmcValueException {
+    public GpbArtifactREF cloneValue(GpbArtifactREF value) throws DmcValueException {
     	   return(typeHelper.cloneValue(value));
     }
     
-    public void serializeValue(DmcOutputStreamIF dos, GpbDefinitionSetREF value) throws Exception {
+    public void serializeValue(DmcOutputStreamIF dos, GpbArtifactREF value) throws Exception {
     	   typeHelper.serializeValue(dos, value);
     }
     
-    public GpbDefinitionSetREF deserializeValue(DmcInputStreamIF dis) throws Exception {
+    public GpbArtifactREF deserializeValue(DmcInputStreamIF dis) throws Exception {
     	   return(typeHelper.deserializeValue(dis));
     }
     

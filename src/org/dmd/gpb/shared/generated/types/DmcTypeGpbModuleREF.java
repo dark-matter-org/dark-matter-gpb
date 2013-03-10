@@ -22,12 +22,12 @@ import org.dmd.dmc.DmcInputStreamIF;
 import org.dmd.dmc.types.DmcTypeNamedObjectREF;
 import org.dmd.dmc.types.DotName;
 
-import org.dmd.gpb.shared.generated.types.GpbDefinitionSetREF;
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;
 
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionSetDMO;
+import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;
 
 /**
- * This is the generated DmcAttribute derivative for values of type GpbDefinitionSet
+ * This is the generated DmcAttribute derivative for values of type GpbModule
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -35,19 +35,19 @@ import org.dmd.gpb.shared.generated.dmo.GpbDefinitionSetDMO;
  * Generated from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREFHelperType(DmoTypeFormatter.java:585)
  */
 @SuppressWarnings("serial")
-abstract public class DmcTypeGpbDefinitionSetREF extends DmcTypeNamedObjectREF<GpbDefinitionSetREF, DotName> {
+abstract public class DmcTypeGpbModuleREF extends DmcTypeNamedObjectREF<GpbModuleREF, DotName> {
 
-    public DmcTypeGpbDefinitionSetREF(){
+    public DmcTypeGpbModuleREF(){
     
     }
 
-    public DmcTypeGpbDefinitionSetREF(DmcAttributeInfo ai){
+    public DmcTypeGpbModuleREF(DmcAttributeInfo ai){
         super(ai);
     }
 
     @Override
-    protected GpbDefinitionSetREF getNewHelper(){
-        return(new GpbDefinitionSetREF());
+    protected GpbModuleREF getNewHelper(){
+        return(new GpbModuleREF());
     }
 
     @Override
@@ -57,49 +57,49 @@ abstract public class DmcTypeGpbDefinitionSetREF extends DmcTypeNamedObjectREF<G
 
     @Override
     protected String getDMOClassName(){
-        return( GpbDefinitionSetDMO.class.getName());
+        return( GpbModuleDMO.class.getName());
     }
 
     @Override
     protected boolean isDMO(Object value){
-        if (value instanceof GpbDefinitionSetDMO)
+        if (value instanceof GpbModuleDMO)
             return(true);
         return(false);
     }
 
     @Override
-    protected GpbDefinitionSetREF typeCheck(Object value) throws DmcValueException {
-        GpbDefinitionSetREF rc = null;
+    protected GpbModuleREF typeCheck(Object value) throws DmcValueException {
+        GpbModuleREF rc = null;
 
-        if (value instanceof GpbDefinitionSetREF)
-            rc = (GpbDefinitionSetREF)value;
-        else if (value instanceof GpbDefinitionSetDMO)
-            rc = new GpbDefinitionSetREF((GpbDefinitionSetDMO)value);
+        if (value instanceof GpbModuleREF)
+            rc = (GpbModuleREF)value;
+        else if (value instanceof GpbModuleDMO)
+            rc = new GpbModuleREF((GpbModuleDMO)value);
         else if (value instanceof DotName)
-            rc = new GpbDefinitionSetREF((DotName)value);
+            rc = new GpbModuleREF((DotName)value);
         else if (value instanceof String)
-            rc = new GpbDefinitionSetREF((String)value);
+            rc = new GpbModuleREF((String)value);
         else
-            throw(new DmcValueException("Object of class: " + value.getClass().getName() + " passed where object compatible with GpbDefinitionSetREF, GpbDefinitionSetDMO or String expected."));
+            throw(new DmcValueException("Object of class: " + value.getClass().getName() + " passed where object compatible with GpbModuleREF, GpbModuleDMO or String expected."));
 
         return(rc);
     }
 
     @Override
-    public void serializeValue(DmcOutputStreamIF dos, GpbDefinitionSetREF value) throws Exception {
+    public void serializeValue(DmcOutputStreamIF dos, GpbModuleREF value) throws Exception {
         value.serializeIt(dos);
     }
 
     @Override
-    public GpbDefinitionSetREF deserializeValue(DmcInputStreamIF dis) throws Exception {
-        GpbDefinitionSetREF rc = new GpbDefinitionSetREF();
+    public GpbModuleREF deserializeValue(DmcInputStreamIF dis) throws Exception {
+        GpbModuleREF rc = new GpbModuleREF();
         rc.deserializeIt(dis);
         return(rc);
     }
 
     @Override
-    public GpbDefinitionSetREF cloneValue(GpbDefinitionSetREF value){
-        return(new GpbDefinitionSetREF(value));
+    public GpbModuleREF cloneValue(GpbModuleREF value){
+        return(new GpbModuleREF(value));
     }
 
 

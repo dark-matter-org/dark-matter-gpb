@@ -4,16 +4,16 @@ import org.dmd.dmc.presentation.DmcAdapterIF;
 import org.dmd.dmc.DmcAttribute;
 import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dms.generated.types.DmcTypeModifierMV;
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbDefinitionSetREFSV;
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbModuleREFMAP;
 
 @SuppressWarnings("serial")
 // org.dmd.dms.util.AdapterFormatter.dumpAdapter(AdapterFormatter.java:59)
-// Called from: org.dmd.dms.util.AdapterFormatter.dumpAdapterSV(AdapterFormatter.java:12)
-public class GpbDefinitionSetREFSVAdapter extends DmcTypeGpbDefinitionSetREFSV implements DmcAdapterIF {
+// Called from: org.dmd.dms.util.AdapterFormatter.dumpAdapterMAP(AdapterFormatter.java:24)
+public class GpbModuleREFMAPAdapter extends DmcTypeGpbModuleREFMAP implements DmcAdapterIF {
 
-    transient DmcTypeGpbDefinitionSetREFSV existingValue;
+    transient DmcTypeGpbModuleREFMAP existingValue;
 
-    public GpbDefinitionSetREFSVAdapter(DmcAttributeInfo ai){
+    public GpbModuleREFMAPAdapter(DmcAttributeInfo ai){
     	   super(ai);
     }
 
@@ -34,24 +34,24 @@ public class GpbDefinitionSetREFSVAdapter extends DmcTypeGpbDefinitionSetREFSV i
     	if (existingValue == null)
     		value = null;
     	else
-    		value = existingValue.getSVCopy();
+    		value = existingValue.getMVCopy();
     }
 
     @Override
     public void setExisting(DmcAttribute<?> attr) {
-    	existingValue = (DmcTypeGpbDefinitionSetREFSV) attr;
+    	existingValue = (DmcTypeGpbModuleREFMAP) attr;
     	if (existingValue != null)
-    		value = existingValue.getSVCopy();
+    		value = existingValue.getMVCopy();
     }
 
     @Override
     public boolean valueChanged(){
-    	   return(valueChangedSV(existingValue, this));
+    	   return(valueChangedMV(existingValue, this));
     }
 
     @Override
     public void addMods(DmcTypeModifierMV mods){
-    	   addModsSV(mods, existingValue, this);
+    	   addModsMV(mods, existingValue, this);
     }
 
     @Override

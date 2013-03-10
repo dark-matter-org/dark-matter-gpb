@@ -27,61 +27,61 @@ import org.dmd.dmc.DmcMappedAttributeIF;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
 import org.dmd.dmc.types.DotName;    // key type import
 /**
- * The DmcTypeGpbDefinitionSetREFMAP provides storage for a map of GpbDefinitionSetREF
+ * The DmcTypeGpbModuleREFMAP provides storage for a map of GpbModuleREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2828)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:540)
  */
 @SuppressWarnings("serial")
-// public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF<GpbDefinitionSetREF,DotName> {
-public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF implements Serializable {
+// public class DmcTypeGpbModuleREFMAP extends DmcTypeGpbModuleREF<GpbModuleREF,DotName> {
+public class DmcTypeGpbModuleREFMAP extends DmcTypeGpbModuleREF implements Serializable {
     
-    private final static Iterator<GpbDefinitionSetREF> emptyList = (new HashMap<DotName,GpbDefinitionSetREF>()).values().iterator();
+    private final static Iterator<GpbModuleREF> emptyList = (new HashMap<DotName,GpbModuleREF>()).values().iterator();
     
-    protected Map<DotName,GpbDefinitionSetREF> value;
+    protected Map<DotName,GpbModuleREF> value;
     
-    public DmcTypeGpbDefinitionSetREFMAP(){
+    public DmcTypeGpbModuleREFMAP(){
         value = null;
     }
     
-    public DmcTypeGpbDefinitionSetREFMAP(DmcAttributeInfo ai){
+    public DmcTypeGpbModuleREFMAP(DmcAttributeInfo ai){
         super(ai);
         initValue();
     }
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-            value = new HashMap<DotName,GpbDefinitionSetREF>();
+            value = new HashMap<DotName,GpbModuleREF>();
         else
-            value = new TreeMap<DotName,GpbDefinitionSetREF>();
+            value = new TreeMap<DotName,GpbModuleREF>();
     }
     
     public DotName firstKey(){
         if (getAttributeInfo().valueType == ValueTypeEnum.TREEMAPPED){
             if (value == null)
                 return(null);
-            TreeMap<DotName,GpbDefinitionSetREF> map = (TreeMap<DotName,GpbDefinitionSetREF>)value;
+            TreeMap<DotName,GpbModuleREF> map = (TreeMap<DotName,GpbModuleREF>)value;
             return(map.firstKey());
         }
         throw(new IllegalStateException("Attribute " + getAttributeInfo().name + " is HASHMAPPED and doesn't support firstKey()"));
     }
     
     @Override
-    public DmcTypeGpbDefinitionSetREFMAP getNew(){
-        return(new DmcTypeGpbDefinitionSetREFMAP(getAttributeInfo()));
+    public DmcTypeGpbModuleREFMAP getNew(){
+        return(new DmcTypeGpbModuleREFMAP(getAttributeInfo()));
     }
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2885)
-    public DmcAttribute<GpbDefinitionSetREF> cloneIt(){
+    public DmcAttribute<GpbModuleREF> cloneIt(){
         synchronized(this){
-            DmcTypeGpbDefinitionSetREFMAP rc = getNew();
+            DmcTypeGpbModuleREFMAP rc = getNew();
     
             if (value == null)
                 return(rc);
     
-            for(GpbDefinitionSetREF val: value.values())
+            for(GpbModuleREF val: value.values())
             try {
                 rc.add(val);
             } catch (DmcValueException e) {
@@ -93,13 +93,13 @@ public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF im
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2905)
-    public GpbDefinitionSetREF add(Object v) throws DmcValueException {
+    public GpbModuleREF add(Object v) throws DmcValueException {
         synchronized(this){
-            GpbDefinitionSetREF newval = typeCheck(v);
+            GpbModuleREF newval = typeCheck(v);
             if (value == null)
                 initValue();
             DotName key = (DotName)((DmcMappedAttributeIF)newval).getKey();
-            GpbDefinitionSetREF oldval = value.put(key,newval);
+            GpbModuleREF oldval = value.put(key,newval);
             
             if (oldval != null){
                 // We had a value with this key, ensure that the value actually changed
@@ -113,7 +113,7 @@ public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF im
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2926)
-    public GpbDefinitionSetREF del(Object key){
+    public GpbModuleREF del(Object key){
         synchronized(this){
     
             if (value == null)
@@ -128,36 +128,36 @@ public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF im
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2942)
-    public Iterator<GpbDefinitionSetREF> getMV(){
+    public Iterator<GpbModuleREF> getMV(){
         synchronized(this){
     
             if (value == null)
                 return(emptyList);
     
-            Map<DotName,GpbDefinitionSetREF> clone = null;
+            Map<DotName,GpbModuleREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-                clone = new HashMap<DotName,GpbDefinitionSetREF>(value);
+                clone = new HashMap<DotName,GpbModuleREF>(value);
             else
-                clone = new TreeMap<DotName,GpbDefinitionSetREF>(value);
+                clone = new TreeMap<DotName,GpbModuleREF>(value);
             return(clone.values().iterator());
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2959)
-    public Map<DotName,GpbDefinitionSetREF> getMVCopy(){
+    public Map<DotName,GpbModuleREF> getMVCopy(){
         synchronized(this){
-            Map<DotName,GpbDefinitionSetREF> clone = null;
+            Map<DotName,GpbModuleREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED){
                 if (value == null)
-                    clone = new HashMap<DotName,GpbDefinitionSetREF>();
+                    clone = new HashMap<DotName,GpbModuleREF>();
                 else
-                    clone = new HashMap<DotName,GpbDefinitionSetREF>(value);
+                    clone = new HashMap<DotName,GpbModuleREF>(value);
             }
             else{
                 if (value == null)
-                    clone = new TreeMap<DotName,GpbDefinitionSetREF>();
+                    clone = new TreeMap<DotName,GpbModuleREF>();
                 else
-                    clone = new TreeMap<DotName,GpbDefinitionSetREF>(value);
+                    clone = new TreeMap<DotName,GpbModuleREF>(value);
             }
             return(clone);
         }
@@ -175,7 +175,7 @@ public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF im
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2992)
-    public GpbDefinitionSetREF getByKey(Object key){
+    public GpbModuleREF getByKey(Object key){
         synchronized(this){
            if (value == null)
                return(null);
@@ -195,7 +195,7 @@ public class DmcTypeGpbDefinitionSetREFMAP extends DmcTypeGpbDefinitionSetREF im
                return(false);
     
             try {
-                GpbDefinitionSetREF val = typeCheck(v);
+                GpbModuleREF val = typeCheck(v);
                 return(value.containsValue(val));
             } catch (DmcValueException e) {
                 return(false);

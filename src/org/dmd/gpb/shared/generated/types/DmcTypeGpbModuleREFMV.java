@@ -22,43 +22,43 @@ import org.dmd.dmc.DmcAttribute;
 import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 /**
- * The DmcTypeGpbDefinitionSetREFMV provides storage for a multi-valued GpbDefinitionSetREF
+ * The DmcTypeGpbModuleREFMV provides storage for a multi-valued GpbModuleREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2299)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:531)
  */
 @SuppressWarnings("serial")
-public class DmcTypeGpbDefinitionSetREFMV extends DmcTypeGpbDefinitionSetREF implements Serializable {
+public class DmcTypeGpbModuleREFMV extends DmcTypeGpbModuleREF implements Serializable {
     
-    private final static Iterator<GpbDefinitionSetREF> emptyList = (new ArrayList<GpbDefinitionSetREF>()).iterator();
+    private final static Iterator<GpbModuleREF> emptyList = (new ArrayList<GpbModuleREF>()).iterator();
     
-    protected ArrayList<GpbDefinitionSetREF> value;
+    protected ArrayList<GpbModuleREF> value;
     
-    public DmcTypeGpbDefinitionSetREFMV(){
+    public DmcTypeGpbModuleREFMV(){
     
     }
     
-    public DmcTypeGpbDefinitionSetREFMV(DmcAttributeInfo ai){
+    public DmcTypeGpbModuleREFMV(DmcAttributeInfo ai){
         super(ai);
     }
     
     @Override
-    public DmcTypeGpbDefinitionSetREFMV getNew(){
-        return(new DmcTypeGpbDefinitionSetREFMV(getAttributeInfo()));
+    public DmcTypeGpbModuleREFMV getNew(){
+        return(new DmcTypeGpbModuleREFMV(getAttributeInfo()));
     }
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2330)
-    public DmcAttribute<GpbDefinitionSetREF> cloneIt(){
+    public DmcAttribute<GpbModuleREF> cloneIt(){
         synchronized(this){
-            DmcTypeGpbDefinitionSetREFMV rc = getNew();
+            DmcTypeGpbModuleREFMV rc = getNew();
     
             if (value == null)
                 return(rc);
     
             if (getAttributeInfo().indexSize == 0){
-                for(GpbDefinitionSetREF val: value)
+                for(GpbModuleREF val: value)
                 try {
                     rc.add(val);
                 } catch (DmcValueException e) {
@@ -79,11 +79,11 @@ public class DmcTypeGpbDefinitionSetREFMV extends DmcTypeGpbDefinitionSetREF imp
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2363)
-    public GpbDefinitionSetREF add(Object v) throws DmcValueException {
+    public GpbModuleREF add(Object v) throws DmcValueException {
         synchronized(this){
-            GpbDefinitionSetREF rc = typeCheck(v);
+            GpbModuleREF rc = typeCheck(v);
             if (value == null)
-                value = new ArrayList<GpbDefinitionSetREF>();
+                value = new ArrayList<GpbModuleREF>();
             value.add(rc);
             return(rc);
         }
@@ -91,13 +91,13 @@ public class DmcTypeGpbDefinitionSetREFMV extends DmcTypeGpbDefinitionSetREF imp
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2376)
-    public GpbDefinitionSetREF del(Object v){
+    public GpbModuleREF del(Object v){
         synchronized(this){
             if (value == null)
                 return(null);
     
-            GpbDefinitionSetREF key = null;
-            GpbDefinitionSetREF rc = null;
+            GpbModuleREF key = null;
+            GpbModuleREF rc = null;
             try {
                 key = typeCheck(v);
             } catch (DmcValueException e) {
@@ -115,23 +115,23 @@ public class DmcTypeGpbDefinitionSetREFMV extends DmcTypeGpbDefinitionSetREF imp
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2410)
-    public Iterator<GpbDefinitionSetREF> getMV(){
+    public Iterator<GpbModuleREF> getMV(){
         synchronized(this){
             if (value == null)
                 return(emptyList);
     
-            ArrayList<GpbDefinitionSetREF> clone = new ArrayList<GpbDefinitionSetREF>(value);
+            ArrayList<GpbModuleREF> clone = new ArrayList<GpbModuleREF>(value);
             return(clone.iterator());
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2422)
-    public ArrayList<GpbDefinitionSetREF> getMVCopy(){
+    public ArrayList<GpbModuleREF> getMVCopy(){
         synchronized(this){
             if (value == null)
-                return(new ArrayList<GpbDefinitionSetREF>());
+                return(new ArrayList<GpbModuleREF>());
             else 
-                return(new ArrayList<GpbDefinitionSetREF>(value));
+                return(new ArrayList<GpbModuleREF>(value));
         }
     }
     
@@ -151,7 +151,7 @@ public class DmcTypeGpbDefinitionSetREFMV extends DmcTypeGpbDefinitionSetREF imp
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2449)
-    public GpbDefinitionSetREF getMVnth(int index){
+    public GpbModuleREF getMVnth(int index){
         synchronized(this){
             if (value == null)
                 return(null);
@@ -161,7 +161,7 @@ public class DmcTypeGpbDefinitionSetREFMV extends DmcTypeGpbDefinitionSetREF imp
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2460)
-    public GpbDefinitionSetREF setMVnth(int index, Object v) throws DmcValueException {
+    public GpbModuleREF setMVnth(int index, Object v) throws DmcValueException {
         synchronized(this){
             if (getAttributeInfo().indexSize == 0)
                 throw(new IllegalStateException("Attribute: " + getAttributeInfo().name + " is not indexed. You can't use setMVnth()."));
@@ -169,13 +169,13 @@ public class DmcTypeGpbDefinitionSetREFMV extends DmcTypeGpbDefinitionSetREF imp
             if ( (index < 0) || (index >= getAttributeInfo().indexSize))
                 throw(new IllegalStateException("Index " + index + " for attribute: " + getAttributeInfo().name + " is out of range: 0 <= index < " + getAttributeInfo().indexSize));
             
-            GpbDefinitionSetREF rc = null;
+            GpbModuleREF rc = null;
             
             if (v != null)
                 rc = typeCheck(v);
             
             if (value == null){
-                value = new ArrayList<GpbDefinitionSetREF>(getAttributeInfo().indexSize);
+                value = new ArrayList<GpbModuleREF>(getAttributeInfo().indexSize);
                 for(int i=0;i<getAttributeInfo().indexSize;i++)
                     value.add(null);
             }
@@ -217,7 +217,7 @@ public class DmcTypeGpbDefinitionSetREFMV extends DmcTypeGpbDefinitionSetREF imp
                 return(false);
 
             try {
-                GpbDefinitionSetREF val = typeCheck(v);
+                GpbModuleREF val = typeCheck(v);
                 return(value.contains(val));
             } catch (DmcValueException e) {
                 return(false);
