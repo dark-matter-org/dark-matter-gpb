@@ -4,16 +4,16 @@ import org.dmd.dmc.presentation.DmcAdapterIF;
 import org.dmd.dmc.DmcAttribute;
 import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dms.generated.types.DmcTypeModifierMV;
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbDefinitionSetREFMV;
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbArtifactREFMV;
 
 @SuppressWarnings("serial")
 // org.dmd.dms.util.AdapterFormatter.dumpAdapter(AdapterFormatter.java:59)
 // Called from: org.dmd.dms.util.AdapterFormatter.dumpAdapterMV(AdapterFormatter.java:16)
-public class GpbDefinitionSetREFMVAdapter extends DmcTypeGpbDefinitionSetREFMV implements DmcAdapterIF {
+public class GpbArtifactREFMVAdapter extends DmcTypeGpbArtifactREFMV implements DmcAdapterIF {
 
-    transient DmcTypeGpbDefinitionSetREFMV existingValue;
+    transient DmcTypeGpbArtifactREFMV existingValue;
 
-    public GpbDefinitionSetREFMVAdapter(DmcAttributeInfo ai){
+    public GpbArtifactREFMVAdapter(DmcAttributeInfo ai){
     	   super(ai);
     }
 
@@ -39,7 +39,7 @@ public class GpbDefinitionSetREFMVAdapter extends DmcTypeGpbDefinitionSetREFMV i
 
     @Override
     public void setExisting(DmcAttribute<?> attr) {
-    	existingValue = (DmcTypeGpbDefinitionSetREFMV) attr;
+    	existingValue = (DmcTypeGpbArtifactREFMV) attr;
     	if (existingValue != null)
     		value = existingValue.getMVCopy();
     }

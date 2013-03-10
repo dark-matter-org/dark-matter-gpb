@@ -22,14 +22,14 @@ import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcOutputStreamIF;
 import org.dmd.dmc.DmcInputStreamIF;
 import org.dmd.dmc.DmcNamedObjectNontransportableREF; // base import
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionSetDMO; // primitive type
+import org.dmd.gpb.shared.generated.dmo.GpbArtifactDMO; // primitive type
 import org.dmd.dmc.types.DotName;
 import org.dmd.dms.generated.types.DmcTypeDotNameSV; 
 
 import org.dmd.dms.generated.enums.ValueTypeEnum;
 import org.dmd.dms.generated.enums.DataTypeEnum;
 /**
- * This is the generated DmcAttribute derivative for values of type GpbDefinitionSet
+ * This is the generated DmcAttribute derivative for values of type GpbArtifact
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -37,38 +37,38 @@ import org.dmd.dms.generated.enums.DataTypeEnum;
  * Generated from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:420)
  */
 @SuppressWarnings("serial")
-public class GpbDefinitionSetREF extends DmcNamedObjectNontransportableREF<GpbDefinitionSetDMO> {
+public class GpbArtifactREF extends DmcNamedObjectNontransportableREF<GpbArtifactDMO> {
 
     public final static DmcAttributeInfo __dotName = new DmcAttributeInfo("dotName",107,"DotName",ValueTypeEnum.SINGLE,DataTypeEnum.PERSISTENT);
     
     DmcTypeDotNameSV myName;    
     
-    public GpbDefinitionSetREF(){
+    public GpbArtifactREF(){
     }
 
-    public GpbDefinitionSetREF(GpbDefinitionSetDMO o){
+    public GpbArtifactREF(GpbArtifactDMO o){
          object = o;
          myName = (DmcTypeDotNameSV)o.getObjectNameAttribute();
     }
 
-    public GpbDefinitionSetREF(DotName n) throws DmcValueException {
+    public GpbArtifactREF(DotName n) throws DmcValueException {
          object = null;
          myName = new DmcTypeDotNameSV(__dotName);
          myName.set(n);
     }
 
-    public GpbDefinitionSetREF(String n) throws DmcValueException {
+    public GpbArtifactREF(String n) throws DmcValueException {
          object = null;
          myName = new DmcTypeDotNameSV(__dotName);
          myName.set(n);
     }
 
-    public GpbDefinitionSetREF(GpbDefinitionSetREF original){
+    public GpbArtifactREF(GpbArtifactREF original){
         myName = original.myName;
         object = original.object;
     }
 
-    public void setObject(GpbDefinitionSetDMO o){
+    public void setObject(GpbArtifactDMO o){
          object = o;
          if (object != null)
              myName = (DmcTypeDotNameSV)o.getObjectNameAttribute();
@@ -77,8 +77,8 @@ public class GpbDefinitionSetREF extends DmcNamedObjectNontransportableREF<GpbDe
     /**
      * Clones this reference.
      */
-    public GpbDefinitionSetREF cloneMe(){
-        GpbDefinitionSetREF rc = new GpbDefinitionSetREF();
+    public GpbArtifactREF cloneMe(){
+        GpbArtifactREF rc = new GpbArtifactREF();
         rc.myName = myName;
         rc.object = object;
         return(rc);

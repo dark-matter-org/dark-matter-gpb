@@ -20,43 +20,43 @@ import org.dmd.dmc.DmcAttribute;
 import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 /**
- * The DmcTypeGpbDefinitionSetREFSV provides storage for a single-valued GpbDefinitionSetREF
+ * The DmcTypeGpbArtifactREFSV provides storage for a single-valued GpbArtifactREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1955)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:530)
  */
 @SuppressWarnings("serial")
-public class DmcTypeGpbDefinitionSetREFSV extends DmcTypeGpbDefinitionSetREF implements Serializable {
+public class DmcTypeGpbArtifactREFSV extends DmcTypeGpbArtifactREF implements Serializable {
     
-    protected GpbDefinitionSetREF value;
+    protected GpbArtifactREF value;
     
-    public DmcTypeGpbDefinitionSetREFSV(){
+    public DmcTypeGpbArtifactREFSV(){
     
     }
     
-    public DmcTypeGpbDefinitionSetREFSV(DmcAttributeInfo ai){
+    public DmcTypeGpbArtifactREFSV(DmcAttributeInfo ai){
         super(ai);
     }
     
-    public DmcTypeGpbDefinitionSetREFSV getNew(){
-        return(new DmcTypeGpbDefinitionSetREFSV(getAttributeInfo()));
+    public DmcTypeGpbArtifactREFSV getNew(){
+        return(new DmcTypeGpbArtifactREFSV(getAttributeInfo()));
     }
     
-    public DmcTypeGpbDefinitionSetREFSV getNew(DmcAttributeInfo ai){
-        return(new DmcTypeGpbDefinitionSetREFSV(ai));
+    public DmcTypeGpbArtifactREFSV getNew(DmcAttributeInfo ai){
+        return(new DmcTypeGpbArtifactREFSV(ai));
     }
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1987)
-    public DmcAttribute<GpbDefinitionSetREF> cloneIt(){
-        DmcTypeGpbDefinitionSetREFSV rc = getNew();
+    public DmcAttribute<GpbArtifactREF> cloneIt(){
+        DmcTypeGpbArtifactREFSV rc = getNew();
         rc.value = value;
         return(rc);
     }
     
     // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1998)
-    public GpbDefinitionSetREF getSVCopy(){
+    public GpbArtifactREF getSVCopy(){
         if (value == null)
             return(null);
         return(cloneValue(value));
@@ -64,8 +64,8 @@ public class DmcTypeGpbDefinitionSetREFSV extends DmcTypeGpbDefinitionSetREF imp
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2010)
-    public GpbDefinitionSetREF set(Object v) throws DmcValueException {
-        GpbDefinitionSetREF rc = typeCheck(v);
+    public GpbArtifactREF set(Object v) throws DmcValueException {
+        GpbArtifactREF rc = typeCheck(v);
         // We only return a value if the value actually changed. This supports
         // the applyModifier() mechanism on DmcObject where we only return true
         // if something changed as a result of the modifier
@@ -81,7 +81,7 @@ public class DmcTypeGpbDefinitionSetREFSV extends DmcTypeGpbDefinitionSetREF imp
     }
     
     @Override
-    public GpbDefinitionSetREF getSV(){
+    public GpbArtifactREF getSV(){
         return(value);
     }
     

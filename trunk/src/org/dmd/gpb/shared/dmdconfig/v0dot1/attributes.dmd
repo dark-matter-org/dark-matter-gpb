@@ -44,7 +44,30 @@ description		Indicates if an internally generated GpbType is associated with a G
 AttributeDefinition
 name			definedInGpbModule
 dmdID			8
-type			Boolean
+type			GpbModule
 description		Indicates if an internally generated GpbType is associated with a GpbMessage.
 
+AttributeDefinition
+name			usesDefsFrom
+dmdID			9
+type			GpbModule
+description		Indicates if an internally generated GpbType is associated with a GpbMessage.
+
+AttributeDefinition
+name			pythonType
+dmdID			10
+type			String
+description		An indication of the Python type associated with a GPB attribute type.
+
+AttributeDefinition
+name			javaType
+dmdID			11
+type			String
+description		An indication of the Java type associated with a GPB attribute type.
+
+AttributeDefinition
+name			basedOnEnum
+dmdID			12
+type			EnumDefinition
+description		Indicates that a GPB enum is based on a dark-matter schema defined enumeration.
 

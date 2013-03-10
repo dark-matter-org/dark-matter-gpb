@@ -1,0 +1,7 @@
+GpbArtifact
+dotName			example
+usesDefsFrom gpbbase
+outputProto		example.proto
+outputLocation
+usesArtifact	ewmnbi_common
+usesDef			

@@ -16,20 +16,24 @@
 package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:391)
-import java.io.Serializable;                                      // Always required - (GenUtility.java:220)
-import org.dmd.dmc.DmcAttribute;                                  // Any attributes - (GenUtility.java:236)
-import org.dmd.dmc.DmcHierarchicNamedObjectIF;                    // Named object - (GenUtility.java:369)
-import org.dmd.dmc.DmcNamedObjectIF;                              // Named object - (GenUtility.java:371)
-import org.dmd.dmc.DmcSliceInfo;                                  // Required for object slicing - (GenUtility.java:225)
-import org.dmd.dmc.DmcValueException;                             // Any attributes - (GenUtility.java:237)
-import org.dmd.dmc.types.DotName;                                 // Naming attribute type - (GenUtility.java:366)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (GenUtility.java:224)
-import org.dmd.dms.generated.types.DmcTypeBooleanSV;              // Required type - (GenUtility.java:324)
-import org.dmd.dms.generated.types.DmcTypeDotNameSV;              // Required type - (GenUtility.java:324)
-import org.dmd.dms.generated.types.DmcTypeIntegerSV;              // Required type - (GenUtility.java:324)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (GenUtility.java:223)
-import org.dmd.dms.generated.types.DmcTypeStringSV;               // Required type - (GenUtility.java:324)
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Base class - (GenUtility.java:351)
+import java.io.Serializable;                                             // Always required - (GenUtility.java:220)
+import org.dmd.dmc.DmcAttribute;                                         // Any attributes - (GenUtility.java:236)
+import org.dmd.dmc.DmcHierarchicNamedObjectIF;                           // Named object - (GenUtility.java:369)
+import org.dmd.dmc.DmcNamedObjectIF;                                     // Named object - (GenUtility.java:371)
+import org.dmd.dmc.DmcOmni;                                              // Lazy resolution - (GenUtility.java:316)
+import org.dmd.dmc.DmcSliceInfo;                                         // Required for object slicing - (GenUtility.java:225)
+import org.dmd.dmc.DmcValueException;                                    // Any attributes - (GenUtility.java:237)
+import org.dmd.dmc.types.DotName;                                        // Naming attribute type - (GenUtility.java:366)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                              // Required for MODREC constructor - (GenUtility.java:224)
+import org.dmd.dms.generated.types.DmcTypeBooleanSV;                     // Required type - (GenUtility.java:324)
+import org.dmd.dms.generated.types.DmcTypeDotNameSV;                     // Required type - (GenUtility.java:324)
+import org.dmd.dms.generated.types.DmcTypeIntegerSV;                     // Required type - (GenUtility.java:324)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                    // Required for MODREC constructor - (GenUtility.java:223)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                      // Required type - (GenUtility.java:324)
+import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;                // Base class - (GenUtility.java:351)
+import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                    // Type specific set/add - (GenUtility.java:303)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbModuleREFSV;         // Reference type - (GenUtility.java:296)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;                  // Helper class - (GenUtility.java:331)
 
 /**
  * The GpbType class is use to define the types of attributes in the GPB\n
@@ -373,6 +377,156 @@ public class GpbTypeDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:774)
+    public String getJavaType(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__javaType);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets javaType to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:814)
+    public void setJavaType(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__javaType);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__javaType);
+        
+        try{
+            attr.set(value);
+            set(DmdgpbDMSAG.__javaType,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets javaType to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:867)
+    public void setJavaType(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__javaType);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__javaType);
+        
+        attr.set(value);
+        set(DmdgpbDMSAG.__javaType,attr);
+    }
+
+    /**
+     * Removes the javaType attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:887)
+    public void remJavaType(){
+         rem(DmdgpbDMSAG.__javaType);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:774)
+    public String getCplusplusType(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__cplusplusType);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets cplusplusType to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:814)
+    public void setCplusplusType(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__cplusplusType);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__cplusplusType);
+        
+        try{
+            attr.set(value);
+            set(DmdgpbDMSAG.__cplusplusType,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets cplusplusType to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:867)
+    public void setCplusplusType(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__cplusplusType);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__cplusplusType);
+        
+        attr.set(value);
+        set(DmdgpbDMSAG.__cplusplusType,attr);
+    }
+
+    /**
+     * Removes the cplusplusType attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:887)
+    public void remCplusplusType(){
+         rem(DmdgpbDMSAG.__cplusplusType);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:774)
+    public String getPythonType(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__pythonType);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets pythonType to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:814)
+    public void setPythonType(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__pythonType);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__pythonType);
+        
+        try{
+            attr.set(value);
+            set(DmdgpbDMSAG.__pythonType,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets pythonType to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:867)
+    public void setPythonType(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__pythonType);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__pythonType);
+        
+        attr.set(value);
+        set(DmdgpbDMSAG.__pythonType,attr);
+    }
+
+    /**
+     * Removes the pythonType attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:887)
+    public void remPythonType(){
+         rem(DmdgpbDMSAG.__pythonType);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:774)
     public DotName getDotName(){
         DmcTypeDotNameSV attr = (DmcTypeDotNameSV) get(MetaDMSAG.__dotName);
         if (attr == null)
@@ -422,24 +576,44 @@ public class GpbTypeDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
          rem(MetaDMSAG.__dotName);
     }
 
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:774)
-    public Boolean isDefinedInGpbModule(){
-        DmcTypeBooleanSV attr = (DmcTypeBooleanSV) get(DmdgpbDMSAG.__definedInGpbModule);
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:645)
+    public GpbModuleREF getDefinedInGpbModule(){
+        DmcTypeGpbModuleREFSV attr = (DmcTypeGpbModuleREFSV) get(DmdgpbDMSAG.__definedInGpbModule);
         if (attr == null)
-            return(false);
+            return(null);
+
+        if (DmcOmni.instance().lazyResolution()){
+            if (attr.doLazyResolution(this)){
+                rem(attr.getAttributeInfo());
+                return(null);
+            }
+        }
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Returns the reference to GpbModule without attempting lazy resolution (if turned on).
+     */
+    public GpbModuleREF getDefinedInGpbModuleREF(){
+        DmcTypeGpbModuleREFSV attr = (DmcTypeGpbModuleREFSV) get(DmdgpbDMSAG.__definedInGpbModule);
+        if (attr == null)
+            return(null);
 
         return(attr.getSV());
     }
 
     /**
      * Sets definedInGpbModule to the specified value.
-     * @param value Boolean
+     * @param value GpbModuleDMO
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:814)
-    public void setDefinedInGpbModule(Boolean value) {
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:699)
+    public void setDefinedInGpbModule(GpbModuleDMO value) {
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__definedInGpbModule);
         if (attr == null)
-            attr = new DmcTypeBooleanSV(DmdgpbDMSAG.__definedInGpbModule);
+            attr = new DmcTypeGpbModuleREFSV(DmdgpbDMSAG.__definedInGpbModule);
+        else
+            ((DmcTypeGpbModuleREFSV)attr).removeBackReferences();
         
         try{
             attr.set(value);
@@ -452,13 +626,15 @@ public class GpbTypeDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
 
     /**
      * Sets definedInGpbModule to the specified value.
-     * @param value A value compatible with DmcTypeBooleanSV
+     * @param value A value compatible with DmcTypeGpbModuleREFSV
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:867)
     public void setDefinedInGpbModule(Object value) throws DmcValueException {
-        DmcTypeBooleanSV attr  = (DmcTypeBooleanSV) get(DmdgpbDMSAG.__definedInGpbModule);
+        DmcTypeGpbModuleREFSV attr  = (DmcTypeGpbModuleREFSV) get(DmdgpbDMSAG.__definedInGpbModule);
         if (attr == null)
-            attr = new DmcTypeBooleanSV(DmdgpbDMSAG.__definedInGpbModule);
+            attr = new DmcTypeGpbModuleREFSV(DmdgpbDMSAG.__definedInGpbModule);
+        else
+            attr.removeBackReferences();
         
         attr.set(value);
         set(DmdgpbDMSAG.__definedInGpbModule,attr);

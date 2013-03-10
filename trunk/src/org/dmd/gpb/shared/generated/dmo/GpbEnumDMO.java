@@ -36,16 +36,20 @@ import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Base class 
  * The GpbEnum allows for the definition of enumerations. One thing to be
  * aware\n of with enums is that, if you're generating C++, the names of enum
  * elements must be globally\n unique. The dark-matter GPB utility will warn
- * you if you have clashing enum value names.\n <p/>\n When you're defining a
- * message type, you might want one of its fields to only have one of a\n
- * pre-defined list of values. For example, let's say you want to add a
- * corpus field for each\n SearchRequest, where the corpus can be UNIVERSAL,
- * WEB, IMAGES, LOCAL, NEWS, PRODUCTS or VIDEO.\n You can do this very simply
- * by adding an enum to your message definition - a field with an enum\n type
- * can only have one of a specified set of constants as its value (if you try
- * to provide a\n different value, the parser will treat it like an unknown
- * field). In the following\n example we've added an enum called Corpus with
- * all the possible values, and a field of type Corpus:
+ * you if you have clashing enum value names.\n <p/>\n May want to allow for
+ * mapping between DMS enum definitions and GpbEnums. Provide a basedOnEnum\n
+ * attribute that refers to a DMS enum. A GpbDefinitionSet could use the
+ * schemaToLoad attribute\n to specify a DMS schema from which definitions
+ * can be pulled.\n <p/>\n When you're defining a message type, you might
+ * want one of its fields to only have one of a\n pre-defined list of values.
+ * For example, let's say you want to add a corpus field for each\n
+ * SearchRequest, where the corpus can be UNIVERSAL, WEB, IMAGES, LOCAL,
+ * NEWS, PRODUCTS or VIDEO.\n You can do this very simply by adding an enum
+ * to your message definition - a field with an enum\n type can only have one
+ * of a specified set of constants as its value (if you try to provide a\n
+ * different value, the parser will treat it like an unknown field). In the
+ * following\n example we've added an enum called Corpus with all the
+ * possible values, and a field of type Corpus:
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>

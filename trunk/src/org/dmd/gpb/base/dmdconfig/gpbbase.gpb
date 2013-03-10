@@ -1,0 +1,32 @@
+GpbModule
+dotName gpbbase
+
+GpbType
+dotName 		double
+javaType		double
+cplusplusType	double
+pythonType		float
+description		Represents double values.
+
+GpbType
+dotName 		float
+javaType		float
+cplusplusType	float
+pythonType		float
+description		Represents float values.
+
+GpbType
+dotName 		int32
+javaType		int
+cplusplusType	int32
+pythonType		float
+description		Uses variable-length encoding. Inefficient for encoding negative numbers –
+ if your field is likely to have negative values, use sint32 instead.
+
+GpbType
+dotName 		int64
+javaType		long
+cplusplusType	int64
+pythonType		int/long
+description		Uses variable-length encoding. Inefficient for encoding negative numbers –
+ if your field is likely to have negative values, use sint64 instead.

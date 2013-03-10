@@ -25,51 +25,51 @@ import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
 /**
- * The DmcTypeGpbDefinitionSetREFSET provides storage for a set of GpbDefinitionSetREF
+ * The DmcTypeGpbModuleREFSET provides storage for a set of GpbModuleREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2595)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:532)
  */
 @SuppressWarnings("serial")
-public class DmcTypeGpbDefinitionSetREFSET extends DmcTypeGpbDefinitionSetREF implements Serializable {
+public class DmcTypeGpbModuleREFSET extends DmcTypeGpbModuleREF implements Serializable {
     
-     private final static Iterator<GpbDefinitionSetREF> emptyList =  (new HashSet<GpbDefinitionSetREF>()).iterator();
+     private final static Iterator<GpbModuleREF> emptyList =  (new HashSet<GpbModuleREF>()).iterator();
     
     
-    protected Set<GpbDefinitionSetREF> value;
+    protected Set<GpbModuleREF> value;
     
-    public DmcTypeGpbDefinitionSetREFSET(){
+    public DmcTypeGpbModuleREFSET(){
         value = null;
     }
     
-    public DmcTypeGpbDefinitionSetREFSET(DmcAttributeInfo ai){
+    public DmcTypeGpbModuleREFSET(DmcAttributeInfo ai){
         super(ai);
         initValue();
     }
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHSET)
-            value = new HashSet<GpbDefinitionSetREF>();
+            value = new HashSet<GpbModuleREF>();
         else
-            value = new TreeSet<GpbDefinitionSetREF>();
+            value = new TreeSet<GpbModuleREF>();
     }
     
     @Override
-    public DmcTypeGpbDefinitionSetREFSET getNew(){
-        return(new DmcTypeGpbDefinitionSetREFSET(getAttributeInfo()));
+    public DmcTypeGpbModuleREFSET getNew(){
+        return(new DmcTypeGpbModuleREFSET(getAttributeInfo()));
     }
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2636)
-    public DmcAttribute<GpbDefinitionSetREF> cloneIt(){
+    public DmcAttribute<GpbModuleREF> cloneIt(){
         synchronized(this){
-            DmcTypeGpbDefinitionSetREFSET rc = getNew();
+            DmcTypeGpbModuleREFSET rc = getNew();
     
             if (value == null)
                 return(rc);
     
-            for(GpbDefinitionSetREF val: value)
+            for(GpbModuleREF val: value)
             try {
                 rc.add(val);
             } catch (DmcValueException e) {
@@ -81,9 +81,9 @@ public class DmcTypeGpbDefinitionSetREFSET extends DmcTypeGpbDefinitionSetREF im
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2659)
-    public GpbDefinitionSetREF add(Object v) throws DmcValueException {
+    public GpbModuleREF add(Object v) throws DmcValueException {
         synchronized(this){
-            GpbDefinitionSetREF rc = typeCheck(v);
+            GpbModuleREF rc = typeCheck(v);
             if (value == null)
                 initValue();
         
@@ -97,9 +97,9 @@ public class DmcTypeGpbDefinitionSetREFSET extends DmcTypeGpbDefinitionSetREF im
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2676)
-    public GpbDefinitionSetREF del(Object v){
+    public GpbModuleREF del(Object v){
         synchronized(this){
-            GpbDefinitionSetREF rc = null;
+            GpbModuleREF rc = null;
             if (value == null)
                 return(rc);
             
@@ -121,32 +121,32 @@ public class DmcTypeGpbDefinitionSetREFSET extends DmcTypeGpbDefinitionSetREF im
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2701)
-    public Iterator<GpbDefinitionSetREF> getMV(){
+    public Iterator<GpbModuleREF> getMV(){
         synchronized(this){
             if (value == null)
                 return(emptyList);
 
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHSET)
-                return( (new HashSet<GpbDefinitionSetREF>(value)).iterator() );
+                return( (new HashSet<GpbModuleREF>(value)).iterator() );
             else
-                return( (new TreeSet<GpbDefinitionSetREF>(value)).iterator() );
+                return( (new TreeSet<GpbModuleREF>(value)).iterator() );
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2715)
-    public Set<GpbDefinitionSetREF> getMVCopy(){
+    public Set<GpbModuleREF> getMVCopy(){
         synchronized(this){
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHSET){
                 if (value == null)
-                    return(new HashSet<GpbDefinitionSetREF>());
+                    return(new HashSet<GpbModuleREF>());
                 else
-                    return(new HashSet<GpbDefinitionSetREF>(value));
+                    return(new HashSet<GpbModuleREF>(value));
             }
             else{
                 if (value == null)
-                    return(new TreeSet<GpbDefinitionSetREF>(value));
+                    return(new TreeSet<GpbModuleREF>(value));
                 else
-                    return(new TreeSet<GpbDefinitionSetREF>(value));
+                    return(new TreeSet<GpbModuleREF>(value));
             }
         }
     }
@@ -169,7 +169,7 @@ public class DmcTypeGpbDefinitionSetREFSET extends DmcTypeGpbDefinitionSetREF im
                 return(false);
             
             try {
-                GpbDefinitionSetREF val = typeCheck(v);
+                GpbModuleREF val = typeCheck(v);
                 return(value.contains(val));
             } catch (DmcValueException e) {
                 return(false);
