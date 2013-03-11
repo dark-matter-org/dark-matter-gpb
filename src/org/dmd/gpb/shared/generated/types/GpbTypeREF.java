@@ -23,8 +23,8 @@ import org.dmd.dmc.DmcOutputStreamIF;
 import org.dmd.dmc.DmcInputStreamIF;
 import org.dmd.dmc.DmcNamedObjectNontransportableREF; // base import
 import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO; // primitive type
-import org.dmd.dmc.types.DotName;
-import org.dmd.dms.generated.types.DmcTypeDotNameSV; 
+import org.dmd.dmc.types.StringName;
+import org.dmd.dms.generated.types.DmcTypeStringNameSV; 
 
 import org.dmd.dms.generated.enums.ValueTypeEnum;
 import org.dmd.dms.generated.enums.DataTypeEnum;
@@ -39,27 +39,27 @@ import org.dmd.dms.generated.enums.DataTypeEnum;
 @SuppressWarnings("serial")
 public class GpbTypeREF extends DmcNamedObjectNontransportableREF<GpbTypeDMO> {
 
-    public final static DmcAttributeInfo __dotName = new DmcAttributeInfo("dotName",107,"DotName",ValueTypeEnum.SINGLE,DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __name = new DmcAttributeInfo("name",2,"StringName",ValueTypeEnum.SINGLE,DataTypeEnum.PERSISTENT);
     
-    DmcTypeDotNameSV myName;    
+    DmcTypeStringNameSV myName;    
     
     public GpbTypeREF(){
     }
 
     public GpbTypeREF(GpbTypeDMO o){
          object = o;
-         myName = (DmcTypeDotNameSV)o.getObjectNameAttribute();
+         myName = (DmcTypeStringNameSV)o.getObjectNameAttribute();
     }
 
-    public GpbTypeREF(DotName n) throws DmcValueException {
+    public GpbTypeREF(StringName n) throws DmcValueException {
          object = null;
-         myName = new DmcTypeDotNameSV(__dotName);
+         myName = new DmcTypeStringNameSV(__name);
          myName.set(n);
     }
 
     public GpbTypeREF(String n) throws DmcValueException {
          object = null;
-         myName = new DmcTypeDotNameSV(__dotName);
+         myName = new DmcTypeStringNameSV(__name);
          myName.set(n);
     }
 
@@ -71,7 +71,7 @@ public class GpbTypeREF extends DmcNamedObjectNontransportableREF<GpbTypeDMO> {
     public void setObject(GpbTypeDMO o){
          object = o;
          if (object != null)
-             myName = (DmcTypeDotNameSV)o.getObjectNameAttribute();
+             myName = (DmcTypeStringNameSV)o.getObjectNameAttribute();
     }
 
     /**
@@ -87,7 +87,7 @@ public class GpbTypeREF extends DmcNamedObjectNontransportableREF<GpbTypeDMO> {
     @Override
     public void setName(DmcObjectName n) throws DmcValueException {
         if (myName == null)
-            myName = new DmcTypeDotNameSV(__dotName);
+            myName = new DmcTypeStringNameSV(__name);
         myName.set(n);
     }
 
@@ -99,7 +99,7 @@ public class GpbTypeREF extends DmcNamedObjectNontransportableREF<GpbTypeDMO> {
         return(myName.getSV());
     }
 
-    public DotName getName(){
+    public StringName getName(){
         if (myName == null)
             throw(new IllegalStateException("You've tried to access the name of an object but the name attribute hasn't been set."));
         
@@ -119,7 +119,7 @@ public class GpbTypeREF extends DmcNamedObjectNontransportableREF<GpbTypeDMO> {
     }
 
     public void deserializeIt(DmcInputStreamIF dis) throws Exception {
-        myName = (DmcTypeDotNameSV) dis.getAttributeInstance();
+        myName = (DmcTypeStringNameSV) dis.getAttributeInstance();
         myName.deserializeIt(dis);
     }
 

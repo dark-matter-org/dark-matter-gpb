@@ -20,7 +20,7 @@ dotName 		int32
 javaType		int
 cplusplusType	int32
 pythonType		float
-description		Uses variable-length encoding. Inefficient for encoding negative numbers –
+description		Uses variable-length encoding. Inefficient for encoding negative numbers
  if your field is likely to have negative values, use sint32 instead.
 
 GpbType
@@ -28,5 +28,85 @@ dotName 		int64
 javaType		long
 cplusplusType	int64
 pythonType		int/long
-description		Uses variable-length encoding. Inefficient for encoding negative numbers –
+description		Uses variable-length encoding. Inefficient for encoding negative numbers
  if your field is likely to have negative values, use sint64 instead.
+
+GpbType
+dotName 		uint32
+javaType		int
+cplusplusType	uint32
+pythonType		int/long
+description		Uses variable-length encoding.
+
+GpbType
+dotName 		uint64
+javaType		long
+cplusplusType	uint64
+pythonType		int/long
+description		Uses variable-length encoding.
+
+GpbType
+dotName 		sint32
+javaType		int
+cplusplusType	int32
+pythonType		int
+description		Uses variable-length encoding. Signed int value. These more efficiently
+ encode negative numbers than regular int32s.
+
+GpbType
+dotName 		sint64
+javaType		long
+cplusplusType	int64
+pythonType		int/long
+description		Uses variable-length encoding. Signed int value. These more efficiently
+ encode negative numbers than regular int64s.
+
+GpbType
+dotName 		fixed32
+javaType		int
+cplusplusType	uint32
+pythonType		int
+description		Always four bytes. More efficient than uint32 if values are often greater than 2^28.
+
+GpbType
+dotName 		fixed64
+javaType		long
+cplusplusType	int64
+pythonType		int/long
+description		Always eight bytes. More efficient than uint64 if values are often greater than 2^56.
+
+GpbType
+dotName 		sfixed32
+javaType		int
+cplusplusType	int32
+pythonType		int
+description		Always four bytes.
+
+GpbType
+dotName 		sfixed64
+javaType		long
+cplusplusType	int64
+pythonType		int/long
+description		Always eight bytes.
+
+GpbType
+dotName 		bool
+javaType		long
+cplusplusType	int64
+pythonType		int/long
+description		Boolean values.
+
+GpbType
+dotName 		string
+javaType		String
+cplusplusType	string
+pythonType		str/unicode
+description		A string must always contain UTF-8 encoded or 7-bit ASCII text.
+
+GpbType
+dotName 		bytes
+javaType		ByteString
+cplusplusType	string
+pythonType		str
+description		May contain any arbitrary sequence of bytes.
+

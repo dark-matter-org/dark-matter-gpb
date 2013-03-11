@@ -25,21 +25,21 @@ import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcMappedAttributeIF;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
-import org.dmd.dmc.types.DotName;    // key type import
+import org.dmd.dmc.types.StringName;    // key type import
 /**
  * The DmcTypeGpbEnumREFMAP provides storage for a map of GpbEnumREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2828)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2829)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:540)
  */
 @SuppressWarnings("serial")
-// public class DmcTypeGpbEnumREFMAP extends DmcTypeGpbEnumREF<GpbEnumREF,DotName> {
+// public class DmcTypeGpbEnumREFMAP extends DmcTypeGpbEnumREF<GpbEnumREF,StringName> {
 public class DmcTypeGpbEnumREFMAP extends DmcTypeGpbEnumREF implements Serializable {
     
-    private final static Iterator<GpbEnumREF> emptyList = (new HashMap<DotName,GpbEnumREF>()).values().iterator();
+    private final static Iterator<GpbEnumREF> emptyList = (new HashMap<StringName,GpbEnumREF>()).values().iterator();
     
-    protected Map<DotName,GpbEnumREF> value;
+    protected Map<StringName,GpbEnumREF> value;
     
     public DmcTypeGpbEnumREFMAP(){
         value = null;
@@ -52,16 +52,16 @@ public class DmcTypeGpbEnumREFMAP extends DmcTypeGpbEnumREF implements Serializa
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-            value = new HashMap<DotName,GpbEnumREF>();
+            value = new HashMap<StringName,GpbEnumREF>();
         else
-            value = new TreeMap<DotName,GpbEnumREF>();
+            value = new TreeMap<StringName,GpbEnumREF>();
     }
     
-    public DotName firstKey(){
+    public StringName firstKey(){
         if (getAttributeInfo().valueType == ValueTypeEnum.TREEMAPPED){
             if (value == null)
                 return(null);
-            TreeMap<DotName,GpbEnumREF> map = (TreeMap<DotName,GpbEnumREF>)value;
+            TreeMap<StringName,GpbEnumREF> map = (TreeMap<StringName,GpbEnumREF>)value;
             return(map.firstKey());
         }
         throw(new IllegalStateException("Attribute " + getAttributeInfo().name + " is HASHMAPPED and doesn't support firstKey()"));
@@ -73,7 +73,7 @@ public class DmcTypeGpbEnumREFMAP extends DmcTypeGpbEnumREF implements Serializa
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2885)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2886)
     public DmcAttribute<GpbEnumREF> cloneIt(){
         synchronized(this){
             DmcTypeGpbEnumREFMAP rc = getNew();
@@ -92,13 +92,13 @@ public class DmcTypeGpbEnumREFMAP extends DmcTypeGpbEnumREF implements Serializa
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2905)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2906)
     public GpbEnumREF add(Object v) throws DmcValueException {
         synchronized(this){
             GpbEnumREF newval = typeCheck(v);
             if (value == null)
                 initValue();
-            DotName key = (DotName)((DmcMappedAttributeIF)newval).getKey();
+            StringName key = (StringName)((DmcMappedAttributeIF)newval).getKey();
             GpbEnumREF oldval = value.put(key,newval);
             
             if (oldval != null){
@@ -112,14 +112,14 @@ public class DmcTypeGpbEnumREFMAP extends DmcTypeGpbEnumREF implements Serializa
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2926)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2927)
     public GpbEnumREF del(Object key){
         synchronized(this){
     
             if (value == null)
                 return(null);
     
-           if (key instanceof DotName)
+           if (key instanceof StringName)
                 return(value.remove(key));
             else
                 throw(new IllegalStateException("Incompatible key type: " + key.getClass().getName() + " passed to del():" + getName()));
@@ -127,43 +127,43 @@ public class DmcTypeGpbEnumREFMAP extends DmcTypeGpbEnumREF implements Serializa
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2942)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2943)
     public Iterator<GpbEnumREF> getMV(){
         synchronized(this){
     
             if (value == null)
                 return(emptyList);
     
-            Map<DotName,GpbEnumREF> clone = null;
+            Map<StringName,GpbEnumREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-                clone = new HashMap<DotName,GpbEnumREF>(value);
+                clone = new HashMap<StringName,GpbEnumREF>(value);
             else
-                clone = new TreeMap<DotName,GpbEnumREF>(value);
+                clone = new TreeMap<StringName,GpbEnumREF>(value);
             return(clone.values().iterator());
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2959)
-    public Map<DotName,GpbEnumREF> getMVCopy(){
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2960)
+    public Map<StringName,GpbEnumREF> getMVCopy(){
         synchronized(this){
-            Map<DotName,GpbEnumREF> clone = null;
+            Map<StringName,GpbEnumREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED){
                 if (value == null)
-                    clone = new HashMap<DotName,GpbEnumREF>();
+                    clone = new HashMap<StringName,GpbEnumREF>();
                 else
-                    clone = new HashMap<DotName,GpbEnumREF>(value);
+                    clone = new HashMap<StringName,GpbEnumREF>(value);
             }
             else{
                 if (value == null)
-                    clone = new TreeMap<DotName,GpbEnumREF>();
+                    clone = new TreeMap<StringName,GpbEnumREF>();
                 else
-                    clone = new TreeMap<DotName,GpbEnumREF>(value);
+                    clone = new TreeMap<StringName,GpbEnumREF>(value);
             }
             return(clone);
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2980)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2981)
     @Override
     public int getMVSize(){
         synchronized(this){
@@ -174,21 +174,21 @@ public class DmcTypeGpbEnumREFMAP extends DmcTypeGpbEnumREF implements Serializa
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2992)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2993)
     public GpbEnumREF getByKey(Object key){
         synchronized(this){
            if (value == null)
                return(null);
     
-            if (key instanceof DotName)
-                return(value.get((DotName) key));
+            if (key instanceof StringName)
+                return(value.get((StringName) key));
             else
                 throw(new IllegalStateException("Incompatible type: " + key.getClass().getName() + " passed to del():" + getName()));
         }
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3007)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3008)
     public boolean contains(Object v){
         synchronized(this){
            if (value == null)
@@ -204,13 +204,13 @@ public class DmcTypeGpbEnumREFMAP extends DmcTypeGpbEnumREF implements Serializa
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3024)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3025)
     public boolean containsKey(Object key){
         synchronized(this){
            if (value == null)
                return(false);
     
-           if (key instanceof DotName)
+           if (key instanceof StringName)
                 return(value.containsKey(key));
             return(false);
         }

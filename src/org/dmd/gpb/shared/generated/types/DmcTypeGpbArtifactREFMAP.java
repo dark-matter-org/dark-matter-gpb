@@ -25,21 +25,21 @@ import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcMappedAttributeIF;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
-import org.dmd.dmc.types.DotName;    // key type import
+import org.dmd.dmc.types.StringName;    // key type import
 /**
  * The DmcTypeGpbArtifactREFMAP provides storage for a map of GpbArtifactREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2828)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2829)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:540)
  */
 @SuppressWarnings("serial")
-// public class DmcTypeGpbArtifactREFMAP extends DmcTypeGpbArtifactREF<GpbArtifactREF,DotName> {
+// public class DmcTypeGpbArtifactREFMAP extends DmcTypeGpbArtifactREF<GpbArtifactREF,StringName> {
 public class DmcTypeGpbArtifactREFMAP extends DmcTypeGpbArtifactREF implements Serializable {
     
-    private final static Iterator<GpbArtifactREF> emptyList = (new HashMap<DotName,GpbArtifactREF>()).values().iterator();
+    private final static Iterator<GpbArtifactREF> emptyList = (new HashMap<StringName,GpbArtifactREF>()).values().iterator();
     
-    protected Map<DotName,GpbArtifactREF> value;
+    protected Map<StringName,GpbArtifactREF> value;
     
     public DmcTypeGpbArtifactREFMAP(){
         value = null;
@@ -52,16 +52,16 @@ public class DmcTypeGpbArtifactREFMAP extends DmcTypeGpbArtifactREF implements S
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-            value = new HashMap<DotName,GpbArtifactREF>();
+            value = new HashMap<StringName,GpbArtifactREF>();
         else
-            value = new TreeMap<DotName,GpbArtifactREF>();
+            value = new TreeMap<StringName,GpbArtifactREF>();
     }
     
-    public DotName firstKey(){
+    public StringName firstKey(){
         if (getAttributeInfo().valueType == ValueTypeEnum.TREEMAPPED){
             if (value == null)
                 return(null);
-            TreeMap<DotName,GpbArtifactREF> map = (TreeMap<DotName,GpbArtifactREF>)value;
+            TreeMap<StringName,GpbArtifactREF> map = (TreeMap<StringName,GpbArtifactREF>)value;
             return(map.firstKey());
         }
         throw(new IllegalStateException("Attribute " + getAttributeInfo().name + " is HASHMAPPED and doesn't support firstKey()"));
@@ -73,7 +73,7 @@ public class DmcTypeGpbArtifactREFMAP extends DmcTypeGpbArtifactREF implements S
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2885)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2886)
     public DmcAttribute<GpbArtifactREF> cloneIt(){
         synchronized(this){
             DmcTypeGpbArtifactREFMAP rc = getNew();
@@ -92,13 +92,13 @@ public class DmcTypeGpbArtifactREFMAP extends DmcTypeGpbArtifactREF implements S
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2905)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2906)
     public GpbArtifactREF add(Object v) throws DmcValueException {
         synchronized(this){
             GpbArtifactREF newval = typeCheck(v);
             if (value == null)
                 initValue();
-            DotName key = (DotName)((DmcMappedAttributeIF)newval).getKey();
+            StringName key = (StringName)((DmcMappedAttributeIF)newval).getKey();
             GpbArtifactREF oldval = value.put(key,newval);
             
             if (oldval != null){
@@ -112,14 +112,14 @@ public class DmcTypeGpbArtifactREFMAP extends DmcTypeGpbArtifactREF implements S
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2926)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2927)
     public GpbArtifactREF del(Object key){
         synchronized(this){
     
             if (value == null)
                 return(null);
     
-           if (key instanceof DotName)
+           if (key instanceof StringName)
                 return(value.remove(key));
             else
                 throw(new IllegalStateException("Incompatible key type: " + key.getClass().getName() + " passed to del():" + getName()));
@@ -127,43 +127,43 @@ public class DmcTypeGpbArtifactREFMAP extends DmcTypeGpbArtifactREF implements S
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2942)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2943)
     public Iterator<GpbArtifactREF> getMV(){
         synchronized(this){
     
             if (value == null)
                 return(emptyList);
     
-            Map<DotName,GpbArtifactREF> clone = null;
+            Map<StringName,GpbArtifactREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-                clone = new HashMap<DotName,GpbArtifactREF>(value);
+                clone = new HashMap<StringName,GpbArtifactREF>(value);
             else
-                clone = new TreeMap<DotName,GpbArtifactREF>(value);
+                clone = new TreeMap<StringName,GpbArtifactREF>(value);
             return(clone.values().iterator());
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2959)
-    public Map<DotName,GpbArtifactREF> getMVCopy(){
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2960)
+    public Map<StringName,GpbArtifactREF> getMVCopy(){
         synchronized(this){
-            Map<DotName,GpbArtifactREF> clone = null;
+            Map<StringName,GpbArtifactREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED){
                 if (value == null)
-                    clone = new HashMap<DotName,GpbArtifactREF>();
+                    clone = new HashMap<StringName,GpbArtifactREF>();
                 else
-                    clone = new HashMap<DotName,GpbArtifactREF>(value);
+                    clone = new HashMap<StringName,GpbArtifactREF>(value);
             }
             else{
                 if (value == null)
-                    clone = new TreeMap<DotName,GpbArtifactREF>();
+                    clone = new TreeMap<StringName,GpbArtifactREF>();
                 else
-                    clone = new TreeMap<DotName,GpbArtifactREF>(value);
+                    clone = new TreeMap<StringName,GpbArtifactREF>(value);
             }
             return(clone);
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2980)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2981)
     @Override
     public int getMVSize(){
         synchronized(this){
@@ -174,21 +174,21 @@ public class DmcTypeGpbArtifactREFMAP extends DmcTypeGpbArtifactREF implements S
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2992)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2993)
     public GpbArtifactREF getByKey(Object key){
         synchronized(this){
            if (value == null)
                return(null);
     
-            if (key instanceof DotName)
-                return(value.get((DotName) key));
+            if (key instanceof StringName)
+                return(value.get((StringName) key));
             else
                 throw(new IllegalStateException("Incompatible type: " + key.getClass().getName() + " passed to del():" + getName()));
         }
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3007)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3008)
     public boolean contains(Object v){
         synchronized(this){
            if (value == null)
@@ -204,13 +204,13 @@ public class DmcTypeGpbArtifactREFMAP extends DmcTypeGpbArtifactREF implements S
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3024)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3025)
     public boolean containsKey(Object key){
         synchronized(this){
            if (value == null)
                return(false);
     
-           if (key instanceof DotName)
+           if (key instanceof StringName)
                 return(value.containsKey(key));
             return(false);
         }

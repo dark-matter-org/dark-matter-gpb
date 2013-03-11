@@ -20,7 +20,7 @@ import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcOutputStreamIF;
 import org.dmd.dmc.DmcInputStreamIF;
 import org.dmd.dmc.types.DmcTypeNamedObjectREF;
-import org.dmd.dmc.types.DotName;
+import org.dmd.dmc.types.StringName;
 
 import org.dmd.gpb.shared.generated.types.GpbEnumREF;
 
@@ -35,7 +35,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbEnumDMO;
  * Generated from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREFHelperType(DmoTypeFormatter.java:585)
  */
 @SuppressWarnings("serial")
-abstract public class DmcTypeGpbEnumREF extends DmcTypeNamedObjectREF<GpbEnumREF, DotName> {
+abstract public class DmcTypeGpbEnumREF extends DmcTypeNamedObjectREF<GpbEnumREF, StringName> {
 
     public DmcTypeGpbEnumREF(){
     
@@ -51,8 +51,8 @@ abstract public class DmcTypeGpbEnumREF extends DmcTypeNamedObjectREF<GpbEnumREF
     }
 
     @Override
-    protected DotName getNewName(){
-        return(new DotName());
+    protected StringName getNewName(){
+        return(new StringName());
     }
 
     @Override
@@ -75,8 +75,8 @@ abstract public class DmcTypeGpbEnumREF extends DmcTypeNamedObjectREF<GpbEnumREF
             rc = (GpbEnumREF)value;
         else if (value instanceof GpbEnumDMO)
             rc = new GpbEnumREF((GpbEnumDMO)value);
-        else if (value instanceof DotName)
-            rc = new GpbEnumREF((DotName)value);
+        else if (value instanceof StringName)
+            rc = new GpbEnumREF((StringName)value);
         else if (value instanceof String)
             rc = new GpbEnumREF((String)value);
         else

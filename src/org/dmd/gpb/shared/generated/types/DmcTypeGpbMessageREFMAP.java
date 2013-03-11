@@ -25,21 +25,21 @@ import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcMappedAttributeIF;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
-import org.dmd.dmc.types.DotName;    // key type import
+import org.dmd.dmc.types.StringName;    // key type import
 /**
  * The DmcTypeGpbMessageREFMAP provides storage for a map of GpbMessageREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2828)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2829)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:540)
  */
 @SuppressWarnings("serial")
-// public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF<GpbMessageREF,DotName> {
+// public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF<GpbMessageREF,StringName> {
 public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Serializable {
     
-    private final static Iterator<GpbMessageREF> emptyList = (new HashMap<DotName,GpbMessageREF>()).values().iterator();
+    private final static Iterator<GpbMessageREF> emptyList = (new HashMap<StringName,GpbMessageREF>()).values().iterator();
     
-    protected Map<DotName,GpbMessageREF> value;
+    protected Map<StringName,GpbMessageREF> value;
     
     public DmcTypeGpbMessageREFMAP(){
         value = null;
@@ -52,16 +52,16 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-            value = new HashMap<DotName,GpbMessageREF>();
+            value = new HashMap<StringName,GpbMessageREF>();
         else
-            value = new TreeMap<DotName,GpbMessageREF>();
+            value = new TreeMap<StringName,GpbMessageREF>();
     }
     
-    public DotName firstKey(){
+    public StringName firstKey(){
         if (getAttributeInfo().valueType == ValueTypeEnum.TREEMAPPED){
             if (value == null)
                 return(null);
-            TreeMap<DotName,GpbMessageREF> map = (TreeMap<DotName,GpbMessageREF>)value;
+            TreeMap<StringName,GpbMessageREF> map = (TreeMap<StringName,GpbMessageREF>)value;
             return(map.firstKey());
         }
         throw(new IllegalStateException("Attribute " + getAttributeInfo().name + " is HASHMAPPED and doesn't support firstKey()"));
@@ -73,7 +73,7 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2885)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2886)
     public DmcAttribute<GpbMessageREF> cloneIt(){
         synchronized(this){
             DmcTypeGpbMessageREFMAP rc = getNew();
@@ -92,13 +92,13 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2905)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2906)
     public GpbMessageREF add(Object v) throws DmcValueException {
         synchronized(this){
             GpbMessageREF newval = typeCheck(v);
             if (value == null)
                 initValue();
-            DotName key = (DotName)((DmcMappedAttributeIF)newval).getKey();
+            StringName key = (StringName)((DmcMappedAttributeIF)newval).getKey();
             GpbMessageREF oldval = value.put(key,newval);
             
             if (oldval != null){
@@ -112,14 +112,14 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2926)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2927)
     public GpbMessageREF del(Object key){
         synchronized(this){
     
             if (value == null)
                 return(null);
     
-           if (key instanceof DotName)
+           if (key instanceof StringName)
                 return(value.remove(key));
             else
                 throw(new IllegalStateException("Incompatible key type: " + key.getClass().getName() + " passed to del():" + getName()));
@@ -127,43 +127,43 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2942)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2943)
     public Iterator<GpbMessageREF> getMV(){
         synchronized(this){
     
             if (value == null)
                 return(emptyList);
     
-            Map<DotName,GpbMessageREF> clone = null;
+            Map<StringName,GpbMessageREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-                clone = new HashMap<DotName,GpbMessageREF>(value);
+                clone = new HashMap<StringName,GpbMessageREF>(value);
             else
-                clone = new TreeMap<DotName,GpbMessageREF>(value);
+                clone = new TreeMap<StringName,GpbMessageREF>(value);
             return(clone.values().iterator());
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2959)
-    public Map<DotName,GpbMessageREF> getMVCopy(){
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2960)
+    public Map<StringName,GpbMessageREF> getMVCopy(){
         synchronized(this){
-            Map<DotName,GpbMessageREF> clone = null;
+            Map<StringName,GpbMessageREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED){
                 if (value == null)
-                    clone = new HashMap<DotName,GpbMessageREF>();
+                    clone = new HashMap<StringName,GpbMessageREF>();
                 else
-                    clone = new HashMap<DotName,GpbMessageREF>(value);
+                    clone = new HashMap<StringName,GpbMessageREF>(value);
             }
             else{
                 if (value == null)
-                    clone = new TreeMap<DotName,GpbMessageREF>();
+                    clone = new TreeMap<StringName,GpbMessageREF>();
                 else
-                    clone = new TreeMap<DotName,GpbMessageREF>(value);
+                    clone = new TreeMap<StringName,GpbMessageREF>(value);
             }
             return(clone);
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2980)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2981)
     @Override
     public int getMVSize(){
         synchronized(this){
@@ -174,21 +174,21 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2992)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2993)
     public GpbMessageREF getByKey(Object key){
         synchronized(this){
            if (value == null)
                return(null);
     
-            if (key instanceof DotName)
-                return(value.get((DotName) key));
+            if (key instanceof StringName)
+                return(value.get((StringName) key));
             else
                 throw(new IllegalStateException("Incompatible type: " + key.getClass().getName() + " passed to del():" + getName()));
         }
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3007)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3008)
     public boolean contains(Object v){
         synchronized(this){
            if (value == null)
@@ -204,13 +204,13 @@ public class DmcTypeGpbMessageREFMAP extends DmcTypeGpbMessageREF implements Ser
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3024)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3025)
     public boolean containsKey(Object key){
         synchronized(this){
            if (value == null)
                return(false);
     
-           if (key instanceof DotName)
+           if (key instanceof StringName)
                 return(value.containsKey(key));
             return(false);
         }
