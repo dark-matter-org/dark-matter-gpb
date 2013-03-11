@@ -28,7 +28,7 @@ import org.dmd.dms.generated.enums.ValueTypeEnum;
  * The DmcTypeGpbArtifactREFSET provides storage for a set of GpbArtifactREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2595)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2596)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:532)
  */
 @SuppressWarnings("serial")
@@ -61,7 +61,7 @@ public class DmcTypeGpbArtifactREFSET extends DmcTypeGpbArtifactREF implements S
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2636)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2637)
     public DmcAttribute<GpbArtifactREF> cloneIt(){
         synchronized(this){
             DmcTypeGpbArtifactREFSET rc = getNew();
@@ -80,7 +80,7 @@ public class DmcTypeGpbArtifactREFSET extends DmcTypeGpbArtifactREF implements S
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2659)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2660)
     public GpbArtifactREF add(Object v) throws DmcValueException {
         synchronized(this){
             GpbArtifactREF rc = typeCheck(v);
@@ -96,7 +96,7 @@ public class DmcTypeGpbArtifactREFSET extends DmcTypeGpbArtifactREF implements S
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2676)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2677)
     public GpbArtifactREF del(Object v){
         synchronized(this){
             GpbArtifactREF rc = null;
@@ -120,7 +120,7 @@ public class DmcTypeGpbArtifactREFSET extends DmcTypeGpbArtifactREF implements S
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2701)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2702)
     public Iterator<GpbArtifactREF> getMV(){
         synchronized(this){
             if (value == null)
@@ -133,7 +133,7 @@ public class DmcTypeGpbArtifactREFSET extends DmcTypeGpbArtifactREF implements S
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2715)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2716)
     public Set<GpbArtifactREF> getMVCopy(){
         synchronized(this){
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHSET){
@@ -152,7 +152,7 @@ public class DmcTypeGpbArtifactREFSET extends DmcTypeGpbArtifactREF implements S
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2735)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2736)
     public int getMVSize(){
         synchronized(this){
             if (value == null)
@@ -162,7 +162,7 @@ public class DmcTypeGpbArtifactREFSET extends DmcTypeGpbArtifactREF implements S
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2746)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2747)
     public boolean contains(Object v){
         synchronized(this){
             if (value == null)

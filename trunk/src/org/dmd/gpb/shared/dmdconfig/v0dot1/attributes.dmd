@@ -45,13 +45,13 @@ AttributeDefinition
 name			definedInGpbModule
 dmdID			8
 type			GpbModule
-description		Indicates if an internally generated GpbType is associated with a GpbMessage.
+description		Indicates the name of the GpbModule in which a definition is defined.
 
 AttributeDefinition
 name			usesDefsFrom
 dmdID			9
 type			GpbModule
-description		Indicates if an internally generated GpbType is associated with a GpbMessage.
+description		Indicates the name of a GpbModule from which definitions are included.
 
 AttributeDefinition
 name			pythonType

@@ -55,13 +55,13 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcTypeInfo __type_GpbType = new DmcTypeInfo("GpbType", OriginalTypeEnum.REFERENCE);
 
     // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:203)
-    public final static DmcClassInfo __GpbDefinition = new DmcClassInfo("GpbDefinition","org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO", -477999, ClassTypeEnum.ABSTRACT, DataTypeEnum.PERSISTENT,null,MetaDMSAG.__dotName);
-    public final static DmcClassInfo __GpbArtifact = new DmcClassInfo("GpbArtifact","org.dmd.gpb.shared.generated.dmo.GpbArtifactDMO", -477993, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__dotName);
-    public final static DmcClassInfo __GpbEnum = new DmcClassInfo("GpbEnum","org.dmd.gpb.shared.generated.dmo.GpbEnumDMO", -477997, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__dotName);
-    public final static DmcClassInfo __GpbField = new DmcClassInfo("GpbField","org.dmd.gpb.shared.generated.dmo.GpbFieldDMO", -477996, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__dotName);
-    public final static DmcClassInfo __GpbMessage = new DmcClassInfo("GpbMessage","org.dmd.gpb.shared.generated.dmo.GpbMessageDMO", -477995, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__dotName);
-    public final static DmcClassInfo __GpbModule = new DmcClassInfo("GpbModule","org.dmd.gpb.shared.generated.dmo.GpbModuleDMO", -477994, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__dotName);
-    public final static DmcClassInfo __GpbType = new DmcClassInfo("GpbType","org.dmd.gpb.shared.generated.dmo.GpbTypeDMO", -477998, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__dotName);
+    public final static DmcClassInfo __GpbDefinition = new DmcClassInfo("GpbDefinition","org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO", -477999, ClassTypeEnum.ABSTRACT, DataTypeEnum.PERSISTENT,null,MetaDMSAG.__name);
+    public final static DmcClassInfo __GpbArtifact = new DmcClassInfo("GpbArtifact","org.dmd.gpb.shared.generated.dmo.GpbArtifactDMO", -477993, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__name);
+    public final static DmcClassInfo __GpbEnum = new DmcClassInfo("GpbEnum","org.dmd.gpb.shared.generated.dmo.GpbEnumDMO", -477997, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__name);
+    public final static DmcClassInfo __GpbField = new DmcClassInfo("GpbField","org.dmd.gpb.shared.generated.dmo.GpbFieldDMO", -477996, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__name);
+    public final static DmcClassInfo __GpbMessage = new DmcClassInfo("GpbMessage","org.dmd.gpb.shared.generated.dmo.GpbMessageDMO", -477995, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__name);
+    public final static DmcClassInfo __GpbModule = new DmcClassInfo("GpbModule","org.dmd.gpb.shared.generated.dmo.GpbModuleDMO", -477994, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__name);
+    public final static DmcClassInfo __GpbType = new DmcClassInfo("GpbType","org.dmd.gpb.shared.generated.dmo.GpbTypeDMO", -477998, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__name);
 
     static  HashMap<Integer, DmcClassInfo> _CmAp;
 
@@ -112,13 +112,13 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         _CmAp.put(__GpbModule.id,__GpbModule);
         _CmAp.put(__GpbType.id,__GpbType);
 
+        __GpbDefinition.addMust(MetaDMSAG.__name);
         __GpbDefinition.addMust(MetaDMSAG.__dotName);
         __GpbDefinition.addMay(MetaDMSAG.__file);
         __GpbDefinition.addMay(MetaDMSAG.__lineNumber);
         __GpbDefinition.addMay(MetaDMSAG.__description);
         __GpbDefinition.addMay(__gpbHint);
 
-        __GpbType.addMust(MetaDMSAG.__dotName);
         __GpbType.addMust(__definedInGpbModule);
         __GpbType.addMay(MetaDMSAG.__internallyGenerated);
         __GpbType.addMay(MetaDMSAG.__isEnumType);
@@ -129,18 +129,13 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         __GpbType.addMay(__cplusplusType);
         __GpbType.addMay(__pythonType);
 
-        __GpbEnum.addMust(MetaDMSAG.__dotName);
         __GpbEnum.addMust(MetaDMSAG.__enumValue);
         __GpbEnum.addMay(__defaultValue);
 
-        __GpbField.addMust(MetaDMSAG.__dotName);
         __GpbField.addMust(__gpbType);
 
-        __GpbMessage.addMust(MetaDMSAG.__dotName);
 
-        __GpbModule.addMust(MetaDMSAG.__dotName);
 
-        __GpbArtifact.addMust(MetaDMSAG.__dotName);
 
 
     }
