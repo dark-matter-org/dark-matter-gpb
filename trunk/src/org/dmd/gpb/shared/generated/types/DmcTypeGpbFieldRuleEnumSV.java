@@ -24,7 +24,7 @@ import org.dmd.gpb.shared.generated.enums.GpbFieldRuleEnum;    // DmcType import
  * The DmcTypeGpbFieldRuleEnumSV provides storage for a single-valued GpbFieldRuleEnum
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1956)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1962)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpEnumType(DmoTypeFormatter.java:360)
  */
 @SuppressWarnings("serial")
@@ -49,14 +49,14 @@ public class DmcTypeGpbFieldRuleEnumSV extends DmcTypeGpbFieldRuleEnum implement
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1988)
+    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1994)
     public DmcAttribute<GpbFieldRuleEnum> cloneIt(){
         DmcTypeGpbFieldRuleEnumSV rc = getNew();
         rc.value = value;
         return(rc);
     }
     
-    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1999)
+    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2005)
     public GpbFieldRuleEnum getSVCopy(){
         if (value == null)
             return(null);
@@ -64,7 +64,7 @@ public class DmcTypeGpbFieldRuleEnumSV extends DmcTypeGpbFieldRuleEnum implement
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2011)
+    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2017)
     public GpbFieldRuleEnum set(Object v) throws DmcValueException {
         GpbFieldRuleEnum rc = typeCheck(v);
         // We only return a value if the value actually changed. This supports

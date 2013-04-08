@@ -15,15 +15,15 @@
 //	---------------------------------------------------------------------------
 package org.dmd.gpb.shared.generated.dmo;
 
-// Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:392)
-import java.io.Serializable;                                      // Always required - (GenUtility.java:220)
-import org.dmd.dmc.DmcAttribute;                                  // Named object - (GenUtility.java:372)
-import org.dmd.dmc.DmcNamedObjectIF;                              // Named object - (GenUtility.java:371)
-import org.dmd.dmc.DmcSliceInfo;                                  // Required for object slicing - (GenUtility.java:225)
-import org.dmd.dmc.types.StringName;                              // Naming attribute type - (GenUtility.java:366)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (GenUtility.java:224)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (GenUtility.java:223)
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Base class - (GenUtility.java:351)
+// Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:393)
+import java.io.Serializable;                                      // Always required - (GenUtility.java:221)
+import org.dmd.dmc.DmcAttribute;                                  // Named object - (GenUtility.java:373)
+import org.dmd.dmc.DmcNamedObjectIF;                              // Named object - (GenUtility.java:372)
+import org.dmd.dmc.DmcSliceInfo;                                  // Required for object slicing - (GenUtility.java:226)
+import org.dmd.dmc.types.DefinitionName;                          // Naming attribute type - (GenUtility.java:367)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (GenUtility.java:225)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (GenUtility.java:224)
+import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Base class - (GenUtility.java:352)
 
 /**
  * The GpbModule is used to define a named collection of definitions from\n
@@ -80,10 +80,10 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
     }
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:744)
-    public StringName getObjectName(){
+    public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
-            return((StringName)name.getSV());
+            return((DefinitionName)name.getSV());
     
         return(null);
     }
@@ -104,7 +104,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:776)
     public int hashCode(){
-        StringName objn = getObjectName();
+        DefinitionName objn = getObjectName();
         if (objn == null)
             return(0);
         

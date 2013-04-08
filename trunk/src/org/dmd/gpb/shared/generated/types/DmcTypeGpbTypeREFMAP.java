@@ -25,21 +25,21 @@ import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcMappedAttributeIF;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
-import org.dmd.dmc.types.StringName;    // key type import
+import org.dmd.dmc.types.DefinitionName;    // key type import
 /**
  * The DmcTypeGpbTypeREFMAP provides storage for a map of GpbTypeREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2829)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2835)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:540)
  */
 @SuppressWarnings("serial")
-// public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF<GpbTypeREF,StringName> {
+// public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF<GpbTypeREF,DefinitionName> {
 public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializable {
     
-    private final static Iterator<GpbTypeREF> emptyList = (new HashMap<StringName,GpbTypeREF>()).values().iterator();
+    private final static Iterator<GpbTypeREF> emptyList = (new HashMap<DefinitionName,GpbTypeREF>()).values().iterator();
     
-    protected Map<StringName,GpbTypeREF> value;
+    protected Map<DefinitionName,GpbTypeREF> value;
     
     public DmcTypeGpbTypeREFMAP(){
         value = null;
@@ -52,16 +52,16 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-            value = new HashMap<StringName,GpbTypeREF>();
+            value = new HashMap<DefinitionName,GpbTypeREF>();
         else
-            value = new TreeMap<StringName,GpbTypeREF>();
+            value = new TreeMap<DefinitionName,GpbTypeREF>();
     }
     
-    public StringName firstKey(){
+    public DefinitionName firstKey(){
         if (getAttributeInfo().valueType == ValueTypeEnum.TREEMAPPED){
             if (value == null)
                 return(null);
-            TreeMap<StringName,GpbTypeREF> map = (TreeMap<StringName,GpbTypeREF>)value;
+            TreeMap<DefinitionName,GpbTypeREF> map = (TreeMap<DefinitionName,GpbTypeREF>)value;
             return(map.firstKey());
         }
         throw(new IllegalStateException("Attribute " + getAttributeInfo().name + " is HASHMAPPED and doesn't support firstKey()"));
@@ -73,7 +73,7 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2886)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2892)
     public DmcAttribute<GpbTypeREF> cloneIt(){
         synchronized(this){
             DmcTypeGpbTypeREFMAP rc = getNew();
@@ -92,13 +92,13 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2906)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2912)
     public GpbTypeREF add(Object v) throws DmcValueException {
         synchronized(this){
             GpbTypeREF newval = typeCheck(v);
             if (value == null)
                 initValue();
-            StringName key = (StringName)((DmcMappedAttributeIF)newval).getKey();
+            DefinitionName key = (DefinitionName)((DmcMappedAttributeIF)newval).getKey();
             GpbTypeREF oldval = value.put(key,newval);
             
             if (oldval != null){
@@ -112,14 +112,14 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2927)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2933)
     public GpbTypeREF del(Object key){
         synchronized(this){
     
             if (value == null)
                 return(null);
     
-           if (key instanceof StringName)
+           if (key instanceof DefinitionName)
                 return(value.remove(key));
             else
                 throw(new IllegalStateException("Incompatible key type: " + key.getClass().getName() + " passed to del():" + getName()));
@@ -127,43 +127,43 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2943)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2949)
     public Iterator<GpbTypeREF> getMV(){
         synchronized(this){
     
             if (value == null)
                 return(emptyList);
     
-            Map<StringName,GpbTypeREF> clone = null;
+            Map<DefinitionName,GpbTypeREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED)
-                clone = new HashMap<StringName,GpbTypeREF>(value);
+                clone = new HashMap<DefinitionName,GpbTypeREF>(value);
             else
-                clone = new TreeMap<StringName,GpbTypeREF>(value);
+                clone = new TreeMap<DefinitionName,GpbTypeREF>(value);
             return(clone.values().iterator());
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2960)
-    public Map<StringName,GpbTypeREF> getMVCopy(){
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2966)
+    public Map<DefinitionName,GpbTypeREF> getMVCopy(){
         synchronized(this){
-            Map<StringName,GpbTypeREF> clone = null;
+            Map<DefinitionName,GpbTypeREF> clone = null;
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHMAPPED){
                 if (value == null)
-                    clone = new HashMap<StringName,GpbTypeREF>();
+                    clone = new HashMap<DefinitionName,GpbTypeREF>();
                 else
-                    clone = new HashMap<StringName,GpbTypeREF>(value);
+                    clone = new HashMap<DefinitionName,GpbTypeREF>(value);
             }
             else{
                 if (value == null)
-                    clone = new TreeMap<StringName,GpbTypeREF>();
+                    clone = new TreeMap<DefinitionName,GpbTypeREF>();
                 else
-                    clone = new TreeMap<StringName,GpbTypeREF>(value);
+                    clone = new TreeMap<DefinitionName,GpbTypeREF>(value);
             }
             return(clone);
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2981)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2987)
     @Override
     public int getMVSize(){
         synchronized(this){
@@ -174,21 +174,21 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2993)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:2999)
     public GpbTypeREF getByKey(Object key){
         synchronized(this){
            if (value == null)
                return(null);
     
-            if (key instanceof StringName)
-                return(value.get((StringName) key));
+            if (key instanceof DefinitionName)
+                return(value.get((DefinitionName) key));
             else
                 throw(new IllegalStateException("Incompatible type: " + key.getClass().getName() + " passed to del():" + getName()));
         }
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3008)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3014)
     public boolean contains(Object v){
         synchronized(this){
            if (value == null)
@@ -204,13 +204,13 @@ public class DmcTypeGpbTypeREFMAP extends DmcTypeGpbTypeREF implements Serializa
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3025)
+    // org.dmd.dms.util.GenUtility.dumpMAPType(GenUtility.java:3031)
     public boolean containsKey(Object key){
         synchronized(this){
            if (value == null)
                return(false);
     
-           if (key instanceof StringName)
+           if (key instanceof DefinitionName)
                 return(value.containsKey(key));
             return(false);
         }

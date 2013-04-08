@@ -15,20 +15,20 @@
 //	---------------------------------------------------------------------------
 package org.dmd.gpb.shared.generated.dmo;
 
-// Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:392)
-import java.io.Serializable;                                           // Always required - (GenUtility.java:220)
-import org.dmd.dmc.DmcAttribute;                                       // Named object - (GenUtility.java:372)
-import org.dmd.dmc.DmcNamedObjectIF;                                   // Named object - (GenUtility.java:371)
-import org.dmd.dmc.DmcOmni;                                            // Lazy resolution - (GenUtility.java:316)
-import org.dmd.dmc.DmcSliceInfo;                                       // Required for object slicing - (GenUtility.java:225)
-import org.dmd.dmc.DmcValueException;                                  // Any attributes - (GenUtility.java:237)
-import org.dmd.dmc.types.StringName;                                   // Naming attribute type - (GenUtility.java:366)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                            // Required for MODREC constructor - (GenUtility.java:224)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                  // Required for MODREC constructor - (GenUtility.java:223)
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;              // Base class - (GenUtility.java:351)
-import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                    // Type specific set/add - (GenUtility.java:303)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbTypeREFSV;         // Reference type - (GenUtility.java:296)
-import org.dmd.gpb.shared.generated.types.GpbTypeREF;                  // Helper class - (GenUtility.java:331)
+// Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:393)
+import java.io.Serializable;                                           // Always required - (GenUtility.java:221)
+import org.dmd.dmc.DmcAttribute;                                       // Named object - (GenUtility.java:373)
+import org.dmd.dmc.DmcNamedObjectIF;                                   // Named object - (GenUtility.java:372)
+import org.dmd.dmc.DmcOmni;                                            // Lazy resolution - (GenUtility.java:317)
+import org.dmd.dmc.DmcSliceInfo;                                       // Required for object slicing - (GenUtility.java:226)
+import org.dmd.dmc.DmcValueException;                                  // Any attributes - (GenUtility.java:238)
+import org.dmd.dmc.types.DefinitionName;                               // Naming attribute type - (GenUtility.java:367)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                            // Required for MODREC constructor - (GenUtility.java:225)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                  // Required for MODREC constructor - (GenUtility.java:224)
+import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;              // Base class - (GenUtility.java:352)
+import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                    // Type specific set/add - (GenUtility.java:304)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbTypeREFSV;         // Reference type - (GenUtility.java:297)
+import org.dmd.gpb.shared.generated.types.GpbTypeREF;                  // Helper class - (GenUtility.java:332)
 
 /**
  * null
@@ -83,10 +83,10 @@ public class GpbFieldDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF,
     }
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:744)
-    public StringName getObjectName(){
+    public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
-            return((StringName)name.getSV());
+            return((DefinitionName)name.getSV());
     
         return(null);
     }
@@ -107,14 +107,14 @@ public class GpbFieldDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF,
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:776)
     public int hashCode(){
-        StringName objn = getObjectName();
+        DefinitionName objn = getObjectName();
         if (objn == null)
             return(0);
         
         return(objn.hashCode());
     }
 
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:646)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:652)
     public GpbTypeREF getGpbType(){
         DmcTypeGpbTypeREFSV attr = (DmcTypeGpbTypeREFSV) get(DmdgpbDMSAG.__gpbType);
         if (attr == null)
@@ -145,7 +145,7 @@ public class GpbFieldDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF,
      * Sets gpbType to the specified value.
      * @param value GpbTypeDMO
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:700)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:706)
     public void setGpbType(GpbTypeDMO value) {
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__gpbType);
         if (attr == null)
@@ -166,7 +166,7 @@ public class GpbFieldDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF,
      * Sets gpbType to the specified value.
      * @param value A value compatible with DmcTypeGpbTypeREFSV
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:868)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
     public void setGpbType(Object value) throws DmcValueException {
         DmcTypeGpbTypeREFSV attr  = (DmcTypeGpbTypeREFSV) get(DmdgpbDMSAG.__gpbType);
         if (attr == null)
@@ -181,7 +181,7 @@ public class GpbFieldDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF,
     /**
      * Removes the gpbType attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:888)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
     public void remGpbType(){
          rem(DmdgpbDMSAG.__gpbType);
     }

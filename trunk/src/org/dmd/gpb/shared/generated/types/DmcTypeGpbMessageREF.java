@@ -20,7 +20,7 @@ import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcOutputStreamIF;
 import org.dmd.dmc.DmcInputStreamIF;
 import org.dmd.dmc.types.DmcTypeNamedObjectREF;
-import org.dmd.dmc.types.StringName;
+import org.dmd.dmc.types.DefinitionName;
 
 import org.dmd.gpb.shared.generated.types.GpbMessageREF;
 
@@ -35,7 +35,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbMessageDMO;
  * Generated from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREFHelperType(DmoTypeFormatter.java:585)
  */
 @SuppressWarnings("serial")
-abstract public class DmcTypeGpbMessageREF extends DmcTypeNamedObjectREF<GpbMessageREF, StringName> {
+abstract public class DmcTypeGpbMessageREF extends DmcTypeNamedObjectREF<GpbMessageREF, DefinitionName> {
 
     public DmcTypeGpbMessageREF(){
     
@@ -51,8 +51,8 @@ abstract public class DmcTypeGpbMessageREF extends DmcTypeNamedObjectREF<GpbMess
     }
 
     @Override
-    protected StringName getNewName(){
-        return(new StringName());
+    protected DefinitionName getNewName(){
+        return(new DefinitionName());
     }
 
     @Override
@@ -75,8 +75,8 @@ abstract public class DmcTypeGpbMessageREF extends DmcTypeNamedObjectREF<GpbMess
             rc = (GpbMessageREF)value;
         else if (value instanceof GpbMessageDMO)
             rc = new GpbMessageREF((GpbMessageDMO)value);
-        else if (value instanceof StringName)
-            rc = new GpbMessageREF((StringName)value);
+        else if (value instanceof DefinitionName)
+            rc = new GpbMessageREF((DefinitionName)value);
         else if (value instanceof String)
             rc = new GpbMessageREF((String)value);
         else

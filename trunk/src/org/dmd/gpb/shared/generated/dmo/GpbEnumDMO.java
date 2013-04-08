@@ -15,20 +15,20 @@
 //	---------------------------------------------------------------------------
 package org.dmd.gpb.shared.generated.dmo;
 
-// Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:392)
-import java.io.Serializable;                                      // Always required - (GenUtility.java:220)
-import java.util.*;                                               // Always required if we have any MV attributes - (GenUtility.java:215)
-import org.dmd.dmc.DmcAttribute;                                  // Named object - (GenUtility.java:372)
-import org.dmd.dmc.DmcNamedObjectIF;                              // Named object - (GenUtility.java:371)
-import org.dmd.dmc.DmcSliceInfo;                                  // Required for object slicing - (GenUtility.java:225)
-import org.dmd.dmc.DmcValueException;                             // Any attributes - (GenUtility.java:237)
-import org.dmd.dmc.types.StringName;                              // Naming attribute type - (GenUtility.java:366)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (GenUtility.java:224)
-import org.dmd.dms.generated.types.DmcTypeEnumValueMV;            // Required type - (GenUtility.java:324)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (GenUtility.java:223)
-import org.dmd.dms.generated.types.DmcTypeStringSV;               // Required type - (GenUtility.java:324)
-import org.dmd.dms.types.EnumValue;                               // Primitive type and !auxiliary class - (GenUtility.java:267)
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Base class - (GenUtility.java:351)
+// Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:393)
+import java.io.Serializable;                                      // Always required - (GenUtility.java:221)
+import java.util.*;                                               // Always required if we have any MV attributes - (GenUtility.java:216)
+import org.dmd.dmc.DmcAttribute;                                  // Named object - (GenUtility.java:373)
+import org.dmd.dmc.DmcNamedObjectIF;                              // Named object - (GenUtility.java:372)
+import org.dmd.dmc.DmcSliceInfo;                                  // Required for object slicing - (GenUtility.java:226)
+import org.dmd.dmc.DmcValueException;                             // Any attributes - (GenUtility.java:238)
+import org.dmd.dmc.types.DefinitionName;                          // Naming attribute type - (GenUtility.java:367)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (GenUtility.java:225)
+import org.dmd.dms.generated.types.DmcTypeEnumValueMV;            // Required type - (GenUtility.java:325)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (GenUtility.java:224)
+import org.dmd.dms.generated.types.DmcTypeStringSV;               // Required type - (GenUtility.java:325)
+import org.dmd.dms.types.EnumValue;                               // Primitive type and !auxiliary class - (GenUtility.java:268)
+import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Base class - (GenUtility.java:352)
 
 /**
  * The GpbEnum allows for the definition of enumerations. One thing to be
@@ -99,10 +99,10 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
     }
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:744)
-    public StringName getObjectName(){
+    public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
-            return((StringName)name.getSV());
+            return((DefinitionName)name.getSV());
     
         return(null);
     }
@@ -123,14 +123,14 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:776)
     public int hashCode(){
-        StringName objn = getObjectName();
+        DefinitionName objn = getObjectName();
         if (objn == null)
             return(0);
         
         return(objn.hashCode());
     }
 
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:775)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)
     public String getDefaultValue(){
         DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__defaultValue);
         if (attr == null)
@@ -143,7 +143,7 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
      * Sets defaultValue to the specified value.
      * @param value String
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:815)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:821)
     public void setDefaultValue(String value) {
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__defaultValue);
         if (attr == null)
@@ -162,7 +162,7 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
      * Sets defaultValue to the specified value.
      * @param value A value compatible with DmcTypeStringSV
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:868)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
     public void setDefaultValue(Object value) throws DmcValueException {
         DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__defaultValue);
         if (attr == null)
@@ -175,7 +175,7 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
     /**
      * Removes the defaultValue attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:888)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
     public void remDefaultValue(){
          rem(DmdgpbDMSAG.__defaultValue);
     }
@@ -184,7 +184,7 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
      * @return An Iterator of EnumValue objects.
      */
     @SuppressWarnings("unchecked")
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1103)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1109)
     public Iterator<EnumValue> getEnumValue(){
         DmcTypeEnumValueMV attr = (DmcTypeEnumValueMV) get(MetaDMSAG.__enumValue);
         if (attr == null)
@@ -196,7 +196,7 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
     /**
      * @return The nth EnumValue value.
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1115)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1121)
     public EnumValue getNthEnumValue(int i){
         DmcTypeEnumValueMV attr = (DmcTypeEnumValueMV) get(MetaDMSAG.__enumValue);
         if (attr == null)
@@ -209,7 +209,7 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
      * Adds another enumValue to the specified value.
      * @param value EnumValue
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1129)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1135)
     public DmcAttribute<?> addEnumValue(EnumValue value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__enumValue);
         if (attr == null)
@@ -229,7 +229,7 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
      * Returns true if we contain a valued keyed by the specified EnumValue.
      * @param value EnumValue
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1204)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1210)
     public boolean enumValueContains(EnumValue value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__enumValue);
         if (attr == null)
@@ -241,7 +241,7 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
      * Adds another enumValue value.
      * @param value A value compatible with EnumValue
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1236)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1242)
     public DmcAttribute<?> addEnumValue(Object value) throws DmcValueException {
         DmcAttribute<?> attr = get(MetaDMSAG.__enumValue);
         if (attr == null)
@@ -255,7 +255,7 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
     /**
      * Returns the number of values in enumValue
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1253)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1259)
     public int getEnumValueSize(){
         DmcAttribute<?> attr = get(MetaDMSAG.__enumValue);
         if (attr == null){
@@ -271,7 +271,7 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
      * Deletes a enumValue value.
      * @param value The EnumValue to be deleted from set of attribute values.
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1311)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1317)
     public DmcAttribute<?> delEnumValue(Object value) throws DmcValueException {
         DmcAttribute<?> attr = get(MetaDMSAG.__enumValue);
         
@@ -287,7 +287,7 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
      * Deletes a enumValue from the specified value.
      * @param value EnumValue
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1327)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1333)
     public DmcAttribute<?> delEnumValue(EnumValue value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__enumValue);
         
@@ -302,7 +302,7 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
     /**
      * Removes the enumValue attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1346)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1352)
     public void remEnumValue(){
          rem(MetaDMSAG.__enumValue);
     }
