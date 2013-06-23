@@ -1,7 +1,39 @@
+GpbModule
+name			example
+description		
+
+
 GpbArtifact
 dotName			example
-usesDefsFrom gpbbase
+usesDefsFrom 	gpbbase
 outputProto		example.proto
-outputLocation
+outputLocation	
 usesArtifact	ewmnbi_common
 usesDef			
+
+
+GpbEnumValue
+name 				UNKNOWN
+description			Represents the unknown value
+concinnity			The base concinnity principle.
+concinnityRelated	Another related concinnity principle
+
+GpbEnumValue
+name 				XYZ
+description			Represents the XYZ value
+concinnity			The base concinnity principle.
+concinnityRelated	Another related concinnity principle
+
+GpbEnum
+name				ABCEnum
+valueSuffix			_ABC
+enumValue			UNKNOWN	0
+enumValue 			XYZ 	1 
+description				
+
+
+GpbEnum
+name				DEFEnum
+valueSuffix			_DEF
+enumValue			UNKNOWN	10
+description			

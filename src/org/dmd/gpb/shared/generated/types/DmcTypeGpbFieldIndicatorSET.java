@@ -30,7 +30,7 @@ import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldIndicator;    // DmcTyp
  * The DmcTypeGpbFieldIndicatorSET provides storage for a set of GpbFieldIndicator
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2602)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2606)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpTypes(DmoTypeFormatter.java:127)
  */
 @SuppressWarnings("serial")
@@ -63,7 +63,7 @@ public class DmcTypeGpbFieldIndicatorSET extends DmcTypeGpbFieldIndicator implem
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2643)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2647)
     public DmcAttribute<GpbFieldIndicator> cloneIt(){
         synchronized(this){
             DmcTypeGpbFieldIndicatorSET rc = getNew();
@@ -82,7 +82,7 @@ public class DmcTypeGpbFieldIndicatorSET extends DmcTypeGpbFieldIndicator implem
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2666)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2670)
     public GpbFieldIndicator add(Object v) throws DmcValueException {
         synchronized(this){
             GpbFieldIndicator rc = typeCheck(v);
@@ -98,7 +98,7 @@ public class DmcTypeGpbFieldIndicatorSET extends DmcTypeGpbFieldIndicator implem
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2683)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2687)
     public GpbFieldIndicator del(Object v){
         synchronized(this){
             GpbFieldIndicator rc = null;
@@ -122,7 +122,7 @@ public class DmcTypeGpbFieldIndicatorSET extends DmcTypeGpbFieldIndicator implem
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2708)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2712)
     public Iterator<GpbFieldIndicator> getMV(){
         synchronized(this){
             if (value == null)
@@ -135,7 +135,7 @@ public class DmcTypeGpbFieldIndicatorSET extends DmcTypeGpbFieldIndicator implem
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2722)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2726)
     public Set<GpbFieldIndicator> getMVCopy(){
         synchronized(this){
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHSET){
@@ -154,7 +154,7 @@ public class DmcTypeGpbFieldIndicatorSET extends DmcTypeGpbFieldIndicator implem
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2742)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2746)
     public int getMVSize(){
         synchronized(this){
             if (value == null)
@@ -164,7 +164,7 @@ public class DmcTypeGpbFieldIndicatorSET extends DmcTypeGpbFieldIndicator implem
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2753)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2757)
     public boolean contains(Object v){
         synchronized(this){
             if (value == null)

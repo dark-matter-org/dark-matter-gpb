@@ -26,7 +26,7 @@ import org.dmd.gpb.shared.generated.enums.GpbFieldRuleEnum;    // DmcType import
  * The DmcTypeGpbFieldRuleEnumMV provides storage for a multi-valued GpbFieldRuleEnum
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2306)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2310)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpEnumType(DmoTypeFormatter.java:361)
  */
 @SuppressWarnings("serial")
@@ -50,7 +50,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2337)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2341)
     public DmcAttribute<GpbFieldRuleEnum> cloneIt(){
         synchronized(this){
             DmcTypeGpbFieldRuleEnumMV rc = getNew();
@@ -79,7 +79,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2370)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2374)
     public GpbFieldRuleEnum add(Object v) throws DmcValueException {
         synchronized(this){
             GpbFieldRuleEnum rc = typeCheck(v);
@@ -91,7 +91,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2383)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2387)
     public GpbFieldRuleEnum del(Object v){
         synchronized(this){
             if (value == null)
@@ -115,7 +115,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2417)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2421)
     public Iterator<GpbFieldRuleEnum> getMV(){
         synchronized(this){
             if (value == null)
@@ -126,7 +126,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2429)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2433)
     public ArrayList<GpbFieldRuleEnum> getMVCopy(){
         synchronized(this){
             if (value == null)
@@ -137,7 +137,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2441)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2445)
     public int getMVSize(){
         synchronized(this){
             if (getAttributeInfo().indexSize == 0){
@@ -151,7 +151,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2456)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2460)
     public GpbFieldRuleEnum getMVnth(int index){
         synchronized(this){
             if (value == null)
@@ -161,7 +161,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2467)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2471)
     public GpbFieldRuleEnum setMVnth(int index, Object v) throws DmcValueException {
         synchronized(this){
             if (getAttributeInfo().indexSize == 0)
@@ -188,7 +188,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2495)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2499)
     public boolean hasValue(){
         synchronized(this){
             boolean rc = false;
@@ -211,7 +211,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2519)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2523)
     public boolean contains(Object v){
         synchronized(this){
             if (value == null)
