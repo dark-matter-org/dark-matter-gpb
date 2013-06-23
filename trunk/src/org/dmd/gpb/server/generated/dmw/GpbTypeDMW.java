@@ -29,8 +29,11 @@ import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;           // Class not auxil
 
 /**
  * The GpbType class is use to define the types of attributes in the GPB\n
- * specification. All GpbMessages and EnumDefinitions will have GpbTypes
- * generated for\n them so that they can be used as types for GpbAttributes.
+ * specification. All GpbMessages and GpbEnum will have GpbTypes generated
+ * for\n them so that they can be used as types for GpbAttributes.\n <p/>\n
+ * GpbType definitions cannot be specified in .dmgpb files; they are strictly
+ * for\n internal use. If you specify one in a .dmgpb file, you'll get an
+ * error.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
