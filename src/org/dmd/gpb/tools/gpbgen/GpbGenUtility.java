@@ -1,6 +1,6 @@
 //	---------------------------------------------------------------------------
 //	dark-matter-data
-//	Copyright (c) 2010 dark-matter-data committers
+//	Copyright (c) 2013 dark-matter-data committers
 //	---------------------------------------------------------------------------
 //	This program is free software; you can redistribute it and/or modify it
 //	under the terms of the GNU Lesser General Public License as published by the
@@ -15,20 +15,15 @@
 //	---------------------------------------------------------------------------
 package org.dmd.gpb.tools.gpbgen;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Iterator;
 
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcValueExceptionSet;
 import org.dmd.dmc.rules.DmcRuleExceptionSet;
-import org.dmd.dms.SchemaDefinition;
-import org.dmd.dms.SchemaManager;
-import org.dmd.dms.doc.web.DmsHtmlDocGenerator;
-import org.dmd.dms.util.DmoGenerator;
-import org.dmd.dms.util.DmsSchemaParser;
+import org.dmd.gpb.tools.generation.GpbDefGenerator;
+import org.dmd.gpb.tools.generation.GpbDocGenerator;
 import org.dmd.gpb.tools.parsing.GpbDefParser;
+import org.dmd.gpb.tools.parsing.GpbDefinitionManager;
 import org.dmd.util.BooleanVar;
 import org.dmd.util.FileUpdateManager;
 import org.dmd.util.exceptions.ResultException;
@@ -39,7 +34,6 @@ import org.dmd.util.parsing.ConfigFinder;
 import org.dmd.util.parsing.ConfigLocation;
 import org.dmd.util.parsing.ConfigVersion;
 import org.dmd.util.parsing.StringArrayList;
-import org.dmd.util.parsing.TokenArrayList;
 
 /**
  * The GpbGenUtility allows for the generation of Google Protoocl Buffer prtocol specifications and
@@ -48,10 +42,13 @@ import org.dmd.util.parsing.TokenArrayList;
 public class GpbGenUtility {
 
 	// Our base schema manager
-	SchemaManager		dmsSchema;
+//	SchemaManager		dmsSchema;
 	
 	// The schema manager that will hold definitions read by the schema parser
-	SchemaManager		readSchemas;
+//	SchemaManager		readSchemas;
+	
+	// The definitions we've read
+	GpbDefinitionManager	readDefinitions;
 	
 	// Finds our available schemas
 //	DmsSchemaFinder	finder;
@@ -61,10 +58,10 @@ public class GpbGenUtility {
 //	DmsSchemaParser		parser;
 	GpbDefParser		parser;
 	
-	// The thing that will generate our DMO code
-	DmoGenerator		codeGenerator;
+	// The thing that will generate our GPB proto specs
+	GpbDefGenerator		defGenerator;
 	
-	DmsHtmlDocGenerator	docGenerator;
+	GpbDocGenerator		docGenerator;
 	
 	// Used when formatting the list of schemas
 	PrintfFormat	format;
@@ -99,9 +96,10 @@ public class GpbGenUtility {
 		
 		cl.parseArgs(args);
 		
-		dmsSchema = new SchemaManager();
+//		dmsSchema = new SchemaManager();
 		
-		readSchemas = null;
+//		readSchemas = null;
+		readDefinitions	= null;
 		
 		if (srcdir.size() > 0){
 			StringArrayList search = srcdir;
@@ -127,16 +125,16 @@ public class GpbGenUtility {
 		if (debug.booleanValue())
 			finder.debug(true);
 		
-		finder.addSuffix(".dms");
+		finder.addSuffix(".gpb");
 //		finder.addJarEnding("DMSchema.jar");
 		finder.findConfigs();
 		
 		parser  = new GpbDefParser(finder);
 		
-		codeGenerator = new DmoGenerator(System.out);
+		defGenerator = new GpbDefGenerator(System.out);
 		int longest = finder.getLongestName() + 4;
 		
-		docGenerator = new DmsHtmlDocGenerator();
+		docGenerator = new GpbDocGenerator();
 		
 		String f = "%-" + longest + "s";
 		format = new PrintfFormat(f);
@@ -144,9 +142,11 @@ public class GpbGenUtility {
 		classifier = new Classifier();
 	}
 	
+	public ConfigFinder getFinder(){
+		return(finder);
+	}
+	
 	void initHelp(){
-		String userHome = System.getProperty("user.home");
-
 		help = new StringBuffer();
 		help.append("gpbgen -h -cfg -workspace -srcdir -autogen\n");
         help.append("\n");
@@ -183,10 +183,10 @@ public class GpbGenUtility {
         help.append("\n");
 	}
 	
-	public void run() throws DmcValueExceptionSet, DmcRuleExceptionSet {
-        BufferedReader  in = new BufferedReader(new InputStreamReader(System.in));
-        String          currLine    = null;
-        TokenArrayList	tokens		= null;
+	public void run() throws DmcValueExceptionSet, DmcRuleExceptionSet, ResultException, DmcValueException {
+//        BufferedReader  in = new BufferedReader(new InputStreamReader(System.in));
+//        String          currLine    = null;
+//        TokenArrayList	tokens		= null;
         
         if (_args.length == 0 || helpFlag.booleanValue()){
         	System.out.println(help.toString());
@@ -221,10 +221,10 @@ public class GpbGenUtility {
 
 	}
 	
-	void generateFromConfig(ConfigLocation location){
-    	try {
-    		// Create a new manager into which the parsed schemas will be loaded
-    		readSchemas = new SchemaManager();
+	void generateFromConfig(ConfigLocation location) throws ResultException, DmcValueException, DmcRuleExceptionSet {
+//    	try {
+    		// Create a new manager into which the parsed definitions will be loaded
+    		readDefinitions = new GpbDefinitionManager();
     		
     		// Parse the specified schema
 //			SchemaDefinition sd = parser.parseSchema(readSchemas, location.getConfigName(), false);
@@ -236,7 +236,7 @@ public class GpbGenUtility {
 //				else
 //					docGenerator.dumpSchemaDoc(docdir.toString(), readSchemas);
 				
-				docGenerator.addReadSchemas(readSchemas);
+//				docGenerator.addReadSchemas(readSchemas);
 			}
 			else{
 				// Generate the code
@@ -250,22 +250,24 @@ public class GpbGenUtility {
 				FileUpdateManager.instance().generationComplete();
 			}
 						
-		} catch (ResultException e) {
-			System.err.println(e.toString());
-			System.exit(1);
-		} catch (DmcValueException e) {
-			System.err.println(e.toString());
-			e.printStackTrace();
-			System.exit(1);
+//		} catch (ResultException e) {
+//			System.err.println(e.toString());
+//			System.exit(1);
+//		} catch (DmcValueException e) {
+//			System.err.println(e.toString());
+//			e.printStackTrace();
+//			System.exit(1);
 //		} catch (DmcRuleExceptionSet e) {
 //			System.err.println(e.toString());
 ////			e.printStackTrace();
 //			System.exit(1);
-		} catch (IOException e) {
-			System.err.println(e.toString());
-			e.printStackTrace();
-			System.exit(1);
-		}
+//		} catch (IOException e) {
+//			System.err.println(e.toString());
+//			e.printStackTrace();
+//			System.exit(1);
+			
+			
+//		}
 
 	}
 }
