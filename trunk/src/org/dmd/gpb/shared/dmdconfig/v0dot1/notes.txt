@@ -1,0 +1,17 @@
+
+Creating a new Domain Specific Definition (DSD) package
+
+Let's say you want to create a new set of dark-matter based Domain Specific Definitions (DSDs) that
+allow you to capture concepts associated with some problem domain. For example, let's say you want
+to extend the concepts around Google Protocol Buffers (GPB) to allow for capture of the semantics
+around how a particular protocol is to be used and, from this specification, generate the GPB
+protocol specification and a nice set of documentation to which you developers can refer when
+building applications that use the protocol.
+
+Looking the Language Guide section of the <a href="https://developers.google.com/protocol-buffers/docs/proto"> Developer Guide </a>
+we see the basic concepts of message types being comprised of a collection of fields with specific types and 
+indications of whether they are required, optional or repeated. This is a good starting point, so let's start
+with that much.
+
+
+

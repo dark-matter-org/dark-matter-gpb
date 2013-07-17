@@ -73,6 +73,8 @@ public class SingleFileTest {
 		GpbGenUtility	gen = new GpbGenUtility(args);
 		
 		gen.run();
+		
+		gen.getParser();
 	}
 
 	

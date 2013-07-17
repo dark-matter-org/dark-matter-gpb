@@ -99,8 +99,9 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbDefinitionOBJ.setDmdID("-477999");
             _GpbDefinitionOBJ.setClassType("ABSTRACT");
             _GpbDefinitionOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbDefinitionOBJ.setLineNumber("16");
+            _GpbDefinitionOBJ.setLineNumber("17");
             _GpbDefinitionOBJ.setDescription("The GpbDefinition provides a common base for all dark-matter\n Google Protocol Buffer definitions.");
+            _GpbDefinitionOBJ.setDerivedFrom("meta.DMDefinition");
             _GpbDefinitionOBJ.setIsNamedBy("meta.name");
             _GpbDefinitionOBJ.setUseWrapperType("EXTENDED");
             _GpbDefinitionOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbDefinitionREF");
@@ -124,7 +125,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbTypeOBJ.setDmdID("-477998");
             _GpbTypeOBJ.setClassType("STRUCTURAL");
             _GpbTypeOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbTypeOBJ.setLineNumber("38");
+            _GpbTypeOBJ.setLineNumber("39");
             _GpbTypeOBJ.setDescription("The GpbType class is use to define the types of attributes in the GPB\n specification. All GpbMessages and GpbEnum will have GpbTypes generated for\n them so that they can be used as types for GpbAttributes.\n <p/>\n GpbType definitions cannot be specified in .dmgpb files; they are strictly for\n internal use. If you specify one in a .dmgpb file, you'll get an error.");
             _GpbTypeOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbTypeOBJ.setIsNamedBy("meta.name");
@@ -151,7 +152,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbEnumOBJ.setDmdID("-477997");
             _GpbEnumOBJ.setClassType("STRUCTURAL");
             _GpbEnumOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbEnumOBJ.setLineNumber("63");
+            _GpbEnumOBJ.setLineNumber("64");
             _GpbEnumOBJ.setDescription("The GpbEnum allows for the definition of enumerations. One thing to be aware\n of with enums is that, if you're generating C++, the names of enum elements must be globally\n unique. The dark-matter GPB utility will warn you if you have clashing enum value names.\n <p/>\n May want to allow for mapping between DMS enum definitions and GpbEnums. Provide a basedOnEnum\n attribute that refers to a DMS enum. A GpbDefinitionSet could use the schemaToLoad attribute\n to specify a DMS schema from which definitions can be pulled.\n <p/>\n When you're defining a message type, you might want one of its fields to only have one of a\n pre-defined list of values. For example, let's say you want to add a corpus field for each\n SearchRequest, where the corpus can be UNIVERSAL, WEB, IMAGES, LOCAL, NEWS, PRODUCTS or VIDEO.\n You can do this very simply by adding an enum to your message definition - a field with an enum\n type can only have one of a specified set of constants as its value (if you try to provide a\n different value, the parser will treat it like an unknown field). In the following\n example we've added an enum called Corpus with all the possible values, and a field of type Corpus:");
             _GpbEnumOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbEnumOBJ.setIsNamedBy("meta.name");
@@ -172,7 +173,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldOBJ.setDmdID("-477996");
             _GpbFieldOBJ.setClassType("STRUCTURAL");
             _GpbFieldOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbFieldOBJ.setLineNumber("72");
+            _GpbFieldOBJ.setLineNumber("73");
             _GpbFieldOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbFieldOBJ.setIsNamedBy("meta.name");
             _GpbFieldOBJ.setUseWrapperType("EXTENDED");
@@ -191,7 +192,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbMessageOBJ.setDmdID("-477995");
             _GpbMessageOBJ.setClassType("STRUCTURAL");
             _GpbMessageOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbMessageOBJ.setLineNumber("81");
+            _GpbMessageOBJ.setLineNumber("82");
             _GpbMessageOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbMessageOBJ.setIsNamedBy("meta.name");
             _GpbMessageOBJ.setUseWrapperType("EXTENDED");
@@ -210,7 +211,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleOBJ.setDmdID("-477994");
             _GpbModuleOBJ.setClassType("STRUCTURAL");
             _GpbModuleOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbModuleOBJ.setLineNumber("93");
+            _GpbModuleOBJ.setLineNumber("94");
             _GpbModuleOBJ.setDescription("The GpbModule is used to define a named collection of definitions from\n which Google Protocol Buffer (GPB) .proto files can be composed and generated. GpbModule\n are referred to by GpbArtifacts");
             _GpbModuleOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbModuleOBJ.setIsNamedBy("meta.name");
@@ -230,7 +231,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbArtifactOBJ.setDmdID("-477993");
             _GpbArtifactOBJ.setClassType("STRUCTURAL");
             _GpbArtifactOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbArtifactOBJ.setLineNumber("104");
+            _GpbArtifactOBJ.setLineNumber("105");
             _GpbArtifactOBJ.setDescription("The GpbArtifact defines an artifact to be generated by the dark-matter GPB \n generation mechanisms; the artifacts in this case are .proto files.");
             _GpbArtifactOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbArtifactOBJ.setIsNamedBy("meta.name");

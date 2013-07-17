@@ -19,11 +19,11 @@ package org.dmd.gpb.shared.generated.dmo;
 import java.io.Serializable;                                             // Always required - (GenUtility.java:221)
 import org.dmd.dmc.DmcAttribute;                                         // Named object - (GenUtility.java:373)
 import org.dmd.dmc.DmcNamedObjectIF;                                     // Named object - (GenUtility.java:372)
-import org.dmd.dmc.DmcObject;                                            // Structural class - (GenUtility.java:348)
 import org.dmd.dmc.DmcOmni;                                              // Lazy resolution - (GenUtility.java:317)
 import org.dmd.dmc.DmcValueException;                                    // Any attributes - (GenUtility.java:238)
 import org.dmd.dmc.types.DefinitionName;                                 // Naming attribute type - (GenUtility.java:367)
 import org.dmd.dmc.types.DotName;                                        // Primitive type and !auxiliary class - (GenUtility.java:268)
+import org.dmd.dms.generated.dmo.DMDefinitionDMO;                        // Base class - (GenUtility.java:352)
 import org.dmd.dms.generated.dmo.MetaDMSAG;                              // Attribute from meta schema - (GenUtility.java:194)
 import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;              // Required type - (GenUtility.java:325)
 import org.dmd.dms.generated.types.DmcTypeDotNameSV;                     // Required type - (GenUtility.java:325)
@@ -43,7 +43,7 @@ import org.dmd.gpb.shared.generated.types.GpbModuleREF;                  // Help
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-abstract public class GpbDefinitionDMO  extends DmcObject  implements DmcNamedObjectIF, Serializable  {
+abstract public class GpbDefinitionDMO  extends DMDefinitionDMO  implements DmcNamedObjectIF, Serializable  {
 
     public final static String constructionClassName = "GpbDefinition";
 
