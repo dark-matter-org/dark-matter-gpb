@@ -146,6 +146,10 @@ public class GpbGenUtility {
 		return(finder);
 	}
 	
+	public GpbDefParser getParser(){
+		return(parser);
+	}
+	
 	void initHelp(){
 		help = new StringBuffer();
 		help.append("gpbgen -h -cfg -workspace -srcdir -autogen\n");
@@ -216,7 +220,7 @@ public class GpbGenUtility {
 				System.exit(1);
 			}
         	
-        	System.exit(0);
+//        	System.exit(0);
         }
 
 	}
