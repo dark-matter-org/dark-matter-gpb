@@ -44,13 +44,15 @@ description		Indicates if an internally generated GpbType is associated with a G
 AttributeDefinition
 name			definedInGpbModule
 dmdID			8
-type			GpbModule
+//type			GpbModule
+type			String
 description		Indicates the name of the GpbModule in which a definition is defined.
 
 AttributeDefinition
 name			usesDefsFrom
 dmdID			9
-type			GpbModule
+//type			GpbModule
+type			String
 description		Indicates the name of a GpbModule from which definitions are included.
 
 AttributeDefinition

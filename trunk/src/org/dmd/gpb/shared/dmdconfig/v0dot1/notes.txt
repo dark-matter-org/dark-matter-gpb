@@ -8,10 +8,46 @@ around how a particular protocol is to be used and, from this specification, gen
 protocol specification and a nice set of documentation to which you developers can refer when
 building applications that use the protocol.
 
-Looking the Language Guide section of the <a href="https://developers.google.com/protocol-buffers/docs/proto"> Developer Guide </a>
+Looking at the Language Guide section of the <a href="https://developers.google.com/protocol-buffers/docs/proto"> Developer Guide </a>
 we see the basic concepts of message types being comprised of a collection of fields with specific types and 
 indications of whether they are required, optional or repeated. This is a good starting point, so let's start
 with that much.
+
+
+We start with the concept of DSDefinitionModule. A Domain Specific Definition Module indicates the
+set of definitions that describe the concepts you're trying to convey. By convention, you'll create
+a base definition for your DSD language, for example:
+
+
+ClassDefinition
+name			GpbDefinition
+classType   	ABSTRACT
+dmdID			2
+useWrapperType	EXTENDED
+derivedFrom		DMDefinition
+isNamedBy		name
+must			name
+must			dotName
+must			definedInGpbModule
+may				gpbHint
+description		The GpbDefinition provides a common base for all dark-matter
+ Google Protocol Buffer definitions. 
+
+
+This base ClassDefinition is derived from DMDefinition which indicates that it's part of a DSD language.
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------
+
+Conventions
+
+The first definition in a DSD file is a module definition
+
 
 
 

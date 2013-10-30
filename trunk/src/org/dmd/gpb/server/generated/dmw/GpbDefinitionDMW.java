@@ -23,9 +23,7 @@ import org.dmd.dmc.types.DotName;                                 // Primitive t
 import org.dmd.dms.ClassDefinition;                               // Passing derived class def up the hierarchy - (BaseDMWGeneratorNewest.java:940)
 import org.dmd.dms.DMDefinition;                                  // Derived class - (BaseDMWGeneratorNewest.java:1117)
 import org.dmd.gpb.server.extended.GpbDefinition;                 // Required for getModificationRecorder() - (BaseDMWGeneratorNewest.java:949)
-import org.dmd.gpb.server.extended.GpbModule;                     // Is reference type - (BaseDMWGeneratorNewest.java:976)
 import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Abstract class - (BaseDMWGeneratorNewest.java:1099)
-import org.dmd.gpb.shared.generated.types.GpbModuleREF;           // Is reference type REF - (BaseDMWGeneratorNewest.java:984)
 
 
 /**
@@ -74,36 +72,26 @@ abstract public class GpbDefinitionDMW extends DMDefinition implements DmcNamedO
         return(false);
     }
 
-    /**
-     * @return A GpbModule object.
-     */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1303)
-    public GpbModule getDefinedInGpbModule(){
-        GpbModuleREF ref = ((GpbDefinitionDMO) core).getDefinedInGpbModule();
-        if (ref == null)
-            return(null);
-        
-        if (ref.getObject() == null)
-            return(null);
-        
-        return((GpbModule)ref.getObject().getContainer());
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1343)
+    public String getDefinedInGpbModule(){
+        return(((GpbDefinitionDMO) core).getDefinedInGpbModule());
     }
 
     /**
-     * Sets the definedInGpbModule to the specified value.
-     * @param value A value compatible with GpbModuleREF
+     * Sets definedInGpbModule to the specified value.
+     * @param value A value compatible with DmcTypeString
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1388)
-    public void setDefinedInGpbModule(GpbModule value) {
-        ((GpbDefinitionDMO) core).setDefinedInGpbModule(value.getDMO());
-    }
-
-    /**
-     * Sets the definedInGpbModule to the specified value.
-     * @param value A value compatible with GpbModuleREF
-     */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1397)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1453)
     public void setDefinedInGpbModule(Object value) throws DmcValueException {
+        ((GpbDefinitionDMO) core).setDefinedInGpbModule(value);
+    }
+
+    /**
+     * Sets definedInGpbModule to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1462)
+    public void setDefinedInGpbModule(String value){
         ((GpbDefinitionDMO) core).setDefinedInGpbModule(value);
     }
 
@@ -113,37 +101,6 @@ abstract public class GpbDefinitionDMW extends DMDefinition implements DmcNamedO
     // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1488)
     public void remDefinedInGpbModule(){
         ((GpbDefinitionDMO) core).remDefinedInGpbModule();
-    }
-
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1343)
-    public String getDescription(){
-        return(((GpbDefinitionDMO) core).getDescription());
-    }
-
-    /**
-     * Sets description to the specified value.
-     * @param value A value compatible with DmcTypeString
-     */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1453)
-    public void setDescription(Object value) throws DmcValueException {
-        ((GpbDefinitionDMO) core).setDescription(value);
-    }
-
-    /**
-     * Sets description to the specified value.
-     * @param value String
-     */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1462)
-    public void setDescription(String value){
-        ((GpbDefinitionDMO) core).setDescription(value);
-    }
-
-    /**
-     * Removes the description attribute value.
-     */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1488)
-    public void remDescription(){
-        ((GpbDefinitionDMO) core).remDescription();
     }
 
     // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1343)
@@ -178,37 +135,6 @@ abstract public class GpbDefinitionDMW extends DMDefinition implements DmcNamedO
     }
 
     // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1343)
-    public String getFile(){
-        return(((GpbDefinitionDMO) core).getFile());
-    }
-
-    /**
-     * Sets file to the specified value.
-     * @param value A value compatible with DmcTypeString
-     */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1453)
-    public void setFile(Object value) throws DmcValueException {
-        ((GpbDefinitionDMO) core).setFile(value);
-    }
-
-    /**
-     * Sets file to the specified value.
-     * @param value String
-     */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1462)
-    public void setFile(String value){
-        ((GpbDefinitionDMO) core).setFile(value);
-    }
-
-    /**
-     * Removes the file attribute value.
-     */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1488)
-    public void remFile(){
-        ((GpbDefinitionDMO) core).remFile();
-    }
-
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1343)
     public String getGpbHint(){
         return(((GpbDefinitionDMO) core).getGpbHint());
     }
@@ -237,37 +163,6 @@ abstract public class GpbDefinitionDMW extends DMDefinition implements DmcNamedO
     // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1488)
     public void remGpbHint(){
         ((GpbDefinitionDMO) core).remGpbHint();
-    }
-
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1343)
-    public Integer getLineNumber(){
-        return(((GpbDefinitionDMO) core).getLineNumber());
-    }
-
-    /**
-     * Sets lineNumber to the specified value.
-     * @param value A value compatible with DmcTypeInteger
-     */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1453)
-    public void setLineNumber(Object value) throws DmcValueException {
-        ((GpbDefinitionDMO) core).setLineNumber(value);
-    }
-
-    /**
-     * Sets lineNumber to the specified value.
-     * @param value Integer
-     */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1462)
-    public void setLineNumber(Integer value){
-        ((GpbDefinitionDMO) core).setLineNumber(value);
-    }
-
-    /**
-     * Removes the lineNumber attribute value.
-     */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1488)
-    public void remLineNumber(){
-        ((GpbDefinitionDMO) core).remLineNumber();
     }
 
     // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1343)

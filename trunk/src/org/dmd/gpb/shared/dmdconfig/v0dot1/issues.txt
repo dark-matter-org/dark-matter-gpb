@@ -1,0 +1,6 @@
+How to handled the standard concept of a definition being defined in a module i.e. setting a definedInXModule attribute on all definitions
+For now, just using a string for definedInGpbModule
+
+
+Same issue with usesDefsFrom - this is a module specific attribute, but it would be better if we had a generic way of handling this
+
