@@ -86,7 +86,7 @@ public class GpbTypeDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
         return(rc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:744)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:750)
     public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
@@ -95,13 +95,13 @@ public class GpbTypeDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
         return(null);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:761)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:767)
     public DmcAttribute<?> getObjectNameAttribute(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         return(name);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:774)
     public boolean equals(Object obj){
         if (obj instanceof GpbTypeDMO){
             return( getObjectName().equals( ((GpbTypeDMO) obj).getObjectName()) );
@@ -109,7 +109,7 @@ public class GpbTypeDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
         return(false);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:776)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:782)
     public int hashCode(){
         DefinitionName objn = getObjectName();
         if (objn == null)

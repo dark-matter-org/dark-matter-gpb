@@ -100,7 +100,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbDefinitionOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
             _GpbDefinitionOBJ.setLineNumber("26");
             _GpbDefinitionOBJ.setDescription("The GpbDefinition provides a common base for all dark-matter\n Google Protocol Buffer definitions.");
-            _GpbDefinitionOBJ.setDerivedFrom("meta.DMDefinition");
+            _GpbDefinitionOBJ.setDerivedFrom("meta.DSDefinition");
             _GpbDefinitionOBJ.setIsNamedBy("meta.name");
             _GpbDefinitionOBJ.setUseWrapperType("EXTENDED");
             _GpbDefinitionOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbDefinitionREF");

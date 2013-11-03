@@ -22,7 +22,7 @@ import org.dmd.dmc.DmcNamedObjectIF;                                // Named obj
 import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:238)
 import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:367)
 import org.dmd.dmc.types.DotName;                                   // Primitive type and !auxiliary class - (GenUtility.java:268)
-import org.dmd.dms.generated.dmo.DMDefinitionDMO;                   // Base class - (GenUtility.java:352)
+import org.dmd.dms.generated.dmo.DSDefinitionDMO;                   // Base class - (GenUtility.java:352)
 import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Attribute from meta schema - (GenUtility.java:194)
 import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:325)
 import org.dmd.dms.generated.types.DmcTypeDotNameSV;                // Required type - (GenUtility.java:325)
@@ -38,7 +38,7 @@ import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required 
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-abstract public class GpbDefinitionDMO  extends DMDefinitionDMO  implements DmcNamedObjectIF, Serializable  {
+abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcNamedObjectIF, Serializable  {
 
     public final static String constructionClassName = "GpbDefinition";
 
@@ -54,7 +54,7 @@ abstract public class GpbDefinitionDMO  extends DMDefinitionDMO  implements DmcN
         super(oc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:744)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:750)
     public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
@@ -63,13 +63,13 @@ abstract public class GpbDefinitionDMO  extends DMDefinitionDMO  implements DmcN
         return(null);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:761)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:767)
     public DmcAttribute<?> getObjectNameAttribute(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         return(name);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:774)
     public boolean equals(Object obj){
         if (obj instanceof GpbDefinitionDMO){
             return( getObjectName().equals( ((GpbDefinitionDMO) obj).getObjectName()) );
@@ -77,7 +77,7 @@ abstract public class GpbDefinitionDMO  extends DMDefinitionDMO  implements DmcN
         return(false);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:776)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:782)
     public int hashCode(){
         DefinitionName objn = getObjectName();
         if (objn == null)
