@@ -19,18 +19,17 @@ package org.dmd.gpb.shared.generated.dmo;
 import java.io.Serializable;                                        // Always required - (GenUtility.java:221)
 import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:373)
 import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:372)
+import org.dmd.dmc.DmcObject;                                       // Structural class - (GenUtility.java:348)
 import org.dmd.dmc.DmcSliceInfo;                                    // Required for object slicing - (GenUtility.java:226)
 import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:238)
 import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:367)
 import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Required for MODREC constructor - (GenUtility.java:225)
 import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:325)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;               // Required for MODREC constructor - (GenUtility.java:224)
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;           // Base class - (GenUtility.java:352)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:325)
 
 /**
- * The GpbModule is used to define a named collection of definitions from\n
- * which Google Protocol Buffer (GPB) .proto files can be composed and
- * generated. GpbModule\n are referred to by GpbArtifacts
+ * null
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -38,7 +37,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;           // Base clas
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, Serializable  {
+public class GpbModuleDMO  extends DmcObject  implements DmcNamedObjectIF, Serializable  {
 
     public final static String constructionClassName = "GpbModule";
 
@@ -81,7 +80,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
         return(rc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:744)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:750)
     public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
@@ -90,13 +89,13 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
         return(null);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:761)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:767)
     public DmcAttribute<?> getObjectNameAttribute(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         return(name);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:774)
     public boolean equals(Object obj){
         if (obj instanceof GpbModuleDMO){
             return( getObjectName().equals( ((GpbModuleDMO) obj).getObjectName()) );
@@ -104,13 +103,63 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
         return(false);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:776)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:782)
     public int hashCode(){
         DefinitionName objn = getObjectName();
         if (objn == null)
             return(0);
         
         return(objn.hashCode());
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)
+    public String getDescription(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(MetaDMSAG.__description);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets description to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:821)
+    public void setDescription(String value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        if (attr == null)
+            attr = new DmcTypeStringSV(MetaDMSAG.__description);
+        
+        try{
+            attr.set(value);
+            set(MetaDMSAG.__description,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets description to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
+    public void setDescription(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(MetaDMSAG.__description);
+        if (attr == null)
+            attr = new DmcTypeStringSV(MetaDMSAG.__description);
+        
+        attr.set(value);
+        set(MetaDMSAG.__description,attr);
+    }
+
+    /**
+     * Removes the description attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
+    public void remDescription(){
+         rem(MetaDMSAG.__description);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)

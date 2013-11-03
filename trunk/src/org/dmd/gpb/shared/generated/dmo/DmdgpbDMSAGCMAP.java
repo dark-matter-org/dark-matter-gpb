@@ -15,6 +15,7 @@ public class DmdgpbDMSAGCMAP {
         _CmAp.put(DmdgpbDMSAG.__GpbEnum.id,DmdgpbDMSAG.__GpbEnum);
         _CmAp.put(DmdgpbDMSAG.__GpbField.id,DmdgpbDMSAG.__GpbField);
         _CmAp.put(DmdgpbDMSAG.__GpbMessage.id,DmdgpbDMSAG.__GpbMessage);
+        _CmAp.put(DmdgpbDMSAG.__GpbModule.id,DmdgpbDMSAG.__GpbModule);
         _CmAp.put(DmdgpbDMSAG.__GpbType.id,DmdgpbDMSAG.__GpbType);
     }
 

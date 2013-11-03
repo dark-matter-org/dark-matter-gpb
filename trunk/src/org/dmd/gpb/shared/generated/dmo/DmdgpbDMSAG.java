@@ -51,6 +51,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcTypeInfo __type_GpbFieldIndicator = new DmcTypeInfo("GpbFieldIndicator", OriginalTypeEnum.COMPLEXTYPE);
     public final static DmcTypeInfo __type_GpbFieldRuleEnum = new DmcTypeInfo("GpbFieldRuleEnum", OriginalTypeEnum.ENUM);
     public final static DmcTypeInfo __type_GpbMessage = new DmcTypeInfo("GpbMessage", OriginalTypeEnum.REFERENCE);
+    public final static DmcTypeInfo __type_GpbModule = new DmcTypeInfo("GpbModule", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_GpbType = new DmcTypeInfo("GpbType", OriginalTypeEnum.REFERENCE);
 
     // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:213)
@@ -60,6 +61,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcClassInfo __GpbField = new DmcClassInfo("GpbField","org.dmd.gpb.shared.generated.dmo.GpbFieldDMO", -477995, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__name);
     public final static DmcClassInfo __GpbMessage = new DmcClassInfo("GpbMessage","org.dmd.gpb.shared.generated.dmo.GpbMessageDMO", -477994, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__name);
     public final static DmcClassInfo __GpbType = new DmcClassInfo("GpbType","org.dmd.gpb.shared.generated.dmo.GpbTypeDMO", -477997, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbDefinition,MetaDMSAG.__name);
+    public final static DmcClassInfo __GpbModule = new DmcClassInfo("GpbModule","org.dmd.gpb.shared.generated.dmo.GpbModuleDMO", -477999, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,null,MetaDMSAG.__name);
 
     static  HashMap<Integer, DmcClassInfo> _CmAp;
 
@@ -99,6 +101,9 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:296)
     static {
 
+
+        __GpbModule.addMust(MetaDMSAG.__name);
+        __GpbModule.addMay(MetaDMSAG.__description);
 
         __GpbDefinition.addMust(MetaDMSAG.__name);
         __GpbDefinition.addMust(MetaDMSAG.__dotName);
