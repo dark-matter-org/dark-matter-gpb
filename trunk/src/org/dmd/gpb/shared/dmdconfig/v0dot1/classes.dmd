@@ -15,7 +15,7 @@ name			GpbDefinition
 classType   	ABSTRACT
 dmdID			2
 useWrapperType	EXTENDED
-derivedFrom		DMDefinition
+derivedFrom		DSDefinition
 isNamedBy		name
 must			name
 must			dotName
