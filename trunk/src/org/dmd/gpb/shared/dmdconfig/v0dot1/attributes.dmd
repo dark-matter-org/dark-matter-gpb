@@ -73,3 +73,8 @@ dmdID			12
 type			EnumDefinition
 description		Indicates that a GPB enum is based on a dark-matter schema defined enumeration.
 
+AttributeDefinition
+name			dependsOnGpbModule
+dmdID			20
+type			GpbModule
+description		Indicates the GpbModule on which something depends.

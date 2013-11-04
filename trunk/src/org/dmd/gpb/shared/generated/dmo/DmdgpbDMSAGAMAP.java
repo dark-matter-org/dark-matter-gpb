@@ -14,6 +14,7 @@ public class DmdgpbDMSAGAMAP {
         _SmAp.put(DmdgpbDMSAG.__cplusplusType.id,DmdgpbDMSAG.__cplusplusType);
         _SmAp.put(DmdgpbDMSAG.__defaultValue.id,DmdgpbDMSAG.__defaultValue);
         _SmAp.put(DmdgpbDMSAG.__definedInGpbModule.id,DmdgpbDMSAG.__definedInGpbModule);
+        _SmAp.put(DmdgpbDMSAG.__dependsOnGpbModule.id,DmdgpbDMSAG.__dependsOnGpbModule);
         _SmAp.put(DmdgpbDMSAG.__dmType.id,DmdgpbDMSAG.__dmType);
         _SmAp.put(DmdgpbDMSAG.__gpbHint.id,DmdgpbDMSAG.__gpbHint);
         _SmAp.put(DmdgpbDMSAG.__gpbType.id,DmdgpbDMSAG.__gpbType);
