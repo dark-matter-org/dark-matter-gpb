@@ -58,6 +58,6 @@ Conventions
 
 The first definition in a DSD file is a module definition
 
-
+Or, a DSDModule always has a DMDID of 1
 
 

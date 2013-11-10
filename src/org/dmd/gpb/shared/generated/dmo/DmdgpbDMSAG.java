@@ -103,9 +103,6 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     static {
 
 
-        __GpbModule.addMust(MetaDMSAG.__name);
-        __GpbModule.addMay(MetaDMSAG.__description);
-
         __GpbDefinition.addMust(MetaDMSAG.__name);
         __GpbDefinition.addMust(MetaDMSAG.__dotName);
         __GpbDefinition.addMust(__definedInGpbModule);
@@ -128,6 +125,9 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         __GpbMessage.addMust(MetaDMSAG.__name);
 
         __GpbArtifact.addMust(MetaDMSAG.__name);
+
+        __GpbModule.addMust(MetaDMSAG.__name);
+        __GpbModule.addMay(MetaDMSAG.__description);
 
     }
 

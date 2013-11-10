@@ -1,0 +1,13 @@
+DSDefinitionModule
+name						GpbModule
+fileExtension				gpb
+dmdID						1
+moduleClassName				GpbModule
+moduleDependenceAttribute 	dependsOnGpbModule
+baseDefinition				GpbDefinition
+usesDefinition				GpbType
+usesDefinition				GpbEnum
+usesDefinition				GpbField
+usesDefinition				GpbMessage
+usesDefinition				GpbArtifact
+
