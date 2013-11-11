@@ -5,7 +5,7 @@ Let's say you want to create a new set of dark-matter based Domain Specific Defi
 allow you to capture concepts associated with some problem domain. For example, let's say you want
 to extend the concepts around Google Protocol Buffers (GPB) to allow for the capture of the semantics
 around how a particular protocol is to be used and, from this specification, generate the GPB
-protocol specification and a nice set of documentation to which you developers can refer when
+protocol specification and a nice set of documentation to which your developers can refer when
 building applications that use the protocol.
 
 Looking at the Language Guide section of the <a href="https://developers.google.com/protocol-buffers/docs/proto"> Developer Guide </a>
