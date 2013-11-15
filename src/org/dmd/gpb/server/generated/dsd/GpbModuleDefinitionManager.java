@@ -16,16 +16,16 @@
 package org.dmd.gpb.server.generated.dsd;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:94)
-import org.dmd.dmc.definitions.DmcDefinitionSet;          // Our base to provide definition set storage - (DSDArtifactFormatter.java:92)
-import org.dmd.gpb.server.extended.GpbArtifact;           // A definition from the GpbModule Module - (DSDArtifactFormatter.java:120)
-import org.dmd.gpb.server.extended.GpbDefinition;         // A definition from the GpbModule Module - (DSDArtifactFormatter.java:117)
-import org.dmd.gpb.server.extended.GpbEnum;               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:120)
-import org.dmd.gpb.server.extended.GpbField;              // A definition from the GpbModule Module - (DSDArtifactFormatter.java:120)
-import org.dmd.gpb.server.extended.GpbMessage;            // A definition from the GpbModule Module - (DSDArtifactFormatter.java:120)
-import org.dmd.gpb.server.extended.GpbType;               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:120)
+// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:105)
+import org.dmd.dmc.definitions.DmcDefinitionSet;          // Our base to provide definition set storage - (DSDArtifactFormatter.java:103)
+import org.dmd.gpb.server.extended.GpbArtifact;           // A definition from the GpbModule Module - (DSDArtifactFormatter.java:138)
+import org.dmd.gpb.server.extended.GpbDefinition;         // A definition from the GpbModule Module - (DSDArtifactFormatter.java:135)
+import org.dmd.gpb.server.extended.GpbEnum;               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:138)
+import org.dmd.gpb.server.extended.GpbField;              // A definition from the GpbModule Module - (DSDArtifactFormatter.java:138)
+import org.dmd.gpb.server.extended.GpbMessage;            // A definition from the GpbModule Module - (DSDArtifactFormatter.java:138)
+import org.dmd.gpb.server.extended.GpbType;               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:138)
 
-// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:98)
+// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:109)
 public class GpbModuleDefinitionManager {
 
     DmcDefinitionSet<GpbDefinition> GpbDefinitionDefs;
