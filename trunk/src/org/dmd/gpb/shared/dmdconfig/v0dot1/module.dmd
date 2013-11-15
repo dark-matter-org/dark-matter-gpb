@@ -5,6 +5,7 @@ dmdID						1
 moduleClassName				GpbModule
 moduleDependenceAttribute 	dependsOnGpbModule
 baseDefinition				GpbDefinition
+definedInModuleAttribute	definedInGpbModule
 //usesDefinition				GpbType
 //usesDefinition				GpbEnum
 //usesDefinition				GpbField

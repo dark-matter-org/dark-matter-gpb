@@ -16,17 +16,21 @@
 package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:393)
-import java.io.Serializable;                                        // Always required - (GenUtility.java:221)
-import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:373)
-import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:372)
-import org.dmd.dmc.DmcObject;                                       // Structural class - (GenUtility.java:348)
-import org.dmd.dmc.DmcSliceInfo;                                    // Required for object slicing - (GenUtility.java:226)
-import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:238)
-import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:367)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Required for MODREC constructor - (GenUtility.java:225)
-import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:325)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;               // Required for MODREC constructor - (GenUtility.java:224)
-import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:325)
+import java.io.Serializable;                                             // Always required - (GenUtility.java:221)
+import org.dmd.dmc.DmcAttribute;                                         // Named object - (GenUtility.java:373)
+import org.dmd.dmc.DmcNamedObjectIF;                                     // Named object - (GenUtility.java:372)
+import org.dmd.dmc.DmcObject;                                            // Structural class - (GenUtility.java:348)
+import org.dmd.dmc.DmcOmni;                                              // Lazy resolution - (GenUtility.java:317)
+import org.dmd.dmc.DmcSliceInfo;                                         // Required for object slicing - (GenUtility.java:226)
+import org.dmd.dmc.DmcValueException;                                    // Any attributes - (GenUtility.java:238)
+import org.dmd.dmc.types.DefinitionName;                                 // Naming attribute type - (GenUtility.java:367)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                              // Required for MODREC constructor - (GenUtility.java:225)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;              // Required type - (GenUtility.java:325)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                    // Required for MODREC constructor - (GenUtility.java:224)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                      // Required type - (GenUtility.java:325)
+import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                    // Type specific set/add - (GenUtility.java:304)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbModuleREFSV;         // Reference type - (GenUtility.java:297)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;                  // Helper class - (GenUtility.java:332)
 
 /**
  * null
@@ -160,6 +164,78 @@ public class GpbModuleDMO  extends DmcObject  implements DmcNamedObjectIF, Seria
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
     public void remDescription(){
          rem(MetaDMSAG.__description);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:652)
+    public GpbModuleREF getDependsOnGpbModule(){
+        DmcTypeGpbModuleREFSV attr = (DmcTypeGpbModuleREFSV) get(DmdgpbDMSAG.__dependsOnGpbModule);
+        if (attr == null)
+            return(null);
+
+        if (DmcOmni.instance().lazyResolution()){
+            if (attr.doLazyResolution(this)){
+                rem(attr.getAttributeInfo());
+                return(null);
+            }
+        }
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Returns the reference to GpbModule without attempting lazy resolution (if turned on).
+     */
+    public GpbModuleREF getDependsOnGpbModuleREF(){
+        DmcTypeGpbModuleREFSV attr = (DmcTypeGpbModuleREFSV) get(DmdgpbDMSAG.__dependsOnGpbModule);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets dependsOnGpbModule to the specified value.
+     * @param value GpbModuleDMO
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:706)
+    public void setDependsOnGpbModule(GpbModuleDMO value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__dependsOnGpbModule);
+        if (attr == null)
+            attr = new DmcTypeGpbModuleREFSV(DmdgpbDMSAG.__dependsOnGpbModule);
+        else
+            ((DmcTypeGpbModuleREFSV)attr).removeBackReferences();
+        
+        try{
+            attr.set(value);
+            set(DmdgpbDMSAG.__dependsOnGpbModule,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets dependsOnGpbModule to the specified value.
+     * @param value A value compatible with DmcTypeGpbModuleREFSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
+    public void setDependsOnGpbModule(Object value) throws DmcValueException {
+        DmcTypeGpbModuleREFSV attr  = (DmcTypeGpbModuleREFSV) get(DmdgpbDMSAG.__dependsOnGpbModule);
+        if (attr == null)
+            attr = new DmcTypeGpbModuleREFSV(DmdgpbDMSAG.__dependsOnGpbModule);
+        else
+            attr.removeBackReferences();
+        
+        attr.set(value);
+        set(DmdgpbDMSAG.__dependsOnGpbModule,attr);
+    }
+
+    /**
+     * Removes the dependsOnGpbModule attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
+    public void remDependsOnGpbModule(){
+         rem(DmdgpbDMSAG.__dependsOnGpbModule);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)

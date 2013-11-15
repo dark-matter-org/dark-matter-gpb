@@ -17,13 +17,15 @@ package org.dmd.gpb.server.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGeneratorNewest.dumpWrapper(BaseDMWGeneratorNewest.java:365)
-import org.dmd.dmc.*;                                         // If any attributes - (BaseDMWGeneratorNewest.java:979)
-import org.dmd.dmc.types.DefinitionName;                      // Is named by - (BaseDMWGeneratorNewest.java:958)
-import org.dmd.dms.ClassDefinition;                           // Passing derived class def up the hierarchy - (BaseDMWGeneratorNewest.java:963)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                   // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:968)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;         // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:967)
-import org.dmd.dmw.DmwNamedObjectWrapper;                     // Named object wrapper - (BaseDMWGeneratorNewest.java:1134)
-import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;         // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1144)
+import org.dmd.dmc.*;                                           // If any attributes - (BaseDMWGeneratorNewest.java:979)
+import org.dmd.dmc.types.DefinitionName;                        // Is named by - (BaseDMWGeneratorNewest.java:958)
+import org.dmd.dms.ClassDefinition;                             // Passing derived class def up the hierarchy - (BaseDMWGeneratorNewest.java:963)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                     // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:968)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;           // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:967)
+import org.dmd.dmw.DmwNamedObjectWrapper;                       // Named object wrapper - (BaseDMWGeneratorNewest.java:1134)
+import org.dmd.gpb.server.generated.dmw.GpbModuleDMW;           // Is reference type - (BaseDMWGeneratorNewest.java:999)
+import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;           // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1144)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;         // Is reference type REF - (BaseDMWGeneratorNewest.java:1007)
 
 
 /**
@@ -92,6 +94,47 @@ public class GpbModuleDMW extends DmwNamedObjectWrapper implements DmcNamedObjec
             return( getObjectName().equals( ((GpbModuleDMW) obj).getObjectName()) );
         }
         return(false);
+    }
+
+    /**
+     * @return A GpbModuleDMW object.
+     */
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1326)
+    public GpbModuleDMW getDependsOnGpbModule(){
+        GpbModuleREF ref = ((GpbModuleDMO) core).getDependsOnGpbModule();
+        if (ref == null)
+            return(null);
+        
+        if (ref.getObject() == null)
+            return(null);
+        
+        return((GpbModuleDMW)ref.getObject().getContainer());
+    }
+
+    /**
+     * Sets the dependsOnGpbModule to the specified value.
+     * @param value A value compatible with GpbModuleREF
+     */
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1411)
+    public void setDependsOnGpbModule(GpbModuleDMW value) {
+        ((GpbModuleDMO) core).setDependsOnGpbModule(value.getDMO());
+    }
+
+    /**
+     * Sets the dependsOnGpbModule to the specified value.
+     * @param value A value compatible with GpbModuleREF
+     */
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1420)
+    public void setDependsOnGpbModule(Object value) throws DmcValueException {
+        ((GpbModuleDMO) core).setDependsOnGpbModule(value);
+    }
+
+    /**
+     * Removes the dependsOnGpbModule attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1511)
+    public void remDependsOnGpbModule(){
+        ((GpbModuleDMO) core).remDependsOnGpbModule();
     }
 
     // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1366)
