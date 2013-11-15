@@ -23,7 +23,7 @@ import org.dmd.dms.ClassDefinition;                             // Passing deriv
 import org.dmd.dms.generated.dmo.MetaDMSAG;                     // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:968)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;           // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:967)
 import org.dmd.dmw.DmwNamedObjectWrapper;                       // Named object wrapper - (BaseDMWGeneratorNewest.java:1134)
-import org.dmd.gpb.server.generated.dmw.GpbModuleDMW;           // Is reference type - (BaseDMWGeneratorNewest.java:999)
+import org.dmd.gpb.server.extended.GpbModule;                   // Required for getModificationRecorder() - (BaseDMWGeneratorNewest.java:972)
 import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;           // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1144)
 import org.dmd.gpb.shared.generated.types.GpbModuleREF;         // Is reference type REF - (BaseDMWGeneratorNewest.java:1007)
 
@@ -48,9 +48,9 @@ public class GpbModuleDMW extends DmwNamedObjectWrapper implements DmcNamedObjec
         super(new GpbModuleDMO(mods), org.dmd.gpb.server.generated.DmdgpbSchemaAG._GpbModule);
     }
 
-    // Generated from: org.dmd.dmg.generators.BaseDMWGeneratorNewest.dumpWrapper(BaseDMWGeneratorNewest.java:527)
-    public GpbModuleDMW getModificationRecorder(){
-        GpbModuleDMW rc = new GpbModuleDMW();
+    // Generated from: org.dmd.dmg.generators.BaseDMWGeneratorNewest.dumpWrapper(BaseDMWGeneratorNewest.java:518)
+    public GpbModule getModificationRecorder(){
+        GpbModule rc = new GpbModule();
         rc.setName(getName());
         rc.setModifier(new DmcTypeModifierMV(MetaDMSAG.__modify));
         return(rc);
@@ -61,8 +61,8 @@ public class GpbModuleDMW extends DmwNamedObjectWrapper implements DmcNamedObjec
         super(obj, org.dmd.gpb.server.generated.DmdgpbSchemaAG._GpbModule);
     }
 
-    public GpbModuleDMW cloneIt() {
-        GpbModuleDMW rc = new GpbModuleDMW();
+    public GpbModule cloneIt() {
+        GpbModule rc = new GpbModule();
         rc.setDmcObject(getDMO().cloneIt());
         return(rc);
     }
@@ -97,10 +97,10 @@ public class GpbModuleDMW extends DmwNamedObjectWrapper implements DmcNamedObjec
     }
 
     /**
-     * @return A GpbModuleDMW object.
+     * @return A GpbModule object.
      */
     // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1326)
-    public GpbModuleDMW getDependsOnGpbModule(){
+    public GpbModule getDependsOnGpbModule(){
         GpbModuleREF ref = ((GpbModuleDMO) core).getDependsOnGpbModule();
         if (ref == null)
             return(null);
@@ -108,7 +108,7 @@ public class GpbModuleDMW extends DmwNamedObjectWrapper implements DmcNamedObjec
         if (ref.getObject() == null)
             return(null);
         
-        return((GpbModuleDMW)ref.getObject().getContainer());
+        return((GpbModule)ref.getObject().getContainer());
     }
 
     /**
@@ -116,7 +116,7 @@ public class GpbModuleDMW extends DmwNamedObjectWrapper implements DmcNamedObjec
      * @param value A value compatible with GpbModuleREF
      */
     // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1411)
-    public void setDependsOnGpbModule(GpbModuleDMW value) {
+    public void setDependsOnGpbModule(GpbModule value) {
         ((GpbModuleDMO) core).setDependsOnGpbModule(value.getDMO());
     }
 
