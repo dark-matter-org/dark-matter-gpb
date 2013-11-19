@@ -41,6 +41,7 @@ import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldRuleEnumSTATIC;        
 import org.dmd.gpb.shared.generated.types.GpbFieldREF;                           // Object reference - (ComplexTypeFormatter.java:457)
 
 
+
 @SuppressWarnings("serial")
 /**
  * The GpbFieldIndicator class.

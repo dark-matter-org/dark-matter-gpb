@@ -231,6 +231,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleOBJ.setClassType("STRUCTURAL");
             _GpbModuleOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/module.dmd");
             _GpbModuleOBJ.setLineNumber("14");
+            _GpbModuleOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbModuleOBJ.setIsNamedBy("meta.name");
             _GpbModuleOBJ.setUseWrapperType("EXTENDED");
             _GpbModuleOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbModuleREF");
@@ -239,6 +240,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleOBJ.addMay("dmdgpb.dependsOnGpbModule");
             _GpbModuleOBJ.addMust("meta.name");
             _GpbModuleOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbModuleIterableDMW");
+            _GpbModuleOBJ.setDsdModuleDefinition("dmdgpb.GpbModule");
             _GpbModuleOBJ.setDotName("dmdgpb.GpbModule.ClassDefinition");
             _GpbModule.setDefinedIn(this);
             addClassDefList(_GpbModule);
