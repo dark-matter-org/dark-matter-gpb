@@ -18,12 +18,12 @@ package org.dmd.gpb.server.generated.dsd;
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateScopedInterface(DSDArtifactFormatter.java:305)
 import java.util.Iterator;                                // To provide iterators over definitions - (DSDArtifactFormatter.java:302)
-import org.dmd.gpb.server.extended.GpbArtifact;           // A definition from the GpbModule Module - (DSDefinitionModule.java:122)
-import org.dmd.gpb.server.extended.GpbDefinition;         // A definition from the GpbModule Module - (DSDefinitionModule.java:111)
-import org.dmd.gpb.server.extended.GpbEnum;               // A definition from the GpbModule Module - (DSDefinitionModule.java:122)
-import org.dmd.gpb.server.extended.GpbField;              // A definition from the GpbModule Module - (DSDefinitionModule.java:122)
-import org.dmd.gpb.server.extended.GpbMessage;            // A definition from the GpbModule Module - (DSDefinitionModule.java:122)
-import org.dmd.gpb.server.extended.GpbType;               // A definition from the GpbModule Module - (DSDefinitionModule.java:122)
+import org.dmd.gpb.server.extended.GpbArtifact;           // A definition from the GpbModule Module - (DSDefinitionModule.java:159)
+import org.dmd.gpb.server.extended.GpbDefinition;         // A definition from the GpbModule Module - (DSDefinitionModule.java:148)
+import org.dmd.gpb.server.extended.GpbEnum;               // A definition from the GpbModule Module - (DSDefinitionModule.java:159)
+import org.dmd.gpb.server.extended.GpbField;              // A definition from the GpbModule Module - (DSDefinitionModule.java:159)
+import org.dmd.gpb.server.extended.GpbMessage;            // A definition from the GpbModule Module - (DSDefinitionModule.java:159)
+import org.dmd.gpb.server.extended.GpbType;               // A definition from the GpbModule Module - (DSDefinitionModule.java:159)
 
 
 // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateScopedInterface(DSDArtifactFormatter.java:309)

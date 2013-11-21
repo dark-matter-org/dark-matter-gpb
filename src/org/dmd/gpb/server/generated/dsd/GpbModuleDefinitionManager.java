@@ -53,7 +53,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
 
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:164)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:201)
     // Called from: org.dmd.dmg.generators.DSDArtifactFormatter.dumpDefinitionInterfaceMethods(DSDArtifactFormatter.java:196)
     /**
      * All definitions are added to the base definition collection.
@@ -70,7 +70,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         return(GpbDefinitionDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:189)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
     public void addGpbType(GpbType def){
         GpbTypeDefs.add(def);
         addGpbDefinition(def);
@@ -84,7 +84,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         return(GpbTypeDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:189)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
     public void addGpbEnum(GpbEnum def){
         GpbEnumDefs.add(def);
         addGpbDefinition(def);
@@ -98,7 +98,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         return(GpbEnumDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:189)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
     public void addGpbField(GpbField def){
         GpbFieldDefs.add(def);
         addGpbDefinition(def);
@@ -112,7 +112,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         return(GpbFieldDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:189)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
     public void addGpbMessage(GpbMessage def){
         GpbMessageDefs.add(def);
         addGpbDefinition(def);
@@ -126,7 +126,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         return(GpbMessageDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:189)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
     public void addGpbArtifact(GpbArtifact def){
         GpbArtifactDefs.add(def);
         addGpbDefinition(def);
@@ -140,7 +140,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         return(GpbArtifactDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:189)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
     public void addGpbModule(GpbModule def){
         GpbModuleDefs.add(def);
         addGpbDefinition(def);
