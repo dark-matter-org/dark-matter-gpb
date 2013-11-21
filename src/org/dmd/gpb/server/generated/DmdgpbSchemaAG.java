@@ -237,6 +237,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbModuleREF");
             _GpbModuleOBJ.setDmwIteratorClass("GpbModuleIterableDMW");
             _GpbModuleOBJ.addMay("meta.description");
+            _GpbModuleOBJ.addMay("meta.defFiles");
             _GpbModuleOBJ.addMay("dmdgpb.dependsOnGpbModule");
             _GpbModuleOBJ.addMust("meta.name");
             _GpbModuleOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbModuleIterableDMW");
