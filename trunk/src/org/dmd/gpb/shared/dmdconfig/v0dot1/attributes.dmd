@@ -77,4 +77,5 @@ AttributeDefinition
 name			dependsOnGpbModule
 dmdID			20
 type			GpbModule
+valueType       MULTI
 description		Indicates the GpbModule on which something depends.

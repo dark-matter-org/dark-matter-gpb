@@ -60,4 +60,6 @@ The first definition in a DSD file is a module definition
 
 Or, a DSDModule always has a DMDID of 1
 
+The attribute referred to by the moduleDependenceAttribute should be multi-valued
+
 

@@ -27,16 +27,17 @@ import org.dmd.dms.ClassDefinition;                                       // Pas
 import org.dmd.dms.generated.dmo.MetaDMSAG;                               // Attribute defFiles from the meta schema - (BaseDMWGenerator.java:821)
 import org.dmd.dms.generated.dmw.StringIterableDMW;                       // For multi-valued String - (BaseDMWGenerator.java:2022)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;                     // Required for MODREC constructor - (BaseDMWGenerator.java:994)
-import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDefinitionModule.java:122)
+import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDefinitionModule.java:159)
 import org.dmd.gpb.server.extended.GpbDefinition;                         // Derived class - (BaseDMWGenerator.java:1167)
-import org.dmd.gpb.server.extended.GpbEnum;                               // A definition from the GpbModule Module - (DSDefinitionModule.java:122)
-import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDefinitionModule.java:122)
-import org.dmd.gpb.server.extended.GpbMessage;                            // A definition from the GpbModule Module - (DSDefinitionModule.java:122)
+import org.dmd.gpb.server.extended.GpbEnum;                               // A definition from the GpbModule Module - (DSDefinitionModule.java:159)
+import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDefinitionModule.java:159)
+import org.dmd.gpb.server.extended.GpbMessage;                            // A definition from the GpbModule Module - (DSDefinitionModule.java:159)
 import org.dmd.gpb.server.extended.GpbModule;                             // Required for getModificationRecorder() - (BaseDMWGenerator.java:999)
-import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDefinitionModule.java:122)
+import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDefinitionModule.java:159)
+import org.dmd.gpb.server.generated.dmw.GpbModuleIterableDMW;             // For multi-valued GpbModule - (BaseDMWGenerator.java:1628)
 import org.dmd.gpb.server.generated.dsd.GpbModuleScopedInterface;         // Required to manage module definition - (DMWGenerator.java:161)
+import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                      // Attribute dependsOnGpbModule from the dmdgpb schema - (BaseDMWGenerator.java:821)
 import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                     // Class not auxiliary or abstract - (BaseDMWGenerator.java:1171)
-import org.dmd.gpb.shared.generated.types.GpbModuleREF;                   // Is reference type REF - (BaseDMWGenerator.java:1034)
 
 
 
@@ -232,42 +233,87 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
     }
 
     /**
-     * @return A GpbModule object.
+     * @return The number of GpbModule items.
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1353)
-    public GpbModule getDependsOnGpbModule(){
-        GpbModuleREF ref = ((GpbModuleDMO) core).getDependsOnGpbModule();
-        if (ref == null)
-            return(null);
-        
-        if (ref.getObject() == null)
-            return(null);
-        
-        return((GpbModule)ref.getObject().getContainer());
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1590)
+    public int getDependsOnGpbModuleSize(){
+        return(((GpbModuleDMO) core).getDependsOnGpbModuleSize());
     }
 
     /**
-     * Sets the dependsOnGpbModule to the specified value.
-     * @param value A value compatible with GpbModuleREF
+     * @return true if there are no GpbModuleDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1438)
-    public void setDependsOnGpbModule(GpbModule value) {
-        ((GpbModuleDMO) core).setDependsOnGpbModule(value.getDMO());
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1598)
+    public boolean getDependsOnGpbModuleIsEmpty(){
+        if (((GpbModuleDMO) core).getDependsOnGpbModuleSize() == 0)
+            return(true);
+        return(false);
     }
 
     /**
-     * Sets the dependsOnGpbModule to the specified value.
-     * @param value A value compatible with GpbModuleREF
+     * @return true if there are any GpbModuleDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1447)
-    public void setDependsOnGpbModule(Object value) throws DmcValueException {
-        ((GpbModuleDMO) core).setDependsOnGpbModule(value);
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1608)
+    public boolean getDependsOnGpbModuleHasValue(){
+        if (((GpbModuleDMO) core).getDependsOnGpbModuleSize() == 0)
+            return(false);
+        return(true);
+    }
+
+    /**
+     * @return An Iterator of GpbModuleDMO objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1635)
+    public GpbModuleIterableDMW getDependsOnGpbModuleIterable(){
+        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__dependsOnGpbModule);
+        if (attr == null)
+            return(GpbModuleIterableDMW.emptyList);
+        
+        return(new GpbModuleIterableDMW(((GpbModuleDMO) core).getDependsOnGpbModule()));
+    }
+
+    /**
+     * Adds another dependsOnGpbModule value.
+     * @param value A value compatible with GpbModule
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1692)
+    public DmcAttribute<?> addDependsOnGpbModule(GpbModule value){
+        DmcAttribute<?> attr = ((GpbModuleDMO) core).addDependsOnGpbModule(((GpbModuleDMO)value.getDmcObject()));
+        return(attr);
+    }
+
+    /**
+     * Deletes a dependsOnGpbModule value.
+     * @param value The GpbModule to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1742)
+    public void delDependsOnGpbModule(GpbModule value){
+        ((GpbModuleDMO) core).delDependsOnGpbModule(value.getDMO());
+    }
+
+    /**
+     * @return A COPY of the collection of GpbModule objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1806)
+    public ArrayList<GpbModule> getDependsOnGpbModuleCopy(){
+        DmcAttribute<?> attr = ((GpbModuleDMO) core).get(DmdgpbDMSAG.__dependsOnGpbModule);
+        if (attr == null)
+            return(new ArrayList<GpbModule>());
+        
+        ArrayList<GpbModule> rc = new ArrayList<GpbModule>(attr.getMVSize());
+        
+        GpbModuleIterableDMW it = getDependsOnGpbModuleIterable();
+        while(it.hasNext()){
+            rc.add(it.next());
+        }
+        
+        return(rc);
     }
 
     /**
      * Removes the dependsOnGpbModule attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1538)
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2211)
     public void remDependsOnGpbModule(){
         ((GpbModuleDMO) core).remDependsOnGpbModule();
     }
@@ -334,7 +380,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         ((GpbModuleDMO) core).remName();
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:164)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:201)
     // Called from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:195)
     /**
      * All definitions are added to the base definition collection.
@@ -351,7 +397,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbDefinitionDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:189)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
     public void addGpbType(GpbType def){
         GpbTypeDefs.add(def);
         addGpbDefinition(def);
@@ -365,7 +411,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbTypeDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:189)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
     public void addGpbEnum(GpbEnum def){
         GpbEnumDefs.add(def);
         addGpbDefinition(def);
@@ -379,7 +425,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbEnumDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:189)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
     public void addGpbField(GpbField def){
         GpbFieldDefs.add(def);
         addGpbDefinition(def);
@@ -393,7 +439,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbFieldDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:189)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
     public void addGpbMessage(GpbMessage def){
         GpbMessageDefs.add(def);
         addGpbDefinition(def);
@@ -407,7 +453,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbMessageDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:189)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
     public void addGpbArtifact(GpbArtifact def){
         GpbArtifactDefs.add(def);
         addGpbDefinition(def);

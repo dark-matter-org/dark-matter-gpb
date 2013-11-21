@@ -412,10 +412,11 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _dependsOnGpbModuleOBJ.setName("dependsOnGpbModule");
             _dependsOnGpbModuleOBJ.setDmdID("-477980");
             _dependsOnGpbModuleOBJ.setDescription("Indicates the GpbModule on which something depends.");
+            _dependsOnGpbModuleOBJ.setValueType("MULTI");
             _dependsOnGpbModuleOBJ.setDotName("dmdgpb.dependsOnGpbModule.AttributeDefinition");
             _dependsOnGpbModule.setDefinedIn(this);
             _dependsOnGpbModuleOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _dependsOnGpbModuleOBJ.setLineNumber("80");
+            _dependsOnGpbModuleOBJ.setLineNumber("81");
             addAttributeDefList(_dependsOnGpbModule);
 
     }

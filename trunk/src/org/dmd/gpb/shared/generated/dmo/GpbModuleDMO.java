@@ -31,7 +31,7 @@ import org.dmd.dms.generated.types.DmcTypeStringMV;                      // Requ
 import org.dmd.dms.generated.types.DmcTypeStringSV;                      // Required type - (GenUtility.java:325)
 import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;                // Base class - (GenUtility.java:352)
 import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                    // Type specific set/add - (GenUtility.java:304)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbModuleREFSV;         // Reference type - (GenUtility.java:297)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbModuleREFMV;         // Reference type - (GenUtility.java:297)
 import org.dmd.gpb.shared.generated.types.GpbModuleREF;                  // Helper class - (GenUtility.java:332)
 
 /**
@@ -295,74 +295,109 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
          rem(MetaDMSAG.__defFiles);
     }
 
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:652)
-    public GpbModuleREF getDependsOnGpbModule(){
-        DmcTypeGpbModuleREFSV attr = (DmcTypeGpbModuleREFSV) get(DmdgpbDMSAG.__dependsOnGpbModule);
+    /**
+     * @return An Iterator of GpbModuleDMO objects.
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:967)
+    public Iterator<GpbModuleREF> getDependsOnGpbModule(){
+        DmcTypeGpbModuleREFMV attr = (DmcTypeGpbModuleREFMV) get(DmdgpbDMSAG.__dependsOnGpbModule);
         if (attr == null)
-            return(null);
+            return( ((List<GpbModuleREF>) Collections.EMPTY_LIST).iterator() );
 
         if (DmcOmni.instance().lazyResolution()){
             if (attr.doLazyResolution(this)){
                 rem(attr.getAttributeInfo());
-                return(null);
+                return( ((List<GpbModuleREF>) Collections.EMPTY_LIST).iterator() );
             }
         }
 
-        return(attr.getSV());
+        return(attr.getMV());
     }
 
     /**
-     * Returns the reference to GpbModule without attempting lazy resolution (if turned on).
+     * @return An Iterator of GpbModuleREFs without attempting lazy resolution (if it's turned on).
      */
-    public GpbModuleREF getDependsOnGpbModuleREF(){
-        DmcTypeGpbModuleREFSV attr = (DmcTypeGpbModuleREFSV) get(DmdgpbDMSAG.__dependsOnGpbModule);
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:987)
+    public Iterator<GpbModuleREF> getDependsOnGpbModuleREFs(){
+        DmcTypeGpbModuleREFMV attr = (DmcTypeGpbModuleREFMV) get(DmdgpbDMSAG.__dependsOnGpbModule);
         if (attr == null)
-            return(null);
+            return( ((List<GpbModuleREF>) Collections.EMPTY_LIST).iterator() );
 
-        return(attr.getSV());
+        return(attr.getMV());
     }
 
     /**
-     * Sets dependsOnGpbModule to the specified value.
-     * @param value GpbModuleDMO
+     * Adds another dependsOnGpbModule to the specified value.
+     * @param value GpbModule
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:706)
-    public void setDependsOnGpbModule(GpbModuleDMO value) {
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1001)
+    public DmcAttribute<?> addDependsOnGpbModule(GpbModuleDMO value) {
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__dependsOnGpbModule);
         if (attr == null)
-            attr = new DmcTypeGpbModuleREFSV(DmdgpbDMSAG.__dependsOnGpbModule);
-        else
-            ((DmcTypeGpbModuleREFSV)attr).removeBackReferences();
+            attr = new DmcTypeGpbModuleREFMV(DmdgpbDMSAG.__dependsOnGpbModule);
         
         try{
-            attr.set(value);
-            set(DmdgpbDMSAG.__dependsOnGpbModule,attr);
+            setLastValue(attr.add(value));
+            add(DmdgpbDMSAG.__dependsOnGpbModule,attr);
         }
         catch(DmcValueException ex){
-            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+            throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
         }
+        return(attr);
     }
 
     /**
-     * Sets dependsOnGpbModule to the specified value.
-     * @param value A value compatible with DmcTypeGpbModuleREFSV
+     * Adds another dependsOnGpbModule value.
+     * @param value A value compatible with GpbModule
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
-    public void setDependsOnGpbModule(Object value) throws DmcValueException {
-        DmcTypeGpbModuleREFSV attr  = (DmcTypeGpbModuleREFSV) get(DmdgpbDMSAG.__dependsOnGpbModule);
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1242)
+    public DmcAttribute<?> addDependsOnGpbModule(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__dependsOnGpbModule);
         if (attr == null)
-            attr = new DmcTypeGpbModuleREFSV(DmdgpbDMSAG.__dependsOnGpbModule);
-        else
-            attr.removeBackReferences();
+            attr = new DmcTypeGpbModuleREFMV(DmdgpbDMSAG.__dependsOnGpbModule);
         
-        attr.set(value);
-        set(DmdgpbDMSAG.__dependsOnGpbModule,attr);
+        setLastValue(attr.add(value));
+        add(DmdgpbDMSAG.__dependsOnGpbModule,attr);
+        return(attr);
+    }
+
+    /**
+     * Returns the number of values in dependsOnGpbModule
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1259)
+    public int getDependsOnGpbModuleSize(){
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__dependsOnGpbModule);
+        if (attr == null){
+            if (DmdgpbDMSAG.__dependsOnGpbModule.indexSize == 0)
+                return(0);
+            else
+                return(DmdgpbDMSAG.__dependsOnGpbModule.indexSize);
+        }
+        return(attr.getMVSize());
+    }
+
+    /**
+     * Deletes a dependsOnGpbModule value.
+     * @param value The GpbModule to be deleted from set of attribute values.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1298)
+    public DmcAttribute<?> delDependsOnGpbModule(Object value){
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__dependsOnGpbModule);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeGpbModuleREFMV(DmdgpbDMSAG.__dependsOnGpbModule), value);
+        else
+            attr = del(DmdgpbDMSAG.__dependsOnGpbModule, value);
+        
+        return(attr);
     }
 
     /**
      * Removes the dependsOnGpbModule attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1352)
     public void remDependsOnGpbModule(){
          rem(DmdgpbDMSAG.__dependsOnGpbModule);
     }
