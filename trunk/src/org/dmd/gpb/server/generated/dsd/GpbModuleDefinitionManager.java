@@ -16,23 +16,26 @@
 package org.dmd.gpb.server.generated.dsd;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:121)
-import java.util.Iterator;                                                // To allow access to our definitions - (DSDArtifactFormatter.java:119)
-import org.dmd.dmc.definitions.DmcDefinitionSet;                          // Our base to provide definition set storage - (DSDArtifactFormatter.java:118)
-import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDArtifactFormatter.java:159)
-import org.dmd.gpb.server.extended.GpbDefinition;                         // A definition from the GpbModule Module - (DSDArtifactFormatter.java:156)
-import org.dmd.gpb.server.extended.GpbEnum;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:159)
-import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDArtifactFormatter.java:159)
-import org.dmd.gpb.server.extended.GpbMessage;                            // A definition from the GpbModule Module - (DSDArtifactFormatter.java:159)
-import org.dmd.gpb.server.extended.GpbModule;                             // A definition from the GpbModule Module - (DSDArtifactFormatter.java:159)
-import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:159)
-import org.dmd.gpb.server.generated.dsd.GpbModuleGlobalInterface;         // Interface for GpbModule definitions - (DSDArtifactFormatter.java:153)
+// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:124)
+import java.util.Iterator;                                                // To allow access to our definitions - (DSDArtifactFormatter.java:122)
+import org.dmd.dmc.definitions.DmcDefinitionSet;                          // Our base to provide definition set storage - (DSDArtifactFormatter.java:121)
+import org.dmd.dms.DSDefinition;                                          // The base of all definitions - (DSDArtifactFormatter.java:120)
+import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDArtifactFormatter.java:166)
+import org.dmd.gpb.server.extended.GpbDefinition;                         // A definition from the GpbModule Module - (DSDArtifactFormatter.java:163)
+import org.dmd.gpb.server.extended.GpbEnum;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:166)
+import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDArtifactFormatter.java:166)
+import org.dmd.gpb.server.extended.GpbMessage;                            // A definition from the GpbModule Module - (DSDArtifactFormatter.java:166)
+import org.dmd.gpb.server.extended.GpbModule;                             // A definition from the GpbModule Module - (DSDArtifactFormatter.java:166)
+import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:166)
+import org.dmd.gpb.server.generated.dsd.GpbModuleGlobalInterface;         // Interface for GpbModule definitions - (DSDArtifactFormatter.java:160)
 
 
-// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:125)
+// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:128)
 public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
 
-    // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.dumpDefinitionManagerMembers(DSDArtifactFormatter.java:178)
+    DmcDefinitionSet<DSDefinition>	allDefinitions;
+
+    // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.dumpDefinitionManagerMembers(DSDArtifactFormatter.java:185)
     DmcDefinitionSet<GpbDefinition> GpbDefinitionDefs;
     DmcDefinitionSet<GpbType> GpbTypeDefs;
     DmcDefinitionSet<GpbEnum> GpbEnumDefs;
@@ -42,6 +45,8 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
     DmcDefinitionSet<GpbModule> GpbModuleDefs;
 
     public GpbModuleDefinitionManager(){
+
+        allDefinitions = new DmcDefinitionSet<DSDefinition>();
 
         GpbDefinitionDefs = new DmcDefinitionSet<GpbDefinition>();
         GpbTypeDefs = new DmcDefinitionSet<GpbType>();
@@ -54,12 +59,13 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
     }
 
     // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:201)
-    // Called from: org.dmd.dmg.generators.DSDArtifactFormatter.dumpDefinitionInterfaceMethods(DSDArtifactFormatter.java:196)
+    // Called from: org.dmd.dmg.generators.DSDArtifactFormatter.dumpDefinitionInterfaceMethods(DSDArtifactFormatter.java:203)
     /**
      * All definitions are added to the base definition collection.
      */
     void addGpbDefinition(GpbDefinition def){
         GpbDefinitionDefs.add(def);
+        allDefinitions.add(def);
     }
 
     public int getGpbDefinitionCount(){
@@ -70,7 +76,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         return(GpbDefinitionDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:231)
     public void addGpbType(GpbType def){
         GpbTypeDefs.add(def);
         addGpbDefinition(def);
@@ -84,7 +90,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         return(GpbTypeDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:231)
     public void addGpbEnum(GpbEnum def){
         GpbEnumDefs.add(def);
         addGpbDefinition(def);
@@ -98,7 +104,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         return(GpbEnumDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:231)
     public void addGpbField(GpbField def){
         GpbFieldDefs.add(def);
         addGpbDefinition(def);
@@ -112,7 +118,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         return(GpbFieldDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:231)
     public void addGpbMessage(GpbMessage def){
         GpbMessageDefs.add(def);
         addGpbDefinition(def);
@@ -126,7 +132,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         return(GpbMessageDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:231)
     public void addGpbArtifact(GpbArtifact def){
         GpbArtifactDefs.add(def);
         addGpbDefinition(def);
@@ -140,7 +146,7 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         return(GpbArtifactDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:231)
     public void addGpbModule(GpbModule def){
         GpbModuleDefs.add(def);
         addGpbDefinition(def);

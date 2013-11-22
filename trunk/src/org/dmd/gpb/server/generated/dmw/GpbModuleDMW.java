@@ -1,18 +1,3 @@
-//	---------------------------------------------------------------------------
-//	dark-matter-data
-//	Copyright (c) 2013 dark-matter-data committers
-//	---------------------------------------------------------------------------
-//	This program is free software; you can redistribute it and/or modify it
-//	under the terms of the GNU Lesser General Public License as published by the
-//	Free Software Foundation; either version 3 of the License, or (at your
-//	option) any later version.
-//	This program is distributed in the hope that it will be useful, but WITHOUT
-//	ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-//	FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for
-//	more details.
-//	You should have received a copy of the GNU Lesser General Public License along
-//	with this program; if not, see <http://www.gnu.org/licenses/lgpl.html>.
-//	---------------------------------------------------------------------------
 package org.dmd.gpb.server.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
@@ -397,7 +382,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbDefinitionDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:231)
     public void addGpbType(GpbType def){
         GpbTypeDefs.add(def);
         addGpbDefinition(def);
@@ -411,7 +396,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbTypeDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:231)
     public void addGpbEnum(GpbEnum def){
         GpbEnumDefs.add(def);
         addGpbDefinition(def);
@@ -425,7 +410,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbEnumDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:231)
     public void addGpbField(GpbField def){
         GpbFieldDefs.add(def);
         addGpbDefinition(def);
@@ -439,7 +424,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbFieldDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:231)
     public void addGpbMessage(GpbMessage def){
         GpbMessageDefs.add(def);
         addGpbDefinition(def);
@@ -453,7 +438,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbMessageDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:226)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:231)
     public void addGpbArtifact(GpbArtifact def){
         GpbArtifactDefs.add(def);
         addGpbDefinition(def);
