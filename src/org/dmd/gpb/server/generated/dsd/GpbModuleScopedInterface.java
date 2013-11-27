@@ -16,8 +16,8 @@
 package org.dmd.gpb.server.generated.dsd;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateScopedInterface(DSDArtifactFormatter.java:281)
-import java.util.Iterator;                                // To provide iterators over definitions - (DSDArtifactFormatter.java:278)
+// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateScopedInterface(DSDArtifactFormatter.java:280)
+import java.util.Iterator;                                // To provide iterators over definitions - (DSDArtifactFormatter.java:277)
 import org.dmd.gpb.server.extended.GpbArtifact;           // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
 import org.dmd.gpb.server.extended.GpbDefinition;         // A definition from the GpbModule Module - (DSDefinitionModule.java:160)
 import org.dmd.gpb.server.extended.GpbEnum;               // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
@@ -26,7 +26,7 @@ import org.dmd.gpb.server.extended.GpbMessage;            // A definition from t
 import org.dmd.gpb.server.extended.GpbType;               // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
 
 
-// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateScopedInterface(DSDArtifactFormatter.java:285)
+// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateScopedInterface(DSDArtifactFormatter.java:284)
 /**
  * This interface is implemented by the generated wrapper class for the GpbModule module.
  */
