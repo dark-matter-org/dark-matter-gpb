@@ -7,14 +7,7 @@ public class GpbProtoFile extends GpbProtoFileDMW {
 	public GpbProtoFile(){
 		
 	}
-	
-	///////////////////////////////////////////////////////////////////////////
-	// Parsing support from .proto format
-	
-	public void parseFromProto(String fn){
 		
-	}
-	
 	///////////////////////////////////////////////////////////////////////////
 	// Writing support to .proto format
 }

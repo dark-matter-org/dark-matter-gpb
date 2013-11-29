@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import junit.framework.Assert;
 
+import org.dmd.dmc.DmcValueException;
 import org.dmd.util.exceptions.ResultException;
 import org.dmd.util.parsing.StringArrayList;
 import org.junit.Before;
@@ -22,7 +23,7 @@ public class GpbDotProtoParserTest {
 	}
 
 	@Test
-	public void testBasicFind() throws ResultException, IOException {
+	public void testBasicFind() throws ResultException, IOException, DmcValueException {
 		StringArrayList sd = new StringArrayList();
 		sd.add(workingDir + "/test/org/dmd/gpb/tools/parsing");
 		GpbDotProtoParser parser = new GpbDotProtoParser(sd);
@@ -32,4 +33,6 @@ public class GpbDotProtoParserTest {
 		
 		Assert.assertNotNull(parser.getConfig("config1"));
 	}
+	
+	
 }
