@@ -16,19 +16,20 @@
 package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:393)
-import java.io.Serializable;                                      // Always required - (GenUtility.java:221)
-import java.util.*;                                               // Always required if we have any MV attributes - (GenUtility.java:216)
-import org.dmd.dmc.DmcAttribute;                                  // Named object - (GenUtility.java:373)
-import org.dmd.dmc.DmcNamedObjectIF;                              // Named object - (GenUtility.java:372)
-import org.dmd.dmc.DmcSliceInfo;                                  // Required for object slicing - (GenUtility.java:226)
-import org.dmd.dmc.DmcValueException;                             // Any attributes - (GenUtility.java:238)
-import org.dmd.dmc.types.DefinitionName;                          // Naming attribute type - (GenUtility.java:367)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (GenUtility.java:225)
-import org.dmd.dms.generated.types.DmcTypeEnumValueMV;            // Required type - (GenUtility.java:325)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (GenUtility.java:224)
-import org.dmd.dms.generated.types.DmcTypeStringSV;               // Required type - (GenUtility.java:325)
-import org.dmd.dms.types.EnumValue;                               // Primitive type and !auxiliary class - (GenUtility.java:268)
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Base class - (GenUtility.java:352)
+import java.io.Serializable;                                        // Always required - (GenUtility.java:221)
+import java.util.*;                                                 // Always required if we have any MV attributes - (GenUtility.java:216)
+import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:373)
+import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:372)
+import org.dmd.dmc.DmcSliceInfo;                                    // Required for object slicing - (GenUtility.java:226)
+import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:238)
+import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:367)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Required for MODREC constructor - (GenUtility.java:225)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:325)
+import org.dmd.dms.generated.types.DmcTypeEnumValueMV;              // Required type - (GenUtility.java:325)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;               // Required for MODREC constructor - (GenUtility.java:224)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:325)
+import org.dmd.dms.types.EnumValue;                                 // Primitive type and !auxiliary class - (GenUtility.java:268)
+import org.dmd.gpb.shared.generated.dmo.GpbElementDMO;              // Base class - (GenUtility.java:352)
 
 /**
  * The GpbEnum allows for the definition of enumerations. One thing to be
@@ -55,7 +56,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Base class 
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, Serializable  {
+public class GpbEnumDMO  extends GpbElementDMO  implements DmcNamedObjectIF, Serializable  {
 
     public final static String constructionClassName = "GpbEnum";
 
@@ -178,6 +179,56 @@ public class GpbEnumDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
     public void remDefaultValue(){
          rem(DmdgpbDMSAG.__defaultValue);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)
+    public DefinitionName getName(){
+        DmcTypeDefinitionNameSV attr = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets name to the specified value.
+     * @param value DefinitionName
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:821)
+    public void setName(DefinitionName value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__name);
+        if (attr == null)
+            attr = new DmcTypeDefinitionNameSV(MetaDMSAG.__name);
+        
+        try{
+            attr.set(value);
+            set(MetaDMSAG.__name,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets name to the specified value.
+     * @param value A value compatible with DmcTypeDefinitionNameSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
+    public void setName(Object value) throws DmcValueException {
+        DmcTypeDefinitionNameSV attr  = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
+        if (attr == null)
+            attr = new DmcTypeDefinitionNameSV(MetaDMSAG.__name);
+        
+        attr.set(value);
+        set(MetaDMSAG.__name,attr);
+    }
+
+    /**
+     * Removes the name attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
+    public void remName(){
+         rem(MetaDMSAG.__name);
     }
 
     /**

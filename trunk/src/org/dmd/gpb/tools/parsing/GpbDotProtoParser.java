@@ -1,6 +1,7 @@
 package org.dmd.gpb.tools.parsing;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import org.dmd.util.exceptions.ResultException;
 import org.dmd.util.parsing.ConfigFinder;
@@ -30,12 +31,24 @@ public class GpbDotProtoParser {
 	public void run() throws ResultException, IOException {
 		finder.findConfigs();
 		
+		Iterator<ConfigLocation> it = finder.getLocations();
+		while(it.hasNext()){
+			ConfigLocation location = it.next();
+			
+		}
 	}
 	
+	/**
+	 * @param f set to true to provide debug tracing.
+	 */
 	public void debug(boolean f){
 		finder.debug(f);
 	}
 
+	/**
+	 * @param cn the name of the config to retrieve without the .proto suffix
+	 * @return the location of the config or null if it wasn't found.
+	 */
 	public ConfigLocation getConfig(String cn){
 		ConfigVersion cv = finder.getConfig(cn);
 		

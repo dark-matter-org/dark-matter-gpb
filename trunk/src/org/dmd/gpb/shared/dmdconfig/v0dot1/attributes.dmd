@@ -79,3 +79,16 @@ dmdID			20
 type			GpbModule
 valueType       MULTI
 description		Indicates the GpbModule on which something depends.
+
+AttributeDefinition
+name			package
+dmdID			21
+type			String
+description 	The package associated with a .proto file.
+
+AttributeDefinition
+name			element
+dmdID			22
+type			GpbElement
+valueType		MULTI
+description		The element attribute indicates a list of GpbElements that comprise a GpfFile.

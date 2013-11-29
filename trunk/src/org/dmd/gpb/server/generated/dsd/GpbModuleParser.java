@@ -27,10 +27,9 @@ import org.dmd.dmv.shared.DmvRuleManager;                                 // The
 import org.dmd.dmw.DmwObjectFactory;                                      // Constructs wrapped objects - (DSDArtifactFormatter.java:314)
 import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDArtifactFormatter.java:503)
 import org.dmd.gpb.server.extended.GpbDefinition;                         // The base definition from the GpbModule Module - (DSDArtifactFormatter.java:497)
-import org.dmd.gpb.server.extended.GpbEnum;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:503)
 import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDArtifactFormatter.java:503)
-import org.dmd.gpb.server.extended.GpbMessage;                            // A definition from the GpbModule Module - (DSDArtifactFormatter.java:503)
 import org.dmd.gpb.server.extended.GpbModule;                             // The kind of DDM we're reading - (DSDArtifactFormatter.java:331)
+import org.dmd.gpb.server.extended.GpbProtoFile;                          // A definition from the GpbModule Module - (DSDArtifactFormatter.java:503)
 import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:503)
 import org.dmd.gpb.server.generated.DmdgpbSchemaAG;                       // The schema recognized by this parser - (DSDArtifactFormatter.java:322)
 import org.dmd.gpb.server.generated.dsd.GpbModuleGlobalInterface;         // Interface to our definition storage - (DSDArtifactFormatter.java:315)
@@ -163,21 +162,17 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
                 definitions.addGpbType((GpbType)definition);
                 module.addGpbType((GpbType)definition);
             }
-            else if (definition instanceof GpbEnum){
-                definitions.addGpbEnum((GpbEnum)definition);
-                module.addGpbEnum((GpbEnum)definition);
-            }
             else if (definition instanceof GpbField){
                 definitions.addGpbField((GpbField)definition);
                 module.addGpbField((GpbField)definition);
             }
-            else if (definition instanceof GpbMessage){
-                definitions.addGpbMessage((GpbMessage)definition);
-                module.addGpbMessage((GpbMessage)definition);
-            }
             else if (definition instanceof GpbArtifact){
                 definitions.addGpbArtifact((GpbArtifact)definition);
                 module.addGpbArtifact((GpbArtifact)definition);
+            }
+            else if (definition instanceof GpbProtoFile){
+                definitions.addGpbProtoFile((GpbProtoFile)definition);
+                module.addGpbProtoFile((GpbProtoFile)definition);
             }
 
         }
