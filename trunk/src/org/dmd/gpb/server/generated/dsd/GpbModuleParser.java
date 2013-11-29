@@ -27,7 +27,6 @@ import org.dmd.dmv.shared.DmvRuleManager;                                 // The
 import org.dmd.dmw.DmwObjectFactory;                                      // Constructs wrapped objects - (DSDArtifactFormatter.java:314)
 import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDArtifactFormatter.java:503)
 import org.dmd.gpb.server.extended.GpbDefinition;                         // The base definition from the GpbModule Module - (DSDArtifactFormatter.java:497)
-import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDArtifactFormatter.java:503)
 import org.dmd.gpb.server.extended.GpbModule;                             // The kind of DDM we're reading - (DSDArtifactFormatter.java:331)
 import org.dmd.gpb.server.extended.GpbProtoFile;                          // A definition from the GpbModule Module - (DSDArtifactFormatter.java:503)
 import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:503)
@@ -161,10 +160,6 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
             if (definition instanceof GpbType){
                 definitions.addGpbType((GpbType)definition);
                 module.addGpbType((GpbType)definition);
-            }
-            else if (definition instanceof GpbField){
-                definitions.addGpbField((GpbField)definition);
-                module.addGpbField((GpbField)definition);
             }
             else if (definition instanceof GpbArtifact){
                 definitions.addGpbArtifact((GpbArtifact)definition);

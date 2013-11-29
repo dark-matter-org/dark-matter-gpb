@@ -87,15 +87,59 @@ type			String
 description 	The package associated with a .proto file.
 
 AttributeDefinition
-name			element
+name			elements
 dmdID			22
 type			GpbElement
 valueType		MULTI
-description		The element attribute indicates a list of GpbElements that comprise a GpfFile.
+description		The elements attribute indicates a list of GpbElements that comprise a GpbMessage, this
+ includes GpbFields, GpbEnums and other GpbMessages.
 
-//AttributeDefinition
-//name			field
-//dmdID			23
-//type			GpbField
-//valueType		MULTI
-//description		A field in a GpbMessage.
+AttributeDefinition
+name			mainElements
+dmdID			23
+type			GpbMainElement
+valueType		MULTI
+description		The mainElements attribute indicates a list of GpbMainElements that comprise a GpbProtoFile. Main elements
+ include message and enumerations.
+
+AttributeDefinition
+name			field
+dmdID			24
+type			GpbField
+valueType		MULTI
+description		A field in a GpbMessage.
+
+AttributeDefinition
+name			tag
+dmdID			25
+type			GpbField
+valueType		MULTI
+description		As you can see, each field in the message definition has a unique numbered tag.
+ These tags are used to identify your fields in the message binary format, and should not be
+ changed once your message type is in use. Note that tags with values in the range 1 through 15
+ take one byte to encode, including the identifying number and the field's type (you can find
+ out more about this in Protocol Buffer Encoding). Tags in the range 16 through 2047 take two
+ bytes. So you should reserve the tags 1 through 15 for very frequently occurring message
+ elements. Remember to leave some room for frequently occurring elements that might be added
+ in the future.
+ <p/>
+ The smallest tag number you can specify is 1, and the largest is 229 - 1, or 536,870,911.
+ You also cannot use the numbers 19000 though 19999 
+
+AttributeDefinition
+name			fieldRule
+dmdID			26
+type			FieldRuleEnum
+description		Indicates if a field is required, optional or repeated. See the note about 
+ required fields as part of the FieldRuleEnum.
+ <p/>
+ For historical reasons, repeated fields of basic numeric types aren't encoded as efficiently
+ as they could be. New code should use the special option [packed=true] to get a more efficient encoding.
+ <br/>
+ For example: repeated int32 samples = 4 [packed=true];
+ 
+ 
+ 
+ 
+ 
+ 

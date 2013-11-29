@@ -17,28 +17,28 @@ package org.dmd.gpb.shared.generated.types;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:106)
-import java.io.Serializable;                                                     // To prevent serialization warnings - (ComplexTypeFormatter.java:70)
-import org.dmd.dmc.DmcAttributeInfo;                                             // For fake DmcAttributeInfo - (ComplexTypeFormatter.java:76)
-import org.dmd.dmc.DmcContainerIF;                                               // To support object references - (ComplexTypeFormatter.java:82)
-import org.dmd.dmc.DmcInputStreamIF;                                             // Standard serialization techniques - (ComplexTypeFormatter.java:71)
-import org.dmd.dmc.DmcNameClashResolverIF;                                       // To support possible clashing object references - (ComplexTypeFormatter.java:86)
-import org.dmd.dmc.DmcNameResolverIF;                                            // To support object references - (ComplexTypeFormatter.java:79)
-import org.dmd.dmc.DmcNameResolverWithClashSupportIF;                            // To support possible clashing object references - (ComplexTypeFormatter.java:84)
-import org.dmd.dmc.DmcNamedObjectIF;                                             // To support object references - (ComplexTypeFormatter.java:80)
-import org.dmd.dmc.DmcNamedObjectREF;                                            // To support object references - (ComplexTypeFormatter.java:81)
-import org.dmd.dmc.DmcObject;                                                    // To support possible clashing object references - (ComplexTypeFormatter.java:87)
-import org.dmd.dmc.DmcOutputStreamIF;                                            // Standard serialization techniques - (ComplexTypeFormatter.java:72)
-import org.dmd.dmc.DmcValueException;                                            // Standard value exception - (ComplexTypeFormatter.java:99)
-import org.dmd.dmc.DmcValueExceptionSet;                                         // To support possible clashing object references - (ComplexTypeFormatter.java:88)
-import org.dmd.dmc.types.IntegerVar;                                             // To support getNextField() - (ComplexTypeFormatter.java:73)
-import org.dmd.dms.generated.enums.DataTypeEnum;                                 // For fake DmcAttributeInfo - (ComplexTypeFormatter.java:74)
-import org.dmd.dms.generated.enums.ValueTypeEnum;                                // For fake DmcAttributeInfo - (ComplexTypeFormatter.java:75)
-import org.dmd.dms.generated.types.DmcTypeIntegerSTATIC;                         // Standard type - (ComplexTypeFormatter.java:494)
-import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                          // Standard type - (ComplexTypeFormatter.java:494)
-import org.dmd.gpb.shared.generated.enums.GpbFieldRuleEnum;                      // Primitive type - (ComplexTypeFormatter.java:476)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldREFSTATIC;              // Internally generated type - (ComplexTypeFormatter.java:494)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldRuleEnumSTATIC;         // Internally generated type - (ComplexTypeFormatter.java:494)
-import org.dmd.gpb.shared.generated.types.GpbFieldREF;                           // Object reference - (ComplexTypeFormatter.java:457)
+import java.io.Serializable;                                                  // To prevent serialization warnings - (ComplexTypeFormatter.java:70)
+import org.dmd.dmc.DmcAttributeInfo;                                          // For fake DmcAttributeInfo - (ComplexTypeFormatter.java:76)
+import org.dmd.dmc.DmcContainerIF;                                            // To support object references - (ComplexTypeFormatter.java:82)
+import org.dmd.dmc.DmcInputStreamIF;                                          // Standard serialization techniques - (ComplexTypeFormatter.java:71)
+import org.dmd.dmc.DmcNameClashResolverIF;                                    // To support possible clashing object references - (ComplexTypeFormatter.java:86)
+import org.dmd.dmc.DmcNameResolverIF;                                         // To support object references - (ComplexTypeFormatter.java:79)
+import org.dmd.dmc.DmcNameResolverWithClashSupportIF;                         // To support possible clashing object references - (ComplexTypeFormatter.java:84)
+import org.dmd.dmc.DmcNamedObjectIF;                                          // To support object references - (ComplexTypeFormatter.java:80)
+import org.dmd.dmc.DmcNamedObjectREF;                                         // To support object references - (ComplexTypeFormatter.java:81)
+import org.dmd.dmc.DmcObject;                                                 // To support possible clashing object references - (ComplexTypeFormatter.java:87)
+import org.dmd.dmc.DmcOutputStreamIF;                                         // Standard serialization techniques - (ComplexTypeFormatter.java:72)
+import org.dmd.dmc.DmcValueException;                                         // Standard value exception - (ComplexTypeFormatter.java:99)
+import org.dmd.dmc.DmcValueExceptionSet;                                      // To support possible clashing object references - (ComplexTypeFormatter.java:88)
+import org.dmd.dmc.types.IntegerVar;                                          // To support getNextField() - (ComplexTypeFormatter.java:73)
+import org.dmd.dms.generated.enums.DataTypeEnum;                              // For fake DmcAttributeInfo - (ComplexTypeFormatter.java:74)
+import org.dmd.dms.generated.enums.ValueTypeEnum;                             // For fake DmcAttributeInfo - (ComplexTypeFormatter.java:75)
+import org.dmd.dms.generated.types.DmcTypeIntegerSTATIC;                      // Standard type - (ComplexTypeFormatter.java:494)
+import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                       // Standard type - (ComplexTypeFormatter.java:494)
+import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;                      // Primitive type - (ComplexTypeFormatter.java:476)
+import org.dmd.gpb.shared.generated.types.DmcTypeFieldRuleEnumSTATIC;         // Internally generated type - (ComplexTypeFormatter.java:494)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldREFSTATIC;           // Internally generated type - (ComplexTypeFormatter.java:494)
+import org.dmd.gpb.shared.generated.types.GpbFieldREF;                        // Object reference - (ComplexTypeFormatter.java:457)
 
 
 
@@ -52,9 +52,9 @@ import org.dmd.gpb.shared.generated.types.GpbFieldREF;                          
 public class GpbFieldIndicator implements Serializable {
 
     // Whether the field is required, optional or repeated.
-    GpbFieldRuleEnum fieldRule;
+    FieldRuleEnum fieldRule;
 
-    final static DmcAttributeInfo fieldRuleAI = new DmcAttributeInfo("fieldRule",0,"GpbFieldRuleEnum",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+    final static DmcAttributeInfo fieldRuleAI = new DmcAttributeInfo("fieldRule",0,"FieldRuleEnum",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
 
     // The name of the GpbField used for this field
     GpbFieldREF fieldName;
@@ -91,8 +91,8 @@ public class GpbFieldIndicator implements Serializable {
      * All fields constructor.
      * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:140)
      */
-    public GpbFieldIndicator(GpbFieldRuleEnum f1, GpbFieldREF f2, Integer f3, String f4) throws DmcValueException {
-        fieldRule = DmcTypeGpbFieldRuleEnumSTATIC.instance.typeCheck(f1);
+    public GpbFieldIndicator(FieldRuleEnum f1, GpbFieldREF f2, Integer f3, String f4) throws DmcValueException {
+        fieldRule = DmcTypeFieldRuleEnumSTATIC.instance.typeCheck(f1);
         fieldName = DmcTypeGpbFieldREFSTATIC.instance.typeCheck(f2);
         fieldTag = DmcTypeIntegerSTATIC.instance.typeCheck(f3);
         info = DmcTypeStringSTATIC.instance.typeCheck(f4);
@@ -106,7 +106,7 @@ public class GpbFieldIndicator implements Serializable {
         IntegerVar seppos = new IntegerVar(-1);
         String input = initialInput.trim();
         input = input.replaceAll("(\\s)+", " ");
-        fieldRule = DmcTypeGpbFieldRuleEnumSTATIC.instance.typeCheck(getNextField(input,seppos,"fieldRule",false));
+        fieldRule = DmcTypeFieldRuleEnumSTATIC.instance.typeCheck(getNextField(input,seppos,"fieldRule",false));
         fieldName = DmcTypeGpbFieldREFSTATIC.instance.typeCheck(getNextField(input,seppos,"fieldName",false));
         fieldTag = DmcTypeIntegerSTATIC.instance.typeCheck(getNextField(input,seppos,"fieldTag",false));
         info = DmcTypeStringSTATIC.instance.typeCheck(getNextField(input,seppos,"info",true));
@@ -117,7 +117,7 @@ public class GpbFieldIndicator implements Serializable {
      * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:212)
      */
     public void serializeIt(DmcOutputStreamIF dos) throws Exception {
-        DmcTypeGpbFieldRuleEnumSTATIC.instance.serializeValue(dos, fieldRule);
+        DmcTypeFieldRuleEnumSTATIC.instance.serializeValue(dos, fieldRule);
         DmcTypeGpbFieldREFSTATIC.instance.serializeValue(dos, fieldName);
         DmcTypeIntegerSTATIC.instance.serializeValue(dos, fieldTag);
         DmcTypeStringSTATIC.instance.serializeValue(dos, info);
@@ -128,7 +128,7 @@ public class GpbFieldIndicator implements Serializable {
      * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:229)
      */
     public void deserializeIt(DmcInputStreamIF dis) throws Exception {
-        fieldRule = DmcTypeGpbFieldRuleEnumSTATIC.instance.deserializeValue(dis);
+        fieldRule = DmcTypeFieldRuleEnumSTATIC.instance.deserializeValue(dis);
         fieldName = DmcTypeGpbFieldREFSTATIC.instance.deserializeValue(dis);
         fieldTag = DmcTypeIntegerSTATIC.instance.deserializeValue(dis);
         info = DmcTypeStringSTATIC.instance.deserializeValue(dis);
@@ -142,7 +142,7 @@ public class GpbFieldIndicator implements Serializable {
         return(fieldRule.toString() + " " + fieldName.toString() + " " + fieldTag.toString() + " " + info.toString());
     }
 
-    public GpbFieldRuleEnum getFieldRule(){
+    public FieldRuleEnum getFieldRule(){
         return(fieldRule);
     }
 

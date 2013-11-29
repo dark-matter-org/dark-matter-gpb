@@ -4,16 +4,16 @@ import org.dmd.dmc.presentation.DmcAdapterIF;
 import org.dmd.dmc.DmcAttribute;
 import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dms.generated.types.DmcTypeModifierMV;
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldRuleEnumSV;
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbMainElementREFSV;
 
 @SuppressWarnings("serial")
 // org.dmd.dms.util.AdapterFormatter.dumpAdapter(AdapterFormatter.java:59)
 // Called from: org.dmd.dms.util.AdapterFormatter.dumpAdapterSV(AdapterFormatter.java:12)
-public class GpbFieldRuleEnumSVAdapter extends DmcTypeGpbFieldRuleEnumSV implements DmcAdapterIF {
+public class GpbMainElementREFSVAdapter extends DmcTypeGpbMainElementREFSV implements DmcAdapterIF {
 
-    transient DmcTypeGpbFieldRuleEnumSV existingValue;
+    transient DmcTypeGpbMainElementREFSV existingValue;
 
-    public GpbFieldRuleEnumSVAdapter(DmcAttributeInfo ai){
+    public GpbMainElementREFSVAdapter(DmcAttributeInfo ai){
     	   super(ai);
     }
 
@@ -39,7 +39,7 @@ public class GpbFieldRuleEnumSVAdapter extends DmcTypeGpbFieldRuleEnumSV impleme
 
     @Override
     public void setExisting(DmcAttribute<?> attr) {
-    	existingValue = (DmcTypeGpbFieldRuleEnumSV) attr;
+    	existingValue = (DmcTypeGpbMainElementREFSV) attr;
     	if (existingValue != null)
     		value = existingValue.getSVCopy();
     }

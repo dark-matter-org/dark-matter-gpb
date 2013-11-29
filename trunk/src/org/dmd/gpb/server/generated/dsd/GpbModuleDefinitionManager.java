@@ -23,7 +23,6 @@ import org.dmd.dms.DSDefinition;                                          // The
 import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDArtifactFormatter.java:167)
 import org.dmd.gpb.server.extended.GpbDefinition;                         // A definition from the GpbModule Module - (DSDArtifactFormatter.java:164)
 import org.dmd.gpb.server.extended.GpbElement;                            // A definition from the GpbModule Module - (DSDArtifactFormatter.java:167)
-import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDArtifactFormatter.java:167)
 import org.dmd.gpb.server.extended.GpbModule;                             // A definition from the GpbModule Module - (DSDArtifactFormatter.java:167)
 import org.dmd.gpb.server.extended.GpbProtoFile;                          // A definition from the GpbModule Module - (DSDArtifactFormatter.java:167)
 import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:167)
@@ -39,7 +38,6 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
     DmcDefinitionSet<GpbDefinition> GpbDefinitionDefs;
     DmcDefinitionSet<GpbType> GpbTypeDefs;
     DmcDefinitionSet<GpbElement> GpbElementDefs;
-    DmcDefinitionSet<GpbField> GpbFieldDefs;
     DmcDefinitionSet<GpbArtifact> GpbArtifactDefs;
     DmcDefinitionSet<GpbProtoFile> GpbProtoFileDefs;
     DmcDefinitionSet<GpbModule> GpbModuleDefs;
@@ -51,7 +49,6 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
         GpbDefinitionDefs = new DmcDefinitionSet<GpbDefinition>();
         GpbTypeDefs = new DmcDefinitionSet<GpbType>();
         GpbElementDefs = new DmcDefinitionSet<GpbElement>();
-        GpbFieldDefs = new DmcDefinitionSet<GpbField>();
         GpbArtifactDefs = new DmcDefinitionSet<GpbArtifact>();
         GpbProtoFileDefs = new DmcDefinitionSet<GpbProtoFile>();
         GpbModuleDefs = new DmcDefinitionSet<GpbModule>();
@@ -102,20 +99,6 @@ public class GpbModuleDefinitionManager implements GpbModuleGlobalInterface {
 
     public Iterator<GpbElement> getAllGpbElement(){
         return(GpbElementDefs.values().iterator());
-    }
-
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:243)
-    public void addGpbField(GpbField def){
-        GpbFieldDefs.add(def);
-        addGpbDefinition(def);
-    }
-
-    public int getGpbFieldCount(){
-        return(GpbFieldDefs.size());
-    }
-
-    public Iterator<GpbField> getAllGpbField(){
-        return(GpbFieldDefs.values().iterator());
     }
 
     // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:243)

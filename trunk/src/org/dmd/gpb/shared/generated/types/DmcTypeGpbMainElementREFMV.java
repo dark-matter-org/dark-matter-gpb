@@ -21,45 +21,44 @@ import java.util.Iterator;
 import org.dmd.dmc.DmcAttribute;
 import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
-import org.dmd.gpb.shared.generated.enums.GpbFieldRuleEnum;    // DmcType import
 /**
- * The DmcTypeGpbFieldRuleEnumMV provides storage for a multi-valued GpbFieldRuleEnum
+ * The DmcTypeGpbMainElementREFMV provides storage for a multi-valued GpbMainElementREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2310)
- *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpEnumType(DmoTypeFormatter.java:361)
+ *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:531)
  */
 @SuppressWarnings("serial")
-public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implements Serializable {
+public class DmcTypeGpbMainElementREFMV extends DmcTypeGpbMainElementREF implements Serializable {
     
-    private final static Iterator<GpbFieldRuleEnum> emptyList = (new ArrayList<GpbFieldRuleEnum>()).iterator();
+    private final static Iterator<GpbMainElementREF> emptyList = (new ArrayList<GpbMainElementREF>()).iterator();
     
-    protected ArrayList<GpbFieldRuleEnum> value;
+    protected ArrayList<GpbMainElementREF> value;
     
-    public DmcTypeGpbFieldRuleEnumMV(){
+    public DmcTypeGpbMainElementREFMV(){
     
     }
     
-    public DmcTypeGpbFieldRuleEnumMV(DmcAttributeInfo ai){
+    public DmcTypeGpbMainElementREFMV(DmcAttributeInfo ai){
         super(ai);
     }
     
     @Override
-    public DmcTypeGpbFieldRuleEnumMV getNew(){
-        return(new DmcTypeGpbFieldRuleEnumMV(getAttributeInfo()));
+    public DmcTypeGpbMainElementREFMV getNew(){
+        return(new DmcTypeGpbMainElementREFMV(getAttributeInfo()));
     }
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2341)
-    public DmcAttribute<GpbFieldRuleEnum> cloneIt(){
+    public DmcAttribute<GpbMainElementREF> cloneIt(){
         synchronized(this){
-            DmcTypeGpbFieldRuleEnumMV rc = getNew();
+            DmcTypeGpbMainElementREFMV rc = getNew();
     
             if (value == null)
                 return(rc);
     
             if (getAttributeInfo().indexSize == 0){
-                for(GpbFieldRuleEnum val: value)
+                for(GpbMainElementREF val: value)
                 try {
                     rc.add(val);
                 } catch (DmcValueException e) {
@@ -80,11 +79,11 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2374)
-    public GpbFieldRuleEnum add(Object v) throws DmcValueException {
+    public GpbMainElementREF add(Object v) throws DmcValueException {
         synchronized(this){
-            GpbFieldRuleEnum rc = typeCheck(v);
+            GpbMainElementREF rc = typeCheck(v);
             if (value == null)
-                value = new ArrayList<GpbFieldRuleEnum>();
+                value = new ArrayList<GpbMainElementREF>();
             value.add(rc);
             return(rc);
         }
@@ -92,13 +91,13 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2387)
-    public GpbFieldRuleEnum del(Object v){
+    public GpbMainElementREF del(Object v){
         synchronized(this){
             if (value == null)
                 return(null);
     
-            GpbFieldRuleEnum key = null;
-            GpbFieldRuleEnum rc = null;
+            GpbMainElementREF key = null;
+            GpbMainElementREF rc = null;
             try {
                 key = typeCheck(v);
             } catch (DmcValueException e) {
@@ -116,23 +115,23 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2421)
-    public Iterator<GpbFieldRuleEnum> getMV(){
+    public Iterator<GpbMainElementREF> getMV(){
         synchronized(this){
             if (value == null)
                 return(emptyList);
     
-            ArrayList<GpbFieldRuleEnum> clone = new ArrayList<GpbFieldRuleEnum>(value);
+            ArrayList<GpbMainElementREF> clone = new ArrayList<GpbMainElementREF>(value);
             return(clone.iterator());
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2433)
-    public ArrayList<GpbFieldRuleEnum> getMVCopy(){
+    public ArrayList<GpbMainElementREF> getMVCopy(){
         synchronized(this){
             if (value == null)
-                return(new ArrayList<GpbFieldRuleEnum>());
+                return(new ArrayList<GpbMainElementREF>());
             else 
-                return(new ArrayList<GpbFieldRuleEnum>(value));
+                return(new ArrayList<GpbMainElementREF>(value));
         }
     }
     
@@ -152,7 +151,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2460)
-    public GpbFieldRuleEnum getMVnth(int index){
+    public GpbMainElementREF getMVnth(int index){
         synchronized(this){
             if (value == null)
                 return(null);
@@ -162,7 +161,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2471)
-    public GpbFieldRuleEnum setMVnth(int index, Object v) throws DmcValueException {
+    public GpbMainElementREF setMVnth(int index, Object v) throws DmcValueException {
         synchronized(this){
             if (getAttributeInfo().indexSize == 0)
                 throw(new IllegalStateException("Attribute: " + getAttributeInfo().name + " is not indexed. You can't use setMVnth()."));
@@ -170,13 +169,13 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
             if ( (index < 0) || (index >= getAttributeInfo().indexSize))
                 throw(new IllegalStateException("Index " + index + " for attribute: " + getAttributeInfo().name + " is out of range: 0 <= index < " + getAttributeInfo().indexSize));
             
-            GpbFieldRuleEnum rc = null;
+            GpbMainElementREF rc = null;
             
             if (v != null)
                 rc = typeCheck(v);
             
             if (value == null){
-                value = new ArrayList<GpbFieldRuleEnum>(getAttributeInfo().indexSize);
+                value = new ArrayList<GpbMainElementREF>(getAttributeInfo().indexSize);
                 for(int i=0;i<getAttributeInfo().indexSize;i++)
                     value.add(null);
             }
@@ -218,7 +217,7 @@ public class DmcTypeGpbFieldRuleEnumMV extends DmcTypeGpbFieldRuleEnum implement
                 return(false);
 
             try {
-                GpbFieldRuleEnum val = typeCheck(v);
+                GpbMainElementREF val = typeCheck(v);
                 return(value.contains(val));
             } catch (DmcValueException e) {
                 return(false);

@@ -24,7 +24,7 @@ import org.dmd.dmc.DmcValueException;
 import org.dmd.gpb.shared.generated.enums.*;
 
 /**
- * This is the generated DmcAttribute derivative for values of type GpbFieldRuleEnum
+ * This is the generated DmcAttribute derivative for values of type FieldRuleEnum
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -32,33 +32,33 @@ import org.dmd.gpb.shared.generated.enums.*;
  * Generated from: org.dmd.dms.util.DmoTypeFormatter.dumpEnumType(DmoTypeFormatter.java:291)
  */
 @SuppressWarnings("serial")
-abstract public class DmcTypeGpbFieldRuleEnum extends DmcAttribute<GpbFieldRuleEnum> implements Serializable {
+abstract public class DmcTypeFieldRuleEnum extends DmcAttribute<FieldRuleEnum> implements Serializable {
 
-    public DmcTypeGpbFieldRuleEnum(){
+    public DmcTypeFieldRuleEnum(){
     }
 
-    public DmcTypeGpbFieldRuleEnum(DmcAttributeInfo ai){
+    public DmcTypeFieldRuleEnum(DmcAttributeInfo ai){
         super(ai);
     }
 
-    protected GpbFieldRuleEnum typeCheck(Object value) throws DmcValueException {
-        GpbFieldRuleEnum rc = null;
+    protected FieldRuleEnum typeCheck(Object value) throws DmcValueException {
+        FieldRuleEnum rc = null;
 
-        if (value instanceof GpbFieldRuleEnum){
-            rc = (GpbFieldRuleEnum)value;
+        if (value instanceof FieldRuleEnum){
+            rc = (FieldRuleEnum)value;
         }
         else if (value instanceof String){
-            rc = GpbFieldRuleEnum.get((String)value);
+            rc = FieldRuleEnum.get((String)value);
         }
         else if (value instanceof Integer){
-            rc = GpbFieldRuleEnum.get((Integer)value);
+            rc = FieldRuleEnum.get((Integer)value);
         }
         else{
-            throw(new DmcValueException("Object of class: " + value.getClass().getName() + " passed where object compatible with GpbFieldRuleEnum expected."));
+            throw(new DmcValueException("Object of class: " + value.getClass().getName() + " passed where object compatible with FieldRuleEnum expected."));
         }
 
         if (rc == null){
-            throw(new DmcValueException("Value: " + value.toString() + " is not a valid GpbFieldRuleEnum value."));
+            throw(new DmcValueException("Value: " + value.toString() + " is not a valid FieldRuleEnum value."));
         }
 
         return(rc);
@@ -67,22 +67,22 @@ abstract public class DmcTypeGpbFieldRuleEnum extends DmcAttribute<GpbFieldRuleE
     /**
      * Returns a clone of a value associated with this type.
      */
-    public GpbFieldRuleEnum cloneValue(GpbFieldRuleEnum val){
+    public FieldRuleEnum cloneValue(FieldRuleEnum val){
         return(val);
     }
 
     /**
-     * Writes a GpbFieldRuleEnum.
+     * Writes a FieldRuleEnum.
      */
-    public void serializeValue(DmcOutputStreamIF dos, GpbFieldRuleEnum value) throws Exception {
+    public void serializeValue(DmcOutputStreamIF dos, FieldRuleEnum value) throws Exception {
         dos.writeShort(value.intValue());
     }
 
     /**
-     * Reads a GpbFieldRuleEnum.
+     * Reads a FieldRuleEnum.
      */
-    public GpbFieldRuleEnum deserializeValue(DmcInputStreamIF dis) throws Exception {
-        return(GpbFieldRuleEnum.get(dis.readShort()));
+    public FieldRuleEnum deserializeValue(DmcInputStreamIF dis) throws Exception {
+        return(FieldRuleEnum.get(dis.readShort()));
     }
 
 }

@@ -2,20 +2,20 @@ package org.dmd.gpb.server.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:366)
-import java.util.ArrayList;                                            // To support getMVCopy() - (BaseDMWGenerator.java:1100)
-import org.dmd.dmc.*;                                                  // If any attributes - (BaseDMWGenerator.java:1006)
-import org.dmd.dmc.definitions.DmcDefinitionIF;                        // The object is a domain specific definition - (BaseDMWGenerator.java:335)
-import org.dmd.dmc.types.DefinitionName;                               // Is named by - (BaseDMWGenerator.java:985)
-import org.dmd.dms.ClassDefinition;                                    // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:990)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                            // Required for MODREC constructor - (BaseDMWGenerator.java:995)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                  // Required for MODREC constructor - (BaseDMWGenerator.java:994)
-import org.dmd.gpb.server.extended.GpbDefinition;                      // Derived class - (BaseDMWGenerator.java:1167)
-import org.dmd.gpb.server.extended.GpbElement;                         // Is reference type - (BaseDMWGenerator.java:1026)
-import org.dmd.gpb.server.extended.GpbProtoFile;                       // Required for getModificationRecorder() - (BaseDMWGenerator.java:999)
-import org.dmd.gpb.server.generated.dmw.GpbElementIterableDMW;         // For multi-valued GpbElement - (BaseDMWGenerator.java:1628)
-import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                   // Attribute element from the dmdgpb schema - (BaseDMWGenerator.java:821)
-import org.dmd.gpb.shared.generated.dmo.GpbElementDMO;                 // For multi-valued adds of GpbElement - (BaseDMWGenerator.java:1686)
-import org.dmd.gpb.shared.generated.dmo.GpbProtoFileDMO;               // Class not auxiliary or abstract - (BaseDMWGenerator.java:1171)
+import java.util.ArrayList;                                                // To support getMVCopy() - (BaseDMWGenerator.java:1100)
+import org.dmd.dmc.*;                                                      // If any attributes - (BaseDMWGenerator.java:1006)
+import org.dmd.dmc.definitions.DmcDefinitionIF;                            // The object is a domain specific definition - (BaseDMWGenerator.java:335)
+import org.dmd.dmc.types.DefinitionName;                                   // Is named by - (BaseDMWGenerator.java:985)
+import org.dmd.dms.ClassDefinition;                                        // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:990)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                                // Required for MODREC constructor - (BaseDMWGenerator.java:995)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                      // Required for MODREC constructor - (BaseDMWGenerator.java:994)
+import org.dmd.gpb.server.extended.GpbDefinition;                          // Derived class - (BaseDMWGenerator.java:1167)
+import org.dmd.gpb.server.extended.GpbMainElement;                         // Is reference type - (BaseDMWGenerator.java:1026)
+import org.dmd.gpb.server.extended.GpbProtoFile;                           // Required for getModificationRecorder() - (BaseDMWGenerator.java:999)
+import org.dmd.gpb.server.generated.dmw.GpbMainElementIterableDMW;         // For multi-valued GpbMainElement - (BaseDMWGenerator.java:1628)
+import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                       // Attribute mainElements from the dmdgpb schema - (BaseDMWGenerator.java:821)
+import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;                 // For multi-valued adds of GpbMainElement - (BaseDMWGenerator.java:1686)
+import org.dmd.gpb.shared.generated.dmo.GpbProtoFileDMO;                   // Class not auxiliary or abstract - (BaseDMWGenerator.java:1171)
 
 
 
@@ -88,76 +88,76 @@ abstract public class GpbProtoFileDMW extends GpbDefinition implements DmcDefini
     }
 
     /**
-     * @return The number of GpbElement items.
+     * @return The number of GpbMainElement items.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1590)
-    public int getElementSize(){
-        return(((GpbProtoFileDMO) core).getElementSize());
+    public int getMainElementsSize(){
+        return(((GpbProtoFileDMO) core).getMainElementsSize());
     }
 
     /**
-     * @return true if there are no GpbElementDMO items.
+     * @return true if there are no GpbMainElementDMO items.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1598)
-    public boolean getElementIsEmpty(){
-        if (((GpbProtoFileDMO) core).getElementSize() == 0)
+    public boolean getMainElementsIsEmpty(){
+        if (((GpbProtoFileDMO) core).getMainElementsSize() == 0)
             return(true);
         return(false);
     }
 
     /**
-     * @return true if there are any GpbElementDMO items.
+     * @return true if there are any GpbMainElementDMO items.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1608)
-    public boolean getElementHasValue(){
-        if (((GpbProtoFileDMO) core).getElementSize() == 0)
+    public boolean getMainElementsHasValue(){
+        if (((GpbProtoFileDMO) core).getMainElementsSize() == 0)
             return(false);
         return(true);
     }
 
     /**
-     * @return An Iterator of GpbElementDMO objects.
+     * @return An Iterator of GpbMainElementDMO objects.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1635)
-    public GpbElementIterableDMW getElementIterable(){
-        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__element);
+    public GpbMainElementIterableDMW getMainElementsIterable(){
+        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__mainElements);
         if (attr == null)
-            return(GpbElementIterableDMW.emptyList);
+            return(GpbMainElementIterableDMW.emptyList);
         
-        return(new GpbElementIterableDMW(((GpbProtoFileDMO) core).getElement()));
+        return(new GpbMainElementIterableDMW(((GpbProtoFileDMO) core).getMainElements()));
     }
 
     /**
-     * Adds another element value.
-     * @param value A value compatible with GpbElement
+     * Adds another mainElements value.
+     * @param value A value compatible with GpbMainElement
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1692)
-    public DmcAttribute<?> addElement(GpbElement value){
-        DmcAttribute<?> attr = ((GpbProtoFileDMO) core).addElement(((GpbElementDMO)value.getDmcObject()));
+    public DmcAttribute<?> addMainElements(GpbMainElement value){
+        DmcAttribute<?> attr = ((GpbProtoFileDMO) core).addMainElements(((GpbMainElementDMO)value.getDmcObject()));
         return(attr);
     }
 
     /**
-     * Deletes a element value.
-     * @param value The GpbElement to be deleted from set of attribute values.
+     * Deletes a mainElements value.
+     * @param value The GpbMainElement to be deleted from set of attribute values.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1742)
-    public void delElement(GpbElement value){
-        ((GpbProtoFileDMO) core).delElement(value.getDMO());
+    public void delMainElements(GpbMainElement value){
+        ((GpbProtoFileDMO) core).delMainElements(value.getDMO());
     }
 
     /**
-     * @return A COPY of the collection of GpbElement objects.
+     * @return A COPY of the collection of GpbMainElement objects.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1806)
-    public ArrayList<GpbElement> getElementCopy(){
-        DmcAttribute<?> attr = ((GpbProtoFileDMO) core).get(DmdgpbDMSAG.__element);
+    public ArrayList<GpbMainElement> getMainElementsCopy(){
+        DmcAttribute<?> attr = ((GpbProtoFileDMO) core).get(DmdgpbDMSAG.__mainElements);
         if (attr == null)
-            return(new ArrayList<GpbElement>());
+            return(new ArrayList<GpbMainElement>());
         
-        ArrayList<GpbElement> rc = new ArrayList<GpbElement>(attr.getMVSize());
+        ArrayList<GpbMainElement> rc = new ArrayList<GpbMainElement>(attr.getMVSize());
         
-        GpbElementIterableDMW it = getElementIterable();
+        GpbMainElementIterableDMW it = getMainElementsIterable();
         while(it.hasNext()){
             rc.add(it.next());
         }
@@ -166,11 +166,11 @@ abstract public class GpbProtoFileDMW extends GpbDefinition implements DmcDefini
     }
 
     /**
-     * Removes the element attribute value.
+     * Removes the mainElements attribute value.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2211)
-    public void remElement(){
-        ((GpbProtoFileDMO) core).remElement();
+    public void remMainElements(){
+        ((GpbProtoFileDMO) core).remMainElements();
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1393)

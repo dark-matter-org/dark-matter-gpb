@@ -19,45 +19,45 @@ import java.io.Serializable;
 import org.dmd.dmc.DmcAttribute;
 import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
-import org.dmd.gpb.shared.generated.enums.GpbFieldRuleEnum;    // DmcType import
+import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;    // DmcType import
 /**
- * The DmcTypeGpbFieldRuleEnumSV provides storage for a single-valued GpbFieldRuleEnum
+ * The DmcTypeFieldRuleEnumSV provides storage for a single-valued FieldRuleEnum
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1966)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpEnumType(DmoTypeFormatter.java:360)
  */
 @SuppressWarnings("serial")
-public class DmcTypeGpbFieldRuleEnumSV extends DmcTypeGpbFieldRuleEnum implements Serializable {
+public class DmcTypeFieldRuleEnumSV extends DmcTypeFieldRuleEnum implements Serializable {
     
-    protected GpbFieldRuleEnum value;
+    protected FieldRuleEnum value;
     
-    public DmcTypeGpbFieldRuleEnumSV(){
+    public DmcTypeFieldRuleEnumSV(){
     
     }
     
-    public DmcTypeGpbFieldRuleEnumSV(DmcAttributeInfo ai){
+    public DmcTypeFieldRuleEnumSV(DmcAttributeInfo ai){
         super(ai);
     }
     
-    public DmcTypeGpbFieldRuleEnumSV getNew(){
-        return(new DmcTypeGpbFieldRuleEnumSV(getAttributeInfo()));
+    public DmcTypeFieldRuleEnumSV getNew(){
+        return(new DmcTypeFieldRuleEnumSV(getAttributeInfo()));
     }
     
-    public DmcTypeGpbFieldRuleEnumSV getNew(DmcAttributeInfo ai){
-        return(new DmcTypeGpbFieldRuleEnumSV(ai));
+    public DmcTypeFieldRuleEnumSV getNew(DmcAttributeInfo ai){
+        return(new DmcTypeFieldRuleEnumSV(ai));
     }
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1998)
-    public DmcAttribute<GpbFieldRuleEnum> cloneIt(){
-        DmcTypeGpbFieldRuleEnumSV rc = getNew();
+    public DmcAttribute<FieldRuleEnum> cloneIt(){
+        DmcTypeFieldRuleEnumSV rc = getNew();
         rc.value = value;
         return(rc);
     }
     
     // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2009)
-    public GpbFieldRuleEnum getSVCopy(){
+    public FieldRuleEnum getSVCopy(){
         if (value == null)
             return(null);
         return(cloneValue(value));
@@ -65,8 +65,8 @@ public class DmcTypeGpbFieldRuleEnumSV extends DmcTypeGpbFieldRuleEnum implement
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2021)
-    public GpbFieldRuleEnum set(Object v) throws DmcValueException {
-        GpbFieldRuleEnum rc = typeCheck(v);
+    public FieldRuleEnum set(Object v) throws DmcValueException {
+        FieldRuleEnum rc = typeCheck(v);
         // We only return a value if the value actually changed. This supports
         // the applyModifier() mechanism on DmcObject where we only return true
         // if something changed as a result of the modifier
@@ -82,7 +82,7 @@ public class DmcTypeGpbFieldRuleEnumSV extends DmcTypeGpbFieldRuleEnum implement
     }
     
     @Override
-    public GpbFieldRuleEnum getSV(){
+    public FieldRuleEnum getSV(){
         return(value);
     }
     

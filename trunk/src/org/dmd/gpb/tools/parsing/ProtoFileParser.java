@@ -6,6 +6,7 @@ import java.io.LineNumberReader;
 import java.util.StringTokenizer;
 
 import org.dmd.dmc.DmcValueException;
+import org.dmd.gpb.server.extended.GpbElement;
 import org.dmd.gpb.server.extended.GpbEnum;
 import org.dmd.gpb.server.extended.GpbField;
 import org.dmd.gpb.server.extended.GpbMessage;
@@ -51,10 +52,10 @@ public class ProtoFileParser {
     		switch(state){
         	case ELEMENT:
         		if (line.startsWith(MESSAGE)){
-        			protoFile.addElement(parseMessage(in, fn, line));
+        			protoFile.addMainElements(parseMessage(in, fn, line));
         		}
         		else if (line.startsWith(ENUM)){
-        			protoFile.addElement(parseEnum(in, fn, line));
+        			protoFile.addMainElements(parseEnum(in, fn, line));
         		}
         		else{
         			ResultException ex = new ResultException("Expecting the start of a message or enum");
@@ -122,16 +123,31 @@ public class ProtoFileParser {
         	}
         	if (line.equals(RCURLY))
         		break;
-        	parseField(fn,line);
+        	message.addElements(parseElement(in,fn,line));
         }        
 		
 		return(message);
 	}
 	
+	GpbElement parseElement(LineNumberReader in, String fn, String line) throws ResultException, DmcValueException, IOException {
+		GpbElement rc = null;
+		
+		if (line.startsWith("required"))
+			rc = parseField(fn, line);
+		else if (line.startsWith("optional"))
+			rc = parseField(fn, line);
+		else if (line.startsWith("repeated"))
+			rc = parseField(fn, line);
+		else if (line.startsWith("message"))
+			rc = parseMessage(in, fn, line);
+		else if (line.startsWith("enum"))
+			rc = parseEnum(in, fn, line);
+		
+		return(rc);
+	}
+	
 	GpbField parseField(String fn, String line){
 		GpbField field = new GpbField();
-		
-		
 		
 		return(field);
 	}
