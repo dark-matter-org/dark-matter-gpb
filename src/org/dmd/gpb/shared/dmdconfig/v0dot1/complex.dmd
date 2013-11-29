@@ -1,6 +1,6 @@
 ComplexTypeDefinition
 name GpbFieldIndicator
-field GpbFieldRuleEnum  fieldRule   Whether the field is required, optional or repeated.
+field FieldRuleEnum  fieldRule   Whether the field is required, optional or repeated.
 field GpbField 			fieldName 	The name of the GpbField used for this field
 field Integer           fieldTag    The unique numeric tag for this field.
 field String           	info    	Additional info to be supplied for the field definition. For example the default value for a field [default = 10] or [packed = true] for a repeated field.

@@ -4,16 +4,16 @@ import org.dmd.dmc.presentation.DmcAdapterIF;
 import org.dmd.dmc.DmcAttribute;
 import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dms.generated.types.DmcTypeModifierMV;
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldRuleEnumSET;
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbMainElementREFMV;
 
 @SuppressWarnings("serial")
 // org.dmd.dms.util.AdapterFormatter.dumpAdapter(AdapterFormatter.java:59)
-// Called from: org.dmd.dms.util.AdapterFormatter.dumpAdapterSET(AdapterFormatter.java:20)
-public class GpbFieldRuleEnumSETAdapter extends DmcTypeGpbFieldRuleEnumSET implements DmcAdapterIF {
+// Called from: org.dmd.dms.util.AdapterFormatter.dumpAdapterMV(AdapterFormatter.java:16)
+public class GpbMainElementREFMVAdapter extends DmcTypeGpbMainElementREFMV implements DmcAdapterIF {
 
-    transient DmcTypeGpbFieldRuleEnumSET existingValue;
+    transient DmcTypeGpbMainElementREFMV existingValue;
 
-    public GpbFieldRuleEnumSETAdapter(DmcAttributeInfo ai){
+    public GpbMainElementREFMVAdapter(DmcAttributeInfo ai){
     	   super(ai);
     }
 
@@ -39,7 +39,7 @@ public class GpbFieldRuleEnumSETAdapter extends DmcTypeGpbFieldRuleEnumSET imple
 
     @Override
     public void setExisting(DmcAttribute<?> attr) {
-    	existingValue = (DmcTypeGpbFieldRuleEnumSET) attr;
+    	existingValue = (DmcTypeGpbMainElementREFMV) attr;
     	if (existingValue != null)
     		value = existingValue.getMVCopy();
     }

@@ -29,7 +29,7 @@ import org.dmd.dms.generated.types.DmcTypeEnumValueMV;              // Required 
 import org.dmd.dms.generated.types.DmcTypeModifierMV;               // Required for MODREC constructor - (GenUtility.java:224)
 import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:325)
 import org.dmd.dms.types.EnumValue;                                 // Primitive type and !auxiliary class - (GenUtility.java:268)
-import org.dmd.gpb.shared.generated.dmo.GpbElementDMO;              // Base class - (GenUtility.java:352)
+import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;          // Base class - (GenUtility.java:352)
 
 /**
  * The GpbEnum allows for the definition of enumerations. One thing to be
@@ -56,7 +56,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbElementDMO;              // Base clas
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-public class GpbEnumDMO  extends GpbElementDMO  implements DmcNamedObjectIF, Serializable  {
+public class GpbEnumDMO  extends GpbMainElementDMO  implements DmcNamedObjectIF, Serializable  {
 
     public final static String constructionClassName = "GpbEnum";
 

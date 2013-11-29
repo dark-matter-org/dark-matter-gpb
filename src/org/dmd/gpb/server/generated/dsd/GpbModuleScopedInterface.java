@@ -21,7 +21,6 @@ import java.util.Iterator;                                // To provide iterator
 import org.dmd.gpb.server.extended.GpbArtifact;           // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
 import org.dmd.gpb.server.extended.GpbDefinition;         // A definition from the GpbModule Module - (DSDefinitionModule.java:160)
 import org.dmd.gpb.server.extended.GpbElement;            // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
-import org.dmd.gpb.server.extended.GpbField;              // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
 import org.dmd.gpb.server.extended.GpbProtoFile;          // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
 import org.dmd.gpb.server.extended.GpbType;               // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
 
@@ -42,10 +41,6 @@ public interface GpbModuleScopedInterface {
     public void addGpbElement(GpbElement def);
     public int getGpbElementCount();
     public Iterator<GpbElement> getAllGpbElement();
-
-    public void addGpbField(GpbField def);
-    public int getGpbFieldCount();
-    public Iterator<GpbField> getAllGpbField();
 
     public void addGpbArtifact(GpbArtifact def);
     public int getGpbArtifactCount();

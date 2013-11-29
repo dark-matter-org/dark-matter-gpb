@@ -24,53 +24,53 @@ import org.dmd.dmc.DmcAttribute;
 import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dms.generated.enums.ValueTypeEnum;
-import org.dmd.gpb.shared.generated.enums.GpbFieldRuleEnum;    // DmcType import
+import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;    // DmcType import
 /**
- * The DmcTypeGpbFieldRuleEnumSET provides storage for a set of GpbFieldRuleEnum
+ * The DmcTypeFieldRuleEnumSET provides storage for a set of FieldRuleEnum
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2606)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpEnumType(DmoTypeFormatter.java:362)
  */
 @SuppressWarnings("serial")
-public class DmcTypeGpbFieldRuleEnumSET extends DmcTypeGpbFieldRuleEnum implements Serializable {
+public class DmcTypeFieldRuleEnumSET extends DmcTypeFieldRuleEnum implements Serializable {
     
-     private final static Iterator<GpbFieldRuleEnum> emptyList =  (new HashSet<GpbFieldRuleEnum>()).iterator();
+     private final static Iterator<FieldRuleEnum> emptyList =  (new HashSet<FieldRuleEnum>()).iterator();
     
     
-    protected Set<GpbFieldRuleEnum> value;
+    protected Set<FieldRuleEnum> value;
     
-    public DmcTypeGpbFieldRuleEnumSET(){
+    public DmcTypeFieldRuleEnumSET(){
         value = null;
     }
     
-    public DmcTypeGpbFieldRuleEnumSET(DmcAttributeInfo ai){
+    public DmcTypeFieldRuleEnumSET(DmcAttributeInfo ai){
         super(ai);
         initValue();
     }
     
     void initValue(){
         if (getAttributeInfo().valueType == ValueTypeEnum.HASHSET)
-            value = new HashSet<GpbFieldRuleEnum>();
+            value = new HashSet<FieldRuleEnum>();
         else
-            value = new TreeSet<GpbFieldRuleEnum>();
+            value = new TreeSet<FieldRuleEnum>();
     }
     
     @Override
-    public DmcTypeGpbFieldRuleEnumSET getNew(){
-        return(new DmcTypeGpbFieldRuleEnumSET(getAttributeInfo()));
+    public DmcTypeFieldRuleEnumSET getNew(){
+        return(new DmcTypeFieldRuleEnumSET(getAttributeInfo()));
     }
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2647)
-    public DmcAttribute<GpbFieldRuleEnum> cloneIt(){
+    public DmcAttribute<FieldRuleEnum> cloneIt(){
         synchronized(this){
-            DmcTypeGpbFieldRuleEnumSET rc = getNew();
+            DmcTypeFieldRuleEnumSET rc = getNew();
     
             if (value == null)
                 return(rc);
     
-            for(GpbFieldRuleEnum val: value)
+            for(FieldRuleEnum val: value)
             try {
                 rc.add(val);
             } catch (DmcValueException e) {
@@ -82,9 +82,9 @@ public class DmcTypeGpbFieldRuleEnumSET extends DmcTypeGpbFieldRuleEnum implemen
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2670)
-    public GpbFieldRuleEnum add(Object v) throws DmcValueException {
+    public FieldRuleEnum add(Object v) throws DmcValueException {
         synchronized(this){
-            GpbFieldRuleEnum rc = typeCheck(v);
+            FieldRuleEnum rc = typeCheck(v);
             if (value == null)
                 initValue();
         
@@ -98,9 +98,9 @@ public class DmcTypeGpbFieldRuleEnumSET extends DmcTypeGpbFieldRuleEnum implemen
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2687)
-    public GpbFieldRuleEnum del(Object v){
+    public FieldRuleEnum del(Object v){
         synchronized(this){
-            GpbFieldRuleEnum rc = null;
+            FieldRuleEnum rc = null;
             if (value == null)
                 return(rc);
             
@@ -122,32 +122,32 @@ public class DmcTypeGpbFieldRuleEnumSET extends DmcTypeGpbFieldRuleEnum implemen
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2712)
-    public Iterator<GpbFieldRuleEnum> getMV(){
+    public Iterator<FieldRuleEnum> getMV(){
         synchronized(this){
             if (value == null)
                 return(emptyList);
 
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHSET)
-                return( (new HashSet<GpbFieldRuleEnum>(value)).iterator() );
+                return( (new HashSet<FieldRuleEnum>(value)).iterator() );
             else
-                return( (new TreeSet<GpbFieldRuleEnum>(value)).iterator() );
+                return( (new TreeSet<FieldRuleEnum>(value)).iterator() );
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2726)
-    public Set<GpbFieldRuleEnum> getMVCopy(){
+    public Set<FieldRuleEnum> getMVCopy(){
         synchronized(this){
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHSET){
                 if (value == null)
-                    return(new HashSet<GpbFieldRuleEnum>());
+                    return(new HashSet<FieldRuleEnum>());
                 else
-                    return(new HashSet<GpbFieldRuleEnum>(value));
+                    return(new HashSet<FieldRuleEnum>(value));
             }
             else{
                 if (value == null)
-                    return(new TreeSet<GpbFieldRuleEnum>(value));
+                    return(new TreeSet<FieldRuleEnum>(value));
                 else
-                    return(new TreeSet<GpbFieldRuleEnum>(value));
+                    return(new TreeSet<FieldRuleEnum>(value));
             }
         }
     }
@@ -170,7 +170,7 @@ public class DmcTypeGpbFieldRuleEnumSET extends DmcTypeGpbFieldRuleEnum implemen
                 return(false);
             
             try {
-                GpbFieldRuleEnum val = typeCheck(v);
+                FieldRuleEnum val = typeCheck(v);
                 return(value.contains(val));
             } catch (DmcValueException e) {
                 return(false);

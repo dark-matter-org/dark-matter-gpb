@@ -15,7 +15,6 @@ import org.dmd.dms.generated.types.DmcTypeModifierMV;                     // Req
 import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
 import org.dmd.gpb.server.extended.GpbDefinition;                         // Derived class - (BaseDMWGenerator.java:1167)
 import org.dmd.gpb.server.extended.GpbElement;                            // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
-import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
 import org.dmd.gpb.server.extended.GpbModule;                             // Required for getModificationRecorder() - (BaseDMWGenerator.java:999)
 import org.dmd.gpb.server.extended.GpbProtoFile;                          // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
 import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
@@ -41,7 +40,6 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
     DmcDefinitionSet<GpbDefinition>     GpbDefinitionDefs    = new DmcDefinitionSet<GpbDefinition>();   // All definitions associated with this module
     DmcDefinitionSet<GpbType>           GpbTypeDefs          = new DmcDefinitionSet<GpbType>();         // All GpbType definitions
     DmcDefinitionSet<GpbElement>        GpbElementDefs       = new DmcDefinitionSet<GpbElement>();      // All GpbElement definitions
-    DmcDefinitionSet<GpbField>          GpbFieldDefs         = new DmcDefinitionSet<GpbField>();        // All GpbField definitions
     DmcDefinitionSet<GpbArtifact>       GpbArtifactDefs      = new DmcDefinitionSet<GpbArtifact>();     // All GpbArtifact definitions
     DmcDefinitionSet<GpbProtoFile>      GpbProtoFileDefs     = new DmcDefinitionSet<GpbProtoFile>();    // All GpbProtoFile definitions
     DmcDefinitionSet<GpbModule>         GpbModuleDefs        = new DmcDefinitionSet<GpbModule>();       // All GpbModule definitions
@@ -408,20 +406,6 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
 
     public Iterator<GpbElement> getAllGpbElement(){
         return(GpbElementDefs.values().iterator());
-    }
-
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:243)
-    public void addGpbField(GpbField def){
-        GpbFieldDefs.add(def);
-        addGpbDefinition(def);
-    }
-
-    public int getGpbFieldCount(){
-        return(GpbFieldDefs.size());
-    }
-
-    public Iterator<GpbField> getAllGpbField(){
-        return(GpbFieldDefs.values().iterator());
     }
 
     // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:243)

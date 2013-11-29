@@ -17,14 +17,18 @@ public class DmdgpbDMSAGAMAP {
         _SmAp.put(DmdgpbDMSAG.__definedInGpbModule.id,DmdgpbDMSAG.__definedInGpbModule);
         _SmAp.put(DmdgpbDMSAG.__dependsOnGpbModule.id,DmdgpbDMSAG.__dependsOnGpbModule);
         _SmAp.put(DmdgpbDMSAG.__dmType.id,DmdgpbDMSAG.__dmType);
-        _SmAp.put(DmdgpbDMSAG.__element.id,DmdgpbDMSAG.__element);
+        _SmAp.put(DmdgpbDMSAG.__elements.id,DmdgpbDMSAG.__elements);
+        _SmAp.put(DmdgpbDMSAG.__field.id,DmdgpbDMSAG.__field);
+        _SmAp.put(DmdgpbDMSAG.__fieldRule.id,DmdgpbDMSAG.__fieldRule);
         _SmAp.put(DmdgpbDMSAG.__gpbHint.id,DmdgpbDMSAG.__gpbHint);
         _SmAp.put(DmdgpbDMSAG.__gpbType.id,DmdgpbDMSAG.__gpbType);
         _SmAp.put(DmdgpbDMSAG.__isMessageType.id,DmdgpbDMSAG.__isMessageType);
         _SmAp.put(DmdgpbDMSAG.__javaType.id,DmdgpbDMSAG.__javaType);
+        _SmAp.put(DmdgpbDMSAG.__mainElements.id,DmdgpbDMSAG.__mainElements);
         _SmAp.put(DmdgpbDMSAG.__package.id,DmdgpbDMSAG.__package);
         _SmAp.put(DmdgpbDMSAG.__pythonType.id,DmdgpbDMSAG.__pythonType);
         _SmAp.put(DmdgpbDMSAG.__sizeInBytes.id,DmdgpbDMSAG.__sizeInBytes);
+        _SmAp.put(DmdgpbDMSAG.__tag.id,DmdgpbDMSAG.__tag);
         _SmAp.put(DmdgpbDMSAG.__usesDefsFrom.id,DmdgpbDMSAG.__usesDefsFrom);
     }
 
