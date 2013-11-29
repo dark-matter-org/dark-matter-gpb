@@ -19,16 +19,15 @@ package org.dmd.gpb.shared.generated.dmo;
 import java.io.Serializable;                                        // Always required - (GenUtility.java:221)
 import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:373)
 import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:372)
-import org.dmd.dmc.DmcSliceInfo;                                    // Required for object slicing - (GenUtility.java:226)
 import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:238)
 import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:367)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Required for MODREC constructor - (GenUtility.java:225)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Attribute from meta schema - (GenUtility.java:194)
 import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:325)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;               // Required for MODREC constructor - (GenUtility.java:224)
-import org.dmd.gpb.shared.generated.dmo.GpbElementDMO;              // Base class - (GenUtility.java:352)
+import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;           // Base class - (GenUtility.java:352)
 
 /**
- * null
+ * The GpbElement provides a common base for enums and messages so that\n we
+ * can specify a set of them to compose a GpbProtoFile.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -36,47 +35,20 @@ import org.dmd.gpb.shared.generated.dmo.GpbElementDMO;              // Base clas
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-public class GpbMessageDMO  extends GpbElementDMO  implements DmcNamedObjectIF, Serializable  {
+abstract public class GpbElementDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, Serializable  {
 
-    public final static String constructionClassName = "GpbMessage";
+    public final static String constructionClassName = "GpbElement";
 
 
     static {
     }
 
-    public GpbMessageDMO() {
-        super("GpbMessage");
+    public GpbElementDMO() {
+        super("GpbElement");
     }
 
-    protected GpbMessageDMO(String oc) {
+    protected GpbElementDMO(String oc) {
         super(oc);
-    }
-
-    @Override
-    public GpbMessageDMO getNew(){
-        GpbMessageDMO rc = new GpbMessageDMO();
-        return(rc);
-    }
-
-    @Override
-    public GpbMessageDMO getSlice(DmcSliceInfo info){
-        GpbMessageDMO rc = new GpbMessageDMO();
-        populateSlice(rc,info);
-        return(rc);
-    }
-
-    public GpbMessageDMO(DmcTypeModifierMV mods) {
-        super("GpbMessage");
-        modrec(true);
-        setModifier(mods);
-    }
-
-    public GpbMessageDMO getModificationRecorder(){
-        GpbMessageDMO rc = new GpbMessageDMO();
-        rc.setName(getName());
-        rc.setModifier(new DmcTypeModifierMV(MetaDMSAG.__modify));
-        rc.modrec(true);
-        return(rc);
     }
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:750)
@@ -96,8 +68,8 @@ public class GpbMessageDMO  extends GpbElementDMO  implements DmcNamedObjectIF, 
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:774)
     public boolean equals(Object obj){
-        if (obj instanceof GpbMessageDMO){
-            return( getObjectName().equals( ((GpbMessageDMO) obj).getObjectName()) );
+        if (obj instanceof GpbElementDMO){
+            return( getObjectName().equals( ((GpbElementDMO) obj).getObjectName()) );
         }
         return(false);
     }
