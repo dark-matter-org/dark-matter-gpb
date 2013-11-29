@@ -114,6 +114,7 @@ useWrapperType	EXTENDED
 derivedFrom     GpbElement
 isNamedBy       name
 must			name
+//must			field
 
 //ClassDefinition
 //name         	GpbModule

@@ -92,3 +92,10 @@ dmdID			22
 type			GpbElement
 valueType		MULTI
 description		The element attribute indicates a list of GpbElements that comprise a GpfFile.
+
+//AttributeDefinition
+//name			field
+//dmdID			23
+//type			GpbField
+//valueType		MULTI
+//description		A field in a GpbMessage.
