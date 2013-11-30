@@ -17,7 +17,6 @@ package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:393)
 import java.io.Serializable;                                              // Always required - (GenUtility.java:221)
-import java.util.*;                                                       // Always required if we have any MV attributes - (GenUtility.java:216)
 import org.dmd.dmc.DmcAttribute;                                          // Named object - (GenUtility.java:373)
 import org.dmd.dmc.DmcNamedObjectIF;                                      // Named object - (GenUtility.java:372)
 import org.dmd.dmc.DmcOmni;                                               // Lazy resolution - (GenUtility.java:317)
@@ -25,15 +24,13 @@ import org.dmd.dmc.DmcSliceInfo;                                          // Req
 import org.dmd.dmc.DmcValueException;                                     // Any attributes - (GenUtility.java:238)
 import org.dmd.dmc.types.DefinitionName;                                  // Naming attribute type - (GenUtility.java:367)
 import org.dmd.dms.generated.dmo.MetaDMSAG;                               // Required for MODREC constructor - (GenUtility.java:225)
+import org.dmd.dms.generated.types.DmcTypeIntegerSV;                      // Required type - (GenUtility.java:325)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;                     // Required for MODREC constructor - (GenUtility.java:224)
 import org.dmd.gpb.shared.generated.dmo.GpbElementDMO;                    // Base class - (GenUtility.java:352)
-import org.dmd.gpb.shared.generated.dmo.GpbFieldDMO;                      // Type specific set/add - (GenUtility.java:304)
 import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                       // Type specific set/add - (GenUtility.java:304)
 import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;                  // Primitive type and !auxiliary class - (GenUtility.java:268)
 import org.dmd.gpb.shared.generated.types.DmcTypeFieldRuleEnumSV;         // Required type - (GenUtility.java:325)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldREFMV;           // Reference type - (GenUtility.java:297)
 import org.dmd.gpb.shared.generated.types.DmcTypeGpbTypeREFSV;            // Reference type - (GenUtility.java:297)
-import org.dmd.gpb.shared.generated.types.GpbFieldREF;                    // Helper class - (GenUtility.java:332)
 import org.dmd.gpb.shared.generated.types.GpbTypeREF;                     // Helper class - (GenUtility.java:332)
 
 /**
@@ -242,109 +239,52 @@ public class GpbFieldDMO  extends GpbElementDMO  implements DmcNamedObjectIF, Se
          rem(DmdgpbDMSAG.__gpbType);
     }
 
-    /**
-     * @return An Iterator of GpbFieldDMO objects.
-     */
-    @SuppressWarnings("unchecked")
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:967)
-    public Iterator<GpbFieldREF> getTag(){
-        DmcTypeGpbFieldREFMV attr = (DmcTypeGpbFieldREFMV) get(DmdgpbDMSAG.__tag);
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)
+    public Integer getTag(){
+        DmcTypeIntegerSV attr = (DmcTypeIntegerSV) get(DmdgpbDMSAG.__tag);
         if (attr == null)
-            return( ((List<GpbFieldREF>) Collections.EMPTY_LIST).iterator() );
+            return(null);
 
-        if (DmcOmni.instance().lazyResolution()){
-            if (attr.doLazyResolution(this)){
-                rem(attr.getAttributeInfo());
-                return( ((List<GpbFieldREF>) Collections.EMPTY_LIST).iterator() );
-            }
-        }
-
-        return(attr.getMV());
+        return(attr.getSV());
     }
 
     /**
-     * @return An Iterator of GpbFieldREFs without attempting lazy resolution (if it's turned on).
+     * Sets tag to the specified value.
+     * @param value Integer
      */
-    @SuppressWarnings("unchecked")
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:987)
-    public Iterator<GpbFieldREF> getTagREFs(){
-        DmcTypeGpbFieldREFMV attr = (DmcTypeGpbFieldREFMV) get(DmdgpbDMSAG.__tag);
-        if (attr == null)
-            return( ((List<GpbFieldREF>) Collections.EMPTY_LIST).iterator() );
-
-        return(attr.getMV());
-    }
-
-    /**
-     * Adds another tag to the specified value.
-     * @param value GpbField
-     */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1001)
-    public DmcAttribute<?> addTag(GpbFieldDMO value) {
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:821)
+    public void setTag(Integer value) {
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__tag);
         if (attr == null)
-            attr = new DmcTypeGpbFieldREFMV(DmdgpbDMSAG.__tag);
+            attr = new DmcTypeIntegerSV(DmdgpbDMSAG.__tag);
         
         try{
-            setLastValue(attr.add(value));
-            add(DmdgpbDMSAG.__tag,attr);
+            attr.set(value);
+            set(DmdgpbDMSAG.__tag,attr);
         }
         catch(DmcValueException ex){
-            throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
         }
-        return(attr);
     }
 
     /**
-     * Adds another tag value.
-     * @param value A value compatible with GpbField
+     * Sets tag to the specified value.
+     * @param value A value compatible with DmcTypeIntegerSV
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1242)
-    public DmcAttribute<?> addTag(Object value) throws DmcValueException {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__tag);
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
+    public void setTag(Object value) throws DmcValueException {
+        DmcTypeIntegerSV attr  = (DmcTypeIntegerSV) get(DmdgpbDMSAG.__tag);
         if (attr == null)
-            attr = new DmcTypeGpbFieldREFMV(DmdgpbDMSAG.__tag);
+            attr = new DmcTypeIntegerSV(DmdgpbDMSAG.__tag);
         
-        setLastValue(attr.add(value));
-        add(DmdgpbDMSAG.__tag,attr);
-        return(attr);
-    }
-
-    /**
-     * Returns the number of values in tag
-     */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1259)
-    public int getTagSize(){
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__tag);
-        if (attr == null){
-            if (DmdgpbDMSAG.__tag.indexSize == 0)
-                return(0);
-            else
-                return(DmdgpbDMSAG.__tag.indexSize);
-        }
-        return(attr.getMVSize());
-    }
-
-    /**
-     * Deletes a tag value.
-     * @param value The GpbField to be deleted from set of attribute values.
-     */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1298)
-    public DmcAttribute<?> delTag(Object value){
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__tag);
-        
-        if ( (attr == null) && (getModifier()!= null))
-            delFromEmptyAttribute(new DmcTypeGpbFieldREFMV(DmdgpbDMSAG.__tag), value);
-        else
-            attr = del(DmdgpbDMSAG.__tag, value);
-        
-        return(attr);
+        attr.set(value);
+        set(DmdgpbDMSAG.__tag,attr);
     }
 
     /**
      * Removes the tag attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1352)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
     public void remTag(){
          rem(DmdgpbDMSAG.__tag);
     }
