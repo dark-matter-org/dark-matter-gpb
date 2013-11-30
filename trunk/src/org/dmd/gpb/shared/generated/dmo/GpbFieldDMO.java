@@ -34,7 +34,6 @@ import org.dmd.gpb.shared.generated.types.DmcTypeGpbTypeREFSV;            // Ref
 import org.dmd.gpb.shared.generated.types.GpbTypeREF;                     // Helper class - (GenUtility.java:332)
 
 /**
- * null
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
