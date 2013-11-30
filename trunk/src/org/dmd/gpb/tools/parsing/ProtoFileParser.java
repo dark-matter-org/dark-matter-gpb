@@ -6,27 +6,61 @@ import java.io.LineNumberReader;
 import java.util.StringTokenizer;
 
 import org.dmd.dmc.DmcValueException;
+import org.dmd.dms.types.EnumValue;
 import org.dmd.gpb.server.extended.GpbElement;
 import org.dmd.gpb.server.extended.GpbEnum;
 import org.dmd.gpb.server.extended.GpbField;
 import org.dmd.gpb.server.extended.GpbMessage;
 import org.dmd.gpb.server.extended.GpbProtoFile;
+import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;
 import org.dmd.util.exceptions.DebugInfo;
 import org.dmd.util.exceptions.ResultException;
+import org.dmd.util.parsing.Classifier;
+import org.dmd.util.parsing.Token;
+import org.dmd.util.parsing.TokenArrayList;
 
 public class ProtoFileParser {
 	
-	static String PACKAGE 	= "package";
-	static String MESSAGE 	= "message";
-	static String ENUM 		= "enum";
-	static String LCURLY 	= "{";
-	static String RCURLY 	= "}";
+	static String PACKAGE_STR 	= "package";
+	static String MESSAGE_STR 	= "message";
+	static String ENUM_STR 		= "enum";
+	static String LCURLY_STR 	= "{";
+	static String RCURLY_STR 	= "}";
+	static String OPTIONAL_STR 	= "optional";
+	static String REQUIRED_STR 	= "required";
+	static String REPEATED_STR 	= "repeated";
+	
+	final static int ENUM 		= Token.CUSTOM+1;
+	final static int MESSAGE 	= Token.CUSTOM+2;
+	final static int OPTIONAL 	= Token.CUSTOM+3;
+	final static int REQUIRED 	= Token.CUSTOM+4;
+	final static int REPEATED 	= Token.CUSTOM+5;
+	final static int EQUALS 	= Token.CUSTOM+6;
+	final static int SEMICOLON 	= Token.CUSTOM+7;
+	final static int LCURLY 	= Token.CUSTOM+8;
+	final static int RCURLY 	= Token.CUSTOM+9;
+	
+	LineNumberReader	in;
 	
 	GpbProtoFile	protoFile;
 	
 	State			state;
 	
+	Classifier		classifier;
+	
 	public ProtoFileParser(){
+		classifier = new Classifier();
+		
+		classifier.addKeyword(ENUM_STR, ENUM);
+		classifier.addKeyword(MESSAGE_STR, MESSAGE);
+		classifier.addKeyword(OPTIONAL_STR, OPTIONAL);
+		classifier.addKeyword(REPEATED_STR, REPEATED);
+		classifier.addKeyword(REQUIRED_STR, REQUIRED);
+		
+		classifier.addSeparator("=", EQUALS);
+		classifier.addSeparator(";", SEMICOLON);
+		classifier.addSeparator("{", LCURLY);
+		classifier.addSeparator("}", RCURLY);
 		
 	}
 	
@@ -38,24 +72,20 @@ public class ProtoFileParser {
 
 	public GpbProtoFile parseFromProto(String fn) throws IOException, DmcValueException, ResultException {
 		init(fn);
-        LineNumberReader	in	= new LineNumberReader(new FileReader(fn));
+        in	= new LineNumberReader(new FileReader(fn));
 		
-        String str;
-        while ((str = in.readLine()) != null) {
-        	String line = str.trim();
-        	
-        	DebugInfo.debug(line);
-        	
+        String line;
+        while ((line = getNextLine()) != null) {
     		if (line.length() == 0)
     			continue;
 
     		switch(state){
         	case ELEMENT:
-        		if (line.startsWith(MESSAGE)){
-        			protoFile.addMainElements(parseMessage(in, fn, line));
+        		if (line.startsWith(MESSAGE_STR)){
+        			protoFile.addMainElements(parseMessage(fn, line));
         		}
-        		else if (line.startsWith(ENUM)){
-        			protoFile.addMainElements(parseEnum(in, fn, line));
+        		else if (line.startsWith(ENUM_STR)){
+        			protoFile.addMainElements(parseEnum(fn, line));
         		}
         		else{
         			ResultException ex = new ResultException("Expecting the start of a message or enum");
@@ -68,7 +98,7 @@ public class ProtoFileParser {
         	case PACKAGE:
         		if (line.startsWith("//"))
         			continue;
-        		if (line.startsWith(PACKAGE)){
+        		if (line.startsWith(PACKAGE_STR)){
         			protoFile.setPackage(getPackage(fn,in.getLineNumber(),line));
         			state = State.ELEMENT;
         		}
@@ -76,10 +106,20 @@ public class ProtoFileParser {
         	}
         }
         
+        in.close();
+        
         return(protoFile);
 	}
 	
-	GpbMessage parseMessage(LineNumberReader in, String fn, String first) throws ResultException, DmcValueException, IOException {
+	String getNextLine() throws IOException {
+		String str = in.readLine();
+DebugInfo.debug(str);
+		if (str == null)
+			return(null);
+		return(str.trim());
+	}
+	
+	GpbMessage parseMessage(String fn, String first) throws ResultException, DmcValueException, IOException {
 		GpbMessage message = new GpbMessage();
         StringTokenizer t = new StringTokenizer(first);
         boolean wantLCurly = true;
@@ -109,19 +149,17 @@ public class ProtoFileParser {
         }
         
         // Parse the body
-        String str;
-        while ((str = in.readLine()) != null) {
-        	String line = str.trim();
-        	
+        String line;
+        while ((line = getNextLine()) != null) {
         	if (wantLCurly){
-        		if (!line.equals(LCURLY)){
+        		if (!line.equals(LCURLY_STR)){
         			ResultException ex = new ResultException("Missing open curly bracket for message definition.");
             		throw(ex);
         		}
         		wantLCurly = false;
         		continue;
         	}
-        	if (line.equals(RCURLY))
+        	if (line.equals(RCURLY_STR))
         		break;
         	message.addElements(parseElement(in,fn,line));
         }        
@@ -139,22 +177,70 @@ public class ProtoFileParser {
 		else if (line.startsWith("repeated"))
 			rc = parseField(fn, line);
 		else if (line.startsWith("message"))
-			rc = parseMessage(in, fn, line);
+			rc = parseMessage(fn, line);
 		else if (line.startsWith("enum"))
-			rc = parseEnum(in, fn, line);
+			rc = parseEnum(fn, line);
 		
 		return(rc);
 	}
 	
-	GpbField parseField(String fn, String line){
+	GpbField parseField(String fn, String line) throws DmcValueException {
 		GpbField field = new GpbField();
+		
+		TokenArrayList tokens = classifier.classify(line, true);
+		
+		if (tokens.size() == 6){
+			switch(tokens.nth(0).getType()){
+			case OPTIONAL:
+				field.setFieldRule(FieldRuleEnum.OPTIONAL);
+				break;
+			case REQUIRED:
+				field.setFieldRule(FieldRuleEnum.REQUIRED);
+				break;
+			case REPEATED:
+				field.setFieldRule(FieldRuleEnum.REPEATED);
+				break;
+			}
+
+			field.setGpbType(tokens.nth(1).getValue());
+			
+			field.setName(tokens.nth(2).getValue());
+			
+			field.setTag(tokens.nth(4).getValue());
+			
+			DebugInfo.debug(field.toOIF());
+		}
+	
 		
 		return(field);
 	}
 
-	GpbEnum parseEnum(LineNumberReader in, String fn, String first){
+	GpbEnum parseEnum(String fn, String first) throws DmcValueException, IOException {
 		GpbEnum enumDef = new GpbEnum();
+		String line;
+		TokenArrayList tokens = classifier.classify(first, true);
 		
+		enumDef.setName(tokens.nth(1).getValue());
+		
+		// If only two tokens, the next line should have the opening curly
+		if (tokens.size() == 2){
+			line = getNextLine();
+		}
+		
+		while((line = getNextLine()) != null){
+			tokens = classifier.classify(line, true);
+			
+			if (tokens.size() >= 4){
+				EnumValue ev = new EnumValue();
+				ev.set(tokens.nth(2).getValue() + " " + tokens.nth(0).getValue() + " add a description");
+				enumDef.addEnumValue(ev);
+			}
+			
+			if (line.contains("}"))
+				break;
+		}
+		
+		DebugInfo.debug(enumDef.toOIF());
 		
 		return(enumDef);
 	}

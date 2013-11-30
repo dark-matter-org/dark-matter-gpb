@@ -557,15 +557,14 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
             AttributeDefinitionDMO _tagOBJ = new AttributeDefinitionDMO();
             _tag = new AttributeDefinition(_tagOBJ);
-            _tagOBJ.setType("dmdgpb.GpbField");
+            _tagOBJ.setType("meta.Integer");
             _tagOBJ.setName("tag");
             _tagOBJ.setDmdID("-477975");
             _tagOBJ.setDescription("As you can see, each field in the message definition has a unique numbered tag.\n These tags are used to identify your fields in the message binary format, and should not be\n changed once your message type is in use. Note that tags with values in the range 1 through 15\n take one byte to encode, including the identifying number and the field's type (you can find\n out more about this in Protocol Buffer Encoding). Tags in the range 16 through 2047 take two\n bytes. So you should reserve the tags 1 through 15 for very frequently occurring message\n elements. Remember to leave some room for frequently occurring elements that might be added\n in the future.\n <p/>\n The smallest tag number you can specify is 1, and the largest is 229 - 1, or 536,870,911.\n You also cannot use the numbers 19000 though 19999");
-            _tagOBJ.setValueType("MULTI");
             _tagOBJ.setDotName("dmdgpb.tag.AttributeDefinition");
             _tag.setDefinedIn(this);
             _tagOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _tagOBJ.setLineNumber("128");
+            _tagOBJ.setLineNumber("127");
             addAttributeDefList(_tag);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -578,7 +577,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _fieldRuleOBJ.setDotName("dmdgpb.fieldRule.AttributeDefinition");
             _fieldRule.setDefinedIn(this);
             _fieldRuleOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _fieldRuleOBJ.setLineNumber("140");
+            _fieldRuleOBJ.setLineNumber("139");
             addAttributeDefList(_fieldRule);
 
     }
