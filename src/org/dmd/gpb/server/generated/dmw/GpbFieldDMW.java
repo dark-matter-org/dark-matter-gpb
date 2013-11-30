@@ -18,7 +18,6 @@ import org.dmd.gpb.shared.generated.types.GpbTypeREF;            // Is reference
 
 
 /**
- * null
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>

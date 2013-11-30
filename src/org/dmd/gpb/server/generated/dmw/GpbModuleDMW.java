@@ -26,7 +26,6 @@ import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                     // Cla
 
 
 /**
- * null
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -301,33 +300,115 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         ((GpbModuleDMO) core).remDependsOnGpbModule();
     }
 
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1393)
-    public String getDescription(){
-        return(((GpbModuleDMO) core).getDescription());
+    /**
+     * @return The number of String items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1590)
+    public int getDescriptionSize(){
+        return(((GpbModuleDMO) core).getDescriptionSize());
     }
 
     /**
-     * Sets description to the specified value.
-     * @param value A value compatible with DmcTypeString
+     * @return true if there are no StringDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1503)
-    public void setDescription(Object value) throws DmcValueException {
-        ((GpbModuleDMO) core).setDescription(value);
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1598)
+    public boolean getDescriptionIsEmpty(){
+        if (((GpbModuleDMO) core).getDescriptionSize() == 0)
+            return(true);
+        return(false);
     }
 
     /**
-     * Sets description to the specified value.
-     * @param value String
+     * @return true if there are any StringDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1512)
-    public void setDescription(String value){
-        ((GpbModuleDMO) core).setDescription(value);
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1608)
+    public boolean getDescriptionHasValue(){
+        if (((GpbModuleDMO) core).getDescriptionSize() == 0)
+            return(false);
+        return(true);
+    }
+
+    /**
+     * @return An Iterator of String objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2026)
+    public StringIterableDMW getDescriptionIterable(){
+        DmcAttribute<?> attr = core.get(MetaDMSAG.__description);
+        if (attr == null)
+            return(StringIterableDMW.emptyList);
+        
+        return(new StringIterableDMW(((GpbModuleDMO) core).getDescription()));
+    }
+
+    /**
+     * Adds another description value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2052)
+    public void addDescription(Object value) throws DmcValueException {
+        ((GpbModuleDMO) core).addDescription(value);
+    }
+
+    /**
+     * Adds another description value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2062)
+    public void addDescription(String value){
+        ((GpbModuleDMO) core).addDescription(value);
+    }
+
+    /**
+     * Returns true if the collection contains the description value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2119)
+    public boolean descriptionContains(String value){
+        return(((GpbModuleDMO) core).descriptionContains(value));
+    }
+
+    /**
+     * @return A COPY of the collection of String objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2163)
+    @SuppressWarnings("unchecked")
+    public ArrayList<String> getDescriptionCopy(){
+        DmcAttribute<?> attr = core.get(MetaDMSAG.__description);
+        if (attr == null)
+            return(new ArrayList<String>());
+        
+        ArrayList<String> rc = new ArrayList<String>(attr.getMVSize());
+        
+        Iterator<String> it = (Iterator<String>) attr.getMV();
+        while(it.hasNext()){
+            rc.add(it.next());
+        }
+        
+        return(rc);
+    }
+
+    /**
+     * Deletes a description value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2190)
+    public void delDescription(Object value) throws DmcValueException {
+        ((GpbModuleDMO) core).delDescription(value);
+    }
+
+    /**
+     * Deletes a description value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2199)
+    public void delDescription(String value){
+        ((GpbModuleDMO) core).delDescription(value);
     }
 
     /**
      * Removes the description attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1538)
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2211)
     public void remDescription(){
         ((GpbModuleDMO) core).remDescription();
     }
@@ -361,6 +442,37 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1538)
     public void remName(){
         ((GpbModuleDMO) core).remName();
+    }
+
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1393)
+    public String getPackage(){
+        return(((GpbModuleDMO) core).getPackage());
+    }
+
+    /**
+     * Sets package to the specified value.
+     * @param value A value compatible with DmcTypeString
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1503)
+    public void setPackage(Object value) throws DmcValueException {
+        ((GpbModuleDMO) core).setPackage(value);
+    }
+
+    /**
+     * Sets package to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1512)
+    public void setPackage(String value){
+        ((GpbModuleDMO) core).setPackage(value);
+    }
+
+    /**
+     * Removes the package attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1538)
+    public void remPackage(){
+        ((GpbModuleDMO) core).remPackage();
     }
 
     // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:213)
