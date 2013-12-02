@@ -3,17 +3,19 @@ package org.dmd.gpb.server.generated.dmw;
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:366)
 import java.util.ArrayList;                                                // To support getMVCopy() - (BaseDMWGenerator.java:1100)
+import java.util.Iterator;                                                 // Support copy of MV objects - (BaseDMWGenerator.java:2159)
 import org.dmd.dmc.*;                                                      // If any attributes - (BaseDMWGenerator.java:1006)
 import org.dmd.dmc.definitions.DmcDefinitionIF;                            // The object is a domain specific definition - (BaseDMWGenerator.java:335)
 import org.dmd.dmc.types.DefinitionName;                                   // Is named by - (BaseDMWGenerator.java:985)
 import org.dmd.dms.ClassDefinition;                                        // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:990)
 import org.dmd.dms.generated.dmo.MetaDMSAG;                                // Required for MODREC constructor - (BaseDMWGenerator.java:995)
+import org.dmd.dms.generated.dmw.StringIterableDMW;                        // For multi-valued String - (BaseDMWGenerator.java:2022)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;                      // Required for MODREC constructor - (BaseDMWGenerator.java:994)
 import org.dmd.gpb.server.extended.GpbDefinition;                          // Derived class - (BaseDMWGenerator.java:1167)
 import org.dmd.gpb.server.extended.GpbMainElement;                         // Is reference type - (BaseDMWGenerator.java:1026)
 import org.dmd.gpb.server.extended.GpbProtoFile;                           // Required for getModificationRecorder() - (BaseDMWGenerator.java:999)
 import org.dmd.gpb.server.generated.dmw.GpbMainElementIterableDMW;         // For multi-valued GpbMainElement - (BaseDMWGenerator.java:1628)
-import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                       // Attribute mainElements from the dmdgpb schema - (BaseDMWGenerator.java:821)
+import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                       // Attribute import from the dmdgpb schema - (BaseDMWGenerator.java:821)
 import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;                 // For multi-valued adds of GpbMainElement - (BaseDMWGenerator.java:1686)
 import org.dmd.gpb.shared.generated.dmo.GpbProtoFileDMO;                   // Class not auxiliary or abstract - (BaseDMWGenerator.java:1171)
 
@@ -85,6 +87,119 @@ abstract public class GpbProtoFileDMW extends GpbDefinition implements DmcDefini
             return( getObjectName().equals( ((GpbProtoFileDMW) obj).getObjectName()) );
         }
         return(false);
+    }
+
+    /**
+     * @return The number of String items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1590)
+    public int getImportSize(){
+        return(((GpbProtoFileDMO) core).getImportSize());
+    }
+
+    /**
+     * @return true if there are no StringDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1598)
+    public boolean getImportIsEmpty(){
+        if (((GpbProtoFileDMO) core).getImportSize() == 0)
+            return(true);
+        return(false);
+    }
+
+    /**
+     * @return true if there are any StringDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1608)
+    public boolean getImportHasValue(){
+        if (((GpbProtoFileDMO) core).getImportSize() == 0)
+            return(false);
+        return(true);
+    }
+
+    /**
+     * @return An Iterator of String objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2026)
+    public StringIterableDMW getImportIterable(){
+        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__import);
+        if (attr == null)
+            return(StringIterableDMW.emptyList);
+        
+        return(new StringIterableDMW(((GpbProtoFileDMO) core).getImport()));
+    }
+
+    /**
+     * Adds another import value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2052)
+    public void addImport(Object value) throws DmcValueException {
+        ((GpbProtoFileDMO) core).addImport(value);
+    }
+
+    /**
+     * Adds another import value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2062)
+    public void addImport(String value){
+        ((GpbProtoFileDMO) core).addImport(value);
+    }
+
+    /**
+     * Returns true if the collection contains the import value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2119)
+    public boolean importContains(String value){
+        return(((GpbProtoFileDMO) core).importContains(value));
+    }
+
+    /**
+     * @return A COPY of the collection of String objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2163)
+    @SuppressWarnings("unchecked")
+    public ArrayList<String> getImportCopy(){
+        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__import);
+        if (attr == null)
+            return(new ArrayList<String>());
+        
+        ArrayList<String> rc = new ArrayList<String>(attr.getMVSize());
+        
+        Iterator<String> it = (Iterator<String>) attr.getMV();
+        while(it.hasNext()){
+            rc.add(it.next());
+        }
+        
+        return(rc);
+    }
+
+    /**
+     * Deletes a import value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2190)
+    public void delImport(Object value) throws DmcValueException {
+        ((GpbProtoFileDMO) core).delImport(value);
+    }
+
+    /**
+     * Deletes a import value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2199)
+    public void delImport(String value){
+        ((GpbProtoFileDMO) core).delImport(value);
+    }
+
+    /**
+     * Removes the import attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2211)
+    public void remImport(){
+        ((GpbProtoFileDMO) core).remImport();
     }
 
     /**

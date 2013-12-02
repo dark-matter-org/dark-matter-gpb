@@ -42,6 +42,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcAttributeInfo __fieldRule = new DmcAttributeInfo("dmdgpb", "fieldRule", -477974, "FieldRuleEnum", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __gpbHint = new DmcAttributeInfo("dmdgpb", "gpbHint", -477997, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __gpbType = new DmcAttributeInfo("dmdgpb", "gpbType", -477994, "GpbType", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __import = new DmcAttributeInfo("dmdgpb", "import", -477973, "String", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __isMessageType = new DmcAttributeInfo("dmdgpb", "isMessageType", -477993, "Boolean", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __javaType = new DmcAttributeInfo("dmdgpb", "javaType", -477989, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __mainElements = new DmcAttributeInfo("dmdgpb", "mainElements", -477977, "GpbMainElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
@@ -149,6 +150,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
 
         __GpbProtoFile.addMust(MetaDMSAG.__name);
         __GpbProtoFile.addMust(__package);
+        __GpbProtoFile.addMay(__import);
         __GpbProtoFile.addMay(__mainElements);
 
         __GpbModule.addMust(MetaDMSAG.__name);

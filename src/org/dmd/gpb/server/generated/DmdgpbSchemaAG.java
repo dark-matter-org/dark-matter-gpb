@@ -64,6 +64,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
     public static AttributeDefinition _field;
     public static AttributeDefinition _tag;
     public static AttributeDefinition _fieldRule;
+    public static AttributeDefinition _import;
 
 
     public static ComplexTypeDefinition _GpbFieldIndicator;
@@ -287,13 +288,14 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbProtoFileOBJ.setDmdID("-477990");
             _GpbProtoFileOBJ.setClassType("STRUCTURAL");
             _GpbProtoFileOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbProtoFileOBJ.setLineNumber("165");
+            _GpbProtoFileOBJ.setLineNumber("166");
             _GpbProtoFileOBJ.addDescription("The GpbProtoFile is used to represent a single .proto file.");
             _GpbProtoFileOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbProtoFileOBJ.setIsNamedBy("meta.name");
             _GpbProtoFileOBJ.setUseWrapperType("EXTENDED");
             _GpbProtoFileOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbProtoFileREF");
             _GpbProtoFileOBJ.setDmwIteratorClass("GpbProtoFileIterableDMW");
+            _GpbProtoFileOBJ.addMay("dmdgpb.import");
             _GpbProtoFileOBJ.addMay("dmdgpb.mainElements");
             _GpbProtoFileOBJ.addMust("meta.name");
             _GpbProtoFileOBJ.addMust("dmdgpb.package");
@@ -580,6 +582,20 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _fieldRuleOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
             _fieldRuleOBJ.setLineNumber("139");
             addAttributeDefList(_fieldRule);
+
+// Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
+            AttributeDefinitionDMO _importOBJ = new AttributeDefinitionDMO();
+            _import = new AttributeDefinition(_importOBJ);
+            _importOBJ.setType("meta.String");
+            _importOBJ.setName("import");
+            _importOBJ.setDmdID("-477973");
+            _importOBJ.addDescription("An import associated with a .proto file.");
+            _importOBJ.setValueType("MULTI");
+            _importOBJ.setDotName("dmdgpb.import.AttributeDefinition");
+            _import.setDefinedIn(this);
+            _importOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
+            _importOBJ.setLineNumber("146");
+            addAttributeDefList(_import);
 
     }
 
