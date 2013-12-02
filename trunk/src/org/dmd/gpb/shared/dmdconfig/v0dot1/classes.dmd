@@ -160,6 +160,7 @@ derivedFrom     GpbDefinition
 isNamedBy       name
 must			name
 must			package
+may				import
 may				mainElements
 description		The GpbProtoFile is used to represent a single .proto file. 
 

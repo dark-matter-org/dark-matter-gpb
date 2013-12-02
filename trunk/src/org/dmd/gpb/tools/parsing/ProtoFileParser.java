@@ -29,6 +29,7 @@ public class ProtoFileParser {
 	static String OPTIONAL_STR 	= "optional";
 	static String REQUIRED_STR 	= "required";
 	static String REPEATED_STR 	= "repeated";
+	static String IMPORT_STR 	= "import";
 	
 	final static int ENUM 		= Token.CUSTOM+1;
 	final static int MESSAGE 	= Token.CUSTOM+2;
@@ -39,8 +40,10 @@ public class ProtoFileParser {
 	final static int SEMICOLON 	= Token.CUSTOM+7;
 	final static int LCURLY 	= Token.CUSTOM+8;
 	final static int RCURLY 	= Token.CUSTOM+9;
+	final static int QUOTE 		= Token.CUSTOM+10;
 	
 	LineNumberReader	in;
+	String				currFN;
 	
 	GpbProtoFile	protoFile;
 	
@@ -61,6 +64,7 @@ public class ProtoFileParser {
 		classifier.addSeparator(";", SEMICOLON);
 		classifier.addSeparator("{", LCURLY);
 		classifier.addSeparator("}", RCURLY);
+		classifier.addSeparator("\"", QUOTE);
 		
 	}
 	
@@ -73,10 +77,13 @@ public class ProtoFileParser {
 	public GpbProtoFile parseFromProto(String fn) throws IOException, DmcValueException, ResultException {
 		init(fn);
         in	= new LineNumberReader(new FileReader(fn));
+        currFN = fn;
 		
         String line;
         while ((line = getNextLine()) != null) {
     		if (line.length() == 0)
+    			continue;
+    		if (line.startsWith("//"))
     			continue;
 
     		switch(state){
@@ -86,6 +93,9 @@ public class ProtoFileParser {
         		}
         		else if (line.startsWith(ENUM_STR)){
         			protoFile.addMainElements(parseEnum(fn, line));
+        		}
+        		else if (line.startsWith(IMPORT_STR)){
+        			protoFile.addImport(parseImport(line));
         		}
         		else{
         			ResultException ex = new ResultException("Expecting the start of a message or enum");
@@ -111,9 +121,14 @@ public class ProtoFileParser {
         return(protoFile);
 	}
 	
+	String parseImport(String line){
+		TokenArrayList tokens = classifier.classify(line, false);
+		return(tokens.nth(1).getValue());
+	}
+	
 	String getNextLine() throws IOException {
 		String str = in.readLine();
-DebugInfo.debug(str);
+DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 		if (str == null)
 			return(null);
 		return(str.trim());
@@ -151,6 +166,11 @@ DebugInfo.debug(str);
         // Parse the body
         String line;
         while ((line = getNextLine()) != null) {
+        	if (line.length() == 0)
+        		continue;
+        	if (line.startsWith("//"))
+        		continue;
+        	
         	if (wantLCurly){
         		if (!line.equals(LCURLY_STR)){
         			ResultException ex = new ResultException("Missing open curly bracket for message definition.");
@@ -187,6 +207,14 @@ DebugInfo.debug(str);
 	GpbField parseField(String fn, String line) throws DmcValueException {
 		GpbField field = new GpbField();
 		
+		String descr = "";
+		
+		if (line.contains("//")){
+			int commentpos = line.indexOf("//");
+			descr = line.substring(commentpos+2).trim();
+			line = line.substring(0, commentpos);
+		}
+		
 		TokenArrayList tokens = classifier.classify(line, true);
 		
 		if (tokens.size() == 6){
@@ -208,7 +236,10 @@ DebugInfo.debug(str);
 			
 			field.setTag(tokens.nth(4).getValue());
 			
-			DebugInfo.debug(field.toOIF());
+			if (descr.length() > 0)
+				field.addDescription(descr);
+			
+			DebugInfo.debug("\n" + field.toOIF());
 		}
 	
 		
@@ -232,7 +263,12 @@ DebugInfo.debug(str);
 			
 			if (tokens.size() >= 4){
 				EnumValue ev = new EnumValue();
-				ev.set(tokens.nth(2).getValue() + " " + tokens.nth(0).getValue() + " add a description");
+				String descr = "add a description";
+				if (line.contains("//")){
+					int commentpos = line.indexOf("//");
+					descr = line.substring(commentpos+2).trim();
+				}
+				ev.set(tokens.nth(2).getValue() + " " + tokens.nth(0).getValue() + " " + descr);
 				enumDef.addEnumValue(ev);
 			}
 			

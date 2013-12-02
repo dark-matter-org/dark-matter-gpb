@@ -27,6 +27,7 @@ import org.dmd.dmc.types.DefinitionName;                                      //
 import org.dmd.dms.generated.dmo.MetaDMSAG;                                   // Required for MODREC constructor - (GenUtility.java:225)
 import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;                   // Required type - (GenUtility.java:325)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;                         // Required for MODREC constructor - (GenUtility.java:224)
+import org.dmd.dms.generated.types.DmcTypeStringMV;                           // Required type - (GenUtility.java:325)
 import org.dmd.dms.generated.types.DmcTypeStringSV;                           // Required type - (GenUtility.java:325)
 import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;                     // Base class - (GenUtility.java:352)
 import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;                    // Type specific set/add - (GenUtility.java:304)
@@ -115,6 +116,133 @@ public class GpbProtoFileDMO  extends GpbDefinitionDMO  implements DmcNamedObjec
             return(0);
         
         return(objn.hashCode());
+    }
+
+    /**
+     * @return An Iterator of String objects.
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1109)
+    public Iterator<String> getImport(){
+        DmcTypeStringMV attr = (DmcTypeStringMV) get(DmdgpbDMSAG.__import);
+        if (attr == null)
+            return( ((List<String>) Collections.EMPTY_LIST).iterator());
+
+        return(attr.getMV());
+    }
+
+    /**
+     * @return The nth String value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1121)
+    public String getNthImport(int i){
+        DmcTypeStringMV attr = (DmcTypeStringMV) get(DmdgpbDMSAG.__import);
+        if (attr == null)
+            return(null);
+
+        return(attr.getMVnth(i));
+    }
+
+    /**
+     * Adds another import to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1135)
+    public DmcAttribute<?> addImport(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__import);
+        if (attr == null)
+            attr = new DmcTypeStringMV(DmdgpbDMSAG.__import);
+        
+        try{
+            setLastValue(attr.add(value));
+            add(DmdgpbDMSAG.__import,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
+        }
+        return(attr);
+    }
+
+    /**
+     * Returns true if we contain a valued keyed by the specified String.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1210)
+    public boolean importContains(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__import);
+        if (attr == null)
+            return(false);
+        return(attr.contains(value));
+    }
+
+    /**
+     * Adds another import value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1242)
+    public DmcAttribute<?> addImport(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__import);
+        if (attr == null)
+            attr = new DmcTypeStringMV(DmdgpbDMSAG.__import);
+        
+        setLastValue(attr.add(value));
+        add(DmdgpbDMSAG.__import,attr);
+        return(attr);
+    }
+
+    /**
+     * Returns the number of values in import
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1259)
+    public int getImportSize(){
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__import);
+        if (attr == null){
+            if (DmdgpbDMSAG.__import.indexSize == 0)
+                return(0);
+            else
+                return(DmdgpbDMSAG.__import.indexSize);
+        }
+        return(attr.getMVSize());
+    }
+
+    /**
+     * Deletes a import value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1317)
+    public DmcAttribute<?> delImport(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__import);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeStringMV(DmdgpbDMSAG.__import), value);
+        else
+            attr = del(DmdgpbDMSAG.__import, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Deletes a import from the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1333)
+    public DmcAttribute<?> delImport(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__import);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeStringMV(DmdgpbDMSAG.__import), value);
+        else
+            attr = del(DmdgpbDMSAG.__import, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Removes the import attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1352)
+    public void remImport(){
+         rem(DmdgpbDMSAG.__import);
     }
 
     /**
