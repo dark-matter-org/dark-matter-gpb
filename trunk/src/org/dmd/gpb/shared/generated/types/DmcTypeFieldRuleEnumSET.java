@@ -29,7 +29,7 @@ import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;    // DmcType import
  * The DmcTypeFieldRuleEnumSET provides storage for a set of FieldRuleEnum
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2606)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2609)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpEnumType(DmoTypeFormatter.java:362)
  */
 @SuppressWarnings("serial")
@@ -62,7 +62,7 @@ public class DmcTypeFieldRuleEnumSET extends DmcTypeFieldRuleEnum implements Ser
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2647)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2650)
     public DmcAttribute<FieldRuleEnum> cloneIt(){
         synchronized(this){
             DmcTypeFieldRuleEnumSET rc = getNew();
@@ -81,7 +81,7 @@ public class DmcTypeFieldRuleEnumSET extends DmcTypeFieldRuleEnum implements Ser
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2670)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2673)
     public FieldRuleEnum add(Object v) throws DmcValueException {
         synchronized(this){
             FieldRuleEnum rc = typeCheck(v);
@@ -97,7 +97,7 @@ public class DmcTypeFieldRuleEnumSET extends DmcTypeFieldRuleEnum implements Ser
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2687)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2690)
     public FieldRuleEnum del(Object v){
         synchronized(this){
             FieldRuleEnum rc = null;
@@ -121,7 +121,7 @@ public class DmcTypeFieldRuleEnumSET extends DmcTypeFieldRuleEnum implements Ser
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2712)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2715)
     public Iterator<FieldRuleEnum> getMV(){
         synchronized(this){
             if (value == null)
@@ -134,7 +134,7 @@ public class DmcTypeFieldRuleEnumSET extends DmcTypeFieldRuleEnum implements Ser
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2726)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2729)
     public Set<FieldRuleEnum> getMVCopy(){
         synchronized(this){
             if (getAttributeInfo().valueType == ValueTypeEnum.HASHSET){
@@ -153,7 +153,7 @@ public class DmcTypeFieldRuleEnumSET extends DmcTypeFieldRuleEnum implements Ser
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2746)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2749)
     public int getMVSize(){
         synchronized(this){
             if (value == null)
@@ -163,7 +163,7 @@ public class DmcTypeFieldRuleEnumSET extends DmcTypeFieldRuleEnum implements Ser
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2757)
+    // org.dmd.dms.util.GenUtility.dumpSETType(GenUtility.java:2760)
     public boolean contains(Object v){
         synchronized(this){
             if (value == null)

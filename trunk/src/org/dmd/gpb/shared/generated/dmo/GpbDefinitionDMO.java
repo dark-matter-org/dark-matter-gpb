@@ -15,18 +15,18 @@
 //	---------------------------------------------------------------------------
 package org.dmd.gpb.shared.generated.dmo;
 
-// Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:393)
-import java.io.Serializable;                                        // Always required - (GenUtility.java:221)
-import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:373)
-import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:372)
-import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:238)
-import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:367)
-import org.dmd.dmc.types.DotName;                                   // Primitive type and !auxiliary class - (GenUtility.java:268)
-import org.dmd.dms.generated.dmo.DSDefinitionDMO;                   // Base class - (GenUtility.java:352)
+// Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
+import java.io.Serializable;                                        // Always required - (GenUtility.java:224)
+import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:376)
+import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:241)
+import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:370)
+import org.dmd.dmc.types.DotName;                                   // Primitive type and !auxiliary class - (GenUtility.java:271)
+import org.dmd.dms.generated.dmo.DSDefinitionDMO;                   // Base class - (GenUtility.java:355)
 import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Attribute from meta schema - (GenUtility.java:194)
-import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:325)
-import org.dmd.dms.generated.types.DmcTypeDotNameSV;                // Required type - (GenUtility.java:325)
-import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:325)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeDotNameSV;                // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:328)
 
 /**
  * The GpbDefinition provides a common base for all dark-matter\n Google
@@ -86,7 +86,7 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
         return(objn.hashCode());
     }
 
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public String getGpbHint(){
         DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__gpbHint);
         if (attr == null)
@@ -99,7 +99,7 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
      * Sets gpbHint to the specified value.
      * @param value String
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:821)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
     public void setGpbHint(String value) {
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__gpbHint);
         if (attr == null)
@@ -118,7 +118,7 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
      * Sets gpbHint to the specified value.
      * @param value A value compatible with DmcTypeStringSV
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setGpbHint(Object value) throws DmcValueException {
         DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__gpbHint);
         if (attr == null)
@@ -131,12 +131,12 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
     /**
      * Removes the gpbHint attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remGpbHint(){
          rem(DmdgpbDMSAG.__gpbHint);
     }
 
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public DefinitionName getName(){
         DmcTypeDefinitionNameSV attr = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
         if (attr == null)
@@ -149,7 +149,7 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
      * Sets name to the specified value.
      * @param value DefinitionName
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:821)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
     public void setName(DefinitionName value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__name);
         if (attr == null)
@@ -168,7 +168,7 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
      * Sets name to the specified value.
      * @param value A value compatible with DmcTypeDefinitionNameSV
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setName(Object value) throws DmcValueException {
         DmcTypeDefinitionNameSV attr  = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
         if (attr == null)
@@ -181,12 +181,12 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
     /**
      * Removes the name attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remName(){
          rem(MetaDMSAG.__name);
     }
 
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public DotName getDotName(){
         DmcTypeDotNameSV attr = (DmcTypeDotNameSV) get(MetaDMSAG.__dotName);
         if (attr == null)
@@ -199,7 +199,7 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
      * Sets dotName to the specified value.
      * @param value DotName
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:821)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
     public void setDotName(DotName value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__dotName);
         if (attr == null)
@@ -218,7 +218,7 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
      * Sets dotName to the specified value.
      * @param value A value compatible with DmcTypeDotNameSV
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setDotName(Object value) throws DmcValueException {
         DmcTypeDotNameSV attr  = (DmcTypeDotNameSV) get(MetaDMSAG.__dotName);
         if (attr == null)
@@ -231,12 +231,12 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
     /**
      * Removes the dotName attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remDotName(){
          rem(MetaDMSAG.__dotName);
     }
 
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public String getDefinedInGpbModule(){
         DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__definedInGpbModule);
         if (attr == null)
@@ -249,7 +249,7 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
      * Sets definedInGpbModule to the specified value.
      * @param value String
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:821)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
     public void setDefinedInGpbModule(String value) {
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__definedInGpbModule);
         if (attr == null)
@@ -268,7 +268,7 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
      * Sets definedInGpbModule to the specified value.
      * @param value A value compatible with DmcTypeStringSV
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setDefinedInGpbModule(Object value) throws DmcValueException {
         DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__definedInGpbModule);
         if (attr == null)
@@ -281,7 +281,7 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
     /**
      * Removes the definedInGpbModule attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remDefinedInGpbModule(){
          rem(DmdgpbDMSAG.__definedInGpbModule);
     }

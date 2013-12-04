@@ -3,6 +3,7 @@ package org.dmd.gpb.tools.parsing;
 import java.io.IOException;
 import java.util.Iterator;
 
+import org.dmd.dmc.DmcNameClashException;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dms.SchemaManager;
 import org.dmd.gpb.server.extended.GpbProtoFile;
@@ -32,8 +33,9 @@ public class GpbDotProtoParser {
 	 * @param sd the source directories to search for .proto files.
 	 * @throws DmcValueException  
 	 * @throws ResultException 
+	 * @throws DmcNameClashException 
 	 */
-	public GpbDotProtoParser(StringArrayList sd) throws ResultException, DmcValueException {
+	public GpbDotProtoParser(StringArrayList sd) throws ResultException, DmcValueException, DmcNameClashException {
 		finder = new ConfigFinder("proto",sd, false);
 		parser = new ProtoFileParser();
 		schema = new SchemaManager();
