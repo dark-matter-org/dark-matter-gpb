@@ -15,24 +15,24 @@
 //	---------------------------------------------------------------------------
 package org.dmd.gpb.shared.generated.dmo;
 
-// Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:393)
-import java.io.Serializable;                                             // Always required - (GenUtility.java:221)
-import java.util.*;                                                      // Always required if we have any MV attributes - (GenUtility.java:216)
-import org.dmd.dmc.DmcAttribute;                                         // Named object - (GenUtility.java:373)
-import org.dmd.dmc.DmcNamedObjectIF;                                     // Named object - (GenUtility.java:372)
-import org.dmd.dmc.DmcOmni;                                              // Lazy resolution - (GenUtility.java:317)
-import org.dmd.dmc.DmcSliceInfo;                                         // Required for object slicing - (GenUtility.java:226)
-import org.dmd.dmc.DmcValueException;                                    // Any attributes - (GenUtility.java:238)
-import org.dmd.dmc.types.DefinitionName;                                 // Naming attribute type - (GenUtility.java:367)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                              // Required for MODREC constructor - (GenUtility.java:225)
-import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;              // Required type - (GenUtility.java:325)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                    // Required for MODREC constructor - (GenUtility.java:224)
-import org.dmd.dms.generated.types.DmcTypeStringMV;                      // Required type - (GenUtility.java:325)
-import org.dmd.dms.generated.types.DmcTypeStringSV;                      // Required type - (GenUtility.java:325)
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;                // Base class - (GenUtility.java:352)
-import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                    // Type specific set/add - (GenUtility.java:304)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbModuleREFMV;         // Reference type - (GenUtility.java:297)
-import org.dmd.gpb.shared.generated.types.GpbModuleREF;                  // Helper class - (GenUtility.java:332)
+// Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
+import java.io.Serializable;                                             // Always required - (GenUtility.java:224)
+import java.util.*;                                                      // Always required if we have any MV attributes - (GenUtility.java:221)
+import org.dmd.dmc.DmcAttribute;                                         // Named object - (GenUtility.java:376)
+import org.dmd.dmc.DmcNamedObjectIF;                                     // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcOmni;                                              // Lazy resolution - (GenUtility.java:320)
+import org.dmd.dmc.DmcSliceInfo;                                         // Required for object slicing - (GenUtility.java:229)
+import org.dmd.dmc.DmcValueException;                                    // Any attributes - (GenUtility.java:241)
+import org.dmd.dmc.types.DefinitionName;                                 // Naming attribute type - (GenUtility.java:370)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                              // Required for MODREC constructor - (GenUtility.java:228)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;              // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                    // Required for MODREC constructor - (GenUtility.java:227)
+import org.dmd.dms.generated.types.DmcTypeStringMV;                      // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                      // Required type - (GenUtility.java:328)
+import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;                // Base class - (GenUtility.java:355)
+import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                    // Type specific set/add - (GenUtility.java:307)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbModuleREFMV;         // Reference type - (GenUtility.java:300)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;                  // Helper class - (GenUtility.java:335)
 
 /**
  * <P>
@@ -121,7 +121,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * @return An Iterator of String objects.
      */
     @SuppressWarnings("unchecked")
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1109)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1112)
     public Iterator<String> getDescription(){
         DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__description);
         if (attr == null)
@@ -133,7 +133,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
     /**
      * @return The nth String value.
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1121)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1124)
     public String getNthDescription(int i){
         DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__description);
         if (attr == null)
@@ -146,7 +146,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Adds another description to the specified value.
      * @param value String
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1135)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1138)
     public DmcAttribute<?> addDescription(String value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__description);
         if (attr == null)
@@ -166,7 +166,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Returns true if we contain a valued keyed by the specified String.
      * @param value String
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1210)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1213)
     public boolean descriptionContains(String value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__description);
         if (attr == null)
@@ -178,7 +178,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Adds another description value.
      * @param value A value compatible with String
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1242)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
     public DmcAttribute<?> addDescription(Object value) throws DmcValueException {
         DmcAttribute<?> attr = get(MetaDMSAG.__description);
         if (attr == null)
@@ -192,7 +192,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
     /**
      * Returns the number of values in description
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1259)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
     public int getDescriptionSize(){
         DmcAttribute<?> attr = get(MetaDMSAG.__description);
         if (attr == null){
@@ -208,7 +208,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Deletes a description value.
      * @param value The String to be deleted from set of attribute values.
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1317)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1320)
     public DmcAttribute<?> delDescription(Object value) throws DmcValueException {
         DmcAttribute<?> attr = get(MetaDMSAG.__description);
         
@@ -224,7 +224,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Deletes a description from the specified value.
      * @param value String
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1333)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1336)
     public DmcAttribute<?> delDescription(String value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__description);
         
@@ -239,7 +239,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
     /**
      * Removes the description attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1352)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
     public void remDescription(){
          rem(MetaDMSAG.__description);
     }
@@ -248,7 +248,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * @return An Iterator of String objects.
      */
     @SuppressWarnings("unchecked")
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1109)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1112)
     public Iterator<String> getDefFiles(){
         DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__defFiles);
         if (attr == null)
@@ -260,7 +260,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
     /**
      * @return The nth String value.
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1121)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1124)
     public String getNthDefFiles(int i){
         DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__defFiles);
         if (attr == null)
@@ -273,7 +273,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Adds another defFiles to the specified value.
      * @param value String
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1135)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1138)
     public DmcAttribute<?> addDefFiles(String value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__defFiles);
         if (attr == null)
@@ -293,7 +293,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Returns true if we contain a valued keyed by the specified String.
      * @param value String
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1210)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1213)
     public boolean defFilesContains(String value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__defFiles);
         if (attr == null)
@@ -305,7 +305,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Adds another defFiles value.
      * @param value A value compatible with String
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1242)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
     public DmcAttribute<?> addDefFiles(Object value) throws DmcValueException {
         DmcAttribute<?> attr = get(MetaDMSAG.__defFiles);
         if (attr == null)
@@ -319,7 +319,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
     /**
      * Returns the number of values in defFiles
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1259)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
     public int getDefFilesSize(){
         DmcAttribute<?> attr = get(MetaDMSAG.__defFiles);
         if (attr == null){
@@ -335,7 +335,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Deletes a defFiles value.
      * @param value The String to be deleted from set of attribute values.
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1317)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1320)
     public DmcAttribute<?> delDefFiles(Object value) throws DmcValueException {
         DmcAttribute<?> attr = get(MetaDMSAG.__defFiles);
         
@@ -351,7 +351,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Deletes a defFiles from the specified value.
      * @param value String
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1333)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1336)
     public DmcAttribute<?> delDefFiles(String value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__defFiles);
         
@@ -366,12 +366,12 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
     /**
      * Removes the defFiles attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1352)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
     public void remDefFiles(){
          rem(MetaDMSAG.__defFiles);
     }
 
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public String getPackage(){
         DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__package);
         if (attr == null)
@@ -384,7 +384,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Sets package to the specified value.
      * @param value String
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:821)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
     public void setPackage(String value) {
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__package);
         if (attr == null)
@@ -403,7 +403,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Sets package to the specified value.
      * @param value A value compatible with DmcTypeStringSV
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setPackage(Object value) throws DmcValueException {
         DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__package);
         if (attr == null)
@@ -416,7 +416,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
     /**
      * Removes the package attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remPackage(){
          rem(DmdgpbDMSAG.__package);
     }
@@ -425,7 +425,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * @return An Iterator of GpbModuleDMO objects.
      */
     @SuppressWarnings("unchecked")
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:967)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:970)
     public Iterator<GpbModuleREF> getDependsOnGpbModule(){
         DmcTypeGpbModuleREFMV attr = (DmcTypeGpbModuleREFMV) get(DmdgpbDMSAG.__dependsOnGpbModule);
         if (attr == null)
@@ -445,7 +445,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * @return An Iterator of GpbModuleREFs without attempting lazy resolution (if it's turned on).
      */
     @SuppressWarnings("unchecked")
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:987)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:990)
     public Iterator<GpbModuleREF> getDependsOnGpbModuleREFs(){
         DmcTypeGpbModuleREFMV attr = (DmcTypeGpbModuleREFMV) get(DmdgpbDMSAG.__dependsOnGpbModule);
         if (attr == null)
@@ -458,7 +458,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Adds another dependsOnGpbModule to the specified value.
      * @param value GpbModule
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1001)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1004)
     public DmcAttribute<?> addDependsOnGpbModule(GpbModuleDMO value) {
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__dependsOnGpbModule);
         if (attr == null)
@@ -478,7 +478,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Adds another dependsOnGpbModule value.
      * @param value A value compatible with GpbModule
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1242)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
     public DmcAttribute<?> addDependsOnGpbModule(Object value) throws DmcValueException {
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__dependsOnGpbModule);
         if (attr == null)
@@ -492,7 +492,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
     /**
      * Returns the number of values in dependsOnGpbModule
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1259)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
     public int getDependsOnGpbModuleSize(){
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__dependsOnGpbModule);
         if (attr == null){
@@ -508,7 +508,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Deletes a dependsOnGpbModule value.
      * @param value The GpbModule to be deleted from set of attribute values.
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1298)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1301)
     public DmcAttribute<?> delDependsOnGpbModule(Object value){
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__dependsOnGpbModule);
         
@@ -523,12 +523,12 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
     /**
      * Removes the dependsOnGpbModule attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1352)
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
     public void remDependsOnGpbModule(){
          rem(DmdgpbDMSAG.__dependsOnGpbModule);
     }
 
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public DefinitionName getName(){
         DmcTypeDefinitionNameSV attr = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
         if (attr == null)
@@ -541,7 +541,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Sets name to the specified value.
      * @param value DefinitionName
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:821)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
     public void setName(DefinitionName value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__name);
         if (attr == null)
@@ -560,7 +560,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      * Sets name to the specified value.
      * @param value A value compatible with DmcTypeDefinitionNameSV
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setName(Object value) throws DmcValueException {
         DmcTypeDefinitionNameSV attr  = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
         if (attr == null)
@@ -573,7 +573,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
     /**
      * Removes the name attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remName(){
          rem(MetaDMSAG.__name);
     }

@@ -15,15 +15,15 @@
 //	---------------------------------------------------------------------------
 package org.dmd.gpb.shared.generated.dmo;
 
-// Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:393)
-import java.io.Serializable;                                        // Always required - (GenUtility.java:221)
-import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:373)
-import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:372)
-import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:238)
-import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:367)
+// Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
+import java.io.Serializable;                                        // Always required - (GenUtility.java:224)
+import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:376)
+import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:241)
+import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:370)
 import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Attribute from meta schema - (GenUtility.java:194)
-import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:325)
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;           // Base class - (GenUtility.java:352)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:328)
+import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;           // Base class - (GenUtility.java:355)
 
 /**
  * The GpbElement provides a common base for enums and messages so that\n we
@@ -83,7 +83,7 @@ abstract public class GpbElementDMO  extends GpbDefinitionDMO  implements DmcNam
         return(objn.hashCode());
     }
 
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:781)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public DefinitionName getName(){
         DmcTypeDefinitionNameSV attr = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
         if (attr == null)
@@ -96,7 +96,7 @@ abstract public class GpbElementDMO  extends GpbDefinitionDMO  implements DmcNam
      * Sets name to the specified value.
      * @param value DefinitionName
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:821)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
     public void setName(DefinitionName value) {
         DmcAttribute<?> attr = get(MetaDMSAG.__name);
         if (attr == null)
@@ -115,7 +115,7 @@ abstract public class GpbElementDMO  extends GpbDefinitionDMO  implements DmcNam
      * Sets name to the specified value.
      * @param value A value compatible with DmcTypeDefinitionNameSV
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:874)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setName(Object value) throws DmcValueException {
         DmcTypeDefinitionNameSV attr  = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
         if (attr == null)
@@ -128,7 +128,7 @@ abstract public class GpbElementDMO  extends GpbDefinitionDMO  implements DmcNam
     /**
      * Removes the name attribute value.
      */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:894)
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remName(){
          rem(MetaDMSAG.__name);
     }

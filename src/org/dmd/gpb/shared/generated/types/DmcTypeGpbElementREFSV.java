@@ -23,7 +23,7 @@ import org.dmd.dmc.DmcValueException;
  * The DmcTypeGpbElementREFSV provides storage for a single-valued GpbElementREF
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1966)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1969)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpNamedREF(DmoTypeFormatter.java:530)
  */
 @SuppressWarnings("serial")
@@ -48,14 +48,14 @@ public class DmcTypeGpbElementREFSV extends DmcTypeGpbElementREF implements Seri
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1998)
+    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2001)
     public DmcAttribute<GpbElementREF> cloneIt(){
         DmcTypeGpbElementREFSV rc = getNew();
         rc.value = value;
         return(rc);
     }
     
-    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2009)
+    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2012)
     public GpbElementREF getSVCopy(){
         if (value == null)
             return(null);
@@ -63,7 +63,7 @@ public class DmcTypeGpbElementREFSV extends DmcTypeGpbElementREF implements Seri
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2021)
+    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2024)
     public GpbElementREF set(Object v) throws DmcValueException {
         GpbElementREF rc = typeCheck(v);
         // We only return a value if the value actually changed. This supports
