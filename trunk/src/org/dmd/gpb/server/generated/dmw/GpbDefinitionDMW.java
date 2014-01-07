@@ -15,7 +15,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Abstract cl
 
 /**
  * The GpbDefinition provides a common base for all dark-matter\n Google
- * Protocol Buffer definitions.
+ * Protocol Buffer (GPB) definitions.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>

@@ -3,7 +3,9 @@ package org.dmd.gpb.tools.parsing;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
+import java.util.TreeMap;
 
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dms.types.EnumValue;
@@ -12,6 +14,7 @@ import org.dmd.gpb.server.extended.GpbEnum;
 import org.dmd.gpb.server.extended.GpbField;
 import org.dmd.gpb.server.extended.GpbMessage;
 import org.dmd.gpb.server.extended.GpbProtoFile;
+import org.dmd.gpb.shared.generated.dmo.GpbFieldDMO;
 import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;
 import org.dmd.util.exceptions.DebugInfo;
 import org.dmd.util.exceptions.ResultException;
@@ -19,6 +22,20 @@ import org.dmd.util.parsing.Classifier;
 import org.dmd.util.parsing.Token;
 import org.dmd.util.parsing.TokenArrayList;
 
+/**
+ * The ProtoFileParser is used to parse individual .proto files and represent its
+ * contents as a a single GpbProtoFile object. This object can be subsequently dumped 
+ * as a .gpb file that allows for the addition of descriptions and other sementic 
+ * information.
+ * <p/>
+ * The ProtoFileParse is very light on format checking; it assumes that the files are
+ * already parsable by the standard GPB parser.
+ * <p/>
+ * The only additional level of checking that's done it to ensure that fields with the
+ * same names in different messages have the same type. This is because we will generate
+ * a single GpbField definition for each uniquely named field. If the types don't
+ * match, it indicates a fundamental semantic anomaly.
+ */
 public class ProtoFileParser {
 	
 	static String PACKAGE_STR 	= "package";
@@ -51,6 +68,8 @@ public class ProtoFileParser {
 	
 	Classifier		classifier;
 	
+	TreeMap<String,ArrayList<GpbField>> fields;
+	
 	public ProtoFileParser(){
 		classifier = new Classifier();
 		
@@ -66,6 +85,7 @@ public class ProtoFileParser {
 		classifier.addSeparator("}", RCURLY);
 		classifier.addSeparator("\"", QUOTE);
 		
+		fields = new TreeMap<String, ArrayList<GpbField>>();
 	}
 	
 	void init(String fn) throws DmcValueException {
@@ -118,7 +138,30 @@ public class ProtoFileParser {
         
         in.close();
         
+        checkFields();
+        
         return(protoFile);
+	}
+	
+	void checkFields(){
+		for(ArrayList<GpbField> list: fields.values()){
+			
+			if (list.size() == 1)
+				continue;
+			
+			// We have to use the DMO because we haven't resolved the GpbTypes
+			GpbFieldDMO first = list.get(0).getDMO();
+			
+			for(int i=1; i<list.size(); i++){
+				GpbFieldDMO current = list.get(i).getDMO();
+				if (!first.getGpbType().getName().equals(current.getGpbType().getName())){
+					// We have a type clash
+					System.err.println("ERROR: Clashing type for field with name: " + first.getName() + " " + first.getGpbType().getName() + " " + current.getGpbType().getName());
+				}
+			}
+			
+			System.out.println("FIELD: " + list.size() + "  - " + first.getName());
+		}
 	}
 	
 	String parseImport(String line){
@@ -242,12 +285,24 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 			DebugInfo.debug("\n" + field.toOIF());
 		}
 	
+		addField(field);
 		
 		return(field);
+	}
+	
+	void addField(GpbField field){
+		ArrayList<GpbField> list = fields.get(field.getName().getNameString());
+		
+		if (list == null){
+			list = new ArrayList<GpbField>();
+			fields.put(field.getName().getNameString(), list);
+		}
+		list.add(field);
 	}
 
 	GpbEnum parseEnum(String fn, String first) throws DmcValueException, IOException {
 		GpbEnum enumDef = new GpbEnum();
+		enumDef.addDescription("Add a description");
 		String line;
 		TokenArrayList tokens = classifier.classify(first, true);
 		
@@ -263,7 +318,7 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 			
 			if (tokens.size() >= 4){
 				EnumValue ev = new EnumValue();
-				String descr = "add a description";
+				String descr = "Add a description";
 				if (line.contains("//")){
 					int commentpos = line.indexOf("//");
 					descr = line.substring(commentpos+2).trim();
@@ -277,6 +332,8 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 		}
 		
 		DebugInfo.debug(enumDef.toOIF());
+		
+		DebugInfo.debug(enumDef.toDotProtoFormat());
 		
 		return(enumDef);
 	}
@@ -297,3 +354,4 @@ enum State {
 	ELEMENT,
 	FIELD
 }
+

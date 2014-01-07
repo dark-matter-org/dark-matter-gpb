@@ -139,14 +139,18 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         __GpbEnum.addMust(MetaDMSAG.__enumValue);
         __GpbEnum.addMay(__defaultValue);
 
-        __GpbField.addMust(__fieldRule);
         __GpbField.addMust(__gpbType);
-        __GpbField.addMust(__tag);
+        __GpbField.addMay(MetaDMSAG.__description);
+        __GpbField.addMay(__fieldRule);
+        __GpbField.addMay(__tag);
 
         __GpbMessage.addMust(MetaDMSAG.__name);
         __GpbMessage.addMust(__elements);
 
         __GpbArtifact.addMust(MetaDMSAG.__name);
+        __GpbArtifact.addMust(__package);
+        __GpbArtifact.addMay(__import);
+        __GpbArtifact.addMay(__mainElements);
 
         __GpbProtoFile.addMust(MetaDMSAG.__name);
         __GpbProtoFile.addMust(__package);
