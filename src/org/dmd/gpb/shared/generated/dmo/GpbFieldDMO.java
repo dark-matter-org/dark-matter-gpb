@@ -17,6 +17,7 @@ package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
 import java.io.Serializable;                                              // Always required - (GenUtility.java:224)
+import java.util.*;                                                       // Always required if we have any MV attributes - (GenUtility.java:221)
 import org.dmd.dmc.DmcAttribute;                                          // Named object - (GenUtility.java:376)
 import org.dmd.dmc.DmcNamedObjectIF;                                      // Named object - (GenUtility.java:375)
 import org.dmd.dmc.DmcOmni;                                               // Lazy resolution - (GenUtility.java:320)
@@ -26,6 +27,7 @@ import org.dmd.dmc.types.DefinitionName;                                  // Nam
 import org.dmd.dms.generated.dmo.MetaDMSAG;                               // Required for MODREC constructor - (GenUtility.java:228)
 import org.dmd.dms.generated.types.DmcTypeIntegerSV;                      // Required type - (GenUtility.java:328)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;                     // Required for MODREC constructor - (GenUtility.java:227)
+import org.dmd.dms.generated.types.DmcTypeStringMV;                       // Required type - (GenUtility.java:328)
 import org.dmd.gpb.shared.generated.dmo.GpbElementDMO;                    // Base class - (GenUtility.java:355)
 import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                       // Type specific set/add - (GenUtility.java:307)
 import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;                  // Primitive type and !auxiliary class - (GenUtility.java:271)
@@ -34,6 +36,11 @@ import org.dmd.gpb.shared.generated.types.DmcTypeGpbTypeREFSV;            // Ref
 import org.dmd.gpb.shared.generated.types.GpbTypeREF;                     // Helper class - (GenUtility.java:335)
 
 /**
+ * The GpbField class is used to represent a reusable, named field for use\n
+ * within a GpbMessage. If the field has been parsed from an existing .proto
+ * file, it will\n have the fieldRule and tag attributes. However, when
+ * specified as part of a .gpb file,\n the fieldRule and tag won't be
+ * specified.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -116,6 +123,133 @@ public class GpbFieldDMO  extends GpbElementDMO  implements DmcNamedObjectIF, Se
         return(objn.hashCode());
     }
 
+    /**
+     * @return An Iterator of String objects.
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1112)
+    public Iterator<String> getDescription(){
+        DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__description);
+        if (attr == null)
+            return( ((List<String>) Collections.EMPTY_LIST).iterator());
+
+        return(attr.getMV());
+    }
+
+    /**
+     * @return The nth String value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1124)
+    public String getNthDescription(int i){
+        DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__description);
+        if (attr == null)
+            return(null);
+
+        return(attr.getMVnth(i));
+    }
+
+    /**
+     * Adds another description to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1138)
+    public DmcAttribute<?> addDescription(String value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        if (attr == null)
+            attr = new DmcTypeStringMV(MetaDMSAG.__description);
+        
+        try{
+            setLastValue(attr.add(value));
+            add(MetaDMSAG.__description,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
+        }
+        return(attr);
+    }
+
+    /**
+     * Returns true if we contain a valued keyed by the specified String.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1213)
+    public boolean descriptionContains(String value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        if (attr == null)
+            return(false);
+        return(attr.contains(value));
+    }
+
+    /**
+     * Adds another description value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
+    public DmcAttribute<?> addDescription(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        if (attr == null)
+            attr = new DmcTypeStringMV(MetaDMSAG.__description);
+        
+        setLastValue(attr.add(value));
+        add(MetaDMSAG.__description,attr);
+        return(attr);
+    }
+
+    /**
+     * Returns the number of values in description
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
+    public int getDescriptionSize(){
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        if (attr == null){
+            if (MetaDMSAG.__description.indexSize == 0)
+                return(0);
+            else
+                return(MetaDMSAG.__description.indexSize);
+        }
+        return(attr.getMVSize());
+    }
+
+    /**
+     * Deletes a description value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1320)
+    public DmcAttribute<?> delDescription(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeStringMV(MetaDMSAG.__description), value);
+        else
+            attr = del(MetaDMSAG.__description, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Deletes a description from the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1336)
+    public DmcAttribute<?> delDescription(String value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeStringMV(MetaDMSAG.__description), value);
+        else
+            attr = del(MetaDMSAG.__description, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Removes the description attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
+    public void remDescription(){
+         rem(MetaDMSAG.__description);
+    }
+
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public FieldRuleEnum getFieldRule(){
         DmcTypeFieldRuleEnumSV attr = (DmcTypeFieldRuleEnumSV) get(DmdgpbDMSAG.__fieldRule);
@@ -164,6 +298,56 @@ public class GpbFieldDMO  extends GpbElementDMO  implements DmcNamedObjectIF, Se
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remFieldRule(){
          rem(DmdgpbDMSAG.__fieldRule);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public Integer getTag(){
+        DmcTypeIntegerSV attr = (DmcTypeIntegerSV) get(DmdgpbDMSAG.__tag);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets tag to the specified value.
+     * @param value Integer
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setTag(Integer value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__tag);
+        if (attr == null)
+            attr = new DmcTypeIntegerSV(DmdgpbDMSAG.__tag);
+        
+        try{
+            attr.set(value);
+            set(DmdgpbDMSAG.__tag,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets tag to the specified value.
+     * @param value A value compatible with DmcTypeIntegerSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setTag(Object value) throws DmcValueException {
+        DmcTypeIntegerSV attr  = (DmcTypeIntegerSV) get(DmdgpbDMSAG.__tag);
+        if (attr == null)
+            attr = new DmcTypeIntegerSV(DmdgpbDMSAG.__tag);
+        
+        attr.set(value);
+        set(DmdgpbDMSAG.__tag,attr);
+    }
+
+    /**
+     * Removes the tag attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remTag(){
+         rem(DmdgpbDMSAG.__tag);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:655)
@@ -236,56 +420,6 @@ public class GpbFieldDMO  extends GpbElementDMO  implements DmcNamedObjectIF, Se
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remGpbType(){
          rem(DmdgpbDMSAG.__gpbType);
-    }
-
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
-    public Integer getTag(){
-        DmcTypeIntegerSV attr = (DmcTypeIntegerSV) get(DmdgpbDMSAG.__tag);
-        if (attr == null)
-            return(null);
-
-        return(attr.getSV());
-    }
-
-    /**
-     * Sets tag to the specified value.
-     * @param value Integer
-     */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
-    public void setTag(Integer value) {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__tag);
-        if (attr == null)
-            attr = new DmcTypeIntegerSV(DmdgpbDMSAG.__tag);
-        
-        try{
-            attr.set(value);
-            set(DmdgpbDMSAG.__tag,attr);
-        }
-        catch(DmcValueException ex){
-            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
-        }
-    }
-
-    /**
-     * Sets tag to the specified value.
-     * @param value A value compatible with DmcTypeIntegerSV
-     */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
-    public void setTag(Object value) throws DmcValueException {
-        DmcTypeIntegerSV attr  = (DmcTypeIntegerSV) get(DmdgpbDMSAG.__tag);
-        if (attr == null)
-            attr = new DmcTypeIntegerSV(DmdgpbDMSAG.__tag);
-        
-        attr.set(value);
-        set(DmdgpbDMSAG.__tag,attr);
-    }
-
-    /**
-     * Removes the tag attribute value.
-     */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
-    public void remTag(){
-         rem(DmdgpbDMSAG.__tag);
     }
 
 

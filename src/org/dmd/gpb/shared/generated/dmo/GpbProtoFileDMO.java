@@ -35,7 +35,8 @@ import org.dmd.gpb.shared.generated.types.DmcTypeGpbMainElementREFMV;         //
 import org.dmd.gpb.shared.generated.types.GpbMainElementREF;                  // Helper class - (GenUtility.java:335)
 
 /**
- * The GpbProtoFile is used to represent a single .proto file.
+ * The GpbProtoFile is used to represent a single .proto file. It may be
+ * parsed\n from an existing .proto file by the GpbDotProtoParser utility.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>

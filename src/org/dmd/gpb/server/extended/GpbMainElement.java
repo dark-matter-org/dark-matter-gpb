@@ -13,4 +13,10 @@ abstract public class GpbMainElement extends GpbMainElementDMW {
 	protected GpbMainElement(GpbMainElementDMO dmo, ClassDefinition cd){
 		super(dmo,cd);
 	}
+	
+	/**
+	 * @return a String that represents this element in the format it would
+	 * have in a .gpb module file.
+	 */
+	abstract public String toDotGPBFormat();
 }

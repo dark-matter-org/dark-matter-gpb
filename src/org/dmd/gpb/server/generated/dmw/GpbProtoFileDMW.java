@@ -22,7 +22,8 @@ import org.dmd.gpb.shared.generated.dmo.GpbProtoFileDMO;                   // Cl
 
 
 /**
- * The GpbProtoFile is used to represent a single .proto file.
+ * The GpbProtoFile is used to represent a single .proto file. It may be
+ * parsed\n from an existing .proto file by the GpbDotProtoParser utility.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>

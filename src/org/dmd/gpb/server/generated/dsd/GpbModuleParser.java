@@ -26,11 +26,11 @@ import org.dmd.dms.SchemaManager;                                         // Man
 import org.dmd.dms.generated.dmw.StringIterableDMW;                       // To iterate over defFiles - (DSDArtifactFormatter.java:332)
 import org.dmd.dmv.shared.DmvRuleManager;                                 // The injected rule manager used for initializations - (DSDArtifactFormatter.java:331)
 import org.dmd.dmw.DmwObjectFactory;                                      // Constructs wrapped objects - (DSDArtifactFormatter.java:318)
-import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDArtifactFormatter.java:509)
-import org.dmd.gpb.server.extended.GpbDefinition;                         // The base definition from the GpbModule Module - (DSDArtifactFormatter.java:503)
+import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDArtifactFormatter.java:512)
+import org.dmd.gpb.server.extended.GpbDefinition;                         // The base definition from the GpbModule Module - (DSDArtifactFormatter.java:506)
 import org.dmd.gpb.server.extended.GpbModule;                             // The kind of DDM we're reading - (DSDArtifactFormatter.java:336)
-import org.dmd.gpb.server.extended.GpbProtoFile;                          // A definition from the GpbModule Module - (DSDArtifactFormatter.java:509)
-import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:509)
+import org.dmd.gpb.server.extended.GpbProtoFile;                          // A definition from the GpbModule Module - (DSDArtifactFormatter.java:512)
+import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:512)
 import org.dmd.gpb.server.generated.DmdgpbSchemaAG;                       // The schema recognized by this parser - (DSDArtifactFormatter.java:326)
 import org.dmd.gpb.server.generated.dsd.GpbModuleGlobalInterface;         // Interface to our definition storage - (DSDArtifactFormatter.java:319)
 import org.dmd.util.exceptions.ResultException;                           // May be thrown by schema management - (DSDArtifactFormatter.java:329)
@@ -49,7 +49,7 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
     // Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateParser(DSDArtifactFormatter.java:360)
     SchemaManager               schema;                                             // Manages the schema for this DSD
     DmcUncheckedOIFParser       parser         = new DmcUncheckedOIFParser(this);   // Parses objects from the config file
-    DmwObjectFactory            factory        = new DmwObjectFactory(schema);      // Instantiates wrapped objects
+    DmwObjectFactory            factory;                                            // Instantiates wrapped objects
     GpbModuleGlobalInterface    definitions;                                        // Place to store parsed definitions
     DmvRuleManager              rules;                                              // The overall rule manager
     ConfigLocation              location;                                           // The location of the config being parsed
@@ -59,6 +59,9 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
     public GpbModuleParser(GpbModuleGlobalInterface d, DmvRuleManager r) throws ResultException, DmcValueException, DmcNameClashException {
         schema = new SchemaManager();
         schema.manageSchema(new DmdgpbSchemaAG());
+        
+        factory      = new DmwObjectFactory(schema);
+        
         definitions  = d;
         rules        = r;
     }
@@ -67,7 +70,7 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
         return(fileExtension);
     }
 
-    // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateParser(DSDArtifactFormatter.java:375)
+    // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateParser(DSDArtifactFormatter.java:378)
     public GpbModule parseConfig(ConfigLocation l) throws ResultException, DmcValueException, DmcRuleExceptionSet, DmcNameClashException {
         location = l;
 
@@ -98,7 +101,7 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
         return(module);
     }
 
-    // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateParser(DSDArtifactFormatter.java:408)
+    // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateParser(DSDArtifactFormatter.java:411)
     @Override
     public void handleObject(DmcUncheckedObject uco, String infile, int lineNumber) throws ResultException, DmcValueException, DmcRuleExceptionSet, DmcNameClashException {
         GpbDefinition definition = null;
@@ -149,7 +152,7 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
             }
         }
         else{
-            // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateParser(DSDArtifactFormatter.java:460)
+            // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateParser(DSDArtifactFormatter.java:463)
             if (definition instanceof GpbModule){
                 ResultException ex = new ResultException("Multiple GpbModule definitions while parsing config: " + location.getFileName());
                 ex.setLocationInfo(infile, lineNumber);

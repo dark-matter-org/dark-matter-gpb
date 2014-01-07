@@ -51,6 +51,7 @@ public class GpbDotProtoParser {
 			GpbProtoFile proto = parser.parseFromProto(location.getFileName());
 			
 			DebugInfo.debug("\n\n" + proto.toOIF());
+			proto.dumpDotGPB(location.getDirectory());
 		}
 	}
 	

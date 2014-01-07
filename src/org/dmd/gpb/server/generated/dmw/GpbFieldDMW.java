@@ -2,11 +2,14 @@ package org.dmd.gpb.server.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:366)
+import java.util.ArrayList;                                      // Support for MULTI attribute - (BaseDMWGenerator.java:2150)
+import java.util.Iterator;                                       // Support copy of MV objects - (BaseDMWGenerator.java:2164)
 import org.dmd.dmc.*;                                            // If any attributes - (BaseDMWGenerator.java:1011)
 import org.dmd.dmc.definitions.DmcDefinitionIF;                  // The object is a domain specific definition - (BaseDMWGenerator.java:335)
 import org.dmd.dmc.types.DefinitionName;                         // Is named by - (BaseDMWGenerator.java:986)
 import org.dmd.dms.ClassDefinition;                              // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:991)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                      // Required for MODREC constructor - (BaseDMWGenerator.java:996)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                      // Attribute description from the meta schema - (BaseDMWGenerator.java:821)
+import org.dmd.dms.generated.dmw.StringIterableDMW;              // For multi-valued String - (BaseDMWGenerator.java:2027)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;            // Required for MODREC constructor - (BaseDMWGenerator.java:995)
 import org.dmd.gpb.server.extended.GpbElement;                   // Derived class - (BaseDMWGenerator.java:1172)
 import org.dmd.gpb.server.extended.GpbField;                     // Required for getModificationRecorder() - (BaseDMWGenerator.java:1000)
@@ -18,6 +21,11 @@ import org.dmd.gpb.shared.generated.types.GpbTypeREF;            // Is reference
 
 
 /**
+ * The GpbField class is used to represent a reusable, named field for use\n
+ * within a GpbMessage. If the field has been parsed from an existing .proto
+ * file, it will\n have the fieldRule and tag attributes. However, when
+ * specified as part of a .gpb file,\n the fieldRule and tag won't be
+ * specified.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -82,6 +90,119 @@ abstract public class GpbFieldDMW extends GpbElement implements DmcDefinitionIF,
             return( getObjectName().equals( ((GpbFieldDMW) obj).getObjectName()) );
         }
         return(false);
+    }
+
+    /**
+     * @return The number of String items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1595)
+    public int getDescriptionSize(){
+        return(((GpbFieldDMO) core).getDescriptionSize());
+    }
+
+    /**
+     * @return true if there are no StringDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1603)
+    public boolean getDescriptionIsEmpty(){
+        if (((GpbFieldDMO) core).getDescriptionSize() == 0)
+            return(true);
+        return(false);
+    }
+
+    /**
+     * @return true if there are any StringDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1613)
+    public boolean getDescriptionHasValue(){
+        if (((GpbFieldDMO) core).getDescriptionSize() == 0)
+            return(false);
+        return(true);
+    }
+
+    /**
+     * @return An Iterator of String objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2031)
+    public StringIterableDMW getDescriptionIterable(){
+        DmcAttribute<?> attr = core.get(MetaDMSAG.__description);
+        if (attr == null)
+            return(StringIterableDMW.emptyList);
+        
+        return(new StringIterableDMW(((GpbFieldDMO) core).getDescription()));
+    }
+
+    /**
+     * Adds another description value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2057)
+    public void addDescription(Object value) throws DmcValueException {
+        ((GpbFieldDMO) core).addDescription(value);
+    }
+
+    /**
+     * Adds another description value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2067)
+    public void addDescription(String value){
+        ((GpbFieldDMO) core).addDescription(value);
+    }
+
+    /**
+     * Returns true if the collection contains the description value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2124)
+    public boolean descriptionContains(String value){
+        return(((GpbFieldDMO) core).descriptionContains(value));
+    }
+
+    /**
+     * @return A COPY of the collection of String objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2168)
+    @SuppressWarnings("unchecked")
+    public ArrayList<String> getDescriptionCopy(){
+        DmcAttribute<?> attr = core.get(MetaDMSAG.__description);
+        if (attr == null)
+            return(new ArrayList<String>());
+        
+        ArrayList<String> rc = new ArrayList<String>(attr.getMVSize());
+        
+        Iterator<String> it = (Iterator<String>) attr.getMV();
+        while(it.hasNext()){
+            rc.add(it.next());
+        }
+        
+        return(rc);
+    }
+
+    /**
+     * Deletes a description value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2195)
+    public void delDescription(Object value) throws DmcValueException {
+        ((GpbFieldDMO) core).delDescription(value);
+    }
+
+    /**
+     * Deletes a description value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2204)
+    public void delDescription(String value){
+        ((GpbFieldDMO) core).delDescription(value);
+    }
+
+    /**
+     * Removes the description attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2216)
+    public void remDescription(){
+        ((GpbFieldDMO) core).remDescription();
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1398)

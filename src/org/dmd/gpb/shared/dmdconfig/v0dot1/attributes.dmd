@@ -100,7 +100,7 @@ dmdID			23
 type			GpbMainElement
 valueType		MULTI
 description		The mainElements attribute indicates a list of GpbMainElements that comprise a GpbProtoFile. Main elements
- include message and enumerations.
+ include messages and enumerations.
 
 AttributeDefinition
 name			field

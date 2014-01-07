@@ -30,7 +30,7 @@ import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required 
 
 /**
  * The GpbDefinition provides a common base for all dark-matter\n Google
- * Protocol Buffer definitions.
+ * Protocol Buffer (GPB) definitions.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
