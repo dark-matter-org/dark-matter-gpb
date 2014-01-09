@@ -7,6 +7,7 @@ import junit.framework.Assert;
 
 import org.dmd.dmc.DmcNameClashException;
 import org.dmd.dmc.DmcValueException;
+import org.dmd.gpb.tools.protoparsing.GpbDotProtoParser;
 import org.dmd.util.exceptions.ResultException;
 import org.dmd.util.parsing.StringArrayList;
 import org.junit.Before;

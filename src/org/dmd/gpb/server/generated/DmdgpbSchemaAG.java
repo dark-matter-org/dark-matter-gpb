@@ -66,8 +66,9 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
     public static AttributeDefinition _fieldRule;
     public static AttributeDefinition _import;
 
+    public static TypeDefinition _GpbFieldIndicator;
 
-    public static ComplexTypeDefinition _GpbFieldIndicator;
+    public static ComplexTypeDefinition _GpbFieldIndicatorBase;
 
 
     public static EnumDefinition _FieldRuleEnum;
@@ -606,24 +607,38 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
 
     // Generated from: org.dmd.dmg.util.SchemaFormatter.dumpInitFunction(SchemaFormatter.java:313)
     private void initTypes() throws DmcValueException {
+// Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
+            TypeDefinitionDMO _GpbFieldIndicatorOBJ = new TypeDefinitionDMO();
+            _GpbFieldIndicator = new TypeDefinition(_GpbFieldIndicatorOBJ);
+            _GpbFieldIndicatorOBJ.setName("GpbFieldIndicator");
+            _GpbFieldIndicatorOBJ.addDescription("The GpbFieldIndicator type is used to represent the specification\n of elements that comprise a GpbMessage. The elements may refer to GpbFields, GpbEnums\n or other GpbMessages.");
+            _GpbFieldIndicatorOBJ.setTypeClassName("org.dmd.gpb.shared.types.DmcTypeGpbFieldIndicator");
+            _GpbFieldIndicatorOBJ.setPrimitiveType("org.dmd.gpb.shared.types.GpbFieldIndicator");
+            _GpbFieldIndicatorOBJ.setDmwIteratorClass("GpbFieldIndicatorIterableDMW");
+            _GpbFieldIndicatorOBJ.setDotName("dmdgpb.GpbFieldIndicator.TypeDefinition");
+            _GpbFieldIndicatorOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbFieldIndicatorIterableDMW");
+            _GpbFieldIndicator.setDefinedIn(this);
+            _GpbFieldIndicatorOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/types.dmd");
+            _GpbFieldIndicatorOBJ.setLineNumber("22");
+            addTypeDefList(_GpbFieldIndicator);
+
     }
 
     // Generated from: org.dmd.dmg.util.SchemaFormatter.dumpInitFunction(SchemaFormatter.java:313)
     private void initComplexTypes() throws DmcValueException {
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            ComplexTypeDefinitionDMO _GpbFieldIndicatorOBJ = new ComplexTypeDefinitionDMO();
-            _GpbFieldIndicator = new ComplexTypeDefinition(_GpbFieldIndicatorOBJ);
-            _GpbFieldIndicatorOBJ.setName("GpbFieldIndicator");
-            _GpbFieldIndicatorOBJ.addDescription("The GpbFieldIndicator type is used to specify a previously defined GpbField\n to be used as one of the fields in a GpbMessage.");
-            _GpbFieldIndicatorOBJ.setDotName("dmdgpb.GpbFieldIndicator.ComplexTypeDefinition");
-            _GpbFieldIndicator.setDefinedIn(this);
-            _GpbFieldIndicatorOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");
-            _GpbFieldIndicatorOBJ.setLineNumber("8");
-            _GpbFieldIndicatorOBJ.addField("FieldRuleEnum fieldRule Whether the field is required, optional or repeated.");
-            _GpbFieldIndicatorOBJ.addField("GpbField fieldName The name of the GpbField used for this field");
-            _GpbFieldIndicatorOBJ.addField("Integer fieldTag The unique numeric tag for this field.");
-            _GpbFieldIndicatorOBJ.addField("String info Additional info to be supplied for the field definition. For example the default value for a field [default = 10] or [packed = true] for a repeated field.");
-            addComplexTypeDefList(_GpbFieldIndicator);
+            ComplexTypeDefinitionDMO _GpbFieldIndicatorBaseOBJ = new ComplexTypeDefinitionDMO();
+            _GpbFieldIndicatorBase = new ComplexTypeDefinition(_GpbFieldIndicatorBaseOBJ);
+            _GpbFieldIndicatorBaseOBJ.setName("GpbFieldIndicatorBase");
+            _GpbFieldIndicatorBaseOBJ.setDotName("dmdgpb.GpbFieldIndicatorBase.ComplexTypeDefinition");
+            _GpbFieldIndicatorBase.setDefinedIn(this);
+            _GpbFieldIndicatorBaseOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");
+            _GpbFieldIndicatorBaseOBJ.setLineNumber("15");
+            _GpbFieldIndicatorBaseOBJ.addField("GpbElement element The field, enum or message referred to by this field indicator.");
+            _GpbFieldIndicatorBaseOBJ.addField("Integer fieldTag The unique numeric tag for this field.");
+            _GpbFieldIndicatorBaseOBJ.addField("FieldRuleEnum fieldRule Whether the field is required, optional or repeated.");
+            _GpbFieldIndicatorBaseOBJ.addField("String info Additional info to be supplied for the field definition. For example the default value for a field [default = 10] or [packed = true] for a repeated field.");
+            addComplexTypeDefList(_GpbFieldIndicatorBase);
 
     }
 
@@ -644,7 +659,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _FieldRuleEnumOBJ.setDotName("dmdgpb.FieldRuleEnum.EnumDefinition");
             _FieldRuleEnum.setDefinedIn(this);
             _FieldRuleEnumOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/types.dmd");
-            _FieldRuleEnumOBJ.setLineNumber("14");
+            _FieldRuleEnumOBJ.setLineNumber("15");
             addEnumDefList(_FieldRuleEnum);
 
     }

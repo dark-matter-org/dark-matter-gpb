@@ -18,24 +18,24 @@ package org.dmd.gpb.server.generated.dmw;
 import java.util.Iterator;
 
 import org.dmd.dmw.DmwMVIterator;
-import org.dmd.gpb.shared.types.GpbFieldIndicator;
+import org.dmd.gpb.shared.generated.types.GpbFieldIndicatorBase;
 /**
- * The GpbFieldIndicatorIterableDMW wraps an Iterator for a particular type and makes 
+ * The GpbFieldIndicatorBaseIterableDMW wraps an Iterator for a particular type and makes 
  * it Iterable.
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpIterable(GenUtility.java:1755)
- *    Called from: org.dmd.dmg.generators.DMWGenerator.createTypeIterables(DMWGenerator.java:106)
+ *    Called from: org.dmd.dmg.generators.DMWGenerator.createTypeIterables(DMWGenerator.java:128)
  */
-public class GpbFieldIndicatorIterableDMW extends DmwMVIterator<GpbFieldIndicator> {
+public class GpbFieldIndicatorBaseIterableDMW extends DmwMVIterator<GpbFieldIndicatorBase> {
 
-    public final static GpbFieldIndicatorIterableDMW emptyList = new GpbFieldIndicatorIterableDMW();
+    public final static GpbFieldIndicatorBaseIterableDMW emptyList = new GpbFieldIndicatorBaseIterableDMW();
 
-    protected GpbFieldIndicatorIterableDMW(){
+    protected GpbFieldIndicatorBaseIterableDMW(){
         super();
     }
 
-    public GpbFieldIndicatorIterableDMW(Iterator<GpbFieldIndicator> it){
+    public GpbFieldIndicatorBaseIterableDMW(Iterator<GpbFieldIndicatorBase> it){
         super(it);
     }
 

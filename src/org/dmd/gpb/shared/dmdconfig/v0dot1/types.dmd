@@ -12,3 +12,11 @@ description		The FieldRuleEnum indicates whether a field is required, optional o
  application-specific custom validation routines for your buffers instead. Some engineers
  at Google have come to the conclusion that using required does more harm than good; they
  prefer to use only optional and repeated. However, this view is not universal.
+
+TypeDefinition
+name			GpbFieldIndicator
+typeClassName	org.dmd.gpb.shared.types.DmcTypeGpbFieldIndicator
+primitiveType	org.dmd.gpb.shared.types.GpbFieldIndicator
+description		The GpbFieldIndicator type is used to represent the specification
+ of elements that comprise a GpbMessage. The elements may refer to GpbFields, GpbEnums
+ or other GpbMessages.
