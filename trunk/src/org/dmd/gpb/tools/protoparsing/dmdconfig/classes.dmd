@@ -1,0 +1,78 @@
+ClassDefinition
+name			ProtoDefinition
+classType   	ABSTRACT
+dmdID			2
+useWrapperType	EXTENDED
+derivedFrom		DSDefinition
+isNamedBy		name
+must			name
+must			dotName
+must			definedInGpbModule
+may				gpbHint
+description		The GpbDefinition provides a common base for all dark-matter
+ Google Protocol Buffer (GPB) definitions. 
+
+ClassDefinition
+name         	ProtoElement
+classType      	ABSTRACT
+dmdID			4
+useWrapperType	EXTENDED
+derivedFrom     GpbDefinition
+isNamedBy       name
+must           	name
+description		The GpbElement provides a common base for enums and messages so that
+ we can specify a set of them to compose a GpbProtoFile.
+
+ClassDefinition
+name         	ProtoMainElement
+classType      	ABSTRACT
+dmdID			5
+useWrapperType	EXTENDED
+derivedFrom     GpbElement
+isNamedBy       name
+must           	name
+description		The GpbElement provides a common base for enums and messages so that
+
+ClassDefinition
+name         	ProtoField
+classType      	STRUCTURAL
+dmdID			7
+useWrapperType	EXTENDED
+derivedFrom     GpbElement
+isNamedBy       name
+must			gpbType
+may             description
+may			    fieldRule
+may			    tag
+description		The GpbField class is used to represent a reusable, named field for use
+ within a GpbMessage. If the field has been parsed from an existing .proto file, it will
+ have the fieldRule and tag attributes. However, when specified as part of a .gpb file,
+ the fieldRule and tag won't be specified.
+
+ClassDefinition
+name         	ProtoMessage
+classType      	STRUCTURAL
+dmdID			8
+useWrapperType	EXTENDED
+derivedFrom     GpbMainElement
+isNamedBy       name
+must			name
+must			elements
+
+ClassDefinition
+name         	GpbProtoFile
+classType      	STRUCTURAL
+dmdID			10
+useWrapperType	EXTENDED
+derivedFrom     GpbDefinition
+isNamedBy       name
+must			name
+must			package
+may				import
+may				mainElements
+description		The GpbProtoFile is used to represent a single .proto file. It may be parsed
+ from an existing .proto file by the GpbDotProtoParser utility. 
+
+
+
+

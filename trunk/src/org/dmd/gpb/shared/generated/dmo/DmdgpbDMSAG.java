@@ -60,6 +60,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcTypeInfo __type_GpbEnum = new DmcTypeInfo("GpbEnum", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_GpbField = new DmcTypeInfo("GpbField", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_GpbFieldIndicator = new DmcTypeInfo("GpbFieldIndicator", OriginalTypeEnum.COMPLEXTYPE);
+    public final static DmcTypeInfo __type_GpbFieldIndicatorBase = new DmcTypeInfo("GpbFieldIndicatorBase", OriginalTypeEnum.COMPLEXTYPE);
     public final static DmcTypeInfo __type_GpbMainElement = new DmcTypeInfo("GpbMainElement", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_GpbMessage = new DmcTypeInfo("GpbMessage", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_GpbModule = new DmcTypeInfo("GpbModule", OriginalTypeEnum.REFERENCE);
