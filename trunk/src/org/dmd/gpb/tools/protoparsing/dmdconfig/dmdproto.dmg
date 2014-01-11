@@ -1,0 +1,6 @@
+DmgConfig
+genPackage      	org.dmd.gpb.tools.protoparsing
+schemaToLoad		dmdproto
+generator			org.dmd.dmg.generators.DMWGenerator
+generatedFileHeader LGPL.txt
+description     	We generate the wrappers for the dark-matter Google Protocol Buffer (GPB) definitions.

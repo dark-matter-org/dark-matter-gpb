@@ -1,70 +1,77 @@
 ClassDefinition
 name			ProtoDefinition
 classType   	ABSTRACT
-dmdID			2
+dmdID			1
 useWrapperType	EXTENDED
 derivedFrom		DSDefinition
 isNamedBy		name
 must			name
 must			dotName
-must			definedInGpbModule
-may				gpbHint
-description		The GpbDefinition provides a common base for all dark-matter
- Google Protocol Buffer (GPB) definitions. 
+description		The ProtoDefinition provides a common base for all data parsed from an
+ original .proto file.
 
 ClassDefinition
 name         	ProtoElement
 classType      	ABSTRACT
-dmdID			4
+dmdID			2
 useWrapperType	EXTENDED
-derivedFrom     GpbDefinition
+derivedFrom     ProtoDefinition
 isNamedBy       name
 must           	name
-description		The GpbElement provides a common base for enums and messages so that
- we can specify a set of them to compose a GpbProtoFile.
+description		The ProtoElement provides a common base for all elements that 
+ comprise a .proto specification.
 
 ClassDefinition
 name         	ProtoMainElement
 classType      	ABSTRACT
-dmdID			5
+dmdID			3
 useWrapperType	EXTENDED
-derivedFrom     GpbElement
+derivedFrom     ProtoElement
 isNamedBy       name
 must           	name
-description		The GpbElement provides a common base for enums and messages so that
+//subpackage		element.something
+description		The GpbElement provides a common base for enums and messages that
+ are defined at the top level of a .proto specification.
 
 ClassDefinition
 name         	ProtoField
 classType      	STRUCTURAL
-dmdID			7
+dmdID			4
 useWrapperType	EXTENDED
-derivedFrom     GpbElement
+derivedFrom     ProtoElement
 isNamedBy       name
 must			gpbType
 may             description
 may			    fieldRule
 may			    tag
-description		The GpbField class is used to represent a reusable, named field for use
- within a GpbMessage. If the field has been parsed from an existing .proto file, it will
- have the fieldRule and tag attributes. However, when specified as part of a .gpb file,
- the fieldRule and tag won't be specified.
+description		The ProtoField class represents a single field of a .proto message.
 
 ClassDefinition
 name         	ProtoMessage
 classType      	STRUCTURAL
-dmdID			8
+dmdID			5
 useWrapperType	EXTENDED
-derivedFrom     GpbMainElement
+derivedFrom     ProtoMainElement
 isNamedBy       name
 must			name
 must			elements
 
 ClassDefinition
-name         	GpbProtoFile
+name         	ProtoEnum
 classType      	STRUCTURAL
-dmdID			10
+dmdID			6
 useWrapperType	EXTENDED
-derivedFrom     GpbDefinition
+derivedFrom     ProtoMainElement
+isNamedBy       name
+must           	name
+must           	enumValue
+
+ClassDefinition
+name         	ProtoFile
+classType      	STRUCTURAL
+dmdID			7
+useWrapperType	EXTENDED
+derivedFrom     ProtoDefinition
 isNamedBy       name
 must			name
 must			package

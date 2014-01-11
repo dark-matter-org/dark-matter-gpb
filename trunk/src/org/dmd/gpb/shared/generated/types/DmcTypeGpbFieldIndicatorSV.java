@@ -1,6 +1,6 @@
 //	---------------------------------------------------------------------------
 //	dark-matter-data
-//	Copyright (c) 2011 dark-matter-data committers
+//	Copyright (c) 2014 dark-matter-data committers
 //	---------------------------------------------------------------------------
 //	This program is free software; you can redistribute it and/or modify it
 //	under the terms of the GNU Lesser General Public License as published by the
@@ -19,14 +19,14 @@ import java.io.Serializable;
 import org.dmd.dmc.DmcAttribute;
 import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
-import org.dmd.gpb.shared.generated.types.GpbFieldIndicator;    // base type import
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldIndicator;    // DmcType import
+import org.dmd.gpb.shared.types.GpbFieldIndicator;    // base type import
+import org.dmd.gpb.shared.types.DmcTypeGpbFieldIndicator;    // DmcType import
 /**
  * The DmcTypeGpbFieldIndicatorSV provides storage for a single-valued GpbFieldIndicator
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1969)
- *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpTypes(DmoTypeFormatter.java:125)
+ *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpTypes(DmoTypeFormatter.java:100)
  */
 @SuppressWarnings("serial")
 public class DmcTypeGpbFieldIndicatorSV extends DmcTypeGpbFieldIndicator implements Serializable {

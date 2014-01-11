@@ -19,9 +19,17 @@ import org.dmd.dmc.types.DmcTypeComplexTypeWithRefs;
  * of type GpbFieldIndicator.
  */
 abstract public class DmcTypeGpbFieldIndicator extends DmcTypeComplexTypeWithRefs<GpbFieldIndicator>  implements Serializable {
+	
+	public DmcTypeGpbFieldIndicator(){
+		
+	}
+
+	public DmcTypeGpbFieldIndicator(DmcAttributeInfo ai) {
+		super(ai);
+	}
 
 	@Override
-	protected GpbFieldIndicator typeCheck(Object value) throws DmcValueException {
+	public GpbFieldIndicator typeCheck(Object value) throws DmcValueException {
         GpbFieldIndicator rc = null;
 
         if (value instanceof GpbFieldIndicator){
@@ -40,7 +48,7 @@ abstract public class DmcTypeGpbFieldIndicator extends DmcTypeComplexTypeWithRef
      * Returns a clone of a value associated with this type.
      */
 	@Override
-	protected GpbFieldIndicator cloneValue(GpbFieldIndicator original) {
+	public GpbFieldIndicator cloneValue(GpbFieldIndicator original) {
 		return(new GpbFieldIndicator(original));
 	}
 
