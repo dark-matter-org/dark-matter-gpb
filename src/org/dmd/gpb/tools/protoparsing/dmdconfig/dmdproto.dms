@@ -6,8 +6,8 @@ defFiles			types.dmd
 defFiles    		attributes.dmd
 defFiles    		classes.dmd
 generatedFileHeader LGPL.txt
-schemaPackage 		org.dmd.gpb.shared
-dmwPackage 			org.dmd.gpb.server
+schemaPackage 		org.dmd.gpb.tools.protoparsing
+dmwPackage 			org.dmd.gpb.tools.protoparsing
 description The dark-matter proto schema defines objects that are parsed from .proto
  specifications and used to generate the initial .gpb files that use the dmdgpb schema.
  These two schemas are maintained separately to prevent confusion.

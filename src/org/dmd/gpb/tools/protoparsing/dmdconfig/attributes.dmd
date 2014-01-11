@@ -1,84 +1,77 @@
-AttributeDefinition
-name			cplusplusType
-dmdID			1
-type			String
-description		An indication of the C++ type associated with a GPB attribute type.
-
-AttributeDefinition
-name			dmType
-dmdID			2
-type			String
-description		An indication of the dark-matter type associated with a GPB attribute type.
-
-AttributeDefinition
-name			gpbHint
-dmdID			3
-type			String
-description		A short description of something that can be dumped as one line comment in a .proto spec.
- For longer explanations, use the description attribute.
-
-AttributeDefinition
-name			defaultValue
-dmdID			4
-type			String
-description		The default value to be used for a GpbType or for an GpbAttribute.
-
-AttributeDefinition
-name			sizeInBytes
-dmdID			5
-type			Integer
-description		The size in bytes that a particular primitive type would occupy on the wire.
+//AttributeDefinition
+//name			cplusplusType
+//dmdID			1
+//type			String
+//description		An indication of the C++ type associated with a GPB attribute type.
+//
+//AttributeDefinition
+//name			dmType
+//dmdID			2
+//type			String
+//description		An indication of the dark-matter type associated with a GPB attribute type.
+//
+//AttributeDefinition
+//name			gpbHint
+//dmdID			3
+//type			String
+//description		A short description of something that can be dumped as one line comment in a .proto spec.
+// For longer explanations, use the description attribute.
+//
+//AttributeDefinition
+//name			defaultValue
+//dmdID			4
+//type			String
+//description		The default value to be used for a GpbType or for an GpbAttribute.
+//
+//AttributeDefinition
+//name			sizeInBytes
+//dmdID			5
+//type			Integer
+//description		The size in bytes that a particular primitive type would occupy on the wire.
 
 AttributeDefinition
 name			gpbType
 dmdID			6
-type			GpbType
-description		A reference to a GpbType definition.
-
-AttributeDefinition
-name			isMessageType
-dmdID			7
-type			Boolean
-description		Indicates if an internally generated GpbType is associated with a GpbMessage.
-
-AttributeDefinition
-name			definedInGpbModule
-dmdID			8
-//type			GpbModule
 type			String
-description		Indicates the name of the GpbModule in which a definition is defined.
+description		The type of a .proto field.
 
-AttributeDefinition
-name			usesDefsFrom
-dmdID			9
-//type			GpbModule
-type			String
-description		Indicates the name of a GpbModule from which definitions are included.
+//AttributeDefinition
+//name			isMessageType
+//dmdID			7
+//type			Boolean
+//description		Indicates if an internally generated GpbType is associated with a GpbMessage.
 
-AttributeDefinition
-name			pythonType
-dmdID			10
-type			String
-description		An indication of the Python type associated with a GPB attribute type.
+//AttributeDefinition
+//name			definedInGpbModule
+//dmdID			8
+////type			GpbModule
+//type			String
+//description		Indicates the name of the GpbModule in which a definition is defined.
 
-AttributeDefinition
-name			javaType
-dmdID			11
-type			String
-description		An indication of the Java type associated with a GPB attribute type.
+//AttributeDefinition
+//name			usesDefsFrom
+//dmdID			9
+////type			GpbModule
+//type			String
+//description		Indicates the name of a GpbModule from which definitions are included.
 
-AttributeDefinition
-name			basedOnEnum
-dmdID			12
-type			EnumDefinition
-description		Indicates that a GPB enum is based on a dark-matter schema defined enumeration.
-
-AttributeDefinition
-name			dependsOnGpbModule
-dmdID			20
-type			GpbModule
-valueType       MULTI
-description		Indicates the GpbModule on which something depends.
+//AttributeDefinition
+//name			pythonType
+//dmdID			10
+//type			String
+//description		An indication of the Python type associated with a GPB attribute type.
+//
+//AttributeDefinition
+//name			javaType
+//dmdID			11
+//type			String
+//description		An indication of the Java type associated with a GPB attribute type.
+//
+//AttributeDefinition
+//name			basedOnEnum
+//dmdID			12
+//type			EnumDefinition
+//description		Indicates that a GPB enum is based on a dark-matter schema defined enumeration.
 
 AttributeDefinition
 name			package
@@ -89,7 +82,7 @@ description 	The package associated with a .proto file.
 AttributeDefinition
 name			elements
 dmdID			22
-type			GpbElement
+type			ProtoElement
 valueType		MULTI
 description		The elements attribute indicates a list of GpbElements that comprise a GpbMessage, this
  includes GpbFields, GpbEnums and other GpbMessages.
@@ -97,7 +90,7 @@ description		The elements attribute indicates a list of GpbElements that compris
 AttributeDefinition
 name			mainElements
 dmdID			23
-type			GpbMainElement
+type			ProtoMainElement
 valueType		MULTI
 description		The mainElements attribute indicates a list of GpbMainElements that comprise a GpbProtoFile. Main elements
  include messages and enumerations.
@@ -105,7 +98,7 @@ description		The mainElements attribute indicates a list of GpbMainElements that
 AttributeDefinition
 name			field
 dmdID			24
-type			GpbField
+type			ProtoField
 valueType		MULTI
 description		A field in a GpbMessage.
 
