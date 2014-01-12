@@ -7,6 +7,8 @@ derivedFrom		DSDefinition
 isNamedBy		name
 must			name
 must			dotName
+may				file
+may				lineNumber
 description		The ProtoDefinition provides a common base for all data parsed from an
  original .proto file.
 

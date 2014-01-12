@@ -18,42 +18,42 @@ package org.dmd.gpb.tools.protoparsing.generated.types;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.DmcInputStreamIF;
 import org.dmd.dmc.DmcOutputStreamIF;
-import org.dmd.gpb.tools.protoparsing.generated.enums.FieldRuleEnum;    // DmcType import
+import org.dmd.gpb.tools.protoparsing.generated.enums.ProtoFieldRuleEnum;    // DmcType import
 
 /**
- * The DmcTypeFieldRuleEnumSTATIC provides static access to functions used to manage values of type FieldRuleEnum
+ * The DmcTypeProtoFieldRuleEnumSTATIC provides static access to functions used to manage values of type ProtoFieldRuleEnum
  * These methods are used to support ComplexTypeDefinitions.
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpSTATICType(GenUtility.java:2144)
  *    Called from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2059)
  */
-public class DmcTypeFieldRuleEnumSTATIC {
+public class DmcTypeProtoFieldRuleEnumSTATIC {
     
-    public static DmcTypeFieldRuleEnumSTATIC instance;
-    static DmcTypeFieldRuleEnumSV typeHelper;
+    public static DmcTypeProtoFieldRuleEnumSTATIC instance;
+    static DmcTypeProtoFieldRuleEnumSV typeHelper;
     
     static {
-        instance = new DmcTypeFieldRuleEnumSTATIC();
+        instance = new DmcTypeProtoFieldRuleEnumSTATIC();
     }
     
-    protected DmcTypeFieldRuleEnumSTATIC() {
-        typeHelper = new DmcTypeFieldRuleEnumSV();
+    protected DmcTypeProtoFieldRuleEnumSTATIC() {
+        typeHelper = new DmcTypeProtoFieldRuleEnumSV();
     }
     
-    public FieldRuleEnum typeCheck(Object value) throws DmcValueException {
+    public ProtoFieldRuleEnum typeCheck(Object value) throws DmcValueException {
     	   return(typeHelper.typeCheck(value));
     }
     
-    public FieldRuleEnum cloneValue(FieldRuleEnum value) throws DmcValueException {
+    public ProtoFieldRuleEnum cloneValue(ProtoFieldRuleEnum value) throws DmcValueException {
     	   return(typeHelper.cloneValue(value));
     }
     
-    public void serializeValue(DmcOutputStreamIF dos, FieldRuleEnum value) throws Exception {
+    public void serializeValue(DmcOutputStreamIF dos, ProtoFieldRuleEnum value) throws Exception {
     	   typeHelper.serializeValue(dos, value);
     }
     
-    public FieldRuleEnum deserializeValue(DmcInputStreamIF dis) throws Exception {
+    public ProtoFieldRuleEnum deserializeValue(DmcInputStreamIF dis) throws Exception {
     	   return(typeHelper.deserializeValue(dis));
     }
     

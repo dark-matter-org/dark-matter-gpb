@@ -6,8 +6,9 @@ import java.util.Iterator;
 import org.dmd.dmc.DmcNameClashException;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dms.SchemaManager;
-import org.dmd.gpb.server.extended.GpbProtoFile;
 import org.dmd.gpb.server.generated.DmdgpbSchemaAG;
+import org.dmd.gpb.tools.protoparsing.extended.ProtoFile;
+import org.dmd.gpb.tools.protoparsing.generated.DmdprotoSchemaAG;
 import org.dmd.util.exceptions.DebugInfo;
 import org.dmd.util.exceptions.ResultException;
 import org.dmd.util.parsing.ConfigFinder;
@@ -24,9 +25,9 @@ import org.dmd.util.parsing.StringArrayList;
  */
 public class GpbDotProtoParser {
 	
-	ConfigFinder	finder;			// Our .proto file finder
+	ConfigFinder		finder;			// Our .proto file finder
 	ProtoFileParser	parser;
-	SchemaManager	schema;
+	SchemaManager		schema;
 	
 	/**
 	 * Constructs a new .proto parser.
@@ -39,6 +40,7 @@ public class GpbDotProtoParser {
 		finder = new ConfigFinder("proto",sd, false);
 		parser = new ProtoFileParser();
 		schema = new SchemaManager();
+		schema.manageSchema(new DmdprotoSchemaAG());
 		schema.manageSchema(new DmdgpbSchemaAG());
 	}
 	
@@ -48,7 +50,7 @@ public class GpbDotProtoParser {
 		Iterator<ConfigLocation> it = finder.getLocations();
 		while(it.hasNext()){
 			ConfigLocation location = it.next();
-			GpbProtoFile proto = parser.parseFromProto(location.getFileName());
+			ProtoFile proto = parser.parseFromProto(location.getFileName());
 			
 			DebugInfo.debug("\n\n" + proto.toOIF());
 			proto.dumpDotGPB(location.getDirectory());

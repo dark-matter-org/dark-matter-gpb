@@ -4,16 +4,16 @@ import org.dmd.dmc.presentation.DmcAdapterIF;
 import org.dmd.dmc.DmcAttribute;
 import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dms.generated.types.DmcTypeModifierMV;
-import org.dmd.gpb.tools.protoparsing.generated.types.DmcTypeFieldRuleEnumSV;
+import org.dmd.gpb.tools.protoparsing.generated.types.DmcTypeProtoFieldRuleEnumMV;
 
 @SuppressWarnings("serial")
 // org.dmd.dms.util.AdapterFormatter.dumpAdapter(AdapterFormatter.java:59)
-// Called from: org.dmd.dms.util.AdapterFormatter.dumpAdapterSV(AdapterFormatter.java:12)
-public class FieldRuleEnumSVAdapter extends DmcTypeFieldRuleEnumSV implements DmcAdapterIF {
+// Called from: org.dmd.dms.util.AdapterFormatter.dumpAdapterMV(AdapterFormatter.java:16)
+public class ProtoFieldRuleEnumMVAdapter extends DmcTypeProtoFieldRuleEnumMV implements DmcAdapterIF {
 
-    transient DmcTypeFieldRuleEnumSV existingValue;
+    transient DmcTypeProtoFieldRuleEnumMV existingValue;
 
-    public FieldRuleEnumSVAdapter(DmcAttributeInfo ai){
+    public ProtoFieldRuleEnumMVAdapter(DmcAttributeInfo ai){
     	   super(ai);
     }
 
@@ -34,24 +34,24 @@ public class FieldRuleEnumSVAdapter extends DmcTypeFieldRuleEnumSV implements Dm
     	if (existingValue == null)
     		value = null;
     	else
-    		value = existingValue.getSVCopy();
+    		value = existingValue.getMVCopy();
     }
 
     @Override
     public void setExisting(DmcAttribute<?> attr) {
-    	existingValue = (DmcTypeFieldRuleEnumSV) attr;
+    	existingValue = (DmcTypeProtoFieldRuleEnumMV) attr;
     	if (existingValue != null)
-    		value = existingValue.getSVCopy();
+    		value = existingValue.getMVCopy();
     }
 
     @Override
     public boolean valueChanged(){
-    	   return(valueChangedSV(existingValue, this));
+    	   return(valueChangedMV(existingValue, this));
     }
 
     @Override
     public void addMods(DmcTypeModifierMV mods){
-    	   addModsSV(mods, existingValue, this);
+    	   addModsMV(mods, existingValue, this);
     }
 
     @Override

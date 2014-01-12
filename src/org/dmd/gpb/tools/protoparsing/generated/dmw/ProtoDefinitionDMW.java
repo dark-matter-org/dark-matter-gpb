@@ -106,6 +106,68 @@ abstract public class ProtoDefinitionDMW extends DSDefinition implements DmcDefi
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public String getFile(){
+        return(((ProtoDefinitionDMO) core).getFile());
+    }
+
+    /**
+     * Sets file to the specified value.
+     * @param value A value compatible with DmcTypeString
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setFile(Object value) throws DmcValueException {
+        ((ProtoDefinitionDMO) core).setFile(value);
+    }
+
+    /**
+     * Sets file to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setFile(String value){
+        ((ProtoDefinitionDMO) core).setFile(value);
+    }
+
+    /**
+     * Removes the file attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remFile(){
+        ((ProtoDefinitionDMO) core).remFile();
+    }
+
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public Integer getLineNumber(){
+        return(((ProtoDefinitionDMO) core).getLineNumber());
+    }
+
+    /**
+     * Sets lineNumber to the specified value.
+     * @param value A value compatible with DmcTypeInteger
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setLineNumber(Object value) throws DmcValueException {
+        ((ProtoDefinitionDMO) core).setLineNumber(value);
+    }
+
+    /**
+     * Sets lineNumber to the specified value.
+     * @param value Integer
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setLineNumber(Integer value){
+        ((ProtoDefinitionDMO) core).setLineNumber(value);
+    }
+
+    /**
+     * Removes the lineNumber attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remLineNumber(){
+        ((ProtoDefinitionDMO) core).remLineNumber();
+    }
+
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
     public DefinitionName getName(){
         return(((ProtoDefinitionDMO) core).getName());
     }

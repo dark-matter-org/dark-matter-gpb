@@ -17,5 +17,11 @@ public class ProtoMessage extends ProtoMessageDMW {
         super(dmo,cd);
     }
 
+	@Override
+	public String toDotGPBFormat() {
+		// TODO Auto-generated method stub
+		return "";
+	}
+
 }
 

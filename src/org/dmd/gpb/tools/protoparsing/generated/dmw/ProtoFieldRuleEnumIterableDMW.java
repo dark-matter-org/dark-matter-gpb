@@ -33,24 +33,24 @@ package org.dmd.gpb.tools.protoparsing.generated.dmw;
 import java.util.Iterator;
 
 import org.dmd.dmw.DmwMVIterator;
-import org.dmd.gpb.tools.protoparsing.generated.enums.FieldRuleEnum;
+import org.dmd.gpb.tools.protoparsing.generated.enums.ProtoFieldRuleEnum;
 /**
- * The FieldRuleEnumIterableDMW wraps an Iterator for a particular type and makes 
+ * The ProtoFieldRuleEnumIterableDMW wraps an Iterator for a particular type and makes 
  * it Iterable.
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpIterable(GenUtility.java:1755)
  *    Called from: org.dmd.dmg.generators.DMWGenerator.createTypeIterables(DMWGenerator.java:122)
  */
-public class FieldRuleEnumIterableDMW extends DmwMVIterator<FieldRuleEnum> {
+public class ProtoFieldRuleEnumIterableDMW extends DmwMVIterator<ProtoFieldRuleEnum> {
 
-    public final static FieldRuleEnumIterableDMW emptyList = new FieldRuleEnumIterableDMW();
+    public final static ProtoFieldRuleEnumIterableDMW emptyList = new ProtoFieldRuleEnumIterableDMW();
 
-    protected FieldRuleEnumIterableDMW(){
+    protected ProtoFieldRuleEnumIterableDMW(){
         super();
     }
 
-    public FieldRuleEnumIterableDMW(Iterator<FieldRuleEnum> it){
+    public ProtoFieldRuleEnumIterableDMW(Iterator<ProtoFieldRuleEnum> it){
         super(it);
     }
 

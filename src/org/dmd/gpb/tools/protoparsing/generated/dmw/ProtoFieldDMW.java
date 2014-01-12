@@ -17,19 +17,19 @@ package org.dmd.gpb.tools.protoparsing.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:442)
-import java.util.ArrayList;                                                  // Support for MULTI attribute - (BaseDMWGenerator.java:2226)
-import java.util.Iterator;                                                   // Support copy of MV objects - (BaseDMWGenerator.java:2240)
-import org.dmd.dmc.*;                                                        // If any attributes - (BaseDMWGenerator.java:1087)
-import org.dmd.dmc.definitions.DmcDefinitionIF;                              // The object is a domain specific definition - (BaseDMWGenerator.java:411)
-import org.dmd.dmc.types.DefinitionName;                                     // Is named by - (BaseDMWGenerator.java:1062)
-import org.dmd.dms.ClassDefinition;                                          // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                                  // Attribute description from the meta schema - (BaseDMWGenerator.java:897)
-import org.dmd.dms.generated.dmw.StringIterableDMW;                          // For multi-valued String - (BaseDMWGenerator.java:2103)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                        // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
-import org.dmd.gpb.tools.protoparsing.extended.ProtoElement;                 // Derived class - (BaseDMWGenerator.java:1248)
-import org.dmd.gpb.tools.protoparsing.extended.ProtoField;                   // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
-import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFieldDMO;           // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
-import org.dmd.gpb.tools.protoparsing.generated.enums.FieldRuleEnum;         // Primitive type - (BaseDMWGenerator.java:1150)
+import java.util.ArrayList;                                                       // Support for MULTI attribute - (BaseDMWGenerator.java:2226)
+import java.util.Iterator;                                                        // Support copy of MV objects - (BaseDMWGenerator.java:2240)
+import org.dmd.dmc.*;                                                             // If any attributes - (BaseDMWGenerator.java:1087)
+import org.dmd.dmc.definitions.DmcDefinitionIF;                                   // The object is a domain specific definition - (BaseDMWGenerator.java:411)
+import org.dmd.dmc.types.DefinitionName;                                          // Is named by - (BaseDMWGenerator.java:1062)
+import org.dmd.dms.ClassDefinition;                                               // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                                       // Attribute description from the meta schema - (BaseDMWGenerator.java:897)
+import org.dmd.dms.generated.dmw.StringIterableDMW;                               // For multi-valued String - (BaseDMWGenerator.java:2103)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                             // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
+import org.dmd.gpb.tools.protoparsing.extended.ProtoElement;                      // Derived class - (BaseDMWGenerator.java:1248)
+import org.dmd.gpb.tools.protoparsing.extended.ProtoField;                        // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
+import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFieldDMO;                // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
+import org.dmd.gpb.tools.protoparsing.generated.enums.ProtoFieldRuleEnum;         // Primitive type - (BaseDMWGenerator.java:1150)
 
 
 
@@ -215,13 +215,13 @@ abstract public class ProtoFieldDMW extends ProtoElement implements DmcDefinitio
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
-    public FieldRuleEnum getFieldRule(){
+    public ProtoFieldRuleEnum getFieldRule(){
         return(((ProtoFieldDMO) core).getFieldRule());
     }
 
     /**
      * Sets fieldRule to the specified value.
-     * @param value A value compatible with DmcTypeFieldRuleEnum
+     * @param value A value compatible with DmcTypeProtoFieldRuleEnum
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
     public void setFieldRule(Object value) throws DmcValueException {
@@ -230,10 +230,10 @@ abstract public class ProtoFieldDMW extends ProtoElement implements DmcDefinitio
 
     /**
      * Sets fieldRule to the specified value.
-     * @param value FieldRuleEnum
+     * @param value ProtoFieldRuleEnum
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
-    public void setFieldRule(FieldRuleEnum value){
+    public void setFieldRule(ProtoFieldRuleEnum value){
         ((ProtoFieldDMO) core).setFieldRule(value);
     }
 
