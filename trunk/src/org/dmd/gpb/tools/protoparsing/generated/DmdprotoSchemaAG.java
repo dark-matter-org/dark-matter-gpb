@@ -70,7 +70,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
 
 
 
-    public static EnumDefinition _FieldRuleEnum;
+    public static EnumDefinition _ProtoFieldRuleEnum;
 
 
 
@@ -114,13 +114,15 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoDefinitionOBJ.setDmdID("-478099");
             _ProtoDefinitionOBJ.setClassType("ABSTRACT");
             _ProtoDefinitionOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/classes.dmd");
-            _ProtoDefinitionOBJ.setLineNumber("12");
+            _ProtoDefinitionOBJ.setLineNumber("14");
             _ProtoDefinitionOBJ.addDescription("The ProtoDefinition provides a common base for all data parsed from an\n original .proto file.");
             _ProtoDefinitionOBJ.setDerivedFrom("meta.DSDefinition");
             _ProtoDefinitionOBJ.setIsNamedBy("meta.name");
             _ProtoDefinitionOBJ.setUseWrapperType("EXTENDED");
             _ProtoDefinitionOBJ.setDmtREFImport("org.dmd.gpb.tools.protoparsing.generated.types.ProtoDefinitionREF");
             _ProtoDefinitionOBJ.setDmwIteratorClass("ProtoDefinitionIterableDMW");
+            _ProtoDefinitionOBJ.addMay("meta.file");
+            _ProtoDefinitionOBJ.addMay("meta.lineNumber");
             _ProtoDefinitionOBJ.addMust("meta.name");
             _ProtoDefinitionOBJ.addMust("meta.dotName");
             _ProtoDefinitionOBJ.setDmwIteratorImport("org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoDefinitionIterableDMW");
@@ -135,7 +137,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoElementOBJ.setDmdID("-478098");
             _ProtoElementOBJ.setClassType("ABSTRACT");
             _ProtoElementOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/classes.dmd");
-            _ProtoElementOBJ.setLineNumber("23");
+            _ProtoElementOBJ.setLineNumber("25");
             _ProtoElementOBJ.addDescription("The ProtoElement provides a common base for all elements that \n comprise a .proto specification.");
             _ProtoElementOBJ.setDerivedFrom("dmdproto.ProtoDefinition");
             _ProtoElementOBJ.setIsNamedBy("meta.name");
@@ -155,7 +157,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoMainElementOBJ.setDmdID("-478097");
             _ProtoMainElementOBJ.setClassType("ABSTRACT");
             _ProtoMainElementOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/classes.dmd");
-            _ProtoMainElementOBJ.setLineNumber("35");
+            _ProtoMainElementOBJ.setLineNumber("37");
             _ProtoMainElementOBJ.addDescription("The GpbElement provides a common base for enums and messages that\n are defined at the top level of a .proto specification.");
             _ProtoMainElementOBJ.setDerivedFrom("dmdproto.ProtoElement");
             _ProtoMainElementOBJ.setIsNamedBy("meta.name");
@@ -175,7 +177,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoFieldOBJ.setDmdID("-478096");
             _ProtoFieldOBJ.setClassType("STRUCTURAL");
             _ProtoFieldOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/classes.dmd");
-            _ProtoFieldOBJ.setLineNumber("48");
+            _ProtoFieldOBJ.setLineNumber("50");
             _ProtoFieldOBJ.addDescription("The ProtoField class represents a single field of a .proto message.");
             _ProtoFieldOBJ.setDerivedFrom("dmdproto.ProtoElement");
             _ProtoFieldOBJ.setIsNamedBy("meta.name");
@@ -198,7 +200,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoMessageOBJ.setDmdID("-478095");
             _ProtoMessageOBJ.setClassType("STRUCTURAL");
             _ProtoMessageOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/classes.dmd");
-            _ProtoMessageOBJ.setLineNumber("58");
+            _ProtoMessageOBJ.setLineNumber("60");
             _ProtoMessageOBJ.setDerivedFrom("dmdproto.ProtoMainElement");
             _ProtoMessageOBJ.setIsNamedBy("meta.name");
             _ProtoMessageOBJ.setUseWrapperType("EXTENDED");
@@ -218,7 +220,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoEnumOBJ.setDmdID("-478094");
             _ProtoEnumOBJ.setClassType("STRUCTURAL");
             _ProtoEnumOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/classes.dmd");
-            _ProtoEnumOBJ.setLineNumber("68");
+            _ProtoEnumOBJ.setLineNumber("70");
             _ProtoEnumOBJ.setDerivedFrom("dmdproto.ProtoMainElement");
             _ProtoEnumOBJ.setIsNamedBy("meta.name");
             _ProtoEnumOBJ.setUseWrapperType("EXTENDED");
@@ -238,7 +240,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoFileOBJ.setDmdID("-478093");
             _ProtoFileOBJ.setClassType("STRUCTURAL");
             _ProtoFileOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/classes.dmd");
-            _ProtoFileOBJ.setLineNumber("82");
+            _ProtoFileOBJ.setLineNumber("84");
             _ProtoFileOBJ.addDescription("The GpbProtoFile is used to represent a single .proto file. It may be parsed\n from an existing .proto file by the GpbDotProtoParser utility.");
             _ProtoFileOBJ.setDerivedFrom("dmdproto.ProtoDefinition");
             _ProtoFileOBJ.setIsNamedBy("meta.name");
@@ -341,7 +343,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
             AttributeDefinitionDMO _fieldRuleOBJ = new AttributeDefinitionDMO();
             _fieldRule = new AttributeDefinition(_fieldRuleOBJ);
-            _fieldRuleOBJ.setType("dmdproto.FieldRuleEnum");
+            _fieldRuleOBJ.setType("dmdproto.ProtoFieldRuleEnum");
             _fieldRuleOBJ.setName("fieldRule");
             _fieldRuleOBJ.setDmdID("-478074");
             _fieldRuleOBJ.addDescription("Indicates if a field is required, optional or repeated. See the note about \n required fields as part of the FieldRuleEnum.\n <p/>\n For historical reasons, repeated fields of basic numeric types aren't encoded as efficiently\n as they could be. New code should use the special option [packed=true] to get a more efficient encoding.\n <br/>\n For example: repeated int32 samples = 4 [packed=true];");
@@ -382,18 +384,18 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
     // Generated from: org.dmd.dmg.util.SchemaFormatter.dumpInitFunction(SchemaFormatter.java:313)
     private void initEnums() throws DmcValueException {
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            EnumDefinitionDMO _FieldRuleEnumOBJ = new EnumDefinitionDMO();
-            _FieldRuleEnum = new EnumDefinition(_FieldRuleEnumOBJ);
-            _FieldRuleEnumOBJ.setName("FieldRuleEnum");
-            _FieldRuleEnumOBJ.addEnumValue("0 REQUIRED A well-formed message must have exactly one of this field.");
-            _FieldRuleEnumOBJ.addEnumValue("1 OPTIONAL A well-formed message can have zero or one of this field (but not more than one).");
-            _FieldRuleEnumOBJ.addEnumValue("2 REPEATED This field can be repeated any number of times (including zero) in a well-formed message. The order of the repeated values will be preserved.");
-            _FieldRuleEnumOBJ.addDescription("The FieldRuleEnum indicates whether a field is required, optional or repeated.\n <p/>\n REQUIRED is Forever You should be very careful about marking fields as required. If at some\n point you wish to stop writing or sending a required field, it will be problematic to change\n the field to an optional field Ð old readers will consider messages without this field to be\n incomplete and may reject or drop them unintentionally. You should consider writing\n application-specific custom validation routines for your buffers instead. Some engineers\n at Google have come to the conclusion that using required does more harm than good; they\n prefer to use only optional and repeated. However, this view is not universal.");
-            _FieldRuleEnumOBJ.setDotName("dmdproto.FieldRuleEnum.EnumDefinition");
-            _FieldRuleEnum.setDefinedIn(this);
-            _FieldRuleEnumOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/types.dmd");
-            _FieldRuleEnumOBJ.setLineNumber("15");
-            addEnumDefList(_FieldRuleEnum);
+            EnumDefinitionDMO _ProtoFieldRuleEnumOBJ = new EnumDefinitionDMO();
+            _ProtoFieldRuleEnum = new EnumDefinition(_ProtoFieldRuleEnumOBJ);
+            _ProtoFieldRuleEnumOBJ.setName("ProtoFieldRuleEnum");
+            _ProtoFieldRuleEnumOBJ.addEnumValue("0 REQUIRED A well-formed message must have exactly one of this field.");
+            _ProtoFieldRuleEnumOBJ.addEnumValue("1 OPTIONAL A well-formed message can have zero or one of this field (but not more than one).");
+            _ProtoFieldRuleEnumOBJ.addEnumValue("2 REPEATED This field can be repeated any number of times (including zero) in a well-formed message. The order of the repeated values will be preserved.");
+            _ProtoFieldRuleEnumOBJ.addDescription("The ProtoFieldRuleEnum indicates whether a field is required, optional or repeated.\n <p/>\n REQUIRED is Forever You should be very careful about marking fields as required. If at some\n point you wish to stop writing or sending a required field, it will be problematic to change\n the field to an optional field Ð old readers will consider messages without this field to be\n incomplete and may reject or drop them unintentionally. You should consider writing\n application-specific custom validation routines for your buffers instead. Some engineers\n at Google have come to the conclusion that using required does more harm than good; they\n prefer to use only optional and repeated. However, this view is not universal.");
+            _ProtoFieldRuleEnumOBJ.setDotName("dmdproto.ProtoFieldRuleEnum.EnumDefinition");
+            _ProtoFieldRuleEnum.setDefinedIn(this);
+            _ProtoFieldRuleEnumOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/types.dmd");
+            _ProtoFieldRuleEnumOBJ.setLineNumber("15");
+            addEnumDefList(_ProtoFieldRuleEnum);
 
     }
 

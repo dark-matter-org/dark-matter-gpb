@@ -16,21 +16,21 @@
 package org.dmd.gpb.tools.protoparsing.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
-import java.io.Serializable;                                                          // Always required - (GenUtility.java:224)
-import java.util.*;                                                                   // Always required if we have any MV attributes - (GenUtility.java:221)
-import org.dmd.dmc.DmcAttribute;                                                      // Named object - (GenUtility.java:376)
-import org.dmd.dmc.DmcNamedObjectIF;                                                  // Named object - (GenUtility.java:375)
-import org.dmd.dmc.DmcSliceInfo;                                                      // Required for object slicing - (GenUtility.java:229)
-import org.dmd.dmc.DmcValueException;                                                 // Any attributes - (GenUtility.java:241)
-import org.dmd.dmc.types.DefinitionName;                                              // Naming attribute type - (GenUtility.java:370)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                                           // Required for MODREC constructor - (GenUtility.java:228)
-import org.dmd.dms.generated.types.DmcTypeIntegerSV;                                  // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                                 // Required for MODREC constructor - (GenUtility.java:227)
-import org.dmd.dms.generated.types.DmcTypeStringMV;                                   // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeStringSV;                                   // Required type - (GenUtility.java:328)
-import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoElementDMO;                  // Base class - (GenUtility.java:355)
-import org.dmd.gpb.tools.protoparsing.generated.enums.FieldRuleEnum;                  // Primitive type and !auxiliary class - (GenUtility.java:271)
-import org.dmd.gpb.tools.protoparsing.generated.types.DmcTypeFieldRuleEnumSV;         // Required type - (GenUtility.java:328)
+import java.io.Serializable;                                                               // Always required - (GenUtility.java:224)
+import java.util.*;                                                                        // Always required if we have any MV attributes - (GenUtility.java:221)
+import org.dmd.dmc.DmcAttribute;                                                           // Named object - (GenUtility.java:376)
+import org.dmd.dmc.DmcNamedObjectIF;                                                       // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcSliceInfo;                                                           // Required for object slicing - (GenUtility.java:229)
+import org.dmd.dmc.DmcValueException;                                                      // Any attributes - (GenUtility.java:241)
+import org.dmd.dmc.types.DefinitionName;                                                   // Naming attribute type - (GenUtility.java:370)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                                                // Required for MODREC constructor - (GenUtility.java:228)
+import org.dmd.dms.generated.types.DmcTypeIntegerSV;                                       // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                                      // Required for MODREC constructor - (GenUtility.java:227)
+import org.dmd.dms.generated.types.DmcTypeStringMV;                                        // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                                        // Required type - (GenUtility.java:328)
+import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoElementDMO;                       // Base class - (GenUtility.java:355)
+import org.dmd.gpb.tools.protoparsing.generated.enums.ProtoFieldRuleEnum;                  // Primitive type and !auxiliary class - (GenUtility.java:271)
+import org.dmd.gpb.tools.protoparsing.generated.types.DmcTypeProtoFieldRuleEnumSV;         // Required type - (GenUtility.java:328)
 
 /**
  * The ProtoField class represents a single field of a .proto message.
@@ -244,8 +244,8 @@ public class ProtoFieldDMO  extends ProtoElementDMO  implements DmcNamedObjectIF
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
-    public FieldRuleEnum getFieldRule(){
-        DmcTypeFieldRuleEnumSV attr = (DmcTypeFieldRuleEnumSV) get(DmdprotoDMSAG.__fieldRule);
+    public ProtoFieldRuleEnum getFieldRule(){
+        DmcTypeProtoFieldRuleEnumSV attr = (DmcTypeProtoFieldRuleEnumSV) get(DmdprotoDMSAG.__fieldRule);
         if (attr == null)
             return(null);
 
@@ -254,13 +254,13 @@ public class ProtoFieldDMO  extends ProtoElementDMO  implements DmcNamedObjectIF
 
     /**
      * Sets fieldRule to the specified value.
-     * @param value FieldRuleEnum
+     * @param value ProtoFieldRuleEnum
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
-    public void setFieldRule(FieldRuleEnum value) {
+    public void setFieldRule(ProtoFieldRuleEnum value) {
         DmcAttribute<?> attr = get(DmdprotoDMSAG.__fieldRule);
         if (attr == null)
-            attr = new DmcTypeFieldRuleEnumSV(DmdprotoDMSAG.__fieldRule);
+            attr = new DmcTypeProtoFieldRuleEnumSV(DmdprotoDMSAG.__fieldRule);
         
         try{
             attr.set(value);
@@ -273,13 +273,13 @@ public class ProtoFieldDMO  extends ProtoElementDMO  implements DmcNamedObjectIF
 
     /**
      * Sets fieldRule to the specified value.
-     * @param value A value compatible with DmcTypeFieldRuleEnumSV
+     * @param value A value compatible with DmcTypeProtoFieldRuleEnumSV
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setFieldRule(Object value) throws DmcValueException {
-        DmcTypeFieldRuleEnumSV attr  = (DmcTypeFieldRuleEnumSV) get(DmdprotoDMSAG.__fieldRule);
+        DmcTypeProtoFieldRuleEnumSV attr  = (DmcTypeProtoFieldRuleEnumSV) get(DmdprotoDMSAG.__fieldRule);
         if (attr == null)
-            attr = new DmcTypeFieldRuleEnumSV(DmdprotoDMSAG.__fieldRule);
+            attr = new DmcTypeProtoFieldRuleEnumSV(DmdprotoDMSAG.__fieldRule);
         
         attr.set(value);
         set(DmdprotoDMSAG.__fieldRule,attr);

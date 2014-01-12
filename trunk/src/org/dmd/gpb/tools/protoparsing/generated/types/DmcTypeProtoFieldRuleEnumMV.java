@@ -21,45 +21,45 @@ import java.util.Iterator;
 import org.dmd.dmc.DmcAttribute;
 import org.dmd.dmc.DmcAttributeInfo;
 import org.dmd.dmc.DmcValueException;
-import org.dmd.gpb.tools.protoparsing.generated.enums.FieldRuleEnum;    // DmcType import
+import org.dmd.gpb.tools.protoparsing.generated.enums.ProtoFieldRuleEnum;    // DmcType import
 /**
- * The DmcTypeFieldRuleEnumMV provides storage for a multi-valued FieldRuleEnum
+ * The DmcTypeProtoFieldRuleEnumMV provides storage for a multi-valued ProtoFieldRuleEnum
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2313)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpEnumType(DmoTypeFormatter.java:361)
  */
 @SuppressWarnings("serial")
-public class DmcTypeFieldRuleEnumMV extends DmcTypeFieldRuleEnum implements Serializable {
+public class DmcTypeProtoFieldRuleEnumMV extends DmcTypeProtoFieldRuleEnum implements Serializable {
     
-    private final static Iterator<FieldRuleEnum> emptyList = (new ArrayList<FieldRuleEnum>()).iterator();
+    private final static Iterator<ProtoFieldRuleEnum> emptyList = (new ArrayList<ProtoFieldRuleEnum>()).iterator();
     
-    protected ArrayList<FieldRuleEnum> value;
+    protected ArrayList<ProtoFieldRuleEnum> value;
     
-    public DmcTypeFieldRuleEnumMV(){
+    public DmcTypeProtoFieldRuleEnumMV(){
     
     }
     
-    public DmcTypeFieldRuleEnumMV(DmcAttributeInfo ai){
+    public DmcTypeProtoFieldRuleEnumMV(DmcAttributeInfo ai){
         super(ai);
     }
     
     @Override
-    public DmcTypeFieldRuleEnumMV getNew(){
-        return(new DmcTypeFieldRuleEnumMV(getAttributeInfo()));
+    public DmcTypeProtoFieldRuleEnumMV getNew(){
+        return(new DmcTypeProtoFieldRuleEnumMV(getAttributeInfo()));
     }
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2344)
-    public DmcAttribute<FieldRuleEnum> cloneIt(){
+    public DmcAttribute<ProtoFieldRuleEnum> cloneIt(){
         synchronized(this){
-            DmcTypeFieldRuleEnumMV rc = getNew();
+            DmcTypeProtoFieldRuleEnumMV rc = getNew();
     
             if (value == null)
                 return(rc);
     
             if (getAttributeInfo().indexSize == 0){
-                for(FieldRuleEnum val: value)
+                for(ProtoFieldRuleEnum val: value)
                 try {
                     rc.add(val);
                 } catch (DmcValueException e) {
@@ -80,11 +80,11 @@ public class DmcTypeFieldRuleEnumMV extends DmcTypeFieldRuleEnum implements Seri
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2377)
-    public FieldRuleEnum add(Object v) throws DmcValueException {
+    public ProtoFieldRuleEnum add(Object v) throws DmcValueException {
         synchronized(this){
-            FieldRuleEnum rc = typeCheck(v);
+            ProtoFieldRuleEnum rc = typeCheck(v);
             if (value == null)
-                value = new ArrayList<FieldRuleEnum>();
+                value = new ArrayList<ProtoFieldRuleEnum>();
             value.add(rc);
             return(rc);
         }
@@ -92,13 +92,13 @@ public class DmcTypeFieldRuleEnumMV extends DmcTypeFieldRuleEnum implements Seri
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2390)
-    public FieldRuleEnum del(Object v){
+    public ProtoFieldRuleEnum del(Object v){
         synchronized(this){
             if (value == null)
                 return(null);
     
-            FieldRuleEnum key = null;
-            FieldRuleEnum rc = null;
+            ProtoFieldRuleEnum key = null;
+            ProtoFieldRuleEnum rc = null;
             try {
                 key = typeCheck(v);
             } catch (DmcValueException e) {
@@ -116,23 +116,23 @@ public class DmcTypeFieldRuleEnumMV extends DmcTypeFieldRuleEnum implements Seri
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2424)
-    public Iterator<FieldRuleEnum> getMV(){
+    public Iterator<ProtoFieldRuleEnum> getMV(){
         synchronized(this){
             if (value == null)
                 return(emptyList);
     
-            ArrayList<FieldRuleEnum> clone = new ArrayList<FieldRuleEnum>(value);
+            ArrayList<ProtoFieldRuleEnum> clone = new ArrayList<ProtoFieldRuleEnum>(value);
             return(clone.iterator());
         }
     }
     
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2436)
-    public ArrayList<FieldRuleEnum> getMVCopy(){
+    public ArrayList<ProtoFieldRuleEnum> getMVCopy(){
         synchronized(this){
             if (value == null)
-                return(new ArrayList<FieldRuleEnum>());
+                return(new ArrayList<ProtoFieldRuleEnum>());
             else 
-                return(new ArrayList<FieldRuleEnum>(value));
+                return(new ArrayList<ProtoFieldRuleEnum>(value));
         }
     }
     
@@ -152,7 +152,7 @@ public class DmcTypeFieldRuleEnumMV extends DmcTypeFieldRuleEnum implements Seri
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2463)
-    public FieldRuleEnum getMVnth(int index){
+    public ProtoFieldRuleEnum getMVnth(int index){
         synchronized(this){
             if (value == null)
                 return(null);
@@ -162,7 +162,7 @@ public class DmcTypeFieldRuleEnumMV extends DmcTypeFieldRuleEnum implements Seri
     
     @Override
     // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2474)
-    public FieldRuleEnum setMVnth(int index, Object v) throws DmcValueException {
+    public ProtoFieldRuleEnum setMVnth(int index, Object v) throws DmcValueException {
         synchronized(this){
             if (getAttributeInfo().indexSize == 0)
                 throw(new IllegalStateException("Attribute: " + getAttributeInfo().name + " is not indexed. You can't use setMVnth()."));
@@ -170,13 +170,13 @@ public class DmcTypeFieldRuleEnumMV extends DmcTypeFieldRuleEnum implements Seri
             if ( (index < 0) || (index >= getAttributeInfo().indexSize))
                 throw(new IllegalStateException("Index " + index + " for attribute: " + getAttributeInfo().name + " is out of range: 0 <= index < " + getAttributeInfo().indexSize));
             
-            FieldRuleEnum rc = null;
+            ProtoFieldRuleEnum rc = null;
             
             if (v != null)
                 rc = typeCheck(v);
             
             if (value == null){
-                value = new ArrayList<FieldRuleEnum>(getAttributeInfo().indexSize);
+                value = new ArrayList<ProtoFieldRuleEnum>(getAttributeInfo().indexSize);
                 for(int i=0;i<getAttributeInfo().indexSize;i++)
                     value.add(null);
             }
@@ -218,7 +218,7 @@ public class DmcTypeFieldRuleEnumMV extends DmcTypeFieldRuleEnum implements Seri
                 return(false);
 
             try {
-                FieldRuleEnum val = typeCheck(v);
+                ProtoFieldRuleEnum val = typeCheck(v);
                 return(value.contains(val));
             } catch (DmcValueException e) {
                 return(false);

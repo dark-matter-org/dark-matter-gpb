@@ -26,6 +26,8 @@ import org.dmd.dms.generated.dmo.DSDefinitionDMO;                   // Base clas
 import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Attribute from meta schema - (GenUtility.java:194)
 import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:328)
 import org.dmd.dms.generated.types.DmcTypeDotNameSV;                // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeIntegerSV;                // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:328)
 
 /**
  * The ProtoDefinition provides a common base for all data parsed from an\n
@@ -83,6 +85,106 @@ abstract public class ProtoDefinitionDMO  extends DSDefinitionDMO  implements Dm
             return(0);
         
         return(objn.hashCode());
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public String getFile(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(MetaDMSAG.__file);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets file to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setFile(String value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__file);
+        if (attr == null)
+            attr = new DmcTypeStringSV(MetaDMSAG.__file);
+        
+        try{
+            attr.set(value);
+            set(MetaDMSAG.__file,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets file to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setFile(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(MetaDMSAG.__file);
+        if (attr == null)
+            attr = new DmcTypeStringSV(MetaDMSAG.__file);
+        
+        attr.set(value);
+        set(MetaDMSAG.__file,attr);
+    }
+
+    /**
+     * Removes the file attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remFile(){
+         rem(MetaDMSAG.__file);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public Integer getLineNumber(){
+        DmcTypeIntegerSV attr = (DmcTypeIntegerSV) get(MetaDMSAG.__lineNumber);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets lineNumber to the specified value.
+     * @param value Integer
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setLineNumber(Integer value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__lineNumber);
+        if (attr == null)
+            attr = new DmcTypeIntegerSV(MetaDMSAG.__lineNumber);
+        
+        try{
+            attr.set(value);
+            set(MetaDMSAG.__lineNumber,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets lineNumber to the specified value.
+     * @param value A value compatible with DmcTypeIntegerSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setLineNumber(Object value) throws DmcValueException {
+        DmcTypeIntegerSV attr  = (DmcTypeIntegerSV) get(MetaDMSAG.__lineNumber);
+        if (attr == null)
+            attr = new DmcTypeIntegerSV(MetaDMSAG.__lineNumber);
+        
+        attr.set(value);
+        set(MetaDMSAG.__lineNumber,attr);
+    }
+
+    /**
+     * Removes the lineNumber attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remLineNumber(){
+         rem(MetaDMSAG.__lineNumber);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)

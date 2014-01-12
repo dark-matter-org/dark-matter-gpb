@@ -17,5 +17,11 @@ abstract public class ProtoMainElement extends ProtoMainElementDMW {
         super(dmo,cd);
     }
 
+	/**
+	 * @return a String that represents this element in the format it would
+	 * have in a .gpb module file.
+	 */
+	abstract public String toDotGPBFormat();
+
 }
 

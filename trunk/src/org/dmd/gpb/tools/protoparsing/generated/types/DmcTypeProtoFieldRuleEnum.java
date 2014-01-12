@@ -24,7 +24,7 @@ import org.dmd.dmc.DmcValueException;
 import org.dmd.gpb.tools.protoparsing.generated.enums.*;
 
 /**
- * This is the generated DmcAttribute derivative for values of type FieldRuleEnum
+ * This is the generated DmcAttribute derivative for values of type ProtoFieldRuleEnum
  * <P>
  * Generated from the dmdproto schema at version unknown
  * <P>
@@ -32,33 +32,33 @@ import org.dmd.gpb.tools.protoparsing.generated.enums.*;
  * Generated from: org.dmd.dms.util.DmoTypeFormatter.dumpEnumType(DmoTypeFormatter.java:291)
  */
 @SuppressWarnings("serial")
-abstract public class DmcTypeFieldRuleEnum extends DmcAttribute<FieldRuleEnum> implements Serializable {
+abstract public class DmcTypeProtoFieldRuleEnum extends DmcAttribute<ProtoFieldRuleEnum> implements Serializable {
 
-    public DmcTypeFieldRuleEnum(){
+    public DmcTypeProtoFieldRuleEnum(){
     }
 
-    public DmcTypeFieldRuleEnum(DmcAttributeInfo ai){
+    public DmcTypeProtoFieldRuleEnum(DmcAttributeInfo ai){
         super(ai);
     }
 
-    protected FieldRuleEnum typeCheck(Object value) throws DmcValueException {
-        FieldRuleEnum rc = null;
+    protected ProtoFieldRuleEnum typeCheck(Object value) throws DmcValueException {
+        ProtoFieldRuleEnum rc = null;
 
-        if (value instanceof FieldRuleEnum){
-            rc = (FieldRuleEnum)value;
+        if (value instanceof ProtoFieldRuleEnum){
+            rc = (ProtoFieldRuleEnum)value;
         }
         else if (value instanceof String){
-            rc = FieldRuleEnum.get((String)value);
+            rc = ProtoFieldRuleEnum.get((String)value);
         }
         else if (value instanceof Integer){
-            rc = FieldRuleEnum.get((Integer)value);
+            rc = ProtoFieldRuleEnum.get((Integer)value);
         }
         else{
-            throw(new DmcValueException("Object of class: " + value.getClass().getName() + " passed where object compatible with FieldRuleEnum expected."));
+            throw(new DmcValueException("Object of class: " + value.getClass().getName() + " passed where object compatible with ProtoFieldRuleEnum expected."));
         }
 
         if (rc == null){
-            throw(new DmcValueException("Value: " + value.toString() + " is not a valid FieldRuleEnum value."));
+            throw(new DmcValueException("Value: " + value.toString() + " is not a valid ProtoFieldRuleEnum value."));
         }
 
         return(rc);
@@ -67,22 +67,22 @@ abstract public class DmcTypeFieldRuleEnum extends DmcAttribute<FieldRuleEnum> i
     /**
      * Returns a clone of a value associated with this type.
      */
-    public FieldRuleEnum cloneValue(FieldRuleEnum val){
+    public ProtoFieldRuleEnum cloneValue(ProtoFieldRuleEnum val){
         return(val);
     }
 
     /**
-     * Writes a FieldRuleEnum.
+     * Writes a ProtoFieldRuleEnum.
      */
-    public void serializeValue(DmcOutputStreamIF dos, FieldRuleEnum value) throws Exception {
+    public void serializeValue(DmcOutputStreamIF dos, ProtoFieldRuleEnum value) throws Exception {
         dos.writeShort(value.intValue());
     }
 
     /**
-     * Reads a FieldRuleEnum.
+     * Reads a ProtoFieldRuleEnum.
      */
-    public FieldRuleEnum deserializeValue(DmcInputStreamIF dis) throws Exception {
-        return(FieldRuleEnum.get(dis.readShort()));
+    public ProtoFieldRuleEnum deserializeValue(DmcInputStreamIF dis) throws Exception {
+        return(ProtoFieldRuleEnum.get(dis.readShort()));
     }
 
 }

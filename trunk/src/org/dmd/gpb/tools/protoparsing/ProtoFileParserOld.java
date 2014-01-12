@@ -9,13 +9,13 @@ import java.util.TreeMap;
 
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dms.types.EnumValue;
-import org.dmd.gpb.tools.protoparsing.extended.ProtoElement;
-import org.dmd.gpb.tools.protoparsing.extended.ProtoEnum;
-import org.dmd.gpb.tools.protoparsing.extended.ProtoField;
-import org.dmd.gpb.tools.protoparsing.extended.ProtoFile;
-import org.dmd.gpb.tools.protoparsing.extended.ProtoMessage;
-import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFieldDMO;
-import org.dmd.gpb.tools.protoparsing.generated.enums.ProtoFieldRuleEnum;
+import org.dmd.gpb.server.extended.GpbElement;
+import org.dmd.gpb.server.extended.GpbEnum;
+import org.dmd.gpb.server.extended.GpbField;
+import org.dmd.gpb.server.extended.GpbMessage;
+import org.dmd.gpb.server.extended.GpbProtoFile;
+import org.dmd.gpb.shared.generated.dmo.GpbFieldDMO;
+import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;
 import org.dmd.util.exceptions.DebugInfo;
 import org.dmd.util.exceptions.ResultException;
 import org.dmd.util.parsing.Classifier;
@@ -36,7 +36,7 @@ import org.dmd.util.parsing.TokenArrayList;
  * a single GpbField definition for each uniquely named field. If the types don't
  * match, it indicates a fundamental semantic anomaly.
  */
-public class ProtoFileParser {
+public class ProtoFileParserOld {
 	
 	static String PACKAGE_STR 	= "package";
 	static String MESSAGE_STR 	= "message";
@@ -62,15 +62,15 @@ public class ProtoFileParser {
 	LineNumberReader	in;
 	String				currFN;
 	
-	ProtoFile	protoFile;
+	GpbProtoFile	protoFile;
 	
 	State			state;
 	
 	Classifier		classifier;
 	
-	TreeMap<String,ArrayList<ProtoField>> fields;
+	TreeMap<String,ArrayList<GpbField>> fields;
 	
-	public ProtoFileParser(){
+	public ProtoFileParserOld(){
 		classifier = new Classifier();
 		
 		classifier.addKeyword(ENUM_STR, ENUM);
@@ -85,16 +85,16 @@ public class ProtoFileParser {
 		classifier.addSeparator("}", RCURLY);
 		classifier.addSeparator("\"", QUOTE);
 		
-		fields = new TreeMap<String, ArrayList<ProtoField>>();
+		fields = new TreeMap<String, ArrayList<GpbField>>();
 	}
 	
 	void init(String fn) throws DmcValueException {
-		protoFile	= new ProtoFile();
+		protoFile	= new GpbProtoFile();
 		protoFile.setFile(fn);
 		state		= State.PACKAGE;
 	}
 
-	public ProtoFile parseFromProto(String fn) throws IOException, DmcValueException, ResultException {
+	public GpbProtoFile parseFromProto(String fn) throws IOException, DmcValueException, ResultException {
 		init(fn);
         in	= new LineNumberReader(new FileReader(fn));
         currFN = fn;
@@ -143,38 +143,20 @@ public class ProtoFileParser {
         return(protoFile);
 	}
 	
-	/**
-	 * We check to see if we have fields with the same name but different types. Ideally,
-	 * fields with the same name will lead back to a common GpbField with common semantics.
-	 * If fields with clashing types are found in the same file, we generate a warning. If
-	 * the fields are in different files, we generate a warning.
-	 */
 	void checkFields(){
-		for(ArrayList<ProtoField> list: fields.values()){
+		for(ArrayList<GpbField> list: fields.values()){
 			
 			if (list.size() == 1)
 				continue;
 			
 			// We have to use the DMO because we haven't resolved the GpbTypes
-			ProtoFieldDMO first = list.get(0).getDMO();
+			GpbFieldDMO first = list.get(0).getDMO();
 			
 			for(int i=1; i<list.size(); i++){
-				ProtoFieldDMO current = list.get(i).getDMO();
-				if (!first.getGpbType().equals(current.getGpbType())){
-					if (first.getFile().equals(current.getFile())){
-						// We have a type clash
-						System.err.println("ERROR: Clashing type for field with name: " + first.getName());
-						System.err.println("                                          " + first.getGpbType() + " " + first.getFile() + " : " + first.getLineNumber());
-						System.err.println("                                          " + current.getGpbType() + " " + current.getFile() + " : " + current.getLineNumber());
-						
-					}
-					else{
-						// We have a type clash
-						System.err.println("WARNING: Clashing type for field with name: " + first.getName());
-						System.err.println("                                            " + first.getGpbType() + " " + first.getFile() + " : " + first.getLineNumber());
-						System.err.println("                                            " + current.getGpbType() + " " + current.getFile() + " : " + current.getLineNumber());
-						
-					}
+				GpbFieldDMO current = list.get(i).getDMO();
+				if (!first.getGpbType().getName().equals(current.getGpbType().getName())){
+					// We have a type clash
+					System.err.println("ERROR: Clashing type for field with name: " + first.getName() + " " + first.getGpbType().getName() + " " + current.getGpbType().getName());
 				}
 			}
 			
@@ -195,8 +177,8 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 		return(str.trim());
 	}
 	
-	ProtoMessage parseMessage(String fn, String first) throws ResultException, DmcValueException, IOException {
-		ProtoMessage message = new ProtoMessage();
+	GpbMessage parseMessage(String fn, String first) throws ResultException, DmcValueException, IOException {
+		GpbMessage message = new GpbMessage();
         StringTokenizer t = new StringTokenizer(first);
         boolean wantLCurly = true;
         
@@ -248,8 +230,8 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 		return(message);
 	}
 	
-	ProtoElement parseElement(LineNumberReader in, String fn, String line) throws ResultException, DmcValueException, IOException {
-		ProtoElement rc = null;
+	GpbElement parseElement(LineNumberReader in, String fn, String line) throws ResultException, DmcValueException, IOException {
+		GpbElement rc = null;
 		
 		if (line.startsWith("required"))
 			rc = parseField(fn, line);
@@ -265,10 +247,8 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 		return(rc);
 	}
 	
-	ProtoField parseField(String fn, String line) throws DmcValueException {
-		ProtoField field = new ProtoField();
-		field.setFile(fn);
-		field.setLineNumber(in.getLineNumber());
+	GpbField parseField(String fn, String line) throws DmcValueException {
+		GpbField field = new GpbField();
 		
 		String descr = "";
 		
@@ -283,13 +263,13 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 		if (tokens.size() == 6){
 			switch(tokens.nth(0).getType()){
 			case OPTIONAL:
-				field.setFieldRule(ProtoFieldRuleEnum.OPTIONAL);
+				field.setFieldRule(FieldRuleEnum.OPTIONAL);
 				break;
 			case REQUIRED:
-				field.setFieldRule(ProtoFieldRuleEnum.REQUIRED);
+				field.setFieldRule(FieldRuleEnum.REQUIRED);
 				break;
 			case REPEATED:
-				field.setFieldRule(ProtoFieldRuleEnum.REPEATED);
+				field.setFieldRule(FieldRuleEnum.REPEATED);
 				break;
 			}
 
@@ -310,18 +290,18 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 		return(field);
 	}
 	
-	void addField(ProtoField field){
-		ArrayList<ProtoField> list = fields.get(field.getName().getNameString());
+	void addField(GpbField field){
+		ArrayList<GpbField> list = fields.get(field.getName().getNameString());
 		
 		if (list == null){
-			list = new ArrayList<ProtoField>();
+			list = new ArrayList<GpbField>();
 			fields.put(field.getName().getNameString(), list);
 		}
 		list.add(field);
 	}
 
-	ProtoEnum parseEnum(String fn, String first) throws DmcValueException, IOException {
-		ProtoEnum enumDef = new ProtoEnum();
+	GpbEnum parseEnum(String fn, String first) throws DmcValueException, IOException {
+		GpbEnum enumDef = new GpbEnum();
 		enumDef.addDescription("Add a description");
 		String line;
 		TokenArrayList tokens = classifier.classify(first, true);
@@ -367,13 +347,11 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 			
 		return(line.substring(8, semipos).trim());
 	}
-	
-	enum State {
-		PACKAGE,
-		ELEMENT,
-		FIELD
-	}
+}
 
-
+enum State {
+	PACKAGE,
+	ELEMENT,
+	FIELD
 }
 

@@ -121,7 +121,7 @@ description		As you can see, each field in the message definition has a unique n
 AttributeDefinition
 name			fieldRule
 dmdID			26
-type			FieldRuleEnum
+type			ProtoFieldRuleEnum
 description		Indicates if a field is required, optional or repeated. See the note about 
  required fields as part of the FieldRuleEnum.
  <p/>
