@@ -30,12 +30,15 @@ import org.dmd.dms.generated.types.DmcTypeModifierMV;                           
 import org.dmd.dms.generated.types.DmcTypeStringMV;                                         // Required type - (GenUtility.java:328)
 import org.dmd.dms.generated.types.DmcTypeStringSV;                                         // Required type - (GenUtility.java:328)
 import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoDefinitionDMO;                     // Base class - (GenUtility.java:355)
+import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFieldDMO;                          // Type specific set/add - (GenUtility.java:307)
 import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoMainElementDMO;                    // Type specific set/add - (GenUtility.java:307)
+import org.dmd.gpb.tools.protoparsing.generated.types.DmcTypeProtoFieldREFMV;               // Reference type - (GenUtility.java:300)
 import org.dmd.gpb.tools.protoparsing.generated.types.DmcTypeProtoMainElementREFMV;         // Reference type - (GenUtility.java:300)
+import org.dmd.gpb.tools.protoparsing.generated.types.ProtoFieldREF;                        // Helper class - (GenUtility.java:335)
 import org.dmd.gpb.tools.protoparsing.generated.types.ProtoMainElementREF;                  // Helper class - (GenUtility.java:335)
 
 /**
- * The GpbProtoFile is used to represent a single .proto file. It may be
+ * The ProtoFile is used to represent a single .proto file. It may be
  * parsed\n from an existing .proto file by the GpbDotProtoParser utility.
  * <P>
  * Generated from the dmdproto schema at version unknown
@@ -351,6 +354,113 @@ public class ProtoFileDMO  extends ProtoDefinitionDMO  implements DmcNamedObject
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
     public void remMainElements(){
          rem(DmdprotoDMSAG.__mainElements);
+    }
+
+    /**
+     * @return An Iterator of ProtoFieldDMO objects.
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:970)
+    public Iterator<ProtoFieldREF> getFields(){
+        DmcTypeProtoFieldREFMV attr = (DmcTypeProtoFieldREFMV) get(DmdprotoDMSAG.__fields);
+        if (attr == null)
+            return( ((List<ProtoFieldREF>) Collections.EMPTY_LIST).iterator() );
+
+        if (DmcOmni.instance().lazyResolution()){
+            if (attr.doLazyResolution(this)){
+                rem(attr.getAttributeInfo());
+                return( ((List<ProtoFieldREF>) Collections.EMPTY_LIST).iterator() );
+            }
+        }
+
+        return(attr.getMV());
+    }
+
+    /**
+     * @return An Iterator of ProtoFieldREFs without attempting lazy resolution (if it's turned on).
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:990)
+    public Iterator<ProtoFieldREF> getFieldsREFs(){
+        DmcTypeProtoFieldREFMV attr = (DmcTypeProtoFieldREFMV) get(DmdprotoDMSAG.__fields);
+        if (attr == null)
+            return( ((List<ProtoFieldREF>) Collections.EMPTY_LIST).iterator() );
+
+        return(attr.getMV());
+    }
+
+    /**
+     * Adds another fields to the specified value.
+     * @param value ProtoField
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1004)
+    public DmcAttribute<?> addFields(ProtoFieldDMO value) {
+        DmcAttribute<?> attr = get(DmdprotoDMSAG.__fields);
+        if (attr == null)
+            attr = new DmcTypeProtoFieldREFMV(DmdprotoDMSAG.__fields);
+        
+        try{
+            setLastValue(attr.add(value));
+            add(DmdprotoDMSAG.__fields,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
+        }
+        return(attr);
+    }
+
+    /**
+     * Adds another fields value.
+     * @param value A value compatible with ProtoField
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
+    public DmcAttribute<?> addFields(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(DmdprotoDMSAG.__fields);
+        if (attr == null)
+            attr = new DmcTypeProtoFieldREFMV(DmdprotoDMSAG.__fields);
+        
+        setLastValue(attr.add(value));
+        add(DmdprotoDMSAG.__fields,attr);
+        return(attr);
+    }
+
+    /**
+     * Returns the number of values in fields
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
+    public int getFieldsSize(){
+        DmcAttribute<?> attr = get(DmdprotoDMSAG.__fields);
+        if (attr == null){
+            if (DmdprotoDMSAG.__fields.indexSize == 0)
+                return(0);
+            else
+                return(DmdprotoDMSAG.__fields.indexSize);
+        }
+        return(attr.getMVSize());
+    }
+
+    /**
+     * Deletes a fields value.
+     * @param value The ProtoField to be deleted from set of attribute values.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1301)
+    public DmcAttribute<?> delFields(Object value){
+        DmcAttribute<?> attr = get(DmdprotoDMSAG.__fields);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeProtoFieldREFMV(DmdprotoDMSAG.__fields), value);
+        else
+            attr = del(DmdprotoDMSAG.__fields, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Removes the fields attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
+    public void remFields(){
+         rem(DmdprotoDMSAG.__fields);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)

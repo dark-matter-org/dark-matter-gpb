@@ -68,7 +68,15 @@ public class ProtoFileParser {
 	
 	Classifier		classifier;
 	
+	// Key: field name
+	// Value: the collection of all fields with the same name
+	// We maintain this so that we can warning of fields with the same name but different types.
 	TreeMap<String,ArrayList<ProtoField>> fields;
+	
+	// Key: enum name
+	// Value: the collection of all enums with the same name
+	// We maintain this so that we can warn of clashing enum names
+	TreeMap<String, ArrayList<ProtoEnum>> enums;
 	
 	public ProtoFileParser(){
 		classifier = new Classifier();
@@ -86,6 +94,8 @@ public class ProtoFileParser {
 		classifier.addSeparator("\"", QUOTE);
 		
 		fields = new TreeMap<String, ArrayList<ProtoField>>();
+		
+		enums = new TreeMap<String, ArrayList<ProtoEnum>>();
 	}
 	
 	void init(String fn) throws DmcValueException {
@@ -138,7 +148,7 @@ public class ProtoFileParser {
         
         in.close();
         
-        checkFields();
+//        checkFields();
         
         return(protoFile);
 	}
@@ -148,8 +158,9 @@ public class ProtoFileParser {
 	 * fields with the same name will lead back to a common GpbField with common semantics.
 	 * If fields with clashing types are found in the same file, we generate a warning. If
 	 * the fields are in different files, we generate a warning.
+	 * @throws DmcValueException 
 	 */
-	void checkFields(){
+	void checkFields() throws DmcValueException{
 		for(ArrayList<ProtoField> list: fields.values()){
 			
 			if (list.size() == 1)
@@ -158,9 +169,12 @@ public class ProtoFileParser {
 			// We have to use the DMO because we haven't resolved the GpbTypes
 			ProtoFieldDMO first = list.get(0).getDMO();
 			
+			boolean anyClash = false;
+			
 			for(int i=1; i<list.size(); i++){
 				ProtoFieldDMO current = list.get(i).getDMO();
 				if (!first.getGpbType().equals(current.getGpbType())){
+					anyClash = true;
 					if (first.getFile().equals(current.getFile())){
 						// We have a type clash
 						System.err.println("ERROR: Clashing type for field with name: " + first.getName());
@@ -176,6 +190,25 @@ public class ProtoFileParser {
 						
 					}
 				}
+			}
+			
+			if (anyClash){
+				int instanceSuffix = 1;
+				
+				String originalName = first.getName().getNameString();
+				
+				if (first.getGenerateAs() != null)
+					originalName = first.getGenerateAs();
+				
+				for(int i=0; i<list.size(); i++){
+					ProtoFieldDMO current = list.get(i).getDMO();
+					if (current.getGenerateAs() == null){
+						// Only rename if we haven't already done so
+						current.setName(originalName + instanceSuffix);
+						instanceSuffix++;
+						current.setGenerateAs(originalName);
+					}
+				}				
 			}
 			
 			System.out.println("FIELD: " + list.size() + "  - " + first.getName());
@@ -307,6 +340,9 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 	
 		addField(field);
 		
+		// Fields will be split out as separate definitions in the generated .gpb file
+		protoFile.addFields(field);
+		
 		return(field);
 	}
 	
@@ -358,6 +394,16 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 		return(enumDef);
 	}
 
+	void addEnum(ProtoEnum penum){
+		ArrayList<ProtoEnum> list = enums.get(penum.getName().getNameString());
+		
+		if (list == null){
+			list = new ArrayList<ProtoEnum>();
+			enums.put(penum.getName().getNameString(), list);
+		}
+		list.add(penum);
+	}
+
 	String getPackage(String fn, int ln, String line) throws ResultException{
 		int semipos = line.indexOf(";");
 		if (semipos == -1){
@@ -374,6 +420,21 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 		FIELD
 	}
 
+//	class FieldInfo {
+//		int instanceSuffix;
+//		ArrayList<ProtoField> fields;
+//		
+//		FieldInfo(){
+//			instanceSuffix = 1;
+//			fields = new ArrayList<ProtoField>();
+//		}
+//		
+//		void addField(ProtoField f){
+//			if (fields.size() == 1){
+//				
+//			}
+//		}
+//	}
 
 }
 

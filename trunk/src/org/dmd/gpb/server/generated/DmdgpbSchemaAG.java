@@ -47,7 +47,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
 
     public static AttributeDefinition _cplusplusType;
     public static AttributeDefinition _dmType;
-    public static AttributeDefinition _gpbHint;
+    public static AttributeDefinition _hint;
     public static AttributeDefinition _defaultValue;
     public static AttributeDefinition _sizeInBytes;
     public static AttributeDefinition _gpbType;
@@ -123,7 +123,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbDefinitionOBJ.setUseWrapperType("EXTENDED");
             _GpbDefinitionOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbDefinitionREF");
             _GpbDefinitionOBJ.setDmwIteratorClass("GpbDefinitionIterableDMW");
-            _GpbDefinitionOBJ.addMay("dmdgpb.gpbHint");
+            _GpbDefinitionOBJ.addMay("dmdgpb.hint");
             _GpbDefinitionOBJ.addMust("meta.name");
             _GpbDefinitionOBJ.addMust("meta.dotName");
             _GpbDefinitionOBJ.addMust("dmdgpb.definedInGpbModule");
@@ -236,8 +236,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbFieldREF");
             _GpbFieldOBJ.setDmwIteratorClass("GpbFieldIterableDMW");
             _GpbFieldOBJ.addMay("meta.description");
-            _GpbFieldOBJ.addMay("dmdgpb.fieldRule");
-            _GpbFieldOBJ.addMay("dmdgpb.tag");
             _GpbFieldOBJ.addMust("dmdgpb.gpbType");
             _GpbFieldOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbFieldIterableDMW");
             _GpbFieldOBJ.setDotName("dmdgpb.GpbField.ClassDefinition");
@@ -365,17 +363,17 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             addAttributeDefList(_dmType);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            AttributeDefinitionDMO _gpbHintOBJ = new AttributeDefinitionDMO();
-            _gpbHint = new AttributeDefinition(_gpbHintOBJ);
-            _gpbHintOBJ.setType("meta.String");
-            _gpbHintOBJ.setName("gpbHint");
-            _gpbHintOBJ.setDmdID("-477997");
-            _gpbHintOBJ.addDescription("A short description of something that can be dumped as one line comment in a .proto spec.\n For longer explanations, use the description attribute.");
-            _gpbHintOBJ.setDotName("dmdgpb.gpbHint.AttributeDefinition");
-            _gpbHint.setDefinedIn(this);
-            _gpbHintOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _gpbHintOBJ.setLineNumber("19");
-            addAttributeDefList(_gpbHint);
+            AttributeDefinitionDMO _hintOBJ = new AttributeDefinitionDMO();
+            _hint = new AttributeDefinition(_hintOBJ);
+            _hintOBJ.setType("meta.String");
+            _hintOBJ.setName("hint");
+            _hintOBJ.setDmdID("-477997");
+            _hintOBJ.addDescription("A short description of something that can be dumped as one line comment in a .proto spec.\n For longer explanations, use the description attribute.");
+            _hintOBJ.setDotName("dmdgpb.hint.AttributeDefinition");
+            _hint.setDefinedIn(this);
+            _hintOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
+            _hintOBJ.setLineNumber("19");
+            addAttributeDefList(_hint);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
             AttributeDefinitionDMO _defaultValueOBJ = new AttributeDefinitionDMO();

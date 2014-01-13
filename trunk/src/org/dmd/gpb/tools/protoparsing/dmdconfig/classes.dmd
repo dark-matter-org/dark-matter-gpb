@@ -31,7 +31,6 @@ useWrapperType	EXTENDED
 derivedFrom     ProtoElement
 isNamedBy       name
 must           	name
-//subpackage		element.something
 description		The GpbElement provides a common base for enums and messages that
  are defined at the top level of a .proto specification.
 
@@ -46,6 +45,8 @@ must			gpbType
 may             description
 may			    fieldRule
 may			    tag
+may				generateAs
+may				hint
 description		The ProtoField class represents a single field of a .proto message.
 
 ClassDefinition
@@ -79,7 +80,8 @@ must			name
 must			package
 may				import
 may				mainElements
-description		The GpbProtoFile is used to represent a single .proto file. It may be parsed
+may				fields
+description		The ProtoFile is used to represent a single .proto file. It may be parsed
  from an existing .proto file by the GpbDotProtoParser utility. 
 
 

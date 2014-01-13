@@ -1,0 +1,147 @@
+GpbModule
+description   Add a description
+name          common
+
+GpbField
+name        mo_type
+gpbType     CgcmMoType
+description Add a description
+
+GpbField
+name        slot
+gpbType     uint32
+description Add a description
+
+GpbField
+name        port
+gpbType     uint32
+description Add a description
+
+GpbField
+name        link_id
+gpbType     uint32
+description Add a description
+
+GpbField
+name        wlan_id
+gpbType     uint32
+description Add a description
+
+GpbField
+name        idx
+gpbType     uint32
+description Add a description
+
+GpbField
+name        tunnelEngine
+gpbType     uint32
+description Add a description
+
+GpbField
+name        tunnel
+gpbType     uint32
+description Add a description
+
+GpbField
+name        cm_idx
+gpbType     uint32
+description Add a description
+
+GpbField
+name        ch_idx
+gpbType     uint32
+description Add a description
+
+GpbField
+name        pep_idx
+gpbType     uint32
+description Add a description
+
+GpbMessage
+name MoId
+field mo_type        1 OPTIONAL 
+field slot           2 OPTIONAL 
+field port           3 OPTIONAL 
+field link_id        4 OPTIONAL 
+field wlan_id        5 OPTIONAL 
+field idx            6 OPTIONAL 
+field tunnelEngine   7 OPTIONAL 
+field tunnel         8 OPTIONAL 
+field cm_idx         9 OPTIONAL 
+field ch_idx         10 OPTIONAL 
+field pep_idx        11 OPTIONAL 
+
+
+GpbEnum
+name        CgcmMoType
+enumValue   NODE                   1 Add a description
+enumValue   CARD                   2 Add a description
+enumValue   WIFI_ITF               3 Add a description
+enumValue   MESH_ITF               4 Add a description
+enumValue   WLAN                   5 Add a description
+enumValue   MGMT_ITF               6 Add a description
+enumValue   TUNNEL_ENGINE          7 Add a description
+enumValue   TUNNEL                 8 Add a description
+enumValue   P2PMOBILITY            9 Add a description
+enumValue   CABLE_MODEM            10 Add a description
+enumValue   ETH_ITF                11 Add a description
+enumValue   IP_ROUTE               12 Add a description
+enumValue   SCAN_LIST              13 Add a description
+enumValue   CABLE_MODEM_DS_CH      14 Add a description
+enumValue   CABLE_MODEM_US_CH      15 Add a description
+enumValue   WLAN_RADIUS_CONFIG     16 Add a description
+enumValue   PEP_RADIUS_CONFIG      17 Add a description
+enumValue   PEP_CONFIG             18 Add a description
+enumValue   NAT_CONFIG             19 Add a description
+enumValue   SNMP_CONFIG            20 Add a description
+enumValue   SECURITY_CONFIG        21 Add a description
+enumValue   EXTDC_CGCM_CONFIG      22 Add a description
+description Add a description
+
+GpbEnum
+name        CgcmHealthLevelType
+enumValue   HL_BACKHAUL_LINK_RSSI              1 Add a description
+enumValue   HL_BACKHAUL_TX_ERROR_RATE          2 Add a description
+enumValue   HL_NOISE_FLOOR                     3 Add a description
+enumValue   HL_ACCESS_TX_ERROR_RATE            4 Add a description
+enumValue   HL_ACCESS_RX_ERROR_RATE            5 Add a description
+enumValue   HL_ACCESS_DUPLICATE_FRAME_RATE     6 Add a description
+enumValue   HL_ACCESS_LOW_MODULATION_RATE      7 Add a description
+enumValue   HL_CHANNEL_BUSYNESS_NOISE          8 Add a description
+enumValue   HL_CHANNEL_BUSYNESS_NON_LOCAL      9 Add a description
+enumValue   HL_WMOS                            10 Add a description
+description Add a description
+
+GpbEnum
+name        CgcmStationaryBackhaulEndpointMode
+enumValue   UNKNOWN_SBEPM     0 Add a description
+enumValue   P2P               1 Add a description
+enumValue   STAR_BS           2 Add a description
+enumValue   STAR_SS           3 Add a description
+enumValue   MESH              4 Add a description
+description Add a description
+
+GpbEnum
+name        ControlState
+enumValue   CONTROL_ENABLED               0 Add a description
+enumValue   CONTROL_DISABLED              1 Add a description
+enumValue   CONTROL_PARTIALLY_ENABLED     2 Add a description
+enumValue   CONTROL_STATE_UNKNOWN         3 Add a description
+description Add a description
+
+GpbEnum
+name        MacAddressFormat
+enumValue   MAC_ADDR_FORMAT_UNKNOWN       0 Add a description
+enumValue   MAC_ADDR_FORMAT_ASCII_HEX     1 Add a description
+enumValue   MAC_ADDR_FORMAT_BINARY        2 Add a description
+description Add a description
+
+GpbProtoFile
+file           /Users/peter/bvw/dark-matter-gpb/test/org/dmd/gpb/tools/parsing/subfolder1/common.proto
+mainElements   MoId
+mainElements   CgcmMoType
+mainElements   CgcmHealthLevelType
+mainElements   CgcmStationaryBackhaulEndpointMode
+mainElements   ControlState
+mainElements   MacAddressFormat
+package        org.dmd.gpb.tools.generation

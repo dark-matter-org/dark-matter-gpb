@@ -31,14 +31,16 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
 
     static int schemaMaxID = -478050;
 
-    public final static DmcAttributeInfo __elements = new DmcAttributeInfo("dmdproto", "elements", -478078, "ProtoElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __field = new DmcAttributeInfo("dmdproto", "field", -478076, "ProtoField", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __fieldRule = new DmcAttributeInfo("dmdproto", "fieldRule", -478074, "ProtoFieldRuleEnum", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __gpbType = new DmcAttributeInfo("dmdproto", "gpbType", -478094, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __import = new DmcAttributeInfo("dmdproto", "import", -478073, "String", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __mainElements = new DmcAttributeInfo("dmdproto", "mainElements", -478077, "ProtoMainElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __package = new DmcAttributeInfo("dmdproto", "package", -478079, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __tag = new DmcAttributeInfo("dmdproto", "tag", -478075, "Integer", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __elements = new DmcAttributeInfo("dmdproto", "elements", -478097, "ProtoElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __fieldRule = new DmcAttributeInfo("dmdproto", "fieldRule", -478093, "ProtoFieldRuleEnum", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __fields = new DmcAttributeInfo("dmdproto", "fields", -478095, "ProtoField", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __generateAs = new DmcAttributeInfo("dmdproto", "generateAs", -478091, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __gpbType = new DmcAttributeInfo("dmdproto", "gpbType", -478099, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __hint = new DmcAttributeInfo("dmdproto", "hint", -478090, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __import = new DmcAttributeInfo("dmdproto", "import", -478092, "String", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __mainElements = new DmcAttributeInfo("dmdproto", "mainElements", -478096, "ProtoMainElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __package = new DmcAttributeInfo("dmdproto", "package", -478098, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __tag = new DmcAttributeInfo("dmdproto", "tag", -478094, "Integer", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
 
     // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:176)
     public final static DmcTypeInfo __type_ProtoDefinition = new DmcTypeInfo("ProtoDefinition", OriginalTypeEnum.REFERENCE);
@@ -111,6 +113,8 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
         __ProtoField.addMay(MetaDMSAG.__description);
         __ProtoField.addMay(__fieldRule);
         __ProtoField.addMay(__tag);
+        __ProtoField.addMay(__generateAs);
+        __ProtoField.addMay(__hint);
 
         __ProtoMessage.addMust(MetaDMSAG.__name);
         __ProtoMessage.addMust(__elements);
@@ -122,6 +126,7 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
         __ProtoFile.addMust(__package);
         __ProtoFile.addMay(__import);
         __ProtoFile.addMay(__mainElements);
+        __ProtoFile.addMay(__fields);
 
     }
 

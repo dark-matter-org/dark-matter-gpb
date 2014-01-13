@@ -5,10 +5,11 @@ package org.dmd.gpb.tools.protoparsing.extended;
 import java.io.IOException;
 
 import org.dmd.dmc.DmcValueException;
-import org.dmd.dms.ClassDefinition;                                       // Used in derived constructors - (DMWGenerator.java:243)
+import org.dmd.dms.ClassDefinition;
 import org.dmd.gpb.server.extended.GpbModule;
-import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFileDMO;         // The wrapper we're extending - (DMWGenerator.java:242)
-import org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoFileDMW;         // The wrapper we're extending - (DMWGenerator.java:241)
+import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFileDMO;
+import org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoFieldIterableDMW;
+import org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoFileDMW;
 import org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoMainElementIterableDMW;
 import org.dmd.util.FileUpdateManager;
 import org.dmd.util.ManagedFileWriter;
@@ -35,9 +36,16 @@ public class ProtoFile extends ProtoFileDMW {
 		
 		GpbModule module = new GpbModule();
 		module.setName(modName);
-		module.addDescription("Add a description");	
-		
+		module.addDescription("Add a description");
+				
 		out.write(module.toOIF() + "\n");
+		
+		if (getFieldsHasValue()){
+			ProtoFieldIterableDMW fields = getFieldsIterable();
+			while(fields.hasNext()){
+				out.write(fields.getNext().toGpbFieldDefinition());
+			}
+		}
 		
 		ProtoMainElementIterableDMW it = getMainElementsIterable();
 		while(it.hasNext()){
@@ -46,7 +54,13 @@ public class ProtoFile extends ProtoFileDMW {
 			out.write(m.toDotGPBFormat() + "\n");
 		}
 		
-		out.write(this.toOIF());
+		// Remove the fields
+		remFields();
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append(this.toOIF());
+		
+		out.write(sb.toString().replaceAll("ProtoFile", "GpbProtoFile"));
 
 		out.close();
 		

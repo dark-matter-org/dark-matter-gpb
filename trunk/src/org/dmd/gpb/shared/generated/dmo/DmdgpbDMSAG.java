@@ -40,8 +40,8 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcAttributeInfo __elements = new DmcAttributeInfo("dmdgpb", "elements", -477978, "GpbElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __field = new DmcAttributeInfo("dmdgpb", "field", -477976, "GpbField", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __fieldRule = new DmcAttributeInfo("dmdgpb", "fieldRule", -477974, "FieldRuleEnum", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __gpbHint = new DmcAttributeInfo("dmdgpb", "gpbHint", -477997, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __gpbType = new DmcAttributeInfo("dmdgpb", "gpbType", -477994, "GpbType", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __hint = new DmcAttributeInfo("dmdgpb", "hint", -477997, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __import = new DmcAttributeInfo("dmdgpb", "import", -477973, "String", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __isMessageType = new DmcAttributeInfo("dmdgpb", "isMessageType", -477993, "Boolean", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __javaType = new DmcAttributeInfo("dmdgpb", "javaType", -477989, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
@@ -121,7 +121,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         __GpbDefinition.addMust(MetaDMSAG.__name);
         __GpbDefinition.addMust(MetaDMSAG.__dotName);
         __GpbDefinition.addMust(__definedInGpbModule);
-        __GpbDefinition.addMay(__gpbHint);
+        __GpbDefinition.addMay(__hint);
 
         __GpbType.addMay(MetaDMSAG.__internallyGenerated);
         __GpbType.addMay(MetaDMSAG.__isEnumType);
@@ -142,8 +142,6 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
 
         __GpbField.addMust(__gpbType);
         __GpbField.addMay(MetaDMSAG.__description);
-        __GpbField.addMay(__fieldRule);
-        __GpbField.addMay(__tag);
 
         __GpbMessage.addMust(MetaDMSAG.__name);
         __GpbMessage.addMust(__elements);

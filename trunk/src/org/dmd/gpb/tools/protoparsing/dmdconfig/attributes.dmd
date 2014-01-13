@@ -1,110 +1,43 @@
-//AttributeDefinition
-//name			cplusplusType
-//dmdID			1
-//type			String
-//description		An indication of the C++ type associated with a GPB attribute type.
-//
-//AttributeDefinition
-//name			dmType
-//dmdID			2
-//type			String
-//description		An indication of the dark-matter type associated with a GPB attribute type.
-//
-//AttributeDefinition
-//name			gpbHint
-//dmdID			3
-//type			String
-//description		A short description of something that can be dumped as one line comment in a .proto spec.
-// For longer explanations, use the description attribute.
-//
-//AttributeDefinition
-//name			defaultValue
-//dmdID			4
-//type			String
-//description		The default value to be used for a GpbType or for an GpbAttribute.
-//
-//AttributeDefinition
-//name			sizeInBytes
-//dmdID			5
-//type			Integer
-//description		The size in bytes that a particular primitive type would occupy on the wire.
-
 AttributeDefinition
 name			gpbType
-dmdID			6
+dmdID			1
 type			String
-description		The type of a .proto field.
-
-//AttributeDefinition
-//name			isMessageType
-//dmdID			7
-//type			Boolean
-//description		Indicates if an internally generated GpbType is associated with a GpbMessage.
-
-//AttributeDefinition
-//name			definedInGpbModule
-//dmdID			8
-////type			GpbModule
-//type			String
-//description		Indicates the name of the GpbModule in which a definition is defined.
-
-//AttributeDefinition
-//name			usesDefsFrom
-//dmdID			9
-////type			GpbModule
-//type			String
-//description		Indicates the name of a GpbModule from which definitions are included.
-
-//AttributeDefinition
-//name			pythonType
-//dmdID			10
-//type			String
-//description		An indication of the Python type associated with a GPB attribute type.
-//
-//AttributeDefinition
-//name			javaType
-//dmdID			11
-//type			String
-//description		An indication of the Java type associated with a GPB attribute type.
-//
-//AttributeDefinition
-//name			basedOnEnum
-//dmdID			12
-//type			EnumDefinition
-//description		Indicates that a GPB enum is based on a dark-matter schema defined enumeration.
+description		The type of a .proto field. We just use a string here since we're
+ not doing object resolution based on type.
 
 AttributeDefinition
 name			package
-dmdID			21
+dmdID			2
 type			String
 description 	The package associated with a .proto file.
 
 AttributeDefinition
 name			elements
-dmdID			22
+dmdID			3
 type			ProtoElement
 valueType		MULTI
-description		The elements attribute indicates a list of GpbElements that comprise a GpbMessage, this
- includes GpbFields, GpbEnums and other GpbMessages.
+description		The elements attribute indicates a list of ProtoElements that comprise a ProtoMessage, this
+ includes ProtoFields, ProtoEnums and other ProtoMessages.
 
 AttributeDefinition
 name			mainElements
-dmdID			23
+dmdID			4
 type			ProtoMainElement
 valueType		MULTI
-description		The mainElements attribute indicates a list of GpbMainElements that comprise a GpbProtoFile. Main elements
+description		The mainElements attribute indicates a list of ProtoMainElements that comprise a ProtoFile. Main elements
  include messages and enumerations.
 
 AttributeDefinition
-name			field
-dmdID			24
+name			fields
+dmdID			5
 type			ProtoField
 valueType		MULTI
-description		A field in a GpbMessage.
+description		The fields that will be defined individually within a GpbModule. As field from messages
+ are parsed, they are added to the fields of a ProtoFile.
 
 AttributeDefinition
 name			tag
-dmdID			25
+dmdID			6
 type			Integer
 description		As you can see, each field in the message definition has a unique numbered tag.
  These tags are used to identify your fields in the message binary format, and should not be
@@ -120,7 +53,7 @@ description		As you can see, each field in the message definition has a unique n
 
 AttributeDefinition
 name			fieldRule
-dmdID			26
+dmdID			7
 type			ProtoFieldRuleEnum
 description		Indicates if a field is required, optional or repeated. See the note about 
  required fields as part of the FieldRuleEnum.
@@ -132,12 +65,25 @@ description		Indicates if a field is required, optional or repeated. See the not
 
 AttributeDefinition
 name			import
-dmdID			27
+dmdID			8
 type			String
 valueType		MULTI
 description 	An import associated with a .proto file.
 
- 
- 
+AttributeDefinition
+name			generateAs
+dmdID			9
+type			String
+description 	When fields with the same name have different types, we set this be
+ the original name of the field so that we can reproduce the original file without
+ difficulty.
+
+AttributeDefinition
+name			hint
+dmdID			10
+type			String
+description 	Any comment associated with a field
+
+
  
  
