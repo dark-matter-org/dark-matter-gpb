@@ -87,8 +87,8 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
-    public String getGpbHint(){
-        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__gpbHint);
+    public String getHint(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__hint);
         if (attr == null)
             return(null);
 
@@ -96,18 +96,18 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
     }
 
     /**
-     * Sets gpbHint to the specified value.
+     * Sets hint to the specified value.
      * @param value String
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
-    public void setGpbHint(String value) {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__gpbHint);
+    public void setHint(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__hint);
         if (attr == null)
-            attr = new DmcTypeStringSV(DmdgpbDMSAG.__gpbHint);
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__hint);
         
         try{
             attr.set(value);
-            set(DmdgpbDMSAG.__gpbHint,attr);
+            set(DmdgpbDMSAG.__hint,attr);
         }
         catch(DmcValueException ex){
             throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
@@ -115,25 +115,25 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
     }
 
     /**
-     * Sets gpbHint to the specified value.
+     * Sets hint to the specified value.
      * @param value A value compatible with DmcTypeStringSV
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
-    public void setGpbHint(Object value) throws DmcValueException {
-        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__gpbHint);
+    public void setHint(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__hint);
         if (attr == null)
-            attr = new DmcTypeStringSV(DmdgpbDMSAG.__gpbHint);
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__hint);
         
         attr.set(value);
-        set(DmdgpbDMSAG.__gpbHint,attr);
+        set(DmdgpbDMSAG.__hint,attr);
     }
 
     /**
-     * Removes the gpbHint attribute value.
+     * Removes the hint attribute value.
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
-    public void remGpbHint(){
-         rem(DmdgpbDMSAG.__gpbHint);
+    public void remHint(){
+         rem(DmdgpbDMSAG.__hint);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)

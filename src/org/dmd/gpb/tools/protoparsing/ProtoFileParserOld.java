@@ -261,23 +261,23 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 		TokenArrayList tokens = classifier.classify(line, true);
 		
 		if (tokens.size() == 6){
-			switch(tokens.nth(0).getType()){
-			case OPTIONAL:
-				field.setFieldRule(FieldRuleEnum.OPTIONAL);
-				break;
-			case REQUIRED:
-				field.setFieldRule(FieldRuleEnum.REQUIRED);
-				break;
-			case REPEATED:
-				field.setFieldRule(FieldRuleEnum.REPEATED);
-				break;
-			}
+//			switch(tokens.nth(0).getType()){
+//			case OPTIONAL:
+//				field.setFieldRule(FieldRuleEnum.OPTIONAL);
+//				break;
+//			case REQUIRED:
+//				field.setFieldRule(FieldRuleEnum.REQUIRED);
+//				break;
+//			case REPEATED:
+//				field.setFieldRule(FieldRuleEnum.REPEATED);
+//				break;
+//			}
 
 			field.setGpbType(tokens.nth(1).getValue());
 			
 			field.setName(tokens.nth(2).getValue());
 			
-			field.setTag(tokens.nth(4).getValue());
+//			field.setTag(tokens.nth(4).getValue());
 			
 			if (descr.length() > 0)
 				field.addDescription(descr);

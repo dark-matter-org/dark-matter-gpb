@@ -344,6 +344,106 @@ public class ProtoFieldDMO  extends ProtoElementDMO  implements DmcNamedObjectIF
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public String getGenerateAs(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdprotoDMSAG.__generateAs);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setGenerateAs(String value) {
+        DmcAttribute<?> attr = get(DmdprotoDMSAG.__generateAs);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdprotoDMSAG.__generateAs);
+        
+        try{
+            attr.set(value);
+            set(DmdprotoDMSAG.__generateAs,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setGenerateAs(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdprotoDMSAG.__generateAs);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdprotoDMSAG.__generateAs);
+        
+        attr.set(value);
+        set(DmdprotoDMSAG.__generateAs,attr);
+    }
+
+    /**
+     * Removes the generateAs attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remGenerateAs(){
+         rem(DmdprotoDMSAG.__generateAs);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public String getHint(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdprotoDMSAG.__hint);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets hint to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setHint(String value) {
+        DmcAttribute<?> attr = get(DmdprotoDMSAG.__hint);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdprotoDMSAG.__hint);
+        
+        try{
+            attr.set(value);
+            set(DmdprotoDMSAG.__hint,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets hint to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setHint(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdprotoDMSAG.__hint);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdprotoDMSAG.__hint);
+        
+        attr.set(value);
+        set(DmdprotoDMSAG.__hint,attr);
+    }
+
+    /**
+     * Removes the hint attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remHint(){
+         rem(DmdprotoDMSAG.__hint);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public String getGpbType(){
         DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdprotoDMSAG.__gpbType);
         if (attr == null)

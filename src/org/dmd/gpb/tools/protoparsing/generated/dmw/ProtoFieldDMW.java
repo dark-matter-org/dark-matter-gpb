@@ -246,6 +246,37 @@ abstract public class ProtoFieldDMW extends ProtoElement implements DmcDefinitio
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public String getGenerateAs(){
+        return(((ProtoFieldDMO) core).getGenerateAs());
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value A value compatible with DmcTypeString
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setGenerateAs(Object value) throws DmcValueException {
+        ((ProtoFieldDMO) core).setGenerateAs(value);
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setGenerateAs(String value){
+        ((ProtoFieldDMO) core).setGenerateAs(value);
+    }
+
+    /**
+     * Removes the generateAs attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remGenerateAs(){
+        ((ProtoFieldDMO) core).remGenerateAs();
+    }
+
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
     public String getGpbType(){
         return(((ProtoFieldDMO) core).getGpbType());
     }
@@ -274,6 +305,37 @@ abstract public class ProtoFieldDMW extends ProtoElement implements DmcDefinitio
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
     public void remGpbType(){
         ((ProtoFieldDMO) core).remGpbType();
+    }
+
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public String getHint(){
+        return(((ProtoFieldDMO) core).getHint());
+    }
+
+    /**
+     * Sets hint to the specified value.
+     * @param value A value compatible with DmcTypeString
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setHint(Object value) throws DmcValueException {
+        ((ProtoFieldDMO) core).setHint(value);
+    }
+
+    /**
+     * Sets hint to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setHint(String value){
+        ((ProtoFieldDMO) core).setHint(value);
+    }
+
+    /**
+     * Removes the hint attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remHint(){
+        ((ProtoFieldDMO) core).remHint();
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)

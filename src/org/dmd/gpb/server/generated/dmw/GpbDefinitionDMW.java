@@ -122,34 +122,34 @@ abstract public class GpbDefinitionDMW extends DSDefinition implements DmcDefini
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
-    public String getGpbHint(){
-        return(((GpbDefinitionDMO) core).getGpbHint());
+    public String getHint(){
+        return(((GpbDefinitionDMO) core).getHint());
     }
 
     /**
-     * Sets gpbHint to the specified value.
+     * Sets hint to the specified value.
      * @param value A value compatible with DmcTypeString
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
-    public void setGpbHint(Object value) throws DmcValueException {
-        ((GpbDefinitionDMO) core).setGpbHint(value);
+    public void setHint(Object value) throws DmcValueException {
+        ((GpbDefinitionDMO) core).setHint(value);
     }
 
     /**
-     * Sets gpbHint to the specified value.
+     * Sets hint to the specified value.
      * @param value String
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
-    public void setGpbHint(String value){
-        ((GpbDefinitionDMO) core).setGpbHint(value);
+    public void setHint(String value){
+        ((GpbDefinitionDMO) core).setHint(value);
     }
 
     /**
-     * Removes the gpbHint attribute value.
+     * Removes the hint attribute value.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
-    public void remGpbHint(){
-        ((GpbDefinitionDMO) core).remGpbHint();
+    public void remHint(){
+        ((GpbDefinitionDMO) core).remHint();
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)

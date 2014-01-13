@@ -11,7 +11,7 @@ type			String
 description		An indication of the dark-matter type associated with a GPB attribute type.
 
 AttributeDefinition
-name			gpbHint
+name			hint
 dmdID			3
 type			String
 description		A short description of something that can be dumped as one line comment in a .proto spec.

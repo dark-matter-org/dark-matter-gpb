@@ -20,8 +20,8 @@ public class DmdgpbDMSAGAMAP {
         _SmAp.put(DmdgpbDMSAG.__elements.id,DmdgpbDMSAG.__elements);
         _SmAp.put(DmdgpbDMSAG.__field.id,DmdgpbDMSAG.__field);
         _SmAp.put(DmdgpbDMSAG.__fieldRule.id,DmdgpbDMSAG.__fieldRule);
-        _SmAp.put(DmdgpbDMSAG.__gpbHint.id,DmdgpbDMSAG.__gpbHint);
         _SmAp.put(DmdgpbDMSAG.__gpbType.id,DmdgpbDMSAG.__gpbType);
+        _SmAp.put(DmdgpbDMSAG.__hint.id,DmdgpbDMSAG.__hint);
         _SmAp.put(DmdgpbDMSAG.__import.id,DmdgpbDMSAG.__import);
         _SmAp.put(DmdgpbDMSAG.__isMessageType.id,DmdgpbDMSAG.__isMessageType);
         _SmAp.put(DmdgpbDMSAG.__javaType.id,DmdgpbDMSAG.__javaType);

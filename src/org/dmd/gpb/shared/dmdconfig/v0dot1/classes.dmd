@@ -21,7 +21,7 @@ isNamedBy		name
 must			name
 must			dotName
 must			definedInGpbModule
-may				gpbHint
+may				hint
 description		The GpbDefinition provides a common base for all dark-matter
  Google Protocol Buffer (GPB) definitions. 
 
@@ -103,8 +103,8 @@ derivedFrom     GpbElement
 isNamedBy       name
 must			gpbType
 may             description
-may			    fieldRule
-may			    tag
+//may			    fieldRule
+//may			    tag
 description		The GpbField class is used to represent a reusable, named field for use
  within a GpbMessage. If the field has been parsed from an existing .proto file, it will
  have the fieldRule and tag attributes. However, when specified as part of a .gpb file,

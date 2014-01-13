@@ -17,5 +17,9 @@ abstract public class ProtoElement extends ProtoElementDMW {
         super(dmo,cd);
     }
 
+    /**
+     * @return the element formatted as a field reference in a GpbProtoMessage
+     */
+    abstract public String toGpbFieldReference(int longest);
 }
 

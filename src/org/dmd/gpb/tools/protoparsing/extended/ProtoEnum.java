@@ -94,5 +94,16 @@ public class ProtoEnum extends ProtoEnumDMW {
 //		return(this.toOIF());
 	}
 
+	@Override
+	public String toGpbFieldReference(int longest) {
+		StringBuffer sb = new StringBuffer();
+		
+		sb.append("embed ");
+		sb.append(getName() + " ");
+		sb.append("\n");
+		
+		return(sb.toString());
+	}
+
 }
 

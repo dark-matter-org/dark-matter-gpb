@@ -27,17 +27,20 @@ import org.dmd.dms.generated.dmo.MetaDMSAG;                                     
 import org.dmd.dms.generated.dmw.StringIterableDMW;                                      // For multi-valued String - (BaseDMWGenerator.java:2103)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;                                    // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
 import org.dmd.gpb.tools.protoparsing.extended.ProtoDefinition;                          // Derived class - (BaseDMWGenerator.java:1248)
+import org.dmd.gpb.tools.protoparsing.extended.ProtoField;                               // Is reference type - (BaseDMWGenerator.java:1107)
 import org.dmd.gpb.tools.protoparsing.extended.ProtoFile;                                // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
 import org.dmd.gpb.tools.protoparsing.extended.ProtoMainElement;                         // Is reference type - (BaseDMWGenerator.java:1107)
-import org.dmd.gpb.tools.protoparsing.generated.dmo.DmdprotoDMSAG;                       // Attribute import from the dmdproto schema - (BaseDMWGenerator.java:897)
+import org.dmd.gpb.tools.protoparsing.generated.dmo.DmdprotoDMSAG;                       // Attribute fields from the dmdproto schema - (BaseDMWGenerator.java:897)
+import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFieldDMO;                       // For multi-valued adds of ProtoField - (BaseDMWGenerator.java:1767)
 import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFileDMO;                        // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
 import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoMainElementDMO;                 // For multi-valued adds of ProtoMainElement - (BaseDMWGenerator.java:1767)
+import org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoFieldIterableDMW;               // For multi-valued ProtoField - (BaseDMWGenerator.java:1709)
 import org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoMainElementIterableDMW;         // For multi-valued ProtoMainElement - (BaseDMWGenerator.java:1709)
 
 
 
 /**
- * The GpbProtoFile is used to represent a single .proto file. It may be
+ * The ProtoFile is used to represent a single .proto file. It may be
  * parsed\n from an existing .proto file by the GpbDotProtoParser utility.
  * <P>
  * Generated from the dmdproto schema at version unknown
@@ -103,6 +106,92 @@ abstract public class ProtoFileDMW extends ProtoDefinition implements DmcDefinit
             return( getObjectName().equals( ((ProtoFileDMW) obj).getObjectName()) );
         }
         return(false);
+    }
+
+    /**
+     * @return The number of ProtoField items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1671)
+    public int getFieldsSize(){
+        return(((ProtoFileDMO) core).getFieldsSize());
+    }
+
+    /**
+     * @return true if there are no ProtoFieldDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1679)
+    public boolean getFieldsIsEmpty(){
+        if (((ProtoFileDMO) core).getFieldsSize() == 0)
+            return(true);
+        return(false);
+    }
+
+    /**
+     * @return true if there are any ProtoFieldDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1689)
+    public boolean getFieldsHasValue(){
+        if (((ProtoFileDMO) core).getFieldsSize() == 0)
+            return(false);
+        return(true);
+    }
+
+    /**
+     * @return An Iterator of ProtoFieldDMO objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1716)
+    public ProtoFieldIterableDMW getFieldsIterable(){
+        DmcAttribute<?> attr = core.get(DmdprotoDMSAG.__fields);
+        if (attr == null)
+            return(ProtoFieldIterableDMW.emptyList);
+        
+        return(new ProtoFieldIterableDMW(((ProtoFileDMO) core).getFields()));
+    }
+
+    /**
+     * Adds another fields value.
+     * @param value A value compatible with ProtoField
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1773)
+    public DmcAttribute<?> addFields(ProtoField value){
+        DmcAttribute<?> attr = ((ProtoFileDMO) core).addFields(((ProtoFieldDMO)value.getDmcObject()));
+        return(attr);
+    }
+
+    /**
+     * Deletes a fields value.
+     * @param value The ProtoField to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1823)
+    public void delFields(ProtoField value){
+        ((ProtoFileDMO) core).delFields(value.getDMO());
+    }
+
+    /**
+     * @return A COPY of the collection of ProtoField objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1887)
+    public ArrayList<ProtoField> getFieldsCopy(){
+        DmcAttribute<?> attr = ((ProtoFileDMO) core).get(DmdprotoDMSAG.__fields);
+        if (attr == null)
+            return(new ArrayList<ProtoField>());
+        
+        ArrayList<ProtoField> rc = new ArrayList<ProtoField>(attr.getMVSize());
+        
+        ProtoFieldIterableDMW it = getFieldsIterable();
+        while(it.hasNext()){
+            rc.add(it.next());
+        }
+        
+        return(rc);
+    }
+
+    /**
+     * Removes the fields attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2292)
+    public void remFields(){
+        ((ProtoFileDMO) core).remFields();
     }
 
     /**
