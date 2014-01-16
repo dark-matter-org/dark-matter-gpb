@@ -9,7 +9,9 @@
 
 ComplexTypeDefinition
 name GpbFieldIndicatorBase
-field GpbElement		element The field, enum or message referred to by this field indicator.
-field Integer           fieldTag    The unique numeric tag for this field.
-field FieldRuleEnum  	fieldRule   Whether the field is required, optional or repeated.
-field String           	info    	Additional info to be supplied for the field definition. For example the default value for a field [default = 10] or [packed = true] for a repeated field.
+field GpbElement		element 		The field, enum or message referred to by this field indicator.
+field Integer           fieldTag    	The unique numeric tag for this field.
+field FieldRuleEnum  	fieldRule   	Whether the field is required, optional or repeated.
+field OptionEnum        option    		Indicates if there's a DEFAULT value or if the PACKED option is to be used for repeated fields.
+field String        	defaultValue	The default value - this is limited to a single, space delimited token at the moment.
+mandatoryFields			3

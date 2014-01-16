@@ -25,6 +25,7 @@ import org.dmd.dmc.DmcSliceInfo;                                       // Requir
 import org.dmd.dmc.DmcValueException;                                  // Any attributes - (GenUtility.java:241)
 import org.dmd.dmc.types.DefinitionName;                               // Naming attribute type - (GenUtility.java:370)
 import org.dmd.dms.generated.dmo.MetaDMSAG;                            // Required for MODREC constructor - (GenUtility.java:228)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;            // Required type - (GenUtility.java:328)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;                  // Required for MODREC constructor - (GenUtility.java:227)
 import org.dmd.dms.generated.types.DmcTypeStringMV;                    // Required type - (GenUtility.java:328)
 import org.dmd.gpb.shared.generated.dmo.GpbElementDMO;                 // Base class - (GenUtility.java:355)
@@ -32,6 +33,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                    // Type s
 import org.dmd.gpb.shared.generated.types.DmcTypeGpbTypeREFSV;         // Reference type - (GenUtility.java:300)
 import org.dmd.gpb.shared.generated.types.GpbTypeREF;                  // Helper class - (GenUtility.java:335)
 
+// Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
  * The GpbField class is used to represent a reusable, named field for use\n
  * within a GpbMessage. If the field has been parsed from an existing .proto
@@ -88,7 +90,7 @@ public class GpbFieldDMO  extends GpbElementDMO  implements DmcNamedObjectIF, Se
         return(rc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:750)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:751)
     public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
@@ -97,13 +99,13 @@ public class GpbFieldDMO  extends GpbElementDMO  implements DmcNamedObjectIF, Se
         return(null);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:767)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
     public DmcAttribute<?> getObjectNameAttribute(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         return(name);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:774)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:775)
     public boolean equals(Object obj){
         if (obj instanceof GpbFieldDMO){
             return( getObjectName().equals( ((GpbFieldDMO) obj).getObjectName()) );
@@ -111,7 +113,7 @@ public class GpbFieldDMO  extends GpbElementDMO  implements DmcNamedObjectIF, Se
         return(false);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:782)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:783)
     public int hashCode(){
         DefinitionName objn = getObjectName();
         if (objn == null)
@@ -245,6 +247,56 @@ public class GpbFieldDMO  extends GpbElementDMO  implements DmcNamedObjectIF, Se
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
     public void remDescription(){
          rem(MetaDMSAG.__description);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public DefinitionName getName(){
+        DmcTypeDefinitionNameSV attr = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets name to the specified value.
+     * @param value DefinitionName
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setName(DefinitionName value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__name);
+        if (attr == null)
+            attr = new DmcTypeDefinitionNameSV(MetaDMSAG.__name);
+        
+        try{
+            attr.set(value);
+            set(MetaDMSAG.__name,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets name to the specified value.
+     * @param value A value compatible with DmcTypeDefinitionNameSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setName(Object value) throws DmcValueException {
+        DmcTypeDefinitionNameSV attr  = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
+        if (attr == null)
+            attr = new DmcTypeDefinitionNameSV(MetaDMSAG.__name);
+        
+        attr.set(value);
+        set(MetaDMSAG.__name,attr);
+    }
+
+    /**
+     * Removes the name attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remName(){
+         rem(MetaDMSAG.__name);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:655)

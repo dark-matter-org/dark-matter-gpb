@@ -34,6 +34,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;                    //
 import org.dmd.gpb.shared.generated.types.DmcTypeGpbMainElementREFMV;         // Reference type - (GenUtility.java:300)
 import org.dmd.gpb.shared.generated.types.GpbMainElementREF;                  // Helper class - (GenUtility.java:335)
 
+// Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
  * The GpbProtoFile is used to represent a single .proto file. It may be
  * parsed\n from an existing .proto file by the GpbDotProtoParser utility.
@@ -87,7 +88,7 @@ public class GpbProtoFileDMO  extends GpbDefinitionDMO  implements DmcNamedObjec
         return(rc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:750)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:751)
     public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
@@ -96,13 +97,13 @@ public class GpbProtoFileDMO  extends GpbDefinitionDMO  implements DmcNamedObjec
         return(null);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:767)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
     public DmcAttribute<?> getObjectNameAttribute(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         return(name);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:774)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:775)
     public boolean equals(Object obj){
         if (obj instanceof GpbProtoFileDMO){
             return( getObjectName().equals( ((GpbProtoFileDMO) obj).getObjectName()) );
@@ -110,7 +111,7 @@ public class GpbProtoFileDMO  extends GpbDefinitionDMO  implements DmcNamedObjec
         return(false);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:782)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:783)
     public int hashCode(){
         DefinitionName objn = getObjectName();
         if (objn == null)

@@ -86,13 +86,13 @@ dmdID			21
 type			String
 description 	The package associated with a .proto file.
 
-AttributeDefinition
-name			elements
-dmdID			22
-type			GpbElement
-valueType		MULTI
-description		The elements attribute indicates a list of GpbElements that comprise a GpbMessage, this
- includes GpbFields, GpbEnums and other GpbMessages.
+//AttributeDefinition
+//name			elements
+//dmdID			22
+//type			GpbElement
+//valueType		MULTI
+//description		The elements attribute indicates a list of GpbElements that comprise a GpbMessage, this
+// includes GpbFields, GpbEnums and other GpbMessages.
 
 AttributeDefinition
 name			mainElements
@@ -105,9 +105,9 @@ description		The mainElements attribute indicates a list of GpbMainElements that
 AttributeDefinition
 name			field
 dmdID			24
-type			GpbField
+type			GpbFieldIndicator
 valueType		MULTI
-description		A field in a GpbMessage.
+description		A set of fields in a GpbMessage.
 
 AttributeDefinition
 name			tag

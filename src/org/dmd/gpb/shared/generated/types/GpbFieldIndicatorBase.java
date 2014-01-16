@@ -33,12 +33,14 @@ import org.dmd.dmc.DmcValueExceptionSet;                                      //
 import org.dmd.dmc.types.IntegerVar;                                          // To support getNextField() - (ComplexTypeFormatter.java:73)
 import org.dmd.dms.generated.enums.DataTypeEnum;                              // For fake DmcAttributeInfo - (ComplexTypeFormatter.java:74)
 import org.dmd.dms.generated.enums.ValueTypeEnum;                             // For fake DmcAttributeInfo - (ComplexTypeFormatter.java:75)
-import org.dmd.dms.generated.types.DmcTypeIntegerSTATIC;                      // Standard type - (ComplexTypeFormatter.java:494)
-import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                       // Standard type - (ComplexTypeFormatter.java:494)
-import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;                      // Primitive type - (ComplexTypeFormatter.java:476)
-import org.dmd.gpb.shared.generated.types.DmcTypeFieldRuleEnumSTATIC;         // Internally generated type - (ComplexTypeFormatter.java:494)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbElementREFSTATIC;         // Internally generated type - (ComplexTypeFormatter.java:494)
-import org.dmd.gpb.shared.generated.types.GpbElementREF;                      // Object reference - (ComplexTypeFormatter.java:457)
+import org.dmd.dms.generated.types.DmcTypeIntegerSTATIC;                      // Standard type - (ComplexTypeFormatter.java:616)
+import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                       // Standard type - (ComplexTypeFormatter.java:616)
+import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;                      // Primitive type - (ComplexTypeFormatter.java:598)
+import org.dmd.gpb.shared.generated.enums.OptionEnum;                         // Primitive type - (ComplexTypeFormatter.java:598)
+import org.dmd.gpb.shared.generated.types.DmcTypeFieldRuleEnumSTATIC;         // Internally generated type - (ComplexTypeFormatter.java:616)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbElementREFSTATIC;         // Internally generated type - (ComplexTypeFormatter.java:616)
+import org.dmd.gpb.shared.generated.types.DmcTypeOptionEnumSTATIC;            // Internally generated type - (ComplexTypeFormatter.java:616)
+import org.dmd.gpb.shared.generated.types.GpbElementREF;                      // Object reference - (ComplexTypeFormatter.java:579)
 
 
 
@@ -50,6 +52,9 @@ import org.dmd.gpb.shared.generated.types.GpbElementREF;                      //
  * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:113)
  */
 public class GpbFieldIndicatorBase implements Serializable {
+
+    // Some fields are optional - this many are mandatory
+    static int mandatoryFields = 3;
 
     // The field, enum or message referred to by this field indicator.
     GpbElementREF element;
@@ -66,10 +71,15 @@ public class GpbFieldIndicatorBase implements Serializable {
 
     final static DmcAttributeInfo fieldRuleAI = new DmcAttributeInfo("fieldRule",0,"FieldRuleEnum",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
 
-    // Additional info to be supplied for the field definition. For example the default value for a field [default = 10] or [packed = true] for a repeated field.
-    String info;
+    // Indicates if there's a DEFAULT value or if the PACKED option is to be used for repeated fields.
+    OptionEnum option;
 
-    final static DmcAttributeInfo infoAI = new DmcAttributeInfo("info",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+    final static DmcAttributeInfo optionAI = new DmcAttributeInfo("option",0,"OptionEnum",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+
+    // The default value - this is limited to a single, space delimited token at the moment.
+    String defaultValue;
+
+    final static DmcAttributeInfo defaultValueAI = new DmcAttributeInfo("defaultValue",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
 
     /**
      * Default constructor.
@@ -84,18 +94,20 @@ public class GpbFieldIndicatorBase implements Serializable {
         element = original.element;
         fieldTag = original.fieldTag;
         fieldRule = original.fieldRule;
-        info = original.info;
+        option = original.option;
+        defaultValue = original.defaultValue;
     }
 
     /**
      * All fields constructor.
      * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:140)
      */
-    public GpbFieldIndicatorBase(GpbElementREF f1, Integer f2, FieldRuleEnum f3, String f4) throws DmcValueException {
+    public GpbFieldIndicatorBase(GpbElementREF f1, Integer f2, FieldRuleEnum f3, OptionEnum f4, String f5) throws DmcValueException {
         element = DmcTypeGpbElementREFSTATIC.instance.typeCheck(f1);
         fieldTag = DmcTypeIntegerSTATIC.instance.typeCheck(f2);
         fieldRule = DmcTypeFieldRuleEnumSTATIC.instance.typeCheck(f3);
-        info = DmcTypeStringSTATIC.instance.typeCheck(f4);
+        option = DmcTypeOptionEnumSTATIC.instance.typeCheck(f4);
+        defaultValue = DmcTypeStringSTATIC.instance.typeCheck(f5);
     }
 
     /**
@@ -104,42 +116,51 @@ public class GpbFieldIndicatorBase implements Serializable {
      */
     public GpbFieldIndicatorBase(String initialInput) throws DmcValueException {
         IntegerVar seppos = new IntegerVar(-1);
+        Object rc = null;
         String input = initialInput.trim();
         input = input.replaceAll("(\\s)+", " ");
-        element = DmcTypeGpbElementREFSTATIC.instance.typeCheck(getNextField(input,seppos,"element",false));
-        fieldTag = DmcTypeIntegerSTATIC.instance.typeCheck(getNextField(input,seppos,"fieldTag",false));
-        fieldRule = DmcTypeFieldRuleEnumSTATIC.instance.typeCheck(getNextField(input,seppos,"fieldRule",false));
-        info = DmcTypeStringSTATIC.instance.typeCheck(getNextField(input,seppos,"info",true));
+        if ((rc = getNextField(input,seppos,"element",1,false)) != null)
+            element = DmcTypeGpbElementREFSTATIC.instance.typeCheck(rc);
+        if ((rc = getNextField(input,seppos,"fieldTag",2,false)) != null)
+            fieldTag = DmcTypeIntegerSTATIC.instance.typeCheck(rc);
+        if ((rc = getNextField(input,seppos,"fieldRule",3,false)) != null)
+            fieldRule = DmcTypeFieldRuleEnumSTATIC.instance.typeCheck(rc);
+        if ((rc = getNextField(input,seppos,"option",4,false)) != null)
+            option = DmcTypeOptionEnumSTATIC.instance.typeCheck(rc);
+        if ((rc = getNextField(input,seppos,"defaultValue",5,true)) != null)
+            defaultValue = DmcTypeStringSTATIC.instance.typeCheck(rc);
     }
 
     /**
      * Serialization.
-     * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:212)
+     * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:225)
      */
     public void serializeIt(DmcOutputStreamIF dos) throws Exception {
         DmcTypeGpbElementREFSTATIC.instance.serializeValue(dos, element);
         DmcTypeIntegerSTATIC.instance.serializeValue(dos, fieldTag);
         DmcTypeFieldRuleEnumSTATIC.instance.serializeValue(dos, fieldRule);
-        DmcTypeStringSTATIC.instance.serializeValue(dos, info);
+        DmcTypeOptionEnumSTATIC.instance.serializeValue(dos, option);
+        DmcTypeStringSTATIC.instance.serializeValue(dos, defaultValue);
     }
 
     /**
      * Deserialization.
-     * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:229)
+     * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:242)
      */
     public void deserializeIt(DmcInputStreamIF dis) throws Exception {
         element = DmcTypeGpbElementREFSTATIC.instance.deserializeValue(dis);
         fieldTag = DmcTypeIntegerSTATIC.instance.deserializeValue(dis);
         fieldRule = DmcTypeFieldRuleEnumSTATIC.instance.deserializeValue(dis);
-        info = DmcTypeStringSTATIC.instance.deserializeValue(dis);
+        option = DmcTypeOptionEnumSTATIC.instance.deserializeValue(dis);
+        defaultValue = DmcTypeStringSTATIC.instance.deserializeValue(dis);
     }
 
     /**
      * String form.
-     * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:246)
+     * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:259)
      */
     public String toString(){
-        return(element.toString() + " " + fieldTag.toString() + " " + fieldRule.toString() + " " + info.toString());
+        return(element.toString() + " " + fieldTag.toString() + " " + fieldRule.toString() + " " + option.toString() + " " + defaultValue.toString());
     }
 
     public GpbElementREF getElement(){
@@ -154,12 +175,16 @@ public class GpbFieldIndicatorBase implements Serializable {
         return(fieldRule);
     }
 
-    public String getInfo(){
-        return(info);
+    public OptionEnum getOption(){
+        return(option);
+    }
+
+    public String getDefaultValue(){
+        return(defaultValue);
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
-    // org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:278)
+    // org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:291)
     public void resolve(DmcNameResolverIF resolver, String attrName) throws DmcValueException {
         DmcNamedObjectIF  obj = null;
 
@@ -175,7 +200,7 @@ public class GpbFieldIndicatorBase implements Serializable {
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
-    // org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:300)
+    // org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:313)
     public void resolve(DmcNameResolverWithClashSupportIF resolver, DmcObject object, DmcNameClashResolverIF ncr, DmcAttributeInfo ai) throws DmcValueException, DmcValueExceptionSet {
         DmcNamedObjectIF  obj = null;
 
@@ -190,13 +215,16 @@ public class GpbFieldIndicatorBase implements Serializable {
         
     }
 
-    // org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:321)
-    String getNextField(String input, IntegerVar seppos, String fn, boolean last) throws DmcValueException {
+    // org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:334)
+    String getNextField(String input, IntegerVar seppos, String fn, int fnum, boolean last) throws DmcValueException {
     	   String rc = null;
     	   int start = seppos.intValue();
 
-    	   if ( (start+1) >= input.length())
-    		   throw (new DmcValueException("Missing value for field: " + fn + " in complex type: GpbFieldIndicatorBase"));
+    	   if ( (start+1) >= input.length()){
+            if (fnum > mandatoryFields)
+                return(null);
+            throw (new DmcValueException("Missing value for field: " + fn + " in complex type: GpbFieldIndicatorBase"));
+        }
 
     	   if (last){
     	       rc = input.substring(start+1);
@@ -208,8 +236,11 @@ public class GpbFieldIndicatorBase implements Serializable {
     	       else
     		       pos = input.indexOf(" ");
 
-    	       if (pos == -1)
-    		       throw (new DmcValueException("Missing value for field: " + fn + " in complex type: GpbFieldIndicatorBase"));
+    	       if (pos == -1){
+                rc = input.substring(start+1);
+                seppos.set(input.length());
+                return(rc);
+            }
 
     		   while(pos < (input.length()-1)){
     		       if ( input.charAt(pos+1) == ' ')

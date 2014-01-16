@@ -31,6 +31,7 @@ import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required 
 import org.dmd.dms.types.EnumValue;                                 // Primitive type and !auxiliary class - (GenUtility.java:271)
 import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;          // Base class - (GenUtility.java:355)
 
+// Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
  * The GpbEnum allows for the definition of enumerations. One thing to be
  * aware\n of with enums is that, if you're generating C++, the names of enum
@@ -99,7 +100,7 @@ public class GpbEnumDMO  extends GpbMainElementDMO  implements DmcNamedObjectIF,
         return(rc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:750)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:751)
     public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
@@ -108,13 +109,13 @@ public class GpbEnumDMO  extends GpbMainElementDMO  implements DmcNamedObjectIF,
         return(null);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:767)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
     public DmcAttribute<?> getObjectNameAttribute(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         return(name);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:774)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:775)
     public boolean equals(Object obj){
         if (obj instanceof GpbEnumDMO){
             return( getObjectName().equals( ((GpbEnumDMO) obj).getObjectName()) );
@@ -122,7 +123,7 @@ public class GpbEnumDMO  extends GpbMainElementDMO  implements DmcNamedObjectIF,
         return(false);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:782)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:783)
     public int hashCode(){
         DefinitionName objn = getObjectName();
         if (objn == null)

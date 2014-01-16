@@ -32,6 +32,7 @@ import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoMainElementDMO;        
 import org.dmd.gpb.tools.protoparsing.generated.types.DmcTypeProtoElementREFMV;         // Reference type - (GenUtility.java:300)
 import org.dmd.gpb.tools.protoparsing.generated.types.ProtoElementREF;                  // Helper class - (GenUtility.java:335)
 
+// Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
  * <P>
  * Generated from the dmdproto schema at version unknown
@@ -83,7 +84,7 @@ public class ProtoMessageDMO  extends ProtoMainElementDMO  implements DmcNamedOb
         return(rc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:750)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:751)
     public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
@@ -92,13 +93,13 @@ public class ProtoMessageDMO  extends ProtoMainElementDMO  implements DmcNamedOb
         return(null);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:767)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
     public DmcAttribute<?> getObjectNameAttribute(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         return(name);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:774)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:775)
     public boolean equals(Object obj){
         if (obj instanceof ProtoMessageDMO){
             return( getObjectName().equals( ((ProtoMessageDMO) obj).getObjectName()) );
@@ -106,7 +107,7 @@ public class ProtoMessageDMO  extends ProtoMainElementDMO  implements DmcNamedOb
         return(false);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:782)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:783)
     public int hashCode(){
         DefinitionName objn = getObjectName();
         if (objn == null)

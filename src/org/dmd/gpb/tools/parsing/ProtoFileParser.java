@@ -224,7 +224,7 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
         	}
         	if (line.equals(RCURLY_STR))
         		break;
-        	message.addElements(parseElement(in,fn,line));
+//        	message.addElements(parseElement(in,fn,line));
         }        
 		
 		return(message);

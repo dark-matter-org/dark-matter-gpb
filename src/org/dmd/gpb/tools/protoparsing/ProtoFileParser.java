@@ -1,5 +1,6 @@
 package org.dmd.gpb.tools.protoparsing;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.LineNumberReader;
@@ -101,6 +102,11 @@ public class ProtoFileParser {
 	void init(String fn) throws DmcValueException {
 		protoFile	= new ProtoFile();
 		protoFile.setFile(fn);
+		
+		int lastSlash = fn.lastIndexOf(File.separatorChar);
+		int lastDot = fn.lastIndexOf(".");
+		protoFile.setName(fn.substring(lastSlash+1, lastDot));
+		
 		state		= State.PACKAGE;
 	}
 

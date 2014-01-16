@@ -22,6 +22,7 @@ must			name
 must			dotName
 must			definedInGpbModule
 may				hint
+may				description
 description		The GpbDefinition provides a common base for all dark-matter
  Google Protocol Buffer (GPB) definitions. 
 
@@ -101,6 +102,7 @@ dmdID			7
 useWrapperType	EXTENDED
 derivedFrom     GpbElement
 isNamedBy       name
+must			name
 must			gpbType
 may             description
 //may			    fieldRule
@@ -131,7 +133,7 @@ useWrapperType	EXTENDED
 derivedFrom     GpbMainElement
 isNamedBy       name
 must			name
-must			elements
+may				field
 
 //ClassDefinition
 //name         	GpbModule
