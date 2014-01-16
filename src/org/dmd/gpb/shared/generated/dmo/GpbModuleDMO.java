@@ -123,6 +123,133 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      */
     @SuppressWarnings("unchecked")
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1112)
+    public Iterator<String> getLoadSchemaClass(){
+        DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__loadSchemaClass);
+        if (attr == null)
+            return( ((List<String>) Collections.EMPTY_LIST).iterator());
+
+        return(attr.getMV());
+    }
+
+    /**
+     * @return The nth String value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1124)
+    public String getNthLoadSchemaClass(int i){
+        DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__loadSchemaClass);
+        if (attr == null)
+            return(null);
+
+        return(attr.getMVnth(i));
+    }
+
+    /**
+     * Adds another loadSchemaClass to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1138)
+    public DmcAttribute<?> addLoadSchemaClass(String value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__loadSchemaClass);
+        if (attr == null)
+            attr = new DmcTypeStringMV(MetaDMSAG.__loadSchemaClass);
+        
+        try{
+            setLastValue(attr.add(value));
+            add(MetaDMSAG.__loadSchemaClass,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
+        }
+        return(attr);
+    }
+
+    /**
+     * Returns true if we contain a valued keyed by the specified String.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1213)
+    public boolean loadSchemaClassContains(String value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__loadSchemaClass);
+        if (attr == null)
+            return(false);
+        return(attr.contains(value));
+    }
+
+    /**
+     * Adds another loadSchemaClass value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
+    public DmcAttribute<?> addLoadSchemaClass(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(MetaDMSAG.__loadSchemaClass);
+        if (attr == null)
+            attr = new DmcTypeStringMV(MetaDMSAG.__loadSchemaClass);
+        
+        setLastValue(attr.add(value));
+        add(MetaDMSAG.__loadSchemaClass,attr);
+        return(attr);
+    }
+
+    /**
+     * Returns the number of values in loadSchemaClass
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
+    public int getLoadSchemaClassSize(){
+        DmcAttribute<?> attr = get(MetaDMSAG.__loadSchemaClass);
+        if (attr == null){
+            if (MetaDMSAG.__loadSchemaClass.indexSize == 0)
+                return(0);
+            else
+                return(MetaDMSAG.__loadSchemaClass.indexSize);
+        }
+        return(attr.getMVSize());
+    }
+
+    /**
+     * Deletes a loadSchemaClass value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1320)
+    public DmcAttribute<?> delLoadSchemaClass(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(MetaDMSAG.__loadSchemaClass);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeStringMV(MetaDMSAG.__loadSchemaClass), value);
+        else
+            attr = del(MetaDMSAG.__loadSchemaClass, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Deletes a loadSchemaClass from the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1336)
+    public DmcAttribute<?> delLoadSchemaClass(String value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__loadSchemaClass);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeStringMV(MetaDMSAG.__loadSchemaClass), value);
+        else
+            attr = del(MetaDMSAG.__loadSchemaClass, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Removes the loadSchemaClass attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
+    public void remLoadSchemaClass(){
+         rem(MetaDMSAG.__loadSchemaClass);
+    }
+
+    /**
+     * @return An Iterator of String objects.
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1112)
     public Iterator<String> getDescription(){
         DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__description);
         if (attr == null)

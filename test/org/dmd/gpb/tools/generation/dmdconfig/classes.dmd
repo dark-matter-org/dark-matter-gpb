@@ -1,0 +1,9 @@
+ClassDefinition
+name			GpbTestAuxInfo
+classType   	AUXILIARY
+dmdID			1
+//useWrapperType	EXTENDED
+may				otherInfo
+may				units
+description		This class is used to test adding auxiliary information to GPB definitions.
+

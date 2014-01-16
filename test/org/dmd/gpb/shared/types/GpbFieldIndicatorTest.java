@@ -42,6 +42,7 @@ public class GpbFieldIndicatorTest {
 	@Test
 	public void missingDefault() throws DmcValueException{
 		try{
+			@SuppressWarnings("unused")
 			GpbFieldIndicator fi = new GpbFieldIndicator("element 5 OPTIONAL  DEFAULT");
 			
 			assertTrue("Should have thrown an exception", false);

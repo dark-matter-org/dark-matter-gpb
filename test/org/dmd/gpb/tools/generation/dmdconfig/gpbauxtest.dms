@@ -1,0 +1,11 @@
+SchemaDefinition
+name       			gpbauxtest
+schemaBaseID		-479000
+schemaIDRange		50
+defFiles    		attributes.dmd
+defFiles    		classes.dmd
+generatedFileHeader LGPL.txt
+schemaPackage 		org.dmd.gpb.tools.generation
+dmwPackage 			org.dmd.gpb.tools.generation
+description 		This is a schema used to test the augmentation of GPB definitions with additional information. 
+
