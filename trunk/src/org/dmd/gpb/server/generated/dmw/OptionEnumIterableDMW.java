@@ -13,21 +13,31 @@
 //	You should have received a copy of the GNU Lesser General Public License along
 //	with this program; if not, see <http://www.gnu.org/licenses/lgpl.html>.
 //	---------------------------------------------------------------------------
-package org.dmd.gpb.server.generated.dsd;
+package org.dmd.gpb.server.generated.dmw;
 
-// Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGeneratorInterface(DSDArtifactFormatter.java:823)
-import org.dmd.gpb.server.extended.GpbModule;                               // The base module for generation - (DSDArtifactFormatter.java:818)
-import org.dmd.gpb.server.generated.dsd.GpbModuleDefinitionManager;         // All parsed definition - (DSDArtifactFormatter.java:821)
-import org.dmd.util.parsing.ConfigLocation;                                 // Where the config was loaded from - (DSDArtifactFormatter.java:820)
+import java.util.Iterator;
 
+import org.dmd.dmw.DmwMVIterator;
+import org.dmd.gpb.shared.generated.enums.OptionEnum;
+/**
+ * The OptionEnumIterableDMW wraps an Iterator for a particular type and makes 
+ * it Iterable.
+ * <P>
+ * This code was auto-generated and shouldn't be altered manually!
+ * Generated from: org.dmd.dms.util.GenUtility.dumpIterable(GenUtility.java:1755)
+ *    Called from: org.dmd.dmg.generators.DMWGenerator.createTypeIterables(DMWGenerator.java:122)
+ */
+public class OptionEnumIterableDMW extends DmwMVIterator<OptionEnum> {
 
-public interface GpbModuleGeneratorInterface {
+    public final static OptionEnumIterableDMW emptyList = new OptionEnumIterableDMW();
 
-    public void generate(GpbModule module, ConfigLocation location, GpbModuleDefinitionManager definitions);
+    protected OptionEnumIterableDMW(){
+        super();
+    }
 
+    public OptionEnumIterableDMW(Iterator<OptionEnum> it){
+        super(it);
+    }
 
 }
-
-
 

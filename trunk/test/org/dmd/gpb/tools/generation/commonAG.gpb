@@ -74,66 +74,66 @@ field pep_idx        11 OPTIONAL
 
 GpbEnum
 name        CgcmMoType
-enumValue   NODE                   1 Add a description
-enumValue   CARD                   2 Add a description
-enumValue   WIFI_ITF               3 Add a description
-enumValue   MESH_ITF               4 Add a description
-enumValue   WLAN                   5 Add a description
-enumValue   MGMT_ITF               6 Add a description
-enumValue   TUNNEL_ENGINE          7 Add a description
-enumValue   TUNNEL                 8 Add a description
-enumValue   P2PMOBILITY            9 Add a description
-enumValue   CABLE_MODEM            10 Add a description
-enumValue   ETH_ITF                11 Add a description
-enumValue   IP_ROUTE               12 Add a description
-enumValue   SCAN_LIST              13 Add a description
-enumValue   CABLE_MODEM_DS_CH      14 Add a description
-enumValue   CABLE_MODEM_US_CH      15 Add a description
-enumValue   WLAN_RADIUS_CONFIG     16 Add a description
-enumValue   PEP_RADIUS_CONFIG      17 Add a description
-enumValue   PEP_CONFIG             18 Add a description
-enumValue   NAT_CONFIG             19 Add a description
-enumValue   SNMP_CONFIG            20 Add a description
-enumValue   SECURITY_CONFIG        21 Add a description
-enumValue   EXTDC_CGCM_CONFIG      22 Add a description
+enumValue    1 NODE                   Add a description
+enumValue    2 CARD                   Add a description
+enumValue    3 WIFI_ITF               Add a description
+enumValue    4 MESH_ITF               Add a description
+enumValue    5 WLAN                   Add a description
+enumValue    6 MGMT_ITF               Add a description
+enumValue    7 TUNNEL_ENGINE          Add a description
+enumValue    8 TUNNEL                 Add a description
+enumValue    9 P2PMOBILITY            Add a description
+enumValue   10 CABLE_MODEM            Add a description
+enumValue   11 ETH_ITF                Add a description
+enumValue   12 IP_ROUTE               Add a description
+enumValue   13 SCAN_LIST              Add a description
+enumValue   14 CABLE_MODEM_DS_CH      Add a description
+enumValue   15 CABLE_MODEM_US_CH      Add a description
+enumValue   16 WLAN_RADIUS_CONFIG     Add a description
+enumValue   17 PEP_RADIUS_CONFIG      Add a description
+enumValue   18 PEP_CONFIG             Add a description
+enumValue   19 NAT_CONFIG             Add a description
+enumValue   20 SNMP_CONFIG            Add a description
+enumValue   21 SECURITY_CONFIG        Add a description
+enumValue   22 EXTDC_CGCM_CONFIG      Add a description
 description Add a description
 
 GpbEnum
 name        CgcmHealthLevelType
-enumValue   HL_BACKHAUL_LINK_RSSI              1 Add a description
-enumValue   HL_BACKHAUL_TX_ERROR_RATE          2 Add a description
-enumValue   HL_NOISE_FLOOR                     3 Add a description
-enumValue   HL_ACCESS_TX_ERROR_RATE            4 Add a description
-enumValue   HL_ACCESS_RX_ERROR_RATE            5 Add a description
-enumValue   HL_ACCESS_DUPLICATE_FRAME_RATE     6 Add a description
-enumValue   HL_ACCESS_LOW_MODULATION_RATE      7 Add a description
-enumValue   HL_CHANNEL_BUSYNESS_NOISE          8 Add a description
-enumValue   HL_CHANNEL_BUSYNESS_NON_LOCAL      9 Add a description
-enumValue   HL_WMOS                            10 Add a description
+enumValue    1 HL_BACKHAUL_LINK_RSSI              Add a description
+enumValue    2 HL_BACKHAUL_TX_ERROR_RATE          Add a description
+enumValue    3 HL_NOISE_FLOOR                     Add a description
+enumValue    4 HL_ACCESS_TX_ERROR_RATE            Add a description
+enumValue    5 HL_ACCESS_RX_ERROR_RATE            Add a description
+enumValue    6 HL_ACCESS_DUPLICATE_FRAME_RATE     Add a description
+enumValue    7 HL_ACCESS_LOW_MODULATION_RATE      Add a description
+enumValue    8 HL_CHANNEL_BUSYNESS_NOISE          Add a description
+enumValue    9 HL_CHANNEL_BUSYNESS_NON_LOCAL      Add a description
+enumValue   10 HL_WMOS                            Add a description
 description Add a description
 
 GpbEnum
 name        CgcmStationaryBackhaulEndpointMode
-enumValue   UNKNOWN_SBEPM     0 Add a description
-enumValue   P2P               1 Add a description
-enumValue   STAR_BS           2 Add a description
-enumValue   STAR_SS           3 Add a description
-enumValue   MESH              4 Add a description
+enumValue    0 UNKNOWN_SBEPM     Add a description
+enumValue    1 P2P               Add a description
+enumValue    2 STAR_BS           Add a description
+enumValue    3 STAR_SS           Add a description
+enumValue    4 MESH              Add a description
 description Add a description
 
 GpbEnum
 name        ControlState
-enumValue   CONTROL_ENABLED               0 Add a description
-enumValue   CONTROL_DISABLED              1 Add a description
-enumValue   CONTROL_PARTIALLY_ENABLED     2 Add a description
-enumValue   CONTROL_STATE_UNKNOWN         3 Add a description
+enumValue    0 CONTROL_ENABLED               Add a description
+enumValue    1 CONTROL_DISABLED              Add a description
+enumValue    2 CONTROL_PARTIALLY_ENABLED     Add a description
+enumValue    3 CONTROL_STATE_UNKNOWN         Add a description
 description Add a description
 
 GpbEnum
 name        MacAddressFormat
-enumValue   MAC_ADDR_FORMAT_UNKNOWN       0 Add a description
-enumValue   MAC_ADDR_FORMAT_ASCII_HEX     1 Add a description
-enumValue   MAC_ADDR_FORMAT_BINARY        2 Add a description
+enumValue    0 MAC_ADDR_FORMAT_UNKNOWN       Add a description
+enumValue    1 MAC_ADDR_FORMAT_ASCII_HEX     Add a description
+enumValue    2 MAC_ADDR_FORMAT_BINARY        Add a description
 description Add a description
 
 GpbProtoFile
@@ -144,4 +144,5 @@ mainElements   CgcmHealthLevelType
 mainElements   CgcmStationaryBackhaulEndpointMode
 mainElements   ControlState
 mainElements   MacAddressFormat
-package        org.dmd.gpb.tools.generation
+name           common
+package        org.dmd.gpb.tools.parsing.subfolder1

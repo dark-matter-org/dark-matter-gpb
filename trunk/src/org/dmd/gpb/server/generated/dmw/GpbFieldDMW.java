@@ -245,5 +245,36 @@ abstract public class GpbFieldDMW extends GpbElement implements DmcDefinitionIF,
         ((GpbFieldDMO) core).remGpbType();
     }
 
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public DefinitionName getName(){
+        return(((GpbFieldDMO) core).getName());
+    }
+
+    /**
+     * Sets name to the specified value.
+     * @param value A value compatible with DmcTypeDefinitionName
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setName(Object value) throws DmcValueException {
+        ((GpbFieldDMO) core).setName(value);
+    }
+
+    /**
+     * Sets name to the specified value.
+     * @param value DefinitionName
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setName(DefinitionName value){
+        ((GpbFieldDMO) core).setName(value);
+    }
+
+    /**
+     * Removes the name attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remName(){
+        ((GpbFieldDMO) core).remName();
+    }
+
 
 }

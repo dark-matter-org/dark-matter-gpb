@@ -70,6 +70,7 @@ public class ProtoEnum extends ProtoEnumDMW {
 		int longestName = getLongestValueNameLength();
 		int npadding = longestName + 4;
 		PrintfFormat 	nformat 	= new PrintfFormat("%-" + npadding + "s");
+		PrintfFormat 	iformat 	= new PrintfFormat("%2d");
 
 		sb.append("GpbEnum\n");
 		sb.append("name        " + getName() + "\n");
@@ -77,7 +78,7 @@ public class ProtoEnum extends ProtoEnumDMW {
 		EnumValueIterableDMW values = this.getEnumValueIterable();
 		while(values.hasNext()){
 			EnumValue value = values.getNext();
-			sb.append("enumValue   " + nformat.sprintf(value.getName()) + " " + value.getId());
+			sb.append("enumValue   " + iformat.sprintf(value.getId()) + " " + nformat.sprintf(value.getName()));
 			if (value.getDescription() != null)
 				sb.append(" " + value.getDescription());
 			sb.append("\n");

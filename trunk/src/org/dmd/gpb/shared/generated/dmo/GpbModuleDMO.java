@@ -34,6 +34,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                    // Type
 import org.dmd.gpb.shared.generated.types.DmcTypeGpbModuleREFMV;         // Reference type - (GenUtility.java:300)
 import org.dmd.gpb.shared.generated.types.GpbModuleREF;                  // Helper class - (GenUtility.java:335)
 
+// Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
  * <P>
  * Generated from the dmdgpb schema at version 0.1
@@ -85,7 +86,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
         return(rc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:750)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:751)
     public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
@@ -94,13 +95,13 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
         return(null);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:767)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
     public DmcAttribute<?> getObjectNameAttribute(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         return(name);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:774)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:775)
     public boolean equals(Object obj){
         if (obj instanceof GpbModuleDMO){
             return( getObjectName().equals( ((GpbModuleDMO) obj).getObjectName()) );
@@ -108,7 +109,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
         return(false);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:782)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:783)
     public int hashCode(){
         DefinitionName objn = getObjectName();
         if (objn == null)

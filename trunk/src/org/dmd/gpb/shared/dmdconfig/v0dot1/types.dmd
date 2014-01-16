@@ -20,3 +20,9 @@ primitiveType	org.dmd.gpb.shared.types.GpbFieldIndicator
 description		The GpbFieldIndicator type is used to represent the specification
  of elements that comprise a GpbMessage. The elements may refer to GpbFields, GpbEnums
  or other GpbMessages.
+
+EnumDefinition
+name            OptionEnum
+enumValue		0 DEFAULT Indicates that a field has a default value.
+enumValue		1 PACKED  Indicates that the more efficient packed representation of numeric data should be used for REPEATED fields.
+description		The OptionEnum indicates whether a field has a defult value or uses a packed representation.

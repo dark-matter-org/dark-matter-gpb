@@ -2,20 +2,20 @@ package org.dmd.gpb.server.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:442)
-import java.util.ArrayList;                                            // To support getMVCopy() - (BaseDMWGenerator.java:1181)
-import org.dmd.dmc.*;                                                  // If any attributes - (BaseDMWGenerator.java:1087)
-import org.dmd.dmc.definitions.DmcDefinitionIF;                        // The object is a domain specific definition - (BaseDMWGenerator.java:411)
-import org.dmd.dmc.types.DefinitionName;                               // Is named by - (BaseDMWGenerator.java:1062)
-import org.dmd.dms.ClassDefinition;                                    // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                            // Required for MODREC constructor - (BaseDMWGenerator.java:1072)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                  // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
-import org.dmd.gpb.server.extended.GpbElement;                         // Is reference type - (BaseDMWGenerator.java:1107)
-import org.dmd.gpb.server.extended.GpbMainElement;                     // Derived class - (BaseDMWGenerator.java:1248)
-import org.dmd.gpb.server.extended.GpbMessage;                         // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
-import org.dmd.gpb.server.generated.dmw.GpbElementIterableDMW;         // For multi-valued GpbElement - (BaseDMWGenerator.java:1709)
-import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                   // Attribute elements from the dmdgpb schema - (BaseDMWGenerator.java:897)
-import org.dmd.gpb.shared.generated.dmo.GpbElementDMO;                 // For multi-valued adds of GpbElement - (BaseDMWGenerator.java:1767)
-import org.dmd.gpb.shared.generated.dmo.GpbMessageDMO;                 // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
+import java.util.ArrayList;                                                   // Support for MULTI attribute - (BaseDMWGenerator.java:2226)
+import java.util.Iterator;                                                    // Support copy of MV objects - (BaseDMWGenerator.java:2240)
+import org.dmd.dmc.*;                                                         // If any attributes - (BaseDMWGenerator.java:1087)
+import org.dmd.dmc.definitions.DmcDefinitionIF;                               // The object is a domain specific definition - (BaseDMWGenerator.java:411)
+import org.dmd.dmc.types.DefinitionName;                                      // Is named by - (BaseDMWGenerator.java:1062)
+import org.dmd.dms.ClassDefinition;                                           // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                                   // Required for MODREC constructor - (BaseDMWGenerator.java:1072)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                         // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
+import org.dmd.gpb.server.extended.GpbMainElement;                            // Derived class - (BaseDMWGenerator.java:1248)
+import org.dmd.gpb.server.extended.GpbMessage;                                // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
+import org.dmd.gpb.server.generated.dmw.GpbFieldIndicatorIterableDMW;         // For multi-valued GpbFieldIndicator - (BaseDMWGenerator.java:2103)
+import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                          // Attribute field from the dmdgpb schema - (BaseDMWGenerator.java:897)
+import org.dmd.gpb.shared.generated.dmo.GpbMessageDMO;                        // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
+import org.dmd.gpb.shared.types.GpbFieldIndicator;                            // Primitive type - (BaseDMWGenerator.java:1150)
 
 
 
@@ -87,76 +87,85 @@ abstract public class GpbMessageDMW extends GpbMainElement implements DmcDefinit
     }
 
     /**
-     * @return The number of GpbElement items.
+     * @return The number of GpbFieldIndicator items.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1671)
-    public int getElementsSize(){
-        return(((GpbMessageDMO) core).getElementsSize());
+    public int getFieldSize(){
+        return(((GpbMessageDMO) core).getFieldSize());
     }
 
     /**
-     * @return true if there are no GpbElementDMO items.
+     * @return true if there are no GpbFieldIndicatorDMO items.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1679)
-    public boolean getElementsIsEmpty(){
-        if (((GpbMessageDMO) core).getElementsSize() == 0)
+    public boolean getFieldIsEmpty(){
+        if (((GpbMessageDMO) core).getFieldSize() == 0)
             return(true);
         return(false);
     }
 
     /**
-     * @return true if there are any GpbElementDMO items.
+     * @return true if there are any GpbFieldIndicatorDMO items.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1689)
-    public boolean getElementsHasValue(){
-        if (((GpbMessageDMO) core).getElementsSize() == 0)
+    public boolean getFieldHasValue(){
+        if (((GpbMessageDMO) core).getFieldSize() == 0)
             return(false);
         return(true);
     }
 
     /**
-     * @return An Iterator of GpbElementDMO objects.
+     * @return An Iterator of GpbFieldIndicator objects.
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1716)
-    public GpbElementIterableDMW getElementsIterable(){
-        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__elements);
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2107)
+    public GpbFieldIndicatorIterableDMW getFieldIterable(){
+        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__field);
         if (attr == null)
-            return(GpbElementIterableDMW.emptyList);
+            return(GpbFieldIndicatorIterableDMW.emptyList);
         
-        return(new GpbElementIterableDMW(((GpbMessageDMO) core).getElements()));
+        return(new GpbFieldIndicatorIterableDMW(((GpbMessageDMO) core).getField()));
     }
 
     /**
-     * Adds another elements value.
-     * @param value A value compatible with GpbElement
+     * Adds another field value.
+     * @param value A value compatible with GpbFieldIndicator
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1773)
-    public DmcAttribute<?> addElements(GpbElement value){
-        DmcAttribute<?> attr = ((GpbMessageDMO) core).addElements(((GpbElementDMO)value.getDmcObject()));
-        return(attr);
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2133)
+    public void addField(Object value) throws DmcValueException {
+        ((GpbMessageDMO) core).addField(value);
     }
 
     /**
-     * Deletes a elements value.
-     * @param value The GpbElement to be deleted from set of attribute values.
+     * Adds another field value.
+     * @param value A value compatible with GpbFieldIndicator
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1823)
-    public void delElements(GpbElement value){
-        ((GpbMessageDMO) core).delElements(value.getDMO());
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2143)
+    public void addField(GpbFieldIndicator value){
+        ((GpbMessageDMO) core).addField(value);
     }
 
     /**
-     * @return A COPY of the collection of GpbElement objects.
+     * Returns true if the collection contains the field value.
+     * @param value A value compatible with GpbFieldIndicator
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1887)
-    public ArrayList<GpbElement> getElementsCopy(){
-        DmcAttribute<?> attr = ((GpbMessageDMO) core).get(DmdgpbDMSAG.__elements);
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2200)
+    public boolean fieldContains(GpbFieldIndicator value){
+        return(((GpbMessageDMO) core).fieldContains(value));
+    }
+
+    /**
+     * @return A COPY of the collection of GpbFieldIndicator objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2244)
+    @SuppressWarnings("unchecked")
+    public ArrayList<GpbFieldIndicator> getFieldCopy(){
+        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__field);
         if (attr == null)
-            return(new ArrayList<GpbElement>());
+            return(new ArrayList<GpbFieldIndicator>());
         
-        ArrayList<GpbElement> rc = new ArrayList<GpbElement>(attr.getMVSize());
+        ArrayList<GpbFieldIndicator> rc = new ArrayList<GpbFieldIndicator>(attr.getMVSize());
         
-        GpbElementIterableDMW it = getElementsIterable();
+        Iterator<GpbFieldIndicator> it = (Iterator<GpbFieldIndicator>) attr.getMV();
         while(it.hasNext()){
             rc.add(it.next());
         }
@@ -165,11 +174,29 @@ abstract public class GpbMessageDMW extends GpbMainElement implements DmcDefinit
     }
 
     /**
-     * Removes the elements attribute value.
+     * Deletes a field value.
+     * @param value The GpbFieldIndicator to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2271)
+    public void delField(Object value) throws DmcValueException {
+        ((GpbMessageDMO) core).delField(value);
+    }
+
+    /**
+     * Deletes a field value.
+     * @param value The GpbFieldIndicator to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2280)
+    public void delField(GpbFieldIndicator value){
+        ((GpbMessageDMO) core).delField(value);
+    }
+
+    /**
+     * Removes the field attribute value.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2292)
-    public void remElements(){
-        ((GpbMessageDMO) core).remElements();
+    public void remField(){
+        ((GpbMessageDMO) core).remField();
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)

@@ -37,6 +37,7 @@ import org.dmd.gpb.tools.protoparsing.generated.types.DmcTypeProtoMainElementREF
 import org.dmd.gpb.tools.protoparsing.generated.types.ProtoFieldREF;                        // Helper class - (GenUtility.java:335)
 import org.dmd.gpb.tools.protoparsing.generated.types.ProtoMainElementREF;                  // Helper class - (GenUtility.java:335)
 
+// Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
  * The ProtoFile is used to represent a single .proto file. It may be
  * parsed\n from an existing .proto file by the GpbDotProtoParser utility.
@@ -90,7 +91,7 @@ public class ProtoFileDMO  extends ProtoDefinitionDMO  implements DmcNamedObject
         return(rc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:750)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:751)
     public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
@@ -99,13 +100,13 @@ public class ProtoFileDMO  extends ProtoDefinitionDMO  implements DmcNamedObject
         return(null);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:767)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
     public DmcAttribute<?> getObjectNameAttribute(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         return(name);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:774)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:775)
     public boolean equals(Object obj){
         if (obj instanceof ProtoFileDMO){
             return( getObjectName().equals( ((ProtoFileDMO) obj).getObjectName()) );
@@ -113,7 +114,7 @@ public class ProtoFileDMO  extends ProtoDefinitionDMO  implements DmcNamedObject
         return(false);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:782)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:783)
     public int hashCode(){
         DefinitionName objn = getObjectName();
         if (objn == null)

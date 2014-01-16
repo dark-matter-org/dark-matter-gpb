@@ -17,6 +17,7 @@ package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
 import java.io.Serializable;                                        // Always required - (GenUtility.java:224)
+import java.util.*;                                                 // Always required if we have any MV attributes - (GenUtility.java:221)
 import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:376)
 import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:375)
 import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:241)
@@ -26,8 +27,10 @@ import org.dmd.dms.generated.dmo.DSDefinitionDMO;                   // Base clas
 import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Attribute from meta schema - (GenUtility.java:194)
 import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:328)
 import org.dmd.dms.generated.types.DmcTypeDotNameSV;                // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeStringMV;                 // Required type - (GenUtility.java:328)
 import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:328)
 
+// Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
  * The GpbDefinition provides a common base for all dark-matter\n Google
  * Protocol Buffer (GPB) definitions.
@@ -54,7 +57,7 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
         super(oc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:750)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:751)
     public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
@@ -63,13 +66,13 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
         return(null);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:767)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
     public DmcAttribute<?> getObjectNameAttribute(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         return(name);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:774)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:775)
     public boolean equals(Object obj){
         if (obj instanceof GpbDefinitionDMO){
             return( getObjectName().equals( ((GpbDefinitionDMO) obj).getObjectName()) );
@@ -77,7 +80,7 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
         return(false);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:782)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:783)
     public int hashCode(){
         DefinitionName objn = getObjectName();
         if (objn == null)
@@ -134,6 +137,133 @@ abstract public class GpbDefinitionDMO  extends DSDefinitionDMO  implements DmcN
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remHint(){
          rem(DmdgpbDMSAG.__hint);
+    }
+
+    /**
+     * @return An Iterator of String objects.
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1112)
+    public Iterator<String> getDescription(){
+        DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__description);
+        if (attr == null)
+            return( ((List<String>) Collections.EMPTY_LIST).iterator());
+
+        return(attr.getMV());
+    }
+
+    /**
+     * @return The nth String value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1124)
+    public String getNthDescription(int i){
+        DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__description);
+        if (attr == null)
+            return(null);
+
+        return(attr.getMVnth(i));
+    }
+
+    /**
+     * Adds another description to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1138)
+    public DmcAttribute<?> addDescription(String value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        if (attr == null)
+            attr = new DmcTypeStringMV(MetaDMSAG.__description);
+        
+        try{
+            setLastValue(attr.add(value));
+            add(MetaDMSAG.__description,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
+        }
+        return(attr);
+    }
+
+    /**
+     * Returns true if we contain a valued keyed by the specified String.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1213)
+    public boolean descriptionContains(String value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        if (attr == null)
+            return(false);
+        return(attr.contains(value));
+    }
+
+    /**
+     * Adds another description value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
+    public DmcAttribute<?> addDescription(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        if (attr == null)
+            attr = new DmcTypeStringMV(MetaDMSAG.__description);
+        
+        setLastValue(attr.add(value));
+        add(MetaDMSAG.__description,attr);
+        return(attr);
+    }
+
+    /**
+     * Returns the number of values in description
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
+    public int getDescriptionSize(){
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        if (attr == null){
+            if (MetaDMSAG.__description.indexSize == 0)
+                return(0);
+            else
+                return(MetaDMSAG.__description.indexSize);
+        }
+        return(attr.getMVSize());
+    }
+
+    /**
+     * Deletes a description value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1320)
+    public DmcAttribute<?> delDescription(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeStringMV(MetaDMSAG.__description), value);
+        else
+            attr = del(MetaDMSAG.__description, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Deletes a description from the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1336)
+    public DmcAttribute<?> delDescription(String value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__description);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeStringMV(MetaDMSAG.__description), value);
+        else
+            attr = del(MetaDMSAG.__description, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Removes the description attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
+    public void remDescription(){
+         rem(MetaDMSAG.__description);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)

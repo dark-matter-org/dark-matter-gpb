@@ -37,8 +37,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcAttributeInfo __definedInGpbModule = new DmcAttributeInfo("dmdgpb", "definedInGpbModule", -477992, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __dependsOnGpbModule = new DmcAttributeInfo("dmdgpb", "dependsOnGpbModule", -477980, "GpbModule", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __dmType = new DmcAttributeInfo("dmdgpb", "dmType", -477998, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __elements = new DmcAttributeInfo("dmdgpb", "elements", -477978, "GpbElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __field = new DmcAttributeInfo("dmdgpb", "field", -477976, "GpbField", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __field = new DmcAttributeInfo("dmdgpb", "field", -477976, "GpbFieldIndicator", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __fieldRule = new DmcAttributeInfo("dmdgpb", "fieldRule", -477974, "FieldRuleEnum", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __gpbType = new DmcAttributeInfo("dmdgpb", "gpbType", -477994, "GpbType", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __hint = new DmcAttributeInfo("dmdgpb", "hint", -477997, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
@@ -66,6 +65,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcTypeInfo __type_GpbModule = new DmcTypeInfo("GpbModule", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_GpbProtoFile = new DmcTypeInfo("GpbProtoFile", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_GpbType = new DmcTypeInfo("GpbType", OriginalTypeEnum.REFERENCE);
+    public final static DmcTypeInfo __type_OptionEnum = new DmcTypeInfo("OptionEnum", OriginalTypeEnum.ENUM);
 
     // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:217)
     public final static DmcClassInfo __GpbDefinition = new DmcClassInfo("GpbDefinition","org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO", -477998, ClassTypeEnum.ABSTRACT, DataTypeEnum.PERSISTENT,MetaDMSAG.__DSDefinition,MetaDMSAG.__name);
@@ -122,6 +122,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         __GpbDefinition.addMust(MetaDMSAG.__dotName);
         __GpbDefinition.addMust(__definedInGpbModule);
         __GpbDefinition.addMay(__hint);
+        __GpbDefinition.addMay(MetaDMSAG.__description);
 
         __GpbType.addMay(MetaDMSAG.__internallyGenerated);
         __GpbType.addMay(MetaDMSAG.__isEnumType);
@@ -140,11 +141,12 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         __GpbEnum.addMust(MetaDMSAG.__enumValue);
         __GpbEnum.addMay(__defaultValue);
 
+        __GpbField.addMust(MetaDMSAG.__name);
         __GpbField.addMust(__gpbType);
         __GpbField.addMay(MetaDMSAG.__description);
 
         __GpbMessage.addMust(MetaDMSAG.__name);
-        __GpbMessage.addMust(__elements);
+        __GpbMessage.addMay(__field);
 
         __GpbArtifact.addMust(MetaDMSAG.__name);
         __GpbArtifact.addMust(__package);

@@ -32,6 +32,7 @@ import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoElementDMO;            
 import org.dmd.gpb.tools.protoparsing.generated.enums.ProtoFieldRuleEnum;                  // Primitive type and !auxiliary class - (GenUtility.java:271)
 import org.dmd.gpb.tools.protoparsing.generated.types.DmcTypeProtoFieldRuleEnumSV;         // Required type - (GenUtility.java:328)
 
+// Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
  * The ProtoField class represents a single field of a .proto message.
  * <P>
@@ -84,7 +85,7 @@ public class ProtoFieldDMO  extends ProtoElementDMO  implements DmcNamedObjectIF
         return(rc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:750)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:751)
     public DefinitionName getObjectName(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         if (name != null)
@@ -93,13 +94,13 @@ public class ProtoFieldDMO  extends ProtoElementDMO  implements DmcNamedObjectIF
         return(null);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:767)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:768)
     public DmcAttribute<?> getObjectNameAttribute(){
         DmcAttribute<?> name = get(MetaDMSAG.__name);
         return(name);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:774)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:775)
     public boolean equals(Object obj){
         if (obj instanceof ProtoFieldDMO){
             return( getObjectName().equals( ((ProtoFieldDMO) obj).getObjectName()) );
@@ -107,7 +108,7 @@ public class ProtoFieldDMO  extends ProtoElementDMO  implements DmcNamedObjectIF
         return(false);
     }
 
-    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:782)
+    // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:783)
     public int hashCode(){
         DefinitionName objn = getObjectName();
         if (objn == null)
