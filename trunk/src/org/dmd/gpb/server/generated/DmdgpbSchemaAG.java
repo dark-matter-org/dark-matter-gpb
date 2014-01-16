@@ -318,12 +318,13 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleOBJ.setInternallyGenerated("true");
             _GpbModuleOBJ.setClassType("STRUCTURAL");
             _GpbModuleOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/module.dmd");
-            _GpbModuleOBJ.setLineNumber("10");
+            _GpbModuleOBJ.setLineNumber("11");
             _GpbModuleOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbModuleOBJ.setIsNamedBy("meta.name");
             _GpbModuleOBJ.setUseWrapperType("EXTENDED");
             _GpbModuleOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbModuleREF");
             _GpbModuleOBJ.setDmwIteratorClass("GpbModuleIterableDMW");
+            _GpbModuleOBJ.addMay("meta.loadSchemaClass");
             _GpbModuleOBJ.addMay("meta.description");
             _GpbModuleOBJ.addMay("meta.defFiles");
             _GpbModuleOBJ.addMay("dmdgpb.package");
@@ -676,6 +677,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleDSD = new DSDefinitionModule(_GpbModuleDSDOBJ);
             _GpbModuleDSDOBJ.setName("GpbModule");
             _GpbModuleDSDOBJ.setDmdID("1");
+            _GpbModuleDSDOBJ.setSupportDynamicSchemaLoading("true");
             _GpbModuleDSDOBJ.setModuleClassName("GpbModule");
             _GpbModuleDSDOBJ.setFileExtension("gpb");
             _GpbModuleDSDOBJ.setDefinedInModuleAttribute("dmdgpb.definedInGpbModule");
@@ -683,7 +685,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleDSDOBJ.setModuleDependenceAttribute("dmdgpb.dependsOnGpbModule");
             _GpbModuleDSDOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/module.dmd");
             _GpbModuleDSDOBJ.setBaseDefinition("dmdgpb.GpbDefinition");
-            _GpbModuleDSDOBJ.setLineNumber("10");
+            _GpbModuleDSDOBJ.setLineNumber("11");
             _GpbModuleDSDOBJ.addMay("dmdgpb.package");
             _GpbModuleDSD.setDefinedIn(this);
             addDsdModuleList(_GpbModuleDSD);

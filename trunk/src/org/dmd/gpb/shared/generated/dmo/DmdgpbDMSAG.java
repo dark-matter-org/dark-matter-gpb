@@ -159,6 +159,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         __GpbProtoFile.addMay(__mainElements);
 
         __GpbModule.addMust(MetaDMSAG.__name);
+        __GpbModule.addMay(MetaDMSAG.__loadSchemaClass);
         __GpbModule.addMay(MetaDMSAG.__description);
         __GpbModule.addMay(MetaDMSAG.__defFiles);
         __GpbModule.addMay(__package);

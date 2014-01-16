@@ -413,6 +413,119 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         ((GpbModuleDMO) core).remDescription();
     }
 
+    /**
+     * @return The number of String items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1671)
+    public int getLoadSchemaClassSize(){
+        return(((GpbModuleDMO) core).getLoadSchemaClassSize());
+    }
+
+    /**
+     * @return true if there are no StringDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1679)
+    public boolean getLoadSchemaClassIsEmpty(){
+        if (((GpbModuleDMO) core).getLoadSchemaClassSize() == 0)
+            return(true);
+        return(false);
+    }
+
+    /**
+     * @return true if there are any StringDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1689)
+    public boolean getLoadSchemaClassHasValue(){
+        if (((GpbModuleDMO) core).getLoadSchemaClassSize() == 0)
+            return(false);
+        return(true);
+    }
+
+    /**
+     * @return An Iterator of String objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2107)
+    public StringIterableDMW getLoadSchemaClassIterable(){
+        DmcAttribute<?> attr = core.get(MetaDMSAG.__loadSchemaClass);
+        if (attr == null)
+            return(StringIterableDMW.emptyList);
+        
+        return(new StringIterableDMW(((GpbModuleDMO) core).getLoadSchemaClass()));
+    }
+
+    /**
+     * Adds another loadSchemaClass value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2133)
+    public void addLoadSchemaClass(Object value) throws DmcValueException {
+        ((GpbModuleDMO) core).addLoadSchemaClass(value);
+    }
+
+    /**
+     * Adds another loadSchemaClass value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2143)
+    public void addLoadSchemaClass(String value){
+        ((GpbModuleDMO) core).addLoadSchemaClass(value);
+    }
+
+    /**
+     * Returns true if the collection contains the loadSchemaClass value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2200)
+    public boolean loadSchemaClassContains(String value){
+        return(((GpbModuleDMO) core).loadSchemaClassContains(value));
+    }
+
+    /**
+     * @return A COPY of the collection of String objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2244)
+    @SuppressWarnings("unchecked")
+    public ArrayList<String> getLoadSchemaClassCopy(){
+        DmcAttribute<?> attr = core.get(MetaDMSAG.__loadSchemaClass);
+        if (attr == null)
+            return(new ArrayList<String>());
+        
+        ArrayList<String> rc = new ArrayList<String>(attr.getMVSize());
+        
+        Iterator<String> it = (Iterator<String>) attr.getMV();
+        while(it.hasNext()){
+            rc.add(it.next());
+        }
+        
+        return(rc);
+    }
+
+    /**
+     * Deletes a loadSchemaClass value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2271)
+    public void delLoadSchemaClass(Object value) throws DmcValueException {
+        ((GpbModuleDMO) core).delLoadSchemaClass(value);
+    }
+
+    /**
+     * Deletes a loadSchemaClass value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2280)
+    public void delLoadSchemaClass(String value){
+        ((GpbModuleDMO) core).delLoadSchemaClass(value);
+    }
+
+    /**
+     * Removes the loadSchemaClass attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2292)
+    public void remLoadSchemaClass(){
+        ((GpbModuleDMO) core).remLoadSchemaClass();
+    }
+
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
     public DefinitionName getName(){
         return(((GpbModuleDMO) core).getName());

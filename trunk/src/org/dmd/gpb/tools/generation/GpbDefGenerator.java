@@ -7,7 +7,7 @@ import org.dmd.gpb.server.generated.dsd.GpbModuleDefinitionManager;
 import org.dmd.gpb.server.generated.dsd.GpbModuleGenUtility;
 import org.dmd.util.parsing.ConfigLocation;
 
-public class GpbDefGenerator extends GpbModuleGenUtility{
+public class GpbDefGenerator extends GpbModuleGenUtility {
 
 	// Where we report progress
 	PrintStream	progress;
