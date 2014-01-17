@@ -1,13 +1,13 @@
-GpbModule 		GpbTestAuxInfo
+GpbModule
 loadSchemaClass	org.dmd.gpb.tools.generation.generated.GpbauxtestSchemaAG
 description   	Add a description
 name          	common
-units			microfleems
 
-GpbField
+GpbField GpbTestAuxInfo
 name        mo_type
 gpbType     CgcmMoType
 description Add a description
+units			microfleems
 
 GpbField
 name        slot
