@@ -20,6 +20,7 @@ import java.io.Serializable;                                                  //
 import java.util.*;                                                           // Always required if we have any MV attributes - (GenUtility.java:221)
 import org.dmd.dmc.DmcAttribute;                                              // Named object - (GenUtility.java:376)
 import org.dmd.dmc.DmcNamedObjectIF;                                          // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcOmni;                                                   // Lazy resolution - (GenUtility.java:320)
 import org.dmd.dmc.DmcSliceInfo;                                              // Required for object slicing - (GenUtility.java:229)
 import org.dmd.dmc.DmcValueException;                                         // Any attributes - (GenUtility.java:241)
 import org.dmd.dmc.types.DefinitionName;                                      // Naming attribute type - (GenUtility.java:370)
@@ -28,6 +29,8 @@ import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;                   //
 import org.dmd.dms.generated.types.DmcTypeModifierMV;                         // Required for MODREC constructor - (GenUtility.java:227)
 import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;                    // Base class - (GenUtility.java:355)
 import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldIndicatorMV;         // Required type - (GenUtility.java:328)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbMainElementREFMV;         // Reference type - (GenUtility.java:300)
+import org.dmd.gpb.shared.generated.types.GpbMainElementREF;                  // Helper class - (GenUtility.java:335)
 import org.dmd.gpb.shared.types.GpbFieldIndicator;                            // Primitive type and !auxiliary class - (GenUtility.java:271)
 
 // Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
@@ -239,6 +242,113 @@ public class GpbMessageDMO  extends GpbMainElementDMO  implements DmcNamedObject
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
     public void remField(){
          rem(DmdgpbDMSAG.__field);
+    }
+
+    /**
+     * @return An Iterator of GpbMainElementDMO objects.
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:970)
+    public Iterator<GpbMainElementREF> getEmbed(){
+        DmcTypeGpbMainElementREFMV attr = (DmcTypeGpbMainElementREFMV) get(DmdgpbDMSAG.__embed);
+        if (attr == null)
+            return( ((List<GpbMainElementREF>) Collections.EMPTY_LIST).iterator() );
+
+        if (DmcOmni.instance().lazyResolution()){
+            if (attr.doLazyResolution(this)){
+                rem(attr.getAttributeInfo());
+                return( ((List<GpbMainElementREF>) Collections.EMPTY_LIST).iterator() );
+            }
+        }
+
+        return(attr.getMV());
+    }
+
+    /**
+     * @return An Iterator of GpbMainElementREFs without attempting lazy resolution (if it's turned on).
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:990)
+    public Iterator<GpbMainElementREF> getEmbedREFs(){
+        DmcTypeGpbMainElementREFMV attr = (DmcTypeGpbMainElementREFMV) get(DmdgpbDMSAG.__embed);
+        if (attr == null)
+            return( ((List<GpbMainElementREF>) Collections.EMPTY_LIST).iterator() );
+
+        return(attr.getMV());
+    }
+
+    /**
+     * Adds another embed to the specified value.
+     * @param value GpbMainElement
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1004)
+    public DmcAttribute<?> addEmbed(GpbMainElementDMO value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__embed);
+        if (attr == null)
+            attr = new DmcTypeGpbMainElementREFMV(DmdgpbDMSAG.__embed);
+        
+        try{
+            setLastValue(attr.add(value));
+            add(DmdgpbDMSAG.__embed,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
+        }
+        return(attr);
+    }
+
+    /**
+     * Adds another embed value.
+     * @param value A value compatible with GpbMainElement
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
+    public DmcAttribute<?> addEmbed(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__embed);
+        if (attr == null)
+            attr = new DmcTypeGpbMainElementREFMV(DmdgpbDMSAG.__embed);
+        
+        setLastValue(attr.add(value));
+        add(DmdgpbDMSAG.__embed,attr);
+        return(attr);
+    }
+
+    /**
+     * Returns the number of values in embed
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
+    public int getEmbedSize(){
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__embed);
+        if (attr == null){
+            if (DmdgpbDMSAG.__embed.indexSize == 0)
+                return(0);
+            else
+                return(DmdgpbDMSAG.__embed.indexSize);
+        }
+        return(attr.getMVSize());
+    }
+
+    /**
+     * Deletes a embed value.
+     * @param value The GpbMainElement to be deleted from set of attribute values.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1301)
+    public DmcAttribute<?> delEmbed(Object value){
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__embed);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeGpbMainElementREFMV(DmdgpbDMSAG.__embed), value);
+        else
+            attr = del(DmdgpbDMSAG.__embed, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Removes the embed attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
+    public void remEmbed(){
+         rem(DmdgpbDMSAG.__embed);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)

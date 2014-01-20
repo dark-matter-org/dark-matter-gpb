@@ -144,6 +144,13 @@ type			String
 valueType		MULTI
 description 	An import associated with a .proto file.
 
+AttributeDefinition
+name			embed
+dmdID			28
+type			GpbMainElement
+valueType		MULTI
+description 	The embed attribute is used to indicate that an existing GpbEnum or GpbMessage
+ description should be embedded directly within a message definition.
  
  
  

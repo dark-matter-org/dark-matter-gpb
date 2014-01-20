@@ -378,6 +378,9 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 		while((line = getNextLine()) != null){
 			tokens = classifier.classify(line, true);
 			
+			if (line.startsWith("//"))
+				continue;
+			
 			if (tokens.size() >= 4){
 				EnumValue ev = new EnumValue();
 				String descr = "Add a description";

@@ -24,7 +24,9 @@ public class GpbDefGeneratorTest {
 	
 	@Test
 	public void testHelp() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException {
-		String[] args = { "-h" };
+		String[] args = { "-h", 
+				"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base"
+				};
 		
 		GpbDefGenerator generator = new GpbDefGenerator(System.out);
 		
@@ -35,7 +37,7 @@ public class GpbDefGeneratorTest {
 	@Test
 	public void basicTest() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException {
 		String[] args = { "-workspace", workingDir,
-							"-srcdir", "test/org/dmd/gpb/tools/generation"
+							"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base"
 				};
 		
 		GpbDefGenerator generator = new GpbDefGenerator(System.out);
