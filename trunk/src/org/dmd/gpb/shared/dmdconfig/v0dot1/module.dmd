@@ -7,5 +7,6 @@ moduleDependenceAttribute 	dependsOnGpbModule
 baseDefinition				GpbDefinition
 definedInModuleAttribute	definedInGpbModule
 supportDynamicSchemaLoading	true
+requiredBaseModule			gpbbase
 may							package
 

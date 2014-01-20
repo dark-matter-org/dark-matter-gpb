@@ -134,6 +134,7 @@ derivedFrom     GpbMainElement
 isNamedBy       name
 must			name
 may				field
+may				embed
 
 //ClassDefinition
 //name         	GpbModule
