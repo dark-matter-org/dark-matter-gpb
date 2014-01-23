@@ -12,6 +12,11 @@ public class ProtoGenerator extends GpbModuleGenUtility {
 		
 		
 	}
+
+	@Override
+	public void displayHelp() {
+		System.out.println("\nHELP!\n\n");
+	}
 	
 	
 
