@@ -10,7 +10,7 @@ import org.dmd.util.exceptions.ResultException;
 import org.junit.Before;
 import org.junit.Test;
 
-public class GpbDefGeneratorTest {
+public class GpbDefGeneratorHelpTest {
 
 	static String workingDir;
 
@@ -19,6 +19,19 @@ public class GpbDefGeneratorTest {
         File curr = new File(".");
         workingDir = curr.getCanonicalPath();
 		System.out.println("*** Generator running from: " + workingDir);
+	}
+
+	
+	@Test
+	public void testHelp() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException {
+		String[] args = { "-h", 
+				"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base"
+				};
+		
+		GpbDefGenerator generator = new GpbDefGenerator(System.out);
+		
+		generator.run(args);
+		
 	}
 	
 	@Test

@@ -25,4 +25,10 @@ public class GpbDefGenerator extends GpbModuleGenUtility {
 		System.out.println("HERE");
 		
 	}
+
+	@Override
+	public void displayHelp() {
+		System.out.println("\nHELP!\n\n");
+		
+	}
 }

@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dms.ClassDefinition;
+import org.dmd.dms.generated.dmw.StringIterableDMW;
 import org.dmd.gpb.server.extended.GpbModule;
 import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFileDMO;
 import org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoFieldIterableDMW;
@@ -32,10 +33,20 @@ public class ProtoFile extends ProtoFileDMW {
 		
 		FileUpdateManager.instance().generationStarting();
 		
-		ManagedFileWriter out = FileUpdateManager.instance().getWriter(dn, modName + "AG.gpb");
+		ManagedFileWriter out = FileUpdateManager.instance().getWriter(dn, modName + ".gpb");
 		
 		GpbModule module = new GpbModule();
 		module.setName(modName);
+		if (getImportHasValue()){
+			StringIterableDMW it = getImportIterable();
+			while(it.hasNext()){
+				String s = it.getNext();
+				int dot = s.lastIndexOf(".");
+				
+				// Note: we add this to the DMO so that we can use the reference
+				module.getDMO().addDependsOnGpbModule(s.substring(0, dot));
+			}
+		}
 		module.addDescription("Add a description");
 				
 		out.write(module.toOIF() + "\n");
