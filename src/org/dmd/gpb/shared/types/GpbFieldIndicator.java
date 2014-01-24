@@ -43,5 +43,20 @@ public class GpbFieldIndicator extends GpbFieldIndicatorBase implements Serializ
     		}
     	}
     }
+    
+    @Override
+    public String toString(){
+    	StringBuffer sb = new StringBuffer();
+    	
+    	sb.append(getElement().toString() + " " + getFieldTag().toString() + " " + getFieldRule().toString());
+    	
+    	if (getOption() != null)
+    		sb.append(" " + getOption());
+    	
+    	if (getDefaultValue() != null)
+    		sb.append(" " + getDefaultValue());
+    	
+    	return(sb.toString());
+    }
 
 }

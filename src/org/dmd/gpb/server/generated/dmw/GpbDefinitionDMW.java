@@ -13,7 +13,9 @@ import org.dmd.dms.DSDefinition;                                  // Derived cla
 import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Attribute description from the meta schema - (BaseDMWGenerator.java:897)
 import org.dmd.dms.generated.dmw.StringIterableDMW;               // For multi-valued String - (BaseDMWGenerator.java:2103)
 import org.dmd.gpb.server.extended.GpbDefinition;                 // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
+import org.dmd.gpb.server.extended.GpbModule;                     // Is reference type - (BaseDMWGenerator.java:1107)
 import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Abstract class - (BaseDMWGenerator.java:1230)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;           // Is reference type REF - (BaseDMWGenerator.java:1115)
 
 
 
@@ -63,26 +65,36 @@ abstract public class GpbDefinitionDMW extends DSDefinition implements DmcDefini
         return(false);
     }
 
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
-    public String getDefinedInGpbModule(){
-        return(((GpbDefinitionDMO) core).getDefinedInGpbModule());
+    /**
+     * @return A GpbModule object.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1434)
+    public GpbModule getDefinedInGpbModule(){
+        GpbModuleREF ref = ((GpbDefinitionDMO) core).getDefinedInGpbModule();
+        if (ref == null)
+            return(null);
+        
+        if (ref.getObject() == null)
+            return(null);
+        
+        return((GpbModule)ref.getObject().getContainer());
     }
 
     /**
-     * Sets definedInGpbModule to the specified value.
-     * @param value A value compatible with DmcTypeString
+     * Sets the definedInGpbModule to the specified value.
+     * @param value A value compatible with GpbModuleREF
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1519)
+    public void setDefinedInGpbModule(GpbModule value) {
+        ((GpbDefinitionDMO) core).setDefinedInGpbModule(value.getDMO());
+    }
+
+    /**
+     * Sets the definedInGpbModule to the specified value.
+     * @param value A value compatible with GpbModuleREF
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1528)
     public void setDefinedInGpbModule(Object value) throws DmcValueException {
-        ((GpbDefinitionDMO) core).setDefinedInGpbModule(value);
-    }
-
-    /**
-     * Sets definedInGpbModule to the specified value.
-     * @param value String
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
-    public void setDefinedInGpbModule(String value){
         ((GpbDefinitionDMO) core).setDefinedInGpbModule(value);
     }
 
