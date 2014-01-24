@@ -5,6 +5,7 @@ import java.util.Iterator;
 import org.dmd.dms.generated.dmw.EnumValueIterableDMW;
 import org.dmd.dms.types.EnumValue;
 import org.dmd.gpb.server.generated.dmw.GpbEnumDMW;
+import org.dmd.gpb.server.generated.dsd.GpbModuleDefinitionManager;
 import org.dmd.util.exceptions.DebugInfo;
 import org.dmd.util.formatting.PrintfFormat;
 
@@ -79,5 +80,11 @@ public class GpbEnum extends GpbEnumDMW {
 		
 		return(sb.toString());
 //		return(this.toOIF());
+	}
+
+	@Override
+	public void createTypeIfRequired(GpbModuleDefinitionManager definitions) {
+		DebugInfo.debug(this.toOIF());
+		
 	}
 }

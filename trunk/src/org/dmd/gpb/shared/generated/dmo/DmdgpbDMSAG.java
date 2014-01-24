@@ -34,7 +34,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcAttributeInfo __basedOnEnum = new DmcAttributeInfo("dmdgpb", "basedOnEnum", -477988, "EnumDefinition", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __cplusplusType = new DmcAttributeInfo("dmdgpb", "cplusplusType", -477999, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __defaultValue = new DmcAttributeInfo("dmdgpb", "defaultValue", -477996, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __definedInGpbModule = new DmcAttributeInfo("dmdgpb", "definedInGpbModule", -477992, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __definedInGpbModule = new DmcAttributeInfo("dmdgpb", "definedInGpbModule", -477992, "GpbModule", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __dependsOnGpbModule = new DmcAttributeInfo("dmdgpb", "dependsOnGpbModule", -477980, "GpbModule", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __dmType = new DmcAttributeInfo("dmdgpb", "dmType", -477998, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __embed = new DmcAttributeInfo("dmdgpb", "embed", -477972, "GpbMainElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
@@ -50,7 +50,6 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcAttributeInfo __pythonType = new DmcAttributeInfo("dmdgpb", "pythonType", -477990, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __sizeInBytes = new DmcAttributeInfo("dmdgpb", "sizeInBytes", -477995, "Integer", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __tag = new DmcAttributeInfo("dmdgpb", "tag", -477975, "Integer", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __usesDefsFrom = new DmcAttributeInfo("dmdgpb", "usesDefsFrom", -477991, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
 
     // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:176)
     public final static DmcTypeInfo __type_FieldRuleEnum = new DmcTypeInfo("FieldRuleEnum", OriginalTypeEnum.ENUM);

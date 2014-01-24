@@ -22,15 +22,29 @@ public class GpbDefGeneratorTest {
 	}
 	
 	@Test
-	public void basicTest() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException {
+	public void singleConfigTest() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException {
 		String[] args = { "-workspace", workingDir,
-							"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base"
+							"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base",
+							"-target", "ewmnbi_stats"
 				};
+		
+		System.out.println("\n\nSingle config...\n");
 		
 		GpbDefGenerator generator = new GpbDefGenerator(System.out);
 		
 		generator.run(args);
-
+	}
+	
+	@Test
+	public void allConfigsTest() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException {
+		String[] args = { "-workspace", workingDir,
+							"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base"
+				};
 		
+		System.out.println("\n\nAll configs...\n");
+		
+		GpbDefGenerator generator = new GpbDefGenerator(System.out);
+		
+		generator.run(args);
 	}
 }

@@ -53,7 +53,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
     public static AttributeDefinition _gpbType;
     public static AttributeDefinition _isMessageType;
     public static AttributeDefinition _definedInGpbModule;
-    public static AttributeDefinition _usesDefsFrom;
     public static AttributeDefinition _pythonType;
     public static AttributeDefinition _javaType;
     public static AttributeDefinition _basedOnEnum;
@@ -435,28 +434,15 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
             AttributeDefinitionDMO _definedInGpbModuleOBJ = new AttributeDefinitionDMO();
             _definedInGpbModule = new AttributeDefinition(_definedInGpbModuleOBJ);
-            _definedInGpbModuleOBJ.setType("meta.String");
+            _definedInGpbModuleOBJ.setType("dmdgpb.GpbModule");
             _definedInGpbModuleOBJ.setName("definedInGpbModule");
             _definedInGpbModuleOBJ.setDmdID("-477992");
             _definedInGpbModuleOBJ.addDescription("Indicates the name of the GpbModule in which a definition is defined.");
             _definedInGpbModuleOBJ.setDotName("dmdgpb.definedInGpbModule.AttributeDefinition");
             _definedInGpbModule.setDefinedIn(this);
             _definedInGpbModuleOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _definedInGpbModuleOBJ.setLineNumber("50");
+            _definedInGpbModuleOBJ.setLineNumber("49");
             addAttributeDefList(_definedInGpbModule);
-
-// Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            AttributeDefinitionDMO _usesDefsFromOBJ = new AttributeDefinitionDMO();
-            _usesDefsFrom = new AttributeDefinition(_usesDefsFromOBJ);
-            _usesDefsFromOBJ.setType("meta.String");
-            _usesDefsFromOBJ.setName("usesDefsFrom");
-            _usesDefsFromOBJ.setDmdID("-477991");
-            _usesDefsFromOBJ.addDescription("Indicates the name of a GpbModule from which definitions are included.");
-            _usesDefsFromOBJ.setDotName("dmdgpb.usesDefsFrom.AttributeDefinition");
-            _usesDefsFrom.setDefinedIn(this);
-            _usesDefsFromOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _usesDefsFromOBJ.setLineNumber("57");
-            addAttributeDefList(_usesDefsFrom);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
             AttributeDefinitionDMO _pythonTypeOBJ = new AttributeDefinitionDMO();
@@ -468,7 +454,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _pythonTypeOBJ.setDotName("dmdgpb.pythonType.AttributeDefinition");
             _pythonType.setDefinedIn(this);
             _pythonTypeOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _pythonTypeOBJ.setLineNumber("63");
+            _pythonTypeOBJ.setLineNumber("62");
             addAttributeDefList(_pythonType);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -481,7 +467,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _javaTypeOBJ.setDotName("dmdgpb.javaType.AttributeDefinition");
             _javaType.setDefinedIn(this);
             _javaTypeOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _javaTypeOBJ.setLineNumber("69");
+            _javaTypeOBJ.setLineNumber("68");
             addAttributeDefList(_javaType);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -494,7 +480,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _basedOnEnumOBJ.setDotName("dmdgpb.basedOnEnum.AttributeDefinition");
             _basedOnEnum.setDefinedIn(this);
             _basedOnEnumOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _basedOnEnumOBJ.setLineNumber("75");
+            _basedOnEnumOBJ.setLineNumber("74");
             addAttributeDefList(_basedOnEnum);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -508,7 +494,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _dependsOnGpbModuleOBJ.setDotName("dmdgpb.dependsOnGpbModule.AttributeDefinition");
             _dependsOnGpbModule.setDefinedIn(this);
             _dependsOnGpbModuleOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _dependsOnGpbModuleOBJ.setLineNumber("82");
+            _dependsOnGpbModuleOBJ.setLineNumber("81");
             addAttributeDefList(_dependsOnGpbModule);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -521,7 +507,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _packageOBJ.setDotName("dmdgpb.package.AttributeDefinition");
             _package.setDefinedIn(this);
             _packageOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _packageOBJ.setLineNumber("88");
+            _packageOBJ.setLineNumber("87");
             addAttributeDefList(_package);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -535,7 +521,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _mainElementsOBJ.setDotName("dmdgpb.mainElements.AttributeDefinition");
             _mainElements.setDefinedIn(this);
             _mainElementsOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _mainElementsOBJ.setLineNumber("104");
+            _mainElementsOBJ.setLineNumber("103");
             addAttributeDefList(_mainElements);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -549,7 +535,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _fieldOBJ.setDotName("dmdgpb.field.AttributeDefinition");
             _field.setDefinedIn(this);
             _fieldOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _fieldOBJ.setLineNumber("111");
+            _fieldOBJ.setLineNumber("110");
             addAttributeDefList(_field);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -562,7 +548,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _tagOBJ.setDotName("dmdgpb.tag.AttributeDefinition");
             _tag.setDefinedIn(this);
             _tagOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _tagOBJ.setLineNumber("127");
+            _tagOBJ.setLineNumber("126");
             addAttributeDefList(_tag);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -575,7 +561,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _fieldRuleOBJ.setDotName("dmdgpb.fieldRule.AttributeDefinition");
             _fieldRule.setDefinedIn(this);
             _fieldRuleOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _fieldRuleOBJ.setLineNumber("139");
+            _fieldRuleOBJ.setLineNumber("138");
             addAttributeDefList(_fieldRule);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -589,7 +575,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _importOBJ.setDotName("dmdgpb.import.AttributeDefinition");
             _import.setDefinedIn(this);
             _importOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _importOBJ.setLineNumber("146");
+            _importOBJ.setLineNumber("145");
             addAttributeDefList(_import);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -603,7 +589,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _embedOBJ.setDotName("dmdgpb.embed.AttributeDefinition");
             _embed.setDefinedIn(this);
             _embedOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _embedOBJ.setLineNumber("154");
+            _embedOBJ.setLineNumber("153");
             addAttributeDefList(_embed);
 
     }

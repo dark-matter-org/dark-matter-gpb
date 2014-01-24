@@ -16,17 +16,21 @@
 package org.dmd.gpb.server.generated.dsd;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGlobalInterface(DSDArtifactFormatter.java:247)
-import java.util.Iterator;                                // To provide iterators over definitions - (DSDArtifactFormatter.java:244)
-import org.dmd.gpb.server.extended.GpbArtifact;           // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
-import org.dmd.gpb.server.extended.GpbDefinition;         // A definition from the GpbModule Module - (DSDefinitionModule.java:160)
-import org.dmd.gpb.server.extended.GpbElement;            // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
-import org.dmd.gpb.server.extended.GpbModule;             // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
-import org.dmd.gpb.server.extended.GpbProtoFile;          // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
-import org.dmd.gpb.server.extended.GpbType;               // A definition from the GpbModule Module - (DSDefinitionModule.java:171)
+// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGlobalInterface(DSDArtifactFormatter.java:253)
+import java.util.Iterator;                                 // To provide iterators over definitions - (DSDArtifactFormatter.java:250)
+import org.dmd.gpb.server.extended.GpbArtifact;            // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbDefinition;          // A definition from the GpbModule Module - (DSDefinitionModule.java:162)
+import org.dmd.gpb.server.extended.GpbElement;             // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbEnum;                // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbField;               // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbMainElement;         // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbMessage;             // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbModule;              // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbProtoFile;           // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbType;                // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
 
 
-// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGlobalInterface(DSDArtifactFormatter.java:251)
+// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGlobalInterface(DSDArtifactFormatter.java:257)
 /**
  * This interface is implemented by definition managers that store definitions from the GpbModule module.
  */
@@ -35,25 +39,41 @@ public interface GpbModuleGlobalInterface {
     public int getGpbDefinitionCount();
     public Iterator<GpbDefinition> getAllGpbDefinition();
 
-    public void addGpbType(GpbType def);
-    public int getGpbTypeCount();
-    public Iterator<GpbType> getAllGpbType();
+    public void addGpbArtifact(GpbArtifact def);
+    public int getGpbArtifactCount();
+    public Iterator<GpbArtifact> getAllGpbArtifact();
 
     public void addGpbElement(GpbElement def);
     public int getGpbElementCount();
     public Iterator<GpbElement> getAllGpbElement();
 
-    public void addGpbArtifact(GpbArtifact def);
-    public int getGpbArtifactCount();
-    public Iterator<GpbArtifact> getAllGpbArtifact();
+    public void addGpbEnum(GpbEnum def);
+    public int getGpbEnumCount();
+    public Iterator<GpbEnum> getAllGpbEnum();
+
+    public void addGpbField(GpbField def);
+    public int getGpbFieldCount();
+    public Iterator<GpbField> getAllGpbField();
+
+    public void addGpbMainElement(GpbMainElement def);
+    public int getGpbMainElementCount();
+    public Iterator<GpbMainElement> getAllGpbMainElement();
+
+    public void addGpbMessage(GpbMessage def);
+    public int getGpbMessageCount();
+    public Iterator<GpbMessage> getAllGpbMessage();
+
+    public void addGpbModule(GpbModule def);
+    public int getGpbModuleCount();
+    public Iterator<GpbModule> getAllGpbModule();
 
     public void addGpbProtoFile(GpbProtoFile def);
     public int getGpbProtoFileCount();
     public Iterator<GpbProtoFile> getAllGpbProtoFile();
 
-    public void addGpbModule(GpbModule def);
-    public int getGpbModuleCount();
-    public Iterator<GpbModule> getAllGpbModule();
+    public void addGpbType(GpbType def);
+    public int getGpbTypeCount();
+    public Iterator<GpbType> getAllGpbType();
 
 }
 

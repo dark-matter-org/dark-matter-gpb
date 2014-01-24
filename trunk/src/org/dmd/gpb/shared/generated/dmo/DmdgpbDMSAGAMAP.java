@@ -30,7 +30,6 @@ public class DmdgpbDMSAGAMAP {
         _SmAp.put(DmdgpbDMSAG.__pythonType.id,DmdgpbDMSAG.__pythonType);
         _SmAp.put(DmdgpbDMSAG.__sizeInBytes.id,DmdgpbDMSAG.__sizeInBytes);
         _SmAp.put(DmdgpbDMSAG.__tag.id,DmdgpbDMSAG.__tag);
-        _SmAp.put(DmdgpbDMSAG.__usesDefsFrom.id,DmdgpbDMSAG.__usesDefsFrom);
     }
 
 }
