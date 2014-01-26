@@ -1,6 +1,6 @@
 //	---------------------------------------------------------------------------
 //	dark-matter-data
-//	Copyright (c) 2013 dark-matter-data committers
+//	Copyright (c) 2014 dark-matter-data committers
 //	---------------------------------------------------------------------------
 //	This program is free software; you can redistribute it and/or modify it
 //	under the terms of the GNU Lesser General Public License as published by the
@@ -16,24 +16,25 @@
 package org.dmd.gpb.server.generated.dsd;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateBaseUtility(DSDArtifactFormatter.java:935)
-import java.io.IOException;                                                  // In case we have problems opening/writin got files - (DSDArtifactFormatter.java:916)
-import org.dmd.dmc.DmcNameClashException;                                    // To handle parsing errors - (DSDArtifactFormatter.java:919)
-import org.dmd.dmc.DmcValueException;                                        // To handle fundamental value errors - (DSDArtifactFormatter.java:918)
-import org.dmd.dmc.rules.DmcRuleExceptionSet;                                // To handle rule errors - (DSDArtifactFormatter.java:920)
-import org.dmd.gpb.server.generated.dsd.GpbModuleGeneratorInterface;         // Called by the parsing coordinator as configs are read - (DSDArtifactFormatter.java:912)
-import org.dmd.gpb.server.generated.dsd.GpbModuleParsingCoordinator;         // Parses modules required for generation - (DSDArtifactFormatter.java:911)
-import org.dmd.util.BooleanVar;                                              // Commandline flags - (DSDArtifactFormatter.java:914)
-import org.dmd.util.exceptions.ResultException;                              // To handle parsing exceptions - (DSDArtifactFormatter.java:917)
-import org.dmd.util.parsing.CommandLine;                                     // Commandline parsing - (DSDArtifactFormatter.java:913)
-import org.dmd.util.parsing.StringArrayList;                                 // Commandline string values - (DSDArtifactFormatter.java:915)
+// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateBaseUtility(DSDArtifactFormatter.java:1035)
+import java.io.IOException;                                                  // In case we have problems opening/writin got files - (DSDArtifactFormatter.java:1015)
+import org.dmd.dmc.DmcNameClashException;                                    // To handle parsing errors - (DSDArtifactFormatter.java:1018)
+import org.dmd.dmc.DmcValueException;                                        // To handle fundamental value errors - (DSDArtifactFormatter.java:1017)
+import org.dmd.dmc.DmcValueExceptionSet;                                     // May occur when resolving objects - (DSDArtifactFormatter.java:1020)
+import org.dmd.dmc.rules.DmcRuleExceptionSet;                                // To handle rule errors - (DSDArtifactFormatter.java:1019)
+import org.dmd.gpb.server.generated.dsd.GpbModuleGeneratorInterface;         // Called by the parsing coordinator as configs are read - (DSDArtifactFormatter.java:1011)
+import org.dmd.gpb.server.generated.dsd.GpbModuleParsingCoordinator;         // Parses modules required for generation - (DSDArtifactFormatter.java:1010)
+import org.dmd.util.BooleanVar;                                              // Commandline flags - (DSDArtifactFormatter.java:1013)
+import org.dmd.util.exceptions.ResultException;                              // To handle parsing exceptions - (DSDArtifactFormatter.java:1016)
+import org.dmd.util.parsing.CommandLine;                                     // Commandline parsing - (DSDArtifactFormatter.java:1012)
+import org.dmd.util.parsing.StringArrayList;                                 // Commandline string values - (DSDArtifactFormatter.java:1014)
 
 
-// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateBaseUtility(DSDArtifactFormatter.java:937)
+// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateBaseUtility(DSDArtifactFormatter.java:1037)
 public abstract class GpbModuleGenUtility implements GpbModuleGeneratorInterface {
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:59)
-    // Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateBaseUtility(DSDArtifactFormatter.java:940)
+    // Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateBaseUtility(DSDArtifactFormatter.java:1040)
     GpbModuleParsingCoordinator    parser;                                   // Module parser
     CommandLine                    commandLine    = new CommandLine();       // Commandline parser
     BooleanVar                     helpFlag       = new BooleanVar();        // The help flag value
@@ -59,13 +60,13 @@ public abstract class GpbModuleGenUtility implements GpbModuleGeneratorInterface
      *
      * @param args the command line arguments
      */
-    public void run(String[] args) throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException {
+    public void run(String[] args) throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException, DmcValueExceptionSet {
 
         commandLine.parseArgs(args);
 
         if (helpFlag.booleanValue()){
             displayHelp();
-            System.exit(0);
+            return;
         }
 
         parser = new GpbModuleParsingCoordinator(this, srcdir,jars);

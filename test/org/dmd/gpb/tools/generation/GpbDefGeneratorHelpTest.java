@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.dmd.dmc.DmcNameClashException;
 import org.dmd.dmc.DmcValueException;
+import org.dmd.dmc.DmcValueExceptionSet;
 import org.dmd.dmc.rules.DmcRuleExceptionSet;
 import org.dmd.util.exceptions.ResultException;
 import org.junit.Before;
@@ -23,7 +24,7 @@ public class GpbDefGeneratorHelpTest {
 
 	
 	@Test
-	public void testHelp() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException {
+	public void testHelp() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException, DmcValueExceptionSet {
 		String[] args = { "-h", 
 				"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base"
 				};
@@ -35,7 +36,7 @@ public class GpbDefGeneratorHelpTest {
 	}
 	
 	@Test
-	public void basicTest() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException {
+	public void basicTest() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException, DmcValueExceptionSet {
 		String[] args = { "-workspace", workingDir,
 							"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base"
 				};

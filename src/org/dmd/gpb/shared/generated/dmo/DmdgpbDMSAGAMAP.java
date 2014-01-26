@@ -12,6 +12,7 @@ public class DmdgpbDMSAGAMAP {
 
     static protected void initSmAp(HashMap<Integer, DmcAttributeInfo> _SmAp){
         _SmAp.put(DmdgpbDMSAG.__basedOnEnum.id,DmdgpbDMSAG.__basedOnEnum);
+        _SmAp.put(DmdgpbDMSAG.__basedOnMainElement.id,DmdgpbDMSAG.__basedOnMainElement);
         _SmAp.put(DmdgpbDMSAG.__cplusplusType.id,DmdgpbDMSAG.__cplusplusType);
         _SmAp.put(DmdgpbDMSAG.__defaultValue.id,DmdgpbDMSAG.__defaultValue);
         _SmAp.put(DmdgpbDMSAG.__definedInGpbModule.id,DmdgpbDMSAG.__definedInGpbModule);
@@ -23,7 +24,6 @@ public class DmdgpbDMSAGAMAP {
         _SmAp.put(DmdgpbDMSAG.__gpbType.id,DmdgpbDMSAG.__gpbType);
         _SmAp.put(DmdgpbDMSAG.__hint.id,DmdgpbDMSAG.__hint);
         _SmAp.put(DmdgpbDMSAG.__import.id,DmdgpbDMSAG.__import);
-        _SmAp.put(DmdgpbDMSAG.__isMessageType.id,DmdgpbDMSAG.__isMessageType);
         _SmAp.put(DmdgpbDMSAG.__javaType.id,DmdgpbDMSAG.__javaType);
         _SmAp.put(DmdgpbDMSAG.__mainElements.id,DmdgpbDMSAG.__mainElements);
         _SmAp.put(DmdgpbDMSAG.__package.id,DmdgpbDMSAG.__package);

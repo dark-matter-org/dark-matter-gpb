@@ -8,6 +8,7 @@ import org.dmd.dmc.*;                                                     // If 
 import org.dmd.dmc.definitions.DmcDefinitionIF;                           // The object is a domain specific definition - (BaseDMWGenerator.java:411)
 import org.dmd.dmc.definitions.DmcDefinitionSet;                          // Our base to provide definition set storage - (DMWGenerator.java:169)
 import org.dmd.dmc.types.DefinitionName;                                  // Is named by - (BaseDMWGenerator.java:1062)
+import org.dmd.dmc.types.DotName;                                         // To support the find method for definitions - (DSDefinitionModule.java:163)
 import org.dmd.dms.ClassDefinition;                                       // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
 import org.dmd.dms.generated.dmo.MetaDMSAG;                               // Attribute defFiles from the meta schema - (BaseDMWGenerator.java:897)
 import org.dmd.dms.generated.dmw.StringIterableDMW;                       // For multi-valued String - (BaseDMWGenerator.java:2103)
@@ -596,7 +597,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         ((GpbModuleDMO) core).remPackage();
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:217)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:219)
     // Called from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:202)
     /**
      * All definitions are added to the base definition collection.
@@ -609,11 +610,15 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbDefinitionDefs.size());
     }
 
+    public GpbDefinition getGpbDefinition(DotName name){
+        return(GpbDefinitionDefs.getDefinition(name));
+    }
+
     public Iterator<GpbDefinition> getAllGpbDefinition(){
         return(GpbDefinitionDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:248)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:254)
     public void addGpbArtifact(GpbArtifact def){
         GpbArtifactDefs.add(def);
         addGpbDefinition(def);
@@ -623,11 +628,15 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbArtifactDefs.size());
     }
 
+    public GpbArtifact getGpbArtifact(DotName name){
+        return(GpbArtifactDefs.getDefinition(name));
+    }
+
     public Iterator<GpbArtifact> getAllGpbArtifact(){
         return(GpbArtifactDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:248)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:254)
     public void addGpbElement(GpbElement def){
         GpbElementDefs.add(def);
         addGpbDefinition(def);
@@ -637,11 +646,15 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbElementDefs.size());
     }
 
+    public GpbElement getGpbElement(DotName name){
+        return(GpbElementDefs.getDefinition(name));
+    }
+
     public Iterator<GpbElement> getAllGpbElement(){
         return(GpbElementDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:248)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:254)
     public void addGpbEnum(GpbEnum def){
         GpbEnumDefs.add(def);
         addGpbMainElement(def);
@@ -651,11 +664,15 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbEnumDefs.size());
     }
 
+    public GpbEnum getGpbEnum(DotName name){
+        return(GpbEnumDefs.getDefinition(name));
+    }
+
     public Iterator<GpbEnum> getAllGpbEnum(){
         return(GpbEnumDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:248)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:254)
     public void addGpbField(GpbField def){
         GpbFieldDefs.add(def);
         addGpbElement(def);
@@ -665,11 +682,15 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbFieldDefs.size());
     }
 
+    public GpbField getGpbField(DotName name){
+        return(GpbFieldDefs.getDefinition(name));
+    }
+
     public Iterator<GpbField> getAllGpbField(){
         return(GpbFieldDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:248)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:254)
     public void addGpbMainElement(GpbMainElement def){
         GpbMainElementDefs.add(def);
         addGpbElement(def);
@@ -679,11 +700,15 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbMainElementDefs.size());
     }
 
+    public GpbMainElement getGpbMainElement(DotName name){
+        return(GpbMainElementDefs.getDefinition(name));
+    }
+
     public Iterator<GpbMainElement> getAllGpbMainElement(){
         return(GpbMainElementDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:248)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:254)
     public void addGpbMessage(GpbMessage def){
         GpbMessageDefs.add(def);
         addGpbMainElement(def);
@@ -693,11 +718,15 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbMessageDefs.size());
     }
 
+    public GpbMessage getGpbMessage(DotName name){
+        return(GpbMessageDefs.getDefinition(name));
+    }
+
     public Iterator<GpbMessage> getAllGpbMessage(){
         return(GpbMessageDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:248)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:254)
     public void addGpbProtoFile(GpbProtoFile def){
         GpbProtoFileDefs.add(def);
         addGpbDefinition(def);
@@ -707,11 +736,15 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
         return(GpbProtoFileDefs.size());
     }
 
+    public GpbProtoFile getGpbProtoFile(DotName name){
+        return(GpbProtoFileDefs.getDefinition(name));
+    }
+
     public Iterator<GpbProtoFile> getAllGpbProtoFile(){
         return(GpbProtoFileDefs.values().iterator());
     }
 
-    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:248)
+    // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:254)
     public void addGpbType(GpbType def){
         GpbTypeDefs.add(def);
         addGpbDefinition(def);
@@ -719,6 +752,10 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
 
     public int getGpbTypeCount(){
         return(GpbTypeDefs.size());
+    }
+
+    public GpbType getGpbType(DotName name){
+        return(GpbTypeDefs.getDefinition(name));
     }
 
     public Iterator<GpbType> getAllGpbType(){

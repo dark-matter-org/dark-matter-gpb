@@ -34,13 +34,12 @@ useWrapperType	EXTENDED
 derivedFrom		GpbDefinition
 isNamedBy		name
 may				internallyGenerated
-may				isEnumType
-may				isMessageType
 may				defaultValue
 may				sizeInBytes
 may				javaType
 may				cplusplusType
 may				pythonType
+may				basedOnMainElement
 description		The GpbType class is use to define the types of attributes in the GPB
  specification. All GpbMessages and GpbEnum will have GpbTypes generated for
  them so that they can be used as types for GpbAttributes.
