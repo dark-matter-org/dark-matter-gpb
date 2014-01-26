@@ -13,6 +13,7 @@ import org.dmd.gpb.server.extended.GpbMainElement;                   // Is refer
 import org.dmd.gpb.server.extended.GpbType;                          // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
 import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                  // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
 import org.dmd.gpb.shared.generated.types.GpbMainElementREF;         // Is reference type REF - (BaseDMWGenerator.java:1115)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;              // Required to access defined in module name - (DMWGenerator.java:180)
 
 
 
@@ -314,6 +315,16 @@ abstract public class GpbTypeDMW extends GpbDefinition implements DmcDefinitionI
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
     public void remSizeInBytes(){
         ((GpbTypeDMO) core).remSizeInBytes();
+    }
+
+    // Generated from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:221)
+    /**
+     * This method indicates the name of the module from which this definition was loaded.
+     */
+    @Override
+    public String getNameOfModuleWhereThisCameFrom(){
+        GpbModuleREF ref = ((GpbTypeDMO) core).getDefinedInGpbModule();
+        return(ref.getName().getNameString());
     }
 
 

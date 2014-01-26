@@ -18,6 +18,7 @@ import org.dmd.gpb.server.generated.dmw.GpbMainElementIterableDMW;         // Fo
 import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                       // Attribute import from the dmdgpb schema - (BaseDMWGenerator.java:897)
 import org.dmd.gpb.shared.generated.dmo.GpbArtifactDMO;                    // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
 import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;                 // For multi-valued adds of GpbMainElement - (BaseDMWGenerator.java:1767)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;                    // Required to access defined in module name - (DMWGenerator.java:180)
 
 
 
@@ -349,6 +350,16 @@ abstract public class GpbArtifactDMW extends GpbDefinition implements DmcDefinit
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
     public void remPackage(){
         ((GpbArtifactDMO) core).remPackage();
+    }
+
+    // Generated from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:221)
+    /**
+     * This method indicates the name of the module from which this definition was loaded.
+     */
+    @Override
+    public String getNameOfModuleWhereThisCameFrom(){
+        GpbModuleREF ref = ((GpbArtifactDMO) core).getDefinedInGpbModule();
+        return(ref.getName().getNameString());
     }
 
 

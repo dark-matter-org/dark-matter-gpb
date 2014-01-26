@@ -129,6 +129,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbDefinitionOBJ.addMust("meta.dotName");
             _GpbDefinitionOBJ.addMust("dmdgpb.definedInGpbModule");
             _GpbDefinitionOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbDefinitionIterableDMW");
+            _GpbDefinitionOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbDefinitionOBJ.setDotName("dmdgpb.GpbDefinition.ClassDefinition");
             _GpbDefinition.setDefinedIn(this);
             addClassDefList(_GpbDefinition);
@@ -155,6 +156,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbTypeOBJ.addMay("dmdgpb.pythonType");
             _GpbTypeOBJ.addMay("dmdgpb.basedOnMainElement");
             _GpbTypeOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbTypeIterableDMW");
+            _GpbTypeOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbTypeOBJ.setDotName("dmdgpb.GpbType.ClassDefinition");
             _GpbType.setDefinedIn(this);
             addClassDefList(_GpbType);
@@ -175,6 +177,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbElementOBJ.setDmwIteratorClass("GpbElementIterableDMW");
             _GpbElementOBJ.addMust("meta.name");
             _GpbElementOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbElementIterableDMW");
+            _GpbElementOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbElementOBJ.setDotName("dmdgpb.GpbElement.ClassDefinition");
             _GpbElement.setDefinedIn(this);
             addClassDefList(_GpbElement);
@@ -195,6 +198,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbMainElementOBJ.setDmwIteratorClass("GpbMainElementIterableDMW");
             _GpbMainElementOBJ.addMust("meta.name");
             _GpbMainElementOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbMainElementIterableDMW");
+            _GpbMainElementOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbMainElementOBJ.setDotName("dmdgpb.GpbMainElement.ClassDefinition");
             _GpbMainElement.setDefinedIn(this);
             addClassDefList(_GpbMainElement);
@@ -217,6 +221,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbEnumOBJ.addMust("meta.name");
             _GpbEnumOBJ.addMust("meta.enumValue");
             _GpbEnumOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbEnumIterableDMW");
+            _GpbEnumOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbEnumOBJ.setDotName("dmdgpb.GpbEnum.ClassDefinition");
             _GpbEnum.setDefinedIn(this);
             addClassDefList(_GpbEnum);
@@ -239,6 +244,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldOBJ.addMust("meta.name");
             _GpbFieldOBJ.addMust("dmdgpb.gpbType");
             _GpbFieldOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbFieldIterableDMW");
+            _GpbFieldOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbFieldOBJ.setDotName("dmdgpb.GpbField.ClassDefinition");
             _GpbField.setDefinedIn(this);
             addClassDefList(_GpbField);
@@ -260,6 +266,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbMessageOBJ.addMay("dmdgpb.embed");
             _GpbMessageOBJ.addMust("meta.name");
             _GpbMessageOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbMessageIterableDMW");
+            _GpbMessageOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbMessageOBJ.setDotName("dmdgpb.GpbMessage.ClassDefinition");
             _GpbMessage.setDefinedIn(this);
             addClassDefList(_GpbMessage);
@@ -283,6 +290,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbArtifactOBJ.addMust("meta.name");
             _GpbArtifactOBJ.addMust("dmdgpb.package");
             _GpbArtifactOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbArtifactIterableDMW");
+            _GpbArtifactOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbArtifactOBJ.setDotName("dmdgpb.GpbArtifact.ClassDefinition");
             _GpbArtifact.setDefinedIn(this);
             addClassDefList(_GpbArtifact);
@@ -306,6 +314,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbProtoFileOBJ.addMust("meta.name");
             _GpbProtoFileOBJ.addMust("dmdgpb.package");
             _GpbProtoFileOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbProtoFileIterableDMW");
+            _GpbProtoFileOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbProtoFileOBJ.setDotName("dmdgpb.GpbProtoFile.ClassDefinition");
             _GpbProtoFile.setDefinedIn(this);
             addClassDefList(_GpbProtoFile);
@@ -332,6 +341,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleOBJ.addMust("meta.name");
             _GpbModuleOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbModuleIterableDMW");
             _GpbModuleOBJ.setDsdModuleDefinition("dmdgpb.GpbModule");
+            _GpbModuleOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbModuleOBJ.setDotName("dmdgpb.GpbModule.ClassDefinition");
             _GpbModule.setDefinedIn(this);
             addClassDefList(_GpbModule);

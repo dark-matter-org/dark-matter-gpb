@@ -25,7 +25,7 @@ import org.dmd.gpb.shared.types.GpbFieldIndicator;
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
  * Generated from: org.dmd.dms.util.GenUtility.dumpIterable(GenUtility.java:1755)
- *    Called from: org.dmd.dmg.generators.DMWGenerator.createTypeIterables(DMWGenerator.java:111)
+ *    Called from: org.dmd.dmg.generators.DMWGenerator.createTypeIterables(DMWGenerator.java:112)
  */
 public class GpbFieldIndicatorIterableDMW extends DmwMVIterator<GpbFieldIndicator> {
 
