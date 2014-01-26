@@ -2,19 +2,20 @@ package org.dmd.gpb.server.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:442)
-import java.util.ArrayList;                                    // Support for MULTI attribute - (BaseDMWGenerator.java:2226)
-import java.util.Iterator;                                     // Support copy of MV objects - (BaseDMWGenerator.java:2240)
-import org.dmd.dmc.*;                                          // If any attributes - (BaseDMWGenerator.java:1087)
-import org.dmd.dmc.definitions.DmcDefinitionIF;                // The object is a domain specific definition - (BaseDMWGenerator.java:411)
-import org.dmd.dmc.types.DefinitionName;                       // Is named by - (BaseDMWGenerator.java:1062)
-import org.dmd.dms.ClassDefinition;                            // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                    // Attribute enumValue from the meta schema - (BaseDMWGenerator.java:897)
-import org.dmd.dms.generated.dmw.EnumValueIterableDMW;         // For multi-valued EnumValue - (BaseDMWGenerator.java:2103)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;          // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
-import org.dmd.dms.types.EnumValue;                            // Primitive type - (BaseDMWGenerator.java:1150)
-import org.dmd.gpb.server.extended.GpbEnum;                    // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
-import org.dmd.gpb.server.extended.GpbMainElement;             // Derived class - (BaseDMWGenerator.java:1248)
-import org.dmd.gpb.shared.generated.dmo.GpbEnumDMO;            // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
+import java.util.ArrayList;                                     // Support for MULTI attribute - (BaseDMWGenerator.java:2226)
+import java.util.Iterator;                                      // Support copy of MV objects - (BaseDMWGenerator.java:2240)
+import org.dmd.dmc.*;                                           // If any attributes - (BaseDMWGenerator.java:1087)
+import org.dmd.dmc.definitions.DmcDefinitionIF;                 // The object is a domain specific definition - (BaseDMWGenerator.java:411)
+import org.dmd.dmc.types.DefinitionName;                        // Is named by - (BaseDMWGenerator.java:1062)
+import org.dmd.dms.ClassDefinition;                             // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                     // Attribute enumValue from the meta schema - (BaseDMWGenerator.java:897)
+import org.dmd.dms.generated.dmw.EnumValueIterableDMW;          // For multi-valued EnumValue - (BaseDMWGenerator.java:2103)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;           // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
+import org.dmd.dms.types.EnumValue;                             // Primitive type - (BaseDMWGenerator.java:1150)
+import org.dmd.gpb.server.extended.GpbEnum;                     // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
+import org.dmd.gpb.server.extended.GpbMainElement;              // Derived class - (BaseDMWGenerator.java:1248)
+import org.dmd.gpb.shared.generated.dmo.GpbEnumDMO;             // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;         // Required to access defined in module name - (DMWGenerator.java:180)
 
 
 
@@ -275,6 +276,16 @@ abstract public class GpbEnumDMW extends GpbMainElement implements DmcDefinition
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
     public void remName(){
         ((GpbEnumDMO) core).remName();
+    }
+
+    // Generated from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:221)
+    /**
+     * This method indicates the name of the module from which this definition was loaded.
+     */
+    @Override
+    public String getNameOfModuleWhereThisCameFrom(){
+        GpbModuleREF ref = ((GpbEnumDMO) core).getDefinedInGpbModule();
+        return(ref.getName().getNameString());
     }
 
 

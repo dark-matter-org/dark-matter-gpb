@@ -140,8 +140,6 @@ public class GpbModuleDefinitionManager implements DmcNameClashResolverIF, DmcNa
     @Override
     public DmcNamedObjectIF resolveClash(DmcObject obj, DmcAttributeInfo ai, DmcNameClashObjectSet<?> ncos) throws DmcValueException {
         System.out.println("***********\n\n");
-        System.out.println(obj.toOIF() + "\n\n");
-        System.out.println("***********\n\n");
         Iterator<DmcNamedObjectIF> it = ncos.getMatches();
         while(it.hasNext()){
             DSDefinition def = (DSDefinition) it.next();

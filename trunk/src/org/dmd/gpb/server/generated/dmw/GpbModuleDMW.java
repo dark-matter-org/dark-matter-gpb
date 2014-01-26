@@ -6,7 +6,7 @@ import java.util.ArrayList;                                               // To 
 import java.util.Iterator;                                                // Support copy of MV objects - (BaseDMWGenerator.java:2240)
 import org.dmd.dmc.*;                                                     // If any attributes - (BaseDMWGenerator.java:1087)
 import org.dmd.dmc.definitions.DmcDefinitionIF;                           // The object is a domain specific definition - (BaseDMWGenerator.java:411)
-import org.dmd.dmc.definitions.DmcDefinitionSet;                          // Our base to provide definition set storage - (DMWGenerator.java:169)
+import org.dmd.dmc.definitions.DmcDefinitionSet;                          // Our base to provide definition set storage - (DMWGenerator.java:170)
 import org.dmd.dmc.types.DefinitionName;                                  // Is named by - (BaseDMWGenerator.java:1062)
 import org.dmd.dmc.types.DotName;                                         // To support the find method for definitions - (DSDefinitionModule.java:163)
 import org.dmd.dms.ClassDefinition;                                       // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
@@ -24,9 +24,10 @@ import org.dmd.gpb.server.extended.GpbModule;                             // Req
 import org.dmd.gpb.server.extended.GpbProtoFile;                          // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
 import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
 import org.dmd.gpb.server.generated.dmw.GpbModuleIterableDMW;             // For multi-valued GpbModule - (BaseDMWGenerator.java:1709)
-import org.dmd.gpb.server.generated.dsd.GpbModuleScopedInterface;         // Required to manage module definition - (DMWGenerator.java:168)
+import org.dmd.gpb.server.generated.dsd.GpbModuleScopedInterface;         // Required to manage module definition - (DMWGenerator.java:169)
 import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                      // Attribute dependsOnGpbModule from the dmdgpb schema - (BaseDMWGenerator.java:897)
 import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                     // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;                   // Required to access defined in module name - (DMWGenerator.java:180)
 
 
 
@@ -40,7 +41,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                     // Cla
 abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitionIF, DmcNamedObjectIF, GpbModuleScopedInterface {
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:59)
-    // Called from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperDefinitions(DMWGenerator.java:194)
+    // Called from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperDefinitions(DMWGenerator.java:203)
     DmcDefinitionSet<GpbDefinition>      GpbDefinitionDefs     = new DmcDefinitionSet<GpbDefinition>("GpbModule-allDefinitions");        // All definitions associated with this module
     DmcDefinitionSet<GpbArtifact>        GpbArtifactDefs       = new DmcDefinitionSet<GpbArtifact>("GpbModule-GpbArtifactDefs");         // All GpbArtifact definitions
     DmcDefinitionSet<GpbElement>         GpbElementDefs        = new DmcDefinitionSet<GpbElement>("GpbModule-GpbElementDefs");           // All GpbElement definitions
@@ -598,7 +599,7 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
     }
 
     // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:219)
-    // Called from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:202)
+    // Called from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:211)
     /**
      * All definitions are added to the base definition collection.
      */
@@ -760,6 +761,16 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
 
     public Iterator<GpbType> getAllGpbType(){
         return(GpbTypeDefs.values().iterator());
+    }
+
+    // Generated from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:221)
+    /**
+     * This method indicates the name of the module from which this definition was loaded.
+     */
+    @Override
+    public String getNameOfModuleWhereThisCameFrom(){
+        GpbModuleREF ref = ((GpbModuleDMO) core).getDefinedInGpbModule();
+        return(ref.getName().getNameString());
     }
 
 
