@@ -35,11 +35,11 @@ dmdID			6
 type			GpbType
 description		A reference to a GpbType definition.
 
-AttributeDefinition
-name			isMessageType
-dmdID			7
-type			Boolean
-description		Indicates if an internally generated GpbType is associated with a GpbMessage.
+//AttributeDefinition
+//name			isMessageType
+//dmdID			7
+//type			Boolean
+//description		Indicates if an internally generated GpbType is associated with a GpbMessage.
 
 AttributeDefinition
 name			definedInGpbModule
@@ -150,7 +150,11 @@ type			GpbMainElement
 valueType		MULTI
 description 	The embed attribute is used to indicate that an existing GpbEnum or GpbMessage
  description should be embedded directly within a message definition.
- 
- 
- 
+
+AttributeDefinition
+name			basedOnMainElement
+dmdID			29
+type			GpbMainElement
+description		The original GpbMainElement (a message or enum) on which a GpbType is based.
+
  

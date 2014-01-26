@@ -1,6 +1,6 @@
 //	---------------------------------------------------------------------------
 //	dark-matter-data
-//	Copyright (c) 2013 dark-matter-data committers
+//	Copyright (c) 2014 dark-matter-data committers
 //	---------------------------------------------------------------------------
 //	This program is free software; you can redistribute it and/or modify it
 //	under the terms of the GNU Lesser General Public License as published by the
@@ -16,14 +16,14 @@
 package org.dmd.gpb.server.generated.dsd;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGeneratorInterface(DSDArtifactFormatter.java:1004)
-import org.dmd.gpb.server.extended.GpbModule;                               // The base module for generation - (DSDArtifactFormatter.java:998)
-import org.dmd.gpb.server.generated.dsd.GpbModuleDefinitionManager;         // All parsed definition - (DSDArtifactFormatter.java:1002)
-import org.dmd.util.exceptions.ResultException;                             // For problems found after parsing - (DSDArtifactFormatter.java:1001)
-import org.dmd.util.parsing.ConfigLocation;                                 // Where the config was loaded from - (DSDArtifactFormatter.java:1000)
+// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGeneratorInterface(DSDArtifactFormatter.java:1104)
+import org.dmd.gpb.server.extended.GpbModule;                               // The base module for generation - (DSDArtifactFormatter.java:1098)
+import org.dmd.gpb.server.generated.dsd.GpbModuleDefinitionManager;         // All parsed definition - (DSDArtifactFormatter.java:1102)
+import org.dmd.util.exceptions.ResultException;                             // For problems found after parsing - (DSDArtifactFormatter.java:1101)
+import org.dmd.util.parsing.ConfigLocation;                                 // Where the config was loaded from - (DSDArtifactFormatter.java:1100)
 
 
-// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGeneratorInterface(DSDArtifactFormatter.java:1006)
+// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGeneratorInterface(DSDArtifactFormatter.java:1106)
 public interface GpbModuleGeneratorInterface {
 
     /**

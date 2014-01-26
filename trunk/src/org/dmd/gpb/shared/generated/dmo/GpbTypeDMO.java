@@ -16,18 +16,22 @@
 package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
-import java.io.Serializable;                                      // Always required - (GenUtility.java:224)
-import org.dmd.dmc.DmcAttribute;                                  // Named object - (GenUtility.java:376)
-import org.dmd.dmc.DmcNamedObjectIF;                              // Named object - (GenUtility.java:375)
-import org.dmd.dmc.DmcSliceInfo;                                  // Required for object slicing - (GenUtility.java:229)
-import org.dmd.dmc.DmcValueException;                             // Any attributes - (GenUtility.java:241)
-import org.dmd.dmc.types.DefinitionName;                          // Naming attribute type - (GenUtility.java:370)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (GenUtility.java:228)
-import org.dmd.dms.generated.types.DmcTypeBooleanSV;              // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeIntegerSV;              // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (GenUtility.java:227)
-import org.dmd.dms.generated.types.DmcTypeStringSV;               // Required type - (GenUtility.java:328)
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;         // Base class - (GenUtility.java:355)
+import java.io.Serializable;                                                  // Always required - (GenUtility.java:224)
+import org.dmd.dmc.DmcAttribute;                                              // Named object - (GenUtility.java:376)
+import org.dmd.dmc.DmcNamedObjectIF;                                          // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcOmni;                                                   // Lazy resolution - (GenUtility.java:320)
+import org.dmd.dmc.DmcSliceInfo;                                              // Required for object slicing - (GenUtility.java:229)
+import org.dmd.dmc.DmcValueException;                                         // Any attributes - (GenUtility.java:241)
+import org.dmd.dmc.types.DefinitionName;                                      // Naming attribute type - (GenUtility.java:370)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                                   // Required for MODREC constructor - (GenUtility.java:228)
+import org.dmd.dms.generated.types.DmcTypeBooleanSV;                          // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeIntegerSV;                          // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                         // Required for MODREC constructor - (GenUtility.java:227)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                           // Required type - (GenUtility.java:328)
+import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;                     // Base class - (GenUtility.java:355)
+import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;                    // Type specific set/add - (GenUtility.java:307)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbMainElementREFSV;         // Reference type - (GenUtility.java:300)
+import org.dmd.gpb.shared.generated.types.GpbMainElementREF;                  // Helper class - (GenUtility.java:335)
 
 // Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
@@ -167,106 +171,6 @@ public class GpbTypeDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remInternallyGenerated(){
          rem(MetaDMSAG.__internallyGenerated);
-    }
-
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
-    public Boolean isIsEnumType(){
-        DmcTypeBooleanSV attr = (DmcTypeBooleanSV) get(MetaDMSAG.__isEnumType);
-        if (attr == null)
-            return(false);
-
-        return(attr.getSV());
-    }
-
-    /**
-     * Sets isEnumType to the specified value.
-     * @param value Boolean
-     */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
-    public void setIsEnumType(Boolean value) {
-        DmcAttribute<?> attr = get(MetaDMSAG.__isEnumType);
-        if (attr == null)
-            attr = new DmcTypeBooleanSV(MetaDMSAG.__isEnumType);
-        
-        try{
-            attr.set(value);
-            set(MetaDMSAG.__isEnumType,attr);
-        }
-        catch(DmcValueException ex){
-            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
-        }
-    }
-
-    /**
-     * Sets isEnumType to the specified value.
-     * @param value A value compatible with DmcTypeBooleanSV
-     */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
-    public void setIsEnumType(Object value) throws DmcValueException {
-        DmcTypeBooleanSV attr  = (DmcTypeBooleanSV) get(MetaDMSAG.__isEnumType);
-        if (attr == null)
-            attr = new DmcTypeBooleanSV(MetaDMSAG.__isEnumType);
-        
-        attr.set(value);
-        set(MetaDMSAG.__isEnumType,attr);
-    }
-
-    /**
-     * Removes the isEnumType attribute value.
-     */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
-    public void remIsEnumType(){
-         rem(MetaDMSAG.__isEnumType);
-    }
-
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
-    public Boolean isIsMessageType(){
-        DmcTypeBooleanSV attr = (DmcTypeBooleanSV) get(DmdgpbDMSAG.__isMessageType);
-        if (attr == null)
-            return(false);
-
-        return(attr.getSV());
-    }
-
-    /**
-     * Sets isMessageType to the specified value.
-     * @param value Boolean
-     */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
-    public void setIsMessageType(Boolean value) {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__isMessageType);
-        if (attr == null)
-            attr = new DmcTypeBooleanSV(DmdgpbDMSAG.__isMessageType);
-        
-        try{
-            attr.set(value);
-            set(DmdgpbDMSAG.__isMessageType,attr);
-        }
-        catch(DmcValueException ex){
-            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
-        }
-    }
-
-    /**
-     * Sets isMessageType to the specified value.
-     * @param value A value compatible with DmcTypeBooleanSV
-     */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
-    public void setIsMessageType(Object value) throws DmcValueException {
-        DmcTypeBooleanSV attr  = (DmcTypeBooleanSV) get(DmdgpbDMSAG.__isMessageType);
-        if (attr == null)
-            attr = new DmcTypeBooleanSV(DmdgpbDMSAG.__isMessageType);
-        
-        attr.set(value);
-        set(DmdgpbDMSAG.__isMessageType,attr);
-    }
-
-    /**
-     * Removes the isMessageType attribute value.
-     */
-    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
-    public void remIsMessageType(){
-         rem(DmdgpbDMSAG.__isMessageType);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
@@ -517,6 +421,78 @@ public class GpbTypeDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remPythonType(){
          rem(DmdgpbDMSAG.__pythonType);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:655)
+    public GpbMainElementREF getBasedOnMainElement(){
+        DmcTypeGpbMainElementREFSV attr = (DmcTypeGpbMainElementREFSV) get(DmdgpbDMSAG.__basedOnMainElement);
+        if (attr == null)
+            return(null);
+
+        if (DmcOmni.instance().lazyResolution()){
+            if (attr.doLazyResolution(this)){
+                rem(attr.getAttributeInfo());
+                return(null);
+            }
+        }
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Returns the reference to GpbMainElement without attempting lazy resolution (if turned on).
+     */
+    public GpbMainElementREF getBasedOnMainElementREF(){
+        DmcTypeGpbMainElementREFSV attr = (DmcTypeGpbMainElementREFSV) get(DmdgpbDMSAG.__basedOnMainElement);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets basedOnMainElement to the specified value.
+     * @param value GpbMainElementDMO
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:709)
+    public void setBasedOnMainElement(GpbMainElementDMO value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__basedOnMainElement);
+        if (attr == null)
+            attr = new DmcTypeGpbMainElementREFSV(DmdgpbDMSAG.__basedOnMainElement);
+        else
+            ((DmcTypeGpbMainElementREFSV)attr).removeBackReferences();
+        
+        try{
+            attr.set(value);
+            set(DmdgpbDMSAG.__basedOnMainElement,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets basedOnMainElement to the specified value.
+     * @param value A value compatible with DmcTypeGpbMainElementREFSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setBasedOnMainElement(Object value) throws DmcValueException {
+        DmcTypeGpbMainElementREFSV attr  = (DmcTypeGpbMainElementREFSV) get(DmdgpbDMSAG.__basedOnMainElement);
+        if (attr == null)
+            attr = new DmcTypeGpbMainElementREFSV(DmdgpbDMSAG.__basedOnMainElement);
+        else
+            attr.removeBackReferences();
+        
+        attr.set(value);
+        set(DmdgpbDMSAG.__basedOnMainElement,attr);
+    }
+
+    /**
+     * Removes the basedOnMainElement attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remBasedOnMainElement(){
+         rem(DmdgpbDMSAG.__basedOnMainElement);
     }
 
 

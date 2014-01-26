@@ -3,6 +3,7 @@ package org.dmd.gpb.tools.generation;
 import java.io.PrintStream;
 import java.util.Iterator;
 
+import org.dmd.dmc.DmcValueException;
 import org.dmd.gpb.server.extended.GpbMainElement;
 import org.dmd.gpb.server.extended.GpbModule;
 import org.dmd.gpb.server.generated.dsd.GpbModuleDefinitionManager;
@@ -43,7 +44,12 @@ public class GpbDefGenerator extends GpbModuleGenUtility {
 		Iterator<GpbMainElement> it = definitions.getAllGpbMainElement();
 		while(it.hasNext()){
 			GpbMainElement element = it.next();
-			element.createTypeIfRequired(definitions);
+			try {
+				element.createTypeIfRequired(definitions);
+			} catch (DmcValueException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 	}

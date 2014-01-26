@@ -1,5 +1,6 @@
 package org.dmd.gpb.server.extended;
 
+import org.dmd.dmc.DmcValueException;
 import org.dmd.dms.ClassDefinition;
 import org.dmd.gpb.server.generated.dmw.GpbMainElementDMW;
 import org.dmd.gpb.server.generated.dsd.GpbModuleDefinitionManager;
@@ -25,6 +26,7 @@ abstract public class GpbMainElement extends GpbMainElementDMW {
 	 * Our derived classes determine whether or not a GpbTypeDefinition exists to
 	 * represent them and, if not, will create one in the definition manager.
 	 * @param definitions The complete set of definitions.
+	 * @throws DmcValueException 
 	 */
-	abstract public void createTypeIfRequired(GpbModuleDefinitionManager definitions);
+	abstract public void createTypeIfRequired(GpbModuleDefinitionManager definitions) throws DmcValueException;
 }
