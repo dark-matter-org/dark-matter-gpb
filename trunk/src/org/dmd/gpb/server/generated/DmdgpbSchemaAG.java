@@ -36,12 +36,11 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
 
     public static ClassDefinition _GpbDefinition;
     public static ClassDefinition _GpbType;
-    public static ClassDefinition _GpbElement;
-    public static ClassDefinition _GpbMainElement;
+    public static ClassDefinition _GpbScalarType;
+    public static ClassDefinition _GpbCompositeType;
     public static ClassDefinition _GpbEnum;
     public static ClassDefinition _GpbField;
     public static ClassDefinition _GpbMessage;
-    public static ClassDefinition _GpbArtifact;
     public static ClassDefinition _GpbProtoFile;
     public static ClassDefinition _GpbModule;
 
@@ -63,7 +62,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
     public static AttributeDefinition _fieldRule;
     public static AttributeDefinition _import;
     public static AttributeDefinition _embed;
-    public static AttributeDefinition _basedOnMainElement;
 
     public static TypeDefinition _GpbFieldIndicator;
 
@@ -142,20 +140,14 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbTypeOBJ.setDmdID("-477997");
             _GpbTypeOBJ.setClassType("STRUCTURAL");
             _GpbTypeOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbTypeOBJ.setLineNumber("49");
-            _GpbTypeOBJ.addDescription("The GpbType class is use to define the types of attributes in the GPB\n specification. All GpbMessages and GpbEnum will have GpbTypes generated for\n them so that they can be used as types for GpbAttributes.\n <p/>\n GpbType definitions cannot be specified in .dmgpb files; they are strictly for\n internal use. If you specify one in a .dmgpb file, you'll get an error.");
+            _GpbTypeOBJ.setLineNumber("62");
+            _GpbTypeOBJ.addDescription("The GpbType class provides a common base for all things that can be used \n to represent the type of a GpbField. This includes the built-in scalar types associated with\n Google Protocol Buffers, as well and enums and messages. Having a common base for types means\n that we don't run into problems with generating internal types to represent enums and messages.");
             _GpbTypeOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbTypeOBJ.setIsNamedBy("meta.name");
             _GpbTypeOBJ.setUseWrapperType("EXTENDED");
             _GpbTypeOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbTypeREF");
             _GpbTypeOBJ.setDmwIteratorClass("GpbTypeIterableDMW");
-            _GpbTypeOBJ.addMay("meta.internallyGenerated");
-            _GpbTypeOBJ.addMay("dmdgpb.defaultValue");
-            _GpbTypeOBJ.addMay("dmdgpb.sizeInBytes");
-            _GpbTypeOBJ.addMay("dmdgpb.javaType");
-            _GpbTypeOBJ.addMay("dmdgpb.cplusplusType");
-            _GpbTypeOBJ.addMay("dmdgpb.pythonType");
-            _GpbTypeOBJ.addMay("dmdgpb.basedOnMainElement");
+            _GpbTypeOBJ.addMust("meta.name");
             _GpbTypeOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbTypeIterableDMW");
             _GpbTypeOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbTypeOBJ.setDotName("dmdgpb.GpbType.ClassDefinition");
@@ -164,48 +156,53 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             addClassDefList(_GpbType);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            ClassDefinitionDMO _GpbElementOBJ = new ClassDefinitionDMO();
-            _GpbElement = new ClassDefinition(_GpbElementOBJ,DmdgpbDMSAG.__GpbElement);
-            _GpbElementOBJ.setName("GpbElement");
-            _GpbElementOBJ.setDmdID("-477996");
-            _GpbElementOBJ.setClassType("ABSTRACT");
-            _GpbElementOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbElementOBJ.setLineNumber("60");
-            _GpbElementOBJ.addDescription("The GpbElement provides a common base for enums and messages so that\n we can specify a set of them to compose a GpbProtoFile.");
-            _GpbElementOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
-            _GpbElementOBJ.setIsNamedBy("meta.name");
-            _GpbElementOBJ.setUseWrapperType("EXTENDED");
-            _GpbElementOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbElementREF");
-            _GpbElementOBJ.setDmwIteratorClass("GpbElementIterableDMW");
-            _GpbElementOBJ.addMust("meta.name");
-            _GpbElementOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbElementIterableDMW");
-            _GpbElementOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
-            _GpbElementOBJ.setDotName("dmdgpb.GpbElement.ClassDefinition");
-            _GpbElementOBJ.setNameAndTypeName("GpbElement.ClassDefinition");
-            _GpbElement.setDefinedIn(this);
-            addClassDefList(_GpbElement);
+            ClassDefinitionDMO _GpbScalarTypeOBJ = new ClassDefinitionDMO();
+            _GpbScalarType = new ClassDefinition(_GpbScalarTypeOBJ,DmdgpbDMSAG.__GpbScalarType);
+            _GpbScalarTypeOBJ.setName("GpbScalarType");
+            _GpbScalarTypeOBJ.setDmdID("-477996");
+            _GpbScalarTypeOBJ.setClassType("STRUCTURAL");
+            _GpbScalarTypeOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
+            _GpbScalarTypeOBJ.setLineNumber("83");
+            _GpbScalarTypeOBJ.addDescription("The GpbType class is use to define the types of attributes in the GPB\n specification. All GpbMessages and GpbEnum will have GpbTypes generated for\n them so that they can be used as types for GpbAttributes.\n <p/>\n GpbType definitions cannot be specified in .dmgpb files; they are strictly for\n internal use. If you specify one in a .dmgpb file, you'll get an error.");
+            _GpbScalarTypeOBJ.setDerivedFrom("dmdgpb.GpbType");
+            _GpbScalarTypeOBJ.setIsNamedBy("meta.name");
+            _GpbScalarTypeOBJ.setUseWrapperType("EXTENDED");
+            _GpbScalarTypeOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbScalarTypeREF");
+            _GpbScalarTypeOBJ.setDmwIteratorClass("GpbScalarTypeIterableDMW");
+            _GpbScalarTypeOBJ.addMay("dmdgpb.defaultValue");
+            _GpbScalarTypeOBJ.addMay("dmdgpb.sizeInBytes");
+            _GpbScalarTypeOBJ.addMay("dmdgpb.javaType");
+            _GpbScalarTypeOBJ.addMay("dmdgpb.cplusplusType");
+            _GpbScalarTypeOBJ.addMay("dmdgpb.pythonType");
+            _GpbScalarTypeOBJ.addMust("meta.name");
+            _GpbScalarTypeOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbScalarTypeIterableDMW");
+            _GpbScalarTypeOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
+            _GpbScalarTypeOBJ.setDotName("dmdgpb.GpbScalarType.ClassDefinition");
+            _GpbScalarTypeOBJ.setNameAndTypeName("GpbScalarType.ClassDefinition");
+            _GpbScalarType.setDefinedIn(this);
+            addClassDefList(_GpbScalarType);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            ClassDefinitionDMO _GpbMainElementOBJ = new ClassDefinitionDMO();
-            _GpbMainElement = new ClassDefinition(_GpbMainElementOBJ,DmdgpbDMSAG.__GpbMainElement);
-            _GpbMainElementOBJ.setName("GpbMainElement");
-            _GpbMainElementOBJ.setDmdID("-477995");
-            _GpbMainElementOBJ.setClassType("ABSTRACT");
-            _GpbMainElementOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbMainElementOBJ.setLineNumber("70");
-            _GpbMainElementOBJ.addDescription("The GpbElement provides a common base for enums and messages so that");
-            _GpbMainElementOBJ.setDerivedFrom("dmdgpb.GpbElement");
-            _GpbMainElementOBJ.setIsNamedBy("meta.name");
-            _GpbMainElementOBJ.setUseWrapperType("EXTENDED");
-            _GpbMainElementOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbMainElementREF");
-            _GpbMainElementOBJ.setDmwIteratorClass("GpbMainElementIterableDMW");
-            _GpbMainElementOBJ.addMust("meta.name");
-            _GpbMainElementOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbMainElementIterableDMW");
-            _GpbMainElementOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
-            _GpbMainElementOBJ.setDotName("dmdgpb.GpbMainElement.ClassDefinition");
-            _GpbMainElementOBJ.setNameAndTypeName("GpbMainElement.ClassDefinition");
-            _GpbMainElement.setDefinedIn(this);
-            addClassDefList(_GpbMainElement);
+            ClassDefinitionDMO _GpbCompositeTypeOBJ = new ClassDefinitionDMO();
+            _GpbCompositeType = new ClassDefinition(_GpbCompositeTypeOBJ,DmdgpbDMSAG.__GpbCompositeType);
+            _GpbCompositeTypeOBJ.setName("GpbCompositeType");
+            _GpbCompositeTypeOBJ.setDmdID("-477995");
+            _GpbCompositeTypeOBJ.setClassType("STRUCTURAL");
+            _GpbCompositeTypeOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
+            _GpbCompositeTypeOBJ.setLineNumber("95");
+            _GpbCompositeTypeOBJ.addDescription("The GpbCompositeType provides a common base for enumerations and messages\n so that they can be referred to as a separate type of object that can be specified in\n standalone blocks within a generate GpbprotoFile.");
+            _GpbCompositeTypeOBJ.setDerivedFrom("dmdgpb.GpbType");
+            _GpbCompositeTypeOBJ.setIsNamedBy("meta.name");
+            _GpbCompositeTypeOBJ.setUseWrapperType("EXTENDED");
+            _GpbCompositeTypeOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbCompositeTypeREF");
+            _GpbCompositeTypeOBJ.setDmwIteratorClass("GpbCompositeTypeIterableDMW");
+            _GpbCompositeTypeOBJ.addMust("meta.name");
+            _GpbCompositeTypeOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbCompositeTypeIterableDMW");
+            _GpbCompositeTypeOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
+            _GpbCompositeTypeOBJ.setDotName("dmdgpb.GpbCompositeType.ClassDefinition");
+            _GpbCompositeTypeOBJ.setNameAndTypeName("GpbCompositeType.ClassDefinition");
+            _GpbCompositeType.setDefinedIn(this);
+            addClassDefList(_GpbCompositeType);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
             ClassDefinitionDMO _GpbEnumOBJ = new ClassDefinitionDMO();
@@ -214,9 +211,9 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbEnumOBJ.setDmdID("-477994");
             _GpbEnumOBJ.setClassType("STRUCTURAL");
             _GpbEnumOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbEnumOBJ.setLineNumber("96");
+            _GpbEnumOBJ.setLineNumber("142");
             _GpbEnumOBJ.addDescription("The GpbEnum allows for the definition of enumerations. One thing to be aware\n of with enums is that, if you're generating C++, the names of enum elements must be globally\n unique. The dark-matter GPB utility will warn you if you have clashing enum value names.\n <p/>\n May want to allow for mapping between DMS enum definitions and GpbEnums. Provide a basedOnEnum\n attribute that refers to a DMS enum. A GpbDefinitionSet could use the schemaToLoad attribute\n to specify a DMS schema from which definitions can be pulled.\n <p/>\n When you're defining a message type, you might want one of its fields to only have one of a\n pre-defined list of values. For example, let's say you want to add a corpus field for each\n SearchRequest, where the corpus can be UNIVERSAL, WEB, IMAGES, LOCAL, NEWS, PRODUCTS or VIDEO.\n You can do this very simply by adding an enum to your message definition - a field with an enum\n type can only have one of a specified set of constants as its value (if you try to provide a\n different value, the parser will treat it like an unknown field). In the following\n example we've added an enum called Corpus with all the possible values, and a field of type Corpus:");
-            _GpbEnumOBJ.setDerivedFrom("dmdgpb.GpbMainElement");
+            _GpbEnumOBJ.setDerivedFrom("dmdgpb.GpbCompositeType");
             _GpbEnumOBJ.setIsNamedBy("meta.name");
             _GpbEnumOBJ.setUseWrapperType("EXTENDED");
             _GpbEnumOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbEnumREF");
@@ -238,9 +235,9 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldOBJ.setDmdID("-477993");
             _GpbFieldOBJ.setClassType("STRUCTURAL");
             _GpbFieldOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbFieldOBJ.setLineNumber("113");
+            _GpbFieldOBJ.setLineNumber("159");
             _GpbFieldOBJ.addDescription("The GpbField class is used to represent a reusable, named field for use\n within a GpbMessage. If the field has been parsed from an existing .proto file, it will\n have the fieldRule and tag attributes. However, when specified as part of a .gpb file,\n the fieldRule and tag won't be specified.");
-            _GpbFieldOBJ.setDerivedFrom("dmdgpb.GpbElement");
+            _GpbFieldOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbFieldOBJ.setIsNamedBy("meta.name");
             _GpbFieldOBJ.setUseWrapperType("EXTENDED");
             _GpbFieldOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbFieldREF");
@@ -262,8 +259,8 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbMessageOBJ.setDmdID("-477992");
             _GpbMessageOBJ.setClassType("STRUCTURAL");
             _GpbMessageOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbMessageOBJ.setLineNumber("137");
-            _GpbMessageOBJ.setDerivedFrom("dmdgpb.GpbMainElement");
+            _GpbMessageOBJ.setLineNumber("183");
+            _GpbMessageOBJ.setDerivedFrom("dmdgpb.GpbCompositeType");
             _GpbMessageOBJ.setIsNamedBy("meta.name");
             _GpbMessageOBJ.setUseWrapperType("EXTENDED");
             _GpbMessageOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbMessageREF");
@@ -279,38 +276,13 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             addClassDefList(_GpbMessage);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            ClassDefinitionDMO _GpbArtifactOBJ = new ClassDefinitionDMO();
-            _GpbArtifact = new ClassDefinition(_GpbArtifactOBJ,DmdgpbDMSAG.__GpbArtifact);
-            _GpbArtifactOBJ.setName("GpbArtifact");
-            _GpbArtifactOBJ.setDmdID("-477991");
-            _GpbArtifactOBJ.setClassType("STRUCTURAL");
-            _GpbArtifactOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbArtifactOBJ.setLineNumber("163");
-            _GpbArtifactOBJ.addDescription("The GpbArtifact defines an artifact to be generated by the dark-matter GPB \n generation mechanisms; the artifacts in this case are .proto files.");
-            _GpbArtifactOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
-            _GpbArtifactOBJ.setIsNamedBy("meta.name");
-            _GpbArtifactOBJ.setUseWrapperType("EXTENDED");
-            _GpbArtifactOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbArtifactREF");
-            _GpbArtifactOBJ.setDmwIteratorClass("GpbArtifactIterableDMW");
-            _GpbArtifactOBJ.addMay("dmdgpb.import");
-            _GpbArtifactOBJ.addMay("dmdgpb.mainElements");
-            _GpbArtifactOBJ.addMust("meta.name");
-            _GpbArtifactOBJ.addMust("dmdgpb.package");
-            _GpbArtifactOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbArtifactIterableDMW");
-            _GpbArtifactOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
-            _GpbArtifactOBJ.setDotName("dmdgpb.GpbArtifact.ClassDefinition");
-            _GpbArtifactOBJ.setNameAndTypeName("GpbArtifact.ClassDefinition");
-            _GpbArtifact.setDefinedIn(this);
-            addClassDefList(_GpbArtifact);
-
-// Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
             ClassDefinitionDMO _GpbProtoFileOBJ = new ClassDefinitionDMO();
             _GpbProtoFile = new ClassDefinition(_GpbProtoFileOBJ,DmdgpbDMSAG.__GpbProtoFile);
             _GpbProtoFileOBJ.setName("GpbProtoFile");
             _GpbProtoFileOBJ.setDmdID("-477990");
             _GpbProtoFileOBJ.setClassType("STRUCTURAL");
             _GpbProtoFileOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbProtoFileOBJ.setLineNumber("177");
+            _GpbProtoFileOBJ.setLineNumber("223");
             _GpbProtoFileOBJ.addDescription("The GpbProtoFile is used to represent a single .proto file. It may be parsed\n from an existing .proto file by the GpbDotProtoParser utility.");
             _GpbProtoFileOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbProtoFileOBJ.setIsNamedBy("meta.name");
@@ -531,10 +503,10 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
             AttributeDefinitionDMO _mainElementsOBJ = new AttributeDefinitionDMO();
             _mainElements = new AttributeDefinition(_mainElementsOBJ);
-            _mainElementsOBJ.setType("dmdgpb.GpbMainElement");
+            _mainElementsOBJ.setType("dmdgpb.GpbCompositeType");
             _mainElementsOBJ.setName("mainElements");
             _mainElementsOBJ.setDmdID("-477977");
-            _mainElementsOBJ.addDescription("The mainElements attribute indicates a list of GpbMainElements that comprise a GpbProtoFile. Main elements\n include messages and enumerations.");
+            _mainElementsOBJ.addDescription("The mainElements attribute indicates a list of GpbCompositeTypes that comprise a GpbProtoFile. Main elements\n include messages and enumerations.");
             _mainElementsOBJ.setNameAndTypeName("mainElements.AttributeDefinition");
             _mainElementsOBJ.setValueType("MULTI");
             _mainElementsOBJ.setDotName("dmdgpb.mainElements.AttributeDefinition");
@@ -604,7 +576,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
             AttributeDefinitionDMO _embedOBJ = new AttributeDefinitionDMO();
             _embed = new AttributeDefinition(_embedOBJ);
-            _embedOBJ.setType("dmdgpb.GpbMainElement");
+            _embedOBJ.setType("dmdgpb.GpbCompositeType");
             _embedOBJ.setName("embed");
             _embedOBJ.setDmdID("-477972");
             _embedOBJ.addDescription("The embed attribute is used to indicate that an existing GpbEnum or GpbMessage\n description should be embedded directly within a message definition.");
@@ -615,20 +587,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _embedOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
             _embedOBJ.setLineNumber("153");
             addAttributeDefList(_embed);
-
-// Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            AttributeDefinitionDMO _basedOnMainElementOBJ = new AttributeDefinitionDMO();
-            _basedOnMainElement = new AttributeDefinition(_basedOnMainElementOBJ);
-            _basedOnMainElementOBJ.setType("dmdgpb.GpbMainElement");
-            _basedOnMainElementOBJ.setName("basedOnMainElement");
-            _basedOnMainElementOBJ.setDmdID("-477971");
-            _basedOnMainElementOBJ.addDescription("The original GpbMainElement (a message or enum) on which a GpbType is based.");
-            _basedOnMainElementOBJ.setNameAndTypeName("basedOnMainElement.AttributeDefinition");
-            _basedOnMainElementOBJ.setDotName("dmdgpb.basedOnMainElement.AttributeDefinition");
-            _basedOnMainElement.setDefinedIn(this);
-            _basedOnMainElementOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _basedOnMainElementOBJ.setLineNumber("159");
-            addAttributeDefList(_basedOnMainElement);
 
     }
 

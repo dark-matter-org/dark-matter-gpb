@@ -28,7 +28,7 @@ import org.dmd.dms.generated.dmo.MetaDMSAG;                            // Requir
 import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;            // Required type - (GenUtility.java:328)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;                  // Required for MODREC constructor - (GenUtility.java:227)
 import org.dmd.dms.generated.types.DmcTypeStringMV;                    // Required type - (GenUtility.java:328)
-import org.dmd.gpb.shared.generated.dmo.GpbElementDMO;                 // Base class - (GenUtility.java:355)
+import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;              // Base class - (GenUtility.java:355)
 import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                    // Type specific set/add - (GenUtility.java:307)
 import org.dmd.gpb.shared.generated.types.DmcTypeGpbTypeREFSV;         // Reference type - (GenUtility.java:300)
 import org.dmd.gpb.shared.generated.types.GpbTypeREF;                  // Helper class - (GenUtility.java:335)
@@ -47,7 +47,7 @@ import org.dmd.gpb.shared.generated.types.GpbTypeREF;                  // Helper
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-public class GpbFieldDMO  extends GpbElementDMO  implements DmcNamedObjectIF, Serializable  {
+public class GpbFieldDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, Serializable  {
 
     public final static String constructionClassName = "GpbField";
 

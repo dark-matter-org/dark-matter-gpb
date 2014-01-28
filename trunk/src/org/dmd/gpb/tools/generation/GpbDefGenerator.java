@@ -1,10 +1,7 @@
 package org.dmd.gpb.tools.generation;
 
 import java.io.PrintStream;
-import java.util.Iterator;
 
-import org.dmd.dmc.DmcValueException;
-import org.dmd.gpb.server.extended.GpbMainElement;
 import org.dmd.gpb.server.extended.GpbModule;
 import org.dmd.gpb.server.generated.dsd.GpbModuleDefinitionManager;
 import org.dmd.gpb.server.generated.dsd.GpbModuleGenUtility;
@@ -39,19 +36,7 @@ public class GpbDefGenerator extends GpbModuleGenUtility {
 	@Override
 	public void parsingComplete(GpbModule module, ConfigLocation location, GpbModuleDefinitionManager definitions) throws ResultException {
 		System.out.println("\nPARSING COMPLETE\n\n");
-		
-		// We create types for all enums and messages
-		Iterator<GpbMainElement> it = definitions.getAllGpbMainElement();
-		while(it.hasNext()){
-			GpbMainElement element = it.next();
-			try {
-				element.createTypeIfRequired(definitions);
-			} catch (DmcValueException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
+				
 	}
 	
 }

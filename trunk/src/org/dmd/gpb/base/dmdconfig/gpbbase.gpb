@@ -1,28 +1,27 @@
 GpbModule
 name 			gpbbase
-description		The gpbbase GpbModule defines the base types that are allowed by
+description		The gpbbase GpbModule defines the scalar types that are allowed by
  the Google Protocol Buffer (GPB) Domain Specific Lanaguage (DSL). All .gpb modules
  have a dependency on this module by default.
  <p/>
- GpbType definitions cannot be defined in any other module! Attempting to do so 
- will result in a parsing error. GpbType are created internally to represent
- enumerations and messages and thus, their internallyGenerated flag will be set to true.
+ GpbScalarType definitions cannot be defined in any other module! Attempting to do so 
+ will result in a parsing error.
 
-GpbType
+GpbScalarType
 name 			double
 javaType		double
 cplusplusType	double
 pythonType		float
 description		Represents double values.
 
-GpbType
+GpbScalarType
 name 			float
 javaType		float
 cplusplusType	float
 pythonType		float
 description		Represents float values.
 
-GpbType
+GpbScalarType
 name 			int32
 javaType		int
 cplusplusType	int32
@@ -30,7 +29,7 @@ pythonType		float
 description		Uses variable-length encoding. Inefficient for encoding negative numbers
  if your field is likely to have negative values, use sint32 instead.
 
-GpbType
+GpbScalarType
 name 			int64
 javaType		long
 cplusplusType	int64
@@ -38,21 +37,21 @@ pythonType		int/long
 description		Uses variable-length encoding. Inefficient for encoding negative numbers
  if your field is likely to have negative values, use sint64 instead.
 
-GpbType
+GpbScalarType
 name 			uint32
 javaType		int
 cplusplusType	uint32
 pythonType		int/long
 description		Uses variable-length encoding.
 
-GpbType
+GpbScalarType
 name 			uint64
 javaType		long
 cplusplusType	uint64
 pythonType		int/long
 description		Uses variable-length encoding.
 
-GpbType
+GpbScalarType
 name 			sint32
 javaType		int
 cplusplusType	int32
@@ -60,7 +59,7 @@ pythonType		int
 description		Uses variable-length encoding. Signed int value. These more efficiently
  encode negative numbers than regular int32s.
 
-GpbType
+GpbScalarType
 name 			sint64
 javaType		long
 cplusplusType	int64
@@ -68,49 +67,49 @@ pythonType		int/long
 description		Uses variable-length encoding. Signed int value. These more efficiently
  encode negative numbers than regular int64s.
 
-GpbType
+GpbScalarType
 name 			fixed32
 javaType		int
 cplusplusType	uint32
 pythonType		int
 description		Always four bytes. More efficient than uint32 if values are often greater than 2^28.
 
-GpbType
+GpbScalarType
 name 			fixed64
 javaType		long
 cplusplusType	int64
 pythonType		int/long
 description		Always eight bytes. More efficient than uint64 if values are often greater than 2^56.
 
-GpbType
+GpbScalarType
 name 			sfixed32
 javaType		int
 cplusplusType	int32
 pythonType		int
 description		Always four bytes.
 
-GpbType
+GpbScalarType
 name 			sfixed64
 javaType		long
 cplusplusType	int64
 pythonType		int/long
 description		Always eight bytes.
 
-GpbType
+GpbScalarType
 name 			bool
 javaType		long
 cplusplusType	int64
 pythonType		int/long
 description		Boolean values.
 
-GpbType
+GpbScalarType
 name 			string
 javaType		String
 cplusplusType	string
 pythonType		str/unicode
 description		A string must always contain UTF-8 encoded or 7-bit ASCII text.
 
-GpbType
+GpbScalarType
 name 			bytes
 javaType		ByteString
 cplusplusType	string

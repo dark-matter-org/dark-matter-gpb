@@ -25,15 +25,14 @@ import org.dmd.dmc.types.DefinitionName;                            // Naming at
 import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Required for MODREC constructor - (GenUtility.java:228)
 import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:328)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;               // Required for MODREC constructor - (GenUtility.java:227)
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;           // Base class - (GenUtility.java:355)
+import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                 // Base class - (GenUtility.java:355)
 
 // Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
- * The GpbType class provides a common base for all things that can be used
- * \n to represent the type of a GpbField. This includes the built-in scalar
- * types associated with\n Google Protocol Buffers, as well and enums and
- * messages. Having a common base for types means\n that we don't run into
- * problems with generating internal types to represent enums and messages.
+ * The GpbCompositeType provides a common base for enumerations and
+ * messages\n so that they can be referred to as a separate type of object
+ * that can be specified in\n standalone blocks within a generate
+ * GpbprotoFile.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -41,43 +40,43 @@ import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;           // Base clas
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-public class GpbTypeDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, Serializable  {
+public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNamedObjectIF, Serializable  {
 
-    public final static String constructionClassName = "GpbType";
+    public final static String constructionClassName = "GpbCompositeType";
 
 
     static {
     }
 
-    public GpbTypeDMO() {
-        super("GpbType");
+    public GpbCompositeTypeDMO() {
+        super("GpbCompositeType");
     }
 
-    protected GpbTypeDMO(String oc) {
+    protected GpbCompositeTypeDMO(String oc) {
         super(oc);
     }
 
     @Override
-    public GpbTypeDMO getNew(){
-        GpbTypeDMO rc = new GpbTypeDMO();
+    public GpbCompositeTypeDMO getNew(){
+        GpbCompositeTypeDMO rc = new GpbCompositeTypeDMO();
         return(rc);
     }
 
     @Override
-    public GpbTypeDMO getSlice(DmcSliceInfo info){
-        GpbTypeDMO rc = new GpbTypeDMO();
+    public GpbCompositeTypeDMO getSlice(DmcSliceInfo info){
+        GpbCompositeTypeDMO rc = new GpbCompositeTypeDMO();
         populateSlice(rc,info);
         return(rc);
     }
 
-    public GpbTypeDMO(DmcTypeModifierMV mods) {
-        super("GpbType");
+    public GpbCompositeTypeDMO(DmcTypeModifierMV mods) {
+        super("GpbCompositeType");
         modrec(true);
         setModifier(mods);
     }
 
-    public GpbTypeDMO getModificationRecorder(){
-        GpbTypeDMO rc = new GpbTypeDMO();
+    public GpbCompositeTypeDMO getModificationRecorder(){
+        GpbCompositeTypeDMO rc = new GpbCompositeTypeDMO();
         rc.setName(getName());
         rc.setModifier(new DmcTypeModifierMV(MetaDMSAG.__modify));
         rc.modrec(true);
@@ -101,8 +100,8 @@ public class GpbTypeDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF, 
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:775)
     public boolean equals(Object obj){
-        if (obj instanceof GpbTypeDMO){
-            return( getObjectName().equals( ((GpbTypeDMO) obj).getObjectName()) );
+        if (obj instanceof GpbCompositeTypeDMO){
+            return( getObjectName().equals( ((GpbCompositeTypeDMO) obj).getObjectName()) );
         }
         return(false);
     }
