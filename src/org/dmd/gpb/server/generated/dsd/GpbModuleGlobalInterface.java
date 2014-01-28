@@ -17,18 +17,17 @@ package org.dmd.gpb.server.generated.dsd;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGlobalInterface(DSDArtifactFormatter.java:362)
-import java.util.Iterator;                                 // To provide iterators over definitions - (DSDArtifactFormatter.java:359)
-import org.dmd.dmc.types.DotName;                          // To support the find method for definitions - (DSDefinitionModule.java:163)
-import org.dmd.gpb.server.extended.GpbArtifact;            // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbDefinition;          // A definition from the GpbModule Module - (DSDefinitionModule.java:161)
-import org.dmd.gpb.server.extended.GpbElement;             // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbEnum;                // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbField;               // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbMainElement;         // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbMessage;             // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbModule;              // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbProtoFile;           // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbType;                // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import java.util.Iterator;                                   // To provide iterators over definitions - (DSDArtifactFormatter.java:359)
+import org.dmd.dmc.types.DotName;                            // To support the find method for definitions - (DSDefinitionModule.java:163)
+import org.dmd.gpb.server.extended.GpbCompositeType;         // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbDefinition;            // A definition from the GpbModule Module - (DSDefinitionModule.java:161)
+import org.dmd.gpb.server.extended.GpbEnum;                  // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbField;                 // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbMessage;               // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbModule;                // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbProtoFile;             // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbScalarType;            // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbType;                  // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
 
 
 // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGlobalInterface(DSDArtifactFormatter.java:366)
@@ -41,15 +40,10 @@ public interface GpbModuleGlobalInterface {
     public GpbDefinition getGpbDefinition(DotName name);
     public Iterator<GpbDefinition> getAllGpbDefinition();
 
-    public void addGpbArtifact(GpbArtifact def);
-    public int getGpbArtifactCount();
-    public GpbArtifact getGpbArtifact(DotName name);
-    public Iterator<GpbArtifact> getAllGpbArtifact();
-
-    public void addGpbElement(GpbElement def);
-    public int getGpbElementCount();
-    public GpbElement getGpbElement(DotName name);
-    public Iterator<GpbElement> getAllGpbElement();
+    public void addGpbCompositeType(GpbCompositeType def);
+    public int getGpbCompositeTypeCount();
+    public GpbCompositeType getGpbCompositeType(DotName name);
+    public Iterator<GpbCompositeType> getAllGpbCompositeType();
 
     public void addGpbEnum(GpbEnum def);
     public int getGpbEnumCount();
@@ -60,11 +54,6 @@ public interface GpbModuleGlobalInterface {
     public int getGpbFieldCount();
     public GpbField getGpbField(DotName name);
     public Iterator<GpbField> getAllGpbField();
-
-    public void addGpbMainElement(GpbMainElement def);
-    public int getGpbMainElementCount();
-    public GpbMainElement getGpbMainElement(DotName name);
-    public Iterator<GpbMainElement> getAllGpbMainElement();
 
     public void addGpbMessage(GpbMessage def);
     public int getGpbMessageCount();
@@ -80,6 +69,11 @@ public interface GpbModuleGlobalInterface {
     public int getGpbProtoFileCount();
     public GpbProtoFile getGpbProtoFile(DotName name);
     public Iterator<GpbProtoFile> getAllGpbProtoFile();
+
+    public void addGpbScalarType(GpbScalarType def);
+    public int getGpbScalarTypeCount();
+    public GpbScalarType getGpbScalarType(DotName name);
+    public Iterator<GpbScalarType> getAllGpbScalarType();
 
     public void addGpbType(GpbType def);
     public int getGpbTypeCount();

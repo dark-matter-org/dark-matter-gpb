@@ -1,18 +1,22 @@
 package org.dmd.gpb.server.extended;
 
-import java.util.Iterator;
-
-import org.dmd.dmc.DmcValueException;
-import org.dmd.dmc.types.DotName;
+import org.dmd.dms.ClassDefinition;
 import org.dmd.dms.generated.dmw.EnumValueIterableDMW;
 import org.dmd.dms.types.EnumValue;
 import org.dmd.gpb.server.generated.dmw.GpbEnumDMW;
-import org.dmd.gpb.server.generated.dsd.GpbModuleDefinitionManager;
-import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;
+import org.dmd.gpb.shared.generated.dmo.GpbEnumDMO;
 import org.dmd.util.exceptions.DebugInfo;
 import org.dmd.util.formatting.PrintfFormat;
 
 public class GpbEnum extends GpbEnumDMW {
+	
+	public GpbEnum(){
+		super();
+	}
+	
+	public GpbEnum(GpbEnumDMO dmo, ClassDefinition cd){
+		super(dmo,cd);
+	}
 
 	/**
 	 * @return the enumeration formatted in .proto format.
@@ -54,61 +58,60 @@ public class GpbEnum extends GpbEnumDMW {
 		return(longestName);
 	}
 
-	@Override
-	public String toDotGPBFormat() {
-		StringBuffer sb = new StringBuffer();
-		
-		int longestName = getLongestValueNameLength();
-		int npadding = longestName + 4;
-		PrintfFormat 	nformat 	= new PrintfFormat("%-" + npadding + "s");
+//	public String toDotGPBFormat() {
+//		StringBuffer sb = new StringBuffer();
+//		
+//		int longestName = getLongestValueNameLength();
+//		int npadding = longestName + 4;
+//		PrintfFormat 	nformat 	= new PrintfFormat("%-" + npadding + "s");
+//
+//		sb.append("GpbEnum\n");
+//		sb.append("name        " + getName() + "\n");
+//		
+//		EnumValueIterableDMW values = this.getEnumValueIterable();
+//		while(values.hasNext()){
+//			EnumValue value = values.getNext();
+//			sb.append("enumValue   " + nformat.sprintf(value.getName()) + " " + value.getId());
+//			if (value.getDescription() != null)
+//				sb.append(" " + value.getDescription());
+//			sb.append("\n");
+//		}
+//		
+//		if (this.getDescriptionSize() > 0){
+//			Iterator<String> it = getDescription();
+//			while(it.hasNext()){
+//				sb.append("description " + it.next() + "\n");
+//			}
+//		}
+//		
+//		return(sb.toString());
+////		return(this.toOIF());
+//	}
 
-		sb.append("GpbEnum\n");
-		sb.append("name        " + getName() + "\n");
-		
-		EnumValueIterableDMW values = this.getEnumValueIterable();
-		while(values.hasNext()){
-			EnumValue value = values.getNext();
-			sb.append("enumValue   " + nformat.sprintf(value.getName()) + " " + value.getId());
-			if (value.getDescription() != null)
-				sb.append(" " + value.getDescription());
-			sb.append("\n");
-		}
-		
-		if (this.getDescriptionSize() > 0){
-			Iterator<String> it = getDescription();
-			while(it.hasNext()){
-				sb.append("description " + it.next() + "\n");
-			}
-		}
-		
-		return(sb.toString());
-//		return(this.toOIF());
-	}
-
-	@Override
-	public void createTypeIfRequired(GpbModuleDefinitionManager definitions) throws DmcValueException {
-		DebugInfo.debug(this.toOIF());
-		
-		DotName dotname = new DotName(getDefinedInGpbModule().getName() + "." + getName() + "." + DmdgpbDMSAG.__GpbType.name);
-		GpbType type = definitions.getGpbType(dotname);
-		
-		if (type == null){
-			DotName nameAndTypeName = new DotName(getName() + "." + DmdgpbDMSAG.__GpbType.name);
-			type = new GpbType();
-			type.setName(getName());
-			type.setDotName(dotname);
-			type.setNameAndTypeName(nameAndTypeName);
-			
-			type.setDefinedInGpbModule(getDefinedInGpbModule());
-			type.setInternallyGenerated(true);
-			type.setBasedOnMainElement(this);
-			
-			definitions.addGpbType(type);
-			getDefinedInGpbModule().addGpbType(type);
-			
-			DebugInfo.debug("ADDED TYPE \n\n" + type.toOIF());
-		}
-		
-		
-	}
+//	@Override
+//	public void createTypeIfRequired(GpbModuleDefinitionManager definitions) throws DmcValueException {
+//		DebugInfo.debug(this.toOIF());
+//		
+//		DotName dotname = new DotName(getDefinedInGpbModule().getName() + "." + getName() + "." + DmdgpbDMSAG.__GpbType.name);
+//		GpbType type = definitions.getGpbType(dotname);
+//		
+//		if (type == null){
+//			DotName nameAndTypeName = new DotName(getName() + "." + DmdgpbDMSAG.__GpbType.name);
+//			type = new GpbType();
+//			type.setName(getName());
+//			type.setDotName(dotname);
+//			type.setNameAndTypeName(nameAndTypeName);
+//			
+//			type.setDefinedInGpbModule(getDefinedInGpbModule());
+//			type.setInternallyGenerated(true);
+//			type.setBasedOnMainElement(this);
+//			
+//			definitions.addGpbType(type);
+//			getDefinedInGpbModule().addGpbType(type);
+//			
+//			DebugInfo.debug("ADDED TYPE \n\n" + type.toOIF());
+//		}
+//		
+//		
+//	}
 }

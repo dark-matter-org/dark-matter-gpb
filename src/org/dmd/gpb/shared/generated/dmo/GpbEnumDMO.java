@@ -16,20 +16,20 @@
 package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
-import java.io.Serializable;                                        // Always required - (GenUtility.java:224)
-import java.util.*;                                                 // Always required if we have any MV attributes - (GenUtility.java:221)
-import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:376)
-import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:375)
-import org.dmd.dmc.DmcSliceInfo;                                    // Required for object slicing - (GenUtility.java:229)
-import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:241)
-import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:370)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Required for MODREC constructor - (GenUtility.java:228)
-import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeEnumValueMV;              // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;               // Required for MODREC constructor - (GenUtility.java:227)
-import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:328)
-import org.dmd.dms.types.EnumValue;                                 // Primitive type and !auxiliary class - (GenUtility.java:271)
-import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;          // Base class - (GenUtility.java:355)
+import java.io.Serializable;                                         // Always required - (GenUtility.java:224)
+import java.util.*;                                                  // Always required if we have any MV attributes - (GenUtility.java:221)
+import org.dmd.dmc.DmcAttribute;                                     // Named object - (GenUtility.java:376)
+import org.dmd.dmc.DmcNamedObjectIF;                                 // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcSliceInfo;                                     // Required for object slicing - (GenUtility.java:229)
+import org.dmd.dmc.DmcValueException;                                // Any attributes - (GenUtility.java:241)
+import org.dmd.dmc.types.DefinitionName;                             // Naming attribute type - (GenUtility.java:370)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                          // Required for MODREC constructor - (GenUtility.java:228)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;          // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeEnumValueMV;               // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                // Required for MODREC constructor - (GenUtility.java:227)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                  // Required type - (GenUtility.java:328)
+import org.dmd.dms.types.EnumValue;                                  // Primitive type and !auxiliary class - (GenUtility.java:271)
+import org.dmd.gpb.shared.generated.dmo.GpbCompositeTypeDMO;         // Base class - (GenUtility.java:355)
 
 // Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
@@ -57,7 +57,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;          // Base clas
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-public class GpbEnumDMO  extends GpbMainElementDMO  implements DmcNamedObjectIF, Serializable  {
+public class GpbEnumDMO  extends GpbCompositeTypeDMO  implements DmcNamedObjectIF, Serializable  {
 
     public final static String constructionClassName = "GpbEnum";
 

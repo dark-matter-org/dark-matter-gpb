@@ -30,13 +30,14 @@ import org.dmd.dms.generated.dmw.StringIterableDMW;                       // To 
 import org.dmd.dmv.shared.DmvRuleManager;                                 // The injected rule manager used for initializations - (DSDArtifactFormatter.java:451)
 import org.dmd.dmw.DmwObjectFactory;                                      // Constructs wrapped objects - (DSDArtifactFormatter.java:433)
 import org.dmd.dmw.DmwWrapper;                                            // To handle factory created objects - (DSDArtifactFormatter.java:454)
-import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDArtifactFormatter.java:715)
+import org.dmd.gpb.server.extended.GpbCompositeType;                      // A definition from the GpbModule Module - (DSDArtifactFormatter.java:715)
 import org.dmd.gpb.server.extended.GpbDefinition;                         // The base definition from the GpbModule Module - (DSDArtifactFormatter.java:707)
 import org.dmd.gpb.server.extended.GpbEnum;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:715)
 import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDArtifactFormatter.java:715)
 import org.dmd.gpb.server.extended.GpbMessage;                            // A definition from the GpbModule Module - (DSDArtifactFormatter.java:715)
 import org.dmd.gpb.server.extended.GpbModule;                             // The kind of DDM we're reading - (DSDArtifactFormatter.java:458)
 import org.dmd.gpb.server.extended.GpbProtoFile;                          // A definition from the GpbModule Module - (DSDArtifactFormatter.java:715)
+import org.dmd.gpb.server.extended.GpbScalarType;                         // A definition from the GpbModule Module - (DSDArtifactFormatter.java:715)
 import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:715)
 import org.dmd.gpb.server.generated.DmdgpbSchemaAG;                       // The schema recognized by this parser - (DSDArtifactFormatter.java:446)
 import org.dmd.gpb.server.generated.dsd.GpbModuleGlobalInterface;         // Interface to our definition storage - (DSDArtifactFormatter.java:434)
@@ -163,10 +164,9 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
             
                 definition.setDotName(module.getName() + "." + definition.getConstructionClassName());
                 definition.setNameAndTypeName(module.getName() + "." + definition.getConstructionClassName());
-                module.setDefinedInGpbModule(module);
             
+                module.setDefinedInGpbModule(module);
                 definitions.addGpbModule(module);
-//                module.setDefinedInGpbModule(module);
                 if (module.getLoadSchemaClassHasValue()){
                     loadSchemas(module);
                 }
@@ -189,9 +189,9 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
             definition.setDotName(module.getName() + "." + definition.getName() + "." + definition.getConstructionClassName());
             definition.setNameAndTypeName(definition.getName() + "." + definition.getConstructionClassName());
             
-            if (definition instanceof GpbArtifact){
-                definitions.addGpbArtifact((GpbArtifact)definition);
-                module.addGpbArtifact((GpbArtifact)definition);
+            if (definition instanceof GpbCompositeType){
+                definitions.addGpbCompositeType((GpbCompositeType)definition);
+                module.addGpbCompositeType((GpbCompositeType)definition);
             }
             else if (definition instanceof GpbEnum){
                 definitions.addGpbEnum((GpbEnum)definition);
@@ -208,6 +208,10 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
             else if (definition instanceof GpbProtoFile){
                 definitions.addGpbProtoFile((GpbProtoFile)definition);
                 module.addGpbProtoFile((GpbProtoFile)definition);
+            }
+            else if (definition instanceof GpbScalarType){
+                definitions.addGpbScalarType((GpbScalarType)definition);
+                module.addGpbScalarType((GpbScalarType)definition);
             }
             else if (definition instanceof GpbType){
                 definitions.addGpbType((GpbType)definition);

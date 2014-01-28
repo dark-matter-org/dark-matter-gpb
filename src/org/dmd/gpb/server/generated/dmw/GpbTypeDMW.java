@@ -2,28 +2,25 @@ package org.dmd.gpb.server.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:442)
-import org.dmd.dmc.*;                                                // If any attributes - (BaseDMWGenerator.java:1087)
-import org.dmd.dmc.definitions.DmcDefinitionIF;                      // The object is a domain specific definition - (BaseDMWGenerator.java:411)
-import org.dmd.dmc.types.DefinitionName;                             // Is named by - (BaseDMWGenerator.java:1062)
-import org.dmd.dms.ClassDefinition;                                  // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                          // Required for MODREC constructor - (BaseDMWGenerator.java:1072)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
-import org.dmd.gpb.server.extended.GpbDefinition;                    // Derived class - (BaseDMWGenerator.java:1248)
-import org.dmd.gpb.server.extended.GpbMainElement;                   // Is reference type - (BaseDMWGenerator.java:1107)
-import org.dmd.gpb.server.extended.GpbType;                          // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
-import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                  // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
-import org.dmd.gpb.shared.generated.types.GpbMainElementREF;         // Is reference type REF - (BaseDMWGenerator.java:1115)
-import org.dmd.gpb.shared.generated.types.GpbModuleREF;              // Required to access defined in module name - (DMWGenerator.java:180)
+import org.dmd.dmc.*;                                           // If any attributes - (BaseDMWGenerator.java:1087)
+import org.dmd.dmc.definitions.DmcDefinitionIF;                 // The object is a domain specific definition - (BaseDMWGenerator.java:411)
+import org.dmd.dmc.types.DefinitionName;                        // Is named by - (BaseDMWGenerator.java:1062)
+import org.dmd.dms.ClassDefinition;                             // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                     // Required for MODREC constructor - (BaseDMWGenerator.java:1072)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;           // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
+import org.dmd.gpb.server.extended.GpbDefinition;               // Derived class - (BaseDMWGenerator.java:1248)
+import org.dmd.gpb.server.extended.GpbType;                     // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
+import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;             // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;         // Required to access defined in module name - (DMWGenerator.java:180)
 
 
 
 /**
- * The GpbType class is use to define the types of attributes in the GPB\n
- * specification. All GpbMessages and GpbEnum will have GpbTypes generated
- * for\n them so that they can be used as types for GpbAttributes.\n <p/>\n
- * GpbType definitions cannot be specified in .dmgpb files; they are strictly
- * for\n internal use. If you specify one in a .dmgpb file, you'll get an
- * error.
+ * The GpbType class provides a common base for all things that can be used
+ * \n to represent the type of a GpbField. This includes the built-in scalar
+ * types associated with\n Google Protocol Buffers, as well and enums and
+ * messages. Having a common base for types means\n that we don't run into
+ * problems with generating internal types to represent enums and messages.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -90,231 +87,35 @@ abstract public class GpbTypeDMW extends GpbDefinition implements DmcDefinitionI
         return(false);
     }
 
-    /**
-     * @return A GpbMainElement object.
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1434)
-    public GpbMainElement getBasedOnMainElement(){
-        GpbMainElementREF ref = ((GpbTypeDMO) core).getBasedOnMainElement();
-        if (ref == null)
-            return(null);
-        
-        if (ref.getObject() == null)
-            return(null);
-        
-        return((GpbMainElement)ref.getObject().getContainer());
-    }
-
-    /**
-     * Sets the basedOnMainElement to the specified value.
-     * @param value A value compatible with GpbMainElementREF
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1519)
-    public void setBasedOnMainElement(GpbMainElement value) {
-        ((GpbTypeDMO) core).setBasedOnMainElement(value.getDMO());
-    }
-
-    /**
-     * Sets the basedOnMainElement to the specified value.
-     * @param value A value compatible with GpbMainElementREF
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1528)
-    public void setBasedOnMainElement(Object value) throws DmcValueException {
-        ((GpbTypeDMO) core).setBasedOnMainElement(value);
-    }
-
-    /**
-     * Removes the basedOnMainElement attribute value.
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
-    public void remBasedOnMainElement(){
-        ((GpbTypeDMO) core).remBasedOnMainElement();
-    }
-
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
-    public String getCplusplusType(){
-        return(((GpbTypeDMO) core).getCplusplusType());
+    public DefinitionName getName(){
+        return(((GpbTypeDMO) core).getName());
     }
 
     /**
-     * Sets cplusplusType to the specified value.
-     * @param value A value compatible with DmcTypeString
+     * Sets name to the specified value.
+     * @param value A value compatible with DmcTypeDefinitionName
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
-    public void setCplusplusType(Object value) throws DmcValueException {
-        ((GpbTypeDMO) core).setCplusplusType(value);
+    public void setName(Object value) throws DmcValueException {
+        ((GpbTypeDMO) core).setName(value);
     }
 
     /**
-     * Sets cplusplusType to the specified value.
-     * @param value String
+     * Sets name to the specified value.
+     * @param value DefinitionName
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
-    public void setCplusplusType(String value){
-        ((GpbTypeDMO) core).setCplusplusType(value);
+    public void setName(DefinitionName value){
+        ((GpbTypeDMO) core).setName(value);
     }
 
     /**
-     * Removes the cplusplusType attribute value.
+     * Removes the name attribute value.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
-    public void remCplusplusType(){
-        ((GpbTypeDMO) core).remCplusplusType();
-    }
-
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
-    public String getDefaultValue(){
-        return(((GpbTypeDMO) core).getDefaultValue());
-    }
-
-    /**
-     * Sets defaultValue to the specified value.
-     * @param value A value compatible with DmcTypeString
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
-    public void setDefaultValue(Object value) throws DmcValueException {
-        ((GpbTypeDMO) core).setDefaultValue(value);
-    }
-
-    /**
-     * Sets defaultValue to the specified value.
-     * @param value String
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
-    public void setDefaultValue(String value){
-        ((GpbTypeDMO) core).setDefaultValue(value);
-    }
-
-    /**
-     * Removes the defaultValue attribute value.
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
-    public void remDefaultValue(){
-        ((GpbTypeDMO) core).remDefaultValue();
-    }
-
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
-    public Boolean isInternallyGenerated(){
-        return(((GpbTypeDMO) core).isInternallyGenerated());
-    }
-
-    /**
-     * Sets internallyGenerated to the specified value.
-     * @param value A value compatible with DmcTypeBoolean
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
-    public void setInternallyGenerated(Object value) throws DmcValueException {
-        ((GpbTypeDMO) core).setInternallyGenerated(value);
-    }
-
-    /**
-     * Sets internallyGenerated to the specified value.
-     * @param value Boolean
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
-    public void setInternallyGenerated(Boolean value){
-        ((GpbTypeDMO) core).setInternallyGenerated(value);
-    }
-
-    /**
-     * Removes the internallyGenerated attribute value.
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
-    public void remInternallyGenerated(){
-        ((GpbTypeDMO) core).remInternallyGenerated();
-    }
-
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
-    public String getJavaType(){
-        return(((GpbTypeDMO) core).getJavaType());
-    }
-
-    /**
-     * Sets javaType to the specified value.
-     * @param value A value compatible with DmcTypeString
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
-    public void setJavaType(Object value) throws DmcValueException {
-        ((GpbTypeDMO) core).setJavaType(value);
-    }
-
-    /**
-     * Sets javaType to the specified value.
-     * @param value String
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
-    public void setJavaType(String value){
-        ((GpbTypeDMO) core).setJavaType(value);
-    }
-
-    /**
-     * Removes the javaType attribute value.
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
-    public void remJavaType(){
-        ((GpbTypeDMO) core).remJavaType();
-    }
-
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
-    public String getPythonType(){
-        return(((GpbTypeDMO) core).getPythonType());
-    }
-
-    /**
-     * Sets pythonType to the specified value.
-     * @param value A value compatible with DmcTypeString
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
-    public void setPythonType(Object value) throws DmcValueException {
-        ((GpbTypeDMO) core).setPythonType(value);
-    }
-
-    /**
-     * Sets pythonType to the specified value.
-     * @param value String
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
-    public void setPythonType(String value){
-        ((GpbTypeDMO) core).setPythonType(value);
-    }
-
-    /**
-     * Removes the pythonType attribute value.
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
-    public void remPythonType(){
-        ((GpbTypeDMO) core).remPythonType();
-    }
-
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
-    public Integer getSizeInBytes(){
-        return(((GpbTypeDMO) core).getSizeInBytes());
-    }
-
-    /**
-     * Sets sizeInBytes to the specified value.
-     * @param value A value compatible with DmcTypeInteger
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
-    public void setSizeInBytes(Object value) throws DmcValueException {
-        ((GpbTypeDMO) core).setSizeInBytes(value);
-    }
-
-    /**
-     * Sets sizeInBytes to the specified value.
-     * @param value Integer
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
-    public void setSizeInBytes(Integer value){
-        ((GpbTypeDMO) core).setSizeInBytes(value);
-    }
-
-    /**
-     * Removes the sizeInBytes attribute value.
-     */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
-    public void remSizeInBytes(){
-        ((GpbTypeDMO) core).remSizeInBytes();
+    public void remName(){
+        ((GpbTypeDMO) core).remName();
     }
 
     // Generated from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:221)

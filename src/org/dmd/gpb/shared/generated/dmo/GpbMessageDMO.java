@@ -16,22 +16,22 @@
 package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
-import java.io.Serializable;                                                  // Always required - (GenUtility.java:224)
-import java.util.*;                                                           // Always required if we have any MV attributes - (GenUtility.java:221)
-import org.dmd.dmc.DmcAttribute;                                              // Named object - (GenUtility.java:376)
-import org.dmd.dmc.DmcNamedObjectIF;                                          // Named object - (GenUtility.java:375)
-import org.dmd.dmc.DmcOmni;                                                   // Lazy resolution - (GenUtility.java:320)
-import org.dmd.dmc.DmcSliceInfo;                                              // Required for object slicing - (GenUtility.java:229)
-import org.dmd.dmc.DmcValueException;                                         // Any attributes - (GenUtility.java:241)
-import org.dmd.dmc.types.DefinitionName;                                      // Naming attribute type - (GenUtility.java:370)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                                   // Required for MODREC constructor - (GenUtility.java:228)
-import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;                   // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                         // Required for MODREC constructor - (GenUtility.java:227)
-import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;                    // Base class - (GenUtility.java:355)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldIndicatorMV;         // Required type - (GenUtility.java:328)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbMainElementREFMV;         // Reference type - (GenUtility.java:300)
-import org.dmd.gpb.shared.generated.types.GpbMainElementREF;                  // Helper class - (GenUtility.java:335)
-import org.dmd.gpb.shared.types.GpbFieldIndicator;                            // Primitive type and !auxiliary class - (GenUtility.java:271)
+import java.io.Serializable;                                                    // Always required - (GenUtility.java:224)
+import java.util.*;                                                             // Always required if we have any MV attributes - (GenUtility.java:221)
+import org.dmd.dmc.DmcAttribute;                                                // Named object - (GenUtility.java:376)
+import org.dmd.dmc.DmcNamedObjectIF;                                            // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcOmni;                                                     // Lazy resolution - (GenUtility.java:320)
+import org.dmd.dmc.DmcSliceInfo;                                                // Required for object slicing - (GenUtility.java:229)
+import org.dmd.dmc.DmcValueException;                                           // Any attributes - (GenUtility.java:241)
+import org.dmd.dmc.types.DefinitionName;                                        // Naming attribute type - (GenUtility.java:370)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                                     // Required for MODREC constructor - (GenUtility.java:228)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;                     // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                           // Required for MODREC constructor - (GenUtility.java:227)
+import org.dmd.gpb.shared.generated.dmo.GpbCompositeTypeDMO;                    // Base class - (GenUtility.java:355)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbCompositeTypeREFMV;         // Reference type - (GenUtility.java:300)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldIndicatorMV;           // Required type - (GenUtility.java:328)
+import org.dmd.gpb.shared.generated.types.GpbCompositeTypeREF;                  // Helper class - (GenUtility.java:335)
+import org.dmd.gpb.shared.types.GpbFieldIndicator;                              // Primitive type and !auxiliary class - (GenUtility.java:271)
 
 // Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
@@ -42,7 +42,7 @@ import org.dmd.gpb.shared.types.GpbFieldIndicator;                            //
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-public class GpbMessageDMO  extends GpbMainElementDMO  implements DmcNamedObjectIF, Serializable  {
+public class GpbMessageDMO  extends GpbCompositeTypeDMO  implements DmcNamedObjectIF, Serializable  {
 
     public final static String constructionClassName = "GpbMessage";
 
@@ -245,19 +245,19 @@ public class GpbMessageDMO  extends GpbMainElementDMO  implements DmcNamedObject
     }
 
     /**
-     * @return An Iterator of GpbMainElementDMO objects.
+     * @return An Iterator of GpbCompositeTypeDMO objects.
      */
     @SuppressWarnings("unchecked")
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:970)
-    public Iterator<GpbMainElementREF> getEmbed(){
-        DmcTypeGpbMainElementREFMV attr = (DmcTypeGpbMainElementREFMV) get(DmdgpbDMSAG.__embed);
+    public Iterator<GpbCompositeTypeREF> getEmbed(){
+        DmcTypeGpbCompositeTypeREFMV attr = (DmcTypeGpbCompositeTypeREFMV) get(DmdgpbDMSAG.__embed);
         if (attr == null)
-            return( ((List<GpbMainElementREF>) Collections.EMPTY_LIST).iterator() );
+            return( ((List<GpbCompositeTypeREF>) Collections.EMPTY_LIST).iterator() );
 
         if (DmcOmni.instance().lazyResolution()){
             if (attr.doLazyResolution(this)){
                 rem(attr.getAttributeInfo());
-                return( ((List<GpbMainElementREF>) Collections.EMPTY_LIST).iterator() );
+                return( ((List<GpbCompositeTypeREF>) Collections.EMPTY_LIST).iterator() );
             }
         }
 
@@ -265,27 +265,27 @@ public class GpbMessageDMO  extends GpbMainElementDMO  implements DmcNamedObject
     }
 
     /**
-     * @return An Iterator of GpbMainElementREFs without attempting lazy resolution (if it's turned on).
+     * @return An Iterator of GpbCompositeTypeREFs without attempting lazy resolution (if it's turned on).
      */
     @SuppressWarnings("unchecked")
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:990)
-    public Iterator<GpbMainElementREF> getEmbedREFs(){
-        DmcTypeGpbMainElementREFMV attr = (DmcTypeGpbMainElementREFMV) get(DmdgpbDMSAG.__embed);
+    public Iterator<GpbCompositeTypeREF> getEmbedREFs(){
+        DmcTypeGpbCompositeTypeREFMV attr = (DmcTypeGpbCompositeTypeREFMV) get(DmdgpbDMSAG.__embed);
         if (attr == null)
-            return( ((List<GpbMainElementREF>) Collections.EMPTY_LIST).iterator() );
+            return( ((List<GpbCompositeTypeREF>) Collections.EMPTY_LIST).iterator() );
 
         return(attr.getMV());
     }
 
     /**
      * Adds another embed to the specified value.
-     * @param value GpbMainElement
+     * @param value GpbCompositeType
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1004)
-    public DmcAttribute<?> addEmbed(GpbMainElementDMO value) {
+    public DmcAttribute<?> addEmbed(GpbCompositeTypeDMO value) {
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__embed);
         if (attr == null)
-            attr = new DmcTypeGpbMainElementREFMV(DmdgpbDMSAG.__embed);
+            attr = new DmcTypeGpbCompositeTypeREFMV(DmdgpbDMSAG.__embed);
         
         try{
             setLastValue(attr.add(value));
@@ -299,13 +299,13 @@ public class GpbMessageDMO  extends GpbMainElementDMO  implements DmcNamedObject
 
     /**
      * Adds another embed value.
-     * @param value A value compatible with GpbMainElement
+     * @param value A value compatible with GpbCompositeType
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
     public DmcAttribute<?> addEmbed(Object value) throws DmcValueException {
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__embed);
         if (attr == null)
-            attr = new DmcTypeGpbMainElementREFMV(DmdgpbDMSAG.__embed);
+            attr = new DmcTypeGpbCompositeTypeREFMV(DmdgpbDMSAG.__embed);
         
         setLastValue(attr.add(value));
         add(DmdgpbDMSAG.__embed,attr);
@@ -329,14 +329,14 @@ public class GpbMessageDMO  extends GpbMainElementDMO  implements DmcNamedObject
 
     /**
      * Deletes a embed value.
-     * @param value The GpbMainElement to be deleted from set of attribute values.
+     * @param value The GpbCompositeType to be deleted from set of attribute values.
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1301)
     public DmcAttribute<?> delEmbed(Object value){
         DmcAttribute<?> attr = get(DmdgpbDMSAG.__embed);
         
         if ( (attr == null) && (getModifier()!= null))
-            delFromEmptyAttribute(new DmcTypeGpbMainElementREFMV(DmdgpbDMSAG.__embed), value);
+            delFromEmptyAttribute(new DmcTypeGpbCompositeTypeREFMV(DmdgpbDMSAG.__embed), value);
         else
             attr = del(DmdgpbDMSAG.__embed, value);
         

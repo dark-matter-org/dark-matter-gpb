@@ -2,23 +2,23 @@ package org.dmd.gpb.server.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:442)
-import java.util.ArrayList;                                                // To support getMVCopy() - (BaseDMWGenerator.java:1181)
-import java.util.Iterator;                                                 // Support copy of MV objects - (BaseDMWGenerator.java:2240)
-import org.dmd.dmc.*;                                                      // If any attributes - (BaseDMWGenerator.java:1087)
-import org.dmd.dmc.definitions.DmcDefinitionIF;                            // The object is a domain specific definition - (BaseDMWGenerator.java:411)
-import org.dmd.dmc.types.DefinitionName;                                   // Is named by - (BaseDMWGenerator.java:1062)
-import org.dmd.dms.ClassDefinition;                                        // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                                // Required for MODREC constructor - (BaseDMWGenerator.java:1072)
-import org.dmd.dms.generated.dmw.StringIterableDMW;                        // For multi-valued String - (BaseDMWGenerator.java:2103)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                      // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
-import org.dmd.gpb.server.extended.GpbDefinition;                          // Derived class - (BaseDMWGenerator.java:1248)
-import org.dmd.gpb.server.extended.GpbMainElement;                         // Is reference type - (BaseDMWGenerator.java:1107)
-import org.dmd.gpb.server.extended.GpbProtoFile;                           // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
-import org.dmd.gpb.server.generated.dmw.GpbMainElementIterableDMW;         // For multi-valued GpbMainElement - (BaseDMWGenerator.java:1709)
-import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                       // Attribute import from the dmdgpb schema - (BaseDMWGenerator.java:897)
-import org.dmd.gpb.shared.generated.dmo.GpbMainElementDMO;                 // For multi-valued adds of GpbMainElement - (BaseDMWGenerator.java:1767)
-import org.dmd.gpb.shared.generated.dmo.GpbProtoFileDMO;                   // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
-import org.dmd.gpb.shared.generated.types.GpbModuleREF;                    // Required to access defined in module name - (DMWGenerator.java:180)
+import java.util.ArrayList;                                                  // To support getMVCopy() - (BaseDMWGenerator.java:1181)
+import java.util.Iterator;                                                   // Support copy of MV objects - (BaseDMWGenerator.java:2240)
+import org.dmd.dmc.*;                                                        // If any attributes - (BaseDMWGenerator.java:1087)
+import org.dmd.dmc.definitions.DmcDefinitionIF;                              // The object is a domain specific definition - (BaseDMWGenerator.java:411)
+import org.dmd.dmc.types.DefinitionName;                                     // Is named by - (BaseDMWGenerator.java:1062)
+import org.dmd.dms.ClassDefinition;                                          // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                                  // Required for MODREC constructor - (BaseDMWGenerator.java:1072)
+import org.dmd.dms.generated.dmw.StringIterableDMW;                          // For multi-valued String - (BaseDMWGenerator.java:2103)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                        // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
+import org.dmd.gpb.server.extended.GpbCompositeType;                         // Is reference type - (BaseDMWGenerator.java:1107)
+import org.dmd.gpb.server.extended.GpbDefinition;                            // Derived class - (BaseDMWGenerator.java:1248)
+import org.dmd.gpb.server.extended.GpbProtoFile;                             // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
+import org.dmd.gpb.server.generated.dmw.GpbCompositeTypeIterableDMW;         // For multi-valued GpbCompositeType - (BaseDMWGenerator.java:1709)
+import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                         // Attribute import from the dmdgpb schema - (BaseDMWGenerator.java:897)
+import org.dmd.gpb.shared.generated.dmo.GpbCompositeTypeDMO;                 // For multi-valued adds of GpbCompositeType - (BaseDMWGenerator.java:1767)
+import org.dmd.gpb.shared.generated.dmo.GpbProtoFileDMO;                     // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;                      // Required to access defined in module name - (DMWGenerator.java:180)
 
 
 
@@ -205,7 +205,7 @@ abstract public class GpbProtoFileDMW extends GpbDefinition implements DmcDefini
     }
 
     /**
-     * @return The number of GpbMainElement items.
+     * @return The number of GpbCompositeType items.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1671)
     public int getMainElementsSize(){
@@ -213,7 +213,7 @@ abstract public class GpbProtoFileDMW extends GpbDefinition implements DmcDefini
     }
 
     /**
-     * @return true if there are no GpbMainElementDMO items.
+     * @return true if there are no GpbCompositeTypeDMO items.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1679)
     public boolean getMainElementsIsEmpty(){
@@ -223,7 +223,7 @@ abstract public class GpbProtoFileDMW extends GpbDefinition implements DmcDefini
     }
 
     /**
-     * @return true if there are any GpbMainElementDMO items.
+     * @return true if there are any GpbCompositeTypeDMO items.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1689)
     public boolean getMainElementsHasValue(){
@@ -233,48 +233,48 @@ abstract public class GpbProtoFileDMW extends GpbDefinition implements DmcDefini
     }
 
     /**
-     * @return An Iterator of GpbMainElementDMO objects.
+     * @return An Iterator of GpbCompositeTypeDMO objects.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1716)
-    public GpbMainElementIterableDMW getMainElementsIterable(){
+    public GpbCompositeTypeIterableDMW getMainElementsIterable(){
         DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__mainElements);
         if (attr == null)
-            return(GpbMainElementIterableDMW.emptyList);
+            return(GpbCompositeTypeIterableDMW.emptyList);
         
-        return(new GpbMainElementIterableDMW(((GpbProtoFileDMO) core).getMainElements()));
+        return(new GpbCompositeTypeIterableDMW(((GpbProtoFileDMO) core).getMainElements()));
     }
 
     /**
      * Adds another mainElements value.
-     * @param value A value compatible with GpbMainElement
+     * @param value A value compatible with GpbCompositeType
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1773)
-    public DmcAttribute<?> addMainElements(GpbMainElement value){
-        DmcAttribute<?> attr = ((GpbProtoFileDMO) core).addMainElements(((GpbMainElementDMO)value.getDmcObject()));
+    public DmcAttribute<?> addMainElements(GpbCompositeType value){
+        DmcAttribute<?> attr = ((GpbProtoFileDMO) core).addMainElements(((GpbCompositeTypeDMO)value.getDmcObject()));
         return(attr);
     }
 
     /**
      * Deletes a mainElements value.
-     * @param value The GpbMainElement to be deleted from set of attribute values.
+     * @param value The GpbCompositeType to be deleted from set of attribute values.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1823)
-    public void delMainElements(GpbMainElement value){
+    public void delMainElements(GpbCompositeType value){
         ((GpbProtoFileDMO) core).delMainElements(value.getDMO());
     }
 
     /**
-     * @return A COPY of the collection of GpbMainElement objects.
+     * @return A COPY of the collection of GpbCompositeType objects.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1887)
-    public ArrayList<GpbMainElement> getMainElementsCopy(){
+    public ArrayList<GpbCompositeType> getMainElementsCopy(){
         DmcAttribute<?> attr = ((GpbProtoFileDMO) core).get(DmdgpbDMSAG.__mainElements);
         if (attr == null)
-            return(new ArrayList<GpbMainElement>());
+            return(new ArrayList<GpbCompositeType>());
         
-        ArrayList<GpbMainElement> rc = new ArrayList<GpbMainElement>(attr.getMVSize());
+        ArrayList<GpbCompositeType> rc = new ArrayList<GpbCompositeType>(attr.getMVSize());
         
-        GpbMainElementIterableDMW it = getMainElementsIterable();
+        GpbCompositeTypeIterableDMW it = getMainElementsIterable();
         while(it.hasNext()){
             rc.add(it.next());
         }

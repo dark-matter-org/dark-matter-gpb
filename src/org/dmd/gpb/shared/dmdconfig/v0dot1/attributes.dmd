@@ -96,9 +96,9 @@ description 	The package associated with a .proto file.
 AttributeDefinition
 name			mainElements
 dmdID			23
-type			GpbMainElement
+type			GpbCompositeType
 valueType		MULTI
-description		The mainElements attribute indicates a list of GpbMainElements that comprise a GpbProtoFile. Main elements
+description		The mainElements attribute indicates a list of GpbCompositeTypes that comprise a GpbProtoFile. Main elements
  include messages and enumerations.
 
 AttributeDefinition
@@ -146,15 +146,15 @@ description 	An import associated with a .proto file.
 AttributeDefinition
 name			embed
 dmdID			28
-type			GpbMainElement
+type			GpbCompositeType
 valueType		MULTI
 description 	The embed attribute is used to indicate that an existing GpbEnum or GpbMessage
  description should be embedded directly within a message definition.
 
-AttributeDefinition
-name			basedOnMainElement
-dmdID			29
-type			GpbMainElement
-description		The original GpbMainElement (a message or enum) on which a GpbType is based.
+//AttributeDefinition
+//name			basedOnMainElement
+//dmdID			29
+//type			GpbMainElement
+//description		The original GpbMainElement (a message or enum) on which a GpbType is based.
 
  
