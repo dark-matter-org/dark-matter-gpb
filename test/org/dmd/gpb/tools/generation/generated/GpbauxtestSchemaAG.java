@@ -111,6 +111,7 @@ public class GpbauxtestSchemaAG extends SchemaDefinition {
             _GpbTestAuxInfoOBJ.setDmoAuxClass("GpbTestAuxInfoDMO");
             _GpbTestAuxInfoOBJ.setDmwAuxClassImport("org.dmd.gpb.tools.generation.generated.auxw.GpbTestAuxInfo");
             _GpbTestAuxInfoOBJ.setDotName("gpbauxtest.GpbTestAuxInfo.ClassDefinition");
+            _GpbTestAuxInfoOBJ.setNameAndTypeName("GpbTestAuxInfo.ClassDefinition");
             _GpbTestAuxInfo.setDefinedIn(this);
             addClassDefList(_GpbTestAuxInfo);
 
@@ -124,6 +125,7 @@ public class GpbauxtestSchemaAG extends SchemaDefinition {
             _otherInfoOBJ.setName("otherInfo");
             _otherInfoOBJ.setDmdID("-478999");
             _otherInfoOBJ.addDescription("Some other information.");
+            _otherInfoOBJ.setNameAndTypeName("otherInfo.AttributeDefinition");
             _otherInfoOBJ.setDotName("gpbauxtest.otherInfo.AttributeDefinition");
             _otherInfo.setDefinedIn(this);
             _otherInfoOBJ.setFile("/Users/peter/bvw/dark-matter-gpb/test/org/dmd/gpb/tools/generation/dmdconfig/attributes.dmd");
@@ -137,6 +139,7 @@ public class GpbauxtestSchemaAG extends SchemaDefinition {
             _unitsOBJ.setName("units");
             _unitsOBJ.setDmdID("-478998");
             _unitsOBJ.addDescription("Some unit information.");
+            _unitsOBJ.setNameAndTypeName("units.AttributeDefinition");
             _unitsOBJ.setDotName("gpbauxtest.units.AttributeDefinition");
             _units.setDefinedIn(this);
             _unitsOBJ.setFile("/Users/peter/bvw/dark-matter-gpb/test/org/dmd/gpb/tools/generation/dmdconfig/attributes.dmd");

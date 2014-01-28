@@ -38,9 +38,9 @@ import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                       //
 import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;                      // Primitive type - (ComplexTypeFormatter.java:598)
 import org.dmd.gpb.shared.generated.enums.OptionEnum;                         // Primitive type - (ComplexTypeFormatter.java:598)
 import org.dmd.gpb.shared.generated.types.DmcTypeFieldRuleEnumSTATIC;         // Internally generated type - (ComplexTypeFormatter.java:616)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbElementREFSTATIC;         // Internally generated type - (ComplexTypeFormatter.java:616)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldREFSTATIC;           // Internally generated type - (ComplexTypeFormatter.java:616)
 import org.dmd.gpb.shared.generated.types.DmcTypeOptionEnumSTATIC;            // Internally generated type - (ComplexTypeFormatter.java:616)
-import org.dmd.gpb.shared.generated.types.GpbElementREF;                      // Object reference - (ComplexTypeFormatter.java:579)
+import org.dmd.gpb.shared.generated.types.GpbFieldREF;                        // Object reference - (ComplexTypeFormatter.java:579)
 
 
 
@@ -56,10 +56,10 @@ public class GpbFieldIndicatorBase implements Serializable {
     // Some fields are optional - this many are mandatory
     static int mandatoryFields = 3;
 
-    // The field, enum or message referred to by this field indicator.
-    GpbElementREF element;
+    // Reference to the GpbField to be used.
+    GpbFieldREF fieldRef;
 
-    final static DmcAttributeInfo elementAI = new DmcAttributeInfo("element",0,"GpbElement",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+    final static DmcAttributeInfo fieldRefAI = new DmcAttributeInfo("fieldRef",0,"GpbField",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
 
     // The unique numeric tag for this field.
     Integer fieldTag;
@@ -91,7 +91,7 @@ public class GpbFieldIndicatorBase implements Serializable {
      * Copy constructor.
      */
     public GpbFieldIndicatorBase(GpbFieldIndicatorBase original){
-        element = original.element;
+        fieldRef = original.fieldRef;
         fieldTag = original.fieldTag;
         fieldRule = original.fieldRule;
         option = original.option;
@@ -102,8 +102,8 @@ public class GpbFieldIndicatorBase implements Serializable {
      * All fields constructor.
      * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:140)
      */
-    public GpbFieldIndicatorBase(GpbElementREF f1, Integer f2, FieldRuleEnum f3, OptionEnum f4, String f5) throws DmcValueException {
-        element = DmcTypeGpbElementREFSTATIC.instance.typeCheck(f1);
+    public GpbFieldIndicatorBase(GpbFieldREF f1, Integer f2, FieldRuleEnum f3, OptionEnum f4, String f5) throws DmcValueException {
+        fieldRef = DmcTypeGpbFieldREFSTATIC.instance.typeCheck(f1);
         fieldTag = DmcTypeIntegerSTATIC.instance.typeCheck(f2);
         fieldRule = DmcTypeFieldRuleEnumSTATIC.instance.typeCheck(f3);
         option = DmcTypeOptionEnumSTATIC.instance.typeCheck(f4);
@@ -119,8 +119,8 @@ public class GpbFieldIndicatorBase implements Serializable {
         Object rc = null;
         String input = initialInput.trim();
         input = input.replaceAll("(\\s)+", " ");
-        if ((rc = getNextField(input,seppos,"element",1,false)) != null)
-            element = DmcTypeGpbElementREFSTATIC.instance.typeCheck(rc);
+        if ((rc = getNextField(input,seppos,"fieldRef",1,false)) != null)
+            fieldRef = DmcTypeGpbFieldREFSTATIC.instance.typeCheck(rc);
         if ((rc = getNextField(input,seppos,"fieldTag",2,false)) != null)
             fieldTag = DmcTypeIntegerSTATIC.instance.typeCheck(rc);
         if ((rc = getNextField(input,seppos,"fieldRule",3,false)) != null)
@@ -136,7 +136,7 @@ public class GpbFieldIndicatorBase implements Serializable {
      * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:225)
      */
     public void serializeIt(DmcOutputStreamIF dos) throws Exception {
-        DmcTypeGpbElementREFSTATIC.instance.serializeValue(dos, element);
+        DmcTypeGpbFieldREFSTATIC.instance.serializeValue(dos, fieldRef);
         DmcTypeIntegerSTATIC.instance.serializeValue(dos, fieldTag);
         DmcTypeFieldRuleEnumSTATIC.instance.serializeValue(dos, fieldRule);
         DmcTypeOptionEnumSTATIC.instance.serializeValue(dos, option);
@@ -148,7 +148,7 @@ public class GpbFieldIndicatorBase implements Serializable {
      * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:242)
      */
     public void deserializeIt(DmcInputStreamIF dis) throws Exception {
-        element = DmcTypeGpbElementREFSTATIC.instance.deserializeValue(dis);
+        fieldRef = DmcTypeGpbFieldREFSTATIC.instance.deserializeValue(dis);
         fieldTag = DmcTypeIntegerSTATIC.instance.deserializeValue(dis);
         fieldRule = DmcTypeFieldRuleEnumSTATIC.instance.deserializeValue(dis);
         option = DmcTypeOptionEnumSTATIC.instance.deserializeValue(dis);
@@ -160,11 +160,11 @@ public class GpbFieldIndicatorBase implements Serializable {
      * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:259)
      */
     public String toString(){
-        return(element.toString() + " " + fieldTag.toString() + " " + fieldRule.toString() + " " + option.toString() + " " + defaultValue.toString());
+        return(fieldRef.toString() + " " + fieldTag.toString() + " " + fieldRule.toString() + " " + option.toString() + " " + defaultValue.toString());
     }
 
-    public GpbElementREF getElement(){
-        return(element);
+    public GpbFieldREF getFieldRef(){
+        return(fieldRef);
     }
 
     public Integer getFieldTag(){
@@ -188,14 +188,14 @@ public class GpbFieldIndicatorBase implements Serializable {
     public void resolve(DmcNameResolverIF resolver, String attrName) throws DmcValueException {
         DmcNamedObjectIF  obj = null;
 
-        obj = resolver.findNamedObject(element.getObjectName());
+        obj = resolver.findNamedObject(fieldRef.getObjectName());
         if (obj == null)
-            throw(new DmcValueException("Could not resolve reference to: " + element.getObjectName() + " via attribute: " + attrName));
+            throw(new DmcValueException("Could not resolve reference to: " + fieldRef.getObjectName() + " via attribute: " + attrName));
         
         if (obj instanceof DmcContainerIF)
-            ((DmcNamedObjectREF)element).setObject((DmcNamedObjectIF) ((DmcContainerIF)obj).getDmcObject());
+            ((DmcNamedObjectREF)fieldRef).setObject((DmcNamedObjectIF) ((DmcContainerIF)obj).getDmcObject());
         else
-            ((DmcNamedObjectREF)element).setObject(obj);
+            ((DmcNamedObjectREF)fieldRef).setObject(obj);
         
     }
 
@@ -204,14 +204,14 @@ public class GpbFieldIndicatorBase implements Serializable {
     public void resolve(DmcNameResolverWithClashSupportIF resolver, DmcObject object, DmcNameClashResolverIF ncr, DmcAttributeInfo ai) throws DmcValueException, DmcValueExceptionSet {
         DmcNamedObjectIF  obj = null;
 
-        obj = resolver.findNamedObjectMayClash(object, element.getObjectName(), ncr, elementAI);
+        obj = resolver.findNamedObjectMayClash(object, fieldRef.getObjectName(), ncr, fieldRefAI);
         if (obj == null)
-            throw(new DmcValueException("Could not resolve reference to: " + element.getObjectName() + " via attribute: " + ai.name));
+            throw(new DmcValueException("Could not resolve reference to: " + fieldRef.getObjectName() + " via attribute: " + ai.name));
         
         if (obj instanceof DmcContainerIF)
-            ((DmcNamedObjectREF)element).setObject((DmcNamedObjectIF) ((DmcContainerIF)obj).getDmcObject());
+            ((DmcNamedObjectREF)fieldRef).setObject((DmcNamedObjectIF) ((DmcContainerIF)obj).getDmcObject());
         else
-            ((DmcNamedObjectREF)element).setObject(obj);
+            ((DmcNamedObjectREF)fieldRef).setObject(obj);
         
     }
 

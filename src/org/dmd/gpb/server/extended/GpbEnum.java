@@ -93,9 +93,12 @@ public class GpbEnum extends GpbEnumDMW {
 		GpbType type = definitions.getGpbType(dotname);
 		
 		if (type == null){
+			DotName nameAndTypeName = new DotName(getName() + "." + DmdgpbDMSAG.__GpbType.name);
 			type = new GpbType();
 			type.setName(getName());
 			type.setDotName(dotname);
+			type.setNameAndTypeName(nameAndTypeName);
+			
 			type.setDefinedInGpbModule(getDefinedInGpbModule());
 			type.setInternallyGenerated(true);
 			type.setBasedOnMainElement(this);

@@ -16,40 +16,40 @@
 package org.dmd.gpb.server.generated.dsd;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:145)
-import java.util.Iterator;                                                // To allow access to our definitions - (DSDArtifactFormatter.java:132)
-import org.dmd.dmc.DmcAttributeInfo;                                      // Used when resolving clashes - (DSDArtifactFormatter.java:141)
-import org.dmd.dmc.DmcNameClashException;                                 // Used when resolving clashes - (DSDArtifactFormatter.java:143)
-import org.dmd.dmc.DmcNameClashObjectSet;                                 // Used when resolving clashes - (DSDArtifactFormatter.java:142)
-import org.dmd.dmc.DmcNameClashResolverIF;                                // To support object resolution - (DSDArtifactFormatter.java:134)
-import org.dmd.dmc.DmcNameResolverWithClashSupportIF;                     // To support object resolution - (DSDArtifactFormatter.java:135)
-import org.dmd.dmc.DmcNamedObjectIF;                                      // To support object resolution - (DSDArtifactFormatter.java:136)
-import org.dmd.dmc.DmcObject;                                             // To support object resolution - (DSDArtifactFormatter.java:137)
-import org.dmd.dmc.DmcObjectName;                                         // To support object resolution - (DSDArtifactFormatter.java:138)
-import org.dmd.dmc.DmcValueException;                                     // Can be thrown when we try to resolve references - (DSDArtifactFormatter.java:140)
-import org.dmd.dmc.DmcValueExceptionSet;                                  // Can be thrown when we try to resolve references - (DSDArtifactFormatter.java:139)
-import org.dmd.dmc.definitions.DmcDefinitionSet;                          // Our base to provide definition set storage - (DSDArtifactFormatter.java:131)
-import org.dmd.dmc.types.DotName;                                         // To support the find method for definitions - (DSDArtifactFormatter.java:133)
-import org.dmd.dms.DSDefinition;                                          // The base of all definitions - (DSDArtifactFormatter.java:130)
-import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDArtifactFormatter.java:276)
-import org.dmd.gpb.server.extended.GpbDefinition;                         // A definition from the GpbModule Module - (DSDArtifactFormatter.java:272)
-import org.dmd.gpb.server.extended.GpbElement;                            // A definition from the GpbModule Module - (DSDArtifactFormatter.java:276)
-import org.dmd.gpb.server.extended.GpbEnum;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:276)
-import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDArtifactFormatter.java:276)
-import org.dmd.gpb.server.extended.GpbMainElement;                        // A definition from the GpbModule Module - (DSDArtifactFormatter.java:276)
-import org.dmd.gpb.server.extended.GpbMessage;                            // A definition from the GpbModule Module - (DSDArtifactFormatter.java:276)
-import org.dmd.gpb.server.extended.GpbModule;                             // A definition from the GpbModule Module - (DSDArtifactFormatter.java:276)
-import org.dmd.gpb.server.extended.GpbProtoFile;                          // A definition from the GpbModule Module - (DSDArtifactFormatter.java:276)
-import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:276)
-import org.dmd.gpb.server.generated.dsd.GpbModuleGlobalInterface;         // Interface for GpbModule definitions - (DSDArtifactFormatter.java:269)
+// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:144)
+import java.util.Iterator;                                                // To allow access to our definitions - (DSDArtifactFormatter.java:131)
+import org.dmd.dmc.DmcAttributeInfo;                                      // Used when resolving clashes - (DSDArtifactFormatter.java:140)
+import org.dmd.dmc.DmcNameClashException;                                 // Used when resolving clashes - (DSDArtifactFormatter.java:142)
+import org.dmd.dmc.DmcNameClashObjectSet;                                 // Used when resolving clashes - (DSDArtifactFormatter.java:141)
+import org.dmd.dmc.DmcNameClashResolverIF;                                // To support object resolution - (DSDArtifactFormatter.java:133)
+import org.dmd.dmc.DmcNameResolverWithClashSupportIF;                     // To support object resolution - (DSDArtifactFormatter.java:134)
+import org.dmd.dmc.DmcNamedObjectIF;                                      // To support object resolution - (DSDArtifactFormatter.java:135)
+import org.dmd.dmc.DmcObject;                                             // To support object resolution - (DSDArtifactFormatter.java:136)
+import org.dmd.dmc.DmcObjectName;                                         // To support object resolution - (DSDArtifactFormatter.java:137)
+import org.dmd.dmc.DmcValueException;                                     // Can be thrown when we try to resolve references - (DSDArtifactFormatter.java:139)
+import org.dmd.dmc.DmcValueExceptionSet;                                  // Can be thrown when we try to resolve references - (DSDArtifactFormatter.java:138)
+import org.dmd.dmc.definitions.DmcDefinitionSet;                          // Our base to provide definition set storage - (DSDArtifactFormatter.java:130)
+import org.dmd.dmc.types.DotName;                                         // To support the find method for definitions - (DSDArtifactFormatter.java:132)
+import org.dmd.dms.DSDefinition;                                          // The base of all definitions - (DSDArtifactFormatter.java:129)
+import org.dmd.gpb.server.extended.GpbArtifact;                           // A definition from the GpbModule Module - (DSDArtifactFormatter.java:281)
+import org.dmd.gpb.server.extended.GpbDefinition;                         // A definition from the GpbModule Module - (DSDArtifactFormatter.java:277)
+import org.dmd.gpb.server.extended.GpbElement;                            // A definition from the GpbModule Module - (DSDArtifactFormatter.java:281)
+import org.dmd.gpb.server.extended.GpbEnum;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:281)
+import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDArtifactFormatter.java:281)
+import org.dmd.gpb.server.extended.GpbMainElement;                        // A definition from the GpbModule Module - (DSDArtifactFormatter.java:281)
+import org.dmd.gpb.server.extended.GpbMessage;                            // A definition from the GpbModule Module - (DSDArtifactFormatter.java:281)
+import org.dmd.gpb.server.extended.GpbModule;                             // A definition from the GpbModule Module - (DSDArtifactFormatter.java:281)
+import org.dmd.gpb.server.extended.GpbProtoFile;                          // A definition from the GpbModule Module - (DSDArtifactFormatter.java:281)
+import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:281)
+import org.dmd.gpb.server.generated.dsd.GpbModuleGlobalInterface;         // Interface for GpbModule definitions - (DSDArtifactFormatter.java:274)
 
 
-// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:149)
+// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:148)
 public class GpbModuleDefinitionManager implements DmcNameClashResolverIF, DmcNameResolverWithClashSupportIF, GpbModuleGlobalInterface {
 
     DmcDefinitionSet<DSDefinition>	allDefinitions;
 
-    // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.dumpDefinitionManagerMembers(DSDArtifactFormatter.java:295)
+    // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.dumpDefinitionManagerMembers(DSDArtifactFormatter.java:300)
     DmcDefinitionSet<GpbDefinition> GpbDefinitionDefs;
     DmcDefinitionSet<GpbArtifact> GpbArtifactDefs;
     DmcDefinitionSet<GpbElement> GpbElementDefs;
@@ -63,18 +63,20 @@ public class GpbModuleDefinitionManager implements DmcNameClashResolverIF, DmcNa
 
     public GpbModuleDefinitionManager(){
 
+        // This will be populated as a result of adding definitions to the definition sets for each definition type
         allDefinitions = new DmcDefinitionSet<DSDefinition>("allDefinitions");
 
-        GpbDefinitionDefs = new DmcDefinitionSet<GpbDefinition>("GpbDefinitionDefs");
-        GpbArtifactDefs = new DmcDefinitionSet<GpbArtifact>("GpbArtifactDefs");
-        GpbElementDefs = new DmcDefinitionSet<GpbElement>("GpbElementDefs");
-        GpbEnumDefs = new DmcDefinitionSet<GpbEnum>("GpbEnumDefs");
-        GpbFieldDefs = new DmcDefinitionSet<GpbField>("GpbFieldDefs");
-        GpbMainElementDefs = new DmcDefinitionSet<GpbMainElement>("GpbMainElementDefs");
-        GpbMessageDefs = new DmcDefinitionSet<GpbMessage>("GpbMessageDefs");
-        GpbModuleDefs = new DmcDefinitionSet<GpbModule>("GpbModuleDefs");
-        GpbProtoFileDefs = new DmcDefinitionSet<GpbProtoFile>("GpbProtoFileDefs");
-        GpbTypeDefs = new DmcDefinitionSet<GpbType>("GpbTypeDefs");
+        // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.initializeDefinitionManagerMembers(DSDArtifactFormatter.java:327)
+        GpbDefinitionDefs = new DmcDefinitionSet<GpbDefinition>("GpbDefinition", allDefinitions);
+        GpbArtifactDefs = new DmcDefinitionSet<GpbArtifact>("GpbArtifact", allDefinitions);
+        GpbElementDefs = new DmcDefinitionSet<GpbElement>("GpbElement", allDefinitions);
+        GpbEnumDefs = new DmcDefinitionSet<GpbEnum>("GpbEnum", allDefinitions);
+        GpbFieldDefs = new DmcDefinitionSet<GpbField>("GpbField", allDefinitions);
+        GpbMainElementDefs = new DmcDefinitionSet<GpbMainElement>("GpbMainElement", allDefinitions);
+        GpbMessageDefs = new DmcDefinitionSet<GpbMessage>("GpbMessage", allDefinitions);
+        GpbModuleDefs = new DmcDefinitionSet<GpbModule>("GpbModule", allDefinitions);
+        GpbProtoFileDefs = new DmcDefinitionSet<GpbProtoFile>("GpbProtoFile", allDefinitions);
+        GpbTypeDefs = new DmcDefinitionSet<GpbType>("GpbType", allDefinitions);
 
     }
 
@@ -154,23 +156,27 @@ public class GpbModuleDefinitionManager implements DmcNameClashResolverIF, DmcNa
     // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateDefinitionManager(DSDArtifactFormatter.java:238)
     @Override
     public DmcNamedObjectIF resolveClash(DmcObject obj, DmcAttributeInfo ai, DmcNameClashObjectSet<?> ncos) throws DmcValueException {
-        System.out.println("***********\n\n");
+        DmcNamedObjectIF rc = null;
+        DSDefinition resolving = (DSDefinition) obj.getContainer();
+    
         Iterator<DmcNamedObjectIF> it = ncos.getMatches();
         while(it.hasNext()){
             DSDefinition def = (DSDefinition) it.next();
-            System.out.println(def.toOIF() + "\n");
+            if (resolving.getNameOfModuleWhereThisCameFrom().equals(def.getNameOfModuleWhereThisCameFrom())){
+                rc = def;
+                break;
+            }
         }
-        return null;
+        return(rc);
     }
 
     // Generated from: org.dmd.dms.DSDefinitionModule.getInterfaceMethodsImplementations(DSDefinitionModule.java:219)
-    // Called from: org.dmd.dmg.generators.DSDArtifactFormatter.dumpDefinitionInterfaceMethods(DSDArtifactFormatter.java:316)
+    // Called from: org.dmd.dmg.generators.DSDArtifactFormatter.dumpDefinitionInterfaceMethods(DSDArtifactFormatter.java:321)
     /**
      * All definitions are added to the base definition collection.
      */
     void addGpbDefinition(GpbDefinition def){
         GpbDefinitionDefs.add(def);
-        allDefinitions.add(def);
     }
 
     public int getGpbDefinitionCount(){
