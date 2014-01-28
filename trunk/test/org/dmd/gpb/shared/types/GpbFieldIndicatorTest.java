@@ -14,8 +14,8 @@ public class GpbFieldIndicatorTest {
 	public void testBasic() throws DmcValueException{
 		GpbFieldIndicator fi = new GpbFieldIndicator("element 5 OPTIONAL");
 		
-		assertNotNull("Element should be available", fi.getElement());
-		assertEquals("Element should be element", "element", fi.getElement().toString());
+		assertNotNull("Field should be available", fi.getFieldRef());
+		assertEquals("Field should be element", "element", fi.getFieldRef().toString());
 		
 		assertNotNull("Tag shouldn't be null", fi.getFieldTag());
 		
@@ -57,8 +57,8 @@ public class GpbFieldIndicatorTest {
 	public void defaultSpecified() throws DmcValueException{
 		GpbFieldIndicator fi = new GpbFieldIndicator("element 5 OPTIONAL  DEFAULT 345");
 			
-		assertNotNull("Element should be available", fi.getElement());
-		assertEquals("Element should be element", "element", fi.getElement().toString());
+		assertNotNull("Field should be available", fi.getFieldRef());
+		assertEquals("Field should be element", "element", fi.getFieldRef().toString());
 		
 		assertNotNull("Tag shouldn't be null", fi.getFieldTag());
 		

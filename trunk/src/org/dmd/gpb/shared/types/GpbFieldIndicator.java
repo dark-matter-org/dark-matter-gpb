@@ -5,8 +5,8 @@ import java.io.Serializable;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;
 import org.dmd.gpb.shared.generated.enums.OptionEnum;
-import org.dmd.gpb.shared.generated.types.GpbElementREF;
 import org.dmd.gpb.shared.generated.types.GpbFieldIndicatorBase;
+import org.dmd.gpb.shared.generated.types.GpbFieldREF;
 
 @SuppressWarnings("serial")
 public class GpbFieldIndicator extends GpbFieldIndicatorBase implements Serializable {
@@ -19,7 +19,7 @@ public class GpbFieldIndicator extends GpbFieldIndicatorBase implements Serializ
 		super(original);
 	}
 	
-    public GpbFieldIndicator(GpbElementREF f1, Integer f2, FieldRuleEnum f3, OptionEnum f4, String f5) throws DmcValueException {
+    public GpbFieldIndicator(GpbFieldREF f1, Integer f2, FieldRuleEnum f3, OptionEnum f4, String f5) throws DmcValueException {
     	super(f1, f2, f3, f4, f5);	
     }
     
@@ -48,7 +48,7 @@ public class GpbFieldIndicator extends GpbFieldIndicatorBase implements Serializ
     public String toString(){
     	StringBuffer sb = new StringBuffer();
     	
-    	sb.append(getElement().toString() + " " + getFieldTag().toString() + " " + getFieldRule().toString());
+    	sb.append(getFieldRef().toString() + " " + getFieldTag().toString() + " " + getFieldRule().toString());
     	
     	if (getOption() != null)
     		sb.append(" " + getOption());
