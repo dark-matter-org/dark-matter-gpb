@@ -216,6 +216,7 @@ derivedFrom     GpbDefinition
 isNamedBy       name
 must			name
 must			package
+must			generatedFileName
 may				import
 may				mainElements
 description		The GpbProtoFile is used to represent a single .proto file. It may be parsed

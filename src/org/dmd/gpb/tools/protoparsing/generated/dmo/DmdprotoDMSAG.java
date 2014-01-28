@@ -35,6 +35,7 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
     public final static DmcAttributeInfo __fieldRule = new DmcAttributeInfo("dmdproto", "fieldRule", -478093, "ProtoFieldRuleEnum", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __fields = new DmcAttributeInfo("dmdproto", "fields", -478095, "ProtoField", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __generateAs = new DmcAttributeInfo("dmdproto", "generateAs", -478091, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __generatedFileName = new DmcAttributeInfo("dmdproto", "generatedFileName", -478089, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __gpbType = new DmcAttributeInfo("dmdproto", "gpbType", -478099, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __hint = new DmcAttributeInfo("dmdproto", "hint", -478090, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __import = new DmcAttributeInfo("dmdproto", "import", -478092, "String", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
@@ -127,6 +128,7 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
         __ProtoFile.addMay(__import);
         __ProtoFile.addMay(__mainElements);
         __ProtoFile.addMay(__fields);
+        __ProtoFile.addMay(__generatedFileName);
 
     }
 

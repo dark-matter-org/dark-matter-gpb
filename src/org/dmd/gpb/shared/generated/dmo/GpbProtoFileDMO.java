@@ -454,6 +454,56 @@ public class GpbProtoFileDMO  extends GpbDefinitionDMO  implements DmcNamedObjec
          rem(DmdgpbDMSAG.__package);
     }
 
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public String getGeneratedFileName(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__generatedFileName);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets generatedFileName to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setGeneratedFileName(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__generatedFileName);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__generatedFileName);
+        
+        try{
+            attr.set(value);
+            set(DmdgpbDMSAG.__generatedFileName,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets generatedFileName to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setGeneratedFileName(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__generatedFileName);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__generatedFileName);
+        
+        attr.set(value);
+        set(DmdgpbDMSAG.__generatedFileName,attr);
+    }
+
+    /**
+     * Removes the generatedFileName attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remGeneratedFileName(){
+         rem(DmdgpbDMSAG.__generatedFileName);
+    }
+
 
 
 

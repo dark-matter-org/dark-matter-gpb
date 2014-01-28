@@ -68,6 +68,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
     public static AttributeDefinition _import;
     public static AttributeDefinition _generateAs;
     public static AttributeDefinition _hint;
+    public static AttributeDefinition _generatedFileName;
 
 
 
@@ -250,7 +251,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoFileOBJ.setDmdID("-478093");
             _ProtoFileOBJ.setClassType("STRUCTURAL");
             _ProtoFileOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/classes.dmd");
-            _ProtoFileOBJ.setLineNumber("86");
+            _ProtoFileOBJ.setLineNumber("87");
             _ProtoFileOBJ.addDescription("The ProtoFile is used to represent a single .proto file. It may be parsed\n from an existing .proto file by the GpbDotProtoParser utility.");
             _ProtoFileOBJ.setDerivedFrom("dmdproto.ProtoDefinition");
             _ProtoFileOBJ.setIsNamedBy("meta.name");
@@ -260,6 +261,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoFileOBJ.addMay("dmdproto.import");
             _ProtoFileOBJ.addMay("dmdproto.mainElements");
             _ProtoFileOBJ.addMay("dmdproto.fields");
+            _ProtoFileOBJ.addMay("dmdproto.generatedFileName");
             _ProtoFileOBJ.addMust("meta.name");
             _ProtoFileOBJ.addMust("dmdproto.package");
             _ProtoFileOBJ.setDmwIteratorImport("org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoFileIterableDMW");
@@ -414,6 +416,20 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _hintOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/attributes.dmd");
             _hintOBJ.setLineNumber("86");
             addAttributeDefList(_hint);
+
+// Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
+            AttributeDefinitionDMO _generatedFileNameOBJ = new AttributeDefinitionDMO();
+            _generatedFileName = new AttributeDefinition(_generatedFileNameOBJ);
+            _generatedFileNameOBJ.setType("meta.String");
+            _generatedFileNameOBJ.setName("generatedFileName");
+            _generatedFileNameOBJ.setDmdID("-478089");
+            _generatedFileNameOBJ.addDescription("The name of the file to be generated, complete with the appropriate file extension.\n An example would be company_common.proto.");
+            _generatedFileNameOBJ.setNameAndTypeName("generatedFileName.AttributeDefinition");
+            _generatedFileNameOBJ.setDotName("dmdproto.generatedFileName.AttributeDefinition");
+            _generatedFileName.setDefinedIn(this);
+            _generatedFileNameOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/attributes.dmd");
+            _generatedFileNameOBJ.setLineNumber("93");
+            addAttributeDefList(_generatedFileName);
 
     }
 

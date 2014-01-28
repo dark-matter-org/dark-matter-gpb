@@ -194,6 +194,37 @@ abstract public class ProtoFileDMW extends ProtoDefinition implements DmcDefinit
         ((ProtoFileDMO) core).remFields();
     }
 
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public String getGeneratedFileName(){
+        return(((ProtoFileDMO) core).getGeneratedFileName());
+    }
+
+    /**
+     * Sets generatedFileName to the specified value.
+     * @param value A value compatible with DmcTypeString
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setGeneratedFileName(Object value) throws DmcValueException {
+        ((ProtoFileDMO) core).setGeneratedFileName(value);
+    }
+
+    /**
+     * Sets generatedFileName to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setGeneratedFileName(String value){
+        ((ProtoFileDMO) core).setGeneratedFileName(value);
+    }
+
+    /**
+     * Removes the generatedFileName attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remGeneratedFileName(){
+        ((ProtoFileDMO) core).remGeneratedFileName();
+    }
+
     /**
      * @return The number of String items.
      */
