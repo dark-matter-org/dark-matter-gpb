@@ -81,6 +81,7 @@ must			package
 may				import
 may				mainElements
 may				fields
+may				generatedFileName
 description		The ProtoFile is used to represent a single .proto file. It may be parsed
  from an existing .proto file by the GpbDotProtoParser utility. 
 

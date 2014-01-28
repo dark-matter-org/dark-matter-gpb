@@ -84,6 +84,12 @@ dmdID			10
 type			String
 description 	Any comment associated with a field
 
+AttributeDefinition
+name			generatedFileName
+dmdID			11
+type			String
+description		The name of the file to be generated, complete with the appropriate file extension.
+ An example would be company_common.proto.
 
  
  

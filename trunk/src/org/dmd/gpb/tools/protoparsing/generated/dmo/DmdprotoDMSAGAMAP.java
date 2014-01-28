@@ -15,6 +15,7 @@ public class DmdprotoDMSAGAMAP {
         _SmAp.put(DmdprotoDMSAG.__fieldRule.id,DmdprotoDMSAG.__fieldRule);
         _SmAp.put(DmdprotoDMSAG.__fields.id,DmdprotoDMSAG.__fields);
         _SmAp.put(DmdprotoDMSAG.__generateAs.id,DmdprotoDMSAG.__generateAs);
+        _SmAp.put(DmdprotoDMSAG.__generatedFileName.id,DmdprotoDMSAG.__generatedFileName);
         _SmAp.put(DmdprotoDMSAG.__gpbType.id,DmdprotoDMSAG.__gpbType);
         _SmAp.put(DmdprotoDMSAG.__hint.id,DmdprotoDMSAG.__hint);
         _SmAp.put(DmdprotoDMSAG.__import.id,DmdprotoDMSAG.__import);

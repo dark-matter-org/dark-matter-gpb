@@ -20,6 +20,7 @@ public class DmdgpbDMSAGAMAP {
         _SmAp.put(DmdgpbDMSAG.__embed.id,DmdgpbDMSAG.__embed);
         _SmAp.put(DmdgpbDMSAG.__field.id,DmdgpbDMSAG.__field);
         _SmAp.put(DmdgpbDMSAG.__fieldRule.id,DmdgpbDMSAG.__fieldRule);
+        _SmAp.put(DmdgpbDMSAG.__generatedFileName.id,DmdgpbDMSAG.__generatedFileName);
         _SmAp.put(DmdgpbDMSAG.__gpbType.id,DmdgpbDMSAG.__gpbType);
         _SmAp.put(DmdgpbDMSAG.__hint.id,DmdgpbDMSAG.__hint);
         _SmAp.put(DmdgpbDMSAG.__import.id,DmdgpbDMSAG.__import);

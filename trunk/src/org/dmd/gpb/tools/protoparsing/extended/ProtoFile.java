@@ -65,8 +65,17 @@ public class ProtoFile extends ProtoFileDMW {
 			out.write(m.toDotGPBFormat() + "\n");
 		}
 		
-		// Remove the fields
+		// Remove the fields attribute - we just want the references to the mainElements
 		remFields();
+		
+		// Remove the file from which this was read
+		remFile();
+		
+		// Set the generated file name to the original .proto file
+		this.setGeneratedFileName(getName() + ".proto");
+
+		// Alter the name of the ProtoFile so that it doesn't clash with the GpbModule
+		this.setName(getName() + "_proto");
 		
 		StringBuffer sb = new StringBuffer();
 		sb.append(this.toOIF());

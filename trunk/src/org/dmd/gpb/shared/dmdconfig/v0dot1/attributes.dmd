@@ -2,7 +2,7 @@ AttributeDefinition
 name			cplusplusType
 dmdID			1
 type			String
-description		An indication of the C++ type associated with a GPB attribute type.
+description		An indication of the C++ type associated with a GpbScalar type.
 
 AttributeDefinition
 name			dmType
@@ -35,11 +35,12 @@ dmdID			6
 type			GpbType
 description		A reference to a GpbType definition.
 
-//AttributeDefinition
-//name			isMessageType
-//dmdID			7
-//type			Boolean
-//description		Indicates if an internally generated GpbType is associated with a GpbMessage.
+AttributeDefinition
+name			generatedFileName
+dmdID			7
+type			String
+description		The name of the file to be generated, complete with the appropriate file extension.
+ An example would be company_common.proto.
 
 AttributeDefinition
 name			definedInGpbModule
