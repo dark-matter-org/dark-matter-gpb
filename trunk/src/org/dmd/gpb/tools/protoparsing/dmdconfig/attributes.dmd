@@ -74,9 +74,10 @@ AttributeDefinition
 name			generateAs
 dmdID			9
 type			String
-description 	When fields with the same name have different types, we set this be
- the original name of the field so that we can reproduce the original file without
- difficulty.
+description 	When protocol elements have clashing names in the namespace of a dmgpb set of definitions,
+ we alter their original names but maintain the original name here so that we can regenerate the .proto
+ file without difficulty. This is also handy when you start to merge definitions from different .proto
+ implementations but still want to maintain the old names in the regenerated .proto files.
 
 AttributeDefinition
 name			hint
@@ -91,5 +92,17 @@ type			String
 description		The name of the file to be generated, complete with the appropriate file extension.
  An example would be company_common.proto.
 
- 
- 
+AttributeDefinition
+name			parentMessage
+dmdID			12
+type			ProtoMessage
+description		Indicates the message in which an enum or message was embedded.
+
+AttributeDefinition
+name			embeddedElements
+dmdID			30
+type			ProtoMainElement
+valueType		MULTI
+description		The embeddedElements attribute indicates a list of ProtoMainElement that were 
+ embedded in other messages. We mainatain a separate collection of these so that we don't
+ wind up dumping them as actual main elements in the regenerated .proto file.

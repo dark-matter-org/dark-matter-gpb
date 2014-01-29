@@ -12,6 +12,7 @@ public class DmdprotoDMSAGAMAP {
 
     static protected void initSmAp(HashMap<Integer, DmcAttributeInfo> _SmAp){
         _SmAp.put(DmdprotoDMSAG.__elements.id,DmdprotoDMSAG.__elements);
+        _SmAp.put(DmdprotoDMSAG.__embeddedElements.id,DmdprotoDMSAG.__embeddedElements);
         _SmAp.put(DmdprotoDMSAG.__fieldRule.id,DmdprotoDMSAG.__fieldRule);
         _SmAp.put(DmdprotoDMSAG.__fields.id,DmdprotoDMSAG.__fields);
         _SmAp.put(DmdprotoDMSAG.__generateAs.id,DmdprotoDMSAG.__generateAs);
@@ -21,6 +22,7 @@ public class DmdprotoDMSAGAMAP {
         _SmAp.put(DmdprotoDMSAG.__import.id,DmdprotoDMSAG.__import);
         _SmAp.put(DmdprotoDMSAG.__mainElements.id,DmdprotoDMSAG.__mainElements);
         _SmAp.put(DmdprotoDMSAG.__package.id,DmdprotoDMSAG.__package);
+        _SmAp.put(DmdprotoDMSAG.__parentMessage.id,DmdprotoDMSAG.__parentMessage);
         _SmAp.put(DmdprotoDMSAG.__tag.id,DmdprotoDMSAG.__tag);
     }
 

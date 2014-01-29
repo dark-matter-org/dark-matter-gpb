@@ -25,9 +25,10 @@ import org.dmd.util.parsing.StringArrayList;
  */
 public class GpbDotProtoParser {
 	
-	ConfigFinder		finder;			// Our .proto file finder
+	ConfigFinder	finder;			// Our .proto file finder
 	ProtoFileParser	parser;
-	SchemaManager		schema;
+	SchemaManager	schema;
+	boolean			debug = false;
 	
 	/**
 	 * Constructs a new .proto parser.
@@ -52,7 +53,11 @@ public class GpbDotProtoParser {
 			ConfigLocation location = it.next();
 			ProtoFile proto = parser.parseFromProto(location.getFileName());
 			
-			DebugInfo.debug("\n\n" + proto.toOIF());
+			System.out.println("Parsing " + location.getFileName());
+			
+			if (debug)
+				DebugInfo.debug("\n\n" + proto.toOIF());
+			
 			proto.dumpDotGPB(location.getDirectory());
 		}
 	}
@@ -61,7 +66,9 @@ public class GpbDotProtoParser {
 	 * @param f set to true to provide debug tracing.
 	 */
 	public void debug(boolean f){
+		debug = f;
 		finder.debug(f);
+		parser.debug(f);
 	}
 
 	/**

@@ -36,6 +36,9 @@ public class ProtoMessage extends ProtoMessageDMW {
 		sb.append("GpbMessage\n");
 		sb.append("name " + getName() + "\n");
 		
+		if (getGenerateAs() != null)
+			sb.append("generateAs  " + getGenerateAs() + "\n");
+
 		int longest = longestElementName();
 		
 		ProtoElementIterableDMW it = getElementsIterable();

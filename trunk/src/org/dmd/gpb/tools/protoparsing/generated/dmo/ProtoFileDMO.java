@@ -358,6 +358,113 @@ public class ProtoFileDMO  extends ProtoDefinitionDMO  implements DmcNamedObject
     }
 
     /**
+     * @return An Iterator of ProtoMainElementDMO objects.
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:970)
+    public Iterator<ProtoMainElementREF> getEmbeddedElements(){
+        DmcTypeProtoMainElementREFMV attr = (DmcTypeProtoMainElementREFMV) get(DmdprotoDMSAG.__embeddedElements);
+        if (attr == null)
+            return( ((List<ProtoMainElementREF>) Collections.EMPTY_LIST).iterator() );
+
+        if (DmcOmni.instance().lazyResolution()){
+            if (attr.doLazyResolution(this)){
+                rem(attr.getAttributeInfo());
+                return( ((List<ProtoMainElementREF>) Collections.EMPTY_LIST).iterator() );
+            }
+        }
+
+        return(attr.getMV());
+    }
+
+    /**
+     * @return An Iterator of ProtoMainElementREFs without attempting lazy resolution (if it's turned on).
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:990)
+    public Iterator<ProtoMainElementREF> getEmbeddedElementsREFs(){
+        DmcTypeProtoMainElementREFMV attr = (DmcTypeProtoMainElementREFMV) get(DmdprotoDMSAG.__embeddedElements);
+        if (attr == null)
+            return( ((List<ProtoMainElementREF>) Collections.EMPTY_LIST).iterator() );
+
+        return(attr.getMV());
+    }
+
+    /**
+     * Adds another embeddedElements to the specified value.
+     * @param value ProtoMainElement
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1004)
+    public DmcAttribute<?> addEmbeddedElements(ProtoMainElementDMO value) {
+        DmcAttribute<?> attr = get(DmdprotoDMSAG.__embeddedElements);
+        if (attr == null)
+            attr = new DmcTypeProtoMainElementREFMV(DmdprotoDMSAG.__embeddedElements);
+        
+        try{
+            setLastValue(attr.add(value));
+            add(DmdprotoDMSAG.__embeddedElements,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
+        }
+        return(attr);
+    }
+
+    /**
+     * Adds another embeddedElements value.
+     * @param value A value compatible with ProtoMainElement
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
+    public DmcAttribute<?> addEmbeddedElements(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(DmdprotoDMSAG.__embeddedElements);
+        if (attr == null)
+            attr = new DmcTypeProtoMainElementREFMV(DmdprotoDMSAG.__embeddedElements);
+        
+        setLastValue(attr.add(value));
+        add(DmdprotoDMSAG.__embeddedElements,attr);
+        return(attr);
+    }
+
+    /**
+     * Returns the number of values in embeddedElements
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
+    public int getEmbeddedElementsSize(){
+        DmcAttribute<?> attr = get(DmdprotoDMSAG.__embeddedElements);
+        if (attr == null){
+            if (DmdprotoDMSAG.__embeddedElements.indexSize == 0)
+                return(0);
+            else
+                return(DmdprotoDMSAG.__embeddedElements.indexSize);
+        }
+        return(attr.getMVSize());
+    }
+
+    /**
+     * Deletes a embeddedElements value.
+     * @param value The ProtoMainElement to be deleted from set of attribute values.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1301)
+    public DmcAttribute<?> delEmbeddedElements(Object value){
+        DmcAttribute<?> attr = get(DmdprotoDMSAG.__embeddedElements);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeProtoMainElementREFMV(DmdprotoDMSAG.__embeddedElements), value);
+        else
+            attr = del(DmdprotoDMSAG.__embeddedElements, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Removes the embeddedElements attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
+    public void remEmbeddedElements(){
+         rem(DmdprotoDMSAG.__embeddedElements);
+    }
+
+    /**
      * @return An Iterator of ProtoFieldDMO objects.
      */
     @SuppressWarnings("unchecked")

@@ -65,11 +65,22 @@ public class ProtoFile extends ProtoFileDMW {
 			out.write(m.toDotGPBFormat() + "\n");
 		}
 		
+		it = getEmbeddedElementsIterable();
+		while(it.hasNext()){
+			ProtoMainElement m = it.getNext();
+			
+			out.write(m.toDotGPBFormat() + "\n");
+		}
+		
 		// Remove the fields attribute - we just want the references to the mainElements
 		remFields();
 		
 		// Remove the file from which this was read
 		remFile();
+		
+		// Remove the embedded definitions - ww only need them so that we could dump the
+		// definitions - we don't want them as part of the main elements
+		remEmbeddedElements();
 		
 		// Set the generated file name to the original .proto file
 		this.setGeneratedFileName(getName() + ".proto");

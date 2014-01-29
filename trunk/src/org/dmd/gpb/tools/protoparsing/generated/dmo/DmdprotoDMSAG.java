@@ -32,6 +32,7 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
     static int schemaMaxID = -478050;
 
     public final static DmcAttributeInfo __elements = new DmcAttributeInfo("dmdproto", "elements", -478097, "ProtoElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __embeddedElements = new DmcAttributeInfo("dmdproto", "embeddedElements", -478070, "ProtoMainElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __fieldRule = new DmcAttributeInfo("dmdproto", "fieldRule", -478093, "ProtoFieldRuleEnum", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __fields = new DmcAttributeInfo("dmdproto", "fields", -478095, "ProtoField", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __generateAs = new DmcAttributeInfo("dmdproto", "generateAs", -478091, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
@@ -41,6 +42,7 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
     public final static DmcAttributeInfo __import = new DmcAttributeInfo("dmdproto", "import", -478092, "String", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __mainElements = new DmcAttributeInfo("dmdproto", "mainElements", -478096, "ProtoMainElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __package = new DmcAttributeInfo("dmdproto", "package", -478098, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __parentMessage = new DmcAttributeInfo("dmdproto", "parentMessage", -478088, "ProtoMessage", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
     public final static DmcAttributeInfo __tag = new DmcAttributeInfo("dmdproto", "tag", -478094, "Integer", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
 
     // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:176)
@@ -107,6 +109,8 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
         __ProtoDefinition.addMay(MetaDMSAG.__lineNumber);
 
         __ProtoElement.addMust(MetaDMSAG.__name);
+        __ProtoElement.addMay(__parentMessage);
+        __ProtoElement.addMay(__generateAs);
 
         __ProtoMainElement.addMust(MetaDMSAG.__name);
 
@@ -127,6 +131,7 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
         __ProtoFile.addMust(__package);
         __ProtoFile.addMay(__import);
         __ProtoFile.addMay(__mainElements);
+        __ProtoFile.addMay(__embeddedElements);
         __ProtoFile.addMay(__fields);
         __ProtoFile.addMay(__generatedFileName);
 

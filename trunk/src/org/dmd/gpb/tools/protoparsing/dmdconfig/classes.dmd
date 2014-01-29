@@ -20,6 +20,8 @@ useWrapperType	EXTENDED
 derivedFrom     ProtoDefinition
 isNamedBy       name
 must           	name
+may				parentMessage
+may				generateAs
 description		The ProtoElement provides a common base for all elements that 
  comprise a .proto specification.
 
@@ -80,6 +82,7 @@ must			name
 must			package
 may				import
 may				mainElements
+may				embeddedElements
 may				fields
 may				generatedFileName
 description		The ProtoFile is used to represent a single .proto file. It may be parsed
