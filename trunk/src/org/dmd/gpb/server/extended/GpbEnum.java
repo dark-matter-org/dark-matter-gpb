@@ -21,12 +21,17 @@ public class GpbEnum extends GpbEnumDMW {
 	/**
 	 * @return the enumeration formatted in .proto format.
 	 */
-	public String toDotProtoFormat(){
+	public String toDotProtoFormat(String indent){
 		StringBuffer sb = new StringBuffer();
 		
-		sb.append("// Generated from: " + DebugInfo.getWhereWeAreNow() + "\n");
-		sb.append("enum " + this.getName() + "\n");
-		sb.append("{\n");
+		sb.append(indent + "// Generated from: " + DebugInfo.getWhereWeAreNow() + "\n");
+		
+		if (getGenerateAs() == null)
+			sb.append(indent + "enum " + this.getName() + "\n");
+		else
+			sb.append(indent + "enum " + this.getGenerateAs() + "\n");
+		
+		sb.append(indent + "{\n");
 		
 		int longestName = getLongestValueNameLength();
 		int npadding = longestName + 4;
@@ -35,13 +40,13 @@ public class GpbEnum extends GpbEnumDMW {
 		EnumValueIterableDMW values = this.getEnumValueIterable();
 		while(values.hasNext()){
 			EnumValue value = values.getNext();
-			sb.append("    " + nformat.sprintf(value.getName()) + " = " + value.getId() + ";");
+			sb.append(indent + "    " + nformat.sprintf(value.getName()) + " = " + value.getId() + ";");
 			if (value.getDescription() != null)
 				sb.append(" // " + value.getDescription());
 			sb.append("\n");
 		}
 		
-		sb.append("}\n\n");
+		sb.append(indent + "}\n\n");
 		
 		return(sb.toString());
 	}

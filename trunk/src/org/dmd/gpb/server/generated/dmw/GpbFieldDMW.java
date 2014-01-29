@@ -205,6 +205,37 @@ abstract public class GpbFieldDMW extends GpbDefinition implements DmcDefinition
         ((GpbFieldDMO) core).remDescription();
     }
 
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public String getGenerateAs(){
+        return(((GpbFieldDMO) core).getGenerateAs());
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value A value compatible with DmcTypeString
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setGenerateAs(Object value) throws DmcValueException {
+        ((GpbFieldDMO) core).setGenerateAs(value);
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setGenerateAs(String value){
+        ((GpbFieldDMO) core).setGenerateAs(value);
+    }
+
+    /**
+     * Removes the generateAs attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remGenerateAs(){
+        ((GpbFieldDMO) core).remGenerateAs();
+    }
+
     /**
      * @return A GpbType object.
      */

@@ -1,8 +1,16 @@
 package org.dmd.gpb.server.extended;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.dmd.dms.ClassDefinition;
+import org.dmd.dms.generated.dmw.StringIterableDMW;
+import org.dmd.gpb.server.generated.dmw.GpbCompositeTypeIterableDMW;
 import org.dmd.gpb.server.generated.dmw.GpbProtoFileDMW;
 import org.dmd.gpb.shared.generated.dmo.GpbProtoFileDMO;
+import org.dmd.util.exceptions.DebugInfo;
 
 /**
  * The GpbProtoFile is created by the ProtoFileParser when it reads an existing .proto file.
@@ -21,32 +29,35 @@ public class GpbProtoFile extends GpbProtoFileDMW {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-//	public void dumpDotGPB(String dn) throws IOException, DmcValueException {
-//		int lastSlash = getFile().lastIndexOf("/");
-//		int lastDot = getFile().lastIndexOf(".");
-//		String modName = getFile().substring(lastSlash+1,lastDot);
-//		
-//		FileUpdateManager.instance().generationStarting();
-//		
-//		ManagedFileWriter out = FileUpdateManager.instance().getWriter(dn, modName + "AG.gpb");
-//		
-//		GpbModule module = new GpbModule();
-//		module.setName(modName);
-//		module.addDescription("Add a description");
-//		
-//		out.write(module.toOIF() + "\n");
-//		
-//		GpbMainElementIterableDMW it = getMainElementsIterable();
-//		while(it.hasNext()){
-//			GpbMainElement m = it.getNext();
-//			
-//			out.write(m.toDotGPBFormat() + "\n");
-//		}
-//		
-//		out.write(this.toOIF());
-//
-//		out.close();
-//		
-//		FileUpdateManager.instance().generationComplete();
-//	}
+	public void dumpProtoFile(String dn) throws IOException {
+		
+		BufferedWriter out = new BufferedWriter(new FileWriter(dn + File.separator + getGeneratedFileName()));
+		
+		DebugInfo.debug("Writing to: " + dn + File.separator + getGeneratedFileName());
+		
+		out.write("// Generated from: " + DebugInfo.getWhereWeAreNow() + "\n");
+		out.write("// This file was generated from the " + getDefinedInGpbModule().getName() + " via the dark-matter GPB mechanisms\n");
+		out.write("// DO NOT MODIFY THIS FILE BY HAND\n\n");
+		out.write(getPackage() + ";\n\n");
+		
+		if (getImportHasValue()){
+			StringIterableDMW it = getImportIterable();
+			while(it.hasNext()){
+				out.write("import \"" + it.next() + "\";\n");
+			}
+			out.write("\n\n");
+		}
+		
+		GpbCompositeTypeIterableDMW it = getMainElementsIterable();
+		while(it.hasNext()){
+			GpbCompositeType ct = it.getNext();
+			
+			out.write(ct.toDotProtoFormat("") + "\n");
+		}
+		
+		out.close();
+		
+		DebugInfo.debug("Finished writing");
+	}
+	
 }

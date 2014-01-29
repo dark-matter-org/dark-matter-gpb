@@ -6,12 +6,9 @@ import org.dmd.dmc.*;                                                // If any a
 import org.dmd.dmc.definitions.DmcDefinitionIF;                      // The object is a domain specific definition - (BaseDMWGenerator.java:411)
 import org.dmd.dmc.types.DefinitionName;                             // Is named by - (BaseDMWGenerator.java:1062)
 import org.dmd.dms.ClassDefinition;                                  // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                          // Required for MODREC constructor - (BaseDMWGenerator.java:1072)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
 import org.dmd.gpb.server.extended.GpbCompositeType;                 // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
 import org.dmd.gpb.server.extended.GpbType;                          // Derived class - (BaseDMWGenerator.java:1248)
-import org.dmd.gpb.shared.generated.dmo.GpbCompositeTypeDMO;         // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
-import org.dmd.gpb.shared.generated.types.GpbModuleREF;              // Required to access defined in module name - (DMWGenerator.java:180)
+import org.dmd.gpb.shared.generated.dmo.GpbCompositeTypeDMO;         // Abstract class - (BaseDMWGenerator.java:1230)
 
 
 
@@ -28,34 +25,11 @@ import org.dmd.gpb.shared.generated.types.GpbModuleREF;              // Required
  */
 abstract public class GpbCompositeTypeDMW extends GpbType implements DmcDefinitionIF, DmcNamedObjectIF {
 
-    // Generated from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:558)
-    public GpbCompositeTypeDMW() {
-        super(new GpbCompositeTypeDMO(), org.dmd.gpb.server.generated.DmdgpbSchemaAG._GpbCompositeType);
+    protected GpbCompositeTypeDMW() {
+        super();
     }
 
-    // Generated from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:564)
-    public GpbCompositeTypeDMW(DmcTypeModifierMV mods) {
-        super(new GpbCompositeTypeDMO(mods), org.dmd.gpb.server.generated.DmdgpbSchemaAG._GpbCompositeType);
-    }
-
-    // Generated from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:606)
-    public GpbCompositeType getModificationRecorder(){
-        GpbCompositeType rc = new GpbCompositeType();
-        rc.setName(getName());
-        rc.setModifier(new DmcTypeModifierMV(MetaDMSAG.__modify));
-        return(rc);
-    }
-
-    // Generated from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:627)
-    public GpbCompositeTypeDMW(GpbCompositeTypeDMO obj) {
-        super(obj, org.dmd.gpb.server.generated.DmdgpbSchemaAG._GpbCompositeType);
-    }
-
-    public GpbCompositeType cloneIt() {
-        GpbCompositeType rc = new GpbCompositeType();
-        rc.setDmcObject(getDMO().cloneIt());
-        return(rc);
-    }
+    abstract public GpbCompositeType getModificationRecorder();
 
     public GpbCompositeTypeDMO getDMO() {
         return((GpbCompositeTypeDMO) core);
@@ -87,6 +61,37 @@ abstract public class GpbCompositeTypeDMW extends GpbType implements DmcDefiniti
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public String getGenerateAs(){
+        return(((GpbCompositeTypeDMO) core).getGenerateAs());
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value A value compatible with DmcTypeString
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setGenerateAs(Object value) throws DmcValueException {
+        ((GpbCompositeTypeDMO) core).setGenerateAs(value);
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setGenerateAs(String value){
+        ((GpbCompositeTypeDMO) core).setGenerateAs(value);
+    }
+
+    /**
+     * Removes the generateAs attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remGenerateAs(){
+        ((GpbCompositeTypeDMO) core).remGenerateAs();
+    }
+
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
     public DefinitionName getName(){
         return(((GpbCompositeTypeDMO) core).getName());
     }
@@ -115,16 +120,6 @@ abstract public class GpbCompositeTypeDMW extends GpbType implements DmcDefiniti
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
     public void remName(){
         ((GpbCompositeTypeDMO) core).remName();
-    }
-
-    // Generated from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:221)
-    /**
-     * This method indicates the name of the module from which this definition was loaded.
-     */
-    @Override
-    public String getNameOfModuleWhereThisCameFrom(){
-        GpbModuleREF ref = ((GpbCompositeTypeDMO) core).getDefinedInGpbModule();
-        return(ref.getName().getNameString());
     }
 
 

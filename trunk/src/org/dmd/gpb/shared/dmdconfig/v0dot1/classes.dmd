@@ -83,12 +83,13 @@ description		The GpbType class is use to define the types of attributes in the G
 
 ClassDefinition
 name 			GpbCompositeType
-classType      	STRUCTURAL
+classType      	ABSTRACT
 dmdID			5
 useWrapperType	EXTENDED
 derivedFrom		GpbType
 isNamedBy		name
 must			name
+may				generateAs
 description		The GpbCompositeType provides a common base for enumerations and messages
  so that they can be referred to as a separate type of object that can be specified in
  standalone blocks within a generate GpbprotoFile.
@@ -150,6 +151,7 @@ isNamedBy       name
 must			name
 must			gpbType
 may             description
+may				generateAs
 //may			    fieldRule
 //may			    tag
 description		The GpbField class is used to represent a reusable, named field for use

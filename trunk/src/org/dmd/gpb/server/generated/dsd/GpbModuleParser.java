@@ -30,7 +30,6 @@ import org.dmd.dms.generated.dmw.StringIterableDMW;                       // To 
 import org.dmd.dmv.shared.DmvRuleManager;                                 // The injected rule manager used for initializations - (DSDArtifactFormatter.java:451)
 import org.dmd.dmw.DmwObjectFactory;                                      // Constructs wrapped objects - (DSDArtifactFormatter.java:433)
 import org.dmd.dmw.DmwWrapper;                                            // To handle factory created objects - (DSDArtifactFormatter.java:454)
-import org.dmd.gpb.server.extended.GpbCompositeType;                      // A definition from the GpbModule Module - (DSDArtifactFormatter.java:715)
 import org.dmd.gpb.server.extended.GpbDefinition;                         // The base definition from the GpbModule Module - (DSDArtifactFormatter.java:707)
 import org.dmd.gpb.server.extended.GpbEnum;                               // A definition from the GpbModule Module - (DSDArtifactFormatter.java:715)
 import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDArtifactFormatter.java:715)
@@ -189,11 +188,7 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
             definition.setDotName(module.getName() + "." + definition.getName() + "." + definition.getConstructionClassName());
             definition.setNameAndTypeName(definition.getName() + "." + definition.getConstructionClassName());
             
-            if (definition instanceof GpbCompositeType){
-                definitions.addGpbCompositeType((GpbCompositeType)definition);
-                module.addGpbCompositeType((GpbCompositeType)definition);
-            }
-            else if (definition instanceof GpbEnum){
+            if (definition instanceof GpbEnum){
                 definitions.addGpbEnum((GpbEnum)definition);
                 module.addGpbEnum((GpbEnum)definition);
             }
