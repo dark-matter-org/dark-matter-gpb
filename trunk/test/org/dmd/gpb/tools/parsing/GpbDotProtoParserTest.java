@@ -29,7 +29,8 @@ public class GpbDotProtoParserTest {
 		StringArrayList sd = new StringArrayList();
 		sd.add(workingDir + "/test/org/dmd/gpb/tools/parsing");
 		GpbDotProtoParser parser = new GpbDotProtoParser(sd);
-		parser.debug(true);
+		
+		parser.debug(false);
 		
 		parser.run();
 		
