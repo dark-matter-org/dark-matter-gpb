@@ -91,6 +91,37 @@ abstract public class GpbProtoFileDMW extends GpbDefinition implements DmcDefini
         return(false);
     }
 
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public String getGeneratedFileName(){
+        return(((GpbProtoFileDMO) core).getGeneratedFileName());
+    }
+
+    /**
+     * Sets generatedFileName to the specified value.
+     * @param value A value compatible with DmcTypeString
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setGeneratedFileName(Object value) throws DmcValueException {
+        ((GpbProtoFileDMO) core).setGeneratedFileName(value);
+    }
+
+    /**
+     * Sets generatedFileName to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setGeneratedFileName(String value){
+        ((GpbProtoFileDMO) core).setGeneratedFileName(value);
+    }
+
+    /**
+     * Removes the generatedFileName attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remGeneratedFileName(){
+        ((GpbProtoFileDMO) core).remGeneratedFileName();
+    }
+
     /**
      * @return The number of String items.
      */

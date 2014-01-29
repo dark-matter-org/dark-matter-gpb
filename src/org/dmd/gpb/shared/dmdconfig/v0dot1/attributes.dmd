@@ -152,10 +152,18 @@ valueType		MULTI
 description 	The embed attribute is used to indicate that an existing GpbEnum or GpbMessage
  description should be embedded directly within a message definition.
 
+AttributeDefinition
+name			generateAs
+dmdID			29
+type			String
+description 	When protocol elements have clashing names in the namespace of a dmgpb set of definitions,
+ we alter their original names but maintain the original name here so that we can regenerate the .proto
+ file without difficulty. This is also handy when you start to merge definitions from different .proto
+ implementations but still want to maintain the old names in the regenerated .proto files.
+
 //AttributeDefinition
 //name			basedOnMainElement
 //dmdID			29
 //type			GpbMainElement
 //description		The original GpbMainElement (a message or enum) on which a GpbType is based.
 
- 

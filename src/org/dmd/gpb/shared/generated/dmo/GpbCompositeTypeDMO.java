@@ -19,12 +19,11 @@ package org.dmd.gpb.shared.generated.dmo;
 import java.io.Serializable;                                        // Always required - (GenUtility.java:224)
 import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:376)
 import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:375)
-import org.dmd.dmc.DmcSliceInfo;                                    // Required for object slicing - (GenUtility.java:229)
 import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:241)
 import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:370)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Required for MODREC constructor - (GenUtility.java:228)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Attribute from meta schema - (GenUtility.java:194)
 import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;               // Required for MODREC constructor - (GenUtility.java:227)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:328)
 import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                 // Base class - (GenUtility.java:355)
 
 // Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
@@ -40,7 +39,7 @@ import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                 // Base clas
  * Generated from: org.dmd.dms.util.DmoFormatter.dumpDMO(DmoFormatter.java:133)
  */
 @SuppressWarnings("serial")
-public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNamedObjectIF, Serializable  {
+abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNamedObjectIF, Serializable  {
 
     public final static String constructionClassName = "GpbCompositeType";
 
@@ -54,33 +53,6 @@ public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNamedObjectI
 
     protected GpbCompositeTypeDMO(String oc) {
         super(oc);
-    }
-
-    @Override
-    public GpbCompositeTypeDMO getNew(){
-        GpbCompositeTypeDMO rc = new GpbCompositeTypeDMO();
-        return(rc);
-    }
-
-    @Override
-    public GpbCompositeTypeDMO getSlice(DmcSliceInfo info){
-        GpbCompositeTypeDMO rc = new GpbCompositeTypeDMO();
-        populateSlice(rc,info);
-        return(rc);
-    }
-
-    public GpbCompositeTypeDMO(DmcTypeModifierMV mods) {
-        super("GpbCompositeType");
-        modrec(true);
-        setModifier(mods);
-    }
-
-    public GpbCompositeTypeDMO getModificationRecorder(){
-        GpbCompositeTypeDMO rc = new GpbCompositeTypeDMO();
-        rc.setName(getName());
-        rc.setModifier(new DmcTypeModifierMV(MetaDMSAG.__modify));
-        rc.modrec(true);
-        return(rc);
     }
 
     // org.dmd.dms.util.DmoFormatter.getAccessFunctions(DmoFormatter.java:751)
@@ -113,6 +85,56 @@ public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNamedObjectI
             return(0);
         
         return(objn.hashCode());
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public String getGenerateAs(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__generateAs);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setGenerateAs(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__generateAs);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__generateAs);
+        
+        try{
+            attr.set(value);
+            set(DmdgpbDMSAG.__generateAs,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setGenerateAs(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__generateAs);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__generateAs);
+        
+        attr.set(value);
+        set(DmdgpbDMSAG.__generateAs,attr);
+    }
+
+    /**
+     * Removes the generateAs attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remGenerateAs(){
+         rem(DmdgpbDMSAG.__generateAs);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
