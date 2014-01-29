@@ -40,6 +40,8 @@ public class ProtoField extends ProtoFieldDMW {
 		
 		sb.append("GpbField\n");
 		sb.append("name        " + getName() + "\n");
+		if (getGenerateAs() != null)
+			sb.append("generateAs  " + getGenerateAs() + "\n");
 		sb.append("gpbType     " + getGpbType() + "\n");
 		if (getDescriptionHasValue()){
 			StringIterableDMW it = getDescriptionIterable();

@@ -17,13 +17,15 @@ package org.dmd.gpb.tools.protoparsing.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:442)
-import org.dmd.dmc.*;                                                        // If any attributes - (BaseDMWGenerator.java:1087)
-import org.dmd.dmc.definitions.DmcDefinitionIF;                              // The object is a domain specific definition - (BaseDMWGenerator.java:411)
-import org.dmd.dmc.types.DefinitionName;                                     // Is named by - (BaseDMWGenerator.java:1062)
-import org.dmd.dms.ClassDefinition;                                          // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
-import org.dmd.gpb.tools.protoparsing.extended.ProtoDefinition;              // Derived class - (BaseDMWGenerator.java:1248)
-import org.dmd.gpb.tools.protoparsing.extended.ProtoElement;                 // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
-import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoElementDMO;         // Abstract class - (BaseDMWGenerator.java:1230)
+import org.dmd.dmc.*;                                                          // If any attributes - (BaseDMWGenerator.java:1087)
+import org.dmd.dmc.definitions.DmcDefinitionIF;                                // The object is a domain specific definition - (BaseDMWGenerator.java:411)
+import org.dmd.dmc.types.DefinitionName;                                       // Is named by - (BaseDMWGenerator.java:1062)
+import org.dmd.dms.ClassDefinition;                                            // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
+import org.dmd.gpb.tools.protoparsing.extended.ProtoDefinition;                // Derived class - (BaseDMWGenerator.java:1248)
+import org.dmd.gpb.tools.protoparsing.extended.ProtoElement;                   // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
+import org.dmd.gpb.tools.protoparsing.extended.ProtoMessage;                   // Is reference type - (BaseDMWGenerator.java:1107)
+import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoElementDMO;           // Abstract class - (BaseDMWGenerator.java:1230)
+import org.dmd.gpb.tools.protoparsing.generated.types.ProtoMessageREF;         // Is reference type REF - (BaseDMWGenerator.java:1115)
 
 
 
@@ -74,6 +76,37 @@ abstract public class ProtoElementDMW extends ProtoDefinition implements DmcDefi
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public String getGenerateAs(){
+        return(((ProtoElementDMO) core).getGenerateAs());
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value A value compatible with DmcTypeString
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setGenerateAs(Object value) throws DmcValueException {
+        ((ProtoElementDMO) core).setGenerateAs(value);
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setGenerateAs(String value){
+        ((ProtoElementDMO) core).setGenerateAs(value);
+    }
+
+    /**
+     * Removes the generateAs attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remGenerateAs(){
+        ((ProtoElementDMO) core).remGenerateAs();
+    }
+
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
     public DefinitionName getName(){
         return(((ProtoElementDMO) core).getName());
     }
@@ -102,6 +135,47 @@ abstract public class ProtoElementDMW extends ProtoDefinition implements DmcDefi
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
     public void remName(){
         ((ProtoElementDMO) core).remName();
+    }
+
+    /**
+     * @return A ProtoMessage object.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1434)
+    public ProtoMessage getParentMessage(){
+        ProtoMessageREF ref = ((ProtoElementDMO) core).getParentMessage();
+        if (ref == null)
+            return(null);
+        
+        if (ref.getObject() == null)
+            return(null);
+        
+        return((ProtoMessage)ref.getObject().getContainer());
+    }
+
+    /**
+     * Sets the parentMessage to the specified value.
+     * @param value A value compatible with ProtoMessageREF
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1519)
+    public void setParentMessage(ProtoMessage value) {
+        ((ProtoElementDMO) core).setParentMessage(value.getDMO());
+    }
+
+    /**
+     * Sets the parentMessage to the specified value.
+     * @param value A value compatible with ProtoMessageREF
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1528)
+    public void setParentMessage(Object value) throws DmcValueException {
+        ((ProtoElementDMO) core).setParentMessage(value);
+    }
+
+    /**
+     * Removes the parentMessage attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remParentMessage(){
+        ((ProtoElementDMO) core).remParentMessage();
     }
 
 

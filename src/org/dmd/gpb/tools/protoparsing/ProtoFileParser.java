@@ -14,10 +14,12 @@ import org.dmd.gpb.tools.protoparsing.extended.ProtoElement;
 import org.dmd.gpb.tools.protoparsing.extended.ProtoEnum;
 import org.dmd.gpb.tools.protoparsing.extended.ProtoField;
 import org.dmd.gpb.tools.protoparsing.extended.ProtoFile;
+import org.dmd.gpb.tools.protoparsing.extended.ProtoMainElement;
 import org.dmd.gpb.tools.protoparsing.extended.ProtoMessage;
 import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFieldDMO;
+import org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoElementIterableDMW;
 import org.dmd.gpb.tools.protoparsing.generated.enums.ProtoFieldRuleEnum;
-import org.dmd.util.exceptions.DebugInfo;
+//import org.dmd.util.exceptions.DebugInfo;
 import org.dmd.util.exceptions.ResultException;
 import org.dmd.util.parsing.Classifier;
 import org.dmd.util.parsing.Token;
@@ -60,6 +62,8 @@ public class ProtoFileParser {
 	final static int RCURLY 	= Token.CUSTOM+9;
 	final static int QUOTE 		= Token.CUSTOM+10;
 	
+	boolean debug = false;
+	
 	LineNumberReader	in;
 	String				currFN;
 	
@@ -78,6 +82,10 @@ public class ProtoFileParser {
 	// Value: the collection of all enums with the same name
 	// We maintain this so that we can warn of clashing enum names
 	TreeMap<String, ArrayList<ProtoEnum>> enums;
+	
+	// Key: element name - either an enum or a message
+	// Value: the collection of all things that were found embedded in messages
+	TreeMap<String, ArrayList<ProtoMainElement>> embeddedElements;
 	
 	public ProtoFileParser(){
 		classifier = new Classifier();
@@ -99,6 +107,10 @@ public class ProtoFileParser {
 		enums = new TreeMap<String, ArrayList<ProtoEnum>>();
 	}
 	
+	public void debug(boolean f){
+		debug = f;
+	}
+	
 	void init(String fn) throws DmcValueException {
 		protoFile	= new ProtoFile();
 		protoFile.setFile(fn);
@@ -108,6 +120,9 @@ public class ProtoFileParser {
 		protoFile.setName(fn.substring(lastSlash+1, lastDot));
 		
 		state		= State.PACKAGE;
+		
+		fields = new TreeMap<String, ArrayList<ProtoField>>();
+		embeddedElements = new TreeMap<String, ArrayList<ProtoMainElement>>();
 	}
 
 	public ProtoFile parseFromProto(String fn) throws IOException, DmcValueException, ResultException {
@@ -125,10 +140,10 @@ public class ProtoFileParser {
     		switch(state){
         	case ELEMENT:
         		if (line.startsWith(MESSAGE_STR)){
-        			protoFile.addMainElements(parseMessage(fn, line));
+        			protoFile.addMainElements(parseMessage(fn, line, null));
         		}
         		else if (line.startsWith(ENUM_STR)){
-        			protoFile.addMainElements(parseEnum(fn, line));
+        			protoFile.addMainElements(parseEnum(fn, line, null));
         		}
         		else if (line.startsWith(IMPORT_STR)){
         			protoFile.addImport(parseImport(line));
@@ -154,9 +169,63 @@ public class ProtoFileParser {
         
         in.close();
         
-//        checkFields();
+        addEmbedded(protoFile);
+        
+        checkFields();
         
         return(protoFile);
+	}
+	
+	/**
+	 * We cycle through the various embedded enums and messages that we found and see if we had any clashes.
+	 * If so, we try to mitigate the damage by naming the embedded things based on their parent elements.
+	 * @param pf
+	 * @throws DmcValueException
+	 */
+	void addEmbedded(ProtoFile pf) throws DmcValueException {
+		for(ArrayList<ProtoMainElement> list: embeddedElements.values()){
+			if (list.size() > 1){
+				System.err.println("Clashing embedded elements: " + list.get(0).getName() + " in file: " + pf.getFile());
+				for(ProtoMainElement e: list){
+					System.err.println("At line: " + e.getLineNumber());
+//					e.remLineNumber();
+					String newName = e.getParentMessage().getName() + "_" + e.getName();
+					adjustElementType(e,newName);
+					
+					e.setGenerateAs(e.getName().getNameString());
+					e.setName(newName);
+				}
+			}
+			for(ProtoMainElement e: list){
+				pf.addEmbeddedElements(e);
+			}
+		}
+	}
+	
+	void adjustElementType(ProtoMainElement clash, String newName){
+		ProtoMessage parent = clash.getParentMessage();
+		
+		ProtoElementIterableDMW it = parent.getElementsIterable();
+		while(it.hasNext()){
+			ProtoElement pe = it.next();
+			if (pe instanceof ProtoField){
+				ProtoField pf = (ProtoField) pe;
+				if (pf.getGpbType().equals(clash.getName().getNameString())){
+					System.err.println("Adjusting type of field: " + pf.getName());
+					pf.setGpbType(newName);
+				}
+			}
+		}
+	}
+	
+	void addEmbeddedElement(ProtoMainElement pme){
+		ArrayList<ProtoMainElement> list = embeddedElements.get(pme.getName().getNameString());
+		
+		if (list == null){
+			list = new ArrayList<ProtoMainElement>();
+			embeddedElements.put(pme.getName().getNameString(), list);
+		}
+		list.add(pme);
 	}
 	
 	/**
@@ -167,6 +236,8 @@ public class ProtoFileParser {
 	 * @throws DmcValueException 
 	 */
 	void checkFields() throws DmcValueException{
+		ArrayList<ProtoField>	zapList = new ArrayList<ProtoField>();
+		
 		for(ArrayList<ProtoField> list: fields.values()){
 			
 			if (list.size() == 1)
@@ -216,9 +287,30 @@ public class ProtoFileParser {
 					}
 				}				
 			}
+			else{
+				System.err.println("Duplicate field " + list.get(0).getName());
+				boolean firstField = true;
+				for(ProtoField pf: list){
+					if (!firstField)
+						zapList.add(pf);
+					ProtoFieldDMO current = pf.getDMO();
+					System.err.println("    " + current.getFile() + " : " + current.getLineNumber());
+					firstField = false;
+				}
+			}
 			
-			System.out.println("FIELD: " + list.size() + "  - " + first.getName());
+			debug("FIELD: " + list.size() + "  - " + first.getName());
 		}
+		
+		// Remove the duplicate fields from the proto file
+		for(ProtoField f: zapList){
+			protoFile.delFields(f);
+		}
+	}
+	
+	void debug(String s){
+		if (debug)
+			System.out.println(s);
 	}
 	
 	String parseImport(String line){
@@ -228,16 +320,29 @@ public class ProtoFileParser {
 	
 	String getNextLine() throws IOException {
 		String str = in.readLine();
-DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
+		debug(currFN + "  " + in.getLineNumber() + "    " + str);
+		
 		if (str == null)
 			return(null);
 		return(str.trim());
 	}
 	
-	ProtoMessage parseMessage(String fn, String first) throws ResultException, DmcValueException, IOException {
+	/**
+	 * 
+	 * @param fn
+	 * @param first
+	 * @param parent if this message was embedded in another message, this is the paremt message
+	 * @return
+	 * @throws ResultException
+	 * @throws DmcValueException
+	 * @throws IOException
+	 */
+	ProtoMessage parseMessage(String fn, String first, ProtoMessage parent) throws ResultException, DmcValueException, IOException {
 		ProtoMessage message = new ProtoMessage();
         StringTokenizer t = new StringTokenizer(first);
         boolean wantLCurly = true;
+        
+        message.setLineNumber(in.getLineNumber());
         
         if (t.countTokens() == 1){
 			ResultException ex = new ResultException("Malformed message specification: " + first);
@@ -263,6 +368,11 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 			throw(ex);
         }
         
+        if (parent != null){
+        	message.setParentMessage(parent);
+        	addEmbeddedElement(message);
+        }
+        
         // Parse the body
         String line;
         while ((line = getNextLine()) != null) {
@@ -281,30 +391,30 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
         	}
         	if (line.equals(RCURLY_STR))
         		break;
-        	message.addElements(parseElement(in,fn,line));
+        	message.addElements(parseElement(in,fn,line,message));
         }        
 		
 		return(message);
 	}
 	
-	ProtoElement parseElement(LineNumberReader in, String fn, String line) throws ResultException, DmcValueException, IOException {
+	ProtoElement parseElement(LineNumberReader in, String fn, String line, ProtoMessage parent) throws ResultException, DmcValueException, IOException {
 		ProtoElement rc = null;
 		
 		if (line.startsWith("required"))
-			rc = parseField(fn, line);
+			rc = parseField(fn, line, parent);
 		else if (line.startsWith("optional"))
-			rc = parseField(fn, line);
+			rc = parseField(fn, line, parent);
 		else if (line.startsWith("repeated"))
-			rc = parseField(fn, line);
+			rc = parseField(fn, line, parent);
 		else if (line.startsWith("message"))
-			rc = parseMessage(fn, line);
+			rc = parseMessage(fn, line, parent);
 		else if (line.startsWith("enum"))
-			rc = parseEnum(fn, line);
+			rc = parseEnum(fn, line, parent);
 		
 		return(rc);
 	}
 	
-	ProtoField parseField(String fn, String line) throws DmcValueException {
+	ProtoField parseField(String fn, String line, ProtoMessage parent) throws DmcValueException {
 		ProtoField field = new ProtoField();
 		field.setFile(fn);
 		field.setLineNumber(in.getLineNumber());
@@ -341,7 +451,9 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 			if (descr.length() > 0)
 				field.addDescription(descr);
 			
-			DebugInfo.debug("\n" + field.toOIF());
+			field.setParentMessage(parent);
+			
+			debug("\n" + field.toOIF());
 		}
 	
 		addField(field);
@@ -362,13 +474,19 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 		list.add(field);
 	}
 
-	ProtoEnum parseEnum(String fn, String first) throws DmcValueException, IOException {
+	ProtoEnum parseEnum(String fn, String first, ProtoMessage parent) throws DmcValueException, IOException {
 		ProtoEnum enumDef = new ProtoEnum();
 		enumDef.addDescription("Add a description");
 		String line;
 		TokenArrayList tokens = classifier.classify(first, true);
 		
 		enumDef.setName(tokens.nth(1).getValue());
+		enumDef.setLineNumber(in.getLineNumber());
+		
+		if (parent != null){
+			enumDef.setParentMessage(parent);
+        	addEmbeddedElement(enumDef);
+		}
 		
 		// If only two tokens, the next line should have the opening curly
 		if (tokens.size() == 2){
@@ -396,9 +514,9 @@ DebugInfo.debug(currFN + "  " + in.getLineNumber() + "    " + str);
 				break;
 		}
 		
-		DebugInfo.debug(enumDef.toOIF());
+		debug(enumDef.toOIF());
 		
-		DebugInfo.debug(enumDef.toDotProtoFormat());
+		debug(enumDef.toDotProtoFormat());
 		
 		return(enumDef);
 	}

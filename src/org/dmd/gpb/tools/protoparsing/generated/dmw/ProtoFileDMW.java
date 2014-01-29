@@ -30,7 +30,7 @@ import org.dmd.gpb.tools.protoparsing.extended.ProtoDefinition;                 
 import org.dmd.gpb.tools.protoparsing.extended.ProtoField;                               // Is reference type - (BaseDMWGenerator.java:1107)
 import org.dmd.gpb.tools.protoparsing.extended.ProtoFile;                                // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
 import org.dmd.gpb.tools.protoparsing.extended.ProtoMainElement;                         // Is reference type - (BaseDMWGenerator.java:1107)
-import org.dmd.gpb.tools.protoparsing.generated.dmo.DmdprotoDMSAG;                       // Attribute fields from the dmdproto schema - (BaseDMWGenerator.java:897)
+import org.dmd.gpb.tools.protoparsing.generated.dmo.DmdprotoDMSAG;                       // Attribute embeddedElements from the dmdproto schema - (BaseDMWGenerator.java:897)
 import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFieldDMO;                       // For multi-valued adds of ProtoField - (BaseDMWGenerator.java:1767)
 import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFileDMO;                        // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
 import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoMainElementDMO;                 // For multi-valued adds of ProtoMainElement - (BaseDMWGenerator.java:1767)
@@ -106,6 +106,92 @@ abstract public class ProtoFileDMW extends ProtoDefinition implements DmcDefinit
             return( getObjectName().equals( ((ProtoFileDMW) obj).getObjectName()) );
         }
         return(false);
+    }
+
+    /**
+     * @return The number of ProtoMainElement items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1671)
+    public int getEmbeddedElementsSize(){
+        return(((ProtoFileDMO) core).getEmbeddedElementsSize());
+    }
+
+    /**
+     * @return true if there are no ProtoMainElementDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1679)
+    public boolean getEmbeddedElementsIsEmpty(){
+        if (((ProtoFileDMO) core).getEmbeddedElementsSize() == 0)
+            return(true);
+        return(false);
+    }
+
+    /**
+     * @return true if there are any ProtoMainElementDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1689)
+    public boolean getEmbeddedElementsHasValue(){
+        if (((ProtoFileDMO) core).getEmbeddedElementsSize() == 0)
+            return(false);
+        return(true);
+    }
+
+    /**
+     * @return An Iterator of ProtoMainElementDMO objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1716)
+    public ProtoMainElementIterableDMW getEmbeddedElementsIterable(){
+        DmcAttribute<?> attr = core.get(DmdprotoDMSAG.__embeddedElements);
+        if (attr == null)
+            return(ProtoMainElementIterableDMW.emptyList);
+        
+        return(new ProtoMainElementIterableDMW(((ProtoFileDMO) core).getEmbeddedElements()));
+    }
+
+    /**
+     * Adds another embeddedElements value.
+     * @param value A value compatible with ProtoMainElement
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1773)
+    public DmcAttribute<?> addEmbeddedElements(ProtoMainElement value){
+        DmcAttribute<?> attr = ((ProtoFileDMO) core).addEmbeddedElements(((ProtoMainElementDMO)value.getDmcObject()));
+        return(attr);
+    }
+
+    /**
+     * Deletes a embeddedElements value.
+     * @param value The ProtoMainElement to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1823)
+    public void delEmbeddedElements(ProtoMainElement value){
+        ((ProtoFileDMO) core).delEmbeddedElements(value.getDMO());
+    }
+
+    /**
+     * @return A COPY of the collection of ProtoMainElement objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1887)
+    public ArrayList<ProtoMainElement> getEmbeddedElementsCopy(){
+        DmcAttribute<?> attr = ((ProtoFileDMO) core).get(DmdprotoDMSAG.__embeddedElements);
+        if (attr == null)
+            return(new ArrayList<ProtoMainElement>());
+        
+        ArrayList<ProtoMainElement> rc = new ArrayList<ProtoMainElement>(attr.getMVSize());
+        
+        ProtoMainElementIterableDMW it = getEmbeddedElementsIterable();
+        while(it.hasNext()){
+            rc.add(it.next());
+        }
+        
+        return(rc);
+    }
+
+    /**
+     * Removes the embeddedElements attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2292)
+    public void remEmbeddedElements(){
+        ((ProtoFileDMO) core).remEmbeddedElements();
     }
 
     /**

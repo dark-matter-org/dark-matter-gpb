@@ -75,6 +75,9 @@ public class ProtoEnum extends ProtoEnumDMW {
 		sb.append("GpbEnum\n");
 		sb.append("name        " + getName() + "\n");
 		
+		if (getGenerateAs() != null)
+			sb.append("generateAs  " + getGenerateAs() + "\n");
+		
 		EnumValueIterableDMW values = this.getEnumValueIterable();
 		while(values.hasNext()){
 			EnumValue value = values.getNext();

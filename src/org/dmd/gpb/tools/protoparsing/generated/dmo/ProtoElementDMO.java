@@ -16,14 +16,19 @@
 package org.dmd.gpb.tools.protoparsing.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
-import java.io.Serializable;                                                    // Always required - (GenUtility.java:224)
-import org.dmd.dmc.DmcAttribute;                                                // Named object - (GenUtility.java:376)
-import org.dmd.dmc.DmcNamedObjectIF;                                            // Named object - (GenUtility.java:375)
-import org.dmd.dmc.DmcValueException;                                           // Any attributes - (GenUtility.java:241)
-import org.dmd.dmc.types.DefinitionName;                                        // Naming attribute type - (GenUtility.java:370)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                                     // Attribute from meta schema - (GenUtility.java:194)
-import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;                     // Required type - (GenUtility.java:328)
-import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoDefinitionDMO;         // Base class - (GenUtility.java:355)
+import java.io.Serializable;                                                            // Always required - (GenUtility.java:224)
+import org.dmd.dmc.DmcAttribute;                                                        // Named object - (GenUtility.java:376)
+import org.dmd.dmc.DmcNamedObjectIF;                                                    // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcOmni;                                                             // Lazy resolution - (GenUtility.java:320)
+import org.dmd.dmc.DmcValueException;                                                   // Any attributes - (GenUtility.java:241)
+import org.dmd.dmc.types.DefinitionName;                                                // Naming attribute type - (GenUtility.java:370)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                                             // Attribute from meta schema - (GenUtility.java:194)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;                             // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                                     // Required type - (GenUtility.java:328)
+import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoDefinitionDMO;                 // Base class - (GenUtility.java:355)
+import org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoMessageDMO;                    // Type specific set/add - (GenUtility.java:307)
+import org.dmd.gpb.tools.protoparsing.generated.types.DmcTypeProtoMessageREFSV;         // Reference type - (GenUtility.java:300)
+import org.dmd.gpb.tools.protoparsing.generated.types.ProtoMessageREF;                  // Helper class - (GenUtility.java:335)
 
 // Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
@@ -82,6 +87,128 @@ abstract public class ProtoElementDMO  extends ProtoDefinitionDMO  implements Dm
             return(0);
         
         return(objn.hashCode());
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:655)
+    public ProtoMessageREF getParentMessage(){
+        DmcTypeProtoMessageREFSV attr = (DmcTypeProtoMessageREFSV) get(DmdprotoDMSAG.__parentMessage);
+        if (attr == null)
+            return(null);
+
+        if (DmcOmni.instance().lazyResolution()){
+            if (attr.doLazyResolution(this)){
+                rem(attr.getAttributeInfo());
+                return(null);
+            }
+        }
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Returns the reference to ProtoMessage without attempting lazy resolution (if turned on).
+     */
+    public ProtoMessageREF getParentMessageREF(){
+        DmcTypeProtoMessageREFSV attr = (DmcTypeProtoMessageREFSV) get(DmdprotoDMSAG.__parentMessage);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets parentMessage to the specified value.
+     * @param value ProtoMessageDMO
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:709)
+    public void setParentMessage(ProtoMessageDMO value) {
+        DmcAttribute<?> attr = get(DmdprotoDMSAG.__parentMessage);
+        if (attr == null)
+            attr = new DmcTypeProtoMessageREFSV(DmdprotoDMSAG.__parentMessage);
+        else
+            ((DmcTypeProtoMessageREFSV)attr).removeBackReferences();
+        
+        try{
+            attr.set(value);
+            set(DmdprotoDMSAG.__parentMessage,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets parentMessage to the specified value.
+     * @param value A value compatible with DmcTypeProtoMessageREFSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setParentMessage(Object value) throws DmcValueException {
+        DmcTypeProtoMessageREFSV attr  = (DmcTypeProtoMessageREFSV) get(DmdprotoDMSAG.__parentMessage);
+        if (attr == null)
+            attr = new DmcTypeProtoMessageREFSV(DmdprotoDMSAG.__parentMessage);
+        else
+            attr.removeBackReferences();
+        
+        attr.set(value);
+        set(DmdprotoDMSAG.__parentMessage,attr);
+    }
+
+    /**
+     * Removes the parentMessage attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remParentMessage(){
+         rem(DmdprotoDMSAG.__parentMessage);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public String getGenerateAs(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdprotoDMSAG.__generateAs);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setGenerateAs(String value) {
+        DmcAttribute<?> attr = get(DmdprotoDMSAG.__generateAs);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdprotoDMSAG.__generateAs);
+        
+        try{
+            attr.set(value);
+            set(DmdprotoDMSAG.__generateAs,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets generateAs to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setGenerateAs(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdprotoDMSAG.__generateAs);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdprotoDMSAG.__generateAs);
+        
+        attr.set(value);
+        set(DmdprotoDMSAG.__generateAs,attr);
+    }
+
+    /**
+     * Removes the generateAs attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remGenerateAs(){
+         rem(DmdprotoDMSAG.__generateAs);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
