@@ -9,9 +9,21 @@
 
 ComplexTypeDefinition
 name GpbFieldIndicatorBase
+field FieldRuleEnum  	fieldRule   	Whether the field is required, optional or repeated.
 field GpbField			fieldRef 		Reference to the GpbField to be used.
 field Integer           fieldTag    	The unique numeric tag for this field.
-field FieldRuleEnum  	fieldRule   	Whether the field is required, optional or repeated.
 field OptionEnum        option    		Indicates if there's a DEFAULT value or if the PACKED option is to be used for repeated fields.
 field String        	defaultValue	The default value - this is limited to a single, space delimited token at the moment.
-mandatoryFields			3
+//mandatoryFields			3
+
+ComplexTypeDefinition
+name GpbFieldIndicatorWithVersion
+field FieldRuleEnum  	fieldRule   		Whether the field is required, optional or repeated.
+field GpbField			fieldRef 			Reference to the GpbField to be used.
+field Integer           fieldTag    		The unique numeric tag for this field.
+field OptionEnum        option    			Indicates if there's a DEFAULT value or if the PACKED option is to be used for repeated fields.
+field String        	defaultValue		The default value - this is limited to a single, space delimited token at the moment.
+field String        	introducedVersion	The release at which the field was introduced to the message.
+field String        	obsoleteVersion		The release at which the field became obsolete.
+fieldSeparator :
+//mandatoryFields			3
