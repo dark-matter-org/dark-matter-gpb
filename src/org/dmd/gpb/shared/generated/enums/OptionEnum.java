@@ -20,8 +20,9 @@ import java.util.*;
 import org.dmd.dmc.DmcEnumIF;
 
 /**
- * The OptionEnum indicates whether a field has a defult value or uses a
- * packed representation.
+ * The OptionEnum indicates whether a field uses a packed representation.
+ * Unlike the GPB\n base concept of having DEFAULT or PACKED as the options,
+ * you would use the default="value" construct\n to indicate a default value.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -30,8 +31,6 @@ import org.dmd.dmc.DmcEnumIF;
  */
 public enum OptionEnum implements DmcEnumIF
 {
-    DEFAULT(0,"Indicates that a field has a default value."),
-
     PACKED(1,"Indicates that the more efficient packed representation of numeric data should be used for REPEATED fields.");
 
     // Maps our integer value to the enumeration value

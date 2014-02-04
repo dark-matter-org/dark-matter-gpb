@@ -23,7 +23,7 @@ public class GpbFieldIndicatorTest {
 		
 		assertNull("Option should be null", fi.getOption());
 		
-		assertNull("Default should be null", fi.getDefaultValue());
+		assertNull("Default should be null", fi.getDefault());
 	}
 	
 	@Test
@@ -35,7 +35,7 @@ public class GpbFieldIndicatorTest {
 			assertTrue("Should have thrown an exception", false);
 		}
 		catch (DmcValueException ex) {
-			System.out.println(ex);
+			System.out.println("Expected exception:\n" + ex);
 		}
 	}
 	
@@ -48,14 +48,14 @@ public class GpbFieldIndicatorTest {
 			assertTrue("Should have thrown an exception", false);
 		}
 		catch (DmcValueException ex) {
-			System.out.println(ex);
+			System.out.println("Expected exception:\n" + ex);
 		}
 		
 	}
 	
 	@Test
 	public void defaultSpecified() throws DmcValueException{
-		GpbFieldIndicator fi = new GpbFieldIndicator("OPTIONAL element 5 DEFAULT 345");
+		GpbFieldIndicator fi = new GpbFieldIndicator("OPTIONAL element 5 default=345");
 			
 		assertNotNull("Field should be available", fi.getFieldRef());
 		assertEquals("Field should be element", "element", fi.getFieldRef().toString());
@@ -64,10 +64,8 @@ public class GpbFieldIndicatorTest {
 		
 		assertNotNull("Rule shouldn't be null", fi.getFieldRule());
 		
-		assertNotNull("Option shouldn't be null", fi.getOption());
-		
-		assertNotNull("Default value shouldn't null", fi.getDefaultValue());
-		assertEquals("Default should be 345", "345", fi.getDefaultValue());
+		assertNotNull("Default value shouldn't be null", fi.getDefault());
+		assertEquals("Default should be 345", "345", fi.getDefault());
 		
 	}
 }

@@ -23,6 +23,8 @@ description		The GpbFieldIndicator type is used to represent the specification
 
 EnumDefinition
 name            OptionEnum
-enumValue		0 DEFAULT Indicates that a field has a default value.
+//enumValue		0 DEFAULT Indicates that a field has a default value.
 enumValue		1 PACKED  Indicates that the more efficient packed representation of numeric data should be used for REPEATED fields.
-description		The OptionEnum indicates whether a field has a defult value or uses a packed representation.
+description		The OptionEnum indicates whether a field uses a packed representation. Unlike the GPB
+ base concept of having DEFAULT or PACKED as the options, you would use the default="value" construct
+ to indicate a default value.
