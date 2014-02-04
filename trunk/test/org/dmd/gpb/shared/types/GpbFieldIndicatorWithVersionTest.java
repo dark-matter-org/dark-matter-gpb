@@ -6,31 +6,44 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.dmd.dmc.DmcValueException;
+import org.dmd.gpb.shared.generated.enums.OptionEnum;
+import org.dmd.gpb.shared.generated.types.GpbFieldIndicatorWithVersion;
 import org.junit.Test;
 
-public class GpbFieldIndicatorTest {
+public class GpbFieldIndicatorWithVersionTest {
+	
+//	OPTIONAL field 5 default="hi there" version=1.0.1.3 obsolete=2.0 concinnity:
+	
+	
 
 	@Test
 	public void testBasic() throws DmcValueException{
-		GpbFieldIndicator fi = new GpbFieldIndicator("OPTIONAL element 5");
-		
-		assertNotNull("Field should be available", fi.getFieldRef());
-		assertEquals("Field should be element", "element", fi.getFieldRef().toString());
-		
-		assertNotNull("Tag shouldn't be null", fi.getFieldTag());
+		GpbFieldIndicatorWithVersion fi = new GpbFieldIndicatorWithVersion("OPTIONAL : element : 5 : DEFAULT : 345 : 1.0.0 : 2.0.1.3 ");
 		
 		assertNotNull("Rule shouldn't be null", fi.getFieldRule());
 		
-		assertNull("Option should be null", fi.getOption());
+		assertNotNull("Field should be available", fi.getFieldRef());
 		
-		assertNull("Default should be null", fi.getDefaultValue());
+		assertEquals("Field should be element", "element", fi.getFieldRef().toString());
+		
+		assertEquals("Option should be DEFAULT", OptionEnum.DEFAULT , fi.getOption());
+
+		assertEquals("Value should be 345", "345", fi.getDefaultValue());
+
+		assertEquals("Introduced version should be 1.0.0", "1.0.0", fi.getIntroducedVersion());
+
+		assertEquals("Obsolete version should be 2.0.1.3", "2.0.1.3", fi.getObsoleteVersion());
+
+//		assertNull("Option should be null", fi.getOption());
+//		
+//		assertNull("Default should be null", fi.getDefaultValue());
 	}
 	
 	@Test
 	public void testMissing() throws DmcValueException{
 		try{
 			@SuppressWarnings("unused")
-			GpbFieldIndicator fi = new GpbFieldIndicator("element 5");
+			GpbFieldIndicatorWithVersion fi = new GpbFieldIndicatorWithVersion("element:5");
 			
 			assertTrue("Should have thrown an exception", false);
 		}
@@ -43,7 +56,7 @@ public class GpbFieldIndicatorTest {
 	public void missingDefault() throws DmcValueException{
 		try{
 			@SuppressWarnings("unused")
-			GpbFieldIndicator fi = new GpbFieldIndicator("OPTIONAL element 5 DEFAULT");
+			GpbFieldIndicatorWithVersion fi = new GpbFieldIndicatorWithVersion("OPTIONAL:element:	5:DEFAULT");
 			
 			assertTrue("Should have thrown an exception", false);
 		}
@@ -55,7 +68,7 @@ public class GpbFieldIndicatorTest {
 	
 	@Test
 	public void defaultSpecified() throws DmcValueException{
-		GpbFieldIndicator fi = new GpbFieldIndicator("OPTIONAL element 5 DEFAULT 345");
+		GpbFieldIndicator fi = new GpbFieldIndicator("OPTIONAL:element:5:DEFAULT:345");
 			
 		assertNotNull("Field should be available", fi.getFieldRef());
 		assertEquals("Field should be element", "element", fi.getFieldRef().toString());

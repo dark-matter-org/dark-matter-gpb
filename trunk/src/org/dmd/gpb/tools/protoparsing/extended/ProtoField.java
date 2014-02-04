@@ -27,9 +27,9 @@ public class ProtoField extends ProtoFieldDMW {
 		PrintfFormat 	nformat 	= new PrintfFormat("%-" + npadding + "s");
 
 		sb.append("field ");
+		sb.append(getFieldRule() + " ");
 		sb.append(nformat.sprintf(getName()) + " ");
 		sb.append(getTag() + " ");
-		sb.append(getFieldRule() + " ");
 		sb.append("\n");
 		
 		return(sb.toString());

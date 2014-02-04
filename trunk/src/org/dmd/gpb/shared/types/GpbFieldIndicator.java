@@ -19,7 +19,7 @@ public class GpbFieldIndicator extends GpbFieldIndicatorBase implements Serializ
 		super(original);
 	}
 	
-    public GpbFieldIndicator(GpbFieldREF f1, Integer f2, FieldRuleEnum f3, OptionEnum f4, String f5) throws DmcValueException {
+    public GpbFieldIndicator(FieldRuleEnum f1, GpbFieldREF f2, Integer f3, OptionEnum f4, String f5) throws DmcValueException {
     	super(f1, f2, f3, f4, f5);	
     }
     

@@ -46,12 +46,12 @@ import org.dmd.gpb.shared.generated.types.GpbFieldREF;                        //
 
 @SuppressWarnings("serial")
 /**
- * The GpbFieldIndicatorBase class.
+ * The GpbFieldIndicatorWithVersion class.
  * This code was auto-generated and shouldn't be alterred manually.
  * 
  * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:107)
  */
-public class GpbFieldIndicatorBase implements Serializable {
+public class GpbFieldIndicatorWithVersion implements Serializable {
 
     // Whether the field is required, optional or repeated.
     FieldRuleEnum fieldRule;
@@ -78,48 +78,63 @@ public class GpbFieldIndicatorBase implements Serializable {
 
     final static DmcAttributeInfo defaultValueAI = new DmcAttributeInfo("defaultValue",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
 
+    // The release at which the field was introduced to the message.
+    String introducedVersion;
+
+    final static DmcAttributeInfo introducedVersionAI = new DmcAttributeInfo("introducedVersion",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+
+    // The release at which the field became obsolete.
+    String obsoleteVersion;
+
+    final static DmcAttributeInfo obsoleteVersionAI = new DmcAttributeInfo("obsoleteVersion",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+
     /**
      * Default constructor.
      */
-    public GpbFieldIndicatorBase(){
+    public GpbFieldIndicatorWithVersion(){
     }
 
     /**
      * Copy constructor.
      */
-    public GpbFieldIndicatorBase(GpbFieldIndicatorBase original){
+    public GpbFieldIndicatorWithVersion(GpbFieldIndicatorWithVersion original){
         fieldRule = original.fieldRule;
         fieldRef = original.fieldRef;
         fieldTag = original.fieldTag;
         option = original.option;
         defaultValue = original.defaultValue;
+        introducedVersion = original.introducedVersion;
+        obsoleteVersion = original.obsoleteVersion;
     }
 
     /**
      * All fields constructor.
      * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:134)
      */
-    public GpbFieldIndicatorBase(FieldRuleEnum f1, GpbFieldREF f2, Integer f3, OptionEnum f4, String f5) throws DmcValueException {
+    public GpbFieldIndicatorWithVersion(FieldRuleEnum f1, GpbFieldREF f2, Integer f3, OptionEnum f4, String f5, String f6, String f7) throws DmcValueException {
         fieldRule = DmcTypeFieldRuleEnumSTATIC.instance.typeCheck(f1);
         fieldRef = DmcTypeGpbFieldREFSTATIC.instance.typeCheck(f2);
         fieldTag = DmcTypeIntegerSTATIC.instance.typeCheck(f3);
         option = DmcTypeOptionEnumSTATIC.instance.typeCheck(f4);
         defaultValue = DmcTypeStringSTATIC.instance.typeCheck(f5);
+        introducedVersion = DmcTypeStringSTATIC.instance.typeCheck(f6);
+        obsoleteVersion = DmcTypeStringSTATIC.instance.typeCheck(f7);
     }
 
     /**
      * String based constructor.
      * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:175)
      */
-    public GpbFieldIndicatorBase(String initialInput) throws DmcValueException {
+    public GpbFieldIndicatorWithVersion(String initialInput) throws DmcValueException {
         IntegerVar seppos = new IntegerVar(-1);
         String input = initialInput.trim();
-        input = input.replaceAll("(\\s)+", " ");
         fieldRule = DmcTypeFieldRuleEnumSTATIC.instance.typeCheck(getNextField(input,seppos,"fieldRule",false));
         fieldRef = DmcTypeGpbFieldREFSTATIC.instance.typeCheck(getNextField(input,seppos,"fieldRef",false));
         fieldTag = DmcTypeIntegerSTATIC.instance.typeCheck(getNextField(input,seppos,"fieldTag",false));
         option = DmcTypeOptionEnumSTATIC.instance.typeCheck(getNextField(input,seppos,"option",false));
-        defaultValue = DmcTypeStringSTATIC.instance.typeCheck(getNextField(input,seppos,"defaultValue",true));
+        defaultValue = DmcTypeStringSTATIC.instance.typeCheck(getNextField(input,seppos,"defaultValue",false));
+        introducedVersion = DmcTypeStringSTATIC.instance.typeCheck(getNextField(input,seppos,"introducedVersion",false));
+        obsoleteVersion = DmcTypeStringSTATIC.instance.typeCheck(getNextField(input,seppos,"obsoleteVersion",true));
     }
 
     /**
@@ -132,6 +147,8 @@ public class GpbFieldIndicatorBase implements Serializable {
         DmcTypeIntegerSTATIC.instance.serializeValue(dos, fieldTag);
         DmcTypeOptionEnumSTATIC.instance.serializeValue(dos, option);
         DmcTypeStringSTATIC.instance.serializeValue(dos, defaultValue);
+        DmcTypeStringSTATIC.instance.serializeValue(dos, introducedVersion);
+        DmcTypeStringSTATIC.instance.serializeValue(dos, obsoleteVersion);
     }
 
     /**
@@ -144,6 +161,8 @@ public class GpbFieldIndicatorBase implements Serializable {
         fieldTag = DmcTypeIntegerSTATIC.instance.deserializeValue(dis);
         option = DmcTypeOptionEnumSTATIC.instance.deserializeValue(dis);
         defaultValue = DmcTypeStringSTATIC.instance.deserializeValue(dis);
+        introducedVersion = DmcTypeStringSTATIC.instance.deserializeValue(dis);
+        obsoleteVersion = DmcTypeStringSTATIC.instance.deserializeValue(dis);
     }
 
     /**
@@ -151,7 +170,7 @@ public class GpbFieldIndicatorBase implements Serializable {
      * Generated from: org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:253)
      */
     public String toString(){
-        return(fieldRule.toString() + " " + fieldRef.toString() + " " + fieldTag.toString() + " " + option.toString() + " " + defaultValue.toString());
+        return(fieldRule.toString() + ":" + fieldRef.toString() + ":" + fieldTag.toString() + ":" + option.toString() + ":" + defaultValue.toString() + ":" + introducedVersion.toString() + ":" + obsoleteVersion.toString());
     }
 
     public FieldRuleEnum getFieldRule(){
@@ -172,6 +191,14 @@ public class GpbFieldIndicatorBase implements Serializable {
 
     public String getDefaultValue(){
         return(defaultValue);
+    }
+
+    public String getIntroducedVersion(){
+        return(introducedVersion);
+    }
+
+    public String getObsoleteVersion(){
+        return(obsoleteVersion);
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
@@ -206,43 +233,44 @@ public class GpbFieldIndicatorBase implements Serializable {
         
     }
 
-    // org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:328)
+    // org.dmd.dms.util.ComplexTypeFormatter.dumpComplexType(ComplexTypeFormatter.java:413)
     String getNextField(String input, IntegerVar seppos, String fn, boolean last) throws DmcValueException {
     	   String rc = null;
     	   int start = seppos.intValue();
-
-    	   if ( (start+1) >= input.length()){
-            throw (new DmcValueException("Missing value for field: " + fn + " in complex type: GpbFieldIndicatorBase"));
-        }
-
+   	   
     	   if (last){
-    	       rc = input.substring(start+1);
-    	   }
-    	   else{
-    	       int pos = -1;
-    	       if (start > 0)
-    		       pos = input.indexOf(" ", start+1);
-    	       else
-    		       pos = input.indexOf(" ");
-
-    	       if (pos == -1){
-    		       rc = input.substring(start+1);
-                seppos.set(input.length());
-                return(rc);
-            }
-
-    		   while(pos < (input.length()-1)){
-    		       if ( input.charAt(pos+1) == ' ')
-    		           pos++;
-    		       else
-    		           break;
-    		   }
-
-    	       rc = input.substring(start+1, pos).trim();
-
-    	       seppos.set(pos);
+            if ( (start+1) >= input.length())
+                rc = "";
+            else
+                rc = input.substring(start+1);
+ 	   }
+	       else{
+    	       if ( (start+1) >= input.length())
+        		   throw (new DmcValueException("Missing value for field: " + fn + " in complex type: RuleParam"));
+   		   
+        	   int pos = -1;
+	           if (start > -1){
+	        	   start = start + 1;
+	    	       pos = input.indexOf(":", start);
+	           }
+	           else{
+	        	   start = 0;
+	    	       pos = input.indexOf(":");
+	           }
+	       
+	           if (pos == start){
+	        	   seppos.set(pos);
+	        	   return("");
+	           }
+	       
+	           if (pos == -1)
+		           throw (new DmcValueException("Missing value for field: " + fn + " in complex type: RuleParam"));
+		       
+	           rc = input.substring(start, pos).trim();
+	       
+	           seppos.set(pos);
         }
-
+    
         return(rc);
     }
 
