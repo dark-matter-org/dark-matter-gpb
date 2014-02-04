@@ -76,7 +76,7 @@ public class GpbauxtestSchemaAG extends SchemaDefinition {
             me.setDotName("gpbauxtest");
             me.setSchemaPackage("org.dmd.gpb.tools.generation");
             me.setDmwPackage("org.dmd.gpb.tools.generation");
-            me.setFile("/Users/peter/bvw/dark-matter-gpb/test/org/dmd/gpb/tools/generation/dmdconfig/gpbauxtest.dms");
+            me.setFile("C:/Users/pstrong/dev/dark-matter/dark-matter-gpb/test/org/dmd/gpb/tools/generation/dmdconfig/gpbauxtest.dms");
 
             initClasses();
             initAttributes1();
@@ -98,7 +98,7 @@ public class GpbauxtestSchemaAG extends SchemaDefinition {
             _GpbTestAuxInfoOBJ.setName("GpbTestAuxInfo");
             _GpbTestAuxInfoOBJ.setDmdID("-478999");
             _GpbTestAuxInfoOBJ.setClassType("AUXILIARY");
-            _GpbTestAuxInfoOBJ.setFile("/Users/peter/bvw/dark-matter-gpb/test/org/dmd/gpb/tools/generation/dmdconfig/classes.dmd");
+            _GpbTestAuxInfoOBJ.setFile("C:/Users/pstrong/dev/dark-matter/dark-matter-gpb/test/org/dmd/gpb/tools/generation/dmdconfig/classes.dmd");
             _GpbTestAuxInfoOBJ.setLineNumber("9");
             _GpbTestAuxInfoOBJ.addDescription("This class is used to test adding auxiliary information to GPB definitions.");
             _GpbTestAuxInfoOBJ.setDmtREFImport("org.dmd.gpb.tools.generation.generated.types.GpbTestAuxInfoREF");
@@ -128,7 +128,7 @@ public class GpbauxtestSchemaAG extends SchemaDefinition {
             _otherInfoOBJ.setNameAndTypeName("otherInfo.AttributeDefinition");
             _otherInfoOBJ.setDotName("gpbauxtest.otherInfo.AttributeDefinition");
             _otherInfo.setDefinedIn(this);
-            _otherInfoOBJ.setFile("/Users/peter/bvw/dark-matter-gpb/test/org/dmd/gpb/tools/generation/dmdconfig/attributes.dmd");
+            _otherInfoOBJ.setFile("C:/Users/pstrong/dev/dark-matter/dark-matter-gpb/test/org/dmd/gpb/tools/generation/dmdconfig/attributes.dmd");
             _otherInfoOBJ.setLineNumber("6");
             addAttributeDefList(_otherInfo);
 
@@ -142,7 +142,7 @@ public class GpbauxtestSchemaAG extends SchemaDefinition {
             _unitsOBJ.setNameAndTypeName("units.AttributeDefinition");
             _unitsOBJ.setDotName("gpbauxtest.units.AttributeDefinition");
             _units.setDefinedIn(this);
-            _unitsOBJ.setFile("/Users/peter/bvw/dark-matter-gpb/test/org/dmd/gpb/tools/generation/dmdconfig/attributes.dmd");
+            _unitsOBJ.setFile("C:/Users/pstrong/dev/dark-matter/dark-matter-gpb/test/org/dmd/gpb/tools/generation/dmdconfig/attributes.dmd");
             _unitsOBJ.setLineNumber("12");
             addAttributeDefList(_units);
 

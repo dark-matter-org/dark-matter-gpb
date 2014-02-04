@@ -650,16 +650,25 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             ComplexTypeDefinitionDMO _GpbFieldIndicatorBaseOBJ = new ComplexTypeDefinitionDMO();
             _GpbFieldIndicatorBase = new ComplexTypeDefinition(_GpbFieldIndicatorBaseOBJ);
             _GpbFieldIndicatorBaseOBJ.setName("GpbFieldIndicatorBase");
+            _GpbFieldIndicatorBaseOBJ.addDescription("The field indicator is used to indicate the assignment of a defined GpbField\n to a GpbMessage. It is very similar in form to a GPB field definition except for the fact\n that the type information is not included; the type is indicated in the referenced GpbField.\n </p>");
+            _GpbFieldIndicatorBaseOBJ.addOptionalPart("OptionEnum option \"Indicates if the PACKED option is to be used for repeated fields.\"");
+            _GpbFieldIndicatorBaseOBJ.addOptionalPart("String default \"The default value\"");
+            _GpbFieldIndicatorBaseOBJ.addOptionalPart("String version \"The version at which the field was introduced in the message.\"");
+            _GpbFieldIndicatorBaseOBJ.addOptionalPart("String obsolete \"The version at which the field was made obsolete.\"");
+            _GpbFieldIndicatorBaseOBJ.addOptionalPart("String note \"A note about the field and its use in this message e.g. why it's obsolete.\"");
+            _GpbFieldIndicatorBaseOBJ.addRequiredPart("FieldRuleEnum fieldRule \"Whether the field is required, optional or repeated.\"");
+            _GpbFieldIndicatorBaseOBJ.addRequiredPart("GpbField fieldRef \"Reference to the GpbField to be used.\"");
+            _GpbFieldIndicatorBaseOBJ.addRequiredPart("Integer fieldTag \"The unique numeric tag for this field.\"");
             _GpbFieldIndicatorBaseOBJ.setNameAndTypeName("GpbFieldIndicatorBase.ComplexTypeDefinition");
+            _GpbFieldIndicatorBaseOBJ.addExampleUsage("Standard field definition:");
+            _GpbFieldIndicatorBaseOBJ.addExampleUsage("Field definition with a default value:");
+            _GpbFieldIndicatorBaseOBJ.addExampleUsage("A packed field:");
+            _GpbFieldIndicatorBaseOBJ.addExampleUsage("A field with a version indicator:");
+            _GpbFieldIndicatorBaseOBJ.addExampleUsage("An obsolete field:");
             _GpbFieldIndicatorBaseOBJ.setDotName("dmdgpb.GpbFieldIndicatorBase.ComplexTypeDefinition");
             _GpbFieldIndicatorBase.setDefinedIn(this);
             _GpbFieldIndicatorBaseOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");
-            _GpbFieldIndicatorBaseOBJ.setLineNumber("18");
-            _GpbFieldIndicatorBaseOBJ.addField("FieldRuleEnum fieldRule Whether the field is required, optional or repeated.");
-            _GpbFieldIndicatorBaseOBJ.addField("GpbField fieldRef Reference to the GpbField to be used.");
-            _GpbFieldIndicatorBaseOBJ.addField("Integer fieldTag The unique numeric tag for this field.");
-            _GpbFieldIndicatorBaseOBJ.addField("OptionEnum option Indicates if there's a DEFAULT value or if the PACKED option is to be used for repeated fields.");
-            _GpbFieldIndicatorBaseOBJ.addField("String defaultValue The default value - this is limited to a single, space delimited token at the moment.");
+            _GpbFieldIndicatorBaseOBJ.setLineNumber("29");
             addComplexTypeDefList(_GpbFieldIndicatorBase);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -671,7 +680,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldIndicatorWithVersion.setDefinedIn(this);
             _GpbFieldIndicatorWithVersionOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");
             _GpbFieldIndicatorWithVersionOBJ.setFieldSeparator(":");
-            _GpbFieldIndicatorWithVersionOBJ.setLineNumber("29");
+            _GpbFieldIndicatorWithVersionOBJ.setLineNumber("41");
             _GpbFieldIndicatorWithVersionOBJ.addField("FieldRuleEnum fieldRule Whether the field is required, optional or repeated.");
             _GpbFieldIndicatorWithVersionOBJ.addField("GpbField fieldRef Reference to the GpbField to be used.");
             _GpbFieldIndicatorWithVersionOBJ.addField("Integer fieldTag The unique numeric tag for this field.");
@@ -708,14 +717,13 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             EnumDefinitionDMO _OptionEnumOBJ = new EnumDefinitionDMO();
             _OptionEnum = new EnumDefinition(_OptionEnumOBJ);
             _OptionEnumOBJ.setName("OptionEnum");
-            _OptionEnumOBJ.addEnumValue("0 DEFAULT Indicates that a field has a default value.");
             _OptionEnumOBJ.addEnumValue("1 PACKED Indicates that the more efficient packed representation of numeric data should be used for REPEATED fields.");
-            _OptionEnumOBJ.addDescription("The OptionEnum indicates whether a field has a defult value or uses a packed representation.");
+            _OptionEnumOBJ.addDescription("The OptionEnum indicates whether a field uses a packed representation. Unlike the GPB\n base concept of having DEFAULT or PACKED as the options, you would use the default=\"value\" construct\n to indicate a default value.");
             _OptionEnumOBJ.setNameAndTypeName("OptionEnum.EnumDefinition");
             _OptionEnumOBJ.setDotName("dmdgpb.OptionEnum.EnumDefinition");
             _OptionEnum.setDefinedIn(this);
             _OptionEnumOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/types.dmd");
-            _OptionEnumOBJ.setLineNumber("28");
+            _OptionEnumOBJ.setLineNumber("30");
             addEnumDefList(_OptionEnum);
 
     }

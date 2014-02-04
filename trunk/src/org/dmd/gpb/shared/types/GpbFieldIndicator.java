@@ -19,8 +19,8 @@ public class GpbFieldIndicator extends GpbFieldIndicatorBase implements Serializ
 		super(original);
 	}
 	
-    public GpbFieldIndicator(FieldRuleEnum f1, GpbFieldREF f2, Integer f3, OptionEnum f4, String f5) throws DmcValueException {
-    	super(f1, f2, f3, f4, f5);	
+    public GpbFieldIndicator(FieldRuleEnum fieldRule_, GpbFieldREF fieldRef_, Integer fieldTag_, OptionEnum option_, String default_, String version_, String obsolete_, String note_) throws DmcValueException {
+    	super(fieldRule_, fieldRef_, fieldTag_, option_, default_, version_, obsolete_, note_);	
     }
     
     public GpbFieldIndicator(String initialInput) throws DmcValueException {
@@ -29,34 +29,13 @@ public class GpbFieldIndicator extends GpbFieldIndicatorBase implements Serializ
     	// Additional checking that isn't supported by the ComplexTypeDefinition
     	
     	if (getOption() != null){
-    		if (getOption() == OptionEnum.DEFAULT){
-    			if (getDefaultValue() == null){
-    				DmcValueException ex = new DmcValueException("Missing default value");
-    				throw(ex);
-    			}
-    		}
     		if (getOption() == OptionEnum.PACKED){
-    			if (getDefaultValue() != null){
+    			if (getDefault() != null){
     				DmcValueException ex = new DmcValueException("Extraneous information after the PACKED option");
     				throw(ex);
     			}
     		}
     	}
-    }
-    
-    @Override
-    public String toString(){
-    	StringBuffer sb = new StringBuffer();
-    	
-    	sb.append(getFieldRef().toString() + " " + getFieldTag().toString() + " " + getFieldRule().toString());
-    	
-    	if (getOption() != null)
-    		sb.append(" " + getOption());
-    	
-    	if (getDefaultValue() != null)
-    		sb.append(" " + getDefaultValue());
-    	
-    	return(sb.toString());
     }
 
 }
