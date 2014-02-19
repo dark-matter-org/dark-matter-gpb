@@ -3,7 +3,7 @@ package org.dmd.gpb.tools.parsing;
 import java.io.File;
 import java.io.IOException;
 
-import junit.framework.Assert;
+import static org.junit.Assert.assertNotNull;
 
 import org.dmd.dmc.DmcNameClashException;
 import org.dmd.dmc.DmcValueException;
@@ -34,7 +34,7 @@ public class GpbDotProtoParserTest {
 		
 		parser.run();
 		
-		Assert.assertNotNull(parser.getConfig("config1"));
+		assertNotNull(parser.getConfig("config1"));
 	}
 	
 	

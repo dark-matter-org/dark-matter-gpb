@@ -16,8 +16,8 @@
 package org.dmd.gpb.server.generated.dsd;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGlobalInterface(DSDArtifactFormatter.java:364)
-import java.util.Iterator;                                   // To provide iterators over definitions - (DSDArtifactFormatter.java:361)
+// Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGlobalInterface(DSDArtifactFormatter.java:362)
+import java.util.Iterator;                                   // To provide iterators over definitions - (DSDArtifactFormatter.java:359)
 import org.dmd.dmc.types.DotName;                            // To support the find method for definitions - (DSDefinitionModule.java:163)
 import org.dmd.gpb.server.extended.GpbCompositeType;         // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
 import org.dmd.gpb.server.extended.GpbDefinition;            // A definition from the GpbModule Module - (DSDefinitionModule.java:161)
@@ -30,7 +30,7 @@ import org.dmd.gpb.server.extended.GpbScalarType;            // A definition fro
 import org.dmd.gpb.server.extended.GpbType;                  // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
 
 
-// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGlobalInterface(DSDArtifactFormatter.java:368)
+// Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateGlobalInterface(DSDArtifactFormatter.java:366)
 /**
  * This interface is implemented by definition managers that store definitions from the GpbModule module.
  */

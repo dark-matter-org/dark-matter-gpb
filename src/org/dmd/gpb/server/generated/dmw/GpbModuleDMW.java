@@ -39,7 +39,7 @@ import org.dmd.gpb.shared.generated.types.GpbModuleREF;                   // Req
  */
 abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitionIF, DmcNamedObjectIF, GpbModuleScopedInterface {
 
-    // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:60)
+    // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
     // Called from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperDefinitions(DMWGenerator.java:203)
     DmcDefinitionSet<GpbDefinition>        GpbDefinitionDefs       = new DmcDefinitionSet<GpbDefinition>("GpbModule-allDefinitions");            // All definitions associated with this module
     DmcDefinitionSet<GpbCompositeType>     GpbCompositeTypeDefs    = new DmcDefinitionSet<GpbCompositeType>("GpbModule-GpbCompositeTypeDefs");   // All GpbCompositeType definitions

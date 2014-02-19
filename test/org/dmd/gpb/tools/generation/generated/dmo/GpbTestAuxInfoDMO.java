@@ -93,7 +93,7 @@ public class GpbTestAuxInfoDMO  {
     /**
      * Removes the otherInfo attribute from the object.
      */
-    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:867)
+    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:871)
     static public DmcAttribute<?> remOtherInfo(DmcObject core){
         if (core == null)
             return(null);
@@ -102,7 +102,7 @@ public class GpbTestAuxInfoDMO  {
         return(rc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:900)
+    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:904)
     static public String getOtherInfo(DmcObject core){
         DmcTypeStringSV attr = (DmcTypeStringSV) get(core, GpbauxtestDMSAG.__otherInfo);
         if (attr == null)
@@ -115,7 +115,7 @@ public class GpbTestAuxInfoDMO  {
      * Sets otherInfo to the specified value.
      * @param value A value compatible with DmcTypeStringSV
      */
-    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:922)
+    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:926)
     static public void setOtherInfo(DmcObject core, Object value) throws DmcValueException {
         DmcAttribute<?> attr = get(core, GpbauxtestDMSAG.__otherInfo);
         if (attr == null)
@@ -129,7 +129,7 @@ public class GpbTestAuxInfoDMO  {
      * Sets otherInfo to the specified value.
      * @param value A value compatible with DmcTypeStringSV
      */
-    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:957)
+    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:961)
     static public void setOtherInfo(DmcObject core, String value){
         DmcAttribute<?> attr = get(core, GpbauxtestDMSAG.__otherInfo);
         if (attr == null)
@@ -146,7 +146,7 @@ public class GpbTestAuxInfoDMO  {
     /**
      * Removes the units attribute from the object.
      */
-    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:867)
+    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:871)
     static public DmcAttribute<?> remUnits(DmcObject core){
         if (core == null)
             return(null);
@@ -155,7 +155,7 @@ public class GpbTestAuxInfoDMO  {
         return(rc);
     }
 
-    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:900)
+    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:904)
     static public String getUnits(DmcObject core){
         DmcTypeStringSV attr = (DmcTypeStringSV) get(core, GpbauxtestDMSAG.__units);
         if (attr == null)
@@ -168,7 +168,7 @@ public class GpbTestAuxInfoDMO  {
      * Sets units to the specified value.
      * @param value A value compatible with DmcTypeStringSV
      */
-    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:922)
+    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:926)
     static public void setUnits(DmcObject core, Object value) throws DmcValueException {
         DmcAttribute<?> attr = get(core, GpbauxtestDMSAG.__units);
         if (attr == null)
@@ -182,7 +182,7 @@ public class GpbTestAuxInfoDMO  {
      * Sets units to the specified value.
      * @param value A value compatible with DmcTypeStringSV
      */
-    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:957)
+    // org.dmd.dms.util.DmoFormatter.formatSVAUX(DmoFormatter.java:961)
     static public void setUnits(DmcObject core, String value){
         DmcAttribute<?> attr = get(core, GpbauxtestDMSAG.__units);
         if (attr == null)
