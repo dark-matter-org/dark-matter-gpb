@@ -80,7 +80,7 @@ public class GpbTestAuxInfo {
     /**
      * Removes the otherInfo attribute from the object.
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatAUXSV(BaseDMWGenerator.java:2836)
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatAUXSV(BaseDMWGenerator.java:2839)
     static public DmcAttribute<?> remOtherInfo(DmwWrapper corew){
         if (corew == null)
             return(null);
@@ -89,7 +89,7 @@ public class GpbTestAuxInfo {
         return(rc);
     }
 
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatAUXSV(BaseDMWGenerator.java:2867)
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatAUXSV(BaseDMWGenerator.java:2870)
     static public String getOtherInfo(DmwWrapper corew){
         DmcTypeStringSV attr = (DmcTypeStringSV) corew.getDmcObject().get(__otherInfo);
         if (attr == null)
@@ -102,7 +102,7 @@ public class GpbTestAuxInfo {
      * Sets otherInfo to the specified value.
      * @param value A value compatible with DmcTypeStringSV
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatAUXSV(BaseDMWGenerator.java:2907)
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatAUXSV(BaseDMWGenerator.java:2910)
     static public void setOtherInfo(DmwWrapper corew, Object value) throws DmcValueException {
         DmcAttribute<?> attr = corew.getDmcObject().get(__otherInfo);
         if (attr == null){
@@ -117,7 +117,7 @@ public class GpbTestAuxInfo {
     /**
      * Removes the units attribute from the object.
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatAUXSV(BaseDMWGenerator.java:2836)
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatAUXSV(BaseDMWGenerator.java:2839)
     static public DmcAttribute<?> remUnits(DmwWrapper corew){
         if (corew == null)
             return(null);
@@ -126,7 +126,7 @@ public class GpbTestAuxInfo {
         return(rc);
     }
 
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatAUXSV(BaseDMWGenerator.java:2867)
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatAUXSV(BaseDMWGenerator.java:2870)
     static public String getUnits(DmwWrapper corew){
         DmcTypeStringSV attr = (DmcTypeStringSV) corew.getDmcObject().get(__units);
         if (attr == null)
@@ -139,7 +139,7 @@ public class GpbTestAuxInfo {
      * Sets units to the specified value.
      * @param value A value compatible with DmcTypeStringSV
      */
-    // org.dmd.dmg.generators.BaseDMWGenerator.formatAUXSV(BaseDMWGenerator.java:2907)
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatAUXSV(BaseDMWGenerator.java:2910)
     static public void setUnits(DmwWrapper corew, Object value) throws DmcValueException {
         DmcAttribute<?> attr = corew.getDmcObject().get(__units);
         if (attr == null){
