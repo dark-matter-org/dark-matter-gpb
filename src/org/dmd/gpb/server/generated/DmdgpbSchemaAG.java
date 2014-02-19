@@ -68,7 +68,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
     public static TypeDefinition _GpbFieldIndicator;
 
     public static ComplexTypeDefinition _GpbFieldIndicatorBase;
-    public static ComplexTypeDefinition _GpbFieldIndicatorWithVersion;
 
 
     public static EnumDefinition _FieldRuleEnum;
@@ -655,7 +654,8 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldIndicatorBaseOBJ.addOptionalPart("String default \"The default value\"");
             _GpbFieldIndicatorBaseOBJ.addOptionalPart("String version \"The version at which the field was introduced in the message.\"");
             _GpbFieldIndicatorBaseOBJ.addOptionalPart("String obsolete \"The version at which the field was made obsolete.\"");
-            _GpbFieldIndicatorBaseOBJ.addOptionalPart("String note \"A note about the field and its use in this message e.g. why it's obsolete.\"");
+            _GpbFieldIndicatorBaseOBJ.addOptionalPart("String note \"A note about the field and its use in this message e.g. why it's obsolete.\" quoted=true");
+            _GpbFieldIndicatorBaseOBJ.addOptionalPart("String skip \"If a field isn't supported in one or more intermediate versions, you can indicate the skip version.\" multivalued=true");
             _GpbFieldIndicatorBaseOBJ.addRequiredPart("FieldRuleEnum fieldRule \"Whether the field is required, optional or repeated.\"");
             _GpbFieldIndicatorBaseOBJ.addRequiredPart("GpbField fieldRef \"Reference to the GpbField to be used.\"");
             _GpbFieldIndicatorBaseOBJ.addRequiredPart("Integer fieldTag \"The unique numeric tag for this field.\"");
@@ -668,27 +668,8 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldIndicatorBaseOBJ.setDotName("dmdgpb.GpbFieldIndicatorBase.ComplexTypeDefinition");
             _GpbFieldIndicatorBase.setDefinedIn(this);
             _GpbFieldIndicatorBaseOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");
-            _GpbFieldIndicatorBaseOBJ.setLineNumber("29");
+            _GpbFieldIndicatorBaseOBJ.setLineNumber("30");
             addComplexTypeDefList(_GpbFieldIndicatorBase);
-
-// Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            ComplexTypeDefinitionDMO _GpbFieldIndicatorWithVersionOBJ = new ComplexTypeDefinitionDMO();
-            _GpbFieldIndicatorWithVersion = new ComplexTypeDefinition(_GpbFieldIndicatorWithVersionOBJ);
-            _GpbFieldIndicatorWithVersionOBJ.setName("GpbFieldIndicatorWithVersion");
-            _GpbFieldIndicatorWithVersionOBJ.setNameAndTypeName("GpbFieldIndicatorWithVersion.ComplexTypeDefinition");
-            _GpbFieldIndicatorWithVersionOBJ.setDotName("dmdgpb.GpbFieldIndicatorWithVersion.ComplexTypeDefinition");
-            _GpbFieldIndicatorWithVersion.setDefinedIn(this);
-            _GpbFieldIndicatorWithVersionOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");
-            _GpbFieldIndicatorWithVersionOBJ.setFieldSeparator(":");
-            _GpbFieldIndicatorWithVersionOBJ.setLineNumber("41");
-            _GpbFieldIndicatorWithVersionOBJ.addField("FieldRuleEnum fieldRule Whether the field is required, optional or repeated.");
-            _GpbFieldIndicatorWithVersionOBJ.addField("GpbField fieldRef Reference to the GpbField to be used.");
-            _GpbFieldIndicatorWithVersionOBJ.addField("Integer fieldTag The unique numeric tag for this field.");
-            _GpbFieldIndicatorWithVersionOBJ.addField("OptionEnum option Indicates if there's a DEFAULT value or if the PACKED option is to be used for repeated fields.");
-            _GpbFieldIndicatorWithVersionOBJ.addField("String defaultValue The default value - this is limited to a single, space delimited token at the moment.");
-            _GpbFieldIndicatorWithVersionOBJ.addField("String introducedVersion The release at which the field was introduced to the message.");
-            _GpbFieldIndicatorWithVersionOBJ.addField("String obsoleteVersion The release at which the field became obsolete.");
-            addComplexTypeDefList(_GpbFieldIndicatorWithVersion);
 
     }
 

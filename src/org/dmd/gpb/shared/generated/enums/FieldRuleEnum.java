@@ -24,7 +24,7 @@ import org.dmd.dmc.DmcEnumIF;
  * repeated.\n <p/>\n REQUIRED is Forever You should be very careful about
  * marking fields as required. If at some\n point you wish to stop writing or
  * sending a required field, it will be problematic to change\n the field to
- * an optional field Ð old readers will consider messages without this field
+ * an optional field ? old readers will consider messages without this field
  * to be\n incomplete and may reject or drop them unintentionally. You should
  * consider writing\n application-specific custom validation routines for
  * your buffers instead. Some engineers\n at Google have come to the
@@ -100,7 +100,7 @@ public enum FieldRuleEnum implements DmcEnumIF
      * a valid member of this enum.
      */
     public static FieldRuleEnum get(String str) {
-        return(lookupString.get(str));
+        return(lookupString.get(str.toUpperCase()));
     }
 
 }

@@ -16,7 +16,8 @@ optionalPart OptionEnum     option    		"Indicates if the PACKED option is to be
 optionalPart String        	default			"The default value"
 optionalPart String        	version			"The version at which the field was introduced in the message."
 optionalPart String        	obsolete		"The version at which the field was made obsolete."
-optionalPart String        	note			"A note about the field and its use in this message e.g. why it's obsolete."
+optionalPart String        	note			"A note about the field and its use in this message e.g. why it's obsolete." quoted=true
+optionalPart String        	skip			"If a field isn't supported in one or more intermediate versions, you can indicate the skip version." multivalued=true
 description	The field indicator is used to indicate the assignment of a defined GpbField
  to a GpbMessage. It is very similar in form to a GPB field definition except for the fact
  that the type information is not included; the type is indicated in the referenced GpbField.
@@ -28,14 +29,14 @@ exampleUsage A field with a version indicator:
 exampleUsage An obsolete field:
 
 
-ComplexTypeDefinition
-name GpbFieldIndicatorWithVersion
-field FieldRuleEnum  	fieldRule   		Whether the field is required, optional or repeated.
-field GpbField			fieldRef 			Reference to the GpbField to be used.
-field Integer           fieldTag    		The unique numeric tag for this field.
-field OptionEnum        option    			Indicates if there's a DEFAULT value or if the PACKED option is to be used for repeated fields.
-field String        	defaultValue		The default value - this is limited to a single, space delimited token at the moment.
-field String        	introducedVersion	The release at which the field was introduced to the message.
-field String        	obsoleteVersion		The release at which the field became obsolete.
-fieldSeparator :
-//mandatoryFields			3
+//ComplexTypeDefinition
+//name GpbFieldIndicatorWithVersion
+//field FieldRuleEnum  	fieldRule   		Whether the field is required, optional or repeated.
+//field GpbField			fieldRef 			Reference to the GpbField to be used.
+//field Integer           fieldTag    		The unique numeric tag for this field.
+//field OptionEnum        option    			Indicates if there's a DEFAULT value or if the PACKED option is to be used for repeated fields.
+//field String        	defaultValue		The default value - this is limited to a single, space delimited token at the moment.
+//field String        	introducedVersion	The release at which the field was introduced to the message.
+//field String        	obsoleteVersion		The release at which the field became obsolete.
+//fieldSeparator :
+////mandatoryFields			3
