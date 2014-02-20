@@ -10,6 +10,7 @@ import org.dmd.dmc.rules.DmcRuleExceptionSet;
 import org.dmd.util.exceptions.ResultException;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class GpbDefGeneratorTest {
 
@@ -50,6 +51,21 @@ public class GpbDefGeneratorTest {
 		generator.run(args);
 	}
 	
+	@Test
+	public void singleConfigTestCommon() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException, DmcValueExceptionSet {
+		String[] args = { "-workspace", workingDir,
+							"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base",
+							"-target", "ewmnbi_common",
+//							"-genversion", "14.1",
+				};
+		
+		System.out.println("\n\nSingle config - ewmnbi_common...\n");
+		
+		GpbDefGenerator generator = new GpbDefGenerator(System.out);
+		
+		generator.run(args);
+	}
+	
 //	@Test
 //	public void allConfigsTest() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException, DmcValueExceptionSet {
 //		String[] args = { "-workspace", workingDir,
@@ -63,18 +79,40 @@ public class GpbDefGeneratorTest {
 //		generator.run(args);
 //	}
 	
+//	@Test
+//	public void singleConfigTest3() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException, DmcValueExceptionSet {
+//		String[] args = { "-workspace", workingDir,
+//							"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base",
+//							"-target", "cgcm"
+//				};
+//		
+//		System.out.println("\n\nSingle config...\n");
+//		
+//		GpbDefGenerator generator = new GpbDefGenerator(System.out);
+//		
+//		generator.run(args);
+//	}
+	
 	@Test
-	public void singleConfigTest3() throws ResultException, DmcValueException, IOException, DmcRuleExceptionSet, DmcNameClashException, DmcValueExceptionSet {
-		String[] args = { "-workspace", workingDir,
-							"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base",
-							"-target", "cgcm"
-				};
+	public void versions(){
+		String v1 = "14.1.0.1";
+		String v2 = "14.2";
+		String v3 = "14.1.0";
+		String genversion = "14.1.1";
 		
-		System.out.println("\n\nSingle config...\n");
+		boolean rc = false;
 		
-		GpbDefGenerator generator = new GpbDefGenerator(System.out);
+		System.out.println("Versions...");
 		
-		generator.run(args);
+		rc = (v1.compareTo(genversion) <= 0);
+		assertEquals(v1 + " >= " + genversion, true, rc);
+		
+		rc = (v2.compareTo(genversion) <= 0);
+		assertEquals(v1 + " >= " + genversion, false, rc);
+		
+		rc = (v3.compareTo(genversion) <= 0);
+		assertEquals(v1 + " >= " + genversion, true, rc);
+		
 	}
 
 }

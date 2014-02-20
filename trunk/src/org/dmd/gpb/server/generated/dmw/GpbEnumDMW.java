@@ -2,20 +2,21 @@ package org.dmd.gpb.server.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:442)
-import java.util.ArrayList;                                     // Support for MULTI attribute - (BaseDMWGenerator.java:2226)
-import java.util.Iterator;                                      // Support copy of MV objects - (BaseDMWGenerator.java:2240)
-import org.dmd.dmc.*;                                           // If any attributes - (BaseDMWGenerator.java:1087)
-import org.dmd.dmc.definitions.DmcDefinitionIF;                 // The object is a domain specific definition - (BaseDMWGenerator.java:411)
-import org.dmd.dmc.types.DefinitionName;                        // Is named by - (BaseDMWGenerator.java:1062)
-import org.dmd.dms.ClassDefinition;                             // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                     // Attribute enumValue from the meta schema - (BaseDMWGenerator.java:897)
-import org.dmd.dms.generated.dmw.EnumValueIterableDMW;          // For multi-valued EnumValue - (BaseDMWGenerator.java:2103)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;           // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
-import org.dmd.dms.types.EnumValue;                             // Primitive type - (BaseDMWGenerator.java:1150)
-import org.dmd.gpb.server.extended.GpbCompositeType;            // Derived class - (BaseDMWGenerator.java:1248)
-import org.dmd.gpb.server.extended.GpbEnum;                     // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
-import org.dmd.gpb.shared.generated.dmo.GpbEnumDMO;             // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
-import org.dmd.gpb.shared.generated.types.GpbModuleREF;         // Required to access defined in module name - (DMWGenerator.java:180)
+import java.util.ArrayList;                                              // Support for MULTI attribute - (BaseDMWGenerator.java:2226)
+import java.util.Iterator;                                               // Support copy of MV objects - (BaseDMWGenerator.java:2240)
+import org.dmd.dmc.*;                                                    // If any attributes - (BaseDMWGenerator.java:1087)
+import org.dmd.dmc.definitions.DmcDefinitionIF;                          // The object is a domain specific definition - (BaseDMWGenerator.java:411)
+import org.dmd.dmc.types.DefinitionName;                                 // Is named by - (BaseDMWGenerator.java:1062)
+import org.dmd.dms.ClassDefinition;                                      // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                              // Required for MODREC constructor - (BaseDMWGenerator.java:1072)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                    // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
+import org.dmd.gpb.server.extended.GpbCompositeType;                     // Derived class - (BaseDMWGenerator.java:1248)
+import org.dmd.gpb.server.extended.GpbEnum;                              // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
+import org.dmd.gpb.server.generated.dmw.GpbEnumValueIterableDMW;         // For multi-valued GpbEnumValue - (BaseDMWGenerator.java:2103)
+import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                     // Attribute gpbEnumValue from the dmdgpb schema - (BaseDMWGenerator.java:897)
+import org.dmd.gpb.shared.generated.dmo.GpbEnumDMO;                      // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
+import org.dmd.gpb.shared.generated.types.GpbEnumValue;                  // Primitive type - (BaseDMWGenerator.java:1150)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;                  // Required to access defined in module name - (DMWGenerator.java:180)
 
 
 
@@ -135,85 +136,85 @@ abstract public class GpbEnumDMW extends GpbCompositeType implements DmcDefiniti
     }
 
     /**
-     * @return The number of EnumValue items.
+     * @return The number of GpbEnumValue items.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1671)
-    public int getEnumValueSize(){
-        return(((GpbEnumDMO) core).getEnumValueSize());
+    public int getGpbEnumValueSize(){
+        return(((GpbEnumDMO) core).getGpbEnumValueSize());
     }
 
     /**
-     * @return true if there are no EnumValueDMO items.
+     * @return true if there are no GpbEnumValueDMO items.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1679)
-    public boolean getEnumValueIsEmpty(){
-        if (((GpbEnumDMO) core).getEnumValueSize() == 0)
+    public boolean getGpbEnumValueIsEmpty(){
+        if (((GpbEnumDMO) core).getGpbEnumValueSize() == 0)
             return(true);
         return(false);
     }
 
     /**
-     * @return true if there are any EnumValueDMO items.
+     * @return true if there are any GpbEnumValueDMO items.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1689)
-    public boolean getEnumValueHasValue(){
-        if (((GpbEnumDMO) core).getEnumValueSize() == 0)
+    public boolean getGpbEnumValueHasValue(){
+        if (((GpbEnumDMO) core).getGpbEnumValueSize() == 0)
             return(false);
         return(true);
     }
 
     /**
-     * @return An Iterator of EnumValue objects.
+     * @return An Iterator of GpbEnumValue objects.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2107)
-    public EnumValueIterableDMW getEnumValueIterable(){
-        DmcAttribute<?> attr = core.get(MetaDMSAG.__enumValue);
+    public GpbEnumValueIterableDMW getGpbEnumValueIterable(){
+        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__gpbEnumValue);
         if (attr == null)
-            return(EnumValueIterableDMW.emptyList);
+            return(GpbEnumValueIterableDMW.emptyList);
         
-        return(new EnumValueIterableDMW(((GpbEnumDMO) core).getEnumValue()));
+        return(new GpbEnumValueIterableDMW(((GpbEnumDMO) core).getGpbEnumValue()));
     }
 
     /**
-     * Adds another enumValue value.
-     * @param value A value compatible with EnumValue
+     * Adds another gpbEnumValue value.
+     * @param value A value compatible with GpbEnumValue
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2133)
-    public void addEnumValue(Object value) throws DmcValueException {
-        ((GpbEnumDMO) core).addEnumValue(value);
+    public void addGpbEnumValue(Object value) throws DmcValueException {
+        ((GpbEnumDMO) core).addGpbEnumValue(value);
     }
 
     /**
-     * Adds another enumValue value.
-     * @param value A value compatible with EnumValue
+     * Adds another gpbEnumValue value.
+     * @param value A value compatible with GpbEnumValue
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2143)
-    public void addEnumValue(EnumValue value){
-        ((GpbEnumDMO) core).addEnumValue(value);
+    public void addGpbEnumValue(GpbEnumValue value){
+        ((GpbEnumDMO) core).addGpbEnumValue(value);
     }
 
     /**
-     * Returns true if the collection contains the enumValue value.
-     * @param value A value compatible with EnumValue
+     * Returns true if the collection contains the gpbEnumValue value.
+     * @param value A value compatible with GpbEnumValue
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2200)
-    public boolean enumValueContains(EnumValue value){
-        return(((GpbEnumDMO) core).enumValueContains(value));
+    public boolean gpbEnumValueContains(GpbEnumValue value){
+        return(((GpbEnumDMO) core).gpbEnumValueContains(value));
     }
 
     /**
-     * @return A COPY of the collection of EnumValue objects.
+     * @return A COPY of the collection of GpbEnumValue objects.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2244)
     @SuppressWarnings("unchecked")
-    public ArrayList<EnumValue> getEnumValueCopy(){
-        DmcAttribute<?> attr = core.get(MetaDMSAG.__enumValue);
+    public ArrayList<GpbEnumValue> getGpbEnumValueCopy(){
+        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__gpbEnumValue);
         if (attr == null)
-            return(new ArrayList<EnumValue>());
+            return(new ArrayList<GpbEnumValue>());
         
-        ArrayList<EnumValue> rc = new ArrayList<EnumValue>(attr.getMVSize());
+        ArrayList<GpbEnumValue> rc = new ArrayList<GpbEnumValue>(attr.getMVSize());
         
-        Iterator<EnumValue> it = (Iterator<EnumValue>) attr.getMV();
+        Iterator<GpbEnumValue> it = (Iterator<GpbEnumValue>) attr.getMV();
         while(it.hasNext()){
             rc.add(it.next());
         }
@@ -222,29 +223,29 @@ abstract public class GpbEnumDMW extends GpbCompositeType implements DmcDefiniti
     }
 
     /**
-     * Deletes a enumValue value.
-     * @param value The EnumValue to be deleted from set of attribute values.
+     * Deletes a gpbEnumValue value.
+     * @param value The GpbEnumValue to be deleted from set of attribute values.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2271)
-    public void delEnumValue(Object value) throws DmcValueException {
-        ((GpbEnumDMO) core).delEnumValue(value);
+    public void delGpbEnumValue(Object value) throws DmcValueException {
+        ((GpbEnumDMO) core).delGpbEnumValue(value);
     }
 
     /**
-     * Deletes a enumValue value.
-     * @param value The EnumValue to be deleted from set of attribute values.
+     * Deletes a gpbEnumValue value.
+     * @param value The GpbEnumValue to be deleted from set of attribute values.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2280)
-    public void delEnumValue(EnumValue value){
-        ((GpbEnumDMO) core).delEnumValue(value);
+    public void delGpbEnumValue(GpbEnumValue value){
+        ((GpbEnumDMO) core).delGpbEnumValue(value);
     }
 
     /**
-     * Removes the enumValue attribute value.
+     * Removes the gpbEnumValue attribute value.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2292)
-    public void remEnumValue(){
-        ((GpbEnumDMO) core).remEnumValue();
+    public void remGpbEnumValue(){
+        ((GpbEnumDMO) core).remGpbEnumValue();
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)

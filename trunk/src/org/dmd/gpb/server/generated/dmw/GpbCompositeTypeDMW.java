@@ -2,12 +2,16 @@ package org.dmd.gpb.server.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:442)
+import java.util.ArrayList;                                          // Support for MULTI attribute - (BaseDMWGenerator.java:2226)
+import java.util.Iterator;                                           // Support copy of MV objects - (BaseDMWGenerator.java:2240)
 import org.dmd.dmc.*;                                                // If any attributes - (BaseDMWGenerator.java:1087)
 import org.dmd.dmc.definitions.DmcDefinitionIF;                      // The object is a domain specific definition - (BaseDMWGenerator.java:411)
 import org.dmd.dmc.types.DefinitionName;                             // Is named by - (BaseDMWGenerator.java:1062)
 import org.dmd.dms.ClassDefinition;                                  // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
+import org.dmd.dms.generated.dmw.StringIterableDMW;                  // For multi-valued String - (BaseDMWGenerator.java:2103)
 import org.dmd.gpb.server.extended.GpbCompositeType;                 // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
 import org.dmd.gpb.server.extended.GpbType;                          // Derived class - (BaseDMWGenerator.java:1248)
+import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                 // Attribute skip from the dmdgpb schema - (BaseDMWGenerator.java:897)
 import org.dmd.gpb.shared.generated.dmo.GpbCompositeTypeDMO;         // Abstract class - (BaseDMWGenerator.java:1230)
 
 
@@ -15,8 +19,8 @@ import org.dmd.gpb.shared.generated.dmo.GpbCompositeTypeDMO;         // Abstract
 /**
  * The GpbCompositeType provides a common base for enumerations and
  * messages\n so that they can be referred to as a separate type of object
- * that can be specified in\n standalone blocks within a generate
- * GpbprotoFile.
+ * that can be specified in\n standalone blocks within a generated
+ * GpbProtoFile.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -120,6 +124,150 @@ abstract public class GpbCompositeTypeDMW extends GpbType implements DmcDefiniti
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
     public void remName(){
         ((GpbCompositeTypeDMO) core).remName();
+    }
+
+    /**
+     * @return The number of String items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1671)
+    public int getSkipSize(){
+        return(((GpbCompositeTypeDMO) core).getSkipSize());
+    }
+
+    /**
+     * @return true if there are no StringDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1679)
+    public boolean getSkipIsEmpty(){
+        if (((GpbCompositeTypeDMO) core).getSkipSize() == 0)
+            return(true);
+        return(false);
+    }
+
+    /**
+     * @return true if there are any StringDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1689)
+    public boolean getSkipHasValue(){
+        if (((GpbCompositeTypeDMO) core).getSkipSize() == 0)
+            return(false);
+        return(true);
+    }
+
+    /**
+     * @return An Iterator of String objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2107)
+    public StringIterableDMW getSkipIterable(){
+        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__skip);
+        if (attr == null)
+            return(StringIterableDMW.emptyList);
+        
+        return(new StringIterableDMW(((GpbCompositeTypeDMO) core).getSkip()));
+    }
+
+    /**
+     * Adds another skip value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2133)
+    public void addSkip(Object value) throws DmcValueException {
+        ((GpbCompositeTypeDMO) core).addSkip(value);
+    }
+
+    /**
+     * Adds another skip value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2143)
+    public void addSkip(String value){
+        ((GpbCompositeTypeDMO) core).addSkip(value);
+    }
+
+    /**
+     * Returns true if the collection contains the skip value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2200)
+    public boolean skipContains(String value){
+        return(((GpbCompositeTypeDMO) core).skipContains(value));
+    }
+
+    /**
+     * @return A COPY of the collection of String objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2244)
+    @SuppressWarnings("unchecked")
+    public ArrayList<String> getSkipCopy(){
+        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__skip);
+        if (attr == null)
+            return(new ArrayList<String>());
+        
+        ArrayList<String> rc = new ArrayList<String>(attr.getMVSize());
+        
+        Iterator<String> it = (Iterator<String>) attr.getMV();
+        while(it.hasNext()){
+            rc.add(it.next());
+        }
+        
+        return(rc);
+    }
+
+    /**
+     * Deletes a skip value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2271)
+    public void delSkip(Object value) throws DmcValueException {
+        ((GpbCompositeTypeDMO) core).delSkip(value);
+    }
+
+    /**
+     * Deletes a skip value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2280)
+    public void delSkip(String value){
+        ((GpbCompositeTypeDMO) core).delSkip(value);
+    }
+
+    /**
+     * Removes the skip attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2292)
+    public void remSkip(){
+        ((GpbCompositeTypeDMO) core).remSkip();
+    }
+
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public String getVersion(){
+        return(((GpbCompositeTypeDMO) core).getVersion());
+    }
+
+    /**
+     * Sets version to the specified value.
+     * @param value A value compatible with DmcTypeString
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setVersion(Object value) throws DmcValueException {
+        ((GpbCompositeTypeDMO) core).setVersion(value);
+    }
+
+    /**
+     * Sets version to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setVersion(String value){
+        ((GpbCompositeTypeDMO) core).setVersion(value);
+    }
+
+    /**
+     * Removes the version attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remVersion(){
+        ((GpbCompositeTypeDMO) core).remVersion();
     }
 
 

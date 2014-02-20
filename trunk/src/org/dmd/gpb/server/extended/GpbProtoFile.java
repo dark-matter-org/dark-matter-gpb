@@ -29,7 +29,7 @@ public class GpbProtoFile extends GpbProtoFileDMW {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	public void dumpProtoFile(String dn) throws IOException {
+	public void dumpProtoFile(String dn, String genversion) throws IOException {
 		
 		BufferedWriter out = new BufferedWriter(new FileWriter(dn + File.separator + getGeneratedFileName()));
 		
@@ -38,7 +38,7 @@ public class GpbProtoFile extends GpbProtoFileDMW {
 		out.write("// Generated from: " + DebugInfo.getWhereWeAreNow() + "\n");
 		out.write("// This file was generated from the " + getDefinedInGpbModule().getName() + " via the dark-matter GPB mechanisms\n");
 		out.write("// DO NOT MODIFY THIS FILE BY HAND\n\n");
-		out.write(getPackage() + ";\n\n");
+		out.write("package " + getPackage() + ";\n\n");
 		
 		if (getImportHasValue()){
 			StringIterableDMW it = getImportIterable();
@@ -52,7 +52,7 @@ public class GpbProtoFile extends GpbProtoFileDMW {
 		while(it.hasNext()){
 			GpbCompositeType ct = it.getNext();
 			
-			out.write(ct.toDotProtoFormat("") + "\n");
+			out.write(ct.toDotProtoFormat("",genversion) + "\n");
 		}
 		
 		out.close();

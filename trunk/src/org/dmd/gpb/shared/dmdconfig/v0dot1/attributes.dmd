@@ -86,13 +86,12 @@ dmdID			21
 type			String
 description 	The package associated with a .proto file.
 
-//AttributeDefinition
-//name			elements
-//dmdID			22
-//type			GpbElement
-//valueType		MULTI
-//description		The elements attribute indicates a list of GpbElements that comprise a GpbMessage, this
-// includes GpbFields, GpbEnums and other GpbMessages.
+AttributeDefinition
+name			gpbEnumValue
+dmdID			22
+type			GpbEnumValue
+valueType		MULTI
+description		The values of an enumeration.
 
 AttributeDefinition
 name			mainElements
@@ -160,6 +159,19 @@ description 	When protocol elements have clashing names in the namespace of a dm
  we alter their original names but maintain the original name here so that we can regenerate the .proto
  file without difficulty. This is also handy when you start to merge definitions from different .proto
  implementations but still want to maintain the old names in the regenerated .proto files.
+
+AttributeDefinition
+name			version
+dmdID			30
+type			String
+description 	The version at which a message or enumeration was introduced.
+
+AttributeDefinition
+name			skip
+dmdID			31
+type			String
+valueType		MULTI
+description 	A version from which a message or enumeration should be excluded when .proto generation takes place.
 
 //AttributeDefinition
 //name			basedOnMainElement

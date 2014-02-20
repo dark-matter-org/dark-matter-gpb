@@ -25,7 +25,10 @@ public class GpbMessage extends GpbMessageDMW {
 	}
 
 	@Override
-	public String toDotProtoFormat(String indent) {
+	public String toDotProtoFormat(String indent, String genversion) {
+		if (!shouldBeIncluded(genversion))
+			return("");
+		
 		StringBuffer sb = new StringBuffer();
 		
 		int fieldWidth	= getMaxFieldNameLength();
@@ -44,7 +47,7 @@ public class GpbMessage extends GpbMessageDMW {
 			GpbCompositeTypeIterableDMW it = getEmbedIterable();
 			while(it.hasNext()){
 				GpbCompositeType ct = it.next();
-				sb.append(ct.toDotProtoFormat(indent + "    "));
+				sb.append(ct.toDotProtoFormat(indent + "    ", genversion));
 			}
 		}
 		
@@ -52,7 +55,9 @@ public class GpbMessage extends GpbMessageDMW {
 			GpbFieldIndicatorIterableDMW it = getFieldIterable();
 			while(it.hasNext()){
 				GpbFieldIndicator fi = it.next();
-				sb.append(formatField(indent, fi, fieldWidth, typeWidth));
+				
+				if (shouldBeIncluded(genversion, fi.getVersion(), fi.getSkip()))
+					sb.append(formatField(indent, fi, fieldWidth, typeWidth));
 			}
 		}
 		

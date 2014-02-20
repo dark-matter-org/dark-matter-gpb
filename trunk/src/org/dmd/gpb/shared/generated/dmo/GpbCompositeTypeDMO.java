@@ -17,12 +17,14 @@ package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
 import java.io.Serializable;                                        // Always required - (GenUtility.java:224)
+import java.util.*;                                                 // Always required if we have any MV attributes - (GenUtility.java:221)
 import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:376)
 import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:375)
 import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:241)
 import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:370)
 import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Attribute from meta schema - (GenUtility.java:194)
 import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeStringMV;                 // Required type - (GenUtility.java:328)
 import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:328)
 import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                 // Base class - (GenUtility.java:355)
 
@@ -30,8 +32,8 @@ import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                 // Base clas
 /**
  * The GpbCompositeType provides a common base for enumerations and
  * messages\n so that they can be referred to as a separate type of object
- * that can be specified in\n standalone blocks within a generate
- * GpbprotoFile.
+ * that can be specified in\n standalone blocks within a generated
+ * GpbProtoFile.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -135,6 +137,183 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remGenerateAs(){
          rem(DmdgpbDMSAG.__generateAs);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public String getVersion(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__version);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets version to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setVersion(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__version);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__version);
+        
+        try{
+            attr.set(value);
+            set(DmdgpbDMSAG.__version,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets version to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setVersion(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__version);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__version);
+        
+        attr.set(value);
+        set(DmdgpbDMSAG.__version,attr);
+    }
+
+    /**
+     * Removes the version attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remVersion(){
+         rem(DmdgpbDMSAG.__version);
+    }
+
+    /**
+     * @return An Iterator of String objects.
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1112)
+    public Iterator<String> getSkip(){
+        DmcTypeStringMV attr = (DmcTypeStringMV) get(DmdgpbDMSAG.__skip);
+        if (attr == null)
+            return( ((List<String>) Collections.EMPTY_LIST).iterator());
+
+        return(attr.getMV());
+    }
+
+    /**
+     * @return The nth String value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1124)
+    public String getNthSkip(int i){
+        DmcTypeStringMV attr = (DmcTypeStringMV) get(DmdgpbDMSAG.__skip);
+        if (attr == null)
+            return(null);
+
+        return(attr.getMVnth(i));
+    }
+
+    /**
+     * Adds another skip to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1138)
+    public DmcAttribute<?> addSkip(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__skip);
+        if (attr == null)
+            attr = new DmcTypeStringMV(DmdgpbDMSAG.__skip);
+        
+        try{
+            setLastValue(attr.add(value));
+            add(DmdgpbDMSAG.__skip,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
+        }
+        return(attr);
+    }
+
+    /**
+     * Returns true if we contain a valued keyed by the specified String.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1213)
+    public boolean skipContains(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__skip);
+        if (attr == null)
+            return(false);
+        return(attr.contains(value));
+    }
+
+    /**
+     * Adds another skip value.
+     * @param value A value compatible with String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
+    public DmcAttribute<?> addSkip(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__skip);
+        if (attr == null)
+            attr = new DmcTypeStringMV(DmdgpbDMSAG.__skip);
+        
+        setLastValue(attr.add(value));
+        add(DmdgpbDMSAG.__skip,attr);
+        return(attr);
+    }
+
+    /**
+     * Returns the number of values in skip
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
+    public int getSkipSize(){
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__skip);
+        if (attr == null){
+            if (DmdgpbDMSAG.__skip.indexSize == 0)
+                return(0);
+            else
+                return(DmdgpbDMSAG.__skip.indexSize);
+        }
+        return(attr.getMVSize());
+    }
+
+    /**
+     * Deletes a skip value.
+     * @param value The String to be deleted from set of attribute values.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1320)
+    public DmcAttribute<?> delSkip(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__skip);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeStringMV(DmdgpbDMSAG.__skip), value);
+        else
+            attr = del(DmdgpbDMSAG.__skip, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Deletes a skip from the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1336)
+    public DmcAttribute<?> delSkip(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__skip);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeStringMV(DmdgpbDMSAG.__skip), value);
+        else
+            attr = del(DmdgpbDMSAG.__skip, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Removes the skip attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
+    public void remSkip(){
+         rem(DmdgpbDMSAG.__skip);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)

@@ -1,15 +1,4 @@
-//DSDefinitionModule
-//name						GpbModule
-//fileExtension				gpb
-//dmdID						1
-//moduleClassName				GpbModule
-//moduleDependenceAttribute 	dependsOnGpbModule
-//baseDefinition				GpbDefinition
-//usesDefinition				GpbType
-//usesDefinition				GpbEnum
-//usesDefinition				GpbField
-//usesDefinition				GpbMessage
-//usesDefinition				GpbArtifact
+// Note: The GpbModule uses dmdID 1
 
 ClassDefinition
 name			GpbDefinition
@@ -25,27 +14,6 @@ may				hint
 may				description
 description		The GpbDefinition provides a common base for all dark-matter
  Google Protocol Buffer (GPB) definitions. 
-
-//ClassDefinition
-//name 			GpbType
-//classType      	STRUCTURAL
-//dmdID			3
-//useWrapperType	EXTENDED
-//derivedFrom		GpbDefinition
-//isNamedBy		name
-//may				internallyGenerated
-//may				defaultValue
-//may				sizeInBytes
-//may				javaType
-//may				cplusplusType
-//may				pythonType
-//may				basedOnMainElement
-//description		The GpbType class is use to define the types of attributes in the GPB
-// specification. All GpbMessages and GpbEnum will have GpbTypes generated for
-// them so that they can be used as types for GpbAttributes.
-// <p/>
-// GpbType definitions cannot be specified in .dmgpb files; they are strictly for
-// internal use. If you specify one in a .dmgpb file, you'll get an error.
 
 ClassDefinition
 name 			GpbType
@@ -73,7 +41,6 @@ may				sizeInBytes
 may				javaType
 may				cplusplusType
 may				pythonType
-//may				basedOnMainElement
 description		The GpbType class is use to define the types of attributes in the GPB
  specification. All GpbMessages and GpbEnum will have GpbTypes generated for
  them so that they can be used as types for GpbAttributes.
@@ -90,30 +57,11 @@ derivedFrom		GpbType
 isNamedBy		name
 must			name
 may				generateAs
+may				version
+may				skip
 description		The GpbCompositeType provides a common base for enumerations and messages
  so that they can be referred to as a separate type of object that can be specified in
- standalone blocks within a generate GpbprotoFile.
-
-//ClassDefinition
-//name         	GpbElement
-//classType      	ABSTRACT
-//dmdID			4
-//useWrapperType	EXTENDED
-//derivedFrom     GpbDefinition
-//isNamedBy       name
-//must           	name
-//description		The GpbElement provides a common base for enums and messages so that
-// we can specify a set of them to compose a GpbProtoFile.
-
-//ClassDefinition
-//name         	GpbMainElement
-//classType      	ABSTRACT
-//dmdID			5
-//useWrapperType	EXTENDED
-//derivedFrom     GpbElement
-//isNamedBy       name
-//must           	name
-//description		The GpbElement provides a common base for enums and messages so that
+ standalone blocks within a generated GpbProtoFile.
 
 ClassDefinition
 name         	GpbEnum
@@ -123,7 +71,8 @@ useWrapperType	EXTENDED
 derivedFrom     GpbCompositeType
 isNamedBy       name
 must           	name
-must           	enumValue
+//must           	enumValue
+must			gpbEnumValue
 may             defaultValue
 description    The GpbEnum allows for the definition of enumerations. One thing to be aware
  of with enums is that, if you're generating C++, the names of enum elements must be globally
@@ -152,25 +101,10 @@ must			name
 must			gpbType
 may             description
 may				generateAs
-//may			    fieldRule
-//may			    tag
 description		The GpbField class is used to represent a reusable, named field for use
  within a GpbMessage. If the field has been parsed from an existing .proto file, it will
  have the fieldRule and tag attributes. However, when specified as part of a .gpb file,
  the fieldRule and tag won't be specified.
-
-//ComplexTypeDefinition
-//name			GPBField
-//field			GPBFieldTypeEnum	fieldType       The type of GPB field
-//field			AttributeDefinition	attribute		The attribute to be stored in this field. The attribute type must specify the gpbFieldType .
-//field			Integer				fieldTag		Unique field ID excluding values 19000 to 19999 which are reserved.
-//description		The GPBField type is used to specify a mapping between the attributes
-//of an object and a Google Protocol Buffer field. An example might be:
-//<pre>
-//gpbField STRING firstName 1
-//</pre>
-//This mechanism allows for generation of GPB compatible dark-matter objects.
-
 
 ClassDefinition
 name         	GpbMessage
@@ -182,32 +116,6 @@ isNamedBy       name
 must			name
 may				field
 may				embed
-
-//ClassDefinition
-//name         	GpbModule
-//classType      	STRUCTURAL
-//dmdID			6
-//useWrapperType	EXTENDED
-//derivedFrom     GpbDefinition
-//isNamedBy       name
-//must			name
-//description		The GpbModule is used to define a named collection of definitions from
-// which Google Protocol Buffer (GPB) .proto files can be composed and generated. GpbModule
-// are referred to by GpbArtifacts
-
-//ClassDefinition
-//name         	GpbArtifact
-//classType      	STRUCTURAL
-//dmdID			9
-//useWrapperType	EXTENDED
-//derivedFrom     GpbDefinition
-//isNamedBy       name
-//must			name
-//must			package
-//may				import
-//may				mainElements
-//description		The GpbArtifact defines an artifact to be generated by the dark-matter GPB 
-// generation mechanisms; the artifacts in this case are .proto files.
 
 ClassDefinition
 name         	GpbProtoFile

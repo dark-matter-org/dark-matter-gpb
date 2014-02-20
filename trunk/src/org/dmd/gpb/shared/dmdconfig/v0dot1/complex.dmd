@@ -28,6 +28,15 @@ exampleUsage A packed field:
 exampleUsage A field with a version indicator:
 exampleUsage An obsolete field:
 
+ComplexTypeDefinition
+name GpbEnumValue
+requiredPart String		name			"The name of the enumerated value"
+requiredPart Integer	value			"The numeric value"
+requiredPart String		description		"A description of the value" quoted=true
+optionalPart String     version			"The version at which the value was introduced in the enumeration."
+optionalPart String     obsolete		"The version at which the value was made obsolete."
+optionalPart String     note			"A note about the value and its use in this message e.g. why it's obsolete." quoted=true
+optionalPart String     skip			"If a value isn't supported in one or more intermediate versions, you can indicate the skip version." multivalued=true
 
 //ComplexTypeDefinition
 //name GpbFieldIndicatorWithVersion

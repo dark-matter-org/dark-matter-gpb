@@ -22,6 +22,7 @@ public class DmdgpbDMSAGAMAP {
         _SmAp.put(DmdgpbDMSAG.__fieldRule.id,DmdgpbDMSAG.__fieldRule);
         _SmAp.put(DmdgpbDMSAG.__generateAs.id,DmdgpbDMSAG.__generateAs);
         _SmAp.put(DmdgpbDMSAG.__generatedFileName.id,DmdgpbDMSAG.__generatedFileName);
+        _SmAp.put(DmdgpbDMSAG.__gpbEnumValue.id,DmdgpbDMSAG.__gpbEnumValue);
         _SmAp.put(DmdgpbDMSAG.__gpbType.id,DmdgpbDMSAG.__gpbType);
         _SmAp.put(DmdgpbDMSAG.__hint.id,DmdgpbDMSAG.__hint);
         _SmAp.put(DmdgpbDMSAG.__import.id,DmdgpbDMSAG.__import);
@@ -30,7 +31,9 @@ public class DmdgpbDMSAGAMAP {
         _SmAp.put(DmdgpbDMSAG.__package.id,DmdgpbDMSAG.__package);
         _SmAp.put(DmdgpbDMSAG.__pythonType.id,DmdgpbDMSAG.__pythonType);
         _SmAp.put(DmdgpbDMSAG.__sizeInBytes.id,DmdgpbDMSAG.__sizeInBytes);
+        _SmAp.put(DmdgpbDMSAG.__skip.id,DmdgpbDMSAG.__skip);
         _SmAp.put(DmdgpbDMSAG.__tag.id,DmdgpbDMSAG.__tag);
+        _SmAp.put(DmdgpbDMSAG.__version.id,DmdgpbDMSAG.__version);
     }
 
 }

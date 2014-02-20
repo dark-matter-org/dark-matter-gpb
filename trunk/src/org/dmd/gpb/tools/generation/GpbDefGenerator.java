@@ -16,22 +16,29 @@ public class GpbDefGenerator extends GpbModuleGenUtility {
 	// Where we report progress
 	PrintStream	progress;
 	
+	// Indicates the version for which we want to generate .proto files
+	StringBuffer		genversion = new StringBuffer();
+	
 	public GpbDefGenerator(){
-		
+		commandLine.addOption("-genversion", genversion, "The version for  whichc we'll generated the .proto files");
 	}
 	
 	public GpbDefGenerator(PrintStream p){
-		
+		commandLine.addOption("-genversion", genversion, "The version for  whichc we'll generated the .proto files");
 	}
 
 	@Override
 	public void generate(GpbModule module, ConfigLocation location, GpbModuleDefinitionManager definitions) throws IOException {
 		System.out.println("HERE");
+		String gv = null;
+		
+		if (genversion.length() > 0)
+			gv = genversion.toString();
 		
 		Iterator<GpbProtoFile> it = module.getAllGpbProtoFile();
 		while(it.hasNext()){
 			GpbProtoFile pf = it.next();
-			pf.dumpProtoFile(location.getDirectory());
+			pf.dumpProtoFile(location.getDirectory(),gv);
 		}
 		
 	}
@@ -46,6 +53,11 @@ public class GpbDefGenerator extends GpbModuleGenUtility {
 	public void parsingComplete(GpbModule module, ConfigLocation location, GpbModuleDefinitionManager definitions) throws ResultException {
 		System.out.println("\nPARSING COMPLETE\n\n");
 				
+	}
+	
+	@Override
+	public void initialize() throws ResultException {
+		
 	}
 	
 }
