@@ -16,20 +16,20 @@
 package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
-import java.io.Serializable;                                         // Always required - (GenUtility.java:224)
-import java.util.*;                                                  // Always required if we have any MV attributes - (GenUtility.java:221)
-import org.dmd.dmc.DmcAttribute;                                     // Named object - (GenUtility.java:376)
-import org.dmd.dmc.DmcNamedObjectIF;                                 // Named object - (GenUtility.java:375)
-import org.dmd.dmc.DmcSliceInfo;                                     // Required for object slicing - (GenUtility.java:229)
-import org.dmd.dmc.DmcValueException;                                // Any attributes - (GenUtility.java:241)
-import org.dmd.dmc.types.DefinitionName;                             // Naming attribute type - (GenUtility.java:370)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                          // Required for MODREC constructor - (GenUtility.java:228)
-import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;          // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeEnumValueMV;               // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                // Required for MODREC constructor - (GenUtility.java:227)
-import org.dmd.dms.generated.types.DmcTypeStringSV;                  // Required type - (GenUtility.java:328)
-import org.dmd.dms.types.EnumValue;                                  // Primitive type and !auxiliary class - (GenUtility.java:271)
-import org.dmd.gpb.shared.generated.dmo.GpbCompositeTypeDMO;         // Base class - (GenUtility.java:355)
+import java.io.Serializable;                                             // Always required - (GenUtility.java:224)
+import java.util.*;                                                      // Always required if we have any MV attributes - (GenUtility.java:221)
+import org.dmd.dmc.DmcAttribute;                                         // Named object - (GenUtility.java:376)
+import org.dmd.dmc.DmcNamedObjectIF;                                     // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcSliceInfo;                                         // Required for object slicing - (GenUtility.java:229)
+import org.dmd.dmc.DmcValueException;                                    // Any attributes - (GenUtility.java:241)
+import org.dmd.dmc.types.DefinitionName;                                 // Naming attribute type - (GenUtility.java:370)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                              // Required for MODREC constructor - (GenUtility.java:228)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;              // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                    // Required for MODREC constructor - (GenUtility.java:227)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                      // Required type - (GenUtility.java:328)
+import org.dmd.gpb.shared.generated.dmo.GpbCompositeTypeDMO;             // Base class - (GenUtility.java:355)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbEnumValueMV;         // Required type - (GenUtility.java:328)
+import org.dmd.gpb.shared.generated.types.GpbEnumValue;                  // Primitive type and !auxiliary class - (GenUtility.java:271)
 
 // Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
@@ -233,24 +233,24 @@ public class GpbEnumDMO  extends GpbCompositeTypeDMO  implements DmcNamedObjectI
     }
 
     /**
-     * @return An Iterator of EnumValue objects.
+     * @return An Iterator of GpbEnumValue objects.
      */
     @SuppressWarnings("unchecked")
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1112)
-    public Iterator<EnumValue> getEnumValue(){
-        DmcTypeEnumValueMV attr = (DmcTypeEnumValueMV) get(MetaDMSAG.__enumValue);
+    public Iterator<GpbEnumValue> getGpbEnumValue(){
+        DmcTypeGpbEnumValueMV attr = (DmcTypeGpbEnumValueMV) get(DmdgpbDMSAG.__gpbEnumValue);
         if (attr == null)
-            return( ((List<EnumValue>) Collections.EMPTY_LIST).iterator());
+            return( ((List<GpbEnumValue>) Collections.EMPTY_LIST).iterator());
 
         return(attr.getMV());
     }
 
     /**
-     * @return The nth EnumValue value.
+     * @return The nth GpbEnumValue value.
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1124)
-    public EnumValue getNthEnumValue(int i){
-        DmcTypeEnumValueMV attr = (DmcTypeEnumValueMV) get(MetaDMSAG.__enumValue);
+    public GpbEnumValue getNthGpbEnumValue(int i){
+        DmcTypeGpbEnumValueMV attr = (DmcTypeGpbEnumValueMV) get(DmdgpbDMSAG.__gpbEnumValue);
         if (attr == null)
             return(null);
 
@@ -258,18 +258,18 @@ public class GpbEnumDMO  extends GpbCompositeTypeDMO  implements DmcNamedObjectI
     }
 
     /**
-     * Adds another enumValue to the specified value.
-     * @param value EnumValue
+     * Adds another gpbEnumValue to the specified value.
+     * @param value GpbEnumValue
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1138)
-    public DmcAttribute<?> addEnumValue(EnumValue value) {
-        DmcAttribute<?> attr = get(MetaDMSAG.__enumValue);
+    public DmcAttribute<?> addGpbEnumValue(GpbEnumValue value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__gpbEnumValue);
         if (attr == null)
-            attr = new DmcTypeEnumValueMV(MetaDMSAG.__enumValue);
+            attr = new DmcTypeGpbEnumValueMV(DmdgpbDMSAG.__gpbEnumValue);
         
         try{
             setLastValue(attr.add(value));
-            add(MetaDMSAG.__enumValue,attr);
+            add(DmdgpbDMSAG.__gpbEnumValue,attr);
         }
         catch(DmcValueException ex){
             throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
@@ -278,85 +278,85 @@ public class GpbEnumDMO  extends GpbCompositeTypeDMO  implements DmcNamedObjectI
     }
 
     /**
-     * Returns true if we contain a valued keyed by the specified EnumValue.
-     * @param value EnumValue
+     * Returns true if we contain a valued keyed by the specified GpbEnumValue.
+     * @param value GpbEnumValue
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1213)
-    public boolean enumValueContains(EnumValue value) {
-        DmcAttribute<?> attr = get(MetaDMSAG.__enumValue);
+    public boolean gpbEnumValueContains(GpbEnumValue value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__gpbEnumValue);
         if (attr == null)
             return(false);
         return(attr.contains(value));
     }
 
     /**
-     * Adds another enumValue value.
-     * @param value A value compatible with EnumValue
+     * Adds another gpbEnumValue value.
+     * @param value A value compatible with GpbEnumValue
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
-    public DmcAttribute<?> addEnumValue(Object value) throws DmcValueException {
-        DmcAttribute<?> attr = get(MetaDMSAG.__enumValue);
+    public DmcAttribute<?> addGpbEnumValue(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__gpbEnumValue);
         if (attr == null)
-            attr = new DmcTypeEnumValueMV(MetaDMSAG.__enumValue);
+            attr = new DmcTypeGpbEnumValueMV(DmdgpbDMSAG.__gpbEnumValue);
         
         setLastValue(attr.add(value));
-        add(MetaDMSAG.__enumValue,attr);
+        add(DmdgpbDMSAG.__gpbEnumValue,attr);
         return(attr);
     }
 
     /**
-     * Returns the number of values in enumValue
+     * Returns the number of values in gpbEnumValue
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
-    public int getEnumValueSize(){
-        DmcAttribute<?> attr = get(MetaDMSAG.__enumValue);
+    public int getGpbEnumValueSize(){
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__gpbEnumValue);
         if (attr == null){
-            if (MetaDMSAG.__enumValue.indexSize == 0)
+            if (DmdgpbDMSAG.__gpbEnumValue.indexSize == 0)
                 return(0);
             else
-                return(MetaDMSAG.__enumValue.indexSize);
+                return(DmdgpbDMSAG.__gpbEnumValue.indexSize);
         }
         return(attr.getMVSize());
     }
 
     /**
-     * Deletes a enumValue value.
-     * @param value The EnumValue to be deleted from set of attribute values.
+     * Deletes a gpbEnumValue value.
+     * @param value The GpbEnumValue to be deleted from set of attribute values.
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1320)
-    public DmcAttribute<?> delEnumValue(Object value) throws DmcValueException {
-        DmcAttribute<?> attr = get(MetaDMSAG.__enumValue);
+    public DmcAttribute<?> delGpbEnumValue(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__gpbEnumValue);
         
         if ( (attr == null) && (getModifier()!= null))
-            delFromEmptyAttribute(new DmcTypeEnumValueMV(MetaDMSAG.__enumValue), value);
+            delFromEmptyAttribute(new DmcTypeGpbEnumValueMV(DmdgpbDMSAG.__gpbEnumValue), value);
         else
-            attr = del(MetaDMSAG.__enumValue, value);
+            attr = del(DmdgpbDMSAG.__gpbEnumValue, value);
         
         return(attr);
     }
 
     /**
-     * Deletes a enumValue from the specified value.
-     * @param value EnumValue
+     * Deletes a gpbEnumValue from the specified value.
+     * @param value GpbEnumValue
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1336)
-    public DmcAttribute<?> delEnumValue(EnumValue value) {
-        DmcAttribute<?> attr = get(MetaDMSAG.__enumValue);
+    public DmcAttribute<?> delGpbEnumValue(GpbEnumValue value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__gpbEnumValue);
         
         if ( (attr == null) && (getModifier()!= null))
-            delFromEmptyAttribute(new DmcTypeEnumValueMV(MetaDMSAG.__enumValue), value);
+            delFromEmptyAttribute(new DmcTypeGpbEnumValueMV(DmdgpbDMSAG.__gpbEnumValue), value);
         else
-            attr = del(MetaDMSAG.__enumValue, value);
+            attr = del(DmdgpbDMSAG.__gpbEnumValue, value);
         
         return(attr);
     }
 
     /**
-     * Removes the enumValue attribute value.
+     * Removes the gpbEnumValue attribute value.
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
-    public void remEnumValue(){
-         rem(MetaDMSAG.__enumValue);
+    public void remGpbEnumValue(){
+         rem(DmdgpbDMSAG.__gpbEnumValue);
     }
 
 

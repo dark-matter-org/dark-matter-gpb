@@ -1,10 +1,10 @@
 package org.dmd.gpb.server.extended;
 
 import org.dmd.dms.ClassDefinition;
-import org.dmd.dms.generated.dmw.EnumValueIterableDMW;
-import org.dmd.dms.types.EnumValue;
 import org.dmd.gpb.server.generated.dmw.GpbEnumDMW;
+import org.dmd.gpb.server.generated.dmw.GpbEnumValueIterableDMW;
 import org.dmd.gpb.shared.generated.dmo.GpbEnumDMO;
+import org.dmd.gpb.shared.generated.types.GpbEnumValue;
 import org.dmd.util.exceptions.DebugInfo;
 import org.dmd.util.formatting.PrintfFormat;
 
@@ -21,7 +21,10 @@ public class GpbEnum extends GpbEnumDMW {
 	/**
 	 * @return the enumeration formatted in .proto format.
 	 */
-	public String toDotProtoFormat(String indent){
+	public String toDotProtoFormat(String indent, String genversion){
+		if (!shouldBeIncluded(genversion))
+			return("");
+		
 		StringBuffer sb = new StringBuffer();
 		
 		sb.append(indent + "// Generated from: " + DebugInfo.getWhereWeAreNow() + "\n");
@@ -37,13 +40,16 @@ public class GpbEnum extends GpbEnumDMW {
 		int npadding = longestName + 4;
 		PrintfFormat 	nformat 	= new PrintfFormat("%-" + npadding + "s");
 
-		EnumValueIterableDMW values = this.getEnumValueIterable();
+		GpbEnumValueIterableDMW values = this.getGpbEnumValueIterable();
 		while(values.hasNext()){
-			EnumValue value = values.getNext();
-			sb.append(indent + "    " + nformat.sprintf(value.getName()) + " = " + value.getId() + ";");
-			if (value.getDescription() != null)
-				sb.append(" // " + value.getDescription());
-			sb.append("\n");
+			GpbEnumValue value = values.getNext();
+			
+			if (shouldBeIncluded(genversion, value.getVersion(), value.getSkip())){
+				sb.append(indent + "    " + nformat.sprintf(value.getName()) + " = " + value.getValue() + ";");
+				if (value.getDescription() != null)
+					sb.append(" // " + value.getDescription());
+				sb.append("\n");
+			}
 		}
 		
 		sb.append(indent + "}\n\n");
@@ -54,9 +60,9 @@ public class GpbEnum extends GpbEnumDMW {
 	public int getLongestValueNameLength(){
 		int longestName = 0;
 		// Determine the longest value name
-		EnumValueIterableDMW values = this.getEnumValueIterable();
+		GpbEnumValueIterableDMW values = this.getGpbEnumValueIterable();
 		while(values.hasNext()){
-			EnumValue value = values.getNext();
+			GpbEnumValue value = values.getNext();
 			if (value.getName().length() > longestName)
 				longestName = value.getName().length();
 		}

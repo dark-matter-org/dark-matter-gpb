@@ -81,10 +81,19 @@ public class ProtoEnum extends ProtoEnumDMW {
 		EnumValueIterableDMW values = this.getEnumValueIterable();
 		while(values.hasNext()){
 			EnumValue value = values.getNext();
-			sb.append("enumValue   " + iformat.sprintf(value.getId()) + " " + nformat.sprintf(value.getName()));
-			if (value.getDescription() != null)
-				sb.append(" " + value.getDescription());
+//			sb.append("enumValue   " + iformat.sprintf(value.getId()) + " " + nformat.sprintf(value.getName()));
+//			if (value.getDescription() != null)
+//				sb.append(" " + value.getDescription());
+//			sb.append("\n");
+			
+			sb.append("gpbEnumValue   " + nformat.sprintf(value.getName()) + " " + iformat.sprintf(value.getId()));
+			if (value.getDescription() == null)
+				sb.append(" \"" + value.getName() + "\"");
+			else
+				sb.append(" \"" + value.getDescription() + "\"");
 			sb.append("\n");
+			
+			
 		}
 		
 		if (this.getDescriptionSize() > 0){
