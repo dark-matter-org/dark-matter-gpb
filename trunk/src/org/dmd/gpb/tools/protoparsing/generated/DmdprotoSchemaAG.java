@@ -132,7 +132,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoDefinitionOBJ.addMust("meta.dotName");
             _ProtoDefinitionOBJ.setDmwIteratorImport("org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoDefinitionIterableDMW");
             _ProtoDefinitionOBJ.setDotName("dmdproto.ProtoDefinition.ClassDefinition");
-            _ProtoDefinitionOBJ.setNameAndTypeName("ProtoDefinition.ClassDefinition");
             _ProtoDefinition.setDefinedIn(this);
             addClassDefList(_ProtoDefinition);
 
@@ -155,7 +154,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoElementOBJ.addMust("meta.name");
             _ProtoElementOBJ.setDmwIteratorImport("org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoElementIterableDMW");
             _ProtoElementOBJ.setDotName("dmdproto.ProtoElement.ClassDefinition");
-            _ProtoElementOBJ.setNameAndTypeName("ProtoElement.ClassDefinition");
             _ProtoElement.setDefinedIn(this);
             addClassDefList(_ProtoElement);
 
@@ -176,7 +174,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoMainElementOBJ.addMust("meta.name");
             _ProtoMainElementOBJ.setDmwIteratorImport("org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoMainElementIterableDMW");
             _ProtoMainElementOBJ.setDotName("dmdproto.ProtoMainElement.ClassDefinition");
-            _ProtoMainElementOBJ.setNameAndTypeName("ProtoMainElement.ClassDefinition");
             _ProtoMainElement.setDefinedIn(this);
             addClassDefList(_ProtoMainElement);
 
@@ -202,7 +199,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoFieldOBJ.addMust("dmdproto.gpbType");
             _ProtoFieldOBJ.setDmwIteratorImport("org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoFieldIterableDMW");
             _ProtoFieldOBJ.setDotName("dmdproto.ProtoField.ClassDefinition");
-            _ProtoFieldOBJ.setNameAndTypeName("ProtoField.ClassDefinition");
             _ProtoField.setDefinedIn(this);
             addClassDefList(_ProtoField);
 
@@ -223,7 +219,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoMessageOBJ.addMust("dmdproto.elements");
             _ProtoMessageOBJ.setDmwIteratorImport("org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoMessageIterableDMW");
             _ProtoMessageOBJ.setDotName("dmdproto.ProtoMessage.ClassDefinition");
-            _ProtoMessageOBJ.setNameAndTypeName("ProtoMessage.ClassDefinition");
             _ProtoMessage.setDefinedIn(this);
             addClassDefList(_ProtoMessage);
 
@@ -244,7 +239,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoEnumOBJ.addMust("meta.enumValue");
             _ProtoEnumOBJ.setDmwIteratorImport("org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoEnumIterableDMW");
             _ProtoEnumOBJ.setDotName("dmdproto.ProtoEnum.ClassDefinition");
-            _ProtoEnumOBJ.setNameAndTypeName("ProtoEnum.ClassDefinition");
             _ProtoEnum.setDefinedIn(this);
             addClassDefList(_ProtoEnum);
 
@@ -271,7 +265,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoFileOBJ.addMust("dmdproto.package");
             _ProtoFileOBJ.setDmwIteratorImport("org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoFileIterableDMW");
             _ProtoFileOBJ.setDotName("dmdproto.ProtoFile.ClassDefinition");
-            _ProtoFileOBJ.setNameAndTypeName("ProtoFile.ClassDefinition");
             _ProtoFile.setDefinedIn(this);
             addClassDefList(_ProtoFile);
 
@@ -285,7 +278,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _gpbTypeOBJ.setName("gpbType");
             _gpbTypeOBJ.setDmdID("-478099");
             _gpbTypeOBJ.addDescription("The type of a .proto field. We just use a string here since we're\n not doing object resolution based on type.");
-            _gpbTypeOBJ.setNameAndTypeName("gpbType.AttributeDefinition");
             _gpbTypeOBJ.setDotName("dmdproto.gpbType.AttributeDefinition");
             _gpbType.setDefinedIn(this);
             _gpbTypeOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/attributes.dmd");
@@ -299,7 +291,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _packageOBJ.setName("package");
             _packageOBJ.setDmdID("-478098");
             _packageOBJ.addDescription("The package associated with a .proto file.");
-            _packageOBJ.setNameAndTypeName("package.AttributeDefinition");
             _packageOBJ.setDotName("dmdproto.package.AttributeDefinition");
             _package.setDefinedIn(this);
             _packageOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/attributes.dmd");
@@ -313,7 +304,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _elementsOBJ.setName("elements");
             _elementsOBJ.setDmdID("-478097");
             _elementsOBJ.addDescription("The elements attribute indicates a list of ProtoElements that comprise a ProtoMessage, this\n includes ProtoFields, ProtoEnums and other ProtoMessages.");
-            _elementsOBJ.setNameAndTypeName("elements.AttributeDefinition");
             _elementsOBJ.setValueType("MULTI");
             _elementsOBJ.setDotName("dmdproto.elements.AttributeDefinition");
             _elements.setDefinedIn(this);
@@ -328,7 +318,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _mainElementsOBJ.setName("mainElements");
             _mainElementsOBJ.setDmdID("-478096");
             _mainElementsOBJ.addDescription("The mainElements attribute indicates a list of ProtoMainElements that comprise a ProtoFile. Main elements\n include messages and enumerations.");
-            _mainElementsOBJ.setNameAndTypeName("mainElements.AttributeDefinition");
             _mainElementsOBJ.setValueType("MULTI");
             _mainElementsOBJ.setDotName("dmdproto.mainElements.AttributeDefinition");
             _mainElements.setDefinedIn(this);
@@ -343,7 +332,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _fieldsOBJ.setName("fields");
             _fieldsOBJ.setDmdID("-478095");
             _fieldsOBJ.addDescription("The fields that will be defined individually within a GpbModule. As field from messages\n are parsed, they are added to the fields of a ProtoFile.");
-            _fieldsOBJ.setNameAndTypeName("fields.AttributeDefinition");
             _fieldsOBJ.setValueType("MULTI");
             _fieldsOBJ.setDotName("dmdproto.fields.AttributeDefinition");
             _fields.setDefinedIn(this);
@@ -358,7 +346,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _tagOBJ.setName("tag");
             _tagOBJ.setDmdID("-478094");
             _tagOBJ.addDescription("As you can see, each field in the message definition has a unique numbered tag.\n These tags are used to identify your fields in the message binary format, and should not be\n changed once your message type is in use. Note that tags with values in the range 1 through 15\n take one byte to encode, including the identifying number and the field's type (you can find\n out more about this in Protocol Buffer Encoding). Tags in the range 16 through 2047 take two\n bytes. So you should reserve the tags 1 through 15 for very frequently occurring message\n elements. Remember to leave some room for frequently occurring elements that might be added\n in the future.\n <p/>\n The smallest tag number you can specify is 1, and the largest is 229 - 1, or 536,870,911.\n You also cannot use the numbers 19000 though 19999");
-            _tagOBJ.setNameAndTypeName("tag.AttributeDefinition");
             _tagOBJ.setDotName("dmdproto.tag.AttributeDefinition");
             _tag.setDefinedIn(this);
             _tagOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/attributes.dmd");
@@ -372,7 +359,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _fieldRuleOBJ.setName("fieldRule");
             _fieldRuleOBJ.setDmdID("-478093");
             _fieldRuleOBJ.addDescription("Indicates if a field is required, optional or repeated. See the note about \n required fields as part of the FieldRuleEnum.\n <p/>\n For historical reasons, repeated fields of basic numeric types aren't encoded as efficiently\n as they could be. New code should use the special option [packed=true] to get a more efficient encoding.\n <br/>\n For example: repeated int32 samples = 4 [packed=true];");
-            _fieldRuleOBJ.setNameAndTypeName("fieldRule.AttributeDefinition");
             _fieldRuleOBJ.setDotName("dmdproto.fieldRule.AttributeDefinition");
             _fieldRule.setDefinedIn(this);
             _fieldRuleOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/attributes.dmd");
@@ -386,7 +372,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _importOBJ.setName("import");
             _importOBJ.setDmdID("-478092");
             _importOBJ.addDescription("An import associated with a .proto file.");
-            _importOBJ.setNameAndTypeName("import.AttributeDefinition");
             _importOBJ.setValueType("MULTI");
             _importOBJ.setDotName("dmdproto.import.AttributeDefinition");
             _import.setDefinedIn(this);
@@ -401,7 +386,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _generateAsOBJ.setName("generateAs");
             _generateAsOBJ.setDmdID("-478091");
             _generateAsOBJ.addDescription("When protocol elements have clashing names in the namespace of a dmgpb set of definitions,\n we alter their original names but maintain the original name here so that we can regenerate the .proto\n file without difficulty. This is also handy when you start to merge definitions from different .proto\n implementations but still want to maintain the old names in the regenerated .proto files.");
-            _generateAsOBJ.setNameAndTypeName("generateAs.AttributeDefinition");
             _generateAsOBJ.setDotName("dmdproto.generateAs.AttributeDefinition");
             _generateAs.setDefinedIn(this);
             _generateAsOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/attributes.dmd");
@@ -415,7 +399,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _hintOBJ.setName("hint");
             _hintOBJ.setDmdID("-478090");
             _hintOBJ.addDescription("Any comment associated with a field");
-            _hintOBJ.setNameAndTypeName("hint.AttributeDefinition");
             _hintOBJ.setDotName("dmdproto.hint.AttributeDefinition");
             _hint.setDefinedIn(this);
             _hintOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/attributes.dmd");
@@ -429,7 +412,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _generatedFileNameOBJ.setName("generatedFileName");
             _generatedFileNameOBJ.setDmdID("-478089");
             _generatedFileNameOBJ.addDescription("The name of the file to be generated, complete with the appropriate file extension.\n An example would be company_common.proto.");
-            _generatedFileNameOBJ.setNameAndTypeName("generatedFileName.AttributeDefinition");
             _generatedFileNameOBJ.setDotName("dmdproto.generatedFileName.AttributeDefinition");
             _generatedFileName.setDefinedIn(this);
             _generatedFileNameOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/attributes.dmd");
@@ -443,7 +425,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _parentMessageOBJ.setName("parentMessage");
             _parentMessageOBJ.setDmdID("-478088");
             _parentMessageOBJ.addDescription("Indicates the message in which an enum or message was embedded.");
-            _parentMessageOBJ.setNameAndTypeName("parentMessage.AttributeDefinition");
             _parentMessageOBJ.setDotName("dmdproto.parentMessage.AttributeDefinition");
             _parentMessage.setDefinedIn(this);
             _parentMessageOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/attributes.dmd");
@@ -457,7 +438,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _embeddedElementsOBJ.setName("embeddedElements");
             _embeddedElementsOBJ.setDmdID("-478070");
             _embeddedElementsOBJ.addDescription("The embeddedElements attribute indicates a list of ProtoMainElement that were \n embedded in other messages. We mainatain a separate collection of these so that we don't\n wind up dumping them as actual main elements in the regenerated .proto file.");
-            _embeddedElementsOBJ.setNameAndTypeName("embeddedElements.AttributeDefinition");
             _embeddedElementsOBJ.setValueType("MULTI");
             _embeddedElementsOBJ.setDotName("dmdproto.embeddedElements.AttributeDefinition");
             _embeddedElements.setDefinedIn(this);
@@ -489,7 +469,6 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoFieldRuleEnumOBJ.addEnumValue("1 OPTIONAL A well-formed message can have zero or one of this field (but not more than one).");
             _ProtoFieldRuleEnumOBJ.addEnumValue("2 REPEATED This field can be repeated any number of times (including zero) in a well-formed message. The order of the repeated values will be preserved.");
             _ProtoFieldRuleEnumOBJ.addDescription("The ProtoFieldRuleEnum indicates whether a field is required, optional or repeated.\n <p/>\n REQUIRED is Forever You should be very careful about marking fields as required. If at some\n point you wish to stop writing or sending a required field, it will be problematic to change\n the field to an optional field Ð old readers will consider messages without this field to be\n incomplete and may reject or drop them unintentionally. You should consider writing\n application-specific custom validation routines for your buffers instead. Some engineers\n at Google have come to the conclusion that using required does more harm than good; they\n prefer to use only optional and repeated. However, this view is not universal.");
-            _ProtoFieldRuleEnumOBJ.setNameAndTypeName("ProtoFieldRuleEnum.EnumDefinition");
             _ProtoFieldRuleEnumOBJ.setDotName("dmdproto.ProtoFieldRuleEnum.EnumDefinition");
             _ProtoFieldRuleEnum.setDefinedIn(this);
             _ProtoFieldRuleEnumOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/types.dmd");

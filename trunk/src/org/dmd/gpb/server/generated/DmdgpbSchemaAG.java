@@ -135,7 +135,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbDefinitionOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbDefinitionIterableDMW");
             _GpbDefinitionOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbDefinitionOBJ.setDotName("dmdgpb.GpbDefinition.ClassDefinition");
-            _GpbDefinitionOBJ.setNameAndTypeName("GpbDefinition.ClassDefinition");
             _GpbDefinition.setDefinedIn(this);
             addClassDefList(_GpbDefinition);
 
@@ -157,7 +156,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbTypeOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbTypeIterableDMW");
             _GpbTypeOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbTypeOBJ.setDotName("dmdgpb.GpbType.ClassDefinition");
-            _GpbTypeOBJ.setNameAndTypeName("GpbType.ClassDefinition");
             _GpbType.setDefinedIn(this);
             addClassDefList(_GpbType);
 
@@ -184,7 +182,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbScalarTypeOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbScalarTypeIterableDMW");
             _GpbScalarTypeOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbScalarTypeOBJ.setDotName("dmdgpb.GpbScalarType.ClassDefinition");
-            _GpbScalarTypeOBJ.setNameAndTypeName("GpbScalarType.ClassDefinition");
             _GpbScalarType.setDefinedIn(this);
             addClassDefList(_GpbScalarType);
 
@@ -209,7 +206,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbCompositeTypeOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbCompositeTypeIterableDMW");
             _GpbCompositeTypeOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbCompositeTypeOBJ.setDotName("dmdgpb.GpbCompositeType.ClassDefinition");
-            _GpbCompositeTypeOBJ.setNameAndTypeName("GpbCompositeType.ClassDefinition");
             _GpbCompositeType.setDefinedIn(this);
             addClassDefList(_GpbCompositeType);
 
@@ -233,7 +229,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbEnumOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbEnumIterableDMW");
             _GpbEnumOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbEnumOBJ.setDotName("dmdgpb.GpbEnum.ClassDefinition");
-            _GpbEnumOBJ.setNameAndTypeName("GpbEnum.ClassDefinition");
             _GpbEnum.setDefinedIn(this);
             addClassDefList(_GpbEnum);
 
@@ -258,7 +253,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbFieldIterableDMW");
             _GpbFieldOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbFieldOBJ.setDotName("dmdgpb.GpbField.ClassDefinition");
-            _GpbFieldOBJ.setNameAndTypeName("GpbField.ClassDefinition");
             _GpbField.setDefinedIn(this);
             addClassDefList(_GpbField);
 
@@ -281,7 +275,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbMessageOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbMessageIterableDMW");
             _GpbMessageOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbMessageOBJ.setDotName("dmdgpb.GpbMessage.ClassDefinition");
-            _GpbMessageOBJ.setNameAndTypeName("GpbMessage.ClassDefinition");
             _GpbMessage.setDefinedIn(this);
             addClassDefList(_GpbMessage);
 
@@ -307,7 +300,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbProtoFileOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbProtoFileIterableDMW");
             _GpbProtoFileOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbProtoFileOBJ.setDotName("dmdgpb.GpbProtoFile.ClassDefinition");
-            _GpbProtoFileOBJ.setNameAndTypeName("GpbProtoFile.ClassDefinition");
             _GpbProtoFile.setDefinedIn(this);
             addClassDefList(_GpbProtoFile);
 
@@ -335,7 +327,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleOBJ.setDsdModuleDefinition("dmdgpb.GpbModule");
             _GpbModuleOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
             _GpbModuleOBJ.setDotName("dmdgpb.GpbModule.ClassDefinition");
-            _GpbModuleOBJ.setNameAndTypeName("GpbModule.ClassDefinition");
             _GpbModule.setDefinedIn(this);
             addClassDefList(_GpbModule);
 
@@ -349,7 +340,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _cplusplusTypeOBJ.setName("cplusplusType");
             _cplusplusTypeOBJ.setDmdID("-477999");
             _cplusplusTypeOBJ.addDescription("An indication of the C++ type associated with a GpbScalar type.");
-            _cplusplusTypeOBJ.setNameAndTypeName("cplusplusType.AttributeDefinition");
             _cplusplusTypeOBJ.setDotName("dmdgpb.cplusplusType.AttributeDefinition");
             _cplusplusType.setDefinedIn(this);
             _cplusplusTypeOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -363,7 +353,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _dmTypeOBJ.setName("dmType");
             _dmTypeOBJ.setDmdID("-477998");
             _dmTypeOBJ.addDescription("An indication of the dark-matter type associated with a GPB attribute type.");
-            _dmTypeOBJ.setNameAndTypeName("dmType.AttributeDefinition");
             _dmTypeOBJ.setDotName("dmdgpb.dmType.AttributeDefinition");
             _dmType.setDefinedIn(this);
             _dmTypeOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -377,7 +366,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _hintOBJ.setName("hint");
             _hintOBJ.setDmdID("-477997");
             _hintOBJ.addDescription("A short description of something that can be dumped as one line comment in a .proto spec.\n For longer explanations, use the description attribute.");
-            _hintOBJ.setNameAndTypeName("hint.AttributeDefinition");
             _hintOBJ.setDotName("dmdgpb.hint.AttributeDefinition");
             _hint.setDefinedIn(this);
             _hintOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -391,7 +379,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _defaultValueOBJ.setName("defaultValue");
             _defaultValueOBJ.setDmdID("-477996");
             _defaultValueOBJ.addDescription("The default value to be used for a GpbType or for an GpbAttribute.");
-            _defaultValueOBJ.setNameAndTypeName("defaultValue.AttributeDefinition");
             _defaultValueOBJ.setDotName("dmdgpb.defaultValue.AttributeDefinition");
             _defaultValue.setDefinedIn(this);
             _defaultValueOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -405,7 +392,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _sizeInBytesOBJ.setName("sizeInBytes");
             _sizeInBytesOBJ.setDmdID("-477995");
             _sizeInBytesOBJ.addDescription("The size in bytes that a particular primitive type would occupy on the wire.");
-            _sizeInBytesOBJ.setNameAndTypeName("sizeInBytes.AttributeDefinition");
             _sizeInBytesOBJ.setDotName("dmdgpb.sizeInBytes.AttributeDefinition");
             _sizeInBytes.setDefinedIn(this);
             _sizeInBytesOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -419,7 +405,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _gpbTypeOBJ.setName("gpbType");
             _gpbTypeOBJ.setDmdID("-477994");
             _gpbTypeOBJ.addDescription("A reference to a GpbType definition.");
-            _gpbTypeOBJ.setNameAndTypeName("gpbType.AttributeDefinition");
             _gpbTypeOBJ.setDotName("dmdgpb.gpbType.AttributeDefinition");
             _gpbType.setDefinedIn(this);
             _gpbTypeOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -433,7 +418,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _generatedFileNameOBJ.setName("generatedFileName");
             _generatedFileNameOBJ.setDmdID("-477993");
             _generatedFileNameOBJ.addDescription("The name of the file to be generated, complete with the appropriate file extension.\n An example would be company_common.proto.");
-            _generatedFileNameOBJ.setNameAndTypeName("generatedFileName.AttributeDefinition");
             _generatedFileNameOBJ.setDotName("dmdgpb.generatedFileName.AttributeDefinition");
             _generatedFileName.setDefinedIn(this);
             _generatedFileNameOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -447,7 +431,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _definedInGpbModuleOBJ.setName("definedInGpbModule");
             _definedInGpbModuleOBJ.setDmdID("-477992");
             _definedInGpbModuleOBJ.addDescription("Indicates the name of the GpbModule in which a definition is defined.");
-            _definedInGpbModuleOBJ.setNameAndTypeName("definedInGpbModule.AttributeDefinition");
             _definedInGpbModuleOBJ.setDotName("dmdgpb.definedInGpbModule.AttributeDefinition");
             _definedInGpbModule.setDefinedIn(this);
             _definedInGpbModuleOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -461,7 +444,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _pythonTypeOBJ.setName("pythonType");
             _pythonTypeOBJ.setDmdID("-477990");
             _pythonTypeOBJ.addDescription("An indication of the Python type associated with a GPB attribute type.");
-            _pythonTypeOBJ.setNameAndTypeName("pythonType.AttributeDefinition");
             _pythonTypeOBJ.setDotName("dmdgpb.pythonType.AttributeDefinition");
             _pythonType.setDefinedIn(this);
             _pythonTypeOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -475,7 +457,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _javaTypeOBJ.setName("javaType");
             _javaTypeOBJ.setDmdID("-477989");
             _javaTypeOBJ.addDescription("An indication of the Java type associated with a GPB attribute type.");
-            _javaTypeOBJ.setNameAndTypeName("javaType.AttributeDefinition");
             _javaTypeOBJ.setDotName("dmdgpb.javaType.AttributeDefinition");
             _javaType.setDefinedIn(this);
             _javaTypeOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -489,7 +470,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _basedOnEnumOBJ.setName("basedOnEnum");
             _basedOnEnumOBJ.setDmdID("-477988");
             _basedOnEnumOBJ.addDescription("Indicates that a GPB enum is based on a dark-matter schema defined enumeration.");
-            _basedOnEnumOBJ.setNameAndTypeName("basedOnEnum.AttributeDefinition");
             _basedOnEnumOBJ.setDotName("dmdgpb.basedOnEnum.AttributeDefinition");
             _basedOnEnum.setDefinedIn(this);
             _basedOnEnumOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -503,7 +483,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _dependsOnGpbModuleOBJ.setName("dependsOnGpbModule");
             _dependsOnGpbModuleOBJ.setDmdID("-477980");
             _dependsOnGpbModuleOBJ.addDescription("Indicates the GpbModule on which something depends.");
-            _dependsOnGpbModuleOBJ.setNameAndTypeName("dependsOnGpbModule.AttributeDefinition");
             _dependsOnGpbModuleOBJ.setValueType("MULTI");
             _dependsOnGpbModuleOBJ.setDotName("dmdgpb.dependsOnGpbModule.AttributeDefinition");
             _dependsOnGpbModule.setDefinedIn(this);
@@ -518,7 +497,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _packageOBJ.setName("package");
             _packageOBJ.setDmdID("-477979");
             _packageOBJ.addDescription("The package associated with a .proto file.");
-            _packageOBJ.setNameAndTypeName("package.AttributeDefinition");
             _packageOBJ.setDotName("dmdgpb.package.AttributeDefinition");
             _package.setDefinedIn(this);
             _packageOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -532,7 +510,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _gpbEnumValueOBJ.setName("gpbEnumValue");
             _gpbEnumValueOBJ.setDmdID("-477978");
             _gpbEnumValueOBJ.addDescription("The values of an enumeration.");
-            _gpbEnumValueOBJ.setNameAndTypeName("gpbEnumValue.AttributeDefinition");
             _gpbEnumValueOBJ.setValueType("MULTI");
             _gpbEnumValueOBJ.setDotName("dmdgpb.gpbEnumValue.AttributeDefinition");
             _gpbEnumValue.setDefinedIn(this);
@@ -547,7 +524,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _mainElementsOBJ.setName("mainElements");
             _mainElementsOBJ.setDmdID("-477977");
             _mainElementsOBJ.addDescription("The mainElements attribute indicates a list of GpbCompositeTypes that comprise a GpbProtoFile. Main elements\n include messages and enumerations.");
-            _mainElementsOBJ.setNameAndTypeName("mainElements.AttributeDefinition");
             _mainElementsOBJ.setValueType("MULTI");
             _mainElementsOBJ.setDotName("dmdgpb.mainElements.AttributeDefinition");
             _mainElements.setDefinedIn(this);
@@ -562,7 +538,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _fieldOBJ.setName("field");
             _fieldOBJ.setDmdID("-477976");
             _fieldOBJ.addDescription("A set of fields in a GpbMessage.");
-            _fieldOBJ.setNameAndTypeName("field.AttributeDefinition");
             _fieldOBJ.setValueType("MULTI");
             _fieldOBJ.setDotName("dmdgpb.field.AttributeDefinition");
             _field.setDefinedIn(this);
@@ -577,7 +552,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _tagOBJ.setName("tag");
             _tagOBJ.setDmdID("-477975");
             _tagOBJ.addDescription("As you can see, each field in the message definition has a unique numbered tag.\n These tags are used to identify your fields in the message binary format, and should not be\n changed once your message type is in use. Note that tags with values in the range 1 through 15\n take one byte to encode, including the identifying number and the field's type (you can find\n out more about this in Protocol Buffer Encoding). Tags in the range 16 through 2047 take two\n bytes. So you should reserve the tags 1 through 15 for very frequently occurring message\n elements. Remember to leave some room for frequently occurring elements that might be added\n in the future.\n <p/>\n The smallest tag number you can specify is 1, and the largest is 229 - 1, or 536,870,911.\n You also cannot use the numbers 19000 though 19999");
-            _tagOBJ.setNameAndTypeName("tag.AttributeDefinition");
             _tagOBJ.setDotName("dmdgpb.tag.AttributeDefinition");
             _tag.setDefinedIn(this);
             _tagOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -591,7 +565,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _fieldRuleOBJ.setName("fieldRule");
             _fieldRuleOBJ.setDmdID("-477974");
             _fieldRuleOBJ.addDescription("Indicates if a field is required, optional or repeated. See the note about \n required fields as part of the FieldRuleEnum.\n <p/>\n For historical reasons, repeated fields of basic numeric types aren't encoded as efficiently\n as they could be. New code should use the special option [packed=true] to get a more efficient encoding.\n <br/>\n For example: repeated int32 samples = 4 [packed=true];");
-            _fieldRuleOBJ.setNameAndTypeName("fieldRule.AttributeDefinition");
             _fieldRuleOBJ.setDotName("dmdgpb.fieldRule.AttributeDefinition");
             _fieldRule.setDefinedIn(this);
             _fieldRuleOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -605,7 +578,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _importOBJ.setName("import");
             _importOBJ.setDmdID("-477973");
             _importOBJ.addDescription("An import associated with a .proto file.");
-            _importOBJ.setNameAndTypeName("import.AttributeDefinition");
             _importOBJ.setValueType("MULTI");
             _importOBJ.setDotName("dmdgpb.import.AttributeDefinition");
             _import.setDefinedIn(this);
@@ -620,7 +592,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _embedOBJ.setName("embed");
             _embedOBJ.setDmdID("-477972");
             _embedOBJ.addDescription("The embed attribute is used to indicate that an existing GpbEnum or GpbMessage\n description should be embedded directly within a message definition.");
-            _embedOBJ.setNameAndTypeName("embed.AttributeDefinition");
             _embedOBJ.setValueType("MULTI");
             _embedOBJ.setDotName("dmdgpb.embed.AttributeDefinition");
             _embed.setDefinedIn(this);
@@ -635,7 +606,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _generateAsOBJ.setName("generateAs");
             _generateAsOBJ.setDmdID("-477971");
             _generateAsOBJ.addDescription("When protocol elements have clashing names in the namespace of a dmgpb set of definitions,\n we alter their original names but maintain the original name here so that we can regenerate the .proto\n file without difficulty. This is also handy when you start to merge definitions from different .proto\n implementations but still want to maintain the old names in the regenerated .proto files.");
-            _generateAsOBJ.setNameAndTypeName("generateAs.AttributeDefinition");
             _generateAsOBJ.setDotName("dmdgpb.generateAs.AttributeDefinition");
             _generateAs.setDefinedIn(this);
             _generateAsOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -649,7 +619,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _versionOBJ.setName("version");
             _versionOBJ.setDmdID("-477970");
             _versionOBJ.addDescription("The version at which a message or enumeration was introduced.");
-            _versionOBJ.setNameAndTypeName("version.AttributeDefinition");
             _versionOBJ.setDotName("dmdgpb.version.AttributeDefinition");
             _version.setDefinedIn(this);
             _versionOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
@@ -663,7 +632,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _skipOBJ.setName("skip");
             _skipOBJ.setDmdID("-477969");
             _skipOBJ.addDescription("A version from which a message or enumeration should be excluded when .proto generation takes place.");
-            _skipOBJ.setNameAndTypeName("skip.AttributeDefinition");
             _skipOBJ.setValueType("MULTI");
             _skipOBJ.setDotName("dmdgpb.skip.AttributeDefinition");
             _skip.setDefinedIn(this);
@@ -683,7 +651,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldIndicatorOBJ.setTypeClassName("org.dmd.gpb.shared.types.DmcTypeGpbFieldIndicator");
             _GpbFieldIndicatorOBJ.setPrimitiveType("org.dmd.gpb.shared.types.GpbFieldIndicator");
             _GpbFieldIndicatorOBJ.setDmwIteratorClass("GpbFieldIndicatorIterableDMW");
-            _GpbFieldIndicatorOBJ.setNameAndTypeName("GpbFieldIndicator.TypeDefinition");
             _GpbFieldIndicatorOBJ.setDotName("dmdgpb.GpbFieldIndicator.TypeDefinition");
             _GpbFieldIndicatorOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbFieldIndicatorIterableDMW");
             _GpbFieldIndicator.setDefinedIn(this);
@@ -709,7 +676,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldIndicatorBaseOBJ.addRequiredPart("FieldRuleEnum fieldRule \"Whether the field is required, optional or repeated.\"");
             _GpbFieldIndicatorBaseOBJ.addRequiredPart("GpbField fieldRef \"Reference to the GpbField to be used.\"");
             _GpbFieldIndicatorBaseOBJ.addRequiredPart("Integer fieldTag \"The unique numeric tag for this field.\"");
-            _GpbFieldIndicatorBaseOBJ.setNameAndTypeName("GpbFieldIndicatorBase.ComplexTypeDefinition");
             _GpbFieldIndicatorBaseOBJ.addExampleUsage("Standard field definition:");
             _GpbFieldIndicatorBaseOBJ.addExampleUsage("Field definition with a default value:");
             _GpbFieldIndicatorBaseOBJ.addExampleUsage("A packed field:");
@@ -732,7 +698,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbEnumValueOBJ.addRequiredPart("String name \"The name of the enumerated value\"");
             _GpbEnumValueOBJ.addRequiredPart("Integer value \"The numeric value\"");
             _GpbEnumValueOBJ.addRequiredPart("String description \"A description of the value\" quoted=true");
-            _GpbEnumValueOBJ.setNameAndTypeName("GpbEnumValue.ComplexTypeDefinition");
             _GpbEnumValueOBJ.setDotName("dmdgpb.GpbEnumValue.ComplexTypeDefinition");
             _GpbEnumValue.setDefinedIn(this);
             _GpbEnumValueOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");
@@ -755,7 +720,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _FieldRuleEnumOBJ.addEnumValue("1 OPTIONAL A well-formed message can have zero or one of this field (but not more than one).");
             _FieldRuleEnumOBJ.addEnumValue("2 REPEATED This field can be repeated any number of times (including zero) in a well-formed message. The order of the repeated values will be preserved.");
             _FieldRuleEnumOBJ.addDescription("The FieldRuleEnum indicates whether a field is required, optional or repeated.\n <p/>\n REQUIRED is Forever You should be very careful about marking fields as required. If at some\n point you wish to stop writing or sending a required field, it will be problematic to change\n the field to an optional field Ð old readers will consider messages without this field to be\n incomplete and may reject or drop them unintentionally. You should consider writing\n application-specific custom validation routines for your buffers instead. Some engineers\n at Google have come to the conclusion that using required does more harm than good; they\n prefer to use only optional and repeated. However, this view is not universal.");
-            _FieldRuleEnumOBJ.setNameAndTypeName("FieldRuleEnum.EnumDefinition");
             _FieldRuleEnumOBJ.setDotName("dmdgpb.FieldRuleEnum.EnumDefinition");
             _FieldRuleEnum.setDefinedIn(this);
             _FieldRuleEnumOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/types.dmd");
@@ -768,7 +732,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _OptionEnumOBJ.setName("OptionEnum");
             _OptionEnumOBJ.addEnumValue("1 PACKED Indicates that the more efficient packed representation of numeric data should be used for REPEATED fields.");
             _OptionEnumOBJ.addDescription("The OptionEnum indicates whether a field uses a packed representation. Unlike the GPB\n base concept of having DEFAULT or PACKED as the options, you would use the default=\"value\" construct\n to indicate a default value.");
-            _OptionEnumOBJ.setNameAndTypeName("OptionEnum.EnumDefinition");
             _OptionEnumOBJ.setDotName("dmdgpb.OptionEnum.EnumDefinition");
             _OptionEnum.setDefinedIn(this);
             _OptionEnumOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/types.dmd");
@@ -794,12 +757,11 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleDSDOBJ.setFileExtension("gpb");
             _GpbModuleDSDOBJ.setDefinedInModuleAttribute("dmdgpb.definedInGpbModule");
             _GpbModuleDSDOBJ.setDotName("dmdgpb.GpbModule.DSDefinitionModule");
-            _GpbModuleDSDOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/module.dmd");
             _GpbModuleDSDOBJ.setModuleDependenceAttribute("dmdgpb.dependsOnGpbModule");
+            _GpbModuleDSDOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/module.dmd");
             _GpbModuleDSDOBJ.setLineNumber("12");
             _GpbModuleDSDOBJ.setBaseDefinition("dmdgpb.GpbDefinition");
             _GpbModuleDSDOBJ.addMay("dmdgpb.package");
-            _GpbModuleDSDOBJ.setNameAndTypeName("GpbModule.DSDefinitionModule");
             _GpbModuleDSD.setDefinedIn(this);
             addDsdModuleList(_GpbModuleDSD);
 

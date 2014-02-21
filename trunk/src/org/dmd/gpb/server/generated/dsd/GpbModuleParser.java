@@ -174,7 +174,6 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
                 module = (GpbModule)definition;
             
                 definition.setDotName(module.getName() + "." + definition.getConstructionClassName());
-                definition.setNameAndTypeName(module.getName() + "." + definition.getConstructionClassName());
             
                 module.setDefinedInGpbModule(module);
                 definitions.addGpbModule(module);
@@ -198,7 +197,6 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
             
             definition.setDefinedInGpbModule(module);
             definition.setDotName(module.getName() + "." + definition.getName() + "." + definition.getConstructionClassName());
-            definition.setNameAndTypeName(definition.getName() + "." + definition.getConstructionClassName());
             
             if (definition instanceof GpbEnum){
                 definitions.addGpbEnum((GpbEnum)definition);
