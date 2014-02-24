@@ -1,0 +1,69 @@
+TdlModule
+name 			gpbdoc
+package			org.dmd.gpb.tools.doc.html
+templateFile	gpbdoc
+commentFormat	<!-- ::comment:: -->
+description		These Sections and their associated Templates are used to format HTML
+ documentation pages for dark-matter Google Protocol Buffer (GPB) definitions.
+
+TextualArtifact
+name 			GpbHtmlDoc
+contains		static DocType
+contains		static HtmlContent
+description 	The GpbHtmlDoc interface defines the overall form of a GPB documentation page.
+
+Section
+name			DocType
+description		Standard front matter for an XHTML document.
+
+Section
+name			HtmlContent
+contains		static HtmlHead
+contains		static Body
+endsWithText	</html>
+description		The main html content.
+
+Section
+name			HtmlHead
+value			styleSheet	"The name of the CSS style sheet to use."
+value			moduleName	"The name of the dark-matter GPB module."
+
+Section
+name			Body
+startsWithText	<body>
+contains		static DivHeader
+contains		static DivMain
+endsWithText	</body> 
+description		The body of the document.
+
+Section
+name			DivHeader
+description		Colored bar across the top
+
+Section
+name			DivMain
+startsWithText	<div id="main">
+contains		static DivContent
+endsWithText	</div> <!-- main -->
+description		Contains the main content of the page.
+
+Section
+name			DivContent
+startsWithText	<div id="content">
+contains		static ModuleTitle
+contains		static DivSummary 
+endsWithText	</div> <!-- content -->
+
+Section
+name			ModuleTitle
+value			moduleName 			"Just the name of the module"
+value			moduleDescription	"The description of the module"
+
+Section
+name			DivSummary
+startsWithText	<div class="summary">
+contains		one MessageSummary
+endsWithText	</div> <!-- summary -->
+
+Section
+name			MessageSummary
