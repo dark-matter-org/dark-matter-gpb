@@ -59,5 +59,13 @@ public class GpbDefGenerator extends GpbModuleGenUtility {
 	public void initialize() throws ResultException {
 		
 	}
+
+	@Override
+	public void objectResolutionComplete(GpbModule module,
+			ConfigLocation location, GpbModuleDefinitionManager definitions)
+			throws ResultException {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
