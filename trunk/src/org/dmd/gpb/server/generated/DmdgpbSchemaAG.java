@@ -13,6 +13,21 @@
 //	You should have received a copy of the GNU Lesser General Public License along
 //	with this program; if not, see <http://www.gnu.org/licenses/lgpl.html>.
 //	---------------------------------------------------------------------------
+//	---------------------------------------------------------------------------
+//	dark-matter-data
+//	Copyright (c) 2014 dark-matter-data committers
+//	---------------------------------------------------------------------------
+//	This program is free software; you can redistribute it and/or modify it
+//	under the terms of the GNU Lesser General Public License as published by the
+//	Free Software Foundation; either version 3 of the License, or (at your
+//	option) any later version.
+//	This program is distributed in the hope that it will be useful, but WITHOUT
+//	ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+//	FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for
+//	more details.
+//	You should have received a copy of the GNU Lesser General Public License along
+//	with this program; if not, see <http://www.gnu.org/licenses/lgpl.html>.
+//	---------------------------------------------------------------------------
 package org.dmd.gpb.server.generated;
 
 import org.dmd.dmc.DmcOmni;
@@ -86,6 +101,8 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
         generatedSchema = true;
         staticRefName   = "org.dmd.gpb.server.generated.DmdgpbSchemaAG";
 
+        dependsOnSchemaClasses.put("dmconcinnity","org.dmd.concinnity.server.generated.DmconcinnitySchemaAG");
+
     }
 
     // Generated from: org.dmd.dmg.util.SchemaFormatter.dumpSchema(SchemaFormatter.java:208)
@@ -98,6 +115,11 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             me.setSchemaPackage("org.dmd.gpb.shared");
             me.setDmwPackage("org.dmd.gpb.server");
             me.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/dmdgpb.dms");
+
+
+            me.addDependsOn("dmconcinnity");
+            dependsOnSchemaClasses.put("dmconcinnity","org.dmd.concinnity.server.generated.DmconcinnitySchemaAG");
+
 
             initClasses();
             initAttributes1();
@@ -311,7 +333,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleOBJ.setInternallyGenerated("true");
             _GpbModuleOBJ.setClassType("STRUCTURAL");
             _GpbModuleOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/module.dmd");
-            _GpbModuleOBJ.setLineNumber("12");
+            _GpbModuleOBJ.setLineNumber("13");
             _GpbModuleOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbModuleOBJ.setIsNamedBy("meta.name");
             _GpbModuleOBJ.setUseWrapperType("EXTENDED");
@@ -322,6 +344,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleOBJ.addMay("meta.defFiles");
             _GpbModuleOBJ.addMay("dmdgpb.package");
             _GpbModuleOBJ.addMay("dmdgpb.dependsOnGpbModule");
+            _GpbModuleOBJ.addMay("dmconcinnity.dependsOnConcinnityModule");
             _GpbModuleOBJ.addMust("meta.name");
             _GpbModuleOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbModuleIterableDMW");
             _GpbModuleOBJ.setDsdModuleDefinition("dmdgpb.GpbModule");
@@ -695,13 +718,15 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbEnumValueOBJ.addOptionalPart("String obsolete \"The version at which the value was made obsolete.\"");
             _GpbEnumValueOBJ.addOptionalPart("String note \"A note about the value and its use in this message e.g. why it's obsolete.\" quoted=true");
             _GpbEnumValueOBJ.addOptionalPart("String skip \"If a value isn't supported in one or more intermediate versions, you can indicate the skip version.\" multivalued=true");
+            _GpbEnumValueOBJ.addOptionalPart("Concept concept \"A reference to a concinnity concept. This might refer to conceptual definition of the thing represented by this value.\"");
+            _GpbEnumValueOBJ.addOptionalPart("Concept baseValue \"If you want to coordinate disparate enum values that actually mean the same thing across systems, you can refer to the base concept value via this part. Mapping software can then be generated to automatically perform the translation between values.\"");
             _GpbEnumValueOBJ.addRequiredPart("String name \"The name of the enumerated value\"");
             _GpbEnumValueOBJ.addRequiredPart("Integer value \"The numeric value\"");
             _GpbEnumValueOBJ.addRequiredPart("String description \"A description of the value\" quoted=true");
             _GpbEnumValueOBJ.setDotName("dmdgpb.GpbEnumValue.ComplexTypeDefinition");
             _GpbEnumValue.setDefinedIn(this);
             _GpbEnumValueOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");
-            _GpbEnumValueOBJ.setLineNumber("40");
+            _GpbEnumValueOBJ.setLineNumber("43");
             addComplexTypeDefList(_GpbEnumValue);
 
     }
@@ -757,9 +782,10 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleDSDOBJ.setFileExtension("gpb");
             _GpbModuleDSDOBJ.setDefinedInModuleAttribute("dmdgpb.definedInGpbModule");
             _GpbModuleDSDOBJ.setDotName("dmdgpb.GpbModule.DSDefinitionModule");
-            _GpbModuleDSDOBJ.setModuleDependenceAttribute("dmdgpb.dependsOnGpbModule");
+            _GpbModuleDSDOBJ.addRefersToDefsFromDSD("dmconcinnity.ConcinnityModule");
             _GpbModuleDSDOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/module.dmd");
-            _GpbModuleDSDOBJ.setLineNumber("12");
+            _GpbModuleDSDOBJ.setModuleDependenceAttribute("dmdgpb.dependsOnGpbModule");
+            _GpbModuleDSDOBJ.setLineNumber("13");
             _GpbModuleDSDOBJ.setBaseDefinition("dmdgpb.GpbDefinition");
             _GpbModuleDSDOBJ.addMay("dmdgpb.package");
             _GpbModuleDSD.setDefinedIn(this);

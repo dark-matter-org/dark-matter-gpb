@@ -36,14 +36,14 @@ import org.dmd.dmc.util.ComplexTypeSplitter;                                  //
 import org.dmd.dmc.util.ParsedNameValuePair;                                  // To store values parsed from initial input - (NewComplexTypeFormatter.java:100)
 import org.dmd.dms.generated.enums.DataTypeEnum;                              // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:95)
 import org.dmd.dms.generated.enums.ValueTypeEnum;                             // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:96)
-import org.dmd.dms.generated.types.DmcTypeIntegerSTATIC;                      // Standard type - (NewComplexTypeFormatter.java:797)
-import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                       // Standard type - (NewComplexTypeFormatter.java:797)
-import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;                      // Primitive type - (NewComplexTypeFormatter.java:780)
-import org.dmd.gpb.shared.generated.enums.OptionEnum;                         // Primitive type - (NewComplexTypeFormatter.java:780)
-import org.dmd.gpb.shared.generated.types.DmcTypeFieldRuleEnumSTATIC;         // Internally generated type - (NewComplexTypeFormatter.java:797)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldREFSTATIC;           // Internally generated type - (NewComplexTypeFormatter.java:797)
-import org.dmd.gpb.shared.generated.types.DmcTypeOptionEnumSTATIC;            // Internally generated type - (NewComplexTypeFormatter.java:797)
-import org.dmd.gpb.shared.generated.types.GpbFieldREF;                        // Object reference - (NewComplexTypeFormatter.java:772)
+import org.dmd.dms.generated.types.DmcTypeIntegerSTATIC;                      // Standard type - (NewComplexTypeFormatter.java:835)
+import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                       // Standard type - (NewComplexTypeFormatter.java:835)
+import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;                      // Primitive type - (NewComplexTypeFormatter.java:818)
+import org.dmd.gpb.shared.generated.enums.OptionEnum;                         // Primitive type - (NewComplexTypeFormatter.java:818)
+import org.dmd.gpb.shared.generated.types.DmcTypeFieldRuleEnumSTATIC;         // Internally generated type - (NewComplexTypeFormatter.java:835)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldREFSTATIC;           // Internally generated type - (NewComplexTypeFormatter.java:835)
+import org.dmd.gpb.shared.generated.types.DmcTypeOptionEnumSTATIC;            // Internally generated type - (NewComplexTypeFormatter.java:835)
+import org.dmd.gpb.shared.generated.types.GpbFieldREF;                        // Object reference - (NewComplexTypeFormatter.java:810)
 
 
 
@@ -61,47 +61,47 @@ public class GpbFieldIndicatorBase implements Serializable {
     // Whether the field is required, optional or repeated.
     FieldRuleEnum fieldRuleV;
 
-    final static DmcAttributeInfo fieldRuleAI = new DmcAttributeInfo("fieldRule",0,"FieldRuleEnum",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+    final static DmcAttributeInfo fieldRuleAI = new DmcAttributeInfo("fieldRule",0,"FieldRuleEnum",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
 
     // Reference to the GpbField to be used.
     GpbFieldREF fieldRefV;
 
-    final static DmcAttributeInfo fieldRefAI = new DmcAttributeInfo("fieldRef",0,"GpbField",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+    final static DmcAttributeInfo fieldRefAI = new DmcAttributeInfo("fieldRef",0,"GpbField",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
 
     // The unique numeric tag for this field.
     Integer fieldTagV;
 
-    final static DmcAttributeInfo fieldTagAI = new DmcAttributeInfo("fieldTag",0,"Integer",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+    final static DmcAttributeInfo fieldTagAI = new DmcAttributeInfo("fieldTag",0,"Integer",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
 
     // Indicates if the PACKED option is to be used for repeated fields.
     OptionEnum optionV;
 
-    final static DmcAttributeInfo optionAI = new DmcAttributeInfo("option",0,"OptionEnum",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+    final static DmcAttributeInfo optionAI = new DmcAttributeInfo("option",0,"OptionEnum",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
 
     // The default value
     String defaultV;
 
-    final static DmcAttributeInfo defaultAI = new DmcAttributeInfo("default",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+    final static DmcAttributeInfo defaultAI = new DmcAttributeInfo("default",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
 
     // The version at which the field was introduced in the message.
     String versionV;
 
-    final static DmcAttributeInfo versionAI = new DmcAttributeInfo("version",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+    final static DmcAttributeInfo versionAI = new DmcAttributeInfo("version",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
 
     // The version at which the field was made obsolete.
     String obsoleteV;
 
-    final static DmcAttributeInfo obsoleteAI = new DmcAttributeInfo("obsolete",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+    final static DmcAttributeInfo obsoleteAI = new DmcAttributeInfo("obsolete",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
 
     // A note about the field and its use in this message e.g. why it's obsolete.
     String noteV;
 
-    final static DmcAttributeInfo noteAI = new DmcAttributeInfo("note",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+    final static DmcAttributeInfo noteAI = new DmcAttributeInfo("note",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
 
     // If a field isn't supported in one or more intermediate versions, you can indicate the skip version.
     ArrayList<String> skipV;
 
-    final static DmcAttributeInfo skipAI = new DmcAttributeInfo("skip",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN);
+    final static DmcAttributeInfo skipAI = new DmcAttributeInfo("skip",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
 
     /**
      * Default constructor.
@@ -114,7 +114,7 @@ public class GpbFieldIndicatorBase implements Serializable {
      */
     @SuppressWarnings("unchecked")
     public GpbFieldIndicatorBase(GpbFieldIndicatorBase original){
-    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.getCopyConstructorAssignments(NewComplexTypeFormatter.java:735)
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.getCopyConstructorAssignments(NewComplexTypeFormatter.java:773)
         fieldRuleV =  original.fieldRuleV;
         fieldRefV =  original.fieldRefV;
         fieldTagV =  original.fieldTagV;
@@ -309,6 +309,8 @@ public class GpbFieldIndicatorBase implements Serializable {
 
         if ((fieldRefV != null) && (!fieldRefV.isResolved())){
             obj = resolver.findNamedObject(fieldRefV.getObjectName());
+            if (fieldRefAI.weakReference)
+                return;
             if (obj == null)
                 throw(new DmcValueException("Could not resolve reference to: " + fieldRefV.getObjectName() + " via attribute: " + attrName));
         
@@ -320,13 +322,15 @@ public class GpbFieldIndicatorBase implements Serializable {
         
     }
 
-    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:494)
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:498)
     @SuppressWarnings({"unchecked", "rawtypes"})
     public void resolve(DmcNameResolverWithClashSupportIF resolver, DmcObject object, DmcNameClashResolverIF ncr, DmcAttributeInfo ai) throws DmcValueException, DmcValueExceptionSet {
         DmcNamedObjectIF  obj = null;
 
         if ((fieldRefV != null) && (!fieldRefV.isResolved())){
             obj = resolver.findNamedObjectMayClash(object, fieldRefV.getObjectName(), ncr, fieldRefAI);
+            if (fieldRefAI.weakReference)
+                return;
             if (obj == null)
                 throw(new DmcValueException("Could not resolve reference to: " + fieldRefV.getObjectName() + " via attribute: " + ai.name));
         

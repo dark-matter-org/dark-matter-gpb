@@ -20,11 +20,11 @@ public class GpbDefGenerator extends GpbModuleGenUtility {
 	StringBuffer		genversion = new StringBuffer();
 	
 	public GpbDefGenerator(){
-		commandLine.addOption("-genversion", genversion, "The version for  whichc we'll generated the .proto files");
+		commandLine.addOption("-genversion", genversion, "The version for  which we'll generated the .proto files");
 	}
 	
 	public GpbDefGenerator(PrintStream p){
-		commandLine.addOption("-genversion", genversion, "The version for  whichc we'll generated the .proto files");
+		commandLine.addOption("-genversion", genversion, "The version for  which we'll generated the .proto files");
 	}
 
 	@Override

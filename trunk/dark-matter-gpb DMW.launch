@@ -10,6 +10,6 @@
 <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.dmd.dmg.tools.dmggenerator.DmgGeneratorMain"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-workspace ${workspace_loc} -srcdir dark-matter-gpb/src dark-matter-gpb/test dark-matter-data/src -jars dark-matter-data -autogen"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-workspace ${workspace_loc} -srcdir dark-matter-gpb/src dark-matter-gpb/test dark-matter-data/src dark-matter-concinnity/src -jars dark-matter-data -autogen"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="dark-matter-gpb"/>
 </launchConfiguration>

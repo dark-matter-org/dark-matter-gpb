@@ -1,32 +1,51 @@
+//	---------------------------------------------------------------------------
+//	dark-matter-data
+//	Copyright (c) 2014 dark-matter-data committers
+//	---------------------------------------------------------------------------
+//	This program is free software; you can redistribute it and/or modify it
+//	under the terms of the GNU Lesser General Public License as published by the
+//	Free Software Foundation; either version 3 of the License, or (at your
+//	option) any later version.
+//	This program is distributed in the hope that it will be useful, but WITHOUT
+//	ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+//	FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for
+//	more details.
+//	You should have received a copy of the GNU Lesser General Public License along
+//	with this program; if not, see <http://www.gnu.org/licenses/lgpl.html>.
+//	---------------------------------------------------------------------------
 package org.dmd.gpb.server.generated.dmw;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:442)
-import java.util.ArrayList;                                               // To support getMVCopy() - (BaseDMWGenerator.java:1181)
-import java.util.Iterator;                                                // Support copy of MV objects - (BaseDMWGenerator.java:2240)
-import org.dmd.dmc.*;                                                     // If any attributes - (BaseDMWGenerator.java:1087)
-import org.dmd.dmc.definitions.DmcDefinitionIF;                           // The object is a domain specific definition - (BaseDMWGenerator.java:411)
-import org.dmd.dmc.definitions.DmcDefinitionSet;                          // Our base to provide definition set storage - (DMWGenerator.java:170)
-import org.dmd.dmc.types.DefinitionName;                                  // Is named by - (BaseDMWGenerator.java:1062)
-import org.dmd.dmc.types.DotName;                                         // To support the find method for definitions - (DSDefinitionModule.java:163)
-import org.dmd.dms.ClassDefinition;                                       // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                               // Attribute defFiles from the meta schema - (BaseDMWGenerator.java:897)
-import org.dmd.dms.generated.dmw.StringIterableDMW;                       // For multi-valued String - (BaseDMWGenerator.java:2103)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                     // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
-import org.dmd.gpb.server.extended.GpbCompositeType;                      // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbDefinition;                         // Derived class - (BaseDMWGenerator.java:1248)
-import org.dmd.gpb.server.extended.GpbEnum;                               // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbField;                              // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbMessage;                            // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbModule;                             // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
-import org.dmd.gpb.server.extended.GpbProtoFile;                          // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbScalarType;                         // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.extended.GpbType;                               // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
-import org.dmd.gpb.server.generated.dmw.GpbModuleIterableDMW;             // For multi-valued GpbModule - (BaseDMWGenerator.java:1709)
-import org.dmd.gpb.server.generated.dsd.GpbModuleScopedInterface;         // Required to manage module definition - (DMWGenerator.java:169)
-import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                      // Attribute dependsOnGpbModule from the dmdgpb schema - (BaseDMWGenerator.java:897)
-import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                     // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
-import org.dmd.gpb.shared.generated.types.GpbModuleREF;                   // Required to access defined in module name - (DMWGenerator.java:180)
+import java.util.ArrayList;                                                         // To support getMVCopy() - (BaseDMWGenerator.java:1181)
+import java.util.Iterator;                                                          // Support copy of MV objects - (BaseDMWGenerator.java:2240)
+import org.dmd.concinnity.server.extended.ConcinnityModule;                         // Is reference type - (BaseDMWGenerator.java:1107)
+import org.dmd.concinnity.server.generated.dmw.ConcinnityModuleIterableDMW;         // For multi-valued ConcinnityModule - (BaseDMWGenerator.java:1709)
+import org.dmd.concinnity.shared.generated.dmo.ConcinnityModuleDMO;                 // For multi-valued adds of ConcinnityModule - (BaseDMWGenerator.java:1767)
+import org.dmd.concinnity.shared.generated.dmo.DmconcinnityDMSAG;                   // Attribute dependsOnConcinnityModule from the dmconcinnity schema - (BaseDMWGenerator.java:897)
+import org.dmd.dmc.*;                                                               // If any attributes - (BaseDMWGenerator.java:1087)
+import org.dmd.dmc.definitions.DmcDefinitionIF;                                     // The object is a domain specific definition - (BaseDMWGenerator.java:411)
+import org.dmd.dmc.definitions.DmcDefinitionSet;                                    // Our base to provide definition set storage - (DMWGenerator.java:170)
+import org.dmd.dmc.types.DefinitionName;                                            // Is named by - (BaseDMWGenerator.java:1062)
+import org.dmd.dmc.types.DotName;                                                   // To support the find method for definitions - (DSDefinitionModule.java:163)
+import org.dmd.dms.ClassDefinition;                                                 // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                                         // Attribute defFiles from the meta schema - (BaseDMWGenerator.java:897)
+import org.dmd.dms.generated.dmw.StringIterableDMW;                                 // For multi-valued String - (BaseDMWGenerator.java:2103)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                               // Required for MODREC constructor - (BaseDMWGenerator.java:1071)
+import org.dmd.gpb.server.extended.GpbCompositeType;                                // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbDefinition;                                   // Derived class - (BaseDMWGenerator.java:1248)
+import org.dmd.gpb.server.extended.GpbEnum;                                         // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbField;                                        // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbMessage;                                      // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbModule;                                       // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
+import org.dmd.gpb.server.extended.GpbProtoFile;                                    // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbScalarType;                                   // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.extended.GpbType;                                         // A definition from the GpbModule Module - (DSDefinitionModule.java:174)
+import org.dmd.gpb.server.generated.dmw.GpbModuleIterableDMW;                       // For multi-valued GpbModule - (BaseDMWGenerator.java:1709)
+import org.dmd.gpb.server.generated.dsd.GpbModuleScopedInterface;                   // Required to manage module definition - (DMWGenerator.java:169)
+import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                                // Attribute dependsOnGpbModule from the dmdgpb schema - (BaseDMWGenerator.java:897)
+import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                               // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;                             // Required to access defined in module name - (DMWGenerator.java:180)
 
 
 
@@ -220,6 +239,92 @@ abstract public class GpbModuleDMW extends GpbDefinition implements DmcDefinitio
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2292)
     public void remDefFiles(){
         ((GpbModuleDMO) core).remDefFiles();
+    }
+
+    /**
+     * @return The number of ConcinnityModule items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1671)
+    public int getDependsOnConcinnityModuleSize(){
+        return(((GpbModuleDMO) core).getDependsOnConcinnityModuleSize());
+    }
+
+    /**
+     * @return true if there are no ConcinnityModuleDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1679)
+    public boolean getDependsOnConcinnityModuleIsEmpty(){
+        if (((GpbModuleDMO) core).getDependsOnConcinnityModuleSize() == 0)
+            return(true);
+        return(false);
+    }
+
+    /**
+     * @return true if there are any ConcinnityModuleDMO items.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1689)
+    public boolean getDependsOnConcinnityModuleHasValue(){
+        if (((GpbModuleDMO) core).getDependsOnConcinnityModuleSize() == 0)
+            return(false);
+        return(true);
+    }
+
+    /**
+     * @return An Iterator of ConcinnityModuleDMO objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1716)
+    public ConcinnityModuleIterableDMW getDependsOnConcinnityModuleIterable(){
+        DmcAttribute<?> attr = core.get(DmconcinnityDMSAG.__dependsOnConcinnityModule);
+        if (attr == null)
+            return(ConcinnityModuleIterableDMW.emptyList);
+        
+        return(new ConcinnityModuleIterableDMW(((GpbModuleDMO) core).getDependsOnConcinnityModule()));
+    }
+
+    /**
+     * Adds another dependsOnConcinnityModule value.
+     * @param value A value compatible with ConcinnityModule
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1773)
+    public DmcAttribute<?> addDependsOnConcinnityModule(ConcinnityModule value){
+        DmcAttribute<?> attr = ((GpbModuleDMO) core).addDependsOnConcinnityModule(((ConcinnityModuleDMO)value.getDmcObject()));
+        return(attr);
+    }
+
+    /**
+     * Deletes a dependsOnConcinnityModule value.
+     * @param value The ConcinnityModule to be deleted from set of attribute values.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1823)
+    public void delDependsOnConcinnityModule(ConcinnityModule value){
+        ((GpbModuleDMO) core).delDependsOnConcinnityModule(value.getDMO());
+    }
+
+    /**
+     * @return A COPY of the collection of ConcinnityModule objects.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:1887)
+    public ArrayList<ConcinnityModule> getDependsOnConcinnityModuleCopy(){
+        DmcAttribute<?> attr = ((GpbModuleDMO) core).get(DmconcinnityDMSAG.__dependsOnConcinnityModule);
+        if (attr == null)
+            return(new ArrayList<ConcinnityModule>());
+        
+        ArrayList<ConcinnityModule> rc = new ArrayList<ConcinnityModule>(attr.getMVSize());
+        
+        ConcinnityModuleIterableDMW it = getDependsOnConcinnityModuleIterable();
+        while(it.hasNext()){
+            rc.add(it.next());
+        }
+        
+        return(rc);
+    }
+
+    /**
+     * Removes the dependsOnConcinnityModule attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2292)
+    public void remDependsOnConcinnityModule(){
+        ((GpbModuleDMO) core).remDependsOnConcinnityModule();
     }
 
     /**

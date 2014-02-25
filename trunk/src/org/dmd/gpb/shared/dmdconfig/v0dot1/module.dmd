@@ -6,6 +6,7 @@ moduleClassName				GpbModule
 moduleDependenceAttribute 	dependsOnGpbModule
 baseDefinition				GpbDefinition
 definedInModuleAttribute	definedInGpbModule
+refersToDefsFromDSD			ConcinnityModule
 supportDynamicSchemaLoading	true
 requiredBaseModule			gpbbase
 may							package

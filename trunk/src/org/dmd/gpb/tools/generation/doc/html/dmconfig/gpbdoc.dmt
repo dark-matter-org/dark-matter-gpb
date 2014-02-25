@@ -26,3 +26,14 @@ format		<div class="schemaName"> ::moduleName:: </div>
  ::moduleDescription::
  </div>
 
+Template
+name		MessageSummary
+format		<div class="summaryTitle"> <h2> Messages </h2> </div>
+
+Template
+name		EnumSummary
+format		<div class="summaryTitle"> <h2> Enumerations </h2> </div>
+
+Template
+name		SummaryItem
+format		<div class="summaryItem"> <a href="#::itemName::"> ::itemName:: </a> </div>

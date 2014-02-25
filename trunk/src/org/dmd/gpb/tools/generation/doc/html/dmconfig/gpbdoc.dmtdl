@@ -1,6 +1,6 @@
 TdlModule
 name 			gpbdoc
-package			org.dmd.gpb.tools.doc.html
+package			org.dmd.gpb.tools.generation.doc.html
 templateFile	gpbdoc
 commentFormat	<!-- ::comment:: -->
 description		These Sections and their associated Templates are used to format HTML
@@ -63,7 +63,20 @@ Section
 name			DivSummary
 startsWithText	<div class="summary">
 contains		one MessageSummary
+contains		one EnumSummary
 endsWithText	</div> <!-- summary -->
 
 Section
 name			MessageSummary
+contains		many	SummaryItem
+description		A list of the messages defined in the module.
+
+Section
+name			EnumSummary
+contains		many	SummaryItem
+description		A list of the enumerations defined in module.
+
+Section
+name			SummaryItem
+description		A reference to some item defined in the current module.
+value			itemName		"The name of the summary item"
