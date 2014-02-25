@@ -16,23 +16,27 @@
 package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
-import java.io.Serializable;                                             // Always required - (GenUtility.java:224)
-import java.util.*;                                                      // Always required if we have any MV attributes - (GenUtility.java:221)
-import org.dmd.dmc.DmcAttribute;                                         // Named object - (GenUtility.java:376)
-import org.dmd.dmc.DmcNamedObjectIF;                                     // Named object - (GenUtility.java:375)
-import org.dmd.dmc.DmcOmni;                                              // Lazy resolution - (GenUtility.java:320)
-import org.dmd.dmc.DmcSliceInfo;                                         // Required for object slicing - (GenUtility.java:229)
-import org.dmd.dmc.DmcValueException;                                    // Any attributes - (GenUtility.java:241)
-import org.dmd.dmc.types.DefinitionName;                                 // Naming attribute type - (GenUtility.java:370)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                              // Required for MODREC constructor - (GenUtility.java:228)
-import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;              // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                    // Required for MODREC constructor - (GenUtility.java:227)
-import org.dmd.dms.generated.types.DmcTypeStringMV;                      // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeStringSV;                      // Required type - (GenUtility.java:328)
-import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;                // Base class - (GenUtility.java:355)
-import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                    // Type specific set/add - (GenUtility.java:307)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbModuleREFMV;         // Reference type - (GenUtility.java:300)
-import org.dmd.gpb.shared.generated.types.GpbModuleREF;                  // Helper class - (GenUtility.java:335)
+import java.io.Serializable;                                                           // Always required - (GenUtility.java:224)
+import java.util.*;                                                                    // Always required if we have any MV attributes - (GenUtility.java:221)
+import org.dmd.concinnity.shared.generated.dmo.ConcinnityModuleDMO;                    // Type specific set/add - (GenUtility.java:307)
+import org.dmd.concinnity.shared.generated.dmo.DmconcinnityDMSAG;                      // Attribute from dmconcinnity schema - (GenUtility.java:135)
+import org.dmd.concinnity.shared.generated.types.ConcinnityModuleREF;                  // Helper class - (GenUtility.java:335)
+import org.dmd.concinnity.shared.generated.types.DmcTypeConcinnityModuleREFMV;         // Reference type - (GenUtility.java:300)
+import org.dmd.dmc.DmcAttribute;                                                       // Named object - (GenUtility.java:376)
+import org.dmd.dmc.DmcNamedObjectIF;                                                   // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcOmni;                                                            // Lazy resolution - (GenUtility.java:320)
+import org.dmd.dmc.DmcSliceInfo;                                                       // Required for object slicing - (GenUtility.java:229)
+import org.dmd.dmc.DmcValueException;                                                  // Any attributes - (GenUtility.java:241)
+import org.dmd.dmc.types.DefinitionName;                                               // Naming attribute type - (GenUtility.java:370)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                                            // Required for MODREC constructor - (GenUtility.java:228)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;                            // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                                  // Required for MODREC constructor - (GenUtility.java:227)
+import org.dmd.dms.generated.types.DmcTypeStringMV;                                    // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                                    // Required type - (GenUtility.java:328)
+import org.dmd.gpb.shared.generated.dmo.GpbDefinitionDMO;                              // Base class - (GenUtility.java:355)
+import org.dmd.gpb.shared.generated.dmo.GpbModuleDMO;                                  // Type specific set/add - (GenUtility.java:307)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbModuleREFMV;                       // Reference type - (GenUtility.java:300)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;                                // Helper class - (GenUtility.java:335)
 
 // Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
@@ -654,6 +658,113 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
     public void remDependsOnGpbModule(){
          rem(DmdgpbDMSAG.__dependsOnGpbModule);
+    }
+
+    /**
+     * @return An Iterator of ConcinnityModuleDMO objects.
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:970)
+    public Iterator<ConcinnityModuleREF> getDependsOnConcinnityModule(){
+        DmcTypeConcinnityModuleREFMV attr = (DmcTypeConcinnityModuleREFMV) get(DmconcinnityDMSAG.__dependsOnConcinnityModule);
+        if (attr == null)
+            return( ((List<ConcinnityModuleREF>) Collections.EMPTY_LIST).iterator() );
+
+        if (DmcOmni.instance().lazyResolution()){
+            if (attr.doLazyResolution(this)){
+                rem(attr.getAttributeInfo());
+                return( ((List<ConcinnityModuleREF>) Collections.EMPTY_LIST).iterator() );
+            }
+        }
+
+        return(attr.getMV());
+    }
+
+    /**
+     * @return An Iterator of ConcinnityModuleREFs without attempting lazy resolution (if it's turned on).
+     */
+    @SuppressWarnings("unchecked")
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:990)
+    public Iterator<ConcinnityModuleREF> getDependsOnConcinnityModuleREFs(){
+        DmcTypeConcinnityModuleREFMV attr = (DmcTypeConcinnityModuleREFMV) get(DmconcinnityDMSAG.__dependsOnConcinnityModule);
+        if (attr == null)
+            return( ((List<ConcinnityModuleREF>) Collections.EMPTY_LIST).iterator() );
+
+        return(attr.getMV());
+    }
+
+    /**
+     * Adds another dependsOnConcinnityModule to the specified value.
+     * @param value ConcinnityModule
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1004)
+    public DmcAttribute<?> addDependsOnConcinnityModule(ConcinnityModuleDMO value) {
+        DmcAttribute<?> attr = get(DmconcinnityDMSAG.__dependsOnConcinnityModule);
+        if (attr == null)
+            attr = new DmcTypeConcinnityModuleREFMV(DmconcinnityDMSAG.__dependsOnConcinnityModule);
+        
+        try{
+            setLastValue(attr.add(value));
+            add(DmconcinnityDMSAG.__dependsOnConcinnityModule,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
+        }
+        return(attr);
+    }
+
+    /**
+     * Adds another dependsOnConcinnityModule value.
+     * @param value A value compatible with ConcinnityModule
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
+    public DmcAttribute<?> addDependsOnConcinnityModule(Object value) throws DmcValueException {
+        DmcAttribute<?> attr = get(DmconcinnityDMSAG.__dependsOnConcinnityModule);
+        if (attr == null)
+            attr = new DmcTypeConcinnityModuleREFMV(DmconcinnityDMSAG.__dependsOnConcinnityModule);
+        
+        setLastValue(attr.add(value));
+        add(DmconcinnityDMSAG.__dependsOnConcinnityModule,attr);
+        return(attr);
+    }
+
+    /**
+     * Returns the number of values in dependsOnConcinnityModule
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
+    public int getDependsOnConcinnityModuleSize(){
+        DmcAttribute<?> attr = get(DmconcinnityDMSAG.__dependsOnConcinnityModule);
+        if (attr == null){
+            if (DmconcinnityDMSAG.__dependsOnConcinnityModule.indexSize == 0)
+                return(0);
+            else
+                return(DmconcinnityDMSAG.__dependsOnConcinnityModule.indexSize);
+        }
+        return(attr.getMVSize());
+    }
+
+    /**
+     * Deletes a dependsOnConcinnityModule value.
+     * @param value The ConcinnityModule to be deleted from set of attribute values.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1301)
+    public DmcAttribute<?> delDependsOnConcinnityModule(Object value){
+        DmcAttribute<?> attr = get(DmconcinnityDMSAG.__dependsOnConcinnityModule);
+        
+        if ( (attr == null) && (getModifier()!= null))
+            delFromEmptyAttribute(new DmcTypeConcinnityModuleREFMV(DmconcinnityDMSAG.__dependsOnConcinnityModule), value);
+        else
+            attr = del(DmconcinnityDMSAG.__dependsOnConcinnityModule, value);
+        
+        return(attr);
+    }
+
+    /**
+     * Removes the dependsOnConcinnityModule attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
+    public void remDependsOnConcinnityModule(){
+         rem(DmconcinnityDMSAG.__dependsOnConcinnityModule);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)

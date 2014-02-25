@@ -1,17 +1,17 @@
 package org.dmd.gpb.tools.protoparsing.generated.dmo;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpHeaderDMSAG(DmoCompactSchemaFormatter.java:1064)
-import java.util.ArrayList;                                  // For storage of schema info - (DmoCompactSchemaFormatter.java:998)
-import java.util.HashMap;                                    // For storage of schema info - (DmoCompactSchemaFormatter.java:997)
-import java.util.Iterator;                                   // For access of schema info - (DmoCompactSchemaFormatter.java:999)
-import org.dmd.dmc.*;                                        // Basic DMC stuff - (DmoCompactSchemaFormatter.java:1000)
-import org.dmd.dmc.rules.RuleIF;                             // For rule info - (DmoCompactSchemaFormatter.java:1001)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                  // Required attribute from MetaDMSAG - (DmoCompactSchemaFormatter.java:1017)
-import org.dmd.dms.generated.enums.ClassTypeEnum;            // Have class definitions - (DmoCompactSchemaFormatter.java:1005)
-import org.dmd.dms.generated.enums.DataTypeEnum;             // Have class/attribute definitions - (DmoCompactSchemaFormatter.java:1006)
-import org.dmd.dms.generated.enums.OriginalTypeEnum;         // Have type/internal type definitions - (DmoCompactSchemaFormatter.java:1011)
-import org.dmd.dms.generated.enums.ValueTypeEnum;            // Have attribute definitions - (DmoCompactSchemaFormatter.java:1032)
+// Called from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpHeaderDMSAG(DmoCompactSchemaFormatter.java:1079)
+import java.util.ArrayList;                                  // For storage of schema info - (DmoCompactSchemaFormatter.java:1013)
+import java.util.HashMap;                                    // For storage of schema info - (DmoCompactSchemaFormatter.java:1012)
+import java.util.Iterator;                                   // For access of schema info - (DmoCompactSchemaFormatter.java:1014)
+import org.dmd.dmc.*;                                        // Basic DMC stuff - (DmoCompactSchemaFormatter.java:1015)
+import org.dmd.dmc.rules.RuleIF;                             // For rule info - (DmoCompactSchemaFormatter.java:1016)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                  // Required attribute from MetaDMSAG - (DmoCompactSchemaFormatter.java:1032)
+import org.dmd.dms.generated.enums.ClassTypeEnum;            // Have class definitions - (DmoCompactSchemaFormatter.java:1020)
+import org.dmd.dms.generated.enums.DataTypeEnum;             // Have class/attribute definitions - (DmoCompactSchemaFormatter.java:1021)
+import org.dmd.dms.generated.enums.OriginalTypeEnum;         // Have type/internal type definitions - (DmoCompactSchemaFormatter.java:1026)
+import org.dmd.dms.generated.enums.ValueTypeEnum;            // Have attribute definitions - (DmoCompactSchemaFormatter.java:1047)
 
 
 
@@ -31,21 +31,21 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
 
     static int schemaMaxID = -478050;
 
-    public final static DmcAttributeInfo __elements = new DmcAttributeInfo("dmdproto", "elements", -478097, "ProtoElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __embeddedElements = new DmcAttributeInfo("dmdproto", "embeddedElements", -478070, "ProtoMainElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __fieldRule = new DmcAttributeInfo("dmdproto", "fieldRule", -478093, "ProtoFieldRuleEnum", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __fields = new DmcAttributeInfo("dmdproto", "fields", -478095, "ProtoField", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __generateAs = new DmcAttributeInfo("dmdproto", "generateAs", -478091, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __generatedFileName = new DmcAttributeInfo("dmdproto", "generatedFileName", -478089, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __gpbType = new DmcAttributeInfo("dmdproto", "gpbType", -478099, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __hint = new DmcAttributeInfo("dmdproto", "hint", -478090, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __import = new DmcAttributeInfo("dmdproto", "import", -478092, "String", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __mainElements = new DmcAttributeInfo("dmdproto", "mainElements", -478096, "ProtoMainElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __package = new DmcAttributeInfo("dmdproto", "package", -478098, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __parentMessage = new DmcAttributeInfo("dmdproto", "parentMessage", -478088, "ProtoMessage", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
-    public final static DmcAttributeInfo __tag = new DmcAttributeInfo("dmdproto", "tag", -478094, "Integer", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT);
+    public final static DmcAttributeInfo __elements = new DmcAttributeInfo("dmdproto", "elements", -478097, "ProtoElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __embeddedElements = new DmcAttributeInfo("dmdproto", "embeddedElements", -478070, "ProtoMainElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __fieldRule = new DmcAttributeInfo("dmdproto", "fieldRule", -478093, "ProtoFieldRuleEnum", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __fields = new DmcAttributeInfo("dmdproto", "fields", -478095, "ProtoField", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __generateAs = new DmcAttributeInfo("dmdproto", "generateAs", -478091, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __generatedFileName = new DmcAttributeInfo("dmdproto", "generatedFileName", -478089, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __gpbType = new DmcAttributeInfo("dmdproto", "gpbType", -478099, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __hint = new DmcAttributeInfo("dmdproto", "hint", -478090, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __import = new DmcAttributeInfo("dmdproto", "import", -478092, "String", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __mainElements = new DmcAttributeInfo("dmdproto", "mainElements", -478096, "ProtoMainElement", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __package = new DmcAttributeInfo("dmdproto", "package", -478098, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __parentMessage = new DmcAttributeInfo("dmdproto", "parentMessage", -478088, "ProtoMessage", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __tag = new DmcAttributeInfo("dmdproto", "tag", -478094, "Integer", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
 
-    // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:176)
+    // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:183)
     public final static DmcTypeInfo __type_ProtoDefinition = new DmcTypeInfo("ProtoDefinition", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_ProtoElement = new DmcTypeInfo("ProtoElement", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_ProtoEnum = new DmcTypeInfo("ProtoEnum", OriginalTypeEnum.REFERENCE);
@@ -55,7 +55,7 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
     public final static DmcTypeInfo __type_ProtoMainElement = new DmcTypeInfo("ProtoMainElement", OriginalTypeEnum.REFERENCE);
     public final static DmcTypeInfo __type_ProtoMessage = new DmcTypeInfo("ProtoMessage", OriginalTypeEnum.REFERENCE);
 
-    // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:217)
+    // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:224)
     public final static DmcClassInfo __ProtoDefinition = new DmcClassInfo("ProtoDefinition","org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoDefinitionDMO", -478099, ClassTypeEnum.ABSTRACT, DataTypeEnum.PERSISTENT,MetaDMSAG.__DSDefinition,MetaDMSAG.__name);
     public final static DmcClassInfo __ProtoElement = new DmcClassInfo("ProtoElement","org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoElementDMO", -478098, ClassTypeEnum.ABSTRACT, DataTypeEnum.PERSISTENT,__ProtoDefinition,MetaDMSAG.__name);
     public final static DmcClassInfo __ProtoField = new DmcClassInfo("ProtoField","org.dmd.gpb.tools.protoparsing.generated.dmo.ProtoFieldDMO", -478096, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__ProtoElement,MetaDMSAG.__name);
@@ -99,7 +99,7 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
 
     }
 
-    // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:300)
+    // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:307)
     static {
 
 
@@ -137,7 +137,7 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
 
     }
 
-    // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:344)
+    // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:351)
     static {
 
 

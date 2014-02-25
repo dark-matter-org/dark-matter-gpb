@@ -2,6 +2,7 @@ SchemaDefinition
 name       			dmdgpb
 schemaBaseID		-478000
 schemaIDRange		50
+dependsOn			dmconcinnity
 defFiles			types.dmd
 defFiles			complex.dmd
 defFiles    		attributes.dmd

@@ -37,6 +37,10 @@ optionalPart String     version			"The version at which the value was introduced
 optionalPart String     obsolete		"The version at which the value was made obsolete."
 optionalPart String     note			"A note about the value and its use in this message e.g. why it's obsolete." quoted=true
 optionalPart String     skip			"If a value isn't supported in one or more intermediate versions, you can indicate the skip version." multivalued=true
+optionalPart Concept	concept			"A reference to a concinnity concept. This might refer to conceptual definition of the thing represented by this value." weakref=true
+optionalPart Concept	baseValue		"If you want to coordinate disparate enum values that actually mean the same thing across systems, you
+ can refer to the base concept value via this part. Mapping software can then be generated to automatically perform the translation between values." weakref=true
+
 
 //ComplexTypeDefinition
 //name GpbFieldIndicatorWithVersion
