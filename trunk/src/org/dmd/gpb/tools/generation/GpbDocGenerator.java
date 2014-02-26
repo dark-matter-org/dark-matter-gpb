@@ -1,12 +1,18 @@
 package org.dmd.gpb.tools.generation;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
+import org.dmd.gpb.server.extended.GpbMessage;
 import org.dmd.gpb.server.extended.GpbModule;
 import org.dmd.gpb.server.generated.dsd.GpbModuleDefinitionManager;
 import org.dmd.gpb.server.generated.dsd.GpbModuleGenUtility;
+import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.GpbHtmlDoc;
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.GpbdocTemplateLoader;
+import org.dmd.templates.server.util.FormattedFile;
 import org.dmd.util.exceptions.ResultException;
 import org.dmd.util.parsing.ConfigLocation;
 import org.dmd.util.parsing.StringArrayList;
@@ -28,6 +34,7 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 	public GpbDocGenerator(){
 		commandLine.addOption("-genversion", 	genversion, "The version for  which we'll generated the .proto files");
 		commandLine.addOption("-outdir", 		outdir, 	"The base directory where we'll dump the docs");
+		commandLine.addOption("-extensions", 		extensions, 	"Classes that implement the GpbdocExtensionsHookIF interface");
 	}
 
 	@Override
@@ -72,10 +79,21 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 	}
 
 	@Override
-	public void generate(GpbModule module, ConfigLocation location,
-			GpbModuleDefinitionManager definitions) throws IOException {
-		// TODO Auto-generated method stub
+	public void generate(GpbModule module, ConfigLocation location, GpbModuleDefinitionManager definitions) throws IOException {
+		String outfn = module.getName() + ".html";
+		FormattedFile artifact = new FormattedFile(new FileWriter(outdir + File.separator + outfn));
 		
+		GpbHtmlDoc doc = new GpbHtmlDoc();
+		
+		// Set the module name and style sheet
+		doc.getHtmlContent().getHtmlHead().setModuleName(module.getName().getNameString()).setStyleSheet("gpbdoc.css");
+		
+		Iterator<GpbMessage> messages = module.getAllGpbMessage();
+		while(messages.hasNext()){
+			
+		}		
+		
+		artifact.close();
 	}
 
 	@Override

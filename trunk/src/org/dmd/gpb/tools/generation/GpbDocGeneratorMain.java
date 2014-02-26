@@ -1,5 +1,6 @@
 package org.dmd.gpb.tools.generation;
 
+
 public class GpbDocGeneratorMain {
 
 	/**
@@ -8,7 +9,11 @@ public class GpbDocGeneratorMain {
 	public static void main(String[] args) {
 		GpbDocGenerator generator = new GpbDocGenerator();
 		
-		
+		try {
+			generator.run(args);
+		} catch (Exception e) {
+			System.err.println(e.toString());
+		} 
 	}
 
 }
