@@ -11,7 +11,7 @@ import org.dmd.templates.server.util.SectionIF;                   // Standard in
 
 
 // Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:114)
-public class SummaryItem implements SectionIF {
+public class EnumerationHeader implements SectionIF {
 
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
@@ -19,53 +19,23 @@ public class SummaryItem implements SectionIF {
     TreeMap<String,String>    values    = new TreeMap<String,String>();   // Required to store our values
 
 
-    public SummaryItem(){
+    public EnumerationHeader(){
     }
 
     /**
-     * Constructs a new SummaryItem section.
-     * @param itemName_ The name of the summary item
-     * @param hint_ A short description of the item
-     * @param version_ The version when something was introduced
-     * @param obsolete_ The version when something became obsolete
+     * Constructs a new EnumerationHeader section.
+     * @param enumTitle_ The name of the enum.
      * Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:143)
      */
-    public SummaryItem(String itemName_, String hint_, String version_, String obsolete_){
-        if (itemName_ != null)
-            values.put("itemName", itemName_);
-
-        if (hint_ != null)
-            values.put("hint", hint_);
-
-        if (version_ != null)
-            values.put("version", version_);
-
-        if (obsolete_ != null)
-            values.put("obsolete", obsolete_);
+    public EnumerationHeader(String enumTitle_){
+        if (enumTitle_ != null)
+            values.put("enumTitle", enumTitle_);
 
     }
 
-    public SummaryItem setItemName(String itemName_){
-        if (itemName_ != null)
-            values.put("itemName", itemName_);
-        return(this);
-    }
-
-    public SummaryItem setHint(String hint_){
-        if (hint_ != null)
-            values.put("hint", hint_);
-        return(this);
-    }
-
-    public SummaryItem setVersion(String version_){
-        if (version_ != null)
-            values.put("version", version_);
-        return(this);
-    }
-
-    public SummaryItem setObsolete(String obsolete_){
-        if (obsolete_ != null)
-            values.put("obsolete", obsolete_);
+    public EnumerationHeader setEnumTitle(String enumTitle_){
+        if (enumTitle_ != null)
+            values.put("enumTitle", enumTitle_);
         return(this);
     }
 
@@ -79,7 +49,7 @@ public class SummaryItem implements SectionIF {
     // Generated from: org.dmd.templates.server.extended.Section.getFormatFunction(Section.java:269)
     public void format(FormattedArtifactIF artifact) throws IOException {
 
-        GpbdocTemplateLoader.SummaryItem.format(this,artifact, GpbdocTemplateLoader._Comment);
+        GpbdocTemplateLoader.EnumerationHeader.format(this,artifact, GpbdocTemplateLoader._Comment);
 
     }
 

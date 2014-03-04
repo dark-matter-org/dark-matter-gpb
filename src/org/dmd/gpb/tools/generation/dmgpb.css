@@ -1,0 +1,82 @@
+body {
+	/*font-family: arial, gil-sans, sans-serif;*/
+	font-family: 	'Open Sans', arial, gil-sans, sans-serif;
+	font-size: 		smaller;
+	line-height: 	140%;
+	width:			940px;
+}
+
+content {
+	width:			900px;
+}
+
+/*****************************************************************************/
+
+a:link {
+	color: #9E0B0F;
+    text-decoration:none;
+}
+
+a:visited {
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+	
+a:active {
+	text-decoration:underline;
+}
+
+/*****************************************************************************/
+
+.moduleName {
+	font-size: x-large;
+	/* font-weight: bold; */
+	color: #444444;
+	padding-bottom: 5px;
+}
+
+/*****************************************************************************/
+
+.summaryTitle {
+	font-size: larger;
+	/* font-weight: bold; */
+	color: #646464;
+	padding-bottom: 5px;
+	padding-top: 15px;
+	border-bottom-style: solid;
+	border-bottom-color: #646464;
+	border-bottom-width: 1px;
+}
+
+.hint {
+	padding-left: 15px;
+}
+
+.version {
+	padding-left: 15px;
+}
+
+.obsolete {
+	padding-left: 	15px;
+	color:			red;
+}
+
+.skip {
+	padding-left: 	15px;
+	color:			orange;
+}
+
+.enumTitle {
+	font-size: larger;
+	color: #646464;
+	padding-bottom: 5px;
+	padding-top: 15px;
+}
+
+.enumValue {
+	padding-left: 15px;
+}
+

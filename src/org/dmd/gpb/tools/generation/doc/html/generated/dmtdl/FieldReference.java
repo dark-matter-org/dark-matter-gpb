@@ -11,7 +11,7 @@ import org.dmd.templates.server.util.SectionIF;                   // Standard in
 
 
 // Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:114)
-public class SummaryItem implements SectionIF {
+public class FieldReference implements SectionIF {
 
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
@@ -19,51 +19,81 @@ public class SummaryItem implements SectionIF {
     TreeMap<String,String>    values    = new TreeMap<String,String>();   // Required to store our values
 
 
-    public SummaryItem(){
+    public FieldReference(){
     }
 
     /**
-     * Constructs a new SummaryItem section.
-     * @param itemName_ The name of the summary item
-     * @param hint_ A short description of the item
-     * @param version_ The version when something was introduced
-     * @param obsolete_ The version when something became obsolete
+     * Constructs a new FieldReference section.
+     * @param fieldRef_ The name of the field being referenced
+     * @param generateAs_ The name the will be used in the generated .proto file
+     * @param fieldTag_ The numeric tag for the field
+     * @param hint_ A short description of the value
+     * @param version_ The version when the enum value was introduced
+     * @param skip_ Any versions where this field is skipped
+     * @param obsolete_ The version when the enum value became obsolete
      * Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:143)
      */
-    public SummaryItem(String itemName_, String hint_, String version_, String obsolete_){
-        if (itemName_ != null)
-            values.put("itemName", itemName_);
+    public FieldReference(String fieldRef_, String generateAs_, String fieldTag_, String hint_, String version_, String skip_, String obsolete_){
+        if (fieldRef_ != null)
+            values.put("fieldRef", fieldRef_);
+
+        if (generateAs_ != null)
+            values.put("generateAs", generateAs_);
+
+        if (fieldTag_ != null)
+            values.put("fieldTag", fieldTag_);
 
         if (hint_ != null)
             values.put("hint", hint_);
 
         if (version_ != null)
             values.put("version", version_);
+
+        if (skip_ != null)
+            values.put("skip", skip_);
 
         if (obsolete_ != null)
             values.put("obsolete", obsolete_);
 
     }
 
-    public SummaryItem setItemName(String itemName_){
-        if (itemName_ != null)
-            values.put("itemName", itemName_);
+    public FieldReference setFieldRef(String fieldRef_){
+        if (fieldRef_ != null)
+            values.put("fieldRef", fieldRef_);
         return(this);
     }
 
-    public SummaryItem setHint(String hint_){
+    public FieldReference setGenerateAs(String generateAs_){
+        if (generateAs_ != null)
+            values.put("generateAs", generateAs_);
+        return(this);
+    }
+
+    public FieldReference setFieldTag(String fieldTag_){
+        if (fieldTag_ != null)
+            values.put("fieldTag", fieldTag_);
+        return(this);
+    }
+
+    public FieldReference setHint(String hint_){
         if (hint_ != null)
             values.put("hint", hint_);
         return(this);
     }
 
-    public SummaryItem setVersion(String version_){
+    public FieldReference setVersion(String version_){
         if (version_ != null)
             values.put("version", version_);
         return(this);
     }
 
-    public SummaryItem setObsolete(String obsolete_){
+    public FieldReference setSkip(String skip_){
+        if (skip_ != null)
+            values.put("skip", skip_);
+        return(this);
+    }
+
+    public FieldReference setObsolete(String obsolete_){
         if (obsolete_ != null)
             values.put("obsolete", obsolete_);
         return(this);
@@ -79,7 +109,7 @@ public class SummaryItem implements SectionIF {
     // Generated from: org.dmd.templates.server.extended.Section.getFormatFunction(Section.java:269)
     public void format(FormattedArtifactIF artifact) throws IOException {
 
-        GpbdocTemplateLoader.SummaryItem.format(this,artifact, GpbdocTemplateLoader._Comment);
+        GpbdocTemplateLoader.FieldReference.format(this,artifact, GpbdocTemplateLoader._Comment);
 
     }
 

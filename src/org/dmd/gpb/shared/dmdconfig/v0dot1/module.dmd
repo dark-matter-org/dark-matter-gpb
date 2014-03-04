@@ -10,4 +10,4 @@ refersToDefsFromDSD			ConcinnityModule
 supportDynamicSchemaLoading	true
 requiredBaseModule			gpbbase
 may							package
-
+may							version

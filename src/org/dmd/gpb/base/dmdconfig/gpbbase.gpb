@@ -12,21 +12,22 @@ name 			double
 javaType		double
 cplusplusType	double
 pythonType		float
-description		Represents double values.
+hint			Represents double values.
 
 GpbScalarType
 name 			float
 javaType		float
 cplusplusType	float
 pythonType		float
-description		Represents float values.
+hint			Represents float values.
 
 GpbScalarType
 name 			int32
 javaType		int
 cplusplusType	int32
 pythonType		float
-description		Uses variable-length encoding. Inefficient for encoding negative numbers
+hint			Represents integer values using variable length encoding.
+description		Inefficient for encoding negative numbers
  if your field is likely to have negative values, use sint32 instead.
 
 GpbScalarType
@@ -34,7 +35,8 @@ name 			int64
 javaType		long
 cplusplusType	int64
 pythonType		int/long
-description		Uses variable-length encoding. Inefficient for encoding negative numbers
+hint			Represents long integer values using variable length encoding.
+description		Inefficient for encoding negative numbers
  if your field is likely to have negative values, use sint64 instead.
 
 GpbScalarType
@@ -42,21 +44,22 @@ name 			uint32
 javaType		int
 cplusplusType	uint32
 pythonType		int/long
-description		Uses variable-length encoding.
+hint			Represents unsigned integers using variable-length encoding.
 
 GpbScalarType
 name 			uint64
 javaType		long
 cplusplusType	uint64
 pythonType		int/long
-description		Uses variable-length encoding.
+hint			Represents unsigned long integers using variable-length encoding.
 
 GpbScalarType
 name 			sint32
 javaType		int
 cplusplusType	int32
 pythonType		int
-description		Uses variable-length encoding. Signed int value. These more efficiently
+hint			Represents signed integers using variable-length encoding.
+description		Signed int value. These more efficiently
  encode negative numbers than regular int32s.
 
 GpbScalarType
@@ -64,6 +67,7 @@ name 			sint64
 javaType		long
 cplusplusType	int64
 pythonType		int/long
+hint			Represents signed long integers using variable-length encoding.
 description		Uses variable-length encoding. Signed int value. These more efficiently
  encode negative numbers than regular int64s.
 
@@ -72,6 +76,7 @@ name 			fixed32
 javaType		int
 cplusplusType	uint32
 pythonType		int
+hint			Represents fixed length  integers.
 description		Always four bytes. More efficient than uint32 if values are often greater than 2^28.
 
 GpbScalarType
@@ -79,6 +84,7 @@ name 			fixed64
 javaType		long
 cplusplusType	int64
 pythonType		int/long
+hint			Represents fixed length long integers.
 description		Always eight bytes. More efficient than uint64 if values are often greater than 2^56.
 
 GpbScalarType
@@ -86,33 +92,33 @@ name 			sfixed32
 javaType		int
 cplusplusType	int32
 pythonType		int
-description		Always four bytes.
+hint			Represents fixed lnegth, signed integers. Always four bytes.
 
 GpbScalarType
 name 			sfixed64
 javaType		long
 cplusplusType	int64
 pythonType		int/long
-description		Always eight bytes.
+hint			Represents fixed lnegth, signed long integers. Always eight bytes.
 
 GpbScalarType
 name 			bool
 javaType		long
 cplusplusType	int64
 pythonType		int/long
-description		Boolean values.
+hint			Represents boolean values.
 
 GpbScalarType
 name 			string
 javaType		String
 cplusplusType	string
 pythonType		str/unicode
-description		A string must always contain UTF-8 encoded or 7-bit ASCII text.
+hint			A string that always contains UTF-8 encoded or 7-bit ASCII text.
 
 GpbScalarType
 name 			bytes
 javaType		ByteString
 cplusplusType	string
 pythonType		str
-description		May contain any arbitrary sequence of bytes.
+hint			May contain any arbitrary sequence of bytes.
 

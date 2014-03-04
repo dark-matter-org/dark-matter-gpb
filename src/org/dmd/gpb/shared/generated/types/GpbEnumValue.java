@@ -95,9 +95,14 @@ public class GpbEnumValue implements Serializable {
     final static DmcAttributeInfo conceptAI = new DmcAttributeInfo("concept",0,"Concept",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, true);
 
     // If you want to coordinate disparate enum values that actually mean the same thing across systems, you can refer to the base concept value via this part. Mapping software can then be generated to automatically perform the translation between values.
-    ArrayList<ConceptREF> baseValueV;
+    ConceptREF baseValueV;
 
     final static DmcAttributeInfo baseValueAI = new DmcAttributeInfo("baseValue",0,"Concept",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, true);
+
+    // An indication of why the field was added. This might be a reference to a requirement or feature concept.
+    ArrayList<ConceptREF> whyV;
+
+    final static DmcAttributeInfo whyAI = new DmcAttributeInfo("why",0,"Concept",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, true);
 
     /**
      * Default constructor.
@@ -119,14 +124,15 @@ public class GpbEnumValue implements Serializable {
         noteV =  original.noteV;
         skipV = (ArrayList<String>) original.skipV.clone();
         conceptV =  original.conceptV;
-        baseValueV = (ArrayList<ConceptREF>) original.baseValueV.clone();
+        baseValueV =  original.baseValueV;
+        whyV = (ArrayList<ConceptREF>) original.whyV.clone();
     }
 
     /**
      * All fields constructor.
      * Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:161)
      */
-    public GpbEnumValue(String name_, Integer value_, String description_, String version_, String obsolete_, String note_, ArrayList<String> skip_, ConceptREF concept_, ArrayList<ConceptREF> baseValue_) throws DmcValueException {
+    public GpbEnumValue(String name_, Integer value_, String description_, String version_, String obsolete_, String note_, ArrayList<String> skip_, ConceptREF concept_, ConceptREF baseValue_, ArrayList<ConceptREF> why_) throws DmcValueException {
         nameV = DmcTypeStringSTATIC.instance.typeCheck(name_);
         valueV = DmcTypeIntegerSTATIC.instance.typeCheck(value_);
         descriptionV = DmcTypeStringSTATIC.instance.typeCheck(description_);
@@ -144,10 +150,12 @@ public class GpbEnumValue implements Serializable {
         }
         if (concept_ != null)
             conceptV = DmcTypeConceptREFSTATIC.instance.typeCheck(concept_);
-        if (baseValue_ != null){
-            baseValueV = new ArrayList<ConceptREF>();
-            for(ConceptREF v: baseValue_){
-                baseValueV.add(DmcTypeConceptREFSTATIC.instance.typeCheck(v));
+        if (baseValue_ != null)
+            baseValueV = DmcTypeConceptREFSTATIC.instance.typeCheck(baseValue_);
+        if (why_ != null){
+            whyV = new ArrayList<ConceptREF>();
+            for(ConceptREF v: why_){
+                whyV.add(DmcTypeConceptREFSTATIC.instance.typeCheck(v));
             }
         }
     }
@@ -194,10 +202,12 @@ public class GpbEnumValue implements Serializable {
                 }
                 else if (nvp.get(i).getName().equals("concept"))
                     conceptV = DmcTypeConceptREFSTATIC.instance.typeCheck(nvp.get(i).getValue());
-                else if (nvp.get(i).getName().equals("baseValue")){
-                    if (baseValueV == null)
-                        baseValueV = new ArrayList<ConceptREF>();
-                    baseValueV.add(DmcTypeConceptREFSTATIC.instance.typeCheck(nvp.get(i).getValue()));
+                else if (nvp.get(i).getName().equals("baseValue"))
+                    baseValueV = DmcTypeConceptREFSTATIC.instance.typeCheck(nvp.get(i).getValue());
+                else if (nvp.get(i).getName().equals("why")){
+                    if (whyV == null)
+                        whyV = new ArrayList<ConceptREF>();
+                    whyV.add(DmcTypeConceptREFSTATIC.instance.typeCheck(nvp.get(i).getValue()));
                 }
                 else{
                     throw(new DmcValueException("Unknown field for complex type GpbEnumValue: "  + nvp.get(i).getName()));
@@ -260,9 +270,14 @@ public class GpbEnumValue implements Serializable {
         }
 
         if (baseValueV != null){
-            for(ConceptREF v: baseValueV){
+            sb.append(' ');
+            sb.append("baseValue=" + baseValueV.toString());
+        }
+
+        if (whyV != null){
+            for(ConceptREF v: whyV){
                 sb.append(' ');
-                sb.append("baseValue=" + v.toString());
+                sb.append("why=" + v.toString());
             }
         }
 
@@ -303,10 +318,14 @@ public class GpbEnumValue implements Serializable {
         return(conceptV);
     }
 
-    public Iterator<ConceptREF> getBaseValue(){
-        if (baseValueV == null)
+    public ConceptREF getBaseValue(){
+        return(baseValueV);
+    }
+
+    public Iterator<ConceptREF> getWhy(){
+        if (whyV == null)
             return(null);
-        return(baseValueV.iterator());
+        return(whyV.iterator());
     }
 
     // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:449)
@@ -327,12 +346,25 @@ public class GpbEnumValue implements Serializable {
                 ((DmcNamedObjectREF)conceptV).setObject(obj);
         }
         
-        if (baseValueV != null){
-            for(ConceptREF v: baseValueV){
+        if ((baseValueV != null) && (!baseValueV.isResolved())){
+            obj = resolver.findNamedObject(baseValueV.getObjectName());
+            if (baseValueAI.weakReference)
+                return;
+            if (obj == null)
+                throw(new DmcValueException("Could not resolve reference to: " + baseValueV.getObjectName() + " via attribute: " + attrName));
+        
+            if (obj instanceof DmcContainerIF)
+                ((DmcNamedObjectREF)baseValueV).setObject((DmcNamedObjectIF) ((DmcContainerIF)obj).getDmcObject());
+            else
+                ((DmcNamedObjectREF)baseValueV).setObject(obj);
+        }
+        
+        if (whyV != null){
+            for(ConceptREF v: whyV){
                 if (v.isResolved())
                     continue;
                 obj = resolver.findNamedObject(v.getObjectName());
-                if (baseValueAI.weakReference)
+                if (whyAI.weakReference)
                     return;
                 if (obj == null)
                     throw(new DmcValueException("Could not resolve reference to: " + v.getObjectName() + " via attribute: " + attrName));
@@ -364,12 +396,25 @@ public class GpbEnumValue implements Serializable {
                 ((DmcNamedObjectREF)conceptV).setObject(obj);
         }
         
-        if (baseValueV != null){
-            for(ConceptREF v: baseValueV){
+        if ((baseValueV != null) && (!baseValueV.isResolved())){
+            obj = resolver.findNamedObjectMayClash(object, baseValueV.getObjectName(), ncr, baseValueAI);
+            if (baseValueAI.weakReference)
+                return;
+            if (obj == null)
+                throw(new DmcValueException("Could not resolve reference to: " + baseValueV.getObjectName() + " via attribute: " + ai.name));
+        
+            if (obj instanceof DmcContainerIF)
+                ((DmcNamedObjectREF)baseValueV).setObject((DmcNamedObjectIF) ((DmcContainerIF)obj).getDmcObject());
+            else
+                ((DmcNamedObjectREF)baseValueV).setObject(obj);
+        }
+        
+        if (whyV != null){
+            for(ConceptREF v: whyV){
                 if (v.isResolved())
                     continue;
-                obj = resolver.findNamedObjectMayClash(object, v.getObjectName(), ncr, baseValueAI);
-                if (baseValueAI.weakReference)
+                obj = resolver.findNamedObjectMayClash(object, v.getObjectName(), ncr, whyAI);
+                if (whyAI.weakReference)
                     return;
                 if (obj == null)
                     throw(new DmcValueException("Could not resolve reference to: " + v.getObjectName() + " via attribute: " + ai.name));
