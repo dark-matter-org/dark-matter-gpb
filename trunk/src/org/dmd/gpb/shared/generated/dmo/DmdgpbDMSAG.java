@@ -13,6 +13,8 @@ import org.dmd.dms.generated.enums.ClassTypeEnum;                         // Hav
 import org.dmd.dms.generated.enums.DataTypeEnum;                          // Have class/attribute definitions - (DmoCompactSchemaFormatter.java:1021)
 import org.dmd.dms.generated.enums.OriginalTypeEnum;                      // Have type/internal type definitions - (DmoCompactSchemaFormatter.java:1026)
 import org.dmd.dms.generated.enums.ValueTypeEnum;                         // Have attribute definitions - (DmoCompactSchemaFormatter.java:1047)
+import org.dmd.dmv.shared.extended.rulesdmo.ValueLengthRule;              // To instantiate rules of this type - (DmoCompactSchemaFormatter.java:1073)
+import org.dmd.dmv.shared.generated.dmo.ValueLengthRuleDataDMO;           // To instantiate ValueLengthRuleData rule data - (DmoCompactSchemaFormatter.java:1072)
 
 
 
@@ -49,6 +51,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcAttributeInfo __import = new DmcAttributeInfo("dmdgpb", "import", -477973, "String", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __javaType = new DmcAttributeInfo("dmdgpb", "javaType", -477989, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __mainElements = new DmcAttributeInfo("dmdgpb", "mainElements", -477977, "GpbCompositeType", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __obsolete = new DmcAttributeInfo("dmdgpb", "obsolete", -477968, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __package = new DmcAttributeInfo("dmdgpb", "package", -477979, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __pythonType = new DmcAttributeInfo("dmdgpb", "pythonType", -477990, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __sizeInBytes = new DmcAttributeInfo("dmdgpb", "sizeInBytes", -477995, "Integer", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
@@ -82,6 +85,9 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcClassInfo __GpbEnum = new DmcClassInfo("GpbEnum","org.dmd.gpb.shared.generated.dmo.GpbEnumDMO", -477994, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbCompositeType,MetaDMSAG.__name);
     public final static DmcClassInfo __GpbMessage = new DmcClassInfo("GpbMessage","org.dmd.gpb.shared.generated.dmo.GpbMessageDMO", -477992, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbCompositeType,MetaDMSAG.__name);
     public final static DmcClassInfo __GpbScalarType = new DmcClassInfo("GpbScalarType","org.dmd.gpb.shared.generated.dmo.GpbScalarTypeDMO", -477996, ClassTypeEnum.STRUCTURAL, DataTypeEnum.PERSISTENT,__GpbType,MetaDMSAG.__name);
+
+    // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:253)
+    public final static ValueLengthRule __dmgpbHintLength;
 
     static  HashMap<Integer, DmcClassInfo> _CmAp;
 
@@ -141,6 +147,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         __GpbCompositeType.addMay(__generateAs);
         __GpbCompositeType.addMay(__version);
         __GpbCompositeType.addMay(__skip);
+        __GpbCompositeType.addMay(__obsolete);
 
         __GpbEnum.addMust(MetaDMSAG.__name);
         __GpbEnum.addMust(__gpbEnumValue);
@@ -166,6 +173,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         __GpbModule.addMay(MetaDMSAG.__description);
         __GpbModule.addMay(MetaDMSAG.__defFiles);
         __GpbModule.addMay(__package);
+        __GpbModule.addMay(__version);
         __GpbModule.addMay(__dependsOnGpbModule);
         __GpbModule.addMay(DmconcinnityDMSAG.__dependsOnConcinnityModule);
 
@@ -174,6 +182,25 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:351)
     static {
 
+
+        // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:370)
+        try{
+            ValueLengthRuleDataDMO _dmgpbHintLengthData = new ValueLengthRuleDataDMO();
+            _dmgpbHintLengthData         .setRuleName("dmgpbHintLength");
+            _dmgpbHintLengthData         .setRuleTitle("The hint for somehting should be at most 80 characters.");
+            _dmgpbHintLengthData         .setApplyToAttribute("hint");
+            _dmgpbHintLengthData         .setMaxLength("80");
+            _dmgpbHintLengthData         .setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
+            _dmgpbHintLengthData         .setDefinedIn("dmdgpb");
+            _dmgpbHintLengthData         .setLineNumber("25");
+
+            __dmgpbHintLength = new ValueLengthRule(_dmgpbHintLengthData);
+
+            _RmAp.add(__dmgpbHintLength);
+
+        } catch(DmcValueException ex){
+            throw(new IllegalStateException(ex));
+        }
 
     }
 

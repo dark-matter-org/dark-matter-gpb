@@ -11,7 +11,7 @@ import org.dmd.templates.server.util.SectionIF;                   // Standard in
 
 
 // Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:114)
-public class SummaryItem implements SectionIF {
+public class ModuleHeader implements SectionIF {
 
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
@@ -19,53 +19,43 @@ public class SummaryItem implements SectionIF {
     TreeMap<String,String>    values    = new TreeMap<String,String>();   // Required to store our values
 
 
-    public SummaryItem(){
+    public ModuleHeader(){
     }
 
     /**
-     * Constructs a new SummaryItem section.
-     * @param itemName_ The name of the summary item
-     * @param hint_ A short description of the item
-     * @param version_ The version when something was introduced
-     * @param obsolete_ The version when something became obsolete
+     * Constructs a new ModuleHeader section.
+     * @param moduleName_ Just the name of the module
+     * @param moduleDescription_ The description of the module
+     * @param version_ The version at which the module was introduced
      * Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:143)
      */
-    public SummaryItem(String itemName_, String hint_, String version_, String obsolete_){
-        if (itemName_ != null)
-            values.put("itemName", itemName_);
+    public ModuleHeader(String moduleName_, String moduleDescription_, String version_){
+        if (moduleName_ != null)
+            values.put("moduleName", moduleName_);
 
-        if (hint_ != null)
-            values.put("hint", hint_);
+        if (moduleDescription_ != null)
+            values.put("moduleDescription", moduleDescription_);
 
         if (version_ != null)
             values.put("version", version_);
 
-        if (obsolete_ != null)
-            values.put("obsolete", obsolete_);
-
     }
 
-    public SummaryItem setItemName(String itemName_){
-        if (itemName_ != null)
-            values.put("itemName", itemName_);
+    public ModuleHeader setModuleName(String moduleName_){
+        if (moduleName_ != null)
+            values.put("moduleName", moduleName_);
         return(this);
     }
 
-    public SummaryItem setHint(String hint_){
-        if (hint_ != null)
-            values.put("hint", hint_);
+    public ModuleHeader setModuleDescription(String moduleDescription_){
+        if (moduleDescription_ != null)
+            values.put("moduleDescription", moduleDescription_);
         return(this);
     }
 
-    public SummaryItem setVersion(String version_){
+    public ModuleHeader setVersion(String version_){
         if (version_ != null)
             values.put("version", version_);
-        return(this);
-    }
-
-    public SummaryItem setObsolete(String obsolete_){
-        if (obsolete_ != null)
-            values.put("obsolete", obsolete_);
         return(this);
     }
 
@@ -79,7 +69,7 @@ public class SummaryItem implements SectionIF {
     // Generated from: org.dmd.templates.server.extended.Section.getFormatFunction(Section.java:269)
     public void format(FormattedArtifactIF artifact) throws IOException {
 
-        GpbdocTemplateLoader.SummaryItem.format(this,artifact, GpbdocTemplateLoader._Comment);
+        GpbdocTemplateLoader.ModuleHeader.format(this,artifact, GpbdocTemplateLoader._Comment);
 
     }
 

@@ -17,6 +17,12 @@ type			String
 description		A short description of something that can be dumped as one line comment in a .proto spec.
  For longer explanations, use the description attribute.
 
+ValueLengthRuleData
+ruleName         dmgpbHintLength
+ruleTitle        The hint for somehting should be at most 80 characters.
+applyToAttribute hint
+maxLength        80
+
 AttributeDefinition
 name			defaultValue
 dmdID			4
@@ -164,7 +170,7 @@ AttributeDefinition
 name			version
 dmdID			30
 type			String
-description 	The version at which a message or enumeration was introduced.
+description 	The version at which a module, message or enumeration was introduced.
 
 AttributeDefinition
 name			skip
@@ -173,9 +179,10 @@ type			String
 valueType		MULTI
 description 	A version from which a message or enumeration should be excluded when .proto generation takes place.
 
-//AttributeDefinition
-//name			basedOnMainElement
-//dmdID			29
-//type			GpbMainElement
-//description		The original GpbMainElement (a message or enum) on which a GpbType is based.
+AttributeDefinition
+name			obsolete
+dmdID			32
+type			String
+description 	The version at which a message or enumeration became obsolete.
+
 

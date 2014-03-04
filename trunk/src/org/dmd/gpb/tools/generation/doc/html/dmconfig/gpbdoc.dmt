@@ -12,6 +12,7 @@ name 		HtmlHead
 format	<head>
  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
  <link rel="stylesheet" type="text/css" href="::styleSheet::" />
+ <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,800' rel='stylesheet' type='text/css'>
  <title>The ::moduleName:: GPB Module</title>
  </head>
 
@@ -20,20 +21,82 @@ name		DivHeader
 format		<div id="header"> <div class="headerBar"> </div> </div>
 
 Template
-name		ModuleTitle
-format		<div class="schemaName"> ::moduleName:: </div>
- <div>
+name		ModuleHeader
+format		<div class="moduleName"> The ::moduleName:: GPB Module</div>
+ <div class="version">
+ ::version::
+ </div>
+ <div class="description">
  ::moduleDescription::
  </div>
 
-Template
-name		MessageSummary
-format		<div class="summaryTitle"> <h2> Messages </h2> </div>
+///////////////////////////////////////////////////////////////////////////////
+// Summary Formatting
 
 Template
-name		EnumSummary
-format		<div class="summaryTitle"> <h2> Enumerations </h2> </div>
+name		SummaryHeader
+format		<div class="summaryTitle"> ::summaryTitle:: </div>
+ <div class="summarySection">
+ <table>
 
 Template
 name		SummaryItem
-format		<div class="summaryItem"> <a href="#::itemName::"> ::itemName:: </a> </div>
+format		<tr>
+ <td> <a href="#::itemName::"> ::itemName:: </a> </td>
+ <td class="hint"> ::hint:: </td>
+ <td class="version"> ::version:: </td>
+ <td class="obsolete"> ::obsolete:: </td>
+ </tr>
+
+Template
+name		SummaryFooter
+format		</table>
+ </div> <!-- summarySection -->
+
+///////////////////////////////////////////////////////////////////////////////
+
+Template
+name		EnumerationHeader
+format		<div class="enumTitle"> <a name="::enumTitle::"> The ::enumTitle:: enum </a> </div>
+ <div class="enumerationSection">
+ <table>
+
+Template
+name		EnumerationValue
+format		<tr>
+ <td class="enumValueName">  ::valueName:: </td>
+ <td class="enumValue">  ::value:: </td>
+ <td class="hint"> ::hint:: </td>
+ <td class="version"> ::version:: </td>
+ <td class="obsolete"> ::obsolete:: </td>
+ </tr>
+
+Template
+name		EnumerationFooter
+format		</table>
+ </div> <!-- enumerationSection -->
+
+///////////////////////////////////////////////////////////////////////////////
+
+Template
+name		MessageHeader
+format		<div class="messsageTitle"> <a name="::messageTitle::"> The ::messageTitle:: message </a> </div>
+ <div class="messageSection">
+ <table>
+
+Template
+name		FieldReference
+format		<tr>
+ <td class="fieldRef">  ::fieldRef:: </td>
+ <td class="generateAs">  ::generateAs:: </td>
+ <td class="fieldTag">  ::fieldTag:: </td>
+ <td class="hint"> ::hint:: </td>
+ <td class="version"> ::version:: </td>
+ <td class="skip"> ::skip:: </td>
+ <td class="obsolete"> ::obsolete:: </td>
+ </tr>
+
+Template
+name		MessageFooter
+format		</table>
+ </div> <!-- messageSection -->

@@ -59,6 +59,7 @@ must			name
 may				generateAs
 may				version
 may				skip
+may				obsolete
 description		The GpbCompositeType provides a common base for enumerations and messages
  so that they can be referred to as a separate type of object that can be specified in
  standalone blocks within a generated GpbProtoFile.
@@ -99,12 +100,11 @@ derivedFrom     GpbDefinition
 isNamedBy       name
 must			name
 must			gpbType
+may				hint
 may             description
 may				generateAs
 description		The GpbField class is used to represent a reusable, named field for use
- within a GpbMessage. If the field has been parsed from an existing .proto file, it will
- have the fieldRule and tag attributes. However, when specified as part of a .gpb file,
- the fieldRule and tag won't be specified.
+ within a GpbMessage.
 
 ClassDefinition
 name         	GpbMessage

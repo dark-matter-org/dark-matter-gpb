@@ -28,7 +28,7 @@ public class GpbDocGeneratorTest {
 		String[] args = { "-workspace", workingDir,
 							"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base", "src/org/dmd/gpb/tools/generation/doc",
 							"-outdir", workingDir + "/test/org/dmd/gpb/tools/generation/doc-out",
-							"-target", "ewmnbi_stats"
+//							"-target", "ewmnbi_stats"
 				};
 		
 		System.out.println("\n\nSingle config...\n");

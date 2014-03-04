@@ -17,33 +17,35 @@ package org.dmd.gpb.shared.generated.types;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:123)
-import java.io.Serializable;                                                  // To prevent serialization warnings - (NewComplexTypeFormatter.java:92)
-import java.util.ArrayList;                                                   // To store ParsedNameValuePairs - (NewComplexTypeFormatter.java:99)
-import java.util.Iterator;                                                    // To support multi-valued optional parts - (NewComplexTypeFormatter.java:103)
-import org.dmd.dmc.DmcAttributeInfo;                                          // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:97)
-import org.dmd.dmc.DmcContainerIF;                                            // To support object references - (NewComplexTypeFormatter.java:109)
-import org.dmd.dmc.DmcInputStreamIF;                                          // Standard serialization techniques - (NewComplexTypeFormatter.java:93)
-import org.dmd.dmc.DmcNameClashResolverIF;                                    // To support possible clashing object references - (NewComplexTypeFormatter.java:113)
-import org.dmd.dmc.DmcNameResolverIF;                                         // To support object references - (NewComplexTypeFormatter.java:106)
-import org.dmd.dmc.DmcNameResolverWithClashSupportIF;                         // To support possible clashing object references - (NewComplexTypeFormatter.java:111)
-import org.dmd.dmc.DmcNamedObjectIF;                                          // To support object references - (NewComplexTypeFormatter.java:107)
-import org.dmd.dmc.DmcNamedObjectREF;                                         // To support object references - (NewComplexTypeFormatter.java:108)
-import org.dmd.dmc.DmcObject;                                                 // To support possible clashing object references - (NewComplexTypeFormatter.java:114)
-import org.dmd.dmc.DmcOutputStreamIF;                                         // Standard serialization techniques - (NewComplexTypeFormatter.java:94)
-import org.dmd.dmc.DmcValueException;                                         // Standard value exception - (NewComplexTypeFormatter.java:118)
-import org.dmd.dmc.DmcValueExceptionSet;                                      // To support possible clashing object references - (NewComplexTypeFormatter.java:115)
-import org.dmd.dmc.util.ComplexTypeSplitter;                                  // For parsing initial input - (NewComplexTypeFormatter.java:98)
-import org.dmd.dmc.util.ParsedNameValuePair;                                  // To store values parsed from initial input - (NewComplexTypeFormatter.java:100)
-import org.dmd.dms.generated.enums.DataTypeEnum;                              // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:95)
-import org.dmd.dms.generated.enums.ValueTypeEnum;                             // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:96)
-import org.dmd.dms.generated.types.DmcTypeIntegerSTATIC;                      // Standard type - (NewComplexTypeFormatter.java:835)
-import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                       // Standard type - (NewComplexTypeFormatter.java:835)
-import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;                      // Primitive type - (NewComplexTypeFormatter.java:818)
-import org.dmd.gpb.shared.generated.enums.OptionEnum;                         // Primitive type - (NewComplexTypeFormatter.java:818)
-import org.dmd.gpb.shared.generated.types.DmcTypeFieldRuleEnumSTATIC;         // Internally generated type - (NewComplexTypeFormatter.java:835)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldREFSTATIC;           // Internally generated type - (NewComplexTypeFormatter.java:835)
-import org.dmd.gpb.shared.generated.types.DmcTypeOptionEnumSTATIC;            // Internally generated type - (NewComplexTypeFormatter.java:835)
-import org.dmd.gpb.shared.generated.types.GpbFieldREF;                        // Object reference - (NewComplexTypeFormatter.java:810)
+import java.io.Serializable;                                                      // To prevent serialization warnings - (NewComplexTypeFormatter.java:92)
+import java.util.ArrayList;                                                       // To store ParsedNameValuePairs - (NewComplexTypeFormatter.java:99)
+import java.util.Iterator;                                                        // To support multi-valued optional parts - (NewComplexTypeFormatter.java:103)
+import org.dmd.concinnity.shared.generated.types.ConceptREF;                      // Object reference - (NewComplexTypeFormatter.java:810)
+import org.dmd.concinnity.shared.generated.types.DmcTypeConceptREFSTATIC;         // Internally generated type - (NewComplexTypeFormatter.java:835)
+import org.dmd.dmc.DmcAttributeInfo;                                              // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:97)
+import org.dmd.dmc.DmcContainerIF;                                                // To support object references - (NewComplexTypeFormatter.java:109)
+import org.dmd.dmc.DmcInputStreamIF;                                              // Standard serialization techniques - (NewComplexTypeFormatter.java:93)
+import org.dmd.dmc.DmcNameClashResolverIF;                                        // To support possible clashing object references - (NewComplexTypeFormatter.java:113)
+import org.dmd.dmc.DmcNameResolverIF;                                             // To support object references - (NewComplexTypeFormatter.java:106)
+import org.dmd.dmc.DmcNameResolverWithClashSupportIF;                             // To support possible clashing object references - (NewComplexTypeFormatter.java:111)
+import org.dmd.dmc.DmcNamedObjectIF;                                              // To support object references - (NewComplexTypeFormatter.java:107)
+import org.dmd.dmc.DmcNamedObjectREF;                                             // To support object references - (NewComplexTypeFormatter.java:108)
+import org.dmd.dmc.DmcObject;                                                     // To support possible clashing object references - (NewComplexTypeFormatter.java:114)
+import org.dmd.dmc.DmcOutputStreamIF;                                             // Standard serialization techniques - (NewComplexTypeFormatter.java:94)
+import org.dmd.dmc.DmcValueException;                                             // Standard value exception - (NewComplexTypeFormatter.java:118)
+import org.dmd.dmc.DmcValueExceptionSet;                                          // To support possible clashing object references - (NewComplexTypeFormatter.java:115)
+import org.dmd.dmc.util.ComplexTypeSplitter;                                      // For parsing initial input - (NewComplexTypeFormatter.java:98)
+import org.dmd.dmc.util.ParsedNameValuePair;                                      // To store values parsed from initial input - (NewComplexTypeFormatter.java:100)
+import org.dmd.dms.generated.enums.DataTypeEnum;                                  // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:95)
+import org.dmd.dms.generated.enums.ValueTypeEnum;                                 // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:96)
+import org.dmd.dms.generated.types.DmcTypeIntegerSTATIC;                          // Standard type - (NewComplexTypeFormatter.java:835)
+import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                           // Standard type - (NewComplexTypeFormatter.java:835)
+import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;                          // Primitive type - (NewComplexTypeFormatter.java:818)
+import org.dmd.gpb.shared.generated.enums.OptionEnum;                             // Primitive type - (NewComplexTypeFormatter.java:818)
+import org.dmd.gpb.shared.generated.types.DmcTypeFieldRuleEnumSTATIC;             // Internally generated type - (NewComplexTypeFormatter.java:835)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldREFSTATIC;               // Internally generated type - (NewComplexTypeFormatter.java:835)
+import org.dmd.gpb.shared.generated.types.DmcTypeOptionEnumSTATIC;                // Internally generated type - (NewComplexTypeFormatter.java:835)
+import org.dmd.gpb.shared.generated.types.GpbFieldREF;                            // Object reference - (NewComplexTypeFormatter.java:810)
 
 
 
@@ -103,6 +105,11 @@ public class GpbFieldIndicatorBase implements Serializable {
 
     final static DmcAttributeInfo skipAI = new DmcAttributeInfo("skip",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
 
+    // An indication of why the field was added. This might be a reference to a requirement or feature concept.
+    ArrayList<ConceptREF> whyV;
+
+    final static DmcAttributeInfo whyAI = new DmcAttributeInfo("why",0,"Concept",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, true);
+
     /**
      * Default constructor.
      */
@@ -124,13 +131,14 @@ public class GpbFieldIndicatorBase implements Serializable {
         obsoleteV =  original.obsoleteV;
         noteV =  original.noteV;
         skipV = (ArrayList<String>) original.skipV.clone();
+        whyV = (ArrayList<ConceptREF>) original.whyV.clone();
     }
 
     /**
      * All fields constructor.
      * Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:161)
      */
-    public GpbFieldIndicatorBase(FieldRuleEnum fieldRule_, GpbFieldREF fieldRef_, Integer fieldTag_, OptionEnum option_, String default_, String version_, String obsolete_, String note_, ArrayList<String> skip_) throws DmcValueException {
+    public GpbFieldIndicatorBase(FieldRuleEnum fieldRule_, GpbFieldREF fieldRef_, Integer fieldTag_, OptionEnum option_, String default_, String version_, String obsolete_, String note_, ArrayList<String> skip_, ArrayList<ConceptREF> why_) throws DmcValueException {
         fieldRuleV = DmcTypeFieldRuleEnumSTATIC.instance.typeCheck(fieldRule_);
         fieldRefV = DmcTypeGpbFieldREFSTATIC.instance.typeCheck(fieldRef_);
         fieldTagV = DmcTypeIntegerSTATIC.instance.typeCheck(fieldTag_);
@@ -148,6 +156,12 @@ public class GpbFieldIndicatorBase implements Serializable {
             skipV = new ArrayList<String>();
             for(String v: skip_){
                 skipV.add(DmcTypeStringSTATIC.instance.typeCheck(v));
+            }
+        }
+        if (why_ != null){
+            whyV = new ArrayList<ConceptREF>();
+            for(ConceptREF v: why_){
+                whyV.add(DmcTypeConceptREFSTATIC.instance.typeCheck(v));
             }
         }
     }
@@ -195,6 +209,11 @@ public class GpbFieldIndicatorBase implements Serializable {
                     if (skipV == null)
                         skipV = new ArrayList<String>();
                     skipV.add(DmcTypeStringSTATIC.instance.typeCheck(nvp.get(i).getValue()));
+                }
+                else if (nvp.get(i).getName().equals("why")){
+                    if (whyV == null)
+                        whyV = new ArrayList<ConceptREF>();
+                    whyV.add(DmcTypeConceptREFSTATIC.instance.typeCheck(nvp.get(i).getValue()));
                 }
                 else{
                     throw(new DmcValueException("Unknown field for complex type GpbFieldIndicatorBase: "  + nvp.get(i).getName()));
@@ -261,6 +280,13 @@ public class GpbFieldIndicatorBase implements Serializable {
             }
         }
 
+        if (whyV != null){
+            for(ConceptREF v: whyV){
+                sb.append(' ');
+                sb.append("why=" + v.toString());
+            }
+        }
+
         return(sb.toString());
     }
 
@@ -302,6 +328,12 @@ public class GpbFieldIndicatorBase implements Serializable {
         return(skipV.iterator());
     }
 
+    public Iterator<ConceptREF> getWhy(){
+        if (whyV == null)
+            return(null);
+        return(whyV.iterator());
+    }
+
     // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:449)
     @SuppressWarnings({"unchecked", "rawtypes"})
     public void resolve(DmcNameResolverIF resolver, String attrName) throws DmcValueException {
@@ -318,6 +350,23 @@ public class GpbFieldIndicatorBase implements Serializable {
                 ((DmcNamedObjectREF)fieldRefV).setObject((DmcNamedObjectIF) ((DmcContainerIF)obj).getDmcObject());
             else
                 ((DmcNamedObjectREF)fieldRefV).setObject(obj);
+        }
+        
+        if (whyV != null){
+            for(ConceptREF v: whyV){
+                if (v.isResolved())
+                    continue;
+                obj = resolver.findNamedObject(v.getObjectName());
+                if (whyAI.weakReference)
+                    return;
+                if (obj == null)
+                    throw(new DmcValueException("Could not resolve reference to: " + v.getObjectName() + " via attribute: " + attrName));
+        
+                if (obj instanceof DmcContainerIF)
+                    ((DmcNamedObjectREF)v).setObject((DmcNamedObjectIF) ((DmcContainerIF)obj).getDmcObject());
+                else
+                    ((DmcNamedObjectREF)v).setObject(obj);
+            }
         }
         
     }
@@ -338,6 +387,23 @@ public class GpbFieldIndicatorBase implements Serializable {
                 ((DmcNamedObjectREF)fieldRefV).setObject((DmcNamedObjectIF) ((DmcContainerIF)obj).getDmcObject());
             else
                 ((DmcNamedObjectREF)fieldRefV).setObject(obj);
+        }
+        
+        if (whyV != null){
+            for(ConceptREF v: whyV){
+                if (v.isResolved())
+                    continue;
+                obj = resolver.findNamedObjectMayClash(object, v.getObjectName(), ncr, whyAI);
+                if (whyAI.weakReference)
+                    return;
+                if (obj == null)
+                    throw(new DmcValueException("Could not resolve reference to: " + v.getObjectName() + " via attribute: " + ai.name));
+        
+                if (obj instanceof DmcContainerIF)
+                    ((DmcNamedObjectREF)v).setObject((DmcNamedObjectIF) ((DmcContainerIF)obj).getDmcObject());
+                else
+                    ((DmcNamedObjectREF)v).setObject(obj);
+            }
         }
         
     }

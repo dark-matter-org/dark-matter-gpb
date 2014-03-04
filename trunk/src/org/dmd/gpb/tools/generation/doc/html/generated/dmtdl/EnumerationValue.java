@@ -11,7 +11,7 @@ import org.dmd.templates.server.util.SectionIF;                   // Standard in
 
 
 // Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:114)
-public class SummaryItem implements SectionIF {
+public class EnumerationValue implements SectionIF {
 
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
@@ -19,20 +19,24 @@ public class SummaryItem implements SectionIF {
     TreeMap<String,String>    values    = new TreeMap<String,String>();   // Required to store our values
 
 
-    public SummaryItem(){
+    public EnumerationValue(){
     }
 
     /**
-     * Constructs a new SummaryItem section.
-     * @param itemName_ The name of the summary item
-     * @param hint_ A short description of the item
-     * @param version_ The version when something was introduced
-     * @param obsolete_ The version when something became obsolete
+     * Constructs a new EnumerationValue section.
+     * @param valueName_ The name of the enumeration value
+     * @param value_ The numeric enumeration value
+     * @param hint_ A short description of the value
+     * @param version_ The version when the enum value was introduced
+     * @param obsolete_ The version when the enum value became obsolete
      * Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:143)
      */
-    public SummaryItem(String itemName_, String hint_, String version_, String obsolete_){
-        if (itemName_ != null)
-            values.put("itemName", itemName_);
+    public EnumerationValue(String valueName_, String value_, String hint_, String version_, String obsolete_){
+        if (valueName_ != null)
+            values.put("valueName", valueName_);
+
+        if (value_ != null)
+            values.put("value", value_);
 
         if (hint_ != null)
             values.put("hint", hint_);
@@ -45,25 +49,31 @@ public class SummaryItem implements SectionIF {
 
     }
 
-    public SummaryItem setItemName(String itemName_){
-        if (itemName_ != null)
-            values.put("itemName", itemName_);
+    public EnumerationValue setValueName(String valueName_){
+        if (valueName_ != null)
+            values.put("valueName", valueName_);
         return(this);
     }
 
-    public SummaryItem setHint(String hint_){
+    public EnumerationValue setValue(String value_){
+        if (value_ != null)
+            values.put("value", value_);
+        return(this);
+    }
+
+    public EnumerationValue setHint(String hint_){
         if (hint_ != null)
             values.put("hint", hint_);
         return(this);
     }
 
-    public SummaryItem setVersion(String version_){
+    public EnumerationValue setVersion(String version_){
         if (version_ != null)
             values.put("version", version_);
         return(this);
     }
 
-    public SummaryItem setObsolete(String obsolete_){
+    public EnumerationValue setObsolete(String obsolete_){
         if (obsolete_ != null)
             values.put("obsolete", obsolete_);
         return(this);
@@ -79,7 +89,7 @@ public class SummaryItem implements SectionIF {
     // Generated from: org.dmd.templates.server.extended.Section.getFormatFunction(Section.java:269)
     public void format(FormattedArtifactIF artifact) throws IOException {
 
-        GpbdocTemplateLoader.SummaryItem.format(this,artifact, GpbdocTemplateLoader._Comment);
+        GpbdocTemplateLoader.EnumerationValue.format(this,artifact, GpbdocTemplateLoader._Comment);
 
     }
 

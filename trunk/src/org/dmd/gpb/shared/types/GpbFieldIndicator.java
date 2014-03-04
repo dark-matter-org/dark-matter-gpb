@@ -3,6 +3,7 @@ package org.dmd.gpb.shared.types;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import org.dmd.concinnity.shared.generated.types.ConceptREF;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;
 import org.dmd.gpb.shared.generated.enums.OptionEnum;
@@ -20,8 +21,8 @@ public class GpbFieldIndicator extends GpbFieldIndicatorBase implements Serializ
 		super(original);
 	}
 	
-    public GpbFieldIndicator(FieldRuleEnum fieldRule_, GpbFieldREF fieldRef_, Integer fieldTag_, OptionEnum option_, String default_, String version_, String obsolete_, String note_, ArrayList<String> skipV_) throws DmcValueException {
-    	super(fieldRule_, fieldRef_, fieldTag_, option_, default_, version_, obsolete_, note_, skipV_);	
+    public GpbFieldIndicator(FieldRuleEnum fieldRule_, GpbFieldREF fieldRef_, Integer fieldTag_, OptionEnum option_, String default_, String version_, String obsolete_, String note_, ArrayList<String> skipV_, ArrayList<ConceptREF> why_) throws DmcValueException {
+    	super(fieldRule_, fieldRef_, fieldTag_, option_, default_, version_, obsolete_, note_, skipV_, why_);	
     }
     
     public GpbFieldIndicator(String initialInput) throws DmcValueException {

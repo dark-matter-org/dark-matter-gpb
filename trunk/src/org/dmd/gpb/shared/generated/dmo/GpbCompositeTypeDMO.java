@@ -317,6 +317,56 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public String getObsolete(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__obsolete);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets obsolete to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setObsolete(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__obsolete);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__obsolete);
+        
+        try{
+            attr.set(value);
+            set(DmdgpbDMSAG.__obsolete,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets obsolete to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setObsolete(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__obsolete);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__obsolete);
+        
+        attr.set(value);
+        set(DmdgpbDMSAG.__obsolete,attr);
+    }
+
+    /**
+     * Removes the obsolete attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remObsolete(){
+         rem(DmdgpbDMSAG.__obsolete);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public DefinitionName getName(){
         DmcTypeDefinitionNameSV attr = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
         if (attr == null)

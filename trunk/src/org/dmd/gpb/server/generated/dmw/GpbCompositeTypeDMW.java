@@ -141,6 +141,37 @@ abstract public class GpbCompositeTypeDMW extends GpbType implements DmcDefiniti
         ((GpbCompositeTypeDMO) core).remName();
     }
 
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public String getObsolete(){
+        return(((GpbCompositeTypeDMO) core).getObsolete());
+    }
+
+    /**
+     * Sets obsolete to the specified value.
+     * @param value A value compatible with DmcTypeString
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setObsolete(Object value) throws DmcValueException {
+        ((GpbCompositeTypeDMO) core).setObsolete(value);
+    }
+
+    /**
+     * Sets obsolete to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setObsolete(String value){
+        ((GpbCompositeTypeDMO) core).setObsolete(value);
+    }
+
+    /**
+     * Removes the obsolete attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remObsolete(){
+        ((GpbCompositeTypeDMO) core).remObsolete();
+    }
+
     /**
      * @return The number of String items.
      */

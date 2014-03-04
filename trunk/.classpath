@@ -7,5 +7,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/dark-matter-data"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/dark-matter-templates"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/dark-matter-concinnity"/>
+	<classpathentry kind="lib" path="extjars/commons-io-2.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

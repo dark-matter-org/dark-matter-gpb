@@ -18,6 +18,7 @@ optionalPart String        	version			"The version at which the field was introd
 optionalPart String        	obsolete		"The version at which the field was made obsolete."
 optionalPart String        	note			"A note about the field and its use in this message e.g. why it's obsolete." quoted=true
 optionalPart String        	skip			"If a field isn't supported in one or more intermediate versions, you can indicate the skip version." multivalued=true
+optionalPart Concept		why				"An indication of why the field was added. This might be a reference to a requirement or feature concept." multivalued=true weakref=true
 description	The field indicator is used to indicate the assignment of a defined GpbField
  to a GpbMessage. It is very similar in form to a GPB field definition except for the fact
  that the type information is not included; the type is indicated in the referenced GpbField.
@@ -40,6 +41,7 @@ optionalPart String     skip			"If a value isn't supported in one or more interm
 optionalPart Concept	concept			"A reference to a concinnity concept. This might refer to conceptual definition of the thing represented by this value." weakref=true
 optionalPart Concept	baseValue		"If you want to coordinate disparate enum values that actually mean the same thing across systems, you
  can refer to the base concept value via this part. Mapping software can then be generated to automatically perform the translation between values." weakref=true
+optionalPart Concept	why				"An indication of why the field was added. This might be a reference to a requirement or feature concept." multivalued=true weakref=true
 
 
 //ComplexTypeDefinition
