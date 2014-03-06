@@ -35,6 +35,7 @@ public class DmdgpbDMSAGAMAP {
         _SmAp.put(DmdgpbDMSAG.__skip.id,DmdgpbDMSAG.__skip);
         _SmAp.put(DmdgpbDMSAG.__tag.id,DmdgpbDMSAG.__tag);
         _SmAp.put(DmdgpbDMSAG.__version.id,DmdgpbDMSAG.__version);
+        _SmAp.put(DmdgpbDMSAG.__why.id,DmdgpbDMSAG.__why);
     }
 
 }

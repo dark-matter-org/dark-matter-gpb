@@ -19,6 +19,8 @@ package org.dmd.gpb.server.generated.dmw;
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:442)
 import java.util.ArrayList;                                          // Support for MULTI attribute - (BaseDMWGenerator.java:2226)
 import java.util.Iterator;                                           // Support copy of MV objects - (BaseDMWGenerator.java:2240)
+import org.dmd.concinnity.server.extended.Concept;                   // Is reference type - (BaseDMWGenerator.java:1107)
+import org.dmd.concinnity.shared.generated.types.ConceptREF;         // Is reference type REF - (BaseDMWGenerator.java:1115)
 import org.dmd.dmc.*;                                                // If any attributes - (BaseDMWGenerator.java:1087)
 import org.dmd.dmc.definitions.DmcDefinitionIF;                      // The object is a domain specific definition - (BaseDMWGenerator.java:411)
 import org.dmd.dmc.types.DefinitionName;                             // Is named by - (BaseDMWGenerator.java:1062)
@@ -314,6 +316,47 @@ abstract public class GpbCompositeTypeDMW extends GpbType implements DmcDefiniti
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
     public void remVersion(){
         ((GpbCompositeTypeDMO) core).remVersion();
+    }
+
+    /**
+     * @return A Concept object.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1434)
+    public Concept getWhy(){
+        ConceptREF ref = ((GpbCompositeTypeDMO) core).getWhy();
+        if (ref == null)
+            return(null);
+        
+        if (ref.getObject() == null)
+            return(null);
+        
+        return((Concept)ref.getObject().getContainer());
+    }
+
+    /**
+     * Sets the why to the specified value.
+     * @param value A value compatible with ConceptREF
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1519)
+    public void setWhy(Concept value) {
+        ((GpbCompositeTypeDMO) core).setWhy(value.getDMO());
+    }
+
+    /**
+     * Sets the why to the specified value.
+     * @param value A value compatible with ConceptREF
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1528)
+    public void setWhy(Object value) throws DmcValueException {
+        ((GpbCompositeTypeDMO) core).setWhy(value);
+    }
+
+    /**
+     * Removes the why attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remWhy(){
+        ((GpbCompositeTypeDMO) core).remWhy();
     }
 
 

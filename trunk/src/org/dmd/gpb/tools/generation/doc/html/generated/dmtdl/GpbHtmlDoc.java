@@ -4,6 +4,7 @@ package org.dmd.gpb.tools.generation.doc.html.generated.dmtdl;
 // Called from: org.dmd.templates.server.extended.TextualArtifact.generateTextualArtifactClass(TextualArtifact.java:72)
 import java.io.IOException;                                                        // Thrown by formatting - (TextualArtifact.java:40)
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.DivDetails;           // To access static Section: DivDetails - (TextualArtifact.java:43)
+import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.DivSeparator;         // To access static Section: DivSeparator - (TextualArtifact.java:43)
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.DivSummary;           // To access static Section: DivSummary - (TextualArtifact.java:43)
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.DocType;              // Is a contained section - (TextualArtifact.java:53)
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.HtmlContent;          // Is a contained section - (TextualArtifact.java:53)
@@ -33,11 +34,13 @@ import org.dmd.templates.server.util.FormattedArtifactIF;                       
      *         -- DivContent  
      *           -- ModuleHeader  <-
      *           -- DivSummary  
+     *             -- DivSeparator  <-
      *             [] SummarySection  
      *               -- SummaryHeader  <-
      *               [] SummaryItem  <-
      *               -- SummaryFooter  
      *           -- DivDetails  
+     *             -- DivSeparator  <-
      *             ++ EnumerationSection  
      *               [] EnumerationDetails  
      *                 -- EnumerationHeader  <-
@@ -79,6 +82,21 @@ import org.dmd.templates.server.util.FormattedArtifactIF;                       
      */
     public DivDetails getDivDetails(){
         return(_HtmlContent.getBody().getDivMain().getDivContent().getDivDetails());
+    }
+
+    // Generated from: org.dmd.templates.server.util.StaticAccessInfo.getAccessFunctions(StaticAccessInfo.java:47)
+    /**
+     * @return the DivSeparator Section at: _HtmlContent.getBody().getDivMain().getDivContent().getDivSummary().getDivSeparator()
+     */
+    public DivSeparator getDivSeparator1(){
+        return(_HtmlContent.getBody().getDivMain().getDivContent().getDivSummary().getDivSeparator());
+    }
+
+    /**
+     * @return the DivSeparator Section at: _HtmlContent.getBody().getDivMain().getDivContent().getDivDetails().getDivSeparator()
+     */
+    public DivSeparator getDivSeparator2(){
+        return(_HtmlContent.getBody().getDivMain().getDivContent().getDivDetails().getDivSeparator());
     }
 
     // Generated from: org.dmd.templates.server.util.StaticAccessInfo.getAccessFunctions(StaticAccessInfo.java:47)

@@ -35,7 +35,7 @@ public class Body implements SectionIF {
     public void format(FormattedArtifactIF artifact) throws IOException {
         TemplateMediator.commentContainer.setValue("comment", "Body starts with text");
         GpbdocTemplateLoader._Comment.format(TemplateMediator.commentContainer, artifact);
-        artifact.addText("<body>\n");
+        artifact.addText("<body> <div class=\"center\">\n");
 
         GpbdocTemplateLoader.Body.format(this,artifact, GpbdocTemplateLoader._Comment);
 
@@ -43,7 +43,7 @@ public class Body implements SectionIF {
 
         _DivMain.format(artifact);
 
-        artifact.addText("</body>\n");
+        artifact.addText("</div> </body>\n");
     }
 
     // Generated from: org.dmd.templates.server.extended.Section.getFormatFunction(Section.java:341)

@@ -85,6 +85,11 @@ public class GpbFieldIndicatorBase implements Serializable {
 
     final static DmcAttributeInfo defaultAI = new DmcAttributeInfo("default",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
 
+    // This hint will override the hint provided by the GpbField, this is handy in cases where you have a very generic field name, like timestamp, and want something a bit more descriptive.
+    String hintV;
+
+    final static DmcAttributeInfo hintAI = new DmcAttributeInfo("hint",0,"String",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
+
     // The version at which the field was introduced in the message.
     String versionV;
 
@@ -127,6 +132,7 @@ public class GpbFieldIndicatorBase implements Serializable {
         fieldTagV =  original.fieldTagV;
         optionV =  original.optionV;
         defaultV =  original.defaultV;
+        hintV =  original.hintV;
         versionV =  original.versionV;
         obsoleteV =  original.obsoleteV;
         noteV =  original.noteV;
@@ -138,7 +144,7 @@ public class GpbFieldIndicatorBase implements Serializable {
      * All fields constructor.
      * Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:161)
      */
-    public GpbFieldIndicatorBase(FieldRuleEnum fieldRule_, GpbFieldREF fieldRef_, Integer fieldTag_, OptionEnum option_, String default_, String version_, String obsolete_, String note_, ArrayList<String> skip_, ArrayList<ConceptREF> why_) throws DmcValueException {
+    public GpbFieldIndicatorBase(FieldRuleEnum fieldRule_, GpbFieldREF fieldRef_, Integer fieldTag_, OptionEnum option_, String default_, String hint_, String version_, String obsolete_, String note_, ArrayList<String> skip_, ArrayList<ConceptREF> why_) throws DmcValueException {
         fieldRuleV = DmcTypeFieldRuleEnumSTATIC.instance.typeCheck(fieldRule_);
         fieldRefV = DmcTypeGpbFieldREFSTATIC.instance.typeCheck(fieldRef_);
         fieldTagV = DmcTypeIntegerSTATIC.instance.typeCheck(fieldTag_);
@@ -146,6 +152,8 @@ public class GpbFieldIndicatorBase implements Serializable {
             optionV = DmcTypeOptionEnumSTATIC.instance.typeCheck(option_);
         if (default_ != null)
             defaultV = DmcTypeStringSTATIC.instance.typeCheck(default_);
+        if (hint_ != null)
+            hintV = DmcTypeStringSTATIC.instance.typeCheck(hint_);
         if (version_ != null)
             versionV = DmcTypeStringSTATIC.instance.typeCheck(version_);
         if (obsolete_ != null)
@@ -199,6 +207,8 @@ public class GpbFieldIndicatorBase implements Serializable {
                     optionV = DmcTypeOptionEnumSTATIC.instance.typeCheck(nvp.get(i).getValue());
                 else if (nvp.get(i).getName().equals("default"))
                     defaultV = DmcTypeStringSTATIC.instance.typeCheck(nvp.get(i).getValue());
+                else if (nvp.get(i).getName().equals("hint"))
+                    hintV = DmcTypeStringSTATIC.instance.typeCheck(nvp.get(i).getValue());
                 else if (nvp.get(i).getName().equals("version"))
                     versionV = DmcTypeStringSTATIC.instance.typeCheck(nvp.get(i).getValue());
                 else if (nvp.get(i).getName().equals("obsolete"))
@@ -258,6 +268,11 @@ public class GpbFieldIndicatorBase implements Serializable {
             sb.append("default=" + defaultV.toString());
         }
 
+        if (hintV != null){
+            sb.append(' ');
+            sb.append("hint=" + hintV.toString());
+        }
+
         if (versionV != null){
             sb.append(' ');
             sb.append("version=" + versionV.toString());
@@ -308,6 +323,10 @@ public class GpbFieldIndicatorBase implements Serializable {
 
     public String getDefault(){
         return(defaultV);
+    }
+
+    public String getHint(){
+        return(hintV);
     }
 
     public String getVersion(){

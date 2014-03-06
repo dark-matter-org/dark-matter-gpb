@@ -14,6 +14,7 @@ requiredPart GpbField		fieldRef 		"Reference to the GpbField to be used."
 requiredPart Integer        fieldTag    	"The unique numeric tag for this field."
 optionalPart OptionEnum     option    		"Indicates if the PACKED option is to be used for repeated fields."
 optionalPart String        	default			"The default value"
+optionalPart String			hint			"This hint will override the hint provided by the GpbField, this is handy in cases where you have a very generic field name, like timestamp, and want something a bit more descriptive."
 optionalPart String        	version			"The version at which the field was introduced in the message."
 optionalPart String        	obsolete		"The version at which the field was made obsolete."
 optionalPart String        	note			"A note about the field and its use in this message e.g. why it's obsolete." quoted=true
@@ -28,6 +29,7 @@ exampleUsage Field definition with a default value:
 exampleUsage A packed field:
 exampleUsage A field with a version indicator:
 exampleUsage An obsolete field:
+exampleUsage Overriding the hint associated with a field:
 
 ComplexTypeDefinition
 name GpbEnumValue

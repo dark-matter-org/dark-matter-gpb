@@ -3,6 +3,7 @@ package org.dmd.gpb.server.extended;
 import org.dmd.dms.ClassDefinition;
 import org.dmd.gpb.server.generated.dmw.GpbEnumDMW;
 import org.dmd.gpb.server.generated.dmw.GpbEnumValueIterableDMW;
+import org.dmd.gpb.server.util.VersionChecker;
 import org.dmd.gpb.shared.generated.dmo.GpbEnumDMO;
 import org.dmd.gpb.shared.generated.types.GpbEnumValue;
 import org.dmd.util.exceptions.DebugInfo;
@@ -44,7 +45,8 @@ public class GpbEnum extends GpbEnumDMW {
 		while(values.hasNext()){
 			GpbEnumValue value = values.getNext();
 			
-			if (shouldBeIncluded(genversion, value.getVersion(), value.getSkip())){
+			if (VersionChecker.shouldBeIncluded(genversion, value.getVersion(), value.getSkip())){
+//			if (shouldBeIncluded(genversion, value.getVersion(), value.getSkip())){
 				sb.append(indent + "    " + nformat.sprintf(value.getName()) + " = " + value.getValue() + ";");
 				if (value.getDescription() != null)
 					sb.append(" // " + value.getDescription());

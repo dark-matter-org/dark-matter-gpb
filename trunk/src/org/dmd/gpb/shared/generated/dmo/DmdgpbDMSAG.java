@@ -58,6 +58,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcAttributeInfo __skip = new DmcAttributeInfo("dmdgpb", "skip", -477969, "String", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __tag = new DmcAttributeInfo("dmdgpb", "tag", -477975, "Integer", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __version = new DmcAttributeInfo("dmdgpb", "version", -477970, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
+    public final static DmcAttributeInfo __why = new DmcAttributeInfo("dmdgpb", "why", -477967, "Concept", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, true);
 
     // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:183)
     public final static DmcTypeInfo __type_FieldRuleEnum = new DmcTypeInfo("FieldRuleEnum", OriginalTypeEnum.ENUM);
@@ -148,6 +149,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         __GpbCompositeType.addMay(__version);
         __GpbCompositeType.addMay(__skip);
         __GpbCompositeType.addMay(__obsolete);
+        __GpbCompositeType.addMay(__why);
 
         __GpbEnum.addMust(MetaDMSAG.__name);
         __GpbEnum.addMust(__gpbEnumValue);
@@ -155,6 +157,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
 
         __GpbField.addMust(MetaDMSAG.__name);
         __GpbField.addMust(__gpbType);
+        __GpbField.addMay(__hint);
         __GpbField.addMay(MetaDMSAG.__description);
         __GpbField.addMay(__generateAs);
 
@@ -187,7 +190,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         try{
             ValueLengthRuleDataDMO _dmgpbHintLengthData = new ValueLengthRuleDataDMO();
             _dmgpbHintLengthData         .setRuleName("dmgpbHintLength");
-            _dmgpbHintLengthData         .setRuleTitle("The hint for somehting should be at most 80 characters.");
+            _dmgpbHintLengthData         .setRuleTitle("The hint for something should be at most 80 characters.");
             _dmgpbHintLengthData         .setApplyToAttribute("hint");
             _dmgpbHintLengthData         .setMaxLength("80");
             _dmgpbHintLengthData         .setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");

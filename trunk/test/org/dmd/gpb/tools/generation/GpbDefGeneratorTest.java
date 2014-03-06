@@ -56,7 +56,7 @@ public class GpbDefGeneratorTest {
 		String[] args = { "-workspace", workingDir,
 							"-srcdir", "test/org/dmd/gpb/tools/generation", "src/org/dmd/gpb/base",
 							"-target", "ewmnbi_common",
-//							"-genversion", "14.1",
+							"-genversion", "14.1",
 				};
 		
 		System.out.println("\n\nSingle config - ewmnbi_common...\n");
