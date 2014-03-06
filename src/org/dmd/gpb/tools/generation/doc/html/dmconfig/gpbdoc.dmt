@@ -30,19 +30,25 @@ format		<div class="moduleName"> The ::moduleName:: GPB Module</div>
  ::moduleDescription::
  </div>
 
+Template
+name		DivSeparator
+format		<div class="divSeparator">
+ ::title::
+ </div> <!-- divSeparator -->
+
 ///////////////////////////////////////////////////////////////////////////////
 // Summary Formatting
 
 Template
 name		SummaryHeader
 format		<div class="summaryTitle"> ::summaryTitle:: </div>
- <div class="summarySection">
+ <div class="summaryTable">
  <table>
 
 Template
 name		SummaryItem
 format		<tr>
- <td> <a href="#::itemName::"> ::itemName:: </a> </td>
+ <td class="summaryItemName"> <a href="#::itemName::"> ::itemName:: </a> </td>
  <td class="hint"> ::hint:: </td>
  <td class="version"> ::version:: </td>
  <td class="obsolete"> ::obsolete:: </td>
@@ -51,7 +57,7 @@ format		<tr>
 Template
 name		SummaryFooter
 format		</table>
- </div> <!-- summarySection -->
+ </div> <!-- summaryTable -->
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -64,11 +70,11 @@ format		<div class="enumTitle"> <a name="::enumTitle::"> The ::enumTitle:: enum 
 Template
 name		EnumerationValue
 format		<tr>
- <td class="enumValueName">  ::valueName:: </td>
- <td class="enumValue">  ::value:: </td>
- <td class="hint"> ::hint:: </td>
- <td class="version"> ::version:: </td>
- <td class="obsolete"> ::obsolete:: </td>
+ <td valign="top" class="enumValueName">  ::valueName:: </td>
+ <td valign="top" class="enumValue">  ::value:: </td>
+ <td valign="top" class="hint"> ::hint:: </td>
+ <td valign="top" class="version"> ::version:: </td>
+ <td valign="top" class="obsolete"> ::obsolete:: </td>
  </tr>
 
 Template
@@ -80,7 +86,8 @@ format		</table>
 
 Template
 name		MessageHeader
-format		<div class="messsageTitle"> <a name="::messageTitle::"> The ::messageTitle:: message </a> </div>
+format		<div class="messageTitle"> <a name="::messageTitle::"> The ::messageTitle:: message </a> </div>
+ <div class="why"> ::why:: </div>
  <div class="messageSection">
  <table>
 

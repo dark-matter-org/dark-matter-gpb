@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.apache.commons.io.FileUtils;
+import org.dmd.concinnity.shared.generated.types.ConceptREF;
 import org.dmd.gpb.server.extended.GpbEnum;
 import org.dmd.gpb.server.extended.GpbMessage;
 import org.dmd.gpb.server.extended.GpbModule;
@@ -63,11 +63,8 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 			ex = new ResultException("You must specify the outdir argument to indicate where the generated documents should be placed.");
 		}
 		
-		ArrayList<String>	paths = new ArrayList<String>();
-		paths.add(workspace + "/src/org/dmd/gpb/tools/generation");
-		
 		try {
-			loader = new GpbdocTemplateLoader(paths);
+			loader = new GpbdocTemplateLoader(searchPaths);
 			loader.findAndLoadTemplate();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -122,6 +119,8 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 		
 		///////////////////////////////////////////////////////////////////////
 		
+		doc.getDivSeparator1().setTitle("Summary");
+		
 		// Add the scalar type summary
 		if (module.getGpbScalarTypeCount() > 0){
 			SummarySection summary = doc.getDivSummary().addSummarySection();
@@ -163,6 +162,8 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 		///////////////////////////////////////////////////////////////////////
 		// Details
 		
+		doc.getDivSeparator2().setTitle("Details");
+		
 		// Add the enum details
 		if (module.getGpbEnumCount() > 0){
 			EnumerationSection enumSection = doc.getDivDetails().addEnumerationSection();
@@ -193,6 +194,30 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 				MessageDetails details = section.addMessageDetails();
 				details.getMessageHeader().setMessageTitle(message.getName().getNameString());
 				
+				// References to Concepts are weak references, they may or may not be
+				// resolved, so we drop down to the DMO level to check things out. If it's
+				// resolved, we try to get the hint, otherwise, we just wind up with the
+				// name of the Concept (or some random string that somebody whacked in there!)
+				if (message.getDMO().getWhy() != null){
+					ConceptREF ref = message.getDMO().getWhy();
+					details.getMessageHeader().setWhy(ref.getName().getNameString());
+					if (ref.isResolved()){
+//						String reference = "<a name=\"::messageTitle::\"> The ::messageTitle:: message </a>";
+						String info = ref.getName().getNameString();
+						String name = ref.getName().getNameString();
+						String from = ref.getObject().getDefinedInConcinnityModule().getName().getNameString();
+						if (ref.getObject().getHint() != null)
+							info = ref.getObject().getHint();
+						
+						String reference = "<a href=\"../dmcm/" + from + ".html#" + name + "\"> " + info + " </a>";
+						
+						details.getMessageHeader().setWhy(reference);
+						
+						
+					}
+						
+				}
+				
 				GpbFieldIndicatorIterableDMW it = message.getFieldIterable();
 				while(it.hasNext()){
 					GpbFieldIndicator field = it.getNext();
@@ -211,6 +236,11 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 					
 					String genAs = field.getFieldRef().getObject().getGenerateAs();
 					String hint = field.getFieldRef().getObject().getHint();
+					
+					// The hint may be overridden at the field level
+					if (field.getHint() != null)
+						hint = field.getHint();
+					
 					String fn = field.getFieldRef().getObject().getName().getNameString();
 					details.fastAddFieldReference(fn, genAs, field.getFieldTag().toString(), hint, field.getVersion(), skip, field.getObsolete());
 				}

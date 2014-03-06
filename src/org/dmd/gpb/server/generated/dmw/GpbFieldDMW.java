@@ -37,10 +37,7 @@ import org.dmd.gpb.shared.generated.types.GpbTypeREF;           // Is reference 
 
 /**
  * The GpbField class is used to represent a reusable, named field for use\n
- * within a GpbMessage. If the field has been parsed from an existing .proto
- * file, it will\n have the fieldRule and tag attributes. However, when
- * specified as part of a .gpb file,\n the fieldRule and tag won't be
- * specified.
+ * within a GpbMessage.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -290,6 +287,37 @@ abstract public class GpbFieldDMW extends GpbDefinition implements DmcDefinition
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
     public void remGpbType(){
         ((GpbFieldDMO) core).remGpbType();
+    }
+
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public String getHint(){
+        return(((GpbFieldDMO) core).getHint());
+    }
+
+    /**
+     * Sets hint to the specified value.
+     * @param value A value compatible with DmcTypeString
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setHint(Object value) throws DmcValueException {
+        ((GpbFieldDMO) core).setHint(value);
+    }
+
+    /**
+     * Sets hint to the specified value.
+     * @param value String
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setHint(String value){
+        ((GpbFieldDMO) core).setHint(value);
+    }
+
+    /**
+     * Removes the hint attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remHint(){
+        ((GpbFieldDMO) core).remHint();
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)

@@ -16,17 +16,21 @@
 package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
-import java.io.Serializable;                                        // Always required - (GenUtility.java:224)
-import java.util.*;                                                 // Always required if we have any MV attributes - (GenUtility.java:221)
-import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:376)
-import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:375)
-import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:241)
-import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:370)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Attribute from meta schema - (GenUtility.java:194)
-import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeStringMV;                 // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:328)
-import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                 // Base class - (GenUtility.java:355)
+import java.io.Serializable;                                                  // Always required - (GenUtility.java:224)
+import java.util.*;                                                           // Always required if we have any MV attributes - (GenUtility.java:221)
+import org.dmd.concinnity.shared.generated.dmo.ConceptDMO;                    // Type specific set/add - (GenUtility.java:307)
+import org.dmd.concinnity.shared.generated.types.ConceptREF;                  // Helper class - (GenUtility.java:335)
+import org.dmd.concinnity.shared.generated.types.DmcTypeConceptREFSV;         // Reference type - (GenUtility.java:300)
+import org.dmd.dmc.DmcAttribute;                                              // Named object - (GenUtility.java:376)
+import org.dmd.dmc.DmcNamedObjectIF;                                          // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcOmni;                                                   // Lazy resolution - (GenUtility.java:320)
+import org.dmd.dmc.DmcValueException;                                         // Any attributes - (GenUtility.java:241)
+import org.dmd.dmc.types.DefinitionName;                                      // Naming attribute type - (GenUtility.java:370)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                                   // Attribute from meta schema - (GenUtility.java:194)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;                   // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeStringMV;                           // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                           // Required type - (GenUtility.java:328)
+import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                           // Base class - (GenUtility.java:355)
 
 // Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
@@ -364,6 +368,78 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remObsolete(){
          rem(DmdgpbDMSAG.__obsolete);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:655)
+    public ConceptREF getWhy(){
+        DmcTypeConceptREFSV attr = (DmcTypeConceptREFSV) get(DmdgpbDMSAG.__why);
+        if (attr == null)
+            return(null);
+
+        if (DmcOmni.instance().lazyResolution()){
+            if (attr.doLazyResolution(this)){
+                rem(attr.getAttributeInfo());
+                return(null);
+            }
+        }
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Returns the reference to Concept without attempting lazy resolution (if turned on).
+     */
+    public ConceptREF getWhyREF(){
+        DmcTypeConceptREFSV attr = (DmcTypeConceptREFSV) get(DmdgpbDMSAG.__why);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets why to the specified value.
+     * @param value ConceptDMO
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:709)
+    public void setWhy(ConceptDMO value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__why);
+        if (attr == null)
+            attr = new DmcTypeConceptREFSV(DmdgpbDMSAG.__why);
+        else
+            ((DmcTypeConceptREFSV)attr).removeBackReferences();
+        
+        try{
+            attr.set(value);
+            set(DmdgpbDMSAG.__why,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets why to the specified value.
+     * @param value A value compatible with DmcTypeConceptREFSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setWhy(Object value) throws DmcValueException {
+        DmcTypeConceptREFSV attr  = (DmcTypeConceptREFSV) get(DmdgpbDMSAG.__why);
+        if (attr == null)
+            attr = new DmcTypeConceptREFSV(DmdgpbDMSAG.__why);
+        else
+            attr.removeBackReferences();
+        
+        attr.set(value);
+        set(DmdgpbDMSAG.__why,attr);
+    }
+
+    /**
+     * Removes the why attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remWhy(){
+         rem(DmdgpbDMSAG.__why);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)

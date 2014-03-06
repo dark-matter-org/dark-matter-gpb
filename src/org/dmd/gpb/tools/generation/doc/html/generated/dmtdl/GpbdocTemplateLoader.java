@@ -46,6 +46,7 @@ public class GpbdocTemplateLoader implements DmcUncheckedOIFHandlerIF {
     public static TemplateMediator      DivDetails            = new TemplateMediator("DivDetails");           // Mediator for the DivDetails template
     public static TemplateMediator      DivHeader             = new TemplateMediator("DivHeader");            // Mediator for the DivHeader template
     public static TemplateMediator      DivMain               = new TemplateMediator("DivMain");              // Mediator for the DivMain template
+    public static TemplateMediator      DivSeparator          = new TemplateMediator("DivSeparator");         // Mediator for the DivSeparator template
     public static TemplateMediator      DivSummary            = new TemplateMediator("DivSummary");           // Mediator for the DivSummary template
     public static TemplateMediator      DocType               = new TemplateMediator("DocType");              // Mediator for the DocType template
     public static TemplateMediator      EnumerationDetails    = new TemplateMediator("EnumerationDetails");   // Mediator for the EnumerationDetails template
@@ -94,6 +95,7 @@ public class GpbdocTemplateLoader implements DmcUncheckedOIFHandlerIF {
         mediators.put("DivDetails",DivDetails);
         mediators.put("DivHeader",DivHeader);
         mediators.put("DivMain",DivMain);
+        mediators.put("DivSeparator",DivSeparator);
         mediators.put("DivSummary",DivSummary);
         mediators.put("DocType",DocType);
         mediators.put("EnumerationDetails",EnumerationDetails);

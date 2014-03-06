@@ -30,10 +30,10 @@ value			moduleName	"The name of the dark-matter GPB module."
 
 Section
 name			Body
-startsWithText	<body>
+startsWithText	<body> <div class="center">
 contains		static DivHeader
 contains		static DivMain
-endsWithText	</body> 
+endsWithText	</div> </body> 
 description		The body of the document.
 
 Section
@@ -51,7 +51,7 @@ Section
 name			DivContent
 startsWithText	<div id="content">
 contains		static ModuleHeader
-contains		static DivSummary 
+contains		static DivSummary
 contains		static DivDetails
 endsWithText	</div> <!-- content -->
 
@@ -63,15 +63,22 @@ value			version				"The version at which the module was introduced"
 
 Section
 name			DivSummary
-startsWithText	<div class="summary">
-contains		many SummarySection
-endsWithText	</div> <!-- summary -->
+startsWithText	<div class="summaryDiv">
+contains		static	DivSeparator
+contains		many 	SummarySection
+endsWithText	</div> <!-- summaryDiv -->
+
+Section
+name			DivSeparator
+value			title "The tile text to be placed in the separator region"
+description		Just a separator area.
 
 Section
 name			DivDetails
 startsWithText	<div class="details">
-contains		one EnumerationSection
-contains		one MessageSection
+contains		static	DivSeparator
+contains		one 	EnumerationSection
+contains		one 	MessageSection
 endsWithText	</div> <!-- details -->
 
 
@@ -163,6 +170,7 @@ value			obsolete		"The version when the enum value became obsolete"
 Section
 name			MessageHeader
 value			messageTitle		"The name of the message."
+value			why					"A reference to why the message was added"
 description		The table heading section for a message detail layout.
 
 Section

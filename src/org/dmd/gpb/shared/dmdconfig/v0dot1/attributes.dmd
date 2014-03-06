@@ -19,7 +19,7 @@ description		A short description of something that can be dumped as one line com
 
 ValueLengthRuleData
 ruleName         dmgpbHintLength
-ruleTitle        The hint for somehting should be at most 80 characters.
+ruleTitle        The hint for something should be at most 80 characters.
 applyToAttribute hint
 maxLength        80
 
@@ -185,4 +185,11 @@ dmdID			32
 type			String
 description 	The version at which a message or enumeration became obsolete.
 
+AttributeDefinition
+name			why
+dmdID			33
+type			Concept
+weakReference	true
+description 	An indication of why a message or enum was added to the specification.
+ This might be a reference to a requirement or feature concept.
 

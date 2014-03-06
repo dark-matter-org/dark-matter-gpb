@@ -37,10 +37,7 @@ import org.dmd.gpb.shared.generated.types.GpbTypeREF;                  // Helper
 // Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:677)
 /**
  * The GpbField class is used to represent a reusable, named field for use\n
- * within a GpbMessage. If the field has been parsed from an existing .proto
- * file, it will\n have the fieldRule and tag attributes. However, when
- * specified as part of a .gpb file,\n the fieldRule and tag won't be
- * specified.
+ * within a GpbMessage.
  * <P>
  * Generated from the dmdgpb schema at version 0.1
  * <P>
@@ -121,6 +118,56 @@ public class GpbFieldDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF,
             return(0);
         
         return(objn.hashCode());
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public String getHint(){
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__hint);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets hint to the specified value.
+     * @param value String
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setHint(String value) {
+        DmcAttribute<?> attr = get(DmdgpbDMSAG.__hint);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__hint);
+        
+        try{
+            attr.set(value);
+            set(DmdgpbDMSAG.__hint,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets hint to the specified value.
+     * @param value A value compatible with DmcTypeStringSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setHint(Object value) throws DmcValueException {
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__hint);
+        if (attr == null)
+            attr = new DmcTypeStringSV(DmdgpbDMSAG.__hint);
+        
+        attr.set(value);
+        set(DmdgpbDMSAG.__hint,attr);
+    }
+
+    /**
+     * Removes the hint attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remHint(){
+         rem(DmdgpbDMSAG.__hint);
     }
 
     /**

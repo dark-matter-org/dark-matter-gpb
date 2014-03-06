@@ -60,6 +60,7 @@ may				generateAs
 may				version
 may				skip
 may				obsolete
+may				why
 description		The GpbCompositeType provides a common base for enumerations and messages
  so that they can be referred to as a separate type of object that can be specified in
  standalone blocks within a generated GpbProtoFile.

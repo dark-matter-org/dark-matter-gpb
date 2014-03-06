@@ -4,6 +4,7 @@ import org.dmd.dms.ClassDefinition;
 import org.dmd.gpb.server.generated.dmw.GpbCompositeTypeIterableDMW;
 import org.dmd.gpb.server.generated.dmw.GpbFieldIndicatorIterableDMW;
 import org.dmd.gpb.server.generated.dmw.GpbMessageDMW;
+import org.dmd.gpb.server.util.VersionChecker;
 import org.dmd.gpb.shared.generated.dmo.GpbMessageDMO;
 import org.dmd.gpb.shared.types.GpbFieldIndicator;
 import org.dmd.util.exceptions.DebugInfo;
@@ -55,9 +56,11 @@ public class GpbMessage extends GpbMessageDMW {
 			GpbFieldIndicatorIterableDMW it = getFieldIterable();
 			while(it.hasNext()){
 				GpbFieldIndicator fi = it.next();
-				
-				if (shouldBeIncluded(genversion, fi.getVersion(), fi.getSkip()))
+
+				if(VersionChecker.shouldBeIncluded(genversion, fi.getVersion(), fi.getSkip())){
+//				if (shouldBeIncluded(genversion, fi.getVersion(), fi.getSkip()))
 					sb.append(formatField(indent, fi, fieldWidth, typeWidth));
+				}
 			}
 		}
 		

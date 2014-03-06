@@ -83,6 +83,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
     public static AttributeDefinition _version;
     public static AttributeDefinition _skip;
     public static AttributeDefinition _obsolete;
+    public static AttributeDefinition _why;
 
     public static TypeDefinition _GpbFieldIndicator;
 
@@ -219,7 +220,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbCompositeTypeOBJ.setDmdID("-477995");
             _GpbCompositeTypeOBJ.setClassType("ABSTRACT");
             _GpbCompositeTypeOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbCompositeTypeOBJ.setLineNumber("66");
+            _GpbCompositeTypeOBJ.setLineNumber("67");
             _GpbCompositeTypeOBJ.addDescription("The GpbCompositeType provides a common base for enumerations and messages\n so that they can be referred to as a separate type of object that can be specified in\n standalone blocks within a generated GpbProtoFile.");
             _GpbCompositeTypeOBJ.setDerivedFrom("dmdgpb.GpbType");
             _GpbCompositeTypeOBJ.setIsNamedBy("meta.name");
@@ -230,6 +231,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbCompositeTypeOBJ.addMay("dmdgpb.version");
             _GpbCompositeTypeOBJ.addMay("dmdgpb.skip");
             _GpbCompositeTypeOBJ.addMay("dmdgpb.obsolete");
+            _GpbCompositeTypeOBJ.addMay("dmdgpb.why");
             _GpbCompositeTypeOBJ.addMust("meta.name");
             _GpbCompositeTypeOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbCompositeTypeIterableDMW");
             _GpbCompositeTypeOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
@@ -244,7 +246,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbEnumOBJ.setDmdID("-477994");
             _GpbEnumOBJ.setClassType("STRUCTURAL");
             _GpbEnumOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
-            _GpbEnumOBJ.setLineNumber("93");
+            _GpbEnumOBJ.setLineNumber("94");
             _GpbEnumOBJ.addDescription("The GpbEnum allows for the definition of enumerations. One thing to be aware\n of with enums is that, if you're generating C++, the names of enum elements must be globally\n unique. The dark-matter GPB utility will warn you if you have clashing enum value names.\n <p/>\n May want to allow for mapping between DMS enum definitions and GpbEnums. Provide a basedOnEnum\n attribute that refers to a DMS enum. A GpbDefinitionSet could use the schemaToLoad attribute\n to specify a DMS schema from which definitions can be pulled.\n <p/>\n When you're defining a message type, you might want one of its fields to only have one of a\n pre-defined list of values. For example, let's say you want to add a corpus field for each\n SearchRequest, where the corpus can be UNIVERSAL, WEB, IMAGES, LOCAL, NEWS, PRODUCTS or VIDEO.\n You can do this very simply by adding an enum to your message definition - a field with an enum\n type can only have one of a specified set of constants as its value (if you try to provide a\n different value, the parser will treat it like an unknown field). In the following\n example we've added an enum called Corpus with all the possible values, and a field of type Corpus:");
             _GpbEnumOBJ.setDerivedFrom("dmdgpb.GpbCompositeType");
             _GpbEnumOBJ.setIsNamedBy("meta.name");
@@ -268,12 +270,13 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldOBJ.setClassType("STRUCTURAL");
             _GpbFieldOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/classes.dmd");
             _GpbFieldOBJ.setLineNumber("109");
-            _GpbFieldOBJ.addDescription("The GpbField class is used to represent a reusable, named field for use\n within a GpbMessage. If the field has been parsed from an existing .proto file, it will\n have the fieldRule and tag attributes. However, when specified as part of a .gpb file,\n the fieldRule and tag won't be specified.");
+            _GpbFieldOBJ.addDescription("The GpbField class is used to represent a reusable, named field for use\n within a GpbMessage.");
             _GpbFieldOBJ.setDerivedFrom("dmdgpb.GpbDefinition");
             _GpbFieldOBJ.setIsNamedBy("meta.name");
             _GpbFieldOBJ.setUseWrapperType("EXTENDED");
             _GpbFieldOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbFieldREF");
             _GpbFieldOBJ.setDmwIteratorClass("GpbFieldIterableDMW");
+            _GpbFieldOBJ.addMay("dmdgpb.hint");
             _GpbFieldOBJ.addMay("meta.description");
             _GpbFieldOBJ.addMay("dmdgpb.generateAs");
             _GpbFieldOBJ.addMust("meta.name");
@@ -682,6 +685,20 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _obsoleteOBJ.setLineNumber("187");
             addAttributeDefList(_obsolete);
 
+// Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
+            AttributeDefinitionDMO _whyOBJ = new AttributeDefinitionDMO();
+            _why = new AttributeDefinition(_whyOBJ);
+            _whyOBJ.setType("dmconcinnity.Concept");
+            _whyOBJ.setName("why");
+            _whyOBJ.setDmdID("-477967");
+            _whyOBJ.addDescription("An indication of why a message or enum was added to the specification.\n This might be a reference to a requirement or feature concept.");
+            _whyOBJ.setWeakReference("true");
+            _whyOBJ.setDotName("dmdgpb.why.AttributeDefinition");
+            _why.setDefinedIn(this);
+            _whyOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
+            _whyOBJ.setLineNumber("195");
+            addAttributeDefList(_why);
+
     }
 
     // Generated from: org.dmd.dmg.util.SchemaFormatter.dumpInitFunction(SchemaFormatter.java:313)
@@ -712,6 +729,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldIndicatorBaseOBJ.addDescription("The field indicator is used to indicate the assignment of a defined GpbField\n to a GpbMessage. It is very similar in form to a GPB field definition except for the fact\n that the type information is not included; the type is indicated in the referenced GpbField.\n </p>");
             _GpbFieldIndicatorBaseOBJ.addOptionalPart("OptionEnum option \"Indicates if the PACKED option is to be used for repeated fields.\"");
             _GpbFieldIndicatorBaseOBJ.addOptionalPart("String default \"The default value\"");
+            _GpbFieldIndicatorBaseOBJ.addOptionalPart("String hint \"This hint will override the hint provided by the GpbField, this is handy in cases where you have a very generic field name, like timestamp, and want something a bit more descriptive.\"");
             _GpbFieldIndicatorBaseOBJ.addOptionalPart("String version \"The version at which the field was introduced in the message.\"");
             _GpbFieldIndicatorBaseOBJ.addOptionalPart("String obsolete \"The version at which the field was made obsolete.\"");
             _GpbFieldIndicatorBaseOBJ.addOptionalPart("String note \"A note about the field and its use in this message e.g. why it's obsolete.\" quoted=true");
@@ -725,10 +743,11 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldIndicatorBaseOBJ.addExampleUsage("A packed field:");
             _GpbFieldIndicatorBaseOBJ.addExampleUsage("A field with a version indicator:");
             _GpbFieldIndicatorBaseOBJ.addExampleUsage("An obsolete field:");
+            _GpbFieldIndicatorBaseOBJ.addExampleUsage("Overriding the hint associated with a field:");
             _GpbFieldIndicatorBaseOBJ.setDotName("dmdgpb.GpbFieldIndicatorBase.ComplexTypeDefinition");
             _GpbFieldIndicatorBase.setDefinedIn(this);
             _GpbFieldIndicatorBaseOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");
-            _GpbFieldIndicatorBaseOBJ.setLineNumber("31");
+            _GpbFieldIndicatorBaseOBJ.setLineNumber("33");
             addComplexTypeDefList(_GpbFieldIndicatorBase);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -748,7 +767,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbEnumValueOBJ.setDotName("dmdgpb.GpbEnumValue.ComplexTypeDefinition");
             _GpbEnumValue.setDefinedIn(this);
             _GpbEnumValueOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");
-            _GpbEnumValueOBJ.setLineNumber("45");
+            _GpbEnumValueOBJ.setLineNumber("47");
             addComplexTypeDefList(_GpbEnumValue);
 
     }
@@ -766,7 +785,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _FieldRuleEnumOBJ.addEnumValue("0 REQUIRED A well-formed message must have exactly one of this field.");
             _FieldRuleEnumOBJ.addEnumValue("1 OPTIONAL A well-formed message can have zero or one of this field (but not more than one).");
             _FieldRuleEnumOBJ.addEnumValue("2 REPEATED This field can be repeated any number of times (including zero) in a well-formed message. The order of the repeated values will be preserved.");
-            _FieldRuleEnumOBJ.addDescription("The FieldRuleEnum indicates whether a field is required, optional or repeated.\n <p/>\n REQUIRED is Forever You should be very careful about marking fields as required. If at some\n point you wish to stop writing or sending a required field, it will be problematic to change\n the field to an optional field Ð old readers will consider messages without this field to be\n incomplete and may reject or drop them unintentionally. You should consider writing\n application-specific custom validation routines for your buffers instead. Some engineers\n at Google have come to the conclusion that using required does more harm than good; they\n prefer to use only optional and repeated. However, this view is not universal.");
+            _FieldRuleEnumOBJ.addDescription("The FieldRuleEnum indicates whether a field is required, optional or repeated.\n <p/>\n REQUIRED is Forever You should be very careful about marking fields as required. If at some\n point you wish to stop writing or sending a required field, it will be problematic to change\n the field to an optional field ? old readers will consider messages without this field to be\n incomplete and may reject or drop them unintentionally. You should consider writing\n application-specific custom validation routines for your buffers instead. Some engineers\n at Google have come to the conclusion that using required does more harm than good; they\n prefer to use only optional and repeated. However, this view is not universal.");
             _FieldRuleEnumOBJ.setDotName("dmdgpb.FieldRuleEnum.EnumDefinition");
             _FieldRuleEnum.setDefinedIn(this);
             _FieldRuleEnumOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/types.dmd");
