@@ -5,6 +5,7 @@ package org.dmd.gpb.tools.generation.doc.html.generated.dmtdl;
 import java.io.IOException;                                                          // Thrown by formatting - (Section.java:95)
 import java.util.ArrayList;                                                          // Because we have multiple instances of some Sections - (Section.java:67)
 import java.util.Iterator;                                                           // Because we have multiple instances of some Sections - (Section.java:68)
+import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.DivSeparator;           // Is a contained section - (Section.java:62)
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.MessageDetails;         // Is a contained section - (Section.java:62)
 import org.dmd.templates.server.extended.Template;                                   // The Template - (Section.java:93)
 import org.dmd.templates.server.util.FormattedArtifactIF;                            // Common interface for gathering formatted output - (Section.java:94)
@@ -19,10 +20,12 @@ public class MessageSection implements SectionIF {
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
     // Called from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:117)
+    DivSeparator                 _DivSeparator;                                          // A single static instance of DivSeparator
     ArrayList<MessageDetails>    _MessageDetails    = new ArrayList<MessageDetails>();   // Multiple instances of MessageDetails
 
 
     public MessageSection(){
+        _DivSeparator = new DivSeparator(); // Static Section
     }
 
     public String getValue(String name){
@@ -37,6 +40,8 @@ public class MessageSection implements SectionIF {
 
         GpbdocTemplateLoader.MessageSection.format(this,artifact, GpbdocTemplateLoader._Comment);
 
+        _DivSeparator.format(artifact);
+
         if (_MessageDetails != null){
             for(MessageDetails entry: _MessageDetails){
                 entry.format(artifact);
@@ -49,6 +54,10 @@ public class MessageSection implements SectionIF {
     // Generated from: org.dmd.templates.server.extended.Section.getFormatFunction(Section.java:341)
     public void format(FormattedArtifactIF artifact, Template template) throws IOException {
         template.format(this, artifact);
+    }
+
+    public DivSeparator getDivSeparator(){
+        return(_DivSeparator);
     }
 
     // Generated from: org.dmd.templates.server.extended.Section.getAccessFunctions(Section.java:391)

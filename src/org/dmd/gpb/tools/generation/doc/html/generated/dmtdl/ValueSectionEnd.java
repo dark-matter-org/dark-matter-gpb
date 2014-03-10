@@ -10,14 +10,14 @@ import org.dmd.templates.server.util.SectionIF;                   // Standard in
 
 
 // Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:114)
-public class MessageFooter implements SectionIF {
+public class ValueSectionEnd implements SectionIF {
 
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
     // Called from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:117)
 
 
-    public MessageFooter(){
+    public ValueSectionEnd(){
     }
 
     public String getValue(String name){
@@ -27,7 +27,7 @@ public class MessageFooter implements SectionIF {
     // Generated from: org.dmd.templates.server.extended.Section.getFormatFunction(Section.java:269)
     public void format(FormattedArtifactIF artifact) throws IOException {
 
-        GpbdocTemplateLoader.MessageFooter.format(this,artifact, GpbdocTemplateLoader._Comment);
+        GpbdocTemplateLoader.ValueSectionEnd.format(this,artifact, GpbdocTemplateLoader._Comment);
 
     }
 

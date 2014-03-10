@@ -11,7 +11,7 @@ import org.dmd.templates.server.util.SectionIF;                   // Standard in
 
 
 // Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:114)
-public class FieldReference implements SectionIF {
+public class AttributeInfo implements SectionIF {
 
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
@@ -19,72 +19,33 @@ public class FieldReference implements SectionIF {
     TreeMap<String,String>    values    = new TreeMap<String,String>();   // Required to store our values
 
 
-    public FieldReference(){
+    public AttributeInfo(){
     }
 
-    public FieldReference setIcon(String icon_){
-        if (icon_ != null)
-            values.put("icon", icon_);
+    /**
+     * Constructs a new AttributeInfo section.
+     * @param label_ A label for the information
+     * @param info_ The actual information
+     * Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:143)
+     */
+    public AttributeInfo(String label_, String info_){
+        if (label_ != null)
+            values.put("label", label_);
+
+        if (info_ != null)
+            values.put("info", info_);
+
+    }
+
+    public AttributeInfo setLabel(String label_){
+        if (label_ != null)
+            values.put("label", label_);
         return(this);
     }
 
-    public FieldReference setTooltip(String tooltip_){
-        if (tooltip_ != null)
-            values.put("tooltip", tooltip_);
-        return(this);
-    }
-
-    public FieldReference setFieldRef(String fieldRef_){
-        if (fieldRef_ != null)
-            values.put("fieldRef", fieldRef_);
-        return(this);
-    }
-
-    public FieldReference setGenerateAs(String generateAs_){
-        if (generateAs_ != null)
-            values.put("generateAs", generateAs_);
-        return(this);
-    }
-
-    public FieldReference setTypeRef(String typeRef_){
-        if (typeRef_ != null)
-            values.put("typeRef", typeRef_);
-        return(this);
-    }
-
-    public FieldReference setTypeName(String typeName_){
-        if (typeName_ != null)
-            values.put("typeName", typeName_);
-        return(this);
-    }
-
-    public FieldReference setFieldTag(String fieldTag_){
-        if (fieldTag_ != null)
-            values.put("fieldTag", fieldTag_);
-        return(this);
-    }
-
-    public FieldReference setHint(String hint_){
-        if (hint_ != null)
-            values.put("hint", hint_);
-        return(this);
-    }
-
-    public FieldReference setVersion(String version_){
-        if (version_ != null)
-            values.put("version", version_);
-        return(this);
-    }
-
-    public FieldReference setSkip(String skip_){
-        if (skip_ != null)
-            values.put("skip", skip_);
-        return(this);
-    }
-
-    public FieldReference setObsolete(String obsolete_){
-        if (obsolete_ != null)
-            values.put("obsolete", obsolete_);
+    public AttributeInfo setInfo(String info_){
+        if (info_ != null)
+            values.put("info", info_);
         return(this);
     }
 
@@ -98,7 +59,7 @@ public class FieldReference implements SectionIF {
     // Generated from: org.dmd.templates.server.extended.Section.getFormatFunction(Section.java:269)
     public void format(FormattedArtifactIF artifact) throws IOException {
 
-        GpbdocTemplateLoader.FieldReference.format(this,artifact, GpbdocTemplateLoader._Comment);
+        GpbdocTemplateLoader.AttributeInfo.format(this,artifact, GpbdocTemplateLoader._Comment);
 
     }
 
