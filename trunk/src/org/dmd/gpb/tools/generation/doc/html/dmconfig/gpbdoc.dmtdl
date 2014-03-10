@@ -57,9 +57,10 @@ endsWithText	</div> <!-- content -->
 
 Section
 name			ModuleHeader
+contains		one DescriptionSection
 value			moduleName 			"Just the name of the module"
-value			moduleDescription	"The description of the module"
-value			version				"The version at which the module was introduced"
+//value			moduleDescription	"The description of the module"
+//value			version				"The version at which the module was introduced"
 
 Section
 name			DivSummary
@@ -76,9 +77,10 @@ description		Just a separator area.
 Section
 name			DivDetails
 startsWithText	<div class="details">
-contains		static	DivSeparator
+// contains		static	DivSeparator
 contains		one 	EnumerationSection
 contains		one 	MessageSection
+contains		one		FieldDetailSection
 endsWithText	</div> <!-- details -->
 
 
@@ -113,15 +115,36 @@ description		The table closure for a SummarySection.
 Section
 name			EnumerationSection
 startsWithText	<div class="enumerations">
-contains		many EnumerationDetails
+contains		static	DivSeparator
+contains		many 	EnumerationDetails
 endsWithText	</div> <!-- enumerations -->
 
 Section
 name			EnumerationDetails
-startsWith		EnumerationHeader
-contains		many	EnumerationValue
-endsWith		EnumerationFooter
+startsWith		DetailStart
+contains		one 	DetailTitle
+contains		one		DescriptionSection
+contains		one		ValueSection
+endsWith		DetailEnd
 description		Provides all the details of an enumeration.
+
+Section
+name			DetailStart
+
+Section
+name			DetailTitle
+value			title		"The name of some definition."
+value			type		"The type of definition e.g. enum, message etc."
+description		Just the title.
+
+Section
+name			ValueSection
+startsWith		ValueSectionStart
+contains		many EnumerationValue
+endsWith		ValueSectionEnd
+
+Section
+name			ValueSectionStart
 
 Section
 name			EnumerationValue
@@ -133,34 +156,54 @@ value			version			"The version when the enum value was introduced"
 value			obsolete		"The version when the enum value became obsolete"
 
 Section
-name			EnumerationHeader
-value			enumTitle		"The name of the enum."
-description		The table heading section for an enum detail layout.
-
-Section
 name			EnumerationFooter
 description		The table closure for a EnumerationDetails section.
+
+Section
+name			ValueSectionEnd
+
+Section
+name			DetailEnd
+
+
 
 ///////////////////////////////////////////////////////////////////////////////
 
 Section
 name			MessageSection
 startsWithText	<div class="messages">
-contains		many MessageDetails
+contains		static	DivSeparator
+contains		many 	MessageDetails
 endsWithText	</div> <!-- messages -->
 
 Section
 name			MessageDetails
-startsWith		MessageHeader
-contains		many	FieldReference
-endsWith		MessageFooter
+startsWith		DetailStart
+contains		one	DetailTitle
+contains		one DescriptionSection
+contains		one FieldSection
+endsWith		DetailEnd
 description		Provides all the details of a message.
+
+Section
+name			FieldSection
+startsWith		FieldSectionStart
+contains		many FieldReference
+endsWith		FieldSectionEnd
+
+Section
+name			FieldSectionStart
+
 
 Section
 name			FieldReference
 description		The details of a field used in a message.
+value			icon			"The icon representing required, optional, repeated"
+value			tooltip			"The tool tip text for the icon"
 value			fieldRef		"The name of the field being referenced"
 value			generateAs		"The name the will be used in the generated .proto file"
+value			typeRef			"A link to the type of the field"
+value			typeName		"The name of the type"
 value			fieldTag		"The numeric tag for the field"
 value			hint			"A short description of the value"
 value			version			"The version when the enum value was introduced"
@@ -168,12 +211,53 @@ value			skip			"Any versions where this field is skipped"
 value			obsolete		"The version when the enum value became obsolete"
 
 Section
-name			MessageHeader
-value			messageTitle		"The name of the message."
-value			why					"A reference to why the message was added"
-description		The table heading section for a message detail layout.
+name			FieldSectionEnd
+
+///////////////////////////////////////////////////////////////////////////////
 
 Section
-name			MessageFooter
-description		The table closure for a EnumerationDetails section.
+name			FieldDetailSection
+startsWithText	<div class="fields">
+contains		static	DivSeparator
+contains		many 	FieldDetails
+endsWithText	</div> <!-- fields -->
+
+Section
+name			FieldDetails
+startsWith		DetailStart
+contains		one	DetailTitle
+contains		one DescriptionSection
+// contains		one FieldSection
+endsWith		DetailEnd
+description		Provides all the details of a field.
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+Section
+name			DescriptionSection
+startsWith		DescriptionStart
+contains		many	AttributeInfo
+endsWith		DescriptionEnd
+description		Provides an area to describe something.
+
+Section
+name			DescriptionStart
+description		Starts the div and the table to hold the attribute info.
+
+Section
+name			AttributeInfo
+value			label	"A label for the information"
+value			info	"The actual information"
+description		These are just rows in a table.
+
+Section
+name			DescriptionEnd
+description		Closes the table and the div.
+
+
+
+
 

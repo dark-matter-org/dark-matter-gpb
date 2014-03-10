@@ -62,10 +62,21 @@ format		</table>
 ///////////////////////////////////////////////////////////////////////////////
 
 Template
-name		EnumerationHeader
-format		<div class="enumTitle"> <a name="::enumTitle::"> The ::enumTitle:: enum </a> </div>
- <div class="enumerationSection">
+name		DetailStart
+format		<div class="detailSection">
+
+
+Template
+name		DetailTitle
+format		<div class="detailTitle">
+ <a name="::title::"> The ::title:: ::type:: </a>
+ </div>
+ 
+Template
+name		ValueSectionStart
+format		<div class="valueSection">
  <table>
+
 
 Template
 name		EnumerationValue
@@ -78,32 +89,59 @@ format		<tr>
  </tr>
 
 Template
-name		EnumerationFooter
+name		ValueSectionEnd
 format		</table>
- </div> <!-- enumerationSection -->
+ </div> <!-- valueSection -->
+ 
+ 
+Template
+name		DetailEnd
+format		</div> <!-- detailSection -->
+
+ 
 
 ///////////////////////////////////////////////////////////////////////////////
 
 Template
-name		MessageHeader
-format		<div class="messageTitle"> <a name="::messageTitle::"> The ::messageTitle:: message </a> </div>
- <div class="why"> ::why:: </div>
- <div class="messageSection">
+name		FieldSectionStart
+format		<div class="fieldSection">
  <table>
-
+ 
 Template
 name		FieldReference
 format		<tr>
- <td class="fieldRef">  ::fieldRef:: </td>
- <td class="generateAs">  ::generateAs:: </td>
- <td class="fieldTag">  ::fieldTag:: </td>
- <td class="hint"> ::hint:: </td>
- <td class="version"> ::version:: </td>
- <td class="skip"> ::skip:: </td>
- <td class="obsolete"> ::obsolete:: </td>
+ <td valign="top"> <img src="::icon::" title="::tooltip::"/>
+ <td valign="top" class="fieldRef">  ::fieldRef:: </td>
+ <td valign="top" class="generateAs">  ::generateAs:: </td>
+ <td valign="top" class="typeRef">  <a href="::typeRef::"> ::typeName:: </a> </td>
+ <td valign="top" class="fieldTag">  ::fieldTag:: </td>
+ <td valign="top" class="hint"> ::hint:: </td>
+ <td valign="top" class="version"> ::version:: </td>
+ <td valign="top" class="skip"> ::skip:: </td>
+ <td valign="top" class="obsolete"> ::obsolete:: </td>
  </tr>
 
 Template
-name		MessageFooter
+name		FieldSectionEnd
 format		</table>
- </div> <!-- messageSection -->
+ </div> <!-- fieldSection -->
+ 
+///////////////////////////////////////////////////////////////////////////////
+
+Template
+name		DescriptionStart
+format <div class="descriptionSection">
+ <table>
+
+Template
+name		AttributeInfo
+format		<tr>
+ <td valign="top" class="attributeLabel" style="white-space: nowrap">  ::label:: </td>
+ <td valign="top" class="attributeInfo">  ::info:: </td>
+ </tr>
+
+Template
+name		DescriptionEnd
+format </table>
+ </div> <!-- descriptionSection -->
+

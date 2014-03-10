@@ -2,11 +2,12 @@ package org.dmd.gpb.tools.generation.doc.html.generated.dmtdl;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:112)
-import java.io.IOException;                                       // Thrown by formatting - (Section.java:95)
-import java.util.TreeMap;                                         // To store values - (Section.java:102)
-import org.dmd.templates.server.extended.Template;                // The Template - (Section.java:93)
-import org.dmd.templates.server.util.FormattedArtifactIF;         // Common interface for gathering formatted output - (Section.java:94)
-import org.dmd.templates.server.util.SectionIF;                   // Standard interface used by Templates - (Section.java:92)
+import java.io.IOException;                                                              // Thrown by formatting - (Section.java:95)
+import java.util.TreeMap;                                                                // To store values - (Section.java:102)
+import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.DescriptionSection;         // Is a contained section - (Section.java:62)
+import org.dmd.templates.server.extended.Template;                                       // The Template - (Section.java:93)
+import org.dmd.templates.server.util.FormattedArtifactIF;                                // Common interface for gathering formatted output - (Section.java:94)
+import org.dmd.templates.server.util.SectionIF;                                          // Standard interface used by Templates - (Section.java:92)
 
 
 
@@ -16,7 +17,8 @@ public class ModuleHeader implements SectionIF {
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
     // Called from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:117)
-    TreeMap<String,String>    values    = new TreeMap<String,String>();   // Required to store our values
+    TreeMap<String,String>    values                 = new TreeMap<String,String>();   // Required to store our values
+    DescriptionSection        _DescriptionSection;                                     // A single instance of DescriptionSection
 
 
     public ModuleHeader(){
@@ -25,37 +27,17 @@ public class ModuleHeader implements SectionIF {
     /**
      * Constructs a new ModuleHeader section.
      * @param moduleName_ Just the name of the module
-     * @param moduleDescription_ The description of the module
-     * @param version_ The version at which the module was introduced
      * Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:143)
      */
-    public ModuleHeader(String moduleName_, String moduleDescription_, String version_){
+    public ModuleHeader(String moduleName_){
         if (moduleName_ != null)
             values.put("moduleName", moduleName_);
-
-        if (moduleDescription_ != null)
-            values.put("moduleDescription", moduleDescription_);
-
-        if (version_ != null)
-            values.put("version", version_);
 
     }
 
     public ModuleHeader setModuleName(String moduleName_){
         if (moduleName_ != null)
             values.put("moduleName", moduleName_);
-        return(this);
-    }
-
-    public ModuleHeader setModuleDescription(String moduleDescription_){
-        if (moduleDescription_ != null)
-            values.put("moduleDescription", moduleDescription_);
-        return(this);
-    }
-
-    public ModuleHeader setVersion(String version_){
-        if (version_ != null)
-            values.put("version", version_);
         return(this);
     }
 
@@ -71,11 +53,30 @@ public class ModuleHeader implements SectionIF {
 
         GpbdocTemplateLoader.ModuleHeader.format(this,artifact, GpbdocTemplateLoader._Comment);
 
+        if (_DescriptionSection != null)
+            _DescriptionSection.format(artifact);
+
     }
 
     // Generated from: org.dmd.templates.server.extended.Section.getFormatFunction(Section.java:341)
     public void format(FormattedArtifactIF artifact, Template template) throws IOException {
         template.format(this, artifact);
+    }
+
+    // Generated from: org.dmd.templates.server.extended.Section.getAccessFunctions(Section.java:361)
+    public DescriptionSection addDescriptionSection(){
+        if (_DescriptionSection != null)
+            throw(new IllegalStateException("Multiple calls to add a DescriptionSection Section. There should only be one of these in a ModuleHeader."));
+        _DescriptionSection = new DescriptionSection();
+        return(_DescriptionSection);
+    }
+
+    // Generated from: org.dmd.templates.server.extended.Section.getAccessFunctions(Section.java:369)
+    public DescriptionSection getDescriptionSection(){
+        if (_DescriptionSection == null)
+            throw new IllegalStateException("The DescriptionSection Section is optional. You must add the section before you get it.");
+
+        return(_DescriptionSection);
     }
 
 }

@@ -117,15 +117,7 @@ a:active {
 
 /*****************************************************************************/
 
-.enumerationSection {
-	margin-left:	30px;
-}
-
-.enumTitle {
-	font-size: 		larger;
-	color: 			#646464;
-	padding-bottom: 5px;
-	padding-top: 	15px;
+.valueSection {
 	margin-left:	30px;
 }
 
@@ -135,15 +127,35 @@ a:active {
 
 /*****************************************************************************/
 
+.descriptionSection {
+	margin-left:	30px;
+	padding-top:	5px;
+	padding-bottom:	15px;
+}
+
+.attributeLabel {
+	color: #000000;
+	font-size: smaller;
+	font-weight: bold;
+}
+
 .messageSection {
 	margin-left:	30px;
 }
 
-.messageTitle {
-	font-size: larger;
-	color: #646464;
-	padding-bottom: 5px;
-	padding-top: 15px;
+.fieldSection {
 	margin-left:	30px;
+}
+
+.detailTitle {
+	font-size: 				larger;
+	color: 					#646464;
+	padding-bottom: 		5px;
+	padding-top: 			25px;
+	padding-bottom: 		10px;
+	border-bottom-style: 	solid;
+	border-bottom-color: 	#C4C4C4;
+	border-bottom-width:	1px;
+	margin-left:			30px;
 }
 

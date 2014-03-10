@@ -33,6 +33,10 @@ import org.dmd.templates.server.util.FormattedArtifactIF;                       
      *       -- DivMain  
      *         -- DivContent  
      *           -- ModuleHeader  <-
+     *             ++ DescriptionSection  
+     *               -- DescriptionStart  
+     *               [] AttributeInfo  <-
+     *               -- DescriptionEnd  
      *           -- DivSummary  
      *             -- DivSeparator  <-
      *             [] SummarySection  
@@ -40,17 +44,44 @@ import org.dmd.templates.server.util.FormattedArtifactIF;                       
      *               [] SummaryItem  <-
      *               -- SummaryFooter  
      *           -- DivDetails  
-     *             -- DivSeparator  <-
      *             ++ EnumerationSection  
+     *               -- DivSeparator  <-
      *               [] EnumerationDetails  
-     *                 -- EnumerationHeader  <-
-     *                 [] EnumerationValue  <-
-     *                 -- EnumerationFooter  
+     *                 -- DetailStart  
+     *                 ++ DetailTitle  <-
+     *                 ++ DescriptionSection  
+     *                   -- DescriptionStart  
+     *                   [] AttributeInfo  <-
+     *                   -- DescriptionEnd  
+     *                 ++ ValueSection  
+     *                   -- ValueSectionStart  
+     *                   [] EnumerationValue  <-
+     *                   -- ValueSectionEnd  
+     *                 -- DetailEnd  
      *             ++ MessageSection  
+     *               -- DivSeparator  <-
      *               [] MessageDetails  
-     *                 -- MessageHeader  <-
-     *                 [] FieldReference  <-
-     *                 -- MessageFooter  
+     *                 -- DetailStart  
+     *                 ++ DetailTitle  <-
+     *                 ++ DescriptionSection  
+     *                   -- DescriptionStart  
+     *                   [] AttributeInfo  <-
+     *                   -- DescriptionEnd  
+     *                 ++ FieldSection  
+     *                   -- FieldSectionStart  
+     *                   [] FieldReference  <-
+     *                   -- FieldSectionEnd  
+     *                 -- DetailEnd  
+     *             ++ FieldDetailSection  
+     *               -- DivSeparator  <-
+     *               [] FieldDetails  
+     *                 -- DetailStart  
+     *                 ++ DetailTitle  <-
+     *                 ++ DescriptionSection  
+     *                   -- DescriptionStart  
+     *                   [] AttributeInfo  <-
+     *                   -- DescriptionEnd  
+     *                 -- DetailEnd  
      */
     public class GpbHtmlDoc {
 
@@ -76,7 +107,7 @@ import org.dmd.templates.server.util.FormattedArtifactIF;                       
 
     }
 
-    // Generated from: org.dmd.templates.server.util.StaticAccessInfo.getAccessFunctions(StaticAccessInfo.java:47)
+    // Generated from: org.dmd.templates.server.util.StaticAccessInfo.getAccessFunctions(StaticAccessInfo.java:51)
     /**
      * @return the DivDetails Section at: _HtmlContent.getBody().getDivMain().getDivContent().getDivDetails()
      */
@@ -84,22 +115,15 @@ import org.dmd.templates.server.util.FormattedArtifactIF;                       
         return(_HtmlContent.getBody().getDivMain().getDivContent().getDivDetails());
     }
 
-    // Generated from: org.dmd.templates.server.util.StaticAccessInfo.getAccessFunctions(StaticAccessInfo.java:47)
+    // Generated from: org.dmd.templates.server.util.StaticAccessInfo.getAccessFunctions(StaticAccessInfo.java:51)
     /**
      * @return the DivSeparator Section at: _HtmlContent.getBody().getDivMain().getDivContent().getDivSummary().getDivSeparator()
      */
-    public DivSeparator getDivSeparator1(){
+    public DivSeparator getDivSeparator(){
         return(_HtmlContent.getBody().getDivMain().getDivContent().getDivSummary().getDivSeparator());
     }
 
-    /**
-     * @return the DivSeparator Section at: _HtmlContent.getBody().getDivMain().getDivContent().getDivDetails().getDivSeparator()
-     */
-    public DivSeparator getDivSeparator2(){
-        return(_HtmlContent.getBody().getDivMain().getDivContent().getDivDetails().getDivSeparator());
-    }
-
-    // Generated from: org.dmd.templates.server.util.StaticAccessInfo.getAccessFunctions(StaticAccessInfo.java:47)
+    // Generated from: org.dmd.templates.server.util.StaticAccessInfo.getAccessFunctions(StaticAccessInfo.java:51)
     /**
      * @return the DivSummary Section at: _HtmlContent.getBody().getDivMain().getDivContent().getDivSummary()
      */
@@ -107,7 +131,7 @@ import org.dmd.templates.server.util.FormattedArtifactIF;                       
         return(_HtmlContent.getBody().getDivMain().getDivContent().getDivSummary());
     }
 
-    // Generated from: org.dmd.templates.server.util.StaticAccessInfo.getAccessFunctions(StaticAccessInfo.java:47)
+    // Generated from: org.dmd.templates.server.util.StaticAccessInfo.getAccessFunctions(StaticAccessInfo.java:51)
     /**
      * @return the HtmlHead Section at: _HtmlContent.getHtmlHead()
      */
@@ -115,7 +139,7 @@ import org.dmd.templates.server.util.FormattedArtifactIF;                       
         return(_HtmlContent.getHtmlHead());
     }
 
-    // Generated from: org.dmd.templates.server.util.StaticAccessInfo.getAccessFunctions(StaticAccessInfo.java:47)
+    // Generated from: org.dmd.templates.server.util.StaticAccessInfo.getAccessFunctions(StaticAccessInfo.java:51)
     /**
      * @return the ModuleHeader Section at: _HtmlContent.getBody().getDivMain().getDivContent().getModuleHeader()
      */

@@ -11,7 +11,7 @@ import org.dmd.templates.server.util.SectionIF;                   // Standard in
 
 
 // Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:114)
-public class MessageHeader implements SectionIF {
+public class DetailTitle implements SectionIF {
 
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
@@ -19,33 +19,33 @@ public class MessageHeader implements SectionIF {
     TreeMap<String,String>    values    = new TreeMap<String,String>();   // Required to store our values
 
 
-    public MessageHeader(){
+    public DetailTitle(){
     }
 
     /**
-     * Constructs a new MessageHeader section.
-     * @param messageTitle_ The name of the message.
-     * @param why_ A reference to why the message was added
+     * Constructs a new DetailTitle section.
+     * @param title_ The name of some definition.
+     * @param type_ The type of definition e.g. enum, message etc.
      * Generated from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:143)
      */
-    public MessageHeader(String messageTitle_, String why_){
-        if (messageTitle_ != null)
-            values.put("messageTitle", messageTitle_);
+    public DetailTitle(String title_, String type_){
+        if (title_ != null)
+            values.put("title", title_);
 
-        if (why_ != null)
-            values.put("why", why_);
+        if (type_ != null)
+            values.put("type", type_);
 
     }
 
-    public MessageHeader setMessageTitle(String messageTitle_){
-        if (messageTitle_ != null)
-            values.put("messageTitle", messageTitle_);
+    public DetailTitle setTitle(String title_){
+        if (title_ != null)
+            values.put("title", title_);
         return(this);
     }
 
-    public MessageHeader setWhy(String why_){
-        if (why_ != null)
-            values.put("why", why_);
+    public DetailTitle setType(String type_){
+        if (type_ != null)
+            values.put("type", type_);
         return(this);
     }
 
@@ -59,7 +59,7 @@ public class MessageHeader implements SectionIF {
     // Generated from: org.dmd.templates.server.extended.Section.getFormatFunction(Section.java:269)
     public void format(FormattedArtifactIF artifact) throws IOException {
 
-        GpbdocTemplateLoader.MessageHeader.format(this,artifact, GpbdocTemplateLoader._Comment);
+        GpbdocTemplateLoader.DetailTitle.format(this,artifact, GpbdocTemplateLoader._Comment);
 
     }
 

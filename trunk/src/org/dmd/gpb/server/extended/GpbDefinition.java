@@ -15,4 +15,12 @@ abstract public class GpbDefinition extends GpbDefinitionDMW {
 	}
 
 
+	public String getHref(GpbDefinition from){
+		if (getDefinedInGpbModule() == from.getDefinedInGpbModule()){
+			return("#" + getName());
+		}
+		else{
+			return(getDefinedInGpbModule().getName() + ".html#" + getName());
+		}
+	}
 }

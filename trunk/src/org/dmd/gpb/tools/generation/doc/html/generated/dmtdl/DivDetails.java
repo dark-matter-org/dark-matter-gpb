@@ -3,8 +3,8 @@ package org.dmd.gpb.tools.generation.doc.html.generated.dmtdl;
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:112)
 import java.io.IOException;                                                              // Thrown by formatting - (Section.java:95)
-import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.DivSeparator;               // Is a contained section - (Section.java:62)
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.EnumerationSection;         // Is a contained section - (Section.java:62)
+import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.FieldDetailSection;         // Is a contained section - (Section.java:62)
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.MessageSection;             // Is a contained section - (Section.java:62)
 import org.dmd.templates.server.extended.Template;                                       // The Template - (Section.java:93)
 import org.dmd.templates.server.util.FormattedArtifactIF;                                // Common interface for gathering formatted output - (Section.java:94)
@@ -19,13 +19,12 @@ public class DivDetails implements SectionIF {
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
     // Called from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:117)
-    DivSeparator          _DivSeparator;               // A single static instance of DivSeparator
     EnumerationSection    _EnumerationSection;         // A single instance of EnumerationSection
     MessageSection        _MessageSection;             // A single instance of MessageSection
+    FieldDetailSection    _FieldDetailSection;         // A single instance of FieldDetailSection
 
 
     public DivDetails(){
-        _DivSeparator = new DivSeparator(); // Static Section
     }
 
     public String getValue(String name){
@@ -40,13 +39,14 @@ public class DivDetails implements SectionIF {
 
         GpbdocTemplateLoader.DivDetails.format(this,artifact, GpbdocTemplateLoader._Comment);
 
-        _DivSeparator.format(artifact);
-
         if (_EnumerationSection != null)
             _EnumerationSection.format(artifact);
 
         if (_MessageSection != null)
             _MessageSection.format(artifact);
+
+        if (_FieldDetailSection != null)
+            _FieldDetailSection.format(artifact);
 
         artifact.addText("</div> <!-- details -->\n");
     }
@@ -54,10 +54,6 @@ public class DivDetails implements SectionIF {
     // Generated from: org.dmd.templates.server.extended.Section.getFormatFunction(Section.java:341)
     public void format(FormattedArtifactIF artifact, Template template) throws IOException {
         template.format(this, artifact);
-    }
-
-    public DivSeparator getDivSeparator(){
-        return(_DivSeparator);
     }
 
     // Generated from: org.dmd.templates.server.extended.Section.getAccessFunctions(Section.java:361)
@@ -90,6 +86,22 @@ public class DivDetails implements SectionIF {
             throw new IllegalStateException("The MessageSection Section is optional. You must add the section before you get it.");
 
         return(_MessageSection);
+    }
+
+    // Generated from: org.dmd.templates.server.extended.Section.getAccessFunctions(Section.java:361)
+    public FieldDetailSection addFieldDetailSection(){
+        if (_FieldDetailSection != null)
+            throw(new IllegalStateException("Multiple calls to add a FieldDetailSection Section. There should only be one of these in a DivDetails."));
+        _FieldDetailSection = new FieldDetailSection();
+        return(_FieldDetailSection);
+    }
+
+    // Generated from: org.dmd.templates.server.extended.Section.getAccessFunctions(Section.java:369)
+    public FieldDetailSection getFieldDetailSection(){
+        if (_FieldDetailSection == null)
+            throw new IllegalStateException("The FieldDetailSection Section is optional. You must add the section before you get it.");
+
+        return(_FieldDetailSection);
     }
 
 }
