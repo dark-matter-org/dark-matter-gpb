@@ -111,7 +111,7 @@ Template
 name		FieldReference
 format		<tr>
  <td valign="top"> <img src="::icon::" title="::tooltip::"/>
- <td valign="top" class="fieldRef">  ::fieldRef:: </td>
+ <td valign="top" class="fieldRef">  <a href="::fieldRef::"> ::fieldName:: </a> </td>
  <td valign="top" class="generateAs">  ::generateAs:: </td>
  <td valign="top" class="typeRef">  <a href="::typeRef::"> ::typeName:: </a> </td>
  <td valign="top" class="fieldTag">  ::fieldTag:: </td>

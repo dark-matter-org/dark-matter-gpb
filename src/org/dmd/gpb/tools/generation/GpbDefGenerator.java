@@ -67,5 +67,12 @@ public class GpbDefGenerator extends GpbModuleGenUtility {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void generate(GpbModuleDefinitionManager definitions)
+			throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

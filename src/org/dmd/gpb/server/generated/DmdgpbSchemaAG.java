@@ -738,12 +738,12 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldIndicatorBaseOBJ.addRequiredPart("FieldRuleEnum fieldRule \"Whether the field is required, optional or repeated.\"");
             _GpbFieldIndicatorBaseOBJ.addRequiredPart("GpbField fieldRef \"Reference to the GpbField to be used.\"");
             _GpbFieldIndicatorBaseOBJ.addRequiredPart("Integer fieldTag \"The unique numeric tag for this field.\"");
-            _GpbFieldIndicatorBaseOBJ.addExampleUsage("Standard field definition:");
-            _GpbFieldIndicatorBaseOBJ.addExampleUsage("Field definition with a default value:");
-            _GpbFieldIndicatorBaseOBJ.addExampleUsage("A packed field:");
-            _GpbFieldIndicatorBaseOBJ.addExampleUsage("A field with a version indicator:");
-            _GpbFieldIndicatorBaseOBJ.addExampleUsage("An obsolete field:");
-            _GpbFieldIndicatorBaseOBJ.addExampleUsage("Overriding the hint associated with a field:");
+            _GpbFieldIndicatorBaseOBJ.addExample("code: Standard field definition :Here's some explanation");
+            _GpbFieldIndicatorBaseOBJ.addExample("code: Field definition with a default value :blah blah");
+            _GpbFieldIndicatorBaseOBJ.addExample("code: A packed field :blah blah");
+            _GpbFieldIndicatorBaseOBJ.addExample("code: A field with a version indicator :blah blah");
+            _GpbFieldIndicatorBaseOBJ.addExample("text: An obsolete field :blah blah");
+            _GpbFieldIndicatorBaseOBJ.addExample("text: Overriding the hint associated with a field :blah blah");
             _GpbFieldIndicatorBaseOBJ.setDotName("dmdgpb.GpbFieldIndicatorBase.ComplexTypeDefinition");
             _GpbFieldIndicatorBase.setDefinedIn(this);
             _GpbFieldIndicatorBaseOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");

@@ -5,6 +5,7 @@ package org.dmd.gpb.tools.generation.doc.html.generated.dmtdl;
 import java.io.IOException;                                                            // Thrown by formatting - (Section.java:95)
 import java.util.ArrayList;                                                            // Because we have multiple instances of some Sections - (Section.java:67)
 import java.util.Iterator;                                                             // Because we have multiple instances of some Sections - (Section.java:68)
+import org.dmd.gpb.server.extended.GpbDefinition;                                      // The object formatted by ExtensionHook - DescriptionExtension - (ExtensionHook.java:40)
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.AttributeInfo;            // Is a contained section - (Section.java:62)
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.DescriptionEnd;           // Ends with one of these - (Section.java:83)
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.DescriptionStart;         // Starts with one of these - (Section.java:50)
@@ -20,9 +21,10 @@ public class DescriptionSection implements SectionIF {
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
     // Called from: org.dmd.templates.server.extended.Section.generateSectionClass(Section.java:117)
-    DescriptionStart            _DescriptionStart;                                       // Starts with a DescriptionStart
-    ArrayList<AttributeInfo>    _AttributeInfo       = new ArrayList<AttributeInfo>();   // Multiple instances of AttributeInfo
-    DescriptionEnd              _DescriptionEnd;                                         // Ends with a DescriptionEnd
+    DescriptionStart            _DescriptionStart;                                                         // Starts with a DescriptionStart
+    ArrayList<AttributeInfo>    _AttributeInfo                         = new ArrayList<AttributeInfo>();   // Multiple instances of AttributeInfo
+    ArrayList<AttributeInfo>    _AttributeInfo_DescriptionExtension    = new ArrayList<AttributeInfo>();   // Multiple instances of AttributeInfo for extension hook DescriptionExtension
+    DescriptionEnd              _DescriptionEnd;                                                           // Ends with a DescriptionEnd
 
 
     public DescriptionSection(){
@@ -44,6 +46,10 @@ public class DescriptionSection implements SectionIF {
             for(AttributeInfo entry: _AttributeInfo){
                 entry.format(artifact);
             }
+        }
+
+        for(AttributeInfo entry: _AttributeInfo_DescriptionExtension){
+            entry.format(artifact);
         }
 
         _DescriptionEnd.format(artifact);
@@ -81,6 +87,17 @@ public class DescriptionSection implements SectionIF {
         return(rc);
     }
 
+    // Generated from: org.dmd.templates.server.extended.ExtensionHook.getExtensionFunction(ExtensionHook.java:62)
+    public void extensionDescriptionExtension(GpbDefinition target){
+        for(GpbdocExtensionHookIF hook: GpbdocTemplateLoader._extensionHooks){
+            ArrayList<AttributeInfo> ext = hook.performDescriptionExtension(target);
+            if (ext != null){
+                for(AttributeInfo entry: ext){
+                    _AttributeInfo_DescriptionExtension.add(entry);
+                }
+            }
+        }
+    }
     public DescriptionEnd getDescriptionEnd(){
         return(_DescriptionEnd);
     }
