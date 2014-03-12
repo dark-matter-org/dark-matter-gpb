@@ -36,6 +36,8 @@ import org.dmd.templates.server.util.FormattedArtifactIF;                       
      *             ++ DescriptionSection  
      *               -- DescriptionStart  
      *               [] AttributeInfo  <-
+     *               xx DescriptionExtension
+     *                 [] AttributeInfo  <-
      *               -- DescriptionEnd  
      *           -- DivSummary  
      *             -- DivSeparator  <-
@@ -52,6 +54,8 @@ import org.dmd.templates.server.util.FormattedArtifactIF;                       
      *                 ++ DescriptionSection  
      *                   -- DescriptionStart  
      *                   [] AttributeInfo  <-
+     *                   xx DescriptionExtension
+     *                     [] AttributeInfo  <-
      *                   -- DescriptionEnd  
      *                 ++ ValueSection  
      *                   -- ValueSectionStart  
@@ -66,6 +70,8 @@ import org.dmd.templates.server.util.FormattedArtifactIF;                       
      *                 ++ DescriptionSection  
      *                   -- DescriptionStart  
      *                   [] AttributeInfo  <-
+     *                   xx DescriptionExtension
+     *                     [] AttributeInfo  <-
      *                   -- DescriptionEnd  
      *                 ++ FieldSection  
      *                   -- FieldSectionStart  
@@ -80,6 +86,8 @@ import org.dmd.templates.server.util.FormattedArtifactIF;                       
      *                 ++ DescriptionSection  
      *                   -- DescriptionStart  
      *                   [] AttributeInfo  <-
+     *                   xx DescriptionExtension
+     *                     [] AttributeInfo  <-
      *                   -- DescriptionEnd  
      *                 -- DetailEnd  
      */

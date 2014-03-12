@@ -24,12 +24,12 @@ description	The field indicator is used to indicate the assignment of a defined 
  to a GpbMessage. It is very similar in form to a GPB field definition except for the fact
  that the type information is not included; the type is indicated in the referenced GpbField.
  </p>
-exampleUsage Standard field definition:
-exampleUsage Field definition with a default value:
-exampleUsage A packed field:
-exampleUsage A field with a version indicator:
-exampleUsage An obsolete field:
-exampleUsage Overriding the hint associated with a field:
+example code: Standard field definition 			: Here's some explanation
+example code: Field definition with a default value	: blah blah
+example code: A packed field						: blah blah
+example code: A field with a version indicator		: blah blah
+example text: An obsolete field						: blah blah
+example text: Overriding the hint associated with a field	: blah blah
 
 ComplexTypeDefinition
 name GpbEnumValue

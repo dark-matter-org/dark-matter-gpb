@@ -40,6 +40,12 @@ public class FieldReference implements SectionIF {
         return(this);
     }
 
+    public FieldReference setFieldName(String fieldName_){
+        if (fieldName_ != null)
+            values.put("fieldName", fieldName_);
+        return(this);
+    }
+
     public FieldReference setGenerateAs(String generateAs_){
         if (generateAs_ != null)
             values.put("generateAs", generateAs_);

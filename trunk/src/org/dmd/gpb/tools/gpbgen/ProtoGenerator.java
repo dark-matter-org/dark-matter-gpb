@@ -1,5 +1,7 @@
 package org.dmd.gpb.tools.gpbgen;
 
+import java.io.IOException;
+
 import org.dmd.gpb.server.extended.GpbModule;
 import org.dmd.gpb.server.generated.dsd.GpbModuleDefinitionManager;
 import org.dmd.gpb.server.generated.dsd.GpbModuleGenUtility;
@@ -30,6 +32,13 @@ public class ProtoGenerator extends GpbModuleGenUtility {
 	public void objectResolutionComplete(GpbModule module,
 			ConfigLocation location, GpbModuleDefinitionManager definitions)
 			throws ResultException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void generate(GpbModuleDefinitionManager definitions)
+			throws IOException {
 		// TODO Auto-generated method stub
 		
 	}

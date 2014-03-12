@@ -200,7 +200,8 @@ name			FieldReference
 description		The details of a field used in a message.
 value			icon			"The icon representing required, optional, repeated"
 value			tooltip			"The tool tip text for the icon"
-value			fieldRef		"The name of the field being referenced"
+value			fieldRef		"The href of the field being referenced"
+value			fieldName		"The name of the field being referenced"
 value			generateAs		"The name the will be used in the generated .proto file"
 value			typeRef			"A link to the type of the field"
 value			typeName		"The name of the type"
@@ -240,6 +241,7 @@ Section
 name			DescriptionSection
 startsWith		DescriptionStart
 contains		many	AttributeInfo
+contains		many	DescriptionExtension
 endsWith		DescriptionEnd
 description		Provides an area to describe something.
 
@@ -258,6 +260,11 @@ name			DescriptionEnd
 description		Closes the table and the div.
 
 
-
+ExtensionHook
+name				DescriptionExtension
+usesSection			AttributeInfo
+targetObjectClass	org.dmd.gpb.server.extended.GpbDefinition
+description			This hook allows you to include additional description information
+ on any GpbDefinition that's formatted by the GpbDocGenerator.
 
 

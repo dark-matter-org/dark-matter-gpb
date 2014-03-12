@@ -38,6 +38,7 @@ import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.MessageSection;
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.SummarySection;
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.ValueSection;
 import org.dmd.templates.server.util.FormattedFile;
+import org.dmd.util.exceptions.DebugInfo;
 import org.dmd.util.exceptions.ResultException;
 import org.dmd.util.parsing.ConfigLocation;
 import org.dmd.util.parsing.StringArrayList;
@@ -80,6 +81,11 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 		try {
 			loader = new GpbdocTemplateLoader(searchPaths);
 			loader.findAndLoadTemplate();
+			
+			// Load any extension hooks
+			if (extensions.size() > 0){
+				loader.loadExtensionHooks(extensions);
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			if (ex == null)
@@ -117,6 +123,9 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 
 	@Override
 	public void generate(GpbModule module, ConfigLocation location, GpbModuleDefinitionManager definitions) throws IOException {
+	}
+		
+	private void generateDoc(GpbModule module) throws IOException {
 		String outfn = module.getName() + ".html";
 		FormattedFile artifact = new FormattedFile(new FileWriter(outdir + File.separator + outfn));
 		
@@ -263,6 +272,7 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 				if (message.isReferenced()){
 					description.fastAddAttributeInfo("Used in:", getReferences(message, message.getReferringObjects()));
 				}
+				addDescription(description, message);
 				
 				// References to Concepts are weak references, they may or may not be
 				// resolved, so we drop down to the DMO level to check things out. If it's
@@ -289,6 +299,9 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 					
 						
 				}
+				
+				// Allow extenders to add their information
+				description.extensionDescriptionExtension(message);
 				
 				FieldSection fieldSection = details.addFieldSection();
 				
@@ -336,11 +349,10 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 					if (field.getHint() != null)
 						hint = field.getHint();
 					
-					String fn = field.getFieldRef().getObject().getName().getNameString();
-					
 					FieldReference fieldReference = fieldSection.addFieldReference();
 					fieldReference.setIcon(icon).setTooltip(tooltip);
-					fieldReference.setFieldRef(fn).setTypeRef(typeRef).setTypeName(tn).setGenerateAs(genAs);
+					fieldReference.setFieldRef(gpbfield.getHref(message)).setFieldName(gpbfield.getName().getNameString());
+					fieldReference.setTypeRef(typeRef).setTypeName(tn).setGenerateAs(genAs);
 					fieldReference.setFieldTag(field.getFieldTag().toString());
 					fieldReference.setHint(hint).setVersion(field.getVersion()).setSkip(skip).setObsolete(field.getObsolete());
 				}
@@ -355,12 +367,20 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 			while(fields.hasNext()){
 				GpbField field = fields.next();
 				
+				if (field.getName().getNameString().equals("moId")){		
+					DebugInfo.debug("ref hash = " + System.identityHashCode(field));
+				}
+				
 				FieldDetails details = section.addFieldDetails();
 				details.fastAddDetailTitle(field.getName().getNameString(), "Field");
 				DescriptionSection description = details.addDescriptionSection();
 				
 				if (field.getHint() != null){
 					description.fastAddAttributeInfo("Summary:", field.getHint());
+				}
+				if (field.getGpbType() != null){
+					String ref = "<a href=\"" + field.getGpbType().getHref(field) + "\"> " + field.getGpbType().getName() + " </a>";
+					description.fastAddAttributeInfo("Type:", ref);
 				}
 				if (field.isReferenced()){
 					description.fastAddAttributeInfo("Used in:", getReferences(field, field.getReferringObjects()));
@@ -378,6 +398,10 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 						}
 					}
 				}
+				
+				// Allow extenders to add their information
+				description.extensionDescriptionExtension(field);
+
 			}
 		}
 
@@ -424,6 +448,30 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void generate(GpbModuleDefinitionManager definitions) throws IOException {
+		Iterator<GpbModule> modules = definitions.getAllGpbModule();
+		while(modules.hasNext()){
+			generateDoc(modules.next());
+		}
+		
+	}
 	
-	
+	void addDescription(DescriptionSection section, GpbDefinition def){
+		if (def.getDescriptionHasValue()){
+			Iterator<String> descr = def.getDescriptionWithNewlines();
+			boolean first = true;
+			while(descr.hasNext()){
+				if (first){
+					section.fastAddAttributeInfo("Description:", descr.next() + "\n");
+					first = false;
+				}
+				else
+					section.fastAddAttributeInfo("", descr.next() + "\n");
+			}
+
+		}
+
+	}
 }

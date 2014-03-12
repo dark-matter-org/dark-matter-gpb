@@ -33,53 +33,55 @@ public class GpbdocTemplateLoader implements DmcUncheckedOIFHandlerIF {
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
     // Called from: org.dmd.templates.server.extended.TdlModule.generateTemplateLoader(TdlModule.java:145)
-    SchemaManager                       schema;                                                               // Manages the schema for this DSD
-    DmcUncheckedOIFParser               parser                = new DmcUncheckedOIFParser(this);              // Parses objects from the config file
-    DmwObjectFactory                    factory;                                                              // Instantiates wrapped objects
-    DmvRuleManager                      rules                 = new DmvRuleManager();                         // Rule manager
-    ConfigFinder                        finder                = new ConfigFinder("dmt");                      // Config finder for template files ending with .dmt
-    ConfigLocation                      location;                                                             // The location of the config being parsed
-    TreeMap<String,TemplateMediator>    mediators             = new TreeMap<String,TemplateMediator>();       // The mediators by name
-                                                                                                              // 
-    public static TemplateMediator      AttributeInfo         = new TemplateMediator("AttributeInfo");        // Mediator for the AttributeInfo template
-    public static TemplateMediator      Body                  = new TemplateMediator("Body");                 // Mediator for the Body template
-    public static TemplateMediator      DescriptionEnd        = new TemplateMediator("DescriptionEnd");       // Mediator for the DescriptionEnd template
-    public static TemplateMediator      DescriptionSection    = new TemplateMediator("DescriptionSection");   // Mediator for the DescriptionSection template
-    public static TemplateMediator      DescriptionStart      = new TemplateMediator("DescriptionStart");     // Mediator for the DescriptionStart template
-    public static TemplateMediator      DetailEnd             = new TemplateMediator("DetailEnd");            // Mediator for the DetailEnd template
-    public static TemplateMediator      DetailStart           = new TemplateMediator("DetailStart");          // Mediator for the DetailStart template
-    public static TemplateMediator      DetailTitle           = new TemplateMediator("DetailTitle");          // Mediator for the DetailTitle template
-    public static TemplateMediator      DivContent            = new TemplateMediator("DivContent");           // Mediator for the DivContent template
-    public static TemplateMediator      DivDetails            = new TemplateMediator("DivDetails");           // Mediator for the DivDetails template
-    public static TemplateMediator      DivHeader             = new TemplateMediator("DivHeader");            // Mediator for the DivHeader template
-    public static TemplateMediator      DivMain               = new TemplateMediator("DivMain");              // Mediator for the DivMain template
-    public static TemplateMediator      DivSeparator          = new TemplateMediator("DivSeparator");         // Mediator for the DivSeparator template
-    public static TemplateMediator      DivSummary            = new TemplateMediator("DivSummary");           // Mediator for the DivSummary template
-    public static TemplateMediator      DocType               = new TemplateMediator("DocType");              // Mediator for the DocType template
-    public static TemplateMediator      EnumerationDetails    = new TemplateMediator("EnumerationDetails");   // Mediator for the EnumerationDetails template
-    public static TemplateMediator      EnumerationFooter     = new TemplateMediator("EnumerationFooter");    // Mediator for the EnumerationFooter template
-    public static TemplateMediator      EnumerationSection    = new TemplateMediator("EnumerationSection");   // Mediator for the EnumerationSection template
-    public static TemplateMediator      EnumerationValue      = new TemplateMediator("EnumerationValue");     // Mediator for the EnumerationValue template
-    public static TemplateMediator      FieldDetailSection    = new TemplateMediator("FieldDetailSection");   // Mediator for the FieldDetailSection template
-    public static TemplateMediator      FieldDetails          = new TemplateMediator("FieldDetails");         // Mediator for the FieldDetails template
-    public static TemplateMediator      FieldReference        = new TemplateMediator("FieldReference");       // Mediator for the FieldReference template
-    public static TemplateMediator      FieldSection          = new TemplateMediator("FieldSection");         // Mediator for the FieldSection template
-    public static TemplateMediator      FieldSectionEnd       = new TemplateMediator("FieldSectionEnd");      // Mediator for the FieldSectionEnd template
-    public static TemplateMediator      FieldSectionStart     = new TemplateMediator("FieldSectionStart");    // Mediator for the FieldSectionStart template
-    public static TemplateMediator      HtmlContent           = new TemplateMediator("HtmlContent");          // Mediator for the HtmlContent template
-    public static TemplateMediator      HtmlHead              = new TemplateMediator("HtmlHead");             // Mediator for the HtmlHead template
-    public static TemplateMediator      MessageDetails        = new TemplateMediator("MessageDetails");       // Mediator for the MessageDetails template
-    public static TemplateMediator      MessageSection        = new TemplateMediator("MessageSection");       // Mediator for the MessageSection template
-    public static TemplateMediator      ModuleHeader          = new TemplateMediator("ModuleHeader");         // Mediator for the ModuleHeader template
-    public static TemplateMediator      SummaryFooter         = new TemplateMediator("SummaryFooter");        // Mediator for the SummaryFooter template
-    public static TemplateMediator      SummaryHeader         = new TemplateMediator("SummaryHeader");        // Mediator for the SummaryHeader template
-    public static TemplateMediator      SummaryItem           = new TemplateMediator("SummaryItem");          // Mediator for the SummaryItem template
-    public static TemplateMediator      SummarySection        = new TemplateMediator("SummarySection");       // Mediator for the SummarySection template
-    public static TemplateMediator      ValueSection          = new TemplateMediator("ValueSection");         // Mediator for the ValueSection template
-    public static TemplateMediator      ValueSectionEnd       = new TemplateMediator("ValueSectionEnd");      // Mediator for the ValueSectionEnd template
-    public static TemplateMediator      ValueSectionStart     = new TemplateMediator("ValueSectionStart");    // Mediator for the ValueSectionStart template
-                                                                                                              // 
-    public static Template              _Comment;                                                             // Used to display debug comments in formatted output
+    SchemaManager                                     schema;                                                               // Manages the schema for this DSD
+    DmcUncheckedOIFParser                             parser                = new DmcUncheckedOIFParser(this);              // Parses objects from the config file
+    DmwObjectFactory                                  factory;                                                              // Instantiates wrapped objects
+    DmvRuleManager                                    rules                 = new DmvRuleManager();                         // Rule manager
+    ConfigFinder                                      finder                = new ConfigFinder("dmt");                      // Config finder for template files ending with .dmt
+    ConfigLocation                                    location;                                                             // The location of the config being parsed
+    TreeMap<String,TemplateMediator>                  mediators             = new TreeMap<String,TemplateMediator>();       // The mediators by name
+                                                                                                                            // 
+    public static TemplateMediator                    AttributeInfo         = new TemplateMediator("AttributeInfo");        // Mediator for the AttributeInfo template
+    public static TemplateMediator                    Body                  = new TemplateMediator("Body");                 // Mediator for the Body template
+    public static TemplateMediator                    DescriptionEnd        = new TemplateMediator("DescriptionEnd");       // Mediator for the DescriptionEnd template
+    public static TemplateMediator                    DescriptionSection    = new TemplateMediator("DescriptionSection");   // Mediator for the DescriptionSection template
+    public static TemplateMediator                    DescriptionStart      = new TemplateMediator("DescriptionStart");     // Mediator for the DescriptionStart template
+    public static TemplateMediator                    DetailEnd             = new TemplateMediator("DetailEnd");            // Mediator for the DetailEnd template
+    public static TemplateMediator                    DetailStart           = new TemplateMediator("DetailStart");          // Mediator for the DetailStart template
+    public static TemplateMediator                    DetailTitle           = new TemplateMediator("DetailTitle");          // Mediator for the DetailTitle template
+    public static TemplateMediator                    DivContent            = new TemplateMediator("DivContent");           // Mediator for the DivContent template
+    public static TemplateMediator                    DivDetails            = new TemplateMediator("DivDetails");           // Mediator for the DivDetails template
+    public static TemplateMediator                    DivHeader             = new TemplateMediator("DivHeader");            // Mediator for the DivHeader template
+    public static TemplateMediator                    DivMain               = new TemplateMediator("DivMain");              // Mediator for the DivMain template
+    public static TemplateMediator                    DivSeparator          = new TemplateMediator("DivSeparator");         // Mediator for the DivSeparator template
+    public static TemplateMediator                    DivSummary            = new TemplateMediator("DivSummary");           // Mediator for the DivSummary template
+    public static TemplateMediator                    DocType               = new TemplateMediator("DocType");              // Mediator for the DocType template
+    public static TemplateMediator                    EnumerationDetails    = new TemplateMediator("EnumerationDetails");   // Mediator for the EnumerationDetails template
+    public static TemplateMediator                    EnumerationFooter     = new TemplateMediator("EnumerationFooter");    // Mediator for the EnumerationFooter template
+    public static TemplateMediator                    EnumerationSection    = new TemplateMediator("EnumerationSection");   // Mediator for the EnumerationSection template
+    public static TemplateMediator                    EnumerationValue      = new TemplateMediator("EnumerationValue");     // Mediator for the EnumerationValue template
+    public static TemplateMediator                    FieldDetailSection    = new TemplateMediator("FieldDetailSection");   // Mediator for the FieldDetailSection template
+    public static TemplateMediator                    FieldDetails          = new TemplateMediator("FieldDetails");         // Mediator for the FieldDetails template
+    public static TemplateMediator                    FieldReference        = new TemplateMediator("FieldReference");       // Mediator for the FieldReference template
+    public static TemplateMediator                    FieldSection          = new TemplateMediator("FieldSection");         // Mediator for the FieldSection template
+    public static TemplateMediator                    FieldSectionEnd       = new TemplateMediator("FieldSectionEnd");      // Mediator for the FieldSectionEnd template
+    public static TemplateMediator                    FieldSectionStart     = new TemplateMediator("FieldSectionStart");    // Mediator for the FieldSectionStart template
+    public static TemplateMediator                    HtmlContent           = new TemplateMediator("HtmlContent");          // Mediator for the HtmlContent template
+    public static TemplateMediator                    HtmlHead              = new TemplateMediator("HtmlHead");             // Mediator for the HtmlHead template
+    public static TemplateMediator                    MessageDetails        = new TemplateMediator("MessageDetails");       // Mediator for the MessageDetails template
+    public static TemplateMediator                    MessageSection        = new TemplateMediator("MessageSection");       // Mediator for the MessageSection template
+    public static TemplateMediator                    ModuleHeader          = new TemplateMediator("ModuleHeader");         // Mediator for the ModuleHeader template
+    public static TemplateMediator                    SummaryFooter         = new TemplateMediator("SummaryFooter");        // Mediator for the SummaryFooter template
+    public static TemplateMediator                    SummaryHeader         = new TemplateMediator("SummaryHeader");        // Mediator for the SummaryHeader template
+    public static TemplateMediator                    SummaryItem           = new TemplateMediator("SummaryItem");          // Mediator for the SummaryItem template
+    public static TemplateMediator                    SummarySection        = new TemplateMediator("SummarySection");       // Mediator for the SummarySection template
+    public static TemplateMediator                    ValueSection          = new TemplateMediator("ValueSection");         // Mediator for the ValueSection template
+    public static TemplateMediator                    ValueSectionEnd       = new TemplateMediator("ValueSectionEnd");      // Mediator for the ValueSectionEnd template
+    public static TemplateMediator                    ValueSectionStart     = new TemplateMediator("ValueSectionStart");    // Mediator for the ValueSectionStart template
+                                                                                                                            // 
+    public static Template                            _Comment;                                                             // Used to display debug comments in formatted output
+                                                                                                                            // 
+    public static ArrayList<GpbdocExtensionHookIF>    _extensionHooks       = new ArrayList<GpbdocExtensionHookIF>();       // Used to access extension hook objects
 
     // Generated from: org.dmd.templates.server.extended.TdlModule.generateTemplateLoader(TdlModule.java:147)
     /**
@@ -169,6 +171,42 @@ public class GpbdocTemplateLoader implements DmcUncheckedOIFHandlerIF {
 
         location = version.getLatestVersion();
         parser.parseFile(location.getFileName());
+    }
+
+    // Generated from: org.dmd.templates.server.extended.TdlModule.generateTemplateLoader(TdlModule.java:215)
+    /**
+     * We attempt to load the classes that provide extension hooks.
+     */
+    public void loadExtensionHooks(ArrayList<String> hooks) throws ResultException {
+        Class<?> hookClass = null;
+        GpbdocExtensionHookIF hook	= null;
+
+        for(String hc: hooks){
+		       try {
+                hookClass = Class.forName(hc);
+            } catch (ClassNotFoundException e) {
+                ResultException ex = new ResultException(e);
+                ex.addError("Couldn't load extension hook class: " + hc);
+                throw(ex);
+            }
+
+            try {
+                Object obj = hookClass.newInstance();
+
+                if (obj instanceof GpbdocExtensionHookIF){
+                    hook = (GpbdocExtensionHookIF) obj;
+                    _extensionHooks.add(hook);
+                }
+                else{
+                    ResultException ex = new ResultException("The specified class does not implement the GpbdocExtensionHookIF interface: " + hc);
+                    throw(ex);
+                }
+            } catch (Exception e) {
+                ResultException ex = new ResultException(e);
+                ex.addError("Couldn't instantiate GpbdocExtensionHookIF class: " + hc);
+                throw(ex);
+            }
+        }
     }
 
     // Generated from: org.dmd.templates.server.extended.TdlModule.generateTemplateLoader(TdlModule.java:252)
