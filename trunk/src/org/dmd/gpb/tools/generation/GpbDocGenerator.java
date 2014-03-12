@@ -10,6 +10,9 @@ import java.util.Iterator;
 import org.apache.commons.io.FileUtils;
 import org.dmd.concinnity.shared.generated.types.ConceptREF;
 import org.dmd.dmc.DmcOmni;
+import org.dmd.dms.generated.dmw.SchemaAndReasonIterableDMW;
+import org.dmd.dms.generated.types.Example;
+import org.dmd.dms.generated.types.SchemaAndReason;
 import org.dmd.dmw.DmwWrapper;
 import org.dmd.gpb.server.extended.GpbDefinition;
 import org.dmd.gpb.server.extended.GpbEnum;
@@ -38,7 +41,7 @@ import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.MessageSection;
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.SummarySection;
 import org.dmd.gpb.tools.generation.doc.html.generated.dmtdl.ValueSection;
 import org.dmd.templates.server.util.FormattedFile;
-import org.dmd.util.exceptions.DebugInfo;
+import org.dmd.util.codegen.Manipulator;
 import org.dmd.util.exceptions.ResultException;
 import org.dmd.util.parsing.ConfigLocation;
 import org.dmd.util.parsing.StringArrayList;
@@ -140,6 +143,16 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 		if (module.getVersion() != null)
 			modDescription.fastAddAttributeInfo("Introduced in:", module.getVersion());
 		
+		
+		if (module.getLoadSchemaClassHasValue()){
+			SchemaAndReasonIterableDMW it =  module.getLoadSchemaClassIterable();
+			while(it.hasNext()){
+				SchemaAndReason sandr = it.getNext();
+				String c = Manipulator.getClassFromImport(sandr.getSchema());
+				modDescription.fastAddAttributeInfo("Augmented by:", c + "<p/>" + sandr.getHint());
+			}
+		}
+		
 		doc.getModuleHeader().setModuleName(module.getName().getNameString());
 		if (module.getDescriptionHasValue()){
 			Iterator<String> descr = module.getDescriptionWithNewlines();
@@ -153,6 +166,17 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 					modDescription.fastAddAttributeInfo("", descr.next() + "\n");
 			}
 
+		}
+		
+		// Allow extenders to add their information
+		modDescription.extensionDescriptionExtension(module);
+		
+		if (module.getExampleSize() > 0){
+			Iterator<Example> it = module.getExample();
+			while(it.hasNext()){
+				Example example = it.next();
+				modDescription.fastAddAttributeInfo("", example.getTitle() + "<p/>" + example.getContent().replaceAll("\\\\n","\\\n"));
+			}
 		}
 		
 		///////////////////////////////////////////////////////////////////////
@@ -366,10 +390,6 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 			Iterator<GpbField> fields = module.getAllGpbField();
 			while(fields.hasNext()){
 				GpbField field = fields.next();
-				
-				if (field.getName().getNameString().equals("moId")){		
-					DebugInfo.debug("ref hash = " + System.identityHashCode(field));
-				}
 				
 				FieldDetails details = section.addFieldDetails();
 				details.fastAddDetailTitle(field.getName().getNameString(), "Field");
