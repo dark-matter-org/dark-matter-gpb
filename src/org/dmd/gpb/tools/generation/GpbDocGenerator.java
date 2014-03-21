@@ -54,6 +54,8 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 	// The directory where we'll dump the generated docs
 	StringBuffer		outdir = new StringBuffer();
 	
+	String				outdirDMGPB;
+	
 	// The set of extension classes that we'll load. These must be the fully qualified
 	// names of classes that implement the GpbdocExtensionHookIF
     StringArrayList		extensions         = new StringArrayList();
@@ -62,7 +64,7 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 
 	public GpbDocGenerator(){
 		commandLine.addOption("-genversion", 	genversion, "The version for  which we'll generated the .proto files");
-		commandLine.addOption("-outdir", 		outdir, 	"The base directory where we'll dump the docs");
+		commandLine.addOption("-outdir", 		outdir, 	"The base directory where we'll dump the docs - we'll create the dmgpb subdirectory");
 		commandLine.addOption("-extensions", 	extensions, "Classes that implement the GpbdocExtensionsHookIF interface");
 	}
 
@@ -78,8 +80,11 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 		}
 		
 		if (outdir.length() == 0){
-			ex = new ResultException("You must specify the outdir argument to indicate where the generated documents should be placed.");
+			ex = new ResultException("You must specify the outdir argument to indicate the base documentation directory. The generated docs will be placed in subfolder dmgpb beneath that directory.");
 		}
+		
+		outdirDMGPB = outdir + File.separator + "dmgpb";
+		createDir(outdirDMGPB);
 		
 		try {
 			loader = new GpbdocTemplateLoader(searchPaths);
@@ -130,7 +135,7 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 		
 	private void generateDoc(GpbModule module) throws IOException {
 		String outfn = module.getName() + ".html";
-		FormattedFile artifact = new FormattedFile(new FileWriter(outdir + File.separator + outfn));
+		FormattedFile artifact = new FormattedFile(new FileWriter(outdirDMGPB + File.separator + outfn));
 		
 		GpbHtmlDoc doc = new GpbHtmlDoc();
 		
@@ -460,7 +465,7 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 	void copyResource(String name) throws IOException{
 		URL url = this.getClass().getResource(name);
 //		DebugInfo.debug("url: " + url.getFile());
-		FileUtils.copyURLToFile(url, new File(outdir + File.separator + name));
+		FileUtils.copyURLToFile(url, new File(outdirDMGPB + File.separator + name));
 	}
 
 	@Override
@@ -494,4 +499,16 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 		}
 
 	}
+	
+	void createDir(String dir) throws ResultException {
+		File folder = new File(dir);
+		
+		if (!folder.exists()){
+			if (!folder.mkdirs()){
+				ResultException rc = new ResultException("Couldn't create directory: " + dir);
+				throw(rc);
+			}
+		}
+	}
+
 }
