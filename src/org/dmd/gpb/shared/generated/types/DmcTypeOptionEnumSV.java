@@ -24,7 +24,7 @@ import org.dmd.gpb.shared.generated.enums.OptionEnum;    // DmcType import
  * The DmcTypeOptionEnumSV provides storage for a single-valued OptionEnum
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1969)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1985)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpEnumType(DmoTypeFormatter.java:360)
  */
 @SuppressWarnings("serial")
@@ -49,14 +49,14 @@ public class DmcTypeOptionEnumSV extends DmcTypeOptionEnum implements Serializab
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2001)
+    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2017)
     public DmcAttribute<OptionEnum> cloneIt(){
         DmcTypeOptionEnumSV rc = getNew();
         rc.value = value;
         return(rc);
     }
     
-    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2012)
+    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2028)
     public OptionEnum getSVCopy(){
         if (value == null)
             return(null);
@@ -64,7 +64,7 @@ public class DmcTypeOptionEnumSV extends DmcTypeOptionEnum implements Serializab
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2024)
+    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2040)
     public OptionEnum set(Object v) throws DmcValueException {
         OptionEnum rc = typeCheck(v);
         // We only return a value if the value actually changed. This supports

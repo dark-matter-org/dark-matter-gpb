@@ -54,7 +54,7 @@ import org.dmd.util.parsing.DmcUncheckedOIFParser;                        // Bas
 // Generated from: org.dmd.dmg.generators.DSDArtifactFormatter.generateParser(DSDArtifactFormatter.java:475)
 public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandlerIF {
 
-    final static String fileExtension = "gpb";
+    final static String fileExtension = "dmgpb";
 
     // Generated from: org.dmd.util.codegen.MemberManager.getFormattedMembers(MemberManager.java:64)
     // Called from: org.dmd.dmg.generators.DSDArtifactFormatter.generateParser(DSDArtifactFormatter.java:489)
@@ -155,7 +155,7 @@ public class GpbModuleParser implements DsdParserInterface, DmcUncheckedOIFHandl
         }
         catch(ClassCastException e){
             ResultException ex = new ResultException();
-            ex.addError("The following object is not valid in a .gpb file:\n\n" + wrapper.toOIF());
+            ex.addError("The following object is not valid in a .dmgpb file:\n\n" + wrapper.toOIF());
             ex.setLocationInfo(infile, lineNumber);
             throw(ex);
         }

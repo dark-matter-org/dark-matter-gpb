@@ -31,7 +31,7 @@ import org.dmd.gpb.server.generated.dmw.GpbEnumValueIterableDMW;         // For 
 import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                     // Attribute gpbEnumValue from the dmdgpb schema - (BaseDMWGenerator.java:897)
 import org.dmd.gpb.shared.generated.dmo.GpbEnumDMO;                      // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
 import org.dmd.gpb.shared.generated.types.GpbEnumValue;                  // Primitive type - (BaseDMWGenerator.java:1150)
-import org.dmd.gpb.shared.generated.types.GpbModuleREF;                  // Required to access defined in module name - (DMWGenerator.java:180)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;                  // Required to access defined in module name - (DMWGenerator.java:181)
 
 
 
@@ -294,7 +294,7 @@ abstract public class GpbEnumDMW extends GpbCompositeType implements DmcDefiniti
         ((GpbEnumDMO) core).remName();
     }
 
-    // Generated from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:221)
+    // Generated from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:222)
     /**
      * This method indicates the name of the module from which this definition was loaded.
      */

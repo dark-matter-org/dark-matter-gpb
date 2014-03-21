@@ -820,7 +820,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleDSDOBJ.addRequiredBaseModule("gpbbase");
             _GpbModuleDSDOBJ.setSupportDynamicSchemaLoading("true");
             _GpbModuleDSDOBJ.setModuleClassName("GpbModule");
-            _GpbModuleDSDOBJ.setFileExtension("gpb");
+            _GpbModuleDSDOBJ.setFileExtension("dmgpb");
             _GpbModuleDSDOBJ.setDefinedInModuleAttribute("dmdgpb.definedInGpbModule");
             _GpbModuleDSDOBJ.setDotName("dmdgpb.GpbModule.DSDefinitionModule");
             _GpbModuleDSDOBJ.addRefersToDefsFromDSD("dmconcinnity.ConcinnityModule");
