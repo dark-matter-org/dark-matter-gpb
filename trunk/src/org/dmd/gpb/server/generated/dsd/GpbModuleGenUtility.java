@@ -46,7 +46,7 @@ public abstract class GpbModuleGenUtility implements GpbModuleGeneratorInterface
     protected StringBuffer         workspace      = new StringBuffer();      // The workspace base directory, this is appended to all srcdir directories
     protected StringBuffer         target         = new StringBuffer();      // The target config on which to base generation
     protected BooleanVar           debug          = new BooleanVar();        // Dumps debug info if specified
-    protected StringArrayList      jars           = new StringArrayList();   // The jars that will be searched for .gpb config files
+    protected StringArrayList      jars           = new StringArrayList();   // The jars that will be searched for .dmgpb config files
     protected StringArrayList      searchPaths    = new StringArrayList();   // The srcdirs prefixed with the workspace - useful to pass to config finders
 
     protected GpbModuleGenUtility() {
@@ -56,7 +56,7 @@ public abstract class GpbModuleGenUtility implements GpbModuleGeneratorInterface
         commandLine.addOption("-workspace", workspace, "The workspace base directory, this is appended to all srcdir directories.");
         commandLine.addOption("-target",    target, "The name of the target config. If this isn't specified, we generate for all configs.");
         commandLine.addOption("-debug",     debug,     "Dump debug information.");
-        commandLine.addOption("-jars",      jars,     	"The prefixs of jars to search for .gpb config files.");
+        commandLine.addOption("-jars",      jars,     	"The prefixs of jars to search for .dmgpb config files.");
 
     }
 

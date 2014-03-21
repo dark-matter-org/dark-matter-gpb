@@ -32,7 +32,7 @@ import org.dmd.gpb.server.generated.dmw.GpbFieldIndicatorIterableDMW;         //
 import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                          // Attribute embed from the dmdgpb schema - (BaseDMWGenerator.java:897)
 import org.dmd.gpb.shared.generated.dmo.GpbCompositeTypeDMO;                  // For multi-valued adds of GpbCompositeType - (BaseDMWGenerator.java:1767)
 import org.dmd.gpb.shared.generated.dmo.GpbMessageDMO;                        // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
-import org.dmd.gpb.shared.generated.types.GpbModuleREF;                       // Required to access defined in module name - (DMWGenerator.java:180)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;                       // Required to access defined in module name - (DMWGenerator.java:181)
 import org.dmd.gpb.shared.types.GpbFieldIndicator;                            // Primitive type - (BaseDMWGenerator.java:1150)
 
 
@@ -334,7 +334,7 @@ abstract public class GpbMessageDMW extends GpbCompositeType implements DmcDefin
         ((GpbMessageDMO) core).remName();
     }
 
-    // Generated from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:221)
+    // Generated from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:222)
     /**
      * This method indicates the name of the module from which this definition was loaded.
      */

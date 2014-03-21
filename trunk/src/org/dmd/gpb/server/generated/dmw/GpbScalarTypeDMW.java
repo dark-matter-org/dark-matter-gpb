@@ -26,7 +26,7 @@ import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required fo
 import org.dmd.gpb.server.extended.GpbScalarType;                 // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
 import org.dmd.gpb.server.extended.GpbType;                       // Derived class - (BaseDMWGenerator.java:1248)
 import org.dmd.gpb.shared.generated.dmo.GpbScalarTypeDMO;         // Class not auxiliary or abstract - (BaseDMWGenerator.java:1252)
-import org.dmd.gpb.shared.generated.types.GpbModuleREF;           // Required to access defined in module name - (DMWGenerator.java:180)
+import org.dmd.gpb.shared.generated.types.GpbModuleREF;           // Required to access defined in module name - (DMWGenerator.java:181)
 
 
 
@@ -289,7 +289,7 @@ abstract public class GpbScalarTypeDMW extends GpbType implements DmcDefinitionI
         ((GpbScalarTypeDMO) core).remSizeInBytes();
     }
 
-    // Generated from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:221)
+    // Generated from: org.dmd.dmg.generators.DMWGenerator.dumpAdditionalWrapperFunctions(DMWGenerator.java:222)
     /**
      * This method indicates the name of the module from which this definition was loaded.
      */

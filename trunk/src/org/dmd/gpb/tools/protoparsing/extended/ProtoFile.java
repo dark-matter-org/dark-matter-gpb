@@ -33,7 +33,7 @@ public class ProtoFile extends ProtoFileDMW {
 		
 		FileUpdateManager.instance().generationStarting();
 		
-		ManagedFileWriter out = FileUpdateManager.instance().getWriter(dn, modName + ".gpb");
+		ManagedFileWriter out = FileUpdateManager.instance().getWriter(dn, modName + ".dmgpb");
 		
 		GpbModule module = new GpbModule();
 		module.setName(modName);

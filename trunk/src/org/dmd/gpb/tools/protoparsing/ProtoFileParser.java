@@ -28,7 +28,7 @@ import org.dmd.util.parsing.TokenArrayList;
 /**
  * The ProtoFileParser is used to parse individual .proto files and represent its
  * contents as a a single ProtoFile object. This object can be subsequently dumped 
- * as a .gpb file that allows for the addition of descriptions and other sementic 
+ * as a .dmgpb file that allows for the addition of descriptions and other sementic 
  * information.
  * <p/>
  * The ProtoFileParse is very light on format checking; it assumes that the files are
@@ -458,7 +458,7 @@ public class ProtoFileParser {
 	
 		addField(field);
 		
-		// Fields will be split out as separate definitions in the generated .gpb file
+		// Fields will be split out as separate definitions in the generated .dmgpb file
 		protoFile.addFields(field);
 		
 		return(field);

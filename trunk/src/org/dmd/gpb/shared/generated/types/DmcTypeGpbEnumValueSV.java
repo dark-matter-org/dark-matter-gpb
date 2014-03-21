@@ -25,7 +25,7 @@ import org.dmd.gpb.shared.generated.types.DmcTypeGpbEnumValue;    // DmcType imp
  * The DmcTypeGpbEnumValueSV provides storage for a single-valued GpbEnumValue
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1969)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:1985)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpTypes(DmoTypeFormatter.java:125)
  */
 @SuppressWarnings("serial")
@@ -50,14 +50,14 @@ public class DmcTypeGpbEnumValueSV extends DmcTypeGpbEnumValue implements Serial
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2001)
+    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2017)
     public DmcAttribute<GpbEnumValue> cloneIt(){
         DmcTypeGpbEnumValueSV rc = getNew();
         rc.value = value;
         return(rc);
     }
     
-    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2012)
+    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2028)
     public GpbEnumValue getSVCopy(){
         if (value == null)
             return(null);
@@ -65,7 +65,7 @@ public class DmcTypeGpbEnumValueSV extends DmcTypeGpbEnumValue implements Serial
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2024)
+    // org.dmd.dms.util.GenUtility.dumpSVType(GenUtility.java:2040)
     public GpbEnumValue set(Object v) throws DmcValueException {
         GpbEnumValue rc = typeCheck(v);
         // We only return a value if the value actually changed. This supports

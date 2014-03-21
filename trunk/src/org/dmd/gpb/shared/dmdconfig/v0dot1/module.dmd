@@ -1,6 +1,6 @@
 DSDefinitionModule
 name						GpbModule
-fileExtension				gpb
+fileExtension				dmgpb
 dmdID						1
 moduleClassName				GpbModule
 moduleDependenceAttribute 	dependsOnGpbModule

@@ -62,7 +62,7 @@ public class GpbModuleParsingCoordinator {
     TreeMap<DefinitionName, ConcinnityModuleInfo>    loadedConcinnityModuleConfigs    = new TreeMap<DefinitionName, ConcinnityModuleInfo>();   // The names/location of the ConcinnityModule modules that have been loaded
 
     GpbModuleParser                                  parserForGpbModule;                                                                       // Parser for GpbModule definitions
-    ConfigFinder                                     finderForGpbModule               = new ConfigFinder("gpb");                               // Config finder for GpbModule config files ending with .gpb
+    ConfigFinder                                     finderForGpbModule               = new ConfigFinder("dmgpb");                             // Config finder for GpbModule config files ending with .dmgpb
     TreeMap<DefinitionName, GpbModuleInfo>           loadedGpbModuleConfigs           = new TreeMap<DefinitionName, GpbModuleInfo>();          // The names/location of the GpbModule modules that have been loaded
 
 
@@ -253,7 +253,7 @@ public class GpbModuleParsingCoordinator {
                     ConfigVersion version = finderForGpbModule.getConfig(ref.toString());
                     
                     if (version == null)
-                        missingConfigError(info.module,ref.toString() + ".gpb");
+                        missingConfigError(info.module,ref.toString() + ".dmgpb");
             
                     loadGpbModuleModule(version.getLatestVersion());
                 }

@@ -30,17 +30,20 @@
 //	---------------------------------------------------------------------------
 package org.dmd.gpb.server.generated.dmw;
 
-import java.util.Iterator;
+// Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
+// Called from: org.dmd.dms.util.GenUtility.dumpIterable(GenUtility.java:1745)
+import java.util.Iterator;                                 // Beacuse we're iterating - (GenUtility.java:1738)
+import org.dmd.dmw.DmwMVIterator;                          // The base multi-value iterator - (GenUtility.java:1739)
+import org.dmd.gpb.shared.types.GpbFieldIndicator;         // This is the type we're iterating - (GenUtility.java:1742)
 
-import org.dmd.dmw.DmwMVIterator;
-import org.dmd.gpb.shared.types.GpbFieldIndicator;
+
 /**
  * The GpbFieldIndicatorIterableDMW wraps an Iterator for a particular type and makes 
  * it Iterable.
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpIterable(GenUtility.java:1755)
- *    Called from: org.dmd.dmg.generators.DMWGenerator.createTypeIterables(DMWGenerator.java:112)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpIterable(GenUtility.java:1761)
+ *    Called from: org.dmd.dmg.generators.DMWGenerator.createTypeIterables(DMWGenerator.java:113)
  */
 public class GpbFieldIndicatorIterableDMW extends DmwMVIterator<GpbFieldIndicator> {
 

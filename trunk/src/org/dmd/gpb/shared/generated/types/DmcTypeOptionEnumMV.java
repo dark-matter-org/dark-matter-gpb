@@ -26,7 +26,7 @@ import org.dmd.gpb.shared.generated.enums.OptionEnum;    // DmcType import
  * The DmcTypeOptionEnumMV provides storage for a multi-valued OptionEnum
  * <P>
  * This code was auto-generated and shouldn't be altered manually!
- * Generated from: org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2313)
+ * Generated from: org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2329)
  *    Called from: org.dmd.dms.util.DmoTypeFormatter.dumpEnumType(DmoTypeFormatter.java:361)
  */
 @SuppressWarnings("serial")
@@ -50,7 +50,7 @@ public class DmcTypeOptionEnumMV extends DmcTypeOptionEnum implements Serializab
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2344)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2360)
     public DmcAttribute<OptionEnum> cloneIt(){
         synchronized(this){
             DmcTypeOptionEnumMV rc = getNew();
@@ -79,7 +79,7 @@ public class DmcTypeOptionEnumMV extends DmcTypeOptionEnum implements Serializab
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2377)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2393)
     public OptionEnum add(Object v) throws DmcValueException {
         synchronized(this){
             OptionEnum rc = typeCheck(v);
@@ -91,7 +91,7 @@ public class DmcTypeOptionEnumMV extends DmcTypeOptionEnum implements Serializab
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2390)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2406)
     public OptionEnum del(Object v){
         synchronized(this){
             if (value == null)
@@ -115,7 +115,7 @@ public class DmcTypeOptionEnumMV extends DmcTypeOptionEnum implements Serializab
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2424)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2440)
     public Iterator<OptionEnum> getMV(){
         synchronized(this){
             if (value == null)
@@ -126,7 +126,7 @@ public class DmcTypeOptionEnumMV extends DmcTypeOptionEnum implements Serializab
         }
     }
     
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2436)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2452)
     public ArrayList<OptionEnum> getMVCopy(){
         synchronized(this){
             if (value == null)
@@ -137,7 +137,7 @@ public class DmcTypeOptionEnumMV extends DmcTypeOptionEnum implements Serializab
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2448)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2464)
     public int getMVSize(){
         synchronized(this){
             if (getAttributeInfo().indexSize == 0){
@@ -151,7 +151,7 @@ public class DmcTypeOptionEnumMV extends DmcTypeOptionEnum implements Serializab
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2463)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2479)
     public OptionEnum getMVnth(int index){
         synchronized(this){
             if (value == null)
@@ -161,7 +161,7 @@ public class DmcTypeOptionEnumMV extends DmcTypeOptionEnum implements Serializab
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2474)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2490)
     public OptionEnum setMVnth(int index, Object v) throws DmcValueException {
         synchronized(this){
             if (getAttributeInfo().indexSize == 0)
@@ -188,7 +188,7 @@ public class DmcTypeOptionEnumMV extends DmcTypeOptionEnum implements Serializab
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2502)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2518)
     public boolean hasValue(){
         synchronized(this){
             boolean rc = false;
@@ -211,7 +211,7 @@ public class DmcTypeOptionEnumMV extends DmcTypeOptionEnum implements Serializab
     }
     
     @Override
-    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2526)
+    // org.dmd.dms.util.GenUtility.dumpMVType(GenUtility.java:2542)
     public boolean contains(Object v){
         synchronized(this){
             if (value == null)
