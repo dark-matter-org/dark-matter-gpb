@@ -19,16 +19,16 @@ package org.dmd.gpb.server.generated.dmw;
 // Called from: org.dmd.dmg.generators.BaseDMWGenerator.dumpWrapper(BaseDMWGenerator.java:442)
 import java.util.ArrayList;                                          // Support for MULTI attribute - (BaseDMWGenerator.java:2226)
 import java.util.Iterator;                                           // Support copy of MV objects - (BaseDMWGenerator.java:2240)
-import org.dmd.concinnity.server.extended.Concept;                   // Is reference type - (BaseDMWGenerator.java:1107)
-import org.dmd.concinnity.shared.generated.types.ConceptREF;         // Is reference type REF - (BaseDMWGenerator.java:1115)
 import org.dmd.dmc.*;                                                // If any attributes - (BaseDMWGenerator.java:1087)
 import org.dmd.dmc.definitions.DmcDefinitionIF;                      // The object is a domain specific definition - (BaseDMWGenerator.java:411)
 import org.dmd.dmc.types.DefinitionName;                             // Is named by - (BaseDMWGenerator.java:1062)
 import org.dmd.dms.ClassDefinition;                                  // Passing derived class def up the hierarchy - (BaseDMWGenerator.java:1067)
+import org.dmd.dms.Concinnity;                                       // Is reference type - (BaseDMWGenerator.java:1107)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                          // Attribute skip from the meta schema - (BaseDMWGenerator.java:897)
 import org.dmd.dms.generated.dmw.StringIterableDMW;                  // For multi-valued String - (BaseDMWGenerator.java:2103)
+import org.dmd.dms.generated.types.ConcinnityREF;                    // Is reference type REF - (BaseDMWGenerator.java:1115)
 import org.dmd.gpb.server.extended.GpbCompositeType;                 // Required for getModificationRecorder() - (BaseDMWGenerator.java:1076)
 import org.dmd.gpb.server.extended.GpbType;                          // Derived class - (BaseDMWGenerator.java:1248)
-import org.dmd.gpb.shared.generated.dmo.DmdgpbDMSAG;                 // Attribute skip from the dmdgpb schema - (BaseDMWGenerator.java:897)
 import org.dmd.gpb.shared.generated.dmo.GpbCompositeTypeDMO;         // Abstract class - (BaseDMWGenerator.java:1230)
 
 
@@ -207,7 +207,7 @@ abstract public class GpbCompositeTypeDMW extends GpbType implements DmcDefiniti
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2107)
     public StringIterableDMW getSkipIterable(){
-        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__skip);
+        DmcAttribute<?> attr = core.get(MetaDMSAG.__skip);
         if (attr == null)
             return(StringIterableDMW.emptyList);
         
@@ -247,7 +247,7 @@ abstract public class GpbCompositeTypeDMW extends GpbType implements DmcDefiniti
     // org.dmd.dmg.generators.BaseDMWGenerator.formatMV(BaseDMWGenerator.java:2244)
     @SuppressWarnings("unchecked")
     public ArrayList<String> getSkipCopy(){
-        DmcAttribute<?> attr = core.get(DmdgpbDMSAG.__skip);
+        DmcAttribute<?> attr = core.get(MetaDMSAG.__skip);
         if (attr == null)
             return(new ArrayList<String>());
         
@@ -319,32 +319,32 @@ abstract public class GpbCompositeTypeDMW extends GpbType implements DmcDefiniti
     }
 
     /**
-     * @return A Concept object.
+     * @return A Concinnity object.
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1434)
-    public Concept getWhy(){
-        ConceptREF ref = ((GpbCompositeTypeDMO) core).getWhy();
+    public Concinnity getWhy(){
+        ConcinnityREF ref = ((GpbCompositeTypeDMO) core).getWhy();
         if (ref == null)
             return(null);
         
         if (ref.getObject() == null)
             return(null);
         
-        return((Concept)ref.getObject().getContainer());
+        return((Concinnity)ref.getObject().getContainer());
     }
 
     /**
      * Sets the why to the specified value.
-     * @param value A value compatible with ConceptREF
+     * @param value A value compatible with ConcinnityREF
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1519)
-    public void setWhy(Concept value) {
+    public void setWhy(Concinnity value) {
         ((GpbCompositeTypeDMO) core).setWhy(value.getDMO());
     }
 
     /**
      * Sets the why to the specified value.
-     * @param value A value compatible with ConceptREF
+     * @param value A value compatible with ConcinnityREF
      */
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1528)
     public void setWhy(Object value) throws DmcValueException {

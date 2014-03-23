@@ -16,21 +16,21 @@
 package org.dmd.gpb.shared.generated.dmo;
 
 // Generated from: org.dmd.dms.util.GenUtility.formatImports(GenUtility.java:396)
-import java.io.Serializable;                                                  // Always required - (GenUtility.java:224)
-import java.util.*;                                                           // Always required if we have any MV attributes - (GenUtility.java:221)
-import org.dmd.concinnity.shared.generated.dmo.ConceptDMO;                    // Type specific set/add - (GenUtility.java:307)
-import org.dmd.concinnity.shared.generated.types.ConceptREF;                  // Helper class - (GenUtility.java:335)
-import org.dmd.concinnity.shared.generated.types.DmcTypeConceptREFSV;         // Reference type - (GenUtility.java:300)
-import org.dmd.dmc.DmcAttribute;                                              // Named object - (GenUtility.java:376)
-import org.dmd.dmc.DmcNamedObjectIF;                                          // Named object - (GenUtility.java:375)
-import org.dmd.dmc.DmcOmni;                                                   // Lazy resolution - (GenUtility.java:320)
-import org.dmd.dmc.DmcValueException;                                         // Any attributes - (GenUtility.java:241)
-import org.dmd.dmc.types.DefinitionName;                                      // Naming attribute type - (GenUtility.java:370)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                                   // Attribute from meta schema - (GenUtility.java:194)
-import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;                   // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeStringMV;                           // Required type - (GenUtility.java:328)
-import org.dmd.dms.generated.types.DmcTypeStringSV;                           // Required type - (GenUtility.java:328)
-import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                           // Base class - (GenUtility.java:355)
+import java.io.Serializable;                                        // Always required - (GenUtility.java:224)
+import java.util.*;                                                 // Always required if we have any MV attributes - (GenUtility.java:221)
+import org.dmd.dmc.DmcAttribute;                                    // Named object - (GenUtility.java:376)
+import org.dmd.dmc.DmcNamedObjectIF;                                // Named object - (GenUtility.java:375)
+import org.dmd.dmc.DmcOmni;                                         // Lazy resolution - (GenUtility.java:320)
+import org.dmd.dmc.DmcValueException;                               // Any attributes - (GenUtility.java:241)
+import org.dmd.dmc.types.DefinitionName;                            // Naming attribute type - (GenUtility.java:370)
+import org.dmd.dms.generated.dmo.ConcinnityDMO;                     // Type specific set/add - (GenUtility.java:307)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                         // Attribute from meta schema - (GenUtility.java:194)
+import org.dmd.dms.generated.types.ConcinnityREF;                   // Helper class - (GenUtility.java:335)
+import org.dmd.dms.generated.types.DmcTypeConcinnityREFSV;          // Reference type - (GenUtility.java:300)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;         // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeStringMV;                 // Required type - (GenUtility.java:328)
+import org.dmd.dms.generated.types.DmcTypeStringSV;                 // Required type - (GenUtility.java:328)
+import org.dmd.gpb.shared.generated.dmo.GpbTypeDMO;                 // Base class - (GenUtility.java:355)
 
 // Generated from: org.dmd.dms.util.DmoFormatter.getClassHeader(DmoFormatter.java:678)
 /**
@@ -145,7 +145,7 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public String getVersion(){
-        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__version);
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(MetaDMSAG.__version);
         if (attr == null)
             return(null);
 
@@ -158,13 +158,13 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
     public void setVersion(String value) {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__version);
+        DmcAttribute<?> attr = get(MetaDMSAG.__version);
         if (attr == null)
-            attr = new DmcTypeStringSV(DmdgpbDMSAG.__version);
+            attr = new DmcTypeStringSV(MetaDMSAG.__version);
         
         try{
             attr.set(value);
-            set(DmdgpbDMSAG.__version,attr);
+            set(MetaDMSAG.__version,attr);
         }
         catch(DmcValueException ex){
             throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
@@ -177,12 +177,12 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setVersion(Object value) throws DmcValueException {
-        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__version);
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(MetaDMSAG.__version);
         if (attr == null)
-            attr = new DmcTypeStringSV(DmdgpbDMSAG.__version);
+            attr = new DmcTypeStringSV(MetaDMSAG.__version);
         
         attr.set(value);
-        set(DmdgpbDMSAG.__version,attr);
+        set(MetaDMSAG.__version,attr);
     }
 
     /**
@@ -190,7 +190,7 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remVersion(){
-         rem(DmdgpbDMSAG.__version);
+         rem(MetaDMSAG.__version);
     }
 
     /**
@@ -199,7 +199,7 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
     @SuppressWarnings("unchecked")
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1112)
     public Iterator<String> getSkip(){
-        DmcTypeStringMV attr = (DmcTypeStringMV) get(DmdgpbDMSAG.__skip);
+        DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__skip);
         if (attr == null)
             return( ((List<String>) Collections.EMPTY_LIST).iterator());
 
@@ -211,7 +211,7 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1124)
     public String getNthSkip(int i){
-        DmcTypeStringMV attr = (DmcTypeStringMV) get(DmdgpbDMSAG.__skip);
+        DmcTypeStringMV attr = (DmcTypeStringMV) get(MetaDMSAG.__skip);
         if (attr == null)
             return(null);
 
@@ -224,13 +224,13 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1138)
     public DmcAttribute<?> addSkip(String value) {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__skip);
+        DmcAttribute<?> attr = get(MetaDMSAG.__skip);
         if (attr == null)
-            attr = new DmcTypeStringMV(DmdgpbDMSAG.__skip);
+            attr = new DmcTypeStringMV(MetaDMSAG.__skip);
         
         try{
             setLastValue(attr.add(value));
-            add(DmdgpbDMSAG.__skip,attr);
+            add(MetaDMSAG.__skip,attr);
         }
         catch(DmcValueException ex){
             throw(new IllegalStateException("The type specific add() method shouldn't throw exceptions!",ex));
@@ -244,7 +244,7 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1213)
     public boolean skipContains(String value) {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__skip);
+        DmcAttribute<?> attr = get(MetaDMSAG.__skip);
         if (attr == null)
             return(false);
         return(attr.contains(value));
@@ -256,12 +256,12 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1245)
     public DmcAttribute<?> addSkip(Object value) throws DmcValueException {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__skip);
+        DmcAttribute<?> attr = get(MetaDMSAG.__skip);
         if (attr == null)
-            attr = new DmcTypeStringMV(DmdgpbDMSAG.__skip);
+            attr = new DmcTypeStringMV(MetaDMSAG.__skip);
         
         setLastValue(attr.add(value));
-        add(DmdgpbDMSAG.__skip,attr);
+        add(MetaDMSAG.__skip,attr);
         return(attr);
     }
 
@@ -270,12 +270,12 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1262)
     public int getSkipSize(){
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__skip);
+        DmcAttribute<?> attr = get(MetaDMSAG.__skip);
         if (attr == null){
-            if (DmdgpbDMSAG.__skip.indexSize == 0)
+            if (MetaDMSAG.__skip.indexSize == 0)
                 return(0);
             else
-                return(DmdgpbDMSAG.__skip.indexSize);
+                return(MetaDMSAG.__skip.indexSize);
         }
         return(attr.getMVSize());
     }
@@ -286,12 +286,12 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1320)
     public DmcAttribute<?> delSkip(Object value) throws DmcValueException {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__skip);
+        DmcAttribute<?> attr = get(MetaDMSAG.__skip);
         
         if ( (attr == null) && (getModifier()!= null))
-            delFromEmptyAttribute(new DmcTypeStringMV(DmdgpbDMSAG.__skip), value);
+            delFromEmptyAttribute(new DmcTypeStringMV(MetaDMSAG.__skip), value);
         else
-            attr = del(DmdgpbDMSAG.__skip, value);
+            attr = del(MetaDMSAG.__skip, value);
         
         return(attr);
     }
@@ -302,12 +302,12 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1336)
     public DmcAttribute<?> delSkip(String value) {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__skip);
+        DmcAttribute<?> attr = get(MetaDMSAG.__skip);
         
         if ( (attr == null) && (getModifier()!= null))
-            delFromEmptyAttribute(new DmcTypeStringMV(DmdgpbDMSAG.__skip), value);
+            delFromEmptyAttribute(new DmcTypeStringMV(MetaDMSAG.__skip), value);
         else
-            attr = del(DmdgpbDMSAG.__skip, value);
+            attr = del(MetaDMSAG.__skip, value);
         
         return(attr);
     }
@@ -317,12 +317,12 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatMV(GenUtility.java:1355)
     public void remSkip(){
-         rem(DmdgpbDMSAG.__skip);
+         rem(MetaDMSAG.__skip);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public String getObsolete(){
-        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__obsolete);
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(MetaDMSAG.__obsolete);
         if (attr == null)
             return(null);
 
@@ -335,13 +335,13 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
     public void setObsolete(String value) {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__obsolete);
+        DmcAttribute<?> attr = get(MetaDMSAG.__obsolete);
         if (attr == null)
-            attr = new DmcTypeStringSV(DmdgpbDMSAG.__obsolete);
+            attr = new DmcTypeStringSV(MetaDMSAG.__obsolete);
         
         try{
             attr.set(value);
-            set(DmdgpbDMSAG.__obsolete,attr);
+            set(MetaDMSAG.__obsolete,attr);
         }
         catch(DmcValueException ex){
             throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
@@ -354,12 +354,12 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setObsolete(Object value) throws DmcValueException {
-        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__obsolete);
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(MetaDMSAG.__obsolete);
         if (attr == null)
-            attr = new DmcTypeStringSV(DmdgpbDMSAG.__obsolete);
+            attr = new DmcTypeStringSV(MetaDMSAG.__obsolete);
         
         attr.set(value);
-        set(DmdgpbDMSAG.__obsolete,attr);
+        set(MetaDMSAG.__obsolete,attr);
     }
 
     /**
@@ -367,12 +367,12 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remObsolete(){
-         rem(DmdgpbDMSAG.__obsolete);
+         rem(MetaDMSAG.__obsolete);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:655)
-    public ConceptREF getWhy(){
-        DmcTypeConceptREFSV attr = (DmcTypeConceptREFSV) get(DmdgpbDMSAG.__why);
+    public ConcinnityREF getWhy(){
+        DmcTypeConcinnityREFSV attr = (DmcTypeConcinnityREFSV) get(MetaDMSAG.__why);
         if (attr == null)
             return(null);
 
@@ -387,10 +387,10 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
     }
 
     /**
-     * Returns the reference to Concept without attempting lazy resolution (if turned on).
+     * Returns the reference to Concinnity without attempting lazy resolution (if turned on).
      */
-    public ConceptREF getWhyREF(){
-        DmcTypeConceptREFSV attr = (DmcTypeConceptREFSV) get(DmdgpbDMSAG.__why);
+    public ConcinnityREF getWhyREF(){
+        DmcTypeConcinnityREFSV attr = (DmcTypeConcinnityREFSV) get(MetaDMSAG.__why);
         if (attr == null)
             return(null);
 
@@ -399,19 +399,19 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
 
     /**
      * Sets why to the specified value.
-     * @param value ConceptDMO
+     * @param value ConcinnityDMO
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:709)
-    public void setWhy(ConceptDMO value) {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__why);
+    public void setWhy(ConcinnityDMO value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__why);
         if (attr == null)
-            attr = new DmcTypeConceptREFSV(DmdgpbDMSAG.__why);
+            attr = new DmcTypeConcinnityREFSV(MetaDMSAG.__why);
         else
-            ((DmcTypeConceptREFSV)attr).removeBackReferences();
+            ((DmcTypeConcinnityREFSV)attr).removeBackReferences();
         
         try{
             attr.set(value);
-            set(DmdgpbDMSAG.__why,attr);
+            set(MetaDMSAG.__why,attr);
         }
         catch(DmcValueException ex){
             throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
@@ -420,18 +420,18 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
 
     /**
      * Sets why to the specified value.
-     * @param value A value compatible with DmcTypeConceptREFSV
+     * @param value A value compatible with DmcTypeConcinnityREFSV
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setWhy(Object value) throws DmcValueException {
-        DmcTypeConceptREFSV attr  = (DmcTypeConceptREFSV) get(DmdgpbDMSAG.__why);
+        DmcTypeConcinnityREFSV attr  = (DmcTypeConcinnityREFSV) get(MetaDMSAG.__why);
         if (attr == null)
-            attr = new DmcTypeConceptREFSV(DmdgpbDMSAG.__why);
+            attr = new DmcTypeConcinnityREFSV(MetaDMSAG.__why);
         else
             attr.removeBackReferences();
         
         attr.set(value);
-        set(DmdgpbDMSAG.__why,attr);
+        set(MetaDMSAG.__why,attr);
     }
 
     /**
@@ -439,7 +439,7 @@ abstract public class GpbCompositeTypeDMO  extends GpbTypeDMO  implements DmcNam
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remWhy(){
-         rem(DmdgpbDMSAG.__why);
+         rem(MetaDMSAG.__why);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)

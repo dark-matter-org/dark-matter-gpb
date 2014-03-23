@@ -51,14 +51,10 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
     public final static DmcAttributeInfo __import = new DmcAttributeInfo("dmdgpb", "import", -477973, "String", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __javaType = new DmcAttributeInfo("dmdgpb", "javaType", -477989, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __mainElements = new DmcAttributeInfo("dmdgpb", "mainElements", -477977, "GpbCompositeType", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT, 0, false);
-    public final static DmcAttributeInfo __obsolete = new DmcAttributeInfo("dmdgpb", "obsolete", -477968, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __package = new DmcAttributeInfo("dmdgpb", "package", -477979, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __pythonType = new DmcAttributeInfo("dmdgpb", "pythonType", -477990, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __sizeInBytes = new DmcAttributeInfo("dmdgpb", "sizeInBytes", -477995, "Integer", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
-    public final static DmcAttributeInfo __skip = new DmcAttributeInfo("dmdgpb", "skip", -477969, "String", ValueTypeEnum.MULTI, DataTypeEnum.PERSISTENT, 0, false);
     public final static DmcAttributeInfo __tag = new DmcAttributeInfo("dmdgpb", "tag", -477975, "Integer", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
-    public final static DmcAttributeInfo __version = new DmcAttributeInfo("dmdgpb", "version", -477970, "String", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, false);
-    public final static DmcAttributeInfo __why = new DmcAttributeInfo("dmdgpb", "why", -477967, "Concept", ValueTypeEnum.SINGLE, DataTypeEnum.PERSISTENT, 0, true);
 
     // Generated from: org.dmd.dms.util.DmoCompactSchemaFormatter.dumpSchema(DmoCompactSchemaFormatter.java:184)
     public final static DmcTypeInfo __type_FieldRuleEnum = new DmcTypeInfo("FieldRuleEnum", OriginalTypeEnum.ENUM);
@@ -146,10 +142,10 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
 
         __GpbCompositeType.addMust(MetaDMSAG.__name);
         __GpbCompositeType.addMay(__generateAs);
-        __GpbCompositeType.addMay(__version);
-        __GpbCompositeType.addMay(__skip);
-        __GpbCompositeType.addMay(__obsolete);
-        __GpbCompositeType.addMay(__why);
+        __GpbCompositeType.addMay(MetaDMSAG.__version);
+        __GpbCompositeType.addMay(MetaDMSAG.__skip);
+        __GpbCompositeType.addMay(MetaDMSAG.__obsolete);
+        __GpbCompositeType.addMay(MetaDMSAG.__why);
 
         __GpbEnum.addMust(MetaDMSAG.__name);
         __GpbEnum.addMust(__gpbEnumValue);
@@ -176,7 +172,7 @@ public class DmdgpbDMSAG implements DmcCompactSchemaIF {
         __GpbModule.addMay(MetaDMSAG.__description);
         __GpbModule.addMay(MetaDMSAG.__defFiles);
         __GpbModule.addMay(__package);
-        __GpbModule.addMay(__version);
+        __GpbModule.addMay(MetaDMSAG.__version);
         __GpbModule.addMay(__dependsOnGpbModule);
         __GpbModule.addMay(DmconcinnityDMSAG.__dependsOnConcinnityModule);
 

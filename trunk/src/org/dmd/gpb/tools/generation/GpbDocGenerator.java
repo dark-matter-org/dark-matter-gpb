@@ -8,9 +8,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.apache.commons.io.FileUtils;
-import org.dmd.concinnity.shared.generated.types.ConceptREF;
+import org.dmd.concinnity.shared.generated.dmo.ConceptDMO;
 import org.dmd.dmc.DmcOmni;
 import org.dmd.dms.generated.dmw.SchemaAndReasonIterableDMW;
+import org.dmd.dms.generated.types.ConcinnityREF;
 import org.dmd.dms.generated.types.Example;
 import org.dmd.dms.generated.types.SchemaAndReason;
 import org.dmd.dmw.DmwWrapper;
@@ -51,9 +52,10 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 	// Indicates the version for which we want to generate the documentation files
 	StringBuffer		genversion = new StringBuffer();
 
-	// The directory where we'll dump the generated docs
+	// The root directory of generated documents 
 	StringBuffer		outdir = new StringBuffer();
 	
+	// The subdirectory where beneath outdir where we'll dump our docs
 	String				outdirDMGPB;
 	
 	// The set of extension classes that we'll load. These must be the fully qualified
@@ -309,21 +311,25 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 				// name of the Concept (or some random string that somebody whacked in there!)
 				if (message.getDMO().getWhy() != null){
 					
-					ConceptREF ref = message.getDMO().getWhy();
-					if (ref.isResolved()){
+//					ConceptREF ref = (message.getDMO().getWhy();
+					ConcinnityREF cref = (message.getDMO().getWhy());
+					if (cref.isResolved()){
+						if (cref.getObject() instanceof ConceptDMO){
+							ConceptDMO concept = (ConceptDMO) cref.getObject();
 //						String reference = "<a name=\"::messageTitle::\"> The ::messageTitle:: message </a>";
-						String info = ref.getName().getNameString();
-						String name = ref.getName().getNameString();
-						String from = ref.getObject().getDefinedInConcinnityModule().getName().getNameString();
-						if (ref.getObject().getHint() != null)
-							info = ref.getObject().getHint();
-						
-						String reference = "<a href=\"../dmcm/" + from + ".html#" + name + "\"> " + info + " </a>";
-						
-						description.fastAddAttributeInfo("Why", reference);
+							String info = concept.getName().getNameString();
+							String name = concept.getName().getNameString();
+							String from = concept.getDefinedInConcinnityModule().getName().getNameString();
+							if (concept.getHint() != null)
+								info = concept.getHint();
+							
+							String reference = "<a href=\"../dmcm/" + from + ".html#" + name + "\"> " + info + " </a>";
+							
+							description.fastAddAttributeInfo("Why", reference);
+						}
 					}
 					else{
-						description.fastAddAttributeInfo("Why", ref.getName().getNameString());
+						description.fastAddAttributeInfo("Why", cref.getObjectName().getNameString());
 					}
 					
 						
@@ -464,7 +470,6 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 	
 	void copyResource(String name) throws IOException{
 		URL url = this.getClass().getResource(name);
-//		DebugInfo.debug("url: " + url.getFile());
 		FileUtils.copyURLToFile(url, new File(outdirDMGPB + File.separator + name));
 	}
 

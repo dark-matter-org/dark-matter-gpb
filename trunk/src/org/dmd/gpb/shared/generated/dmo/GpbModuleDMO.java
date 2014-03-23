@@ -557,7 +557,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public String getVersion(){
-        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__version);
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(MetaDMSAG.__version);
         if (attr == null)
             return(null);
 
@@ -570,13 +570,13 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
     public void setVersion(String value) {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__version);
+        DmcAttribute<?> attr = get(MetaDMSAG.__version);
         if (attr == null)
-            attr = new DmcTypeStringSV(DmdgpbDMSAG.__version);
+            attr = new DmcTypeStringSV(MetaDMSAG.__version);
         
         try{
             attr.set(value);
-            set(DmdgpbDMSAG.__version,attr);
+            set(MetaDMSAG.__version,attr);
         }
         catch(DmcValueException ex){
             throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
@@ -589,12 +589,12 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setVersion(Object value) throws DmcValueException {
-        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__version);
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(MetaDMSAG.__version);
         if (attr == null)
-            attr = new DmcTypeStringSV(DmdgpbDMSAG.__version);
+            attr = new DmcTypeStringSV(MetaDMSAG.__version);
         
         attr.set(value);
-        set(DmdgpbDMSAG.__version,attr);
+        set(MetaDMSAG.__version,attr);
     }
 
     /**
@@ -602,7 +602,7 @@ public class GpbModuleDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remVersion(){
-         rem(DmdgpbDMSAG.__version);
+         rem(MetaDMSAG.__version);
     }
 
     /**
