@@ -28,14 +28,10 @@ public class DmdgpbDMSAGAMAP {
         _SmAp.put(DmdgpbDMSAG.__import.id,DmdgpbDMSAG.__import);
         _SmAp.put(DmdgpbDMSAG.__javaType.id,DmdgpbDMSAG.__javaType);
         _SmAp.put(DmdgpbDMSAG.__mainElements.id,DmdgpbDMSAG.__mainElements);
-        _SmAp.put(DmdgpbDMSAG.__obsolete.id,DmdgpbDMSAG.__obsolete);
         _SmAp.put(DmdgpbDMSAG.__package.id,DmdgpbDMSAG.__package);
         _SmAp.put(DmdgpbDMSAG.__pythonType.id,DmdgpbDMSAG.__pythonType);
         _SmAp.put(DmdgpbDMSAG.__sizeInBytes.id,DmdgpbDMSAG.__sizeInBytes);
-        _SmAp.put(DmdgpbDMSAG.__skip.id,DmdgpbDMSAG.__skip);
         _SmAp.put(DmdgpbDMSAG.__tag.id,DmdgpbDMSAG.__tag);
-        _SmAp.put(DmdgpbDMSAG.__version.id,DmdgpbDMSAG.__version);
-        _SmAp.put(DmdgpbDMSAG.__why.id,DmdgpbDMSAG.__why);
     }
 
 }

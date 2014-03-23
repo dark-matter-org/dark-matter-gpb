@@ -166,30 +166,30 @@ description 	When protocol elements have clashing names in the namespace of a dm
  file without difficulty. This is also handy when you start to merge definitions from different .proto
  implementations but still want to maintain the old names in the regenerated .proto files.
 
-AttributeDefinition
-name			version
-dmdID			30
-type			String
-description 	The version at which a module, message or enumeration was introduced.
-
-AttributeDefinition
-name			skip
-dmdID			31
-type			String
-valueType		MULTI
-description 	A version from which a message or enumeration should be excluded when .proto generation takes place.
-
-AttributeDefinition
-name			obsolete
-dmdID			32
-type			String
-description 	The version at which a message or enumeration became obsolete.
-
-AttributeDefinition
-name			why
-dmdID			33
-type			Concept
-weakReference	true
-description 	An indication of why a message or enum was added to the specification.
- This might be a reference to a requirement or feature concept.
+//AttributeDefinition
+//name			version
+//dmdID			30
+//type			String
+//description 	The version at which a module, message or enumeration was introduced.
+//
+//AttributeDefinition
+//name			skip
+//dmdID			31
+//type			String
+//valueType		MULTI
+//description 	A version from which a message or enumeration should be excluded when .proto generation takes place.
+//
+//AttributeDefinition
+//name			obsolete
+//dmdID			32
+//type			String
+//description 	The version at which a message or enumeration became obsolete.
+//
+//AttributeDefinition
+//name			why
+//dmdID			33
+//type			Concept
+//weakReference	true
+//description 	An indication of why a message or enum was added to the specification.
+// This might be a reference to a requirement or feature concept.
 

@@ -80,10 +80,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
     public static AttributeDefinition _import;
     public static AttributeDefinition _embed;
     public static AttributeDefinition _generateAs;
-    public static AttributeDefinition _version;
-    public static AttributeDefinition _skip;
-    public static AttributeDefinition _obsolete;
-    public static AttributeDefinition _why;
 
     public static TypeDefinition _GpbFieldIndicator;
 
@@ -228,10 +224,10 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbCompositeTypeOBJ.setDmtREFImport("org.dmd.gpb.shared.generated.types.GpbCompositeTypeREF");
             _GpbCompositeTypeOBJ.setDmwIteratorClass("GpbCompositeTypeIterableDMW");
             _GpbCompositeTypeOBJ.addMay("dmdgpb.generateAs");
-            _GpbCompositeTypeOBJ.addMay("dmdgpb.version");
-            _GpbCompositeTypeOBJ.addMay("dmdgpb.skip");
-            _GpbCompositeTypeOBJ.addMay("dmdgpb.obsolete");
-            _GpbCompositeTypeOBJ.addMay("dmdgpb.why");
+            _GpbCompositeTypeOBJ.addMay("meta.version");
+            _GpbCompositeTypeOBJ.addMay("meta.skip");
+            _GpbCompositeTypeOBJ.addMay("meta.obsolete");
+            _GpbCompositeTypeOBJ.addMay("meta.why");
             _GpbCompositeTypeOBJ.addMust("meta.name");
             _GpbCompositeTypeOBJ.setDmwIteratorImport("org.dmd.gpb.server.generated.dmw.GpbCompositeTypeIterableDMW");
             _GpbCompositeTypeOBJ.setPartOfDefinitionModule("dmdgpb.GpbModule");
@@ -352,7 +348,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleOBJ.addMay("meta.description");
             _GpbModuleOBJ.addMay("meta.defFiles");
             _GpbModuleOBJ.addMay("dmdgpb.package");
-            _GpbModuleOBJ.addMay("dmdgpb.version");
+            _GpbModuleOBJ.addMay("meta.version");
             _GpbModuleOBJ.addMay("dmdgpb.dependsOnGpbModule");
             _GpbModuleOBJ.addMay("dmconcinnity.dependsOnConcinnityModule");
             _GpbModuleOBJ.addMust("meta.name");
@@ -645,60 +641,6 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _generateAsOBJ.setLineNumber("168");
             addAttributeDefList(_generateAs);
 
-// Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            AttributeDefinitionDMO _versionOBJ = new AttributeDefinitionDMO();
-            _version = new AttributeDefinition(_versionOBJ);
-            _versionOBJ.setType("meta.String");
-            _versionOBJ.setName("version");
-            _versionOBJ.setDmdID("-477970");
-            _versionOBJ.addDescription("The version at which a module, message or enumeration was introduced.");
-            _versionOBJ.setDotName("dmdgpb.version.AttributeDefinition");
-            _version.setDefinedIn(this);
-            _versionOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _versionOBJ.setLineNumber("174");
-            addAttributeDefList(_version);
-
-// Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            AttributeDefinitionDMO _skipOBJ = new AttributeDefinitionDMO();
-            _skip = new AttributeDefinition(_skipOBJ);
-            _skipOBJ.setType("meta.String");
-            _skipOBJ.setName("skip");
-            _skipOBJ.setDmdID("-477969");
-            _skipOBJ.addDescription("A version from which a message or enumeration should be excluded when .proto generation takes place.");
-            _skipOBJ.setValueType("MULTI");
-            _skipOBJ.setDotName("dmdgpb.skip.AttributeDefinition");
-            _skip.setDefinedIn(this);
-            _skipOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _skipOBJ.setLineNumber("181");
-            addAttributeDefList(_skip);
-
-// Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            AttributeDefinitionDMO _obsoleteOBJ = new AttributeDefinitionDMO();
-            _obsolete = new AttributeDefinition(_obsoleteOBJ);
-            _obsoleteOBJ.setType("meta.String");
-            _obsoleteOBJ.setName("obsolete");
-            _obsoleteOBJ.setDmdID("-477968");
-            _obsoleteOBJ.addDescription("The version at which a message or enumeration became obsolete.");
-            _obsoleteOBJ.setDotName("dmdgpb.obsolete.AttributeDefinition");
-            _obsolete.setDefinedIn(this);
-            _obsoleteOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _obsoleteOBJ.setLineNumber("187");
-            addAttributeDefList(_obsolete);
-
-// Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
-            AttributeDefinitionDMO _whyOBJ = new AttributeDefinitionDMO();
-            _why = new AttributeDefinition(_whyOBJ);
-            _whyOBJ.setType("dmconcinnity.Concept");
-            _whyOBJ.setName("why");
-            _whyOBJ.setDmdID("-477967");
-            _whyOBJ.addDescription("An indication of why a message or enum was added to the specification.\n This might be a reference to a requirement or feature concept.");
-            _whyOBJ.setWeakReference("true");
-            _whyOBJ.setDotName("dmdgpb.why.AttributeDefinition");
-            _why.setDefinedIn(this);
-            _whyOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/attributes.dmd");
-            _whyOBJ.setLineNumber("195");
-            addAttributeDefList(_why);
-
     }
 
     // Generated from: org.dmd.dmg.util.SchemaFormatter.dumpInitFunction(SchemaFormatter.java:313)
@@ -829,7 +771,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbModuleDSDOBJ.setLineNumber("13");
             _GpbModuleDSDOBJ.setBaseDefinition("dmdgpb.GpbDefinition");
             _GpbModuleDSDOBJ.addMay("dmdgpb.package");
-            _GpbModuleDSDOBJ.addMay("dmdgpb.version");
+            _GpbModuleDSDOBJ.addMay("meta.version");
             _GpbModuleDSD.setDefinedIn(this);
             addDsdModuleList(_GpbModuleDSD);
 
