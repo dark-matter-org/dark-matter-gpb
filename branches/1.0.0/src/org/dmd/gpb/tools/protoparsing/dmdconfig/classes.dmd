@@ -1,0 +1,93 @@
+ClassDefinition
+name			ProtoDefinition
+classType   	ABSTRACT
+dmdID			1
+useWrapperType	EXTENDED
+derivedFrom		DSDefinition
+isNamedBy		name
+must			name
+must			dotName
+may				file
+may				lineNumber
+description		The ProtoDefinition provides a common base for all data parsed from an
+ original .proto file.
+
+ClassDefinition
+name         	ProtoElement
+classType      	ABSTRACT
+dmdID			2
+useWrapperType	EXTENDED
+derivedFrom     ProtoDefinition
+isNamedBy       name
+must           	name
+may				parentMessage
+may				generateAs
+description		The ProtoElement provides a common base for all elements that 
+ comprise a .proto specification.
+
+ClassDefinition
+name         	ProtoMainElement
+classType      	ABSTRACT
+dmdID			3
+useWrapperType	EXTENDED
+derivedFrom     ProtoElement
+isNamedBy       name
+must           	name
+description		The GpbElement provides a common base for enums and messages that
+ are defined at the top level of a .proto specification.
+
+ClassDefinition
+name         	ProtoField
+classType      	STRUCTURAL
+dmdID			4
+useWrapperType	EXTENDED
+derivedFrom     ProtoElement
+isNamedBy       name
+must			gpbType
+may             description
+may			    fieldRule
+may			    tag
+may				generateAs
+may				hint
+description		The ProtoField class represents a single field of a .proto message.
+
+ClassDefinition
+name         	ProtoMessage
+classType      	STRUCTURAL
+dmdID			5
+useWrapperType	EXTENDED
+derivedFrom     ProtoMainElement
+isNamedBy       name
+must			name
+must			elements
+
+ClassDefinition
+name         	ProtoEnum
+classType      	STRUCTURAL
+dmdID			6
+useWrapperType	EXTENDED
+derivedFrom     ProtoMainElement
+isNamedBy       name
+must           	name
+must           	enumValue
+
+ClassDefinition
+name         	ProtoFile
+classType      	STRUCTURAL
+dmdID			7
+useWrapperType	EXTENDED
+derivedFrom     ProtoDefinition
+isNamedBy       name
+must			name
+must			package
+may				import
+may				mainElements
+may				embeddedElements
+may				fields
+may				generatedFileName
+description		The ProtoFile is used to represent a single .proto file. It may be parsed
+ from an existing .proto file by the GpbDotProtoParser utility. 
+
+
+
+

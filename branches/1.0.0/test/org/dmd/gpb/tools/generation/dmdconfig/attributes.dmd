@@ -1,0 +1,13 @@
+AttributeDefinition
+name			otherInfo
+dmdID			1
+type			String
+description		Some other information.
+
+AttributeDefinition
+name			units
+dmdID			2
+type			String
+description		Some unit information.
+
+ 

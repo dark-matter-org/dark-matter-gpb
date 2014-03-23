@@ -1,0 +1,138 @@
+// Note: The GpbModule uses dmdID 1
+
+ClassDefinition
+name			GpbDefinition
+classType   	ABSTRACT
+dmdID			2
+useWrapperType	EXTENDED
+derivedFrom		DSDefinition
+isNamedBy		name
+must			name
+must			dotName
+must			definedInGpbModule
+may				hint
+may				description
+description		The GpbDefinition provides a common base for all dark-matter
+ Google Protocol Buffer (GPB) definitions. 
+
+ClassDefinition
+name 			GpbType
+classType      	STRUCTURAL
+dmdID			3
+useWrapperType	EXTENDED
+derivedFrom		GpbDefinition
+isNamedBy		name
+must			name
+description		The GpbType class provides a common base for all things that can be used 
+ to represent the type of a GpbField. This includes the built-in scalar types associated with
+ Google Protocol Buffers, as well and enums and messages. Having a common base for types means
+ that we don't run into problems with generating internal types to represent enums and messages.
+
+ClassDefinition
+name 			GpbScalarType
+classType      	STRUCTURAL
+dmdID			4
+useWrapperType	EXTENDED
+derivedFrom		GpbType
+isNamedBy		name
+must			name
+may				defaultValue
+may				sizeInBytes
+may				javaType
+may				cplusplusType
+may				pythonType
+description		The GpbType class is use to define the types of attributes in the GPB
+ specification. All GpbMessages and GpbEnum will have GpbTypes generated for
+ them so that they can be used as types for GpbAttributes.
+ <p/>
+ GpbType definitions cannot be specified in .dmgpb files; they are strictly for
+ internal use. If you specify one in a .dmgpb file, you'll get an error.
+
+ClassDefinition
+name 			GpbCompositeType
+classType      	ABSTRACT
+dmdID			5
+useWrapperType	EXTENDED
+derivedFrom		GpbType
+isNamedBy		name
+must			name
+may				generateAs
+may				version
+may				skip
+may				obsolete
+may				why
+description		The GpbCompositeType provides a common base for enumerations and messages
+ so that they can be referred to as a separate type of object that can be specified in
+ standalone blocks within a generated GpbProtoFile.
+
+ClassDefinition
+name         	GpbEnum
+classType      	STRUCTURAL
+dmdID			6
+useWrapperType	EXTENDED
+derivedFrom     GpbCompositeType
+isNamedBy       name
+must           	name
+//must           	enumValue
+must			gpbEnumValue
+may             defaultValue
+description    The GpbEnum allows for the definition of enumerations. One thing to be aware
+ of with enums is that, if you're generating C++, the names of enum elements must be globally
+ unique. The dark-matter GPB utility will warn you if you have clashing enum value names.
+ <p/>
+ May want to allow for mapping between DMS enum definitions and GpbEnums. Provide a basedOnEnum
+ attribute that refers to a DMS enum. A GpbDefinitionSet could use the schemaToLoad attribute
+ to specify a DMS schema from which definitions can be pulled.
+ <p/>
+ When you're defining a message type, you might want one of its fields to only have one of a
+ pre-defined list of values. For example, let's say you want to add a corpus field for each
+ SearchRequest, where the corpus can be UNIVERSAL, WEB, IMAGES, LOCAL, NEWS, PRODUCTS or VIDEO.
+ You can do this very simply by adding an enum to your message definition - a field with an enum
+ type can only have one of a specified set of constants as its value (if you try to provide a
+ different value, the parser will treat it like an unknown field). In the following
+ example we've added an enum called Corpus with all the possible values, and a field of type Corpus:
+
+ClassDefinition
+name         	GpbField
+classType      	STRUCTURAL
+dmdID			7
+useWrapperType	EXTENDED
+derivedFrom     GpbDefinition
+isNamedBy       name
+must			name
+must			gpbType
+may				hint
+may             description
+may				generateAs
+description		The GpbField class is used to represent a reusable, named field for use
+ within a GpbMessage.
+
+ClassDefinition
+name         	GpbMessage
+classType      	STRUCTURAL
+dmdID			8
+useWrapperType	EXTENDED
+derivedFrom     GpbCompositeType
+isNamedBy       name
+must			name
+may				field
+may				embed
+
+ClassDefinition
+name         	GpbProtoFile
+classType      	STRUCTURAL
+dmdID			10
+useWrapperType	EXTENDED
+derivedFrom     GpbDefinition
+isNamedBy       name
+must			name
+must			package
+must			generatedFileName
+may				import
+may				mainElements
+description		The GpbProtoFile is used to represent a single .proto file. It may be parsed
+ from an existing .proto file by the GpbDotProtoParser utility. 
+
+
+
+
