@@ -58,11 +58,11 @@ public class GpbModuleParsingCoordinator {
     GpbModuleGeneratorInterface                      generator;                                                                                // Injected generator that we call when config loading is complete
     TreeMap<String, ModuleInfoBase>                  loadedConfigs                    = new TreeMap<String, ModuleInfoBase>();                 // Stores all loaded configs based on the name of the file that was parsed.
     ConcinnityModuleParser                           parserForConcinnityModule;                                                                // Parser for ConcinnityModule definitions
-    ConfigFinder                                     finderForConcinnityModule        = new ConfigFinder("dmcm");                              // Config finder for ConcinnityModule config files ending with .dmcm
+    ConfigFinder                                     finderForConcinnityModule        = new ConfigFinder(".dmcm");                             // Config finder for ConcinnityModule config files ending with .dmcm
     TreeMap<DefinitionName, ConcinnityModuleInfo>    loadedConcinnityModuleConfigs    = new TreeMap<DefinitionName, ConcinnityModuleInfo>();   // The names/location of the ConcinnityModule modules that have been loaded
 
     GpbModuleParser                                  parserForGpbModule;                                                                       // Parser for GpbModule definitions
-    ConfigFinder                                     finderForGpbModule               = new ConfigFinder("dmgpb");                             // Config finder for GpbModule config files ending with .dmgpb
+    ConfigFinder                                     finderForGpbModule               = new ConfigFinder(".dmgpb");                            // Config finder for GpbModule config files ending with .dmgpb
     TreeMap<DefinitionName, GpbModuleInfo>           loadedGpbModuleConfigs           = new TreeMap<DefinitionName, GpbModuleInfo>();          // The names/location of the GpbModule modules that have been loaded
 
 
