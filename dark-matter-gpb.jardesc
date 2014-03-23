@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="no"?>
+<jardesc>
+    <jar path="/Users/peterstrong/Desktop/dark-matter JARs/dark-matter-gpb.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/dark-matter-gpb/dark-matter-gpb.jardesc" exportErrors="false" exportWarnings="false" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" manifestLocation="/dark-matter-gpb/Manifest.txt" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <file path="/dark-matter-gpb/Manifest.txt"/>
+        <folder path="/dark-matter-gpb/extjars"/>
+        <javaElement handleIdentifier="=dark-matter-gpb/src"/>
+        <javaElement handleIdentifier="=dark-matter-gpb/test"/>
+    </selectedElements>
+</jardesc>
