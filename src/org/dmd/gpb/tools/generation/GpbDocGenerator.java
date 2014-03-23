@@ -89,7 +89,7 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 		createDir(outdirDMGPB);
 		
 		try {
-			loader = new GpbdocTemplateLoader(searchPaths);
+			loader = new GpbdocTemplateLoader(searchPaths,jars);
 			loader.findAndLoadTemplate();
 			
 			// Load any extension hooks

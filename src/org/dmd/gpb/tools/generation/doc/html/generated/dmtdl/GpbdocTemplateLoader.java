@@ -37,7 +37,7 @@ public class GpbdocTemplateLoader implements DmcUncheckedOIFHandlerIF {
     DmcUncheckedOIFParser                             parser                = new DmcUncheckedOIFParser(this);              // Parses objects from the config file
     DmwObjectFactory                                  factory;                                                              // Instantiates wrapped objects
     DmvRuleManager                                    rules                 = new DmvRuleManager();                         // Rule manager
-    ConfigFinder                                      finder                = new ConfigFinder("dmt");                      // Config finder for template files ending with .dmt
+    ConfigFinder                                      finder                = new ConfigFinder(".dmt");                     // Config finder for template files ending with .dmt
     ConfigLocation                                    location;                                                             // The location of the config being parsed
     TreeMap<String,TemplateMediator>                  mediators             = new TreeMap<String,TemplateMediator>();       // The mediators by name
                                                                                                                             // 
@@ -87,11 +87,14 @@ public class GpbdocTemplateLoader implements DmcUncheckedOIFHandlerIF {
     /**
      * Creates a new template loader for templates associated with the gpbdoc TdlModule.
      * @param paths the paths that we'll search for the template definition file.
+     * @param jars the prefixes of jars on the classpath that we'll search for configs
      */
-    public GpbdocTemplateLoader(ArrayList<String> paths) throws ResultException, DmcValueException, DmcNameClashException {
+    public GpbdocTemplateLoader(ArrayList<String> paths, ArrayList<String> jars) throws ResultException, DmcValueException, DmcNameClashException {
         schema = new SchemaManager();
         DmtdlSchemaAG sd = new DmtdlSchemaAG();
         schema.manageSchema(sd);
+        // Templates can be used to generate OIF files as well and we don't want the leading spaces on lines
+        parser.dropLineContinuations();
         if (sd.getAttributeDefListSize() > 0){
             AttributeDefinitionIterableDMW attrs = sd.getAttributeDefList();
             while(attrs.hasNext()){
@@ -102,7 +105,7 @@ public class GpbdocTemplateLoader implements DmcUncheckedOIFHandlerIF {
             }
         }
         
-        finder.setSourceInfo(paths);
+        finder.setSourceAndJarInfo(paths, jars);
 
         mediators.put("AttributeInfo",AttributeInfo);
         mediators.put("Body",Body);
@@ -152,7 +155,7 @@ public class GpbdocTemplateLoader implements DmcUncheckedOIFHandlerIF {
         
     }
 
-    // Generated from: org.dmd.templates.server.extended.TdlModule.generateTemplateLoader(TdlModule.java:191)
+    // Generated from: org.dmd.templates.server.extended.TdlModule.generateTemplateLoader(TdlModule.java:194)
     /**
      * We attempt to find and load the gpbdoc.dmt file.
      */
@@ -170,10 +173,12 @@ public class GpbdocTemplateLoader implements DmcUncheckedOIFHandlerIF {
         }
 
         location = version.getLatestVersion();
-        parser.parseFile(location.getFileName());
+
+        // How we read the file will depend on whether or not it's in a JAR
+        parser.parseFile(location.getFileName(),location.isFromJAR());
     }
 
-    // Generated from: org.dmd.templates.server.extended.TdlModule.generateTemplateLoader(TdlModule.java:215)
+    // Generated from: org.dmd.templates.server.extended.TdlModule.generateTemplateLoader(TdlModule.java:220)
     /**
      * We attempt to load the classes that provide extension hooks.
      */
@@ -209,7 +214,7 @@ public class GpbdocTemplateLoader implements DmcUncheckedOIFHandlerIF {
         }
     }
 
-    // Generated from: org.dmd.templates.server.extended.TdlModule.generateTemplateLoader(TdlModule.java:252)
+    // Generated from: org.dmd.templates.server.extended.TdlModule.generateTemplateLoader(TdlModule.java:257)
     @Override
     public void handleObject(DmcUncheckedObject uco, String infile, int lineNumber) throws ResultException, DmcValueException, DmcRuleExceptionSet, DmcNameClashException {
         Template template = null;
