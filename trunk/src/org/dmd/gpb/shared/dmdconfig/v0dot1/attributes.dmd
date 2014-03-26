@@ -10,18 +10,19 @@ dmdID			2
 type			String
 description		An indication of the dark-matter type associated with a GPB attribute type.
 
-AttributeDefinition
-name			hint
-dmdID			3
-type			String
-description		A short description of something that can be dumped as one line comment in a .proto spec.
- For longer explanations, use the description attribute.
-
-ValueLengthRuleData
-ruleName         dmgpbHintLength
-ruleTitle        The hint for something should be at most 80 characters.
-applyToAttribute hint
-maxLength        80
+// Promoted to meta
+//AttributeDefinition
+//name			hint
+//dmdID			3
+//type			String
+//description		A short description of something that can be dumped as one line comment in a .proto spec.
+// For longer explanations, use the description attribute.
+//
+//ValueLengthRuleData
+//ruleName         dmgpbHintLength
+//ruleTitle        The hint for something should be at most 80 characters.
+//applyToAttribute hint
+//maxLength        80
 
 AttributeDefinition
 name			defaultValue

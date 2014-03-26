@@ -24,7 +24,6 @@ public class DmdgpbDMSAGAMAP {
         _SmAp.put(DmdgpbDMSAG.__generatedFileName.id,DmdgpbDMSAG.__generatedFileName);
         _SmAp.put(DmdgpbDMSAG.__gpbEnumValue.id,DmdgpbDMSAG.__gpbEnumValue);
         _SmAp.put(DmdgpbDMSAG.__gpbType.id,DmdgpbDMSAG.__gpbType);
-        _SmAp.put(DmdgpbDMSAG.__hint.id,DmdgpbDMSAG.__hint);
         _SmAp.put(DmdgpbDMSAG.__import.id,DmdgpbDMSAG.__import);
         _SmAp.put(DmdgpbDMSAG.__javaType.id,DmdgpbDMSAG.__javaType);
         _SmAp.put(DmdgpbDMSAG.__mainElements.id,DmdgpbDMSAG.__mainElements);

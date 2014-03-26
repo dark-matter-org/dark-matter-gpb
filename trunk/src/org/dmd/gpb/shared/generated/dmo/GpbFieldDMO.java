@@ -122,7 +122,7 @@ public class GpbFieldDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF,
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
     public String getHint(){
-        DmcTypeStringSV attr = (DmcTypeStringSV) get(DmdgpbDMSAG.__hint);
+        DmcTypeStringSV attr = (DmcTypeStringSV) get(MetaDMSAG.__hint);
         if (attr == null)
             return(null);
 
@@ -135,13 +135,13 @@ public class GpbFieldDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF,
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
     public void setHint(String value) {
-        DmcAttribute<?> attr = get(DmdgpbDMSAG.__hint);
+        DmcAttribute<?> attr = get(MetaDMSAG.__hint);
         if (attr == null)
-            attr = new DmcTypeStringSV(DmdgpbDMSAG.__hint);
+            attr = new DmcTypeStringSV(MetaDMSAG.__hint);
         
         try{
             attr.set(value);
-            set(DmdgpbDMSAG.__hint,attr);
+            set(MetaDMSAG.__hint,attr);
         }
         catch(DmcValueException ex){
             throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
@@ -154,12 +154,12 @@ public class GpbFieldDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF,
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
     public void setHint(Object value) throws DmcValueException {
-        DmcTypeStringSV attr  = (DmcTypeStringSV) get(DmdgpbDMSAG.__hint);
+        DmcTypeStringSV attr  = (DmcTypeStringSV) get(MetaDMSAG.__hint);
         if (attr == null)
-            attr = new DmcTypeStringSV(DmdgpbDMSAG.__hint);
+            attr = new DmcTypeStringSV(MetaDMSAG.__hint);
         
         attr.set(value);
-        set(DmdgpbDMSAG.__hint,attr);
+        set(MetaDMSAG.__hint,attr);
     }
 
     /**
@@ -167,7 +167,7 @@ public class GpbFieldDMO  extends GpbDefinitionDMO  implements DmcNamedObjectIF,
      */
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remHint(){
-         rem(DmdgpbDMSAG.__hint);
+         rem(MetaDMSAG.__hint);
     }
 
     /**
