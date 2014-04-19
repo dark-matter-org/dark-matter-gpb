@@ -339,6 +339,37 @@ abstract public class ProtoFieldDMW extends ProtoElement implements DmcDefinitio
     }
 
     // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
+    public DefinitionName getName(){
+        return(((ProtoFieldDMO) core).getName());
+    }
+
+    /**
+     * Sets name to the specified value.
+     * @param value A value compatible with DmcTypeDefinitionName
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1584)
+    public void setName(Object value) throws DmcValueException {
+        ((ProtoFieldDMO) core).setName(value);
+    }
+
+    /**
+     * Sets name to the specified value.
+     * @param value DefinitionName
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1593)
+    public void setName(DefinitionName value){
+        ((ProtoFieldDMO) core).setName(value);
+    }
+
+    /**
+     * Removes the name attribute value.
+     */
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1619)
+    public void remName(){
+        ((ProtoFieldDMO) core).remName();
+    }
+
+    // org.dmd.dmg.generators.BaseDMWGenerator.formatSV(BaseDMWGenerator.java:1474)
     public Integer getTag(){
         return(((ProtoFieldDMO) core).getTag());
     }

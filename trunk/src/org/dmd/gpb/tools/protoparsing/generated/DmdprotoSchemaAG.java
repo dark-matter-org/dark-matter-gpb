@@ -184,7 +184,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoFieldOBJ.setDmdID("-478096");
             _ProtoFieldOBJ.setClassType("STRUCTURAL");
             _ProtoFieldOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/classes.dmd");
-            _ProtoFieldOBJ.setLineNumber("53");
+            _ProtoFieldOBJ.setLineNumber("54");
             _ProtoFieldOBJ.addDescription("The ProtoField class represents a single field of a .proto message.");
             _ProtoFieldOBJ.setDerivedFrom("dmdproto.ProtoElement");
             _ProtoFieldOBJ.setIsNamedBy("meta.name");
@@ -196,6 +196,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoFieldOBJ.addMay("dmdproto.tag");
             _ProtoFieldOBJ.addMay("dmdproto.generateAs");
             _ProtoFieldOBJ.addMay("dmdproto.hint");
+            _ProtoFieldOBJ.addMust("meta.name");
             _ProtoFieldOBJ.addMust("dmdproto.gpbType");
             _ProtoFieldOBJ.setDmwIteratorImport("org.dmd.gpb.tools.protoparsing.generated.dmw.ProtoFieldIterableDMW");
             _ProtoFieldOBJ.setDotName("dmdproto.ProtoField.ClassDefinition");
@@ -209,7 +210,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoMessageOBJ.setDmdID("-478095");
             _ProtoMessageOBJ.setClassType("STRUCTURAL");
             _ProtoMessageOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/classes.dmd");
-            _ProtoMessageOBJ.setLineNumber("63");
+            _ProtoMessageOBJ.setLineNumber("64");
             _ProtoMessageOBJ.setDerivedFrom("dmdproto.ProtoMainElement");
             _ProtoMessageOBJ.setIsNamedBy("meta.name");
             _ProtoMessageOBJ.setUseWrapperType("EXTENDED");
@@ -229,7 +230,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoEnumOBJ.setDmdID("-478094");
             _ProtoEnumOBJ.setClassType("STRUCTURAL");
             _ProtoEnumOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/classes.dmd");
-            _ProtoEnumOBJ.setLineNumber("73");
+            _ProtoEnumOBJ.setLineNumber("74");
             _ProtoEnumOBJ.setDerivedFrom("dmdproto.ProtoMainElement");
             _ProtoEnumOBJ.setIsNamedBy("meta.name");
             _ProtoEnumOBJ.setUseWrapperType("EXTENDED");
@@ -249,7 +250,7 @@ public class DmdprotoSchemaAG extends SchemaDefinition {
             _ProtoFileOBJ.setDmdID("-478093");
             _ProtoFileOBJ.setClassType("STRUCTURAL");
             _ProtoFileOBJ.setFile("/src/org/dmd/gpb/tools/protoparsing/dmdconfig/classes.dmd");
-            _ProtoFileOBJ.setLineNumber("90");
+            _ProtoFileOBJ.setLineNumber("91");
             _ProtoFileOBJ.addDescription("The ProtoFile is used to represent a single .proto file. It may be parsed\n from an existing .proto file by the GpbDotProtoParser utility.");
             _ProtoFileOBJ.setDerivedFrom("dmdproto.ProtoDefinition");
             _ProtoFileOBJ.setIsNamedBy("meta.name");

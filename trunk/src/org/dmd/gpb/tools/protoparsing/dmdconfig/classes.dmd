@@ -43,6 +43,7 @@ dmdID			4
 useWrapperType	EXTENDED
 derivedFrom     ProtoElement
 isNamedBy       name
+must			name
 must			gpbType
 may             description
 may			    fieldRule

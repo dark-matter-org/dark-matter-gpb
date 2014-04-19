@@ -52,9 +52,6 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 	// Indicates the version for which we want to generate the documentation files
 	StringBuffer		genversion = new StringBuffer();
 
-	// The root directory of generated documents 
-	StringBuffer		outdir = new StringBuffer();
-	
 	// The subdirectory where beneath outdir where we'll dump our docs
 	String				outdirDMGPB;
 	
@@ -66,7 +63,6 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 
 	public GpbDocGenerator(){
 		commandLine.addOption("-genversion", 	genversion, "The version for  which we'll generated the .proto files");
-		commandLine.addOption("-outdir", 		outdir, 	"The base directory where we'll dump the docs - we'll create the dmgpb subdirectory");
 		commandLine.addOption("-extensions", 	extensions, "Classes that implement the GpbdocExtensionsHookIF interface");
 	}
 
@@ -82,7 +78,7 @@ public class GpbDocGenerator extends GpbModuleGenUtility{
 		}
 		
 		if (outdir.length() == 0){
-			ex = new ResultException("You must specify the outdir argument to indicate the base documentation directory. The generated docs will be placed in subfolder dmgpb beneath that directory.");
+			ex = new ResultException("You must specify the -outdir argument to indicate the base documentation directory. The generated docs will be placed in subfolder dmgpb beneath that directory.");
 		}
 		
 		outdirDMGPB = outdir + File.separator + "dmgpb";
