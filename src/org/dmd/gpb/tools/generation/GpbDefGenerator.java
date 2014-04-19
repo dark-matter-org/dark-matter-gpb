@@ -1,5 +1,6 @@
 package org.dmd.gpb.tools.generation;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Iterator;
@@ -20,25 +21,27 @@ public class GpbDefGenerator extends GpbModuleGenUtility {
 	StringBuffer		genversion = new StringBuffer();
 	
 	public GpbDefGenerator(){
-		commandLine.addOption("-genversion", genversion, "The version for  which we'll generated the .proto files");
+		commandLine.addOption("-genversion", genversion, "The version for which we'll generated the .proto files");
 	}
 	
 	public GpbDefGenerator(PrintStream p){
-		commandLine.addOption("-genversion", genversion, "The version for  which we'll generated the .proto files");
+		commandLine.addOption("-genversion", genversion, "The version for which we'll generated the .proto files");
 	}
 
 	@Override
 	public void generate(GpbModule module, ConfigLocation location, GpbModuleDefinitionManager definitions) throws IOException {
-		System.out.println("HERE");
+//		System.out.println("HERE");
 		String gv = null;
 		
-		if (genversion.length() > 0)
+		if (genversion.length() > 0){
 			gv = genversion.toString();
+			System.out.println("Generating .proto for version: " + gv);
+		}
 		
 		Iterator<GpbProtoFile> it = module.getAllGpbProtoFile();
 		while(it.hasNext()){
 			GpbProtoFile pf = it.next();
-			pf.dumpProtoFile(location.getDirectory(),gv);
+			pf.dumpProtoFile(outdir.toString(),gv);
 		}
 		
 	}
@@ -51,28 +54,37 @@ public class GpbDefGenerator extends GpbModuleGenUtility {
 
 	@Override
 	public void parsingComplete(GpbModule module, ConfigLocation location, GpbModuleDefinitionManager definitions) throws ResultException {
-		System.out.println("\nPARSING COMPLETE\n\n");
+//		System.out.println("\nPARSING COMPLETE\n\n");
 				
 	}
 	
 	@Override
 	public void initialize() throws ResultException {
+		if (outdir.length() == 0){
+			throw(new ResultException("You must specify the -outdir argument to indicate where to dump the .proto files."));
+		}
 		
+		File od = new File(outdir.toString());
+		
+		if (!od.exists()){
+			throw(new ResultException("The directory specified by -outdir doesn't exist: ." + outdir.toString()));
+		}
 	}
 
 	@Override
-	public void objectResolutionComplete(GpbModule module,
-			ConfigLocation location, GpbModuleDefinitionManager definitions)
-			throws ResultException {
+	public void objectResolutionComplete(GpbModule module, ConfigLocation location, GpbModuleDefinitionManager definitions) throws ResultException {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void generate(GpbModuleDefinitionManager definitions)
-			throws IOException {
-		// TODO Auto-generated method stub
-		
+	public void generate(GpbModuleDefinitionManager definitions) throws IOException {		
+		Iterator<GpbModule> modules = definitions.getAllGpbModule();
+		while(modules.hasNext()){
+			GpbModule module = modules.next();
+			ConfigLocation location = getLocation(module);
+			generate(module, location, definitions);
+		}
 	}
 	
 }

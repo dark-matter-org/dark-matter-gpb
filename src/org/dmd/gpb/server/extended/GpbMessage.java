@@ -34,8 +34,14 @@ public class GpbMessage extends GpbMessageDMW {
 		
 		int fieldWidth	= getMaxFieldNameLength();
 		int typeWidth	= getMaxFieldTypeLength();
+		String hint = "";
+		
+		if (getHint() != null)
+			hint = "\n//\n// " + getHint() + "\n//\n";
 		
 		sb.append(indent + "// Generated from: " + DebugInfo.getWhereWeAreNow() + "\n");
+		
+		sb.append(hint);
 		
 		if (getGenerateAs() == null)
 			sb.append(indent + "message " + getName() + "\n");
@@ -58,7 +64,6 @@ public class GpbMessage extends GpbMessageDMW {
 				GpbFieldIndicator fi = it.next();
 
 				if(VersionChecker.shouldBeIncluded(genversion, fi.getVersion(), fi.getSkip())){
-//				if (shouldBeIncluded(genversion, fi.getVersion(), fi.getSkip()))
 					sb.append(formatField(indent, fi, fieldWidth, typeWidth));
 				}
 			}
@@ -101,6 +106,15 @@ public class GpbMessage extends GpbMessageDMW {
 	}
 	
 	String formatField(String indent, GpbFieldIndicator fi, int fw, int tw){
+		String hint = "";
+		if (fi.getFieldRef().getObject().getHint() != null){
+			hint = " // " + fi.getFieldRef().getObject().getHint();
+		}
+		
+		// The hint can be overridden in the field indicator
+		if (fi.getHint() != null)
+			hint = " // " + fi.getHint();
+			
 		StringBuffer sb = new StringBuffer();
 		PrintfFormat ruleFormat = new PrintfFormat("%-9s");
 		PrintfFormat nameFormat = new PrintfFormat("%-" + fw + "s");
@@ -128,7 +142,11 @@ public class GpbMessage extends GpbMessageDMW {
 		else
 			sb.append(nameFormat.sprintf(fi.getFieldRef().getObject().getGenerateAs()) + " ");
 		
-		sb.append("= " + fi.getFieldTag() + ";\n");
+		sb.append("= " + fi.getFieldTag() + ";");
+		
+		sb.append(hint);
+		
+		sb.append("\n");
 		
 		return(sb.toString());
 	}

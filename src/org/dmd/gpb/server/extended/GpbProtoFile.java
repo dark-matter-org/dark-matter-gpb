@@ -33,7 +33,7 @@ public class GpbProtoFile extends GpbProtoFileDMW {
 		
 		BufferedWriter out = new BufferedWriter(new FileWriter(dn + File.separator + getGeneratedFileName()));
 		
-		DebugInfo.debug("Writing to: " + dn + File.separator + getGeneratedFileName());
+		System.out.println("Writing to: " + dn + File.separator + getGeneratedFileName());
 		
 		out.write("// Generated from: " + DebugInfo.getWhereWeAreNow() + "\n");
 		out.write("// This file was generated from the " + getDefinedInGpbModule().getName() + " via the dark-matter GPB mechanisms\n");
@@ -57,7 +57,7 @@ public class GpbProtoFile extends GpbProtoFileDMW {
 		
 		out.close();
 		
-		DebugInfo.debug("Finished writing");
+//		DebugInfo.debug("Finished writing");
 	}
 	
 }

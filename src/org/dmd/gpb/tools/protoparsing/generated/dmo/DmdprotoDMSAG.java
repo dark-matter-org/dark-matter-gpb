@@ -114,6 +114,7 @@ public class DmdprotoDMSAG implements DmcCompactSchemaIF {
 
         __ProtoMainElement.addMust(MetaDMSAG.__name);
 
+        __ProtoField.addMust(MetaDMSAG.__name);
         __ProtoField.addMust(__gpbType);
         __ProtoField.addMay(MetaDMSAG.__description);
         __ProtoField.addMay(__fieldRule);

@@ -24,6 +24,7 @@ import org.dmd.dmc.DmcSliceInfo;                                                
 import org.dmd.dmc.DmcValueException;                                                      // Any attributes - (GenUtility.java:241)
 import org.dmd.dmc.types.DefinitionName;                                                   // Naming attribute type - (GenUtility.java:370)
 import org.dmd.dms.generated.dmo.MetaDMSAG;                                                // Required for MODREC constructor - (GenUtility.java:228)
+import org.dmd.dms.generated.types.DmcTypeDefinitionNameSV;                                // Required type - (GenUtility.java:328)
 import org.dmd.dms.generated.types.DmcTypeIntegerSV;                                       // Required type - (GenUtility.java:328)
 import org.dmd.dms.generated.types.DmcTypeModifierMV;                                      // Required for MODREC constructor - (GenUtility.java:227)
 import org.dmd.dms.generated.types.DmcTypeStringMV;                                        // Required type - (GenUtility.java:328)
@@ -442,6 +443,56 @@ public class ProtoFieldDMO  extends ProtoElementDMO  implements DmcNamedObjectIF
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
     public void remHint(){
          rem(DmdprotoDMSAG.__hint);
+    }
+
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
+    public DefinitionName getName(){
+        DmcTypeDefinitionNameSV attr = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
+        if (attr == null)
+            return(null);
+
+        return(attr.getSV());
+    }
+
+    /**
+     * Sets name to the specified value.
+     * @param value DefinitionName
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:824)
+    public void setName(DefinitionName value) {
+        DmcAttribute<?> attr = get(MetaDMSAG.__name);
+        if (attr == null)
+            attr = new DmcTypeDefinitionNameSV(MetaDMSAG.__name);
+        
+        try{
+            attr.set(value);
+            set(MetaDMSAG.__name,attr);
+        }
+        catch(DmcValueException ex){
+            throw(new IllegalStateException("The type specific set() method shouldn't throw exceptions!",ex));
+        }
+    }
+
+    /**
+     * Sets name to the specified value.
+     * @param value A value compatible with DmcTypeDefinitionNameSV
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:877)
+    public void setName(Object value) throws DmcValueException {
+        DmcTypeDefinitionNameSV attr  = (DmcTypeDefinitionNameSV) get(MetaDMSAG.__name);
+        if (attr == null)
+            attr = new DmcTypeDefinitionNameSV(MetaDMSAG.__name);
+        
+        attr.set(value);
+        set(MetaDMSAG.__name,attr);
+    }
+
+    /**
+     * Removes the name attribute value.
+     */
+    // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:897)
+    public void remName(){
+         rem(MetaDMSAG.__name);
     }
 
     // org.dmd.dms.util.GenUtility.formatSV(GenUtility.java:784)
