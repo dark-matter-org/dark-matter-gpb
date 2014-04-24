@@ -191,7 +191,7 @@ public class GpbFieldIndicatorBase implements Serializable {
         ArrayList<ParsedNameValuePair> nvp = ComplexTypeSplitter.parse(initialInput);
 
         if (nvp.size() < requiredParts)
-            throw(new DmcValueException("Missing required values for complex type: GpbFieldIndicatorBase"));
+            throw(new DmcValueException("Missing required values for complex type: GpbFieldIndicatorBase\nValue: " + initialInput));
 
         fieldRuleV = DmcTypeFieldRuleEnumSTATIC.instance.typeCheck(nvp.get(0).getValue());
         fieldRefV = DmcTypeGpbFieldREFSTATIC.instance.typeCheck(nvp.get(1).getValue());
@@ -201,9 +201,9 @@ public class GpbFieldIndicatorBase implements Serializable {
             for(int i=3; i<nvp.size(); i++){
                 if (nvp.get(i).getName() == null){
                     if (nvp.get(i).getValue() == null)
-                        throw(new DmcValueException("Expecting a partname=\"some value\" in complex type: GpbFieldIndicatorBase"));
+                        throw(new DmcValueException("Expecting a partname=\"some value\" in complex type: GpbFieldIndicatorBase\nValue: " + initialInput));
                     else
-                        throw(new DmcValueException("Expecting a partname=\"" + nvp.get(i).getValue() + "\" in complex type: GpbFieldIndicatorBase"));
+                        throw(new DmcValueException("Expecting a partname=\"" + nvp.get(i).getValue() + "\" in complex type: GpbFieldIndicatorBase\nValue: " + initialInput));
                 }
                 if (nvp.get(i).getName().equals("option"))
                     optionV = DmcTypeOptionEnumSTATIC.instance.typeCheck(nvp.get(i).getValue());
