@@ -13,6 +13,7 @@ public class GpbDocGeneratorMain {
 			generator.run(args);
 		} catch (Exception e) {
 			System.err.println(e.toString());
+			System.exit(1);
 		} 
 	}
 

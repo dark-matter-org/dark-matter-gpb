@@ -177,7 +177,7 @@ public class GpbEnumValue implements Serializable {
         ArrayList<ParsedNameValuePair> nvp = ComplexTypeSplitter.parse(initialInput);
 
         if (nvp.size() < requiredParts)
-            throw(new DmcValueException("Missing required values for complex type: GpbEnumValue"));
+            throw(new DmcValueException("Missing required values for complex type: GpbEnumValue\nValue: " + initialInput));
 
         nameV = DmcTypeStringSTATIC.instance.typeCheck(nvp.get(0).getValue());
         valueV = DmcTypeIntegerSTATIC.instance.typeCheck(nvp.get(1).getValue());
@@ -187,9 +187,9 @@ public class GpbEnumValue implements Serializable {
             for(int i=3; i<nvp.size(); i++){
                 if (nvp.get(i).getName() == null){
                     if (nvp.get(i).getValue() == null)
-                        throw(new DmcValueException("Expecting a partname=\"some value\" in complex type: GpbEnumValue"));
+                        throw(new DmcValueException("Expecting a partname=\"some value\" in complex type: GpbEnumValue\nValue: " + initialInput));
                     else
-                        throw(new DmcValueException("Expecting a partname=\"" + nvp.get(i).getValue() + "\" in complex type: GpbEnumValue"));
+                        throw(new DmcValueException("Expecting a partname=\"" + nvp.get(i).getValue() + "\" in complex type: GpbEnumValue\nValue: " + initialInput));
                 }
                 if (nvp.get(i).getName().equals("version"))
                     versionV = DmcTypeStringSTATIC.instance.typeCheck(nvp.get(i).getValue());
