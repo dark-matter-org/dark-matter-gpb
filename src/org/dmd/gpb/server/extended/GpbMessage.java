@@ -26,13 +26,13 @@ public class GpbMessage extends GpbMessageDMW {
 	}
 
 	@Override
-	public String toDotProtoFormat(String indent, String genversion) {
+	public String toDotProtoFormat(String indent, String genversion, String renameobsolete) {
 		if (!shouldBeIncluded(genversion))
 			return("");
 		
 		StringBuffer sb = new StringBuffer();
 		
-		int fieldWidth	= getMaxFieldNameLength();
+		int fieldWidth	= getMaxFieldNameLength(renameobsolete);
 		int typeWidth	= getMaxFieldTypeLength();
 		String hint = "";
 		
@@ -54,7 +54,7 @@ public class GpbMessage extends GpbMessageDMW {
 			GpbCompositeTypeIterableDMW it = getEmbedIterable();
 			while(it.hasNext()){
 				GpbCompositeType ct = it.next();
-				sb.append(ct.toDotProtoFormat(indent + "    ", genversion));
+				sb.append(ct.toDotProtoFormat(indent + "    ", genversion, renameobsolete));
 			}
 		}
 		
@@ -64,7 +64,7 @@ public class GpbMessage extends GpbMessageDMW {
 				GpbFieldIndicator fi = it.next();
 
 				if(VersionChecker.shouldBeIncluded(genversion, fi.getVersion(), fi.getSkip())){
-					sb.append(formatField(indent, fi, fieldWidth, typeWidth));
+					sb.append(formatField(indent, fi, fieldWidth, typeWidth, renameobsolete));
 				}
 			}
 		}
@@ -73,16 +73,26 @@ public class GpbMessage extends GpbMessageDMW {
 		return(sb.toString());
 	}
 	
-	public int getMaxFieldNameLength(){
+	public int getMaxFieldNameLength(String renameobsolete){
 		int rc = 0;
+		int suffix = 0;
+		
+		if (renameobsolete != null){
+			suffix = renameobsolete.length();
+		}
 		
 		if (getFieldHasValue()){
 			GpbFieldIndicatorIterableDMW it = getFieldIterable();
 			while(it.hasNext()){
 				GpbFieldIndicator fi = it.next();
 				
-				if (fi.getFieldRef().getName().getNameString().length() > rc)
-					rc = fi.getFieldRef().getName().getNameString().length();
+				int length = fi.getFieldRef().getName().getNameString().length();
+				
+				if (fi.getObsolete() != null)
+					length = length + suffix;
+				
+				if (length > rc)
+					rc = length;
 			}
 		}
 		
@@ -105,8 +115,10 @@ public class GpbMessage extends GpbMessageDMW {
 		return(rc);
 	}
 	
-	String formatField(String indent, GpbFieldIndicator fi, int fw, int tw){
+	String formatField(String indent, GpbFieldIndicator fi, int fw, int tw, String renameobsolete){
 		String hint = "";
+		String suffix = "";
+		
 		if (fi.getFieldRef().getObject().getHint() != null){
 			hint = " // " + fi.getFieldRef().getObject().getHint();
 		}
@@ -114,6 +126,11 @@ public class GpbMessage extends GpbMessageDMW {
 		// The hint can be overridden in the field indicator
 		if (fi.getHint() != null)
 			hint = " // " + fi.getHint();
+		
+		if (renameobsolete != null){
+			if (fi.getObsolete() != null)
+				suffix = renameobsolete;
+		}
 			
 		StringBuffer sb = new StringBuffer();
 		PrintfFormat ruleFormat = new PrintfFormat("%-9s");
@@ -138,9 +155,9 @@ public class GpbMessage extends GpbMessageDMW {
 		sb.append(typeFormat.sprintf(fi.getFieldRef().getObject().getGpbType().getName()) + " ");
 		
 		if (fi.getFieldRef().getObject().getGenerateAs() == null)
-			sb.append(nameFormat.sprintf(fi.getFieldRef().getObjectName()) + " ");
+			sb.append(nameFormat.sprintf(fi.getFieldRef().getObjectName() + suffix) + " ");
 		else
-			sb.append(nameFormat.sprintf(fi.getFieldRef().getObject().getGenerateAs()) + " ");
+			sb.append(nameFormat.sprintf(fi.getFieldRef().getObject().getGenerateAs() + suffix) + " ");
 		
 		sb.append("= " + fi.getFieldTag() + ";");
 		
@@ -150,31 +167,5 @@ public class GpbMessage extends GpbMessageDMW {
 		
 		return(sb.toString());
 	}
-
-//	@Override
-//	public void createTypeIfRequired(GpbModuleDefinitionManager definitions) throws DmcValueException {
-//		DebugInfo.debug(this.toOIF());
-//
-//		DotName dotname = new DotName(getDefinedInGpbModule().getName() + "." + getName() + "." + DmdgpbDMSAG.__GpbType.name);
-//		GpbType type = definitions.getGpbType(dotname);
-//		
-//		if (type == null){
-//			DotName nameAndTypeName = new DotName(getName() + "." + DmdgpbDMSAG.__GpbType.name);
-//			type = new GpbType();
-//			type.setName(getName());
-//			type.setDotName(dotname);
-//			type.setNameAndTypeName(nameAndTypeName);
-//			type.setDefinedInGpbModule(getDefinedInGpbModule());
-//			type.setInternallyGenerated(true);
-//			type.setBasedOnMainElement(this);
-//			
-//			definitions.addGpbType(type);
-//			getDefinedInGpbModule().addGpbType(type);
-//			
-//			DebugInfo.debug("ADDED TYPE \n\n" + type.toOIF());
-//		}
-//		
-//
-//	}
 
 }

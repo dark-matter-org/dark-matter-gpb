@@ -23,8 +23,10 @@ abstract public class GpbCompositeType extends GpbCompositeTypeDMW {
      * @param indent a string with the required indentation level. This is used in the case of embedded enums/messages.
      * @param genversion either null, or a string that indicates the version at which particular elements should
      * should be generated. 
+     * @param renameobsolete either null, or the suffix to be added to obsolete fields
+     * in the generated .proto file
      */
-    abstract public String toDotProtoFormat(String indent, String genversion);
+    abstract public String toDotProtoFormat(String indent, String genversion, String renameobsolete);
     
     /**
      * Determines if the derived message or enum should be included in generated output.
