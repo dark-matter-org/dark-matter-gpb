@@ -22,7 +22,7 @@ public class GpbEnum extends GpbEnumDMW {
 	/**
 	 * @return the enumeration formatted in .proto format.
 	 */
-	public String toDotProtoFormat(String indent, String genversion){
+	public String toDotProtoFormat(String indent, String genversion, String renameobsolete){
 		if (!shouldBeIncluded(genversion))
 			return("");
 		

@@ -15,7 +15,7 @@ import org.dmd.util.exceptions.DebugInfo;
 /**
  * The GpbProtoFile is created by the ProtoFileParser when it reads an existing .proto file.
  * Based on the contents of the original proto file, we can dump an equivalent .gpb file
- * that can then be augmented to contain additional descriptions, docuementation etc.
+ * that can then be augmented to contain additional descriptions, documentation etc.
  */
 public class GpbProtoFile extends GpbProtoFileDMW {
 
@@ -29,7 +29,7 @@ public class GpbProtoFile extends GpbProtoFileDMW {
 	
 	///////////////////////////////////////////////////////////////////////////
 	
-	public void dumpProtoFile(String dn, String genversion) throws IOException {
+	public void dumpProtoFile(String dn, String genversion, String renameobsolete) throws IOException {
 		
 		BufferedWriter out = new BufferedWriter(new FileWriter(dn + File.separator + getGeneratedFileName()));
 		
@@ -52,7 +52,7 @@ public class GpbProtoFile extends GpbProtoFileDMW {
 		while(it.hasNext()){
 			GpbCompositeType ct = it.getNext();
 			
-			out.write(ct.toDotProtoFormat("",genversion) + "\n");
+			out.write(ct.toDotProtoFormat("",genversion,renameobsolete) + "\n");
 		}
 		
 		out.close();
