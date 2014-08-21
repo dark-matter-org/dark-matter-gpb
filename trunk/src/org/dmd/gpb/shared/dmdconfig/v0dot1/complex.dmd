@@ -20,6 +20,7 @@ optionalPart String        	obsolete		"The version at which the field was made o
 optionalPart String        	note			"A note about the field and its use in this message e.g. why it's obsolete." quoted=true
 optionalPart String        	skip			"If a field isn't supported in one or more intermediate versions, you can indicate the skip version." multivalued=true
 optionalPart Concept		why				"An indication of why the field was added. This might be a reference to a requirement or feature concept." multivalued=true weakref=true
+optionalPart Integer		order			"In some cases you want to indicate the order in which fields are handled, for instance in generated documentation. This lets you specify an ordering."
 description	The field indicator is used to indicate the assignment of a defined GpbField
  to a GpbMessage. It is very similar in form to a GPB field definition except for the fact
  that the type information is not included; the type is indicated in the referenced GpbField.

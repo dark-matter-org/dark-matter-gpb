@@ -21,8 +21,8 @@ public class GpbFieldIndicator extends GpbFieldIndicatorBase implements Serializ
 		super(original);
 	}
 	
-    public GpbFieldIndicator(FieldRuleEnum fieldRule_, GpbFieldREF fieldRef_, Integer fieldTag_, OptionEnum option_, String default_, String hint_, String version_, String obsolete_, String note_, ArrayList<String> skipV_, ArrayList<ConceptREF> why_) throws DmcValueException {
-    	super(fieldRule_, fieldRef_, fieldTag_, option_, default_, hint_, version_, obsolete_, note_, skipV_, why_);	
+    public GpbFieldIndicator(FieldRuleEnum fieldRule_, GpbFieldREF fieldRef_, Integer fieldTag_, OptionEnum option_, String default_, String hint_, String version_, String obsolete_, String note_, ArrayList<String> skipV_, ArrayList<ConceptREF> why_, Integer order_) throws DmcValueException {
+    	super(fieldRule_, fieldRef_, fieldTag_, option_, default_, hint_, version_, obsolete_, note_, skipV_, why_, order_);	
     }
     
     public GpbFieldIndicator(String initialInput) throws DmcValueException {
