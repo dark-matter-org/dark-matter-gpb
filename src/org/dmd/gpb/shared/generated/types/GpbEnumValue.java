@@ -20,8 +20,8 @@ package org.dmd.gpb.shared.generated.types;
 import java.io.Serializable;                                                      // To prevent serialization warnings - (NewComplexTypeFormatter.java:100)
 import java.util.ArrayList;                                                       // To store ParsedNameValuePairs - (NewComplexTypeFormatter.java:107)
 import java.util.Iterator;                                                        // To support multi-valued optional parts - (NewComplexTypeFormatter.java:111)
-import org.dmd.concinnity.shared.generated.types.ConceptREF;                      // Object reference - (NewComplexTypeFormatter.java:875)
-import org.dmd.concinnity.shared.generated.types.DmcTypeConceptREFSTATIC;         // Internally generated type - (NewComplexTypeFormatter.java:900)
+import org.dmd.concinnity.shared.generated.types.ConceptREF;                      // Object reference - (NewComplexTypeFormatter.java:919)
+import org.dmd.concinnity.shared.generated.types.DmcTypeConceptREFSTATIC;         // Internally generated type - (NewComplexTypeFormatter.java:944)
 import org.dmd.dmc.DmcAttributeInfo;                                              // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:105)
 import org.dmd.dmc.DmcContainerIF;                                                // To support object references - (NewComplexTypeFormatter.java:117)
 import org.dmd.dmc.DmcInputStreamIF;                                              // Standard serialization techniques - (NewComplexTypeFormatter.java:101)
@@ -40,8 +40,8 @@ import org.dmd.dmc.util.ComplexTypeSplitter;                                    
 import org.dmd.dmc.util.ParsedNameValuePair;                                      // To store values parsed from initial input - (NewComplexTypeFormatter.java:108)
 import org.dmd.dms.generated.enums.DataTypeEnum;                                  // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:103)
 import org.dmd.dms.generated.enums.ValueTypeEnum;                                 // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:104)
-import org.dmd.dms.generated.types.DmcTypeIntegerSTATIC;                          // Standard type - (NewComplexTypeFormatter.java:900)
-import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                           // Standard type - (NewComplexTypeFormatter.java:900)
+import org.dmd.dms.generated.types.DmcTypeIntegerSTATIC;                          // Standard type - (NewComplexTypeFormatter.java:944)
+import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                           // Standard type - (NewComplexTypeFormatter.java:944)
 
 
 
@@ -117,7 +117,7 @@ public class GpbEnumValue implements Serializable {
      */
     @SuppressWarnings("unchecked")
     public GpbEnumValue(GpbEnumValue original){
-    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.getCopyConstructorAssignments(NewComplexTypeFormatter.java:838)
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.getCopyConstructorAssignments(NewComplexTypeFormatter.java:881)
         nameV =  original.nameV;
         valueV =  original.valueV;
         descriptionV =  original.descriptionV;
@@ -235,7 +235,7 @@ public class GpbEnumValue implements Serializable {
 
     /**
      * String form.
-     * Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:388)
+     * Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:389)
      */
     public String toString(){
         StringBuffer sb = new StringBuffer();
@@ -310,10 +310,32 @@ public class GpbEnumValue implements Serializable {
         return(noteV);
     }
 
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:500)
     public Iterator<String> getSkip(){
         if (skipV == null)
             return(null);
         return(skipV.iterator());
+    }
+
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:507)
+    public boolean hasSkip(){
+        if (skipV == null)
+            return(false);
+        return(true);
+    }
+
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:514)
+    public int getSkipSize(){
+        if (skipV == null)
+            return(0);
+        return(skipV.size());
+    }
+
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:521)
+    public String getSkip(int index){
+        if (skipV == null)
+            return(null);
+        return(skipV.get(index));
     }
 
     public ConceptREF getConcept(){
@@ -324,13 +346,35 @@ public class GpbEnumValue implements Serializable {
         return(baseValueV);
     }
 
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:500)
     public Iterator<ConceptREF> getWhy(){
         if (whyV == null)
             return(null);
         return(whyV.iterator());
     }
 
-    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:496)
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:507)
+    public boolean hasWhy(){
+        if (whyV == null)
+            return(false);
+        return(true);
+    }
+
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:514)
+    public int getWhySize(){
+        if (whyV == null)
+            return(0);
+        return(whyV.size());
+    }
+
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:521)
+    public ConceptREF getWhy(int index){
+        if (whyV == null)
+            return(null);
+        return(whyV.get(index));
+    }
+
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:539)
     @SuppressWarnings({"unchecked", "rawtypes"})
     public void resolve(DmcNameResolverIF resolver, String attrName) throws DmcValueException {
         DmcNamedObjectIF  obj = null;
@@ -380,7 +424,7 @@ public class GpbEnumValue implements Serializable {
         
     }
 
-    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:545)
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:588)
     @SuppressWarnings({"unchecked", "rawtypes"})
     public void resolve(DmcNameResolverWithClashSupportIF resolver, DmcObject object, DmcNameClashResolverIF ncr, DmcAttributeInfo ai) throws DmcValueException, DmcValueExceptionSet {
         DmcNamedObjectIF  obj = null;
@@ -398,7 +442,7 @@ public class GpbEnumValue implements Serializable {
                 ((DmcNamedObjectREF)conceptV).setObject(obj);
         
             if (DmcOmni.instance().backRefTracking()){
-                Modifier backrefMod = new Modifier("concept", object, conceptV);
+                Modifier backrefMod = new Modifier("concept", object, conceptV, ai.id);
                 if (obj instanceof DmcContainerIF)
                     ((DmcContainerIF)obj).getDmcObject().addBackref(backrefMod);
                 else
@@ -420,7 +464,7 @@ public class GpbEnumValue implements Serializable {
                 ((DmcNamedObjectREF)baseValueV).setObject(obj);
         
             if (DmcOmni.instance().backRefTracking()){
-                Modifier backrefMod = new Modifier("baseValue", object, baseValueV);
+                Modifier backrefMod = new Modifier("baseValue", object, baseValueV, ai.id);
                 if (obj instanceof DmcContainerIF)
                     ((DmcContainerIF)obj).getDmcObject().addBackref(backrefMod);
                 else
@@ -445,7 +489,7 @@ public class GpbEnumValue implements Serializable {
                     ((DmcNamedObjectREF)v).setObject(obj);
         
                 if (DmcOmni.instance().backRefTracking()){
-                    Modifier backrefMod = new Modifier("why", object, v);
+                    Modifier backrefMod = new Modifier("why", object, v, ai.id);
                     if (obj instanceof DmcContainerIF)
                         ((DmcContainerIF)obj).getDmcObject().addBackref(backrefMod);
                     else

@@ -20,8 +20,8 @@ package org.dmd.gpb.shared.generated.types;
 import java.io.Serializable;                                                      // To prevent serialization warnings - (NewComplexTypeFormatter.java:100)
 import java.util.ArrayList;                                                       // To store ParsedNameValuePairs - (NewComplexTypeFormatter.java:107)
 import java.util.Iterator;                                                        // To support multi-valued optional parts - (NewComplexTypeFormatter.java:111)
-import org.dmd.concinnity.shared.generated.types.ConceptREF;                      // Object reference - (NewComplexTypeFormatter.java:875)
-import org.dmd.concinnity.shared.generated.types.DmcTypeConceptREFSTATIC;         // Internally generated type - (NewComplexTypeFormatter.java:900)
+import org.dmd.concinnity.shared.generated.types.ConceptREF;                      // Object reference - (NewComplexTypeFormatter.java:919)
+import org.dmd.concinnity.shared.generated.types.DmcTypeConceptREFSTATIC;         // Internally generated type - (NewComplexTypeFormatter.java:944)
 import org.dmd.dmc.DmcAttributeInfo;                                              // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:105)
 import org.dmd.dmc.DmcContainerIF;                                                // To support object references - (NewComplexTypeFormatter.java:117)
 import org.dmd.dmc.DmcInputStreamIF;                                              // Standard serialization techniques - (NewComplexTypeFormatter.java:101)
@@ -40,14 +40,14 @@ import org.dmd.dmc.util.ComplexTypeSplitter;                                    
 import org.dmd.dmc.util.ParsedNameValuePair;                                      // To store values parsed from initial input - (NewComplexTypeFormatter.java:108)
 import org.dmd.dms.generated.enums.DataTypeEnum;                                  // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:103)
 import org.dmd.dms.generated.enums.ValueTypeEnum;                                 // For fake DmcAttributeInfo - (NewComplexTypeFormatter.java:104)
-import org.dmd.dms.generated.types.DmcTypeIntegerSTATIC;                          // Standard type - (NewComplexTypeFormatter.java:900)
-import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                           // Standard type - (NewComplexTypeFormatter.java:900)
-import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;                          // Primitive type - (NewComplexTypeFormatter.java:883)
-import org.dmd.gpb.shared.generated.enums.OptionEnum;                             // Primitive type - (NewComplexTypeFormatter.java:883)
-import org.dmd.gpb.shared.generated.types.DmcTypeFieldRuleEnumSTATIC;             // Internally generated type - (NewComplexTypeFormatter.java:900)
-import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldREFSTATIC;               // Internally generated type - (NewComplexTypeFormatter.java:900)
-import org.dmd.gpb.shared.generated.types.DmcTypeOptionEnumSTATIC;                // Internally generated type - (NewComplexTypeFormatter.java:900)
-import org.dmd.gpb.shared.generated.types.GpbFieldREF;                            // Object reference - (NewComplexTypeFormatter.java:875)
+import org.dmd.dms.generated.types.DmcTypeIntegerSTATIC;                          // Standard type - (NewComplexTypeFormatter.java:944)
+import org.dmd.dms.generated.types.DmcTypeStringSTATIC;                           // Standard type - (NewComplexTypeFormatter.java:944)
+import org.dmd.gpb.shared.generated.enums.FieldRuleEnum;                          // Primitive type - (NewComplexTypeFormatter.java:927)
+import org.dmd.gpb.shared.generated.enums.OptionEnum;                             // Primitive type - (NewComplexTypeFormatter.java:927)
+import org.dmd.gpb.shared.generated.types.DmcTypeFieldRuleEnumSTATIC;             // Internally generated type - (NewComplexTypeFormatter.java:944)
+import org.dmd.gpb.shared.generated.types.DmcTypeGpbFieldREFSTATIC;               // Internally generated type - (NewComplexTypeFormatter.java:944)
+import org.dmd.gpb.shared.generated.types.DmcTypeOptionEnumSTATIC;                // Internally generated type - (NewComplexTypeFormatter.java:944)
+import org.dmd.gpb.shared.generated.types.GpbFieldREF;                            // Object reference - (NewComplexTypeFormatter.java:919)
 
 
 
@@ -117,6 +117,11 @@ public class GpbFieldIndicatorBase implements Serializable {
 
     final static DmcAttributeInfo whyAI = new DmcAttributeInfo("why",0,"Concept",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, true);
 
+    // In some cases you want to indicate the order in which fields are handled, for instance in generated documentation. This lets you specify an ordering.
+    Integer orderV;
+
+    final static DmcAttributeInfo orderAI = new DmcAttributeInfo("order",0,"Integer",ValueTypeEnum.SINGLE,DataTypeEnum.UNKNOWN, 0, false);
+
     /**
      * Default constructor.
      */
@@ -128,7 +133,7 @@ public class GpbFieldIndicatorBase implements Serializable {
      */
     @SuppressWarnings("unchecked")
     public GpbFieldIndicatorBase(GpbFieldIndicatorBase original){
-    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.getCopyConstructorAssignments(NewComplexTypeFormatter.java:838)
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.getCopyConstructorAssignments(NewComplexTypeFormatter.java:881)
         fieldRuleV =  original.fieldRuleV;
         fieldRefV =  original.fieldRefV;
         fieldTagV =  original.fieldTagV;
@@ -140,13 +145,14 @@ public class GpbFieldIndicatorBase implements Serializable {
         noteV =  original.noteV;
         skipV = (ArrayList<String>) original.skipV.clone();
         whyV = (ArrayList<ConceptREF>) original.whyV.clone();
+        orderV =  original.orderV;
     }
 
     /**
      * All fields constructor.
      * Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:172)
      */
-    public GpbFieldIndicatorBase(FieldRuleEnum fieldRule_, GpbFieldREF fieldRef_, Integer fieldTag_, OptionEnum option_, String default_, String hint_, String version_, String obsolete_, String note_, ArrayList<String> skip_, ArrayList<ConceptREF> why_) throws DmcValueException {
+    public GpbFieldIndicatorBase(FieldRuleEnum fieldRule_, GpbFieldREF fieldRef_, Integer fieldTag_, OptionEnum option_, String default_, String hint_, String version_, String obsolete_, String note_, ArrayList<String> skip_, ArrayList<ConceptREF> why_, Integer order_) throws DmcValueException {
         fieldRuleV = DmcTypeFieldRuleEnumSTATIC.instance.typeCheck(fieldRule_);
         fieldRefV = DmcTypeGpbFieldREFSTATIC.instance.typeCheck(fieldRef_);
         fieldTagV = DmcTypeIntegerSTATIC.instance.typeCheck(fieldTag_);
@@ -174,6 +180,8 @@ public class GpbFieldIndicatorBase implements Serializable {
                 whyV.add(DmcTypeConceptREFSTATIC.instance.typeCheck(v));
             }
         }
+        if (order_ != null)
+            orderV = DmcTypeIntegerSTATIC.instance.typeCheck(order_);
     }
 
     /**
@@ -227,6 +235,8 @@ public class GpbFieldIndicatorBase implements Serializable {
                         whyV = new ArrayList<ConceptREF>();
                     whyV.add(DmcTypeConceptREFSTATIC.instance.typeCheck(nvp.get(i).getValue()));
                 }
+                else if (nvp.get(i).getName().equals("order"))
+                    orderV = DmcTypeIntegerSTATIC.instance.typeCheck(nvp.get(i).getValue());
                 else{
                     throw(new DmcValueException("Unknown field for complex type GpbFieldIndicatorBase: "  + nvp.get(i).getName()));
                 }
@@ -251,7 +261,7 @@ public class GpbFieldIndicatorBase implements Serializable {
 
     /**
      * String form.
-     * Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:388)
+     * Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:389)
      */
     public String toString(){
         StringBuffer sb = new StringBuffer();
@@ -304,6 +314,11 @@ public class GpbFieldIndicatorBase implements Serializable {
             }
         }
 
+        if (orderV != null){
+            sb.append(' ');
+            sb.append("order=" + orderV.toString());
+        }
+
         return(sb.toString());
     }
 
@@ -343,19 +358,67 @@ public class GpbFieldIndicatorBase implements Serializable {
         return(noteV);
     }
 
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:500)
     public Iterator<String> getSkip(){
         if (skipV == null)
             return(null);
         return(skipV.iterator());
     }
 
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:507)
+    public boolean hasSkip(){
+        if (skipV == null)
+            return(false);
+        return(true);
+    }
+
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:514)
+    public int getSkipSize(){
+        if (skipV == null)
+            return(0);
+        return(skipV.size());
+    }
+
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:521)
+    public String getSkip(int index){
+        if (skipV == null)
+            return(null);
+        return(skipV.get(index));
+    }
+
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:500)
     public Iterator<ConceptREF> getWhy(){
         if (whyV == null)
             return(null);
         return(whyV.iterator());
     }
 
-    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:496)
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:507)
+    public boolean hasWhy(){
+        if (whyV == null)
+            return(false);
+        return(true);
+    }
+
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:514)
+    public int getWhySize(){
+        if (whyV == null)
+            return(0);
+        return(whyV.size());
+    }
+
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:521)
+    public ConceptREF getWhy(int index){
+        if (whyV == null)
+            return(null);
+        return(whyV.get(index));
+    }
+
+    public Integer getOrder(){
+        return(orderV);
+    }
+
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:539)
     @SuppressWarnings({"unchecked", "rawtypes"})
     public void resolve(DmcNameResolverIF resolver, String attrName) throws DmcValueException {
         DmcNamedObjectIF  obj = null;
@@ -392,7 +455,7 @@ public class GpbFieldIndicatorBase implements Serializable {
         
     }
 
-    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:545)
+    // Generated from: org.dmd.dms.util.NewComplexTypeFormatter.dumpComplexType(NewComplexTypeFormatter.java:588)
     @SuppressWarnings({"unchecked", "rawtypes"})
     public void resolve(DmcNameResolverWithClashSupportIF resolver, DmcObject object, DmcNameClashResolverIF ncr, DmcAttributeInfo ai) throws DmcValueException, DmcValueExceptionSet {
         DmcNamedObjectIF  obj = null;
@@ -410,7 +473,7 @@ public class GpbFieldIndicatorBase implements Serializable {
                 ((DmcNamedObjectREF)fieldRefV).setObject(obj);
         
             if (DmcOmni.instance().backRefTracking()){
-                Modifier backrefMod = new Modifier("fieldRef", object, fieldRefV);
+                Modifier backrefMod = new Modifier("fieldRef", object, fieldRefV, ai.id);
                 if (obj instanceof DmcContainerIF)
                     ((DmcContainerIF)obj).getDmcObject().addBackref(backrefMod);
                 else
@@ -435,7 +498,7 @@ public class GpbFieldIndicatorBase implements Serializable {
                     ((DmcNamedObjectREF)v).setObject(obj);
         
                 if (DmcOmni.instance().backRefTracking()){
-                    Modifier backrefMod = new Modifier("why", object, v);
+                    Modifier backrefMod = new Modifier("why", object, v, ai.id);
                     if (obj instanceof DmcContainerIF)
                         ((DmcContainerIF)obj).getDmcObject().addBackref(backrefMod);
                     else

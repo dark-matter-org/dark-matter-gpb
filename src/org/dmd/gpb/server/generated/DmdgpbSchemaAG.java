@@ -648,6 +648,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldIndicatorBaseOBJ.addOptionalPart("String note \"A note about the field and its use in this message e.g. why it's obsolete.\" quoted=true");
             _GpbFieldIndicatorBaseOBJ.addOptionalPart("String skip \"If a field isn't supported in one or more intermediate versions, you can indicate the skip version.\" multivalued=true");
             _GpbFieldIndicatorBaseOBJ.addOptionalPart("Concept why \"An indication of why the field was added. This might be a reference to a requirement or feature concept.\" multivalued=true weakref=true");
+            _GpbFieldIndicatorBaseOBJ.addOptionalPart("Integer order \"In some cases you want to indicate the order in which fields are handled, for instance in generated documentation. This lets you specify an ordering.\"");
             _GpbFieldIndicatorBaseOBJ.addRequiredPart("FieldRuleEnum fieldRule \"Whether the field is required, optional or repeated.\"");
             _GpbFieldIndicatorBaseOBJ.addRequiredPart("GpbField fieldRef \"Reference to the GpbField to be used.\"");
             _GpbFieldIndicatorBaseOBJ.addRequiredPart("Integer fieldTag \"The unique numeric tag for this field.\"");
@@ -660,7 +661,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbFieldIndicatorBaseOBJ.setDotName("dmdgpb.GpbFieldIndicatorBase.ComplexTypeDefinition");
             _GpbFieldIndicatorBase.setDefinedIn(this);
             _GpbFieldIndicatorBaseOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");
-            _GpbFieldIndicatorBaseOBJ.setLineNumber("33");
+            _GpbFieldIndicatorBaseOBJ.setLineNumber("34");
             addComplexTypeDefList(_GpbFieldIndicatorBase);
 
 // Generated from: org.dmd.dmg.util.SchemaFormatter.getObjectAsCode(SchemaFormatter.java:585)
@@ -680,7 +681,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _GpbEnumValueOBJ.setDotName("dmdgpb.GpbEnumValue.ComplexTypeDefinition");
             _GpbEnumValue.setDefinedIn(this);
             _GpbEnumValueOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/complex.dmd");
-            _GpbEnumValueOBJ.setLineNumber("47");
+            _GpbEnumValueOBJ.setLineNumber("48");
             addComplexTypeDefList(_GpbEnumValue);
 
     }
@@ -698,7 +699,7 @@ public class DmdgpbSchemaAG extends SchemaDefinition {
             _FieldRuleEnumOBJ.addEnumValue("0 REQUIRED A well-formed message must have exactly one of this field.");
             _FieldRuleEnumOBJ.addEnumValue("1 OPTIONAL A well-formed message can have zero or one of this field (but not more than one).");
             _FieldRuleEnumOBJ.addEnumValue("2 REPEATED This field can be repeated any number of times (including zero) in a well-formed message. The order of the repeated values will be preserved.");
-            _FieldRuleEnumOBJ.addDescription("The FieldRuleEnum indicates whether a field is required, optional or repeated.\n <p/>\n REQUIRED is Forever You should be very careful about marking fields as required. If at some\n point you wish to stop writing or sending a required field, it will be problematic to change\n the field to an optional field ? old readers will consider messages without this field to be\n incomplete and may reject or drop them unintentionally. You should consider writing\n application-specific custom validation routines for your buffers instead. Some engineers\n at Google have come to the conclusion that using required does more harm than good; they\n prefer to use only optional and repeated. However, this view is not universal.");
+            _FieldRuleEnumOBJ.addDescription("The FieldRuleEnum indicates whether a field is required, optional or repeated.\n <p/>\n REQUIRED is Forever You should be very careful about marking fields as required. If at some\n point you wish to stop writing or sending a required field, it will be problematic to change\n the field to an optional field � old readers will consider messages without this field to be\n incomplete and may reject or drop them unintentionally. You should consider writing\n application-specific custom validation routines for your buffers instead. Some engineers\n at Google have come to the conclusion that using required does more harm than good; they\n prefer to use only optional and repeated. However, this view is not universal.");
             _FieldRuleEnumOBJ.setDotName("dmdgpb.FieldRuleEnum.EnumDefinition");
             _FieldRuleEnum.setDefinedIn(this);
             _FieldRuleEnumOBJ.setFile("/src/org/dmd/gpb/shared/dmdconfig/v0dot1/types.dmd");

@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Name: dark-matter-gpb
 Specification-Title: dark-matter-gpb
-Specification-Version: 1.0.1
+Specification-Version: 1.0.2
 Specification-Vendor: dark-matter-gpb committers
 Implementation-Title: org.dmd
-Implementation-Version: rev94
+Implementation-Version: rev96
 Implementation-Vendor: dark-matter-gpb committers
