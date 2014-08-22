@@ -1,0 +1,42 @@
+GpbType
+name			int32
+cplusplusType	int32
+dmType			Integer
+description Uses variable-length encoding. Inefficient for encoding negative
+ numbers if your field is likely to have negative values, use sint32 instead.
+
+GpbField
+name 		id
+gpbType		int32
+description A person's unique identifier in the blah system.
+
+GpbField
+name		phone
+gpbType		PhoneNumber
+description A phone number and its type.
+
+GpbMessage
+name 	Person
+gpbfield 	REQUIRED name 			1 
+gpbfield 	REQUIRED id 			2
+gpbfield 	OPTIONAL email 			3
+embed	PhoneType
+embed 	PhoneNumber
+field 	REPEATED phone 			4
+description The Person Message is used to represent an individual with an
+ email address and one or more phone numbers.
+
+GpbMessage
+name	PhoneNumber
+gpbfield	REQUIRED number		1
+gpbfield	OPTIONAL phoneType	2 HOME
+description Allows for the specification of a phone number and, optionally, its location.
+
+GpbEnumDefinition
+name            PhoneTypeEnum
+nullReturnValue PhoneTypeEnum.HOME
+enumValue		0 MOBILE A mobile phone number : Mobile
+enumValue		1 HOME A home phone number : Home
+enumValue		2 WORK A work phone number : Work
+description Indicates the location of a phone number.
+

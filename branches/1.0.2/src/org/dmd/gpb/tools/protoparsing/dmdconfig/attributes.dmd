@@ -1,0 +1,108 @@
+AttributeDefinition
+name			gpbType
+dmdID			1
+type			String
+description		The type of a .proto field. We just use a string here since we're
+ not doing object resolution based on type.
+
+AttributeDefinition
+name			package
+dmdID			2
+type			String
+description 	The package associated with a .proto file.
+
+AttributeDefinition
+name			elements
+dmdID			3
+type			ProtoElement
+valueType		MULTI
+description		The elements attribute indicates a list of ProtoElements that comprise a ProtoMessage, this
+ includes ProtoFields, ProtoEnums and other ProtoMessages.
+
+AttributeDefinition
+name			mainElements
+dmdID			4
+type			ProtoMainElement
+valueType		MULTI
+description		The mainElements attribute indicates a list of ProtoMainElements that comprise a ProtoFile. Main elements
+ include messages and enumerations.
+
+AttributeDefinition
+name			fields
+dmdID			5
+type			ProtoField
+valueType		MULTI
+description		The fields that will be defined individually within a GpbModule. As field from messages
+ are parsed, they are added to the fields of a ProtoFile.
+
+AttributeDefinition
+name			tag
+dmdID			6
+type			Integer
+description		As you can see, each field in the message definition has a unique numbered tag.
+ These tags are used to identify your fields in the message binary format, and should not be
+ changed once your message type is in use. Note that tags with values in the range 1 through 15
+ take one byte to encode, including the identifying number and the field's type (you can find
+ out more about this in Protocol Buffer Encoding). Tags in the range 16 through 2047 take two
+ bytes. So you should reserve the tags 1 through 15 for very frequently occurring message
+ elements. Remember to leave some room for frequently occurring elements that might be added
+ in the future.
+ <p/>
+ The smallest tag number you can specify is 1, and the largest is 229 - 1, or 536,870,911.
+ You also cannot use the numbers 19000 though 19999 
+
+AttributeDefinition
+name			fieldRule
+dmdID			7
+type			ProtoFieldRuleEnum
+description		Indicates if a field is required, optional or repeated. See the note about 
+ required fields as part of the FieldRuleEnum.
+ <p/>
+ For historical reasons, repeated fields of basic numeric types aren't encoded as efficiently
+ as they could be. New code should use the special option [packed=true] to get a more efficient encoding.
+ <br/>
+ For example: repeated int32 samples = 4 [packed=true];
+
+AttributeDefinition
+name			import
+dmdID			8
+type			String
+valueType		MULTI
+description 	An import associated with a .proto file.
+
+AttributeDefinition
+name			generateAs
+dmdID			9
+type			String
+description 	When protocol elements have clashing names in the namespace of a dmgpb set of definitions,
+ we alter their original names but maintain the original name here so that we can regenerate the .proto
+ file without difficulty. This is also handy when you start to merge definitions from different .proto
+ implementations but still want to maintain the old names in the regenerated .proto files.
+
+AttributeDefinition
+name			hint
+dmdID			10
+type			String
+description 	Any comment associated with a field
+
+AttributeDefinition
+name			generatedFileName
+dmdID			11
+type			String
+description		The name of the file to be generated, complete with the appropriate file extension.
+ An example would be company_common.proto.
+
+AttributeDefinition
+name			parentMessage
+dmdID			12
+type			ProtoMessage
+description		Indicates the message in which an enum or message was embedded.
+
+AttributeDefinition
+name			embeddedElements
+dmdID			30
+type			ProtoMainElement
+valueType		MULTI
+description		The embeddedElements attribute indicates a list of ProtoMainElement that were 
+ embedded in other messages. We mainatain a separate collection of these so that we don't
+ wind up dumping them as actual main elements in the regenerated .proto file.

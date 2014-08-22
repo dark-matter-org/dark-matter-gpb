@@ -1,0 +1,124 @@
+GpbModule
+name 			gpbbase
+description		The gpbbase GpbModule defines the scalar types that are allowed by
+ the Google Protocol Buffer (GPB) Domain Specific Lanaguage (DSL). All .gpb modules
+ have a dependency on this module by default.
+ <p/>
+ GpbScalarType definitions cannot be defined in any other module! Attempting to do so 
+ will result in a parsing error.
+
+GpbScalarType
+name 			double
+javaType		double
+cplusplusType	double
+pythonType		float
+hint			Represents double values.
+
+GpbScalarType
+name 			float
+javaType		float
+cplusplusType	float
+pythonType		float
+hint			Represents float values.
+
+GpbScalarType
+name 			int32
+javaType		int
+cplusplusType	int32
+pythonType		float
+hint			Represents integer values using variable length encoding.
+description		Inefficient for encoding negative numbers
+ if your field is likely to have negative values, use sint32 instead.
+
+GpbScalarType
+name 			int64
+javaType		long
+cplusplusType	int64
+pythonType		int/long
+hint			Represents long integer values using variable length encoding.
+description		Inefficient for encoding negative numbers
+ if your field is likely to have negative values, use sint64 instead.
+
+GpbScalarType
+name 			uint32
+javaType		int
+cplusplusType	uint32
+pythonType		int/long
+hint			Represents unsigned integers using variable-length encoding.
+
+GpbScalarType
+name 			uint64
+javaType		long
+cplusplusType	uint64
+pythonType		int/long
+hint			Represents unsigned long integers using variable-length encoding.
+
+GpbScalarType
+name 			sint32
+javaType		int
+cplusplusType	int32
+pythonType		int
+hint			Represents signed integers using variable-length encoding.
+description		Signed int value. These more efficiently
+ encode negative numbers than regular int32s.
+
+GpbScalarType
+name 			sint64
+javaType		long
+cplusplusType	int64
+pythonType		int/long
+hint			Represents signed long integers using variable-length encoding.
+description		Uses variable-length encoding. Signed int value. These more efficiently
+ encode negative numbers than regular int64s.
+
+GpbScalarType
+name 			fixed32
+javaType		int
+cplusplusType	uint32
+pythonType		int
+hint			Represents fixed length  integers.
+description		Always four bytes. More efficient than uint32 if values are often greater than 2^28.
+
+GpbScalarType
+name 			fixed64
+javaType		long
+cplusplusType	int64
+pythonType		int/long
+hint			Represents fixed length long integers.
+description		Always eight bytes. More efficient than uint64 if values are often greater than 2^56.
+
+GpbScalarType
+name 			sfixed32
+javaType		int
+cplusplusType	int32
+pythonType		int
+hint			Represents fixed lnegth, signed integers. Always four bytes.
+
+GpbScalarType
+name 			sfixed64
+javaType		long
+cplusplusType	int64
+pythonType		int/long
+hint			Represents fixed lnegth, signed long integers. Always eight bytes.
+
+GpbScalarType
+name 			bool
+javaType		long
+cplusplusType	int64
+pythonType		int/long
+hint			Represents boolean values.
+
+GpbScalarType
+name 			string
+javaType		String
+cplusplusType	string
+pythonType		str/unicode
+hint			A string that always contains UTF-8 encoded or 7-bit ASCII text.
+
+GpbScalarType
+name 			bytes
+javaType		ByteString
+cplusplusType	string
+pythonType		str
+hint			May contain any arbitrary sequence of bytes.
+

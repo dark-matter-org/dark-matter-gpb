@@ -1,0 +1,21 @@
+SchemaDefinition
+name       			dmdgpb
+schemaBaseID		-478000
+schemaIDRange		50
+dependsOn			dmv
+dependsOn			dmconcinnity
+defFiles			types.dmd
+defFiles			complex.dmd
+defFiles    		attributes.dmd
+defFiles    		classes.dmd
+// Note: handling the module like this is a hack to get around some object resolve issues
+// Eventually, it will probably wind up in the classes file. Or all definitions may be in one file
+// like MVW.
+defFiles			module.dmd
+generatedFileHeader LGPL.txt
+schemaPackage 		org.dmd.gpb.shared
+dmwPackage 			org.dmd.gpb.server
+description The dark-matter GPB schema defines objects that for the specification
+ of elements required to generate Google Protocol Buffer specifications, but adds
+ the ability to document those interfaces. 
+

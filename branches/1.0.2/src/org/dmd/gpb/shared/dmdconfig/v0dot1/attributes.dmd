@@ -1,0 +1,196 @@
+AttributeDefinition
+name			cplusplusType
+dmdID			1
+type			String
+description		An indication of the C++ type associated with a GpbScalar type.
+
+AttributeDefinition
+name			dmType
+dmdID			2
+type			String
+description		An indication of the dark-matter type associated with a GPB attribute type.
+
+// Promoted to meta
+//AttributeDefinition
+//name			hint
+//dmdID			3
+//type			String
+//description		A short description of something that can be dumped as one line comment in a .proto spec.
+// For longer explanations, use the description attribute.
+//
+//ValueLengthRuleData
+//ruleName         dmgpbHintLength
+//ruleTitle        The hint for something should be at most 80 characters.
+//applyToAttribute hint
+//maxLength        80
+
+AttributeDefinition
+name			defaultValue
+dmdID			4
+type			String
+description		The default value to be used for a GpbType or for an GpbAttribute.
+
+AttributeDefinition
+name			sizeInBytes
+dmdID			5
+type			Integer
+description		The size in bytes that a particular primitive type would occupy on the wire.
+
+AttributeDefinition
+name			gpbType
+dmdID			6
+type			GpbType
+description		A reference to a GpbType definition.
+
+AttributeDefinition
+name			generatedFileName
+dmdID			7
+type			String
+description		The name of the file to be generated, complete with the appropriate file extension.
+ An example would be company_common.proto.
+
+AttributeDefinition
+name			definedInGpbModule
+dmdID			8
+type			GpbModule
+description		Indicates the name of the GpbModule in which a definition is defined.
+
+//AttributeDefinition
+//name			usesDefsFrom
+//dmdID			9
+////type			GpbModule
+//type			String
+//description		Indicates the name of a GpbModule from which definitions are included.
+
+AttributeDefinition
+name			pythonType
+dmdID			10
+type			String
+description		An indication of the Python type associated with a GPB attribute type.
+
+AttributeDefinition
+name			javaType
+dmdID			11
+type			String
+description		An indication of the Java type associated with a GPB attribute type.
+
+AttributeDefinition
+name			basedOnEnum
+dmdID			12
+type			EnumDefinition
+description		Indicates that a GPB enum is based on a dark-matter schema defined enumeration.
+
+AttributeDefinition
+name			dependsOnGpbModule
+dmdID			20
+type			GpbModule
+valueType       MULTI
+description		Indicates the GpbModule on which something depends.
+
+AttributeDefinition
+name			package
+dmdID			21
+type			String
+description 	The package associated with a .proto file.
+
+AttributeDefinition
+name			gpbEnumValue
+dmdID			22
+type			GpbEnumValue
+valueType		MULTI
+description		The values of an enumeration.
+
+AttributeDefinition
+name			mainElements
+dmdID			23
+type			GpbCompositeType
+valueType		MULTI
+description		The mainElements attribute indicates a list of GpbCompositeTypes that comprise a GpbProtoFile. Main elements
+ include messages and enumerations.
+
+AttributeDefinition
+name			field
+dmdID			24
+type			GpbFieldIndicator
+valueType		MULTI
+description		A set of fields in a GpbMessage.
+
+AttributeDefinition
+name			tag
+dmdID			25
+type			Integer
+description		As you can see, each field in the message definition has a unique numbered tag.
+ These tags are used to identify your fields in the message binary format, and should not be
+ changed once your message type is in use. Note that tags with values in the range 1 through 15
+ take one byte to encode, including the identifying number and the field's type (you can find
+ out more about this in Protocol Buffer Encoding). Tags in the range 16 through 2047 take two
+ bytes. So you should reserve the tags 1 through 15 for very frequently occurring message
+ elements. Remember to leave some room for frequently occurring elements that might be added
+ in the future.
+ <p/>
+ The smallest tag number you can specify is 1, and the largest is 229 - 1, or 536,870,911.
+ You also cannot use the numbers 19000 though 19999 
+
+AttributeDefinition
+name			fieldRule
+dmdID			26
+type			FieldRuleEnum
+description		Indicates if a field is required, optional or repeated. See the note about 
+ required fields as part of the FieldRuleEnum.
+ <p/>
+ For historical reasons, repeated fields of basic numeric types aren't encoded as efficiently
+ as they could be. New code should use the special option [packed=true] to get a more efficient encoding.
+ <br/>
+ For example: repeated int32 samples = 4 [packed=true];
+
+AttributeDefinition
+name			import
+dmdID			27
+type			String
+valueType		MULTI
+description 	An import associated with a .proto file.
+
+AttributeDefinition
+name			embed
+dmdID			28
+type			GpbCompositeType
+valueType		MULTI
+description 	The embed attribute is used to indicate that an existing GpbEnum or GpbMessage
+ description should be embedded directly within a message definition.
+
+AttributeDefinition
+name			generateAs
+dmdID			29
+type			String
+description 	When protocol elements have clashing names in the namespace of a dmgpb set of definitions,
+ we alter their original names but maintain the original name here so that we can regenerate the .proto
+ file without difficulty. This is also handy when you start to merge definitions from different .proto
+ implementations but still want to maintain the old names in the regenerated .proto files.
+
+//AttributeDefinition
+//name			version
+//dmdID			30
+//type			String
+//description 	The version at which a module, message or enumeration was introduced.
+//
+//AttributeDefinition
+//name			skip
+//dmdID			31
+//type			String
+//valueType		MULTI
+//description 	A version from which a message or enumeration should be excluded when .proto generation takes place.
+//
+//AttributeDefinition
+//name			obsolete
+//dmdID			32
+//type			String
+//description 	The version at which a message or enumeration became obsolete.
+//
+//AttributeDefinition
+//name			why
+//dmdID			33
+//type			Concept
+//weakReference	true
+//description 	An indication of why a message or enum was added to the specification.
+// This might be a reference to a requirement or feature concept.
+
