@@ -1,0 +1,3 @@
+Google Protocol Buffers (GPB) provide an excellent mechanism for providing support for versionless interfaces between systems. GPB does not, however, provide much by way of documenting the messages or the manner in which they are exchanged. The dark-matter-gpb projects provides tools to read existing GPB specifications (.proto files) and generate a different Domain Specific Language (DSL) dark-matter GPB (dmgpb) that allows for proper documentation of the specification. The .dmgpb files are then used to generate the .proto files.
+
+Refer to the Wiki for the motivation behind this project and its potential benefits.
